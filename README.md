@@ -1,6 +1,6 @@
-### Weather Dashboard
+# Weather Dashboard
 
-# Structure so far:
+### Structure so far:
 
 - GUI from HW 8
 - Error handling and API from HW 10
