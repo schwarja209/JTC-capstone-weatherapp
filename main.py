@@ -16,11 +16,7 @@ import random
 import requests
 import os
 
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    print("Warning: 'dotenv' not found. Skipping .env loading.")
+import config
 
 class SampleWeatherGenerator:
     def generate(self, city, num_days=30):
@@ -41,8 +37,8 @@ class SampleWeatherGenerator:
 
 class WeatherAPIService:
     def __init__(self):
-        self.api = "https://api.openweathermap.org/data/2.5/weather"
-        self.key = os.getenv("OPENWEATHER_API_KEY")
+        self.api = config.API_BASE_URL
+        self.key = config.API_KEY
 
     def fetch_current(self, city, unit="imperial"):
         try:
@@ -119,7 +115,7 @@ class WeatherDataManager:
         pressure_display = f"{pressure} inHg"
         wind_display = f"{wind} mph"
 
-        with open("data_big.txt", "a") as f:
+        with open(config.OUTPUT_FILE, "a") as f:
             f.write(f"\n\nTime: {timestamp}\n")
             f.write(f"City: {city}\n")
             f.write(f"Temperature: {temp_display}\n")
@@ -388,52 +384,36 @@ class WeatherDashboardMain:
 
     def init_vars(self):
         return {
-            'city': tk.StringVar(value="New York"),
-            'unit': tk.StringVar(value="F"),
-            'range': tk.StringVar(value="Last 7 Days"),
-            'chart': tk.StringVar(value="Temperature"),
+            'city': tk.StringVar(value=config.DEFAULT_CITY),
+            'unit': tk.StringVar(value=config.DEFAULT_UNIT),
+            'range': tk.StringVar(value=config.DEFAULT_RANGE),
+            'chart': tk.StringVar(value=config.DEFAULT_CHART),
             'visibility': {
-                'temperature': tk.BooleanVar(value=True),
-                'humidity': tk.BooleanVar(value=True),
-                'wind_speed': tk.BooleanVar(value=False),
-                'pressure': tk.BooleanVar(value=False),
-                'conditions': tk.BooleanVar(value=False),
+                key: tk.BooleanVar(value=val)
+                for key, val in config.DEFAULT_VISIBILITY.items()
             }
         }
 
     def get_display_keys(self):
-        return {
-            'temperature': 'Temperature',
-            'humidity': 'Humidity',
-            'wind_speed': 'Wind Speed',
-            'pressure': 'Pressure',
-            'conditions': 'Conditions'
-        }
+        return config.KEY_TO_DISPLAY
 
     def get_range_options(self):
-        return {
-            'Last 7 Days': 7,
-            'Last 14 Days': 14,
-            'Last 30 Days': 30
-        }
-
+        return config.RANGE_OPTIONS
+    
     def on_update_clicked(self):
         self.logic.fetch_city(self.gui_vars['city'].get())
         self.logic.update_chart()
 
     def on_clear_clicked(self):
-        self.gui_vars['city'].set("New York")
-        self.gui_vars['unit'].set("F")
-        self.gui_vars['range'].set("Last 7 Days")
-        self.gui_vars['chart'].set("Temperature")
-        
-        self.gui_vars['visibility']['temperature'].set(True)
-        self.gui_vars['visibility']['humidity'].set(True)
-        self.gui_vars['visibility']['wind_speed'].set(False)
-        self.gui_vars['visibility']['pressure'].set(False)
-        self.gui_vars['visibility']['conditions'].set(False)
+        self.gui_vars['city'].set(config.DEFAULT_CITY)
+        self.gui_vars['unit'].set(config.DEFAULT_UNIT)
+        self.gui_vars['range'].set(config.DEFAULT_RANGE)
+        self.gui_vars['chart'].set(config.DEFAULT_CHART)
 
-        messagebox.showinfo("Reset", "Dashboard reset to default values.")  # confirm that everything was reset
+        for key, var in self.gui_vars['visibility'].items():
+            var.set(config.DEFAULT_VISIBILITY.get(key, False))
+
+        messagebox.showinfo("Reset", "Dashboard reset to default values.")
         self.update_chart_dropdown()
 
     def update_chart_dropdown(self):
