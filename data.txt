@@ -1,0 +1,1085 @@
+
+
+Time: 2025-06-30 09:55:18
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 09:55:22
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 09:55:26
+City: New York
+Temperature: 27.9 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 2.06 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:00:56
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:01:07
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:01:08
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:01:16
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:01:19
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:01:21
+City: New York
+Temperature: 82.3 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:03:26
+City: New York
+Temperature: 83.3 °C
+Humidity: 60%
+Pressure: 1016 inHg
+Wind Speed: 4 mph
+Conditions: Broken Clouds
+
+
+Time: 2025-06-30 10:05:07
+City: New York
+Temperature: 301.6 °C
+Humidity: 60%
+Pressure: 1016 inHg
+Wind Speed: 1.79 mph
+Conditions: Broken Clouds
+
+
+Time: 2025-06-30 10:06:15
+City: New York
+Temperature: 83.3 °C
+Humidity: 60%
+Pressure: 1016 inHg
+Wind Speed: 4 mph
+Conditions: Broken Clouds
+
+
+Time: 2025-06-30 10:06:18
+City: New York
+Temperature: 83.3 °C
+Humidity: 60%
+Pressure: 1016 inHg
+Wind Speed: 4 mph
+Conditions: Broken Clouds
+
+
+Time: 2025-06-30 10:06:20
+City: New York
+Temperature: 28.0 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 2.06 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:06:24
+City: New York
+Temperature: 28.0 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 2.06 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:06:27
+City: New York
+Temperature: 83.3 °C
+Humidity: 60%
+Pressure: 1016 inHg
+Wind Speed: 4 mph
+Conditions: Broken Clouds
+
+
+Time: 2025-06-30 10:06:30
+City: New York
+Temperature: 28.0 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 2.06 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:06:32
+City: New York
+Temperature: 83.3 °C
+Humidity: 60%
+Pressure: 1016 inHg
+Wind Speed: 4 mph
+Conditions: Broken Clouds
+
+
+Time: 2025-06-30 10:06:34
+City: New York
+Temperature: 28.0 °C
+Humidity: 61%
+Pressure: 1016 inHg
+Wind Speed: 2.06 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:06:55
+City: New York
+Temperature: 83.3 °C
+Humidity: 60%
+Pressure: 1016 inHg
+Wind Speed: 4 mph
+Conditions: Broken Clouds
+
+
+Time: 2025-06-30 10:42:01
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:04
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:07
+City: New York
+Temperature: 29.1 °C
+Humidity: 58%
+Pressure: 1015 hPa
+Wind Speed: 2.06 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:13
+City: New York
+Temperature: 29.1 °C
+Humidity: 58%
+Pressure: 1015 hPa
+Wind Speed: 2.06 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:16
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:18
+City: New York
+Temperature: 29.1 °C
+Humidity: 58%
+Pressure: 1015 hPa
+Wind Speed: 2.06 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:23
+City: New York
+Temperature: 29.1 °C
+Humidity: 58%
+Pressure: 1015 hPa
+Wind Speed: 2.06 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:26
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:34
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:41
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:45
+City: New York
+Temperature: 29.1 °C
+Humidity: 58%
+Pressure: 1015 hPa
+Wind Speed: 2.06 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:48
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:51
+City: New York
+Temperature: 29.1 °C
+Humidity: 58%
+Pressure: 1015 hPa
+Wind Speed: 2.06 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 10:42:53
+City: New York
+Temperature: 84.4 °F
+Humidity: 56%
+Pressure: 29.97 inHg
+Wind Speed: 4.61 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:10
+City: New York
+Temperature: 86.9 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 7 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:13
+City: New York
+Temperature: 86.9 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 7 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:15
+City: New York
+Temperature: 30.5 °C
+Humidity: 55%
+Pressure: 1015 hPa
+Wind Speed: 3.13 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:18
+City: New York
+Temperature: 30.5 °C
+Humidity: 55%
+Pressure: 1015 hPa
+Wind Speed: 3.13 m/s
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:26
+City: New York
+Temperature: 86.9 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 7 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:32
+City: New York
+Temperature: 86.9 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 7 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:35
+City: New York
+Temperature: 86.9 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 7 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:37
+City: New York
+Temperature: 86.9 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 7 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:46:40
+City: New York
+Temperature: 86.9 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 7 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 11:58:12
+City: New York
+Temperature: 87.0 °F
+Humidity: 55%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+
+Time: 2025-06-30 12:26:11
+City: New York
+Temperature: 31.4 °F
+Humidity: 53%
+Pressure: 1015 inHg
+Wind Speed: 2.06 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:26:21
+City: New York
+Temperature: -0.3 °C
+Humidity: 53%
+Pressure: 34371.83 hPa
+Wind Speed: 0.92 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:26:28
+City: New York
+Temperature: 31.4 °F
+Humidity: 53%
+Pressure: 1015 inHg
+Wind Speed: 2.06 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:38:59
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:02
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:04
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:05
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:07
+City: New York
+Temperature: 31.4 °C
+Humidity: 51%
+Pressure: 1015 hPa
+Wind Speed: 2.68 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:08
+City: New York
+Temperature: 31.4 °C
+Humidity: 51%
+Pressure: 1015 hPa
+Wind Speed: 2.68 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:09
+City: New York
+Temperature: 31.4 °C
+Humidity: 51%
+Pressure: 1015 hPa
+Wind Speed: 2.68 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:11
+City: New York
+Temperature: 31.4 °C
+Humidity: 51%
+Pressure: 1015 hPa
+Wind Speed: 2.68 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:12
+City: New York
+Temperature: 31.4 °C
+Humidity: 51%
+Pressure: 1015 hPa
+Wind Speed: 2.68 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:13
+City: New York
+Temperature: 31.4 °C
+Humidity: 51%
+Pressure: 1015 hPa
+Wind Speed: 2.68 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:16
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:17
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:18
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 12:39:19
+City: New York
+Temperature: 88.4 °F
+Humidity: 51%
+Pressure: 29.97 inHg
+Wind Speed: 5.99 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:09
+City: New York
+Temperature: 89.6 °F
+Humidity: 49%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:11
+City: New York
+Temperature: 89.6 °F
+Humidity: 49%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:15
+City: New York
+Temperature: 32.0 °C
+Humidity: 49%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:20
+City: New York
+Temperature: 32.0 °C
+Humidity: 49%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:23
+City: New York
+Temperature: 89.6 °F
+Humidity: 49%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:25
+City: New York
+Temperature: 32.0 °C
+Humidity: 49%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:28
+City: New York
+Temperature: 32.0 °C
+Humidity: 49%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:31
+City: New York
+Temperature: 89.6 °F
+Humidity: 49%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:35
+City: New York
+Temperature: 89.6 °F
+Humidity: 49%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:04:37
+City: New York
+Temperature: 32.0 °C
+Humidity: 49%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:30:15
+City: New York
+Temperature: 90.8 °F
+Humidity: 48%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:30:17
+City: New York
+Temperature: 90.8 °F
+Humidity: 48%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:32:14
+City: New York
+Temperature: 90.8 °F
+Humidity: 48%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:32:16
+City: New York
+Temperature: 90.8 °F
+Humidity: 48%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:32:24
+City: New York
+Temperature: 32.7 °C
+Humidity: 48%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:32:29
+City: New York
+Temperature: 32.7 °C
+Humidity: 48%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:32:32
+City: New York
+Temperature: 32.7 °C
+Humidity: 48%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:32:36
+City: New York
+Temperature: 32.7 °C
+Humidity: 48%
+Pressure: 1015.00 hPa
+Wind Speed: 3.60 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:34:21
+City: New York
+Temperature: 90.8 °F
+Humidity: 48%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:34:23
+City: New York
+Temperature: 90.8 °F
+Humidity: 48%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:36:34
+City: New York
+Temperature: 90.6 °F
+Humidity: 47%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 13:36:35
+City: New York
+Temperature: 90.6 °F
+Humidity: 47%
+Pressure: 29.97 inHg
+Wind Speed: 8.05 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 14:34:50
+City: New York
+Temperature: 90.7 °F
+Humidity: 45%
+Pressure: 29.94 inHg
+Wind Speed: 11.50 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:25
+City: New York
+Temperature: 90.9 °F
+Humidity: 45 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:27
+City: New York
+Temperature: 90.9 °F
+Humidity: 45 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:33
+City: New York
+Temperature: 90.9 °F
+Humidity: 45 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:36
+City: New York
+Temperature: 32.7 °C
+Humidity: 45 %
+Pressure: 1014.00 hPa
+Wind Speed: 4.63 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:39
+City: New York
+Temperature: 90.9 °F
+Humidity: 45 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:42
+City: New York
+Temperature: 32.7 °C
+Humidity: 45 %
+Pressure: 1014.00 hPa
+Wind Speed: 4.63 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:49
+City: New York
+Temperature: 90.9 °F
+Humidity: 45 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:42:57
+City: New York
+Temperature: 90.9 °F
+Humidity: 45 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:43:03
+City: New York
+Temperature: 90.9 °F
+Humidity: 45 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:48:54
+City: New York
+Temperature: 90.9 °F
+Humidity: 46 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:58:32
+City: New York
+Temperature: 90.4 °F
+Humidity: 47 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:58:34
+City: New York
+Temperature: 90.4 °F
+Humidity: 47 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:58:39
+City: New York
+Temperature: 32.5 °C
+Humidity: 47 %
+Pressure: 1014.00 hPa
+Wind Speed: 4.63 m/s
+Conditions: Clear Sky
+
+Time: 2025-06-30 15:58:43
+City: New York
+Temperature: 90.4 °F
+Humidity: 47 %
+Pressure: 29.94 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:01:54
+City: New York
+Temperature: 90.2 °F
+Humidity: 49 %
+Pressure: 29.94 inHg
+Wind Speed: 5.01 mph
+Conditions: Overcast Clouds
+
+Time: 2025-06-30 16:01:55
+City: New York
+Temperature: 90.2 °F
+Humidity: 49 %
+Pressure: 29.94 inHg
+Wind Speed: 5.01 mph
+Conditions: Overcast Clouds
+
+Time: 2025-06-30 16:01:58
+City: New York
+Temperature: 32.4 °C
+Humidity: 49 %
+Pressure: 1014.00 hPa
+Wind Speed: 2.24 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-06-30 16:19:12
+City: New York
+Temperature: 89.9 °F
+Humidity: 48 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:19:14
+City: New York
+Temperature: 89.9 °F
+Humidity: 48 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:19:19
+City: Asdasd
+Temperature: 80.6 °F
+Humidity: 63 %
+Pressure: 30.22 inHg
+Wind Speed: 0.00 mph
+Conditions: Snowy
+
+Time: 2025-06-30 16:19:38
+City: 
+Temperature: 32.0 °F
+Humidity: 46 %
+Pressure: 30.34 inHg
+Wind Speed: 2.24 mph
+Conditions: Rainy
+
+Time: 2025-06-30 16:26:00
+City: New York
+Temperature: 89.9 °F
+Humidity: 48 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:26:04
+City: New York
+Temperature: 89.9 °F
+Humidity: 48 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:26:13
+City: New York
+Temperature: 89.9 °F
+Humidity: 48 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:26:17
+City: New York
+Temperature: 89.9 °F
+Humidity: 48 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:28:20
+City: New York
+Temperature: 90.1 °F
+Humidity: 46 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:28:40
+City: New York
+Temperature: 90.1 °F
+Humidity: 46 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:28:43
+City: New York
+Temperature: 90.1 °F
+Humidity: 46 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:42:34
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:42:44
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:42:46
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:42:50
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:42:53
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:42:59
+City: 
+Temperature: 73.4 °F
+Humidity: 44 %
+Pressure: 29.39 inHg
+Wind Speed: 8.95 mph
+Conditions: Cloudy
+
+Time: 2025-06-30 16:43:05
+City: Oigoigoig
+Temperature: 19.0 °C
+Humidity: 78 %
+Pressure: 1015.66 hPa
+Wind Speed: 8.00 m/s
+Conditions: Cloudy
+
+Time: 2025-06-30 16:43:39
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:43:42
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:46:31
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:46:35
+City: New York
+Temperature: 88.4 °F
+Humidity: 54 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:57:25
+City: New York
+Temperature: 87.7 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 12.66 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:57:27
+City: New York
+Temperature: 87.7 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 12.66 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 16:57:32
+City: Asafsa
+Temperature: 53.6 °F
+Humidity: 68 %
+Pressure: 30.04 inHg
+Wind Speed: 22.37 mph
+Conditions: Rainy
+
+Time: 2025-06-30 17:04:12
+City: New York
+Temperature: 87.7 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 12.66 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 17:14:47
+City: New York
+Temperature: 87.2 °F
+Humidity: 60 %
+Pressure: 29.91 inHg
+Wind Speed: 18.41 mph
+Conditions: Clear Sky
+
+Time: 2025-06-30 17:32:56
+City: New York
+Temperature: 85.9 °F
+Humidity: 63 %
+Pressure: 29.91 inHg
+Wind Speed: 18.41 mph
+Conditions: Thunderstorm
+
+Time: 2025-06-30 17:33:04
+City: Saifjapsfh
+Temperature: 60.8 °F
+Humidity: 72 %
+Pressure: 29.70 inHg
+Wind Speed: 22.37 mph
+Conditions: Cloudy

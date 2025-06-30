@@ -17,33 +17,53 @@ API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 API_KEY = os.getenv("OPENWEATHER_API_KEY")  # load from .env
 
 # Control Frame Defaults
-DEFAULT_CITY = "New York"
-DEFAULT_UNIT = "F"
-DEFAULT_RANGE = "Last 7 Days"
-DEFAULT_CHART = "Temperature"
-DEFAULT_VISIBILITY = {
-    'temperature': True,
-    'humidity': True,
-    'wind_speed': False,
-    'pressure': False,
-    'conditions': False,
+DEFAULTS = {
+    "city": "New York",
+    "unit": "imperial",
+    "range": "Last 7 Days",
+    "chart": "Temperature",
+    "visibility": {
+        'temperature': True,
+        'humidity': True,
+        'wind_speed': False,
+        'pressure': False,
+        'conditions': False,
+    }
 }
 
 # Keys for how to display variable names in UI
-KEY_TO_DISPLAY = {
-    'temperature': 'Temperature',
-    'humidity': 'Humidity',
-    'wind_speed': 'Wind Speed',
-    'pressure': 'Pressure',
-    'conditions': 'Conditions'
+LABELS = {
+    "key_to_display": {
+        'temperature': 'Temperature',
+        'humidity': 'Humidity',
+        'wind_speed': 'Wind Speed',
+        'pressure': 'Pressure',
+        'conditions': 'Conditions'
+    }
 }
+LABELS["display_to_key"] = {v: k for k, v in LABELS["key_to_display"].items()}
 
 # Historical Data Range Options
-RANGE_OPTIONS = {
-    'Last 7 Days': 7,
-    'Last 14 Days': 14,
-    'Last 30 Days': 30
+CHART = {
+    "range_options": {
+        'Last 7 Days': 7,
+        'Last 14 Days': 14,
+        'Last 30 Days': 30
+    }
+}
+
+# Metric Units Mapping
+UNITS = {
+    'metric_units': {
+        'temperature': {'imperial': '°F', 'metric': '°C'},
+        'humidity': {'imperial': '%', 'metric': '%'},
+        'pressure': {'imperial': 'inHg', 'metric': 'hPa'},
+        'wind_speed': {'imperial': 'mph', 'metric': 'm/s'},
+        'conditions': {'imperial': 'Category', 'metric': 'Category'},
+    }
 }
 
 # Output File Name
-OUTPUT_FILE = "data.txt"
+OUTPUT = {
+    "log": "data.txt"
+}
