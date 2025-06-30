@@ -64,6 +64,9 @@ UNITS = {
 }
 
 # Output File Name
+DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+os.makedirs(DATA_DIR, exist_ok=True)
+
 OUTPUT = {
-    "log": "data.txt"
+    "log": os.path.join(DATA_DIR, "data.txt")
 }
