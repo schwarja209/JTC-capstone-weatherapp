@@ -16,32 +16,28 @@ except ImportError:
 API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 API_KEY = os.getenv("OPENWEATHER_API_KEY")  # load from .env
 
+# Unified Metric Definitions
+METRICS = {
+    'temperature': {'label': 'Temperature', 'visible': True},
+    'humidity': {'label': 'Humidity', 'visible': True},
+    'wind_speed': {'label': 'Wind Speed', 'visible': False},
+    'pressure': {'label': 'Pressure', 'visible': False},
+    'conditions': {'label': 'Conditions', 'visible': False},
+}
+
+# Derive visibility and label maps for internal use
+KEY_TO_DISPLAY = {k: v['label'] for k, v in METRICS.items()}
+DISPLAY_TO_KEY = {v['label']: k for k, v in METRICS.items()}
+DEFAULT_VISIBILITY = {k: v['visible'] for k, v in METRICS.items()}
+
 # Control Frame Defaults
 DEFAULTS = {
     "city": "New York",
     "unit": "imperial",
     "range": "Last 7 Days",
     "chart": "Temperature",
-    "visibility": {
-        'temperature': True,
-        'humidity': True,
-        'wind_speed': False,
-        'pressure': False,
-        'conditions': False,
-    }
+    "visibility": DEFAULT_VISIBILITY
 }
-
-# Keys for how to display variable names in UI
-LABELS = {
-    "key_to_display": {
-        'temperature': 'Temperature',
-        'humidity': 'Humidity',
-        'wind_speed': 'Wind Speed',
-        'pressure': 'Pressure',
-        'conditions': 'Conditions'
-    }
-}
-LABELS["display_to_key"] = {v: k for k, v in LABELS["key_to_display"].items()}
 
 # Historical Data Range Options
 CHART = {
@@ -63,10 +59,9 @@ UNITS = {
     }
 }
 
-# Output File Name
-DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
-os.makedirs(DATA_DIR, exist_ok=True)
-
+# Output Files & Directories
 OUTPUT = {
-    "log": os.path.join(DATA_DIR, "data.txt")
+    "data_dir": os.path.join(os.path.dirname(__file__), "data"),
+    "log_dir": os.path.join(os.path.dirname(__file__), "data"),
+    "log": os.path.join(os.path.dirname(__file__), "data", "output.txt")
 }

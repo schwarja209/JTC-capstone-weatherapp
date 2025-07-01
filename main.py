@@ -14,49 +14,108 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 import random
 import requests
+import os
+import json
 
 import config
+# Ensure required directories exist at app startup
+for folder in {config.OUTPUT["data_dir"], config.OUTPUT["log_dir"]}:
+    os.makedirs(folder, exist_ok=True)
+
+class Logger:
+    '''Centralized logger with timestamp, level, optional file + JSON output.'''
+
+    LOG_FOLDER = config.OUTPUT.get("log_dir", "data")  # default fallback
+    PLAIN_LOG = os.path.join(LOG_FOLDER, "weather.log")
+    JSON_LOG = os.path.join(LOG_FOLDER, "weather.jsonl")
+
+    @staticmethod
+    def _timestamp():
+        '''Returns current timestamp in YYYY-MM-DD HH:MM:SS format.'''
+        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    @staticmethod
+    def info(msg): Logger._log("INFO", msg)
+    @staticmethod
+    def warn(msg): Logger._log("WARN", msg)
+    @staticmethod
+    def error(msg): Logger._log("ERROR", msg)
+
+
+    @staticmethod
+    def _log(level, msg):
+        '''Logs a message with the specified level, timestamp, and writes to files.'''
+        ts = Logger._timestamp()
+        formatted = f"[{level}] {ts} {msg}"
+        print(formatted)
+        Logger._write_to_files(level, ts, msg)
+
+    @staticmethod
+    def _write_to_files(level, ts, msg):
+        '''Writes log entry to both plain text and JSON files.'''
+        with open(Logger.PLAIN_LOG, "a", encoding="utf-8") as f:
+            f.write(f"[{level}] {ts} {msg}\n")
+
+        log_entry = {
+            "timestamp": ts,
+            "level": level,
+            "message": msg
+        }
+        with open(Logger.JSON_LOG, "a", encoding="utf-8") as f:
+            f.write(json.dumps(log_entry) + "\n")
+
 
 class SampleWeatherGenerator:
-    '''Generates simulated metric weather data for a given city over a specified number of days.'''
+    '''Generates simulated metric weather data.'''
+    def __init__(self):
+        ''' Initializes the generator with default units. '''
+        self.source_unit = "metric"
+    
     def generate(self, city, num_days=7):
+        '''Generates simulated weather data for a given city over a specified number of days.'''
         data = []
-        base_temp = random.randint(5, 30)
+        base_temp = random.randint(5, 30)               # Celsius
         for i in range(num_days):
             date = datetime.now() - timedelta(days=num_days - 1 - i)
             data.append({
                 'date': date,
                 'temperature': base_temp + random.randint(-15, 15),
-                'humidity': random.randint(30, 90),
-                # 'precipitation': random.uniform(0, 2),  # All precipitation values and handling is on hold for now
+                'humidity': random.randint(30, 90),     # %
+                # TODO: 'precipitation': random.uniform(0, 2),  # All precipitation values and handling is on hold for now
                 'conditions': random.choice(['Sunny', 'Cloudy', 'Rainy', 'Snowy']),
-                'wind_speed': random.randint(0, 10),
-                'pressure': random.uniform(990, 1035)
+                'wind_speed': random.randint(0, 10),    # m/s
+                'pressure': random.uniform(990, 1035)   # hPa
             })
         return data
 
 class UnitConverter:
     '''Utility class for converting between explicit weather units.'''
 
+    TEMP_UNITS = ("C", "F")
+    PRESSURE_UNITS = ("hPa", "inHg")
+    WIND_UNITS = ("m/s", "mph")
+
     @staticmethod
     def convert_temperature(value, from_unit, to_unit):
         '''Converts temperature between Celsius and Fahrenheit.'''
+        C, F = UnitConverter.TEMP_UNITS
         if from_unit == to_unit:
             return value
-        if from_unit == "F" and to_unit == "C":
+        if from_unit == F and to_unit == C:
             return (value - 32) * 5 / 9
-        if from_unit == "C" and to_unit == "F":
+        if from_unit == C and to_unit == F:
             return (value * 9 / 5) + 32
         raise ValueError(f"Unsupported temperature conversion: {from_unit} to {to_unit}")
 
     @staticmethod
     def convert_pressure(value, from_unit, to_unit):
         '''Converts pressure between hPa and inHg.'''
+        HPA, INHG = UnitConverter.PRESSURE_UNITS
         if from_unit == to_unit:
             return value
-        if from_unit == "hPa" and to_unit == "inHg":
+        if from_unit == HPA and to_unit == INHG:
             return value * 0.02953
-        if from_unit == "inHg" and to_unit == "hPa":
+        if from_unit == INHG and to_unit == HPA:
             return value / 0.02953
         raise ValueError(f"Unsupported pressure conversion: {from_unit} to {to_unit}")
 
@@ -92,8 +151,29 @@ class UnitConverter:
             return f"{val:.2f} {unit}"
         return f"{val} {unit}" if unit else str(val)
 
+def display_fallback_status(fallback_used):
+    '''Returns fallback status label for display based on boolean.'''
+    return "(Simulated)" if fallback_used else ""
+
+def describe_fallback_status(fallback_used):
+    '''Returns descriptive fallback status for logging based on boolean.'''
+    return "(Simulated)" if fallback_used else "Live"
+
+def is_fallback(data):
+    '''Returns True if the data was generated as a fallback.'''
+    return data.get('source') == 'simulated'
+
+def normalize_city_name(name):
+    '''Strips whitespace and capitalizes each word of the city name.'''
+    return name.strip().title()
+
+def city_key(name):
+    '''Generates a normalized key for city name to ensure consistent API calls and logging.'''
+    return normalize_city_name(name).lower().replace(" ", "_")
+    
+
 class WeatherAPIService:
-    '''Fetches current weather data from OpenWeatherMap API. Otherwise uses fallback data generator.'''
+    '''Handles fetching current weather data from OpenWeatherMap API with fallback to simulated data.'''
     def __init__(self):
         self.api = config.API_BASE_URL
         self.key = config.API_KEY
@@ -102,61 +182,109 @@ class WeatherAPIService:
     def fetch_current(self, city):
         '''Fetches current weather data for a given city using OpenWeatherMap API.'''
         try:
-            if not city.strip():
-                raise Exception("No city provided") # No city error handling
-            if not self.key:
-                raise Exception("Missing API key") # No API key error handling
-            url = f"{self.api}?q={city}&appid={self.key}&units=metric" # hardcoded units for API call because OpenWeatherMap API only supports metric for some metrics anyway
-            response = requests.get(url)
-            data = response.json()
-            if str(data.get("cod")) != "200":
-                raise Exception("City not found") # City not found error handling
+            self._validate_city(city)
+            data = self._get_api_data(city)
+            parsed = self._parse_weather_data(data)
+            parsed['source'] = 'live'
+            self._validate_weather_data(parsed)
+            self._status_weather_data(parsed)
 
-            # rain = data.get("rain", {})
-            # snow = data.get("snow", {})
-            # precip_mm = rain.get("1h", 0) + snow.get("1h", 0)
-
-            return {
-                'temperature': data['main']['temp'], # May expand to additional values later
-                'humidity': data['main']['humidity'],
-                # 'precipitation': precip_mm,
-                'conditions': data['weather'][0]['description'].title(),
-                'wind_speed': data['wind']['speed'],
-                'pressure': data['main']['pressure'],
-                'date': datetime.now()
-            }, False
+            return parsed, ""
 
         # Enumerate specific exceptions for clearer error handling
-        except requests.exceptions.RequestException as e: 
-            return self.use_fallback(city, f"Network/API issue: {e}")
-        except (KeyError, TypeError, ValueError) as e:
-            return self.use_fallback(city, f"Data parsing issue: {e}")
+        except requests.exceptions.RequestException as e:
+            data, used, msg = self.use_fallback(city, "Network/API issue", e)
+            return data, used, msg
+        except (KeyError, TypeError, ValueError, LookupError, EnvironmentError, RuntimeError) as e:
+            data, used, msg = self.use_fallback(city, type(e).__name__, e)
+            return data, used, msg
         except Exception as e:
-            return self.use_fallback(city, f"General error: {e}")
+            data, used, msg = self.use_fallback(city, "General error", e)
+            return data, used, msg
+
+    def _validate_city(self, city):
+        '''Validates the city input for non-empty and API key presence.'''
+        if not city.strip():
+            raise ValueError("City is empty") # No city error handling
+        if not self.key:
+            raise EnvironmentError("Missing API key") # No API key error handling
+
+    def _get_api_data(self, city):
+        '''Fetches raw weather data from OpenWeatherMap API for the specified city.'''
+        city = normalize_city_name(city)  # Normalize city name for consistency
+        url = f"{self.api}?q={city}&appid={self.key}&units=metric" # hardcoded always in metric, for consistency
+        response = requests.get(url)
+
+        if response.status_code == 429:
+            raise RuntimeError("Rate limit exceeded (Too Many Requests)") # Rate limit error handling
+        
+        data = response.json()
+
+        if str(data.get("cod")) != "200":
+            raise LookupError(f"City '{city_key(city)}' not found") # City not found error handling
+        return data
+
+    def _parse_weather_data(self, data):
+        '''Parses the raw weather data from the API response into a structured format.'''
+        # TODO:
+        # rain = data.get("rain", {})
+        # snow = data.get("snow", {})
+        # precip_mm = rain.get("1h", 0) + snow.get("1h", 0)
+
+        return {
+            'temperature': data.get("main", {}).get("temp"),
+            'humidity': data.get("main", {}).get("humidity"),
+            # TODO: 'precipitation': precip_mm,
+            'pressure': data.get("main", {}).get("pressure"),
+            'wind_speed': data.get("wind", {}).get("speed"),
+            'conditions': data.get("weather", [{}])[0].get("description", "--").title(),
+            'date': datetime.now()
+        }
+
+    def _validate_weather_data(self, d):
+        '''Performs basic sanity checks on the parsed weather data.'''
+        if not all(isinstance(val, (int, float)) for val in [d['temperature'], d['humidity'], d['wind_speed'], d['pressure']]):
+            raise ValueError("One or more values in the API response are not numeric")
+        if not (0 <= d['humidity'] <= 100):
+            raise ValueError("Humidity outside of expected range")
+        if not (-100 <= d['temperature'] <= 70):
+            raise ValueError("Temperature outside of expected range")
+        if not (900 <= d['pressure'] <= 1100):
+            raise ValueError("Pressure outside of expected range")
+
+    def _status_weather_data(self, d):
+        '''Prints status message for fetched weather data.'''
+        Logger.info("Fetched current weather for city")
+        return d
     
-    def use_fallback(self, city, error_message):
+    def use_fallback(self, city, msg, exc):
         '''Uses simulated data generator when API call fails.'''
-        print(f"{error_message} - Using fallback data")
+        error_msg = f"{msg}: {exc}"
+        Logger.error(f"{msg}: {exc} - Using fallback data for {city_key(city)}")
+
         fallback_data = self.fallback.generate(city)
-        return fallback_data[-1], True
+        fallback_data[-1]['source'] = 'simulated'
+        return fallback_data[-1], error_msg
 
 class WeatherDataManager:
     '''Manages weather data fetching and storage, including fallback handling.'''
     def __init__(self):
         self.api_service = WeatherAPIService()
         self.weather_data = {}
-        self.fallback_used = False
 
     def fetch_current(self, city, unit_system):
         '''Fetches current weather data for a city, using fallback if API call fails.'''
-        raw_data, fallback_used = self.api_service.fetch_current(city)
+        raw_data, error_msg = self.api_service.fetch_current(city)
 
         # All API and fallback data is assumed to be in metric units and converted downstream.
         # If this changes in future (e.g., new fallback with imperial), update convert_units().
         converted_data = self.convert_units(raw_data, unit_system)
 
-        self.weather_data.setdefault(city, []).append(converted_data) # Store the latest data for the city, for use in history tracking later
-        return converted_data, fallback_used
+        key = city_key(city)
+        existing_data = self.weather_data.setdefault(key, []) # Store the latest data for the city with a timestamp, for use in history tracking later
+        if not existing_data or existing_data[-1].get("date") != converted_data.get("date"):
+            existing_data.append(converted_data)
+        return converted_data, error_msg
     
     def convert_units(self, data, unit_system):
         '''Converts weather data units based on the selected UI unit system (metric or imperial).'''
@@ -171,18 +299,27 @@ class WeatherDataManager:
 
     def get_historical(self, city, num_days):
         '''Fetches historical weather data for a city. Currently always defaults to fallback.'''
-        return self.api_service.fallback.generate(city, num_days)
+        return self.api_service.fallback.generate(normalize_city_name(city), num_days)
 
     def get_recent_data(self, city, days):
         '''Returns recent weather data for a city, filtered by specified dates. Not currently used, but may support trend-based features like Tomorrow's Guess.'''
-        return [entry for entry in self.weather_data.get(city, []) if entry['date'].date() in days]
+        return [entry for entry in self.weather_data.get(city_key(city), []) if entry['date'].date() in days]
+
+    def write_to_file(self, city, data, unit_system):
+        '''Writes formatted weather data to a log file with timestamp and unit system information.'''
+        log_entry = self.format_data_for_logging(city, data, unit_system)
+        with open(config.OUTPUT["log"], "a", encoding="utf-8") as f:
+            f.write(log_entry)
+
+        status = describe_fallback_status(is_fallback(data))
+        Logger.info(f"Weather data written for {city_key(city)} - {status}")
 
     def format_data_for_logging(self, city, data, unit_system):
         '''Formats weather data for logging to a file with timestamp and unit system information.'''
         timestamp = data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
         lines = [
             f"\n\nTime: {timestamp}",
-            f"City: {city}",
+            f"City: {city_key(city)}",
             f"Temperature: {UnitConverter.format_value('temperature', data.get('temperature'), unit_system)}",
             f"Humidity: {UnitConverter.format_value('humidity', data.get('humidity'), unit_system)}",
             f"Pressure: {UnitConverter.format_value('pressure', data.get('pressure'), unit_system)}",
@@ -190,12 +327,6 @@ class WeatherDataManager:
             f"Conditions: {data.get('conditions', '--')}"
         ]
         return "\n".join(lines)
-
-    def write_to_file(self, city, data, unit_system):
-        '''Writes formatted weather data to a log file with timestamp and unit system information.'''
-        log_entry = self.format_data_for_logging(city, data, unit_system)
-        with open(config.OUTPUT["log"], "a") as f:
-            f.write(log_entry)
 
 
 class WeatherDashboardGUIFrames:
@@ -231,6 +362,7 @@ class WeatherDashboardGUIFrames:
 
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=0)
+
 
 class WeatherDashboardWidgets:
     '''Creates and manages the widgets for the weather dashboard.'''
@@ -269,10 +401,9 @@ class WeatherDashboardWidgets:
         ttk.Radiobutton(control, text="Imperial (°F, mph, inHg)", variable=self.gui_vars['unit'], value="imperial").grid(row=2, column=1, sticky=tk.W)
         ttk.Radiobutton(control, text="Metric (°C, m/s, hPa)", variable=self.gui_vars['unit'], value="metric").grid(row=3, column=1, sticky=tk.W)
 
-
         ttk.Label(control, text="Show Metrics:", style="LabelName.TLabel").grid(row=4, column=0, sticky=tk.W, pady=5) # Metric visibility checkboxes
         for i, (metric_key, var) in enumerate(self.gui_vars['visibility'].items()):
-            label = config.LABELS["key_to_display"].get(metric_key, metric_key.title())
+            label = config.KEY_TO_DISPLAY.get(metric_key, metric_key.title())
             checkbox = ttk.Checkbutton(control, text=label, variable=var, command=self.dropdown_cb)
             checkbox.grid(row=5 + i // 2, column=i % 2, sticky=tk.W)
 
@@ -300,26 +431,23 @@ class WeatherDashboardWidgets:
         metric = self.frames["metric"]
 
         ttk.Label(metric, text="City:", style="LabelName.TLabel").grid(row=0, column=0, sticky=tk.W, pady=5) # City label
-        city_label = ttk.Label(metric, text="--", width=15, style="LabelValue.TLabel")
-        city_label.grid(row=0, column=1, sticky=tk.W, pady=5)
+        self.city_label = ttk.Label(metric, text="--", width=15, style="LabelValue.TLabel")
+        self.city_label.grid(row=0, column=1, sticky=tk.W, pady=5)
 
         ttk.Label(metric, text="Date:", style="LabelName.TLabel").grid(row=1, column=0, sticky=tk.W, pady=5) # Date label
-        date_label = ttk.Label(metric, text="--", width=15, style="LabelValue.TLabel")
-        date_label.grid(row=1, column=1, sticky=tk.W, pady=5)
+        self.date_label = ttk.Label(metric, text="--", width=15, style="LabelValue.TLabel")
+        self.date_label.grid(row=1, column=1, sticky=tk.W, pady=5)
 
-        for i, metric_key in enumerate(config.LABELS["key_to_display"]): # Create labels for each metric subject to visibility
+        for i, metric_key in enumerate(config.KEY_TO_DISPLAY): # Create labels for each metric subject to visibility
             row = 0 + i
-            name = ttk.Label(metric, text=f"{config.LABELS["key_to_display"][metric_key]}:", style="LabelName.TLabel")
+            name = ttk.Label(metric, text=f"{config.KEY_TO_DISPLAY[metric_key]}:", style="LabelName.TLabel")
             value = ttk.Label(metric, text="--", style="LabelValue.TLabel")
             name.grid(row=row, column=2, sticky=tk.W, pady=5)
             value.grid(row=row, column=3, sticky=tk.W, pady=5)
             self._metric_labels[metric_key] = {"label": name, "value": value}
 
-        self.gui_vars['status_label'] = ttk.Label(metric, text="", foreground="red", style="LabelValue.TLabel") # Status label for API fallback or errors
-        self.gui_vars['status_label'].grid(row=10, column=0, columnspan=2, sticky=tk.W, pady=5)
-
-        self._metric_labels['summary_city'] = {'value': city_label} # City value
-        self._metric_labels['summary_date'] = {'value': date_label} # Date value
+        self.status_label = ttk.Label(metric, text="", foreground="red", style="LabelValue.TLabel") # Status label for API fallback or errors
+        self.status_label.grid(row=10, column=0, columnspan=2, sticky=tk.W, pady=5)
 
     def create_chart_widgets(self):
         '''Creates the chart display for historical weather trends.'''
@@ -338,16 +466,16 @@ class WeatherDashboardWidgets:
         canvas.draw()
         canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-    def update_chart_display(self, x_vals, y_vals, metric_key, city, unit_system):
+    def update_chart_display(self, x_vals, y_vals, metric_key, city, unit_system, fallback=False):
         '''Updates the chart display with new data for the specified metric and city.'''
         ax = self._chart_ax
         ax.clear()
         ax.plot(x_vals, y_vals, marker="o")
 
-        label = config.LABELS["key_to_display"].get(metric_key, metric_key.title())
+        label = config.KEY_TO_DISPLAY.get(metric_key, metric_key.title())
         unit = UnitConverter.get_unit_label(metric_key, unit_system)
 
-        ax.set_title(f"{label} (Simulated) in {city}")
+        ax.set_title(f"{label} {display_fallback_status(fallback)} in {city_key(city)}")
         ax.set_xlabel("Date")
         ax.set_ylabel(f"{label} ({unit})")
 
@@ -358,6 +486,21 @@ class WeatherDashboardWidgets:
     def bind_entry_events(self):
         '''Binds events for immediate updates'''
         self.city_entry.bind("<Return>", lambda e: self.update_cb()) # Pressing Enter in city entry triggers update
+
+    @property
+    def city_label_widget(self):
+        '''Returns the city label widget for current weather data.'''
+        return self.city_label
+
+    @property
+    def date_label_widget(self):
+        '''Returns the date label widget for current weather data.'''
+        return self.date_label
+
+    @property
+    def status_label_widget(self):
+        '''Returns the error status label widget for current weather data.'''
+        return self.status_label
 
     @property
     def metric_labels(self):
@@ -380,76 +523,165 @@ class WeatherDashboardWidgets:
         return self._chart_ax
 
 
+class WeatherDataController:
+    '''Handles fetching and returning weather data without interacting with GUI.'''
+    def __init__(self, data_manager):
+        self.data_manager = data_manager
+
+    def get_city_data(self, city_name, unit_system):
+        '''Fetches weather data for a city. Handles fallback. Returns (city, data, fallback_flag).'''
+        city = normalize_city_name(city_name)
+        data, error_msg = self.data_manager.fetch_current(city, unit_system)
+        return city, data, error_msg
+
+    def get_historical_data(self, city_name, num_days, unit_system):
+        '''Fetches historical data and applies unit conversion.'''
+        city = normalize_city_name(city_name)
+        raw = self.data_manager.get_historical(city, num_days)
+
+        source_unit = "metric"  # Same as generator’s output
+        if unit_system == source_unit:
+            return raw
+        return [self.data_manager.convert_units(d, unit_system) for d in raw]
+
+    def write_to_log(self, city, data, unit, fallback_used):
+        '''Writes weather data to log file with timestamp and unit system information.'''
+        self.data_manager.write_to_file(city, data, unit)
+
+
+class WeatherViewModel:
+    '''Prepares sanitized, display-ready data from raw weather data.'''
+
+    def __init__(self, city, data, unit):
+        self.city_name = city_key(city)
+        self.date_str = data['date'].strftime("%Y-%m-%d") if 'date' in data else "--"
+        self.status = " (Simulated)" if is_fallback(data) else ""
+        self.unit = unit
+
+        self.metrics = {}
+        for key in KEY_TO_DISPLAY:
+            raw_value = data.get(key, "--")
+            display_val = UnitConverter.format_value(key, raw_value, unit)
+            self.metrics[key] = display_val
+            
+
 class WeatherDashboardLogic:
-    '''Handles the logic for fetching and displaying weather data in the dashboard.'''
-    def __init__(self, gui_vars, metric_labels, data_manager):
+    '''Handles the rendering logic for the dashboard.'''
+    def __init__(self, gui_vars, metric_labels, data_controller):
         self.vars = gui_vars
         self.labels = metric_labels
-        self.data = data_manager
+        self.controller = data_controller
         self.widgets = None
 
     def fetch_city(self, city_name, unit_system):
-        '''Fetches weather data for the specified city and updates the display.'''
-        city = city_name.strip().title()
-        
-        current, fallback_used = self.data.fetch_current(city, unit_system)
+        '''Fetches weather data and updates display using the ViewModel.'''      
+        try:
+            city, raw_data, error_msg = self.controller.get_city_data(city_name, unit_system)
+            vm = WeatherViewModel(city, raw_data, unit_system)
 
-        if fallback_used: # Error pop-ups for clear communication
-            if not city:
-                messagebox.showerror("Error", "Please enter a city name.")
-            else:
-                messagebox.showerror("Error", f"No data available for '{city}'.")
+            if vm.status:
+                Logger.warn(f"Using fallback for {vm.city_name}: {error_msg}")
+                messagebox.showerror("Notice", f"No live data for '{vm.city_name}'. Simulated data is shown.")
 
-        self.update_display(city, current, fallback_used)
-        self.data.write_to_file(city, current, unit_system)
+            self.update_display(vm)
 
-    def update_display(self, city, data, fallback_used):
+            self.controller.write_to_log(city, raw_data, unit_system, is_fallback(raw_data))
+
+        except ValueError as e:
+            messagebox.showerror("Input Error", str(e))
+            Logger.warn(f"Input error: {e}")
+        except Exception as e:
+            messagebox.showerror("Error", f"Unexpected error: {e}")
+            Logger.error(f"Unexpected error: {e}")
+
+    def update_display(self, vm: WeatherViewModel):
         '''Updates the display with current weather data.'''
-        for metric, widgets in self.labels.items():
-            if metric not in self.vars['visibility']: # skip metrics not set as visible
-                continue  # skip entries that can't be toggled off like city and date
-            visible = self.vars['visibility'][metric].get()
-            if visible:
-                widgets['label'].grid()
-                widgets['value'].grid()
-                unit = self.vars['unit'].get()
-                widgets['value'].config(text=UnitConverter.format_value(metric, data.get(metric, "--"), unit))
-            else:
-                widgets['label'].grid_remove() # remove labels for hidden metrics
-                widgets['value'].grid_remove()
-            
-        self.labels['summary_city']['value'].config(text=city) # Then update city and date
-        date_str = data.get('date', datetime.now()).strftime("%Y-%m-%d")
-        self.labels['summary_date']['value'].config(text=date_str)
-        self.vars['status_label'].config(text="(Simulated)" if fallback_used else "") # Update status
+        self._render_metric_labels(vm)
+        self._update_metadata_labels(vm)
+        self._update_status_label(vm.status)
+
+    def _render_metric_labels(self, vm):
+        '''Renders the metric labels based on visibility settings and updates their values.'''
+        row_counter = 0  # Fresh stacking for metric labels in column 2/3 only
+        for metric_key in config.KEY_TO_DISPLAY:
+            if metric_key not in self.labels: # skip metrics not set as visible
+                continue
+            widgets = self.labels[metric_key]
+            is_visible = self.vars['visibility'].get(metric_key, tk.BooleanVar()).get()
+
+            # Always remove whole grid before potentially re-adding
+            widgets['label'].grid_forget()
+            widgets['value'].grid_forget()
+
+            if is_visible:
+                widgets['label'].grid(row=row_counter, column=2, sticky=tk.W, pady=5)
+                widgets['value'].grid(row=row_counter, column=3, sticky=tk.W, pady=5)
+                widgets['value'].config(text=vm.metrics.get(metric_key, "--"))
+                row_counter += 1 # Only increment when visible
+
+    def _update_metadata_labels(self, vm):
+        '''Updates the city and date labels in the display.'''
+        self.vars['city_label'].config(text=vm.city_name)
+        self.vars['date_label'].config(text=vm.date_str)
+
+    def _update_status_label(self, status_text):
+        '''Updates the status label to indicate if fallback data was used.'''
+        label = self.vars.get('status_label')
+        if label:
+            label.config(text=status_text)
 
     def update_chart(self):
         '''Updates the chart with historical weather data for the selected city and metric.'''
-        city = self.vars['city'].get().strip().title()
-        range_key = self.vars['range'].get()
-        days = config.CHART["range_options"].get(range_key, 7)
+        try:
+            city, days, metric_key, unit = self._get_chart_settings()
+            x_vals, y_vals = self._build_chart_series(city, days, metric_key, unit)
+            self._render_chart(x_vals, y_vals, metric_key, city, unit)
 
-        display_name = self.vars['chart'].get()
-        metric_key = config.LABELS["display_to_key"].get(display_name)
-        if not metric_key:
-            messagebox.showerror("Error", "No chart metric available.")
-            print("No chart metric available.")
-            return         
+        except KeyError as e:
+            messagebox.showerror("Chart Error", str(e))
+            Logger.warn(f"Chart error: {e}")
+        except ValueError as e:
+            messagebox.showerror("Chart Data Error", str(e))
+            Logger.warn(f"Chart data error: {e}")
+        except Exception as e:
+            messagebox.showerror("Chart Error", f"Unexpected error: {e}")
+            Logger.error(f"Unexpected chart error: {e}")
 
-        raw_data = self.data.get_historical(city, days)
-        if not raw_data:
-            return
-
+    def _get_chart_settings(self):
+        '''Retrieves the current settings for chart display: city, date range, metric key, and unit.'''
+        raw_city = self.vars["city"].get()
+        city = normalize_city_name(raw_city)
+        days = config.CHART["range_options"].get(self.vars['range'].get(), 7)
+        metric_key = self._get_chart_metric_key()
         unit = self.vars['unit'].get()
-        converted_data = [self.data.convert_units(entry, unit) for entry in raw_data]
+        return city, days, metric_key, unit
+    
+    def _build_chart_series(self, city, days, metric_key, unit):
+        '''Builds the x and y axis values for the chart based on historical data.'''
+        data = self.controller.get_historical_data(city, days, unit)
 
-        x_vals = [d['date'].strftime("%Y-%m-%d") for d in converted_data] # Dynamic axis values
-        y_vals = [d[metric_key] for d in converted_data if metric_key in d]
-        if not all(metric_key in d for d in converted_data):
+        if not data:
+            raise ValueError(f"No historical data available for {city_key(city)}.")
+
+        if not all(metric_key in d for d in data):
             print(f"Warning: Some data entries are missing '{metric_key}'")
 
-        self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit)
+        x_vals = [d['date'].strftime("%Y-%m-%d") for d in data] # Dynamic axis values
+        y_vals = [d[metric_key] for d in data if metric_key in d]
+        return x_vals, y_vals
+    
+    def _render_chart(self, x_vals, y_vals, metric_key, city, unit):
+        '''Renders the chart with the provided x and y values for the specified metric and city.'''
+        self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback=False)
 
+    def _get_chart_metric_key(self):
+        '''Determines the metric key for the chart based on user selection.'''
+        display_name = self.vars['chart'].get()
+        metric_key = config.DISPLAY_TO_KEY.get(display_name)
+        if not metric_key:
+            raise KeyError("No valid chart metric available.")
+        return metric_key
+    
 
 class WeatherDashboardMain:
     '''Main application class for the Weather Dashboard.'''
@@ -459,7 +691,7 @@ class WeatherDashboardMain:
         self.frames = WeatherDashboardGUIFrames(root)
         self.data_manager = WeatherDataManager()
 
-        self.widgets = WeatherDashboardWidgets(
+        self.ui_renderer = WeatherDashboardWidgets(
             frames=self.frames.frames,
             gui_vars=self.gui_vars,
             update_cb=self.on_update_clicked,
@@ -467,15 +699,20 @@ class WeatherDashboardMain:
             dropdown_cb=self.update_chart_dropdown
         )
 
-        self.gui_vars['metric_labels'] = self.widgets.metric_labels
+        self.gui_vars['metric_labels'] = self.ui_renderer.metric_labels
+        self.gui_vars['city_label'] = self.ui_renderer.city_label_widget
+        self.gui_vars['date_label'] = self.ui_renderer.date_label_widget
+        self.gui_vars['status_label'] = self.ui_renderer.status_label_widget
+
+        self.controller = WeatherDataController(self.data_manager)
 
         self.logic = WeatherDashboardLogic(
             self.gui_vars,
-            metric_labels=self.widgets.metric_labels,
-            data_manager=self.data_manager
+            metric_labels=self.ui_renderer.metric_labels,
+            data_controller=self.controller
         )
 
-        self.logic.widgets = self.widgets
+        self.logic.widgets = self.ui_renderer
         self.update_chart_dropdown()
 
     def init_vars(self):
@@ -525,7 +762,7 @@ class WeatherDashboardMain:
         if not chart_widget:
             return
         visible = [ # Get display versions of visible metrics for chart dropdown
-            config.LABELS["key_to_display"][k]
+            config.KEY_TO_DISPLAY[k]
             for k, v in self.gui_vars['visibility'].items() if v.get()
         ]
         chart_widget['values'] = visible
