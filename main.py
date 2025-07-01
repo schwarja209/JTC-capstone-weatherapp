@@ -15,55 +15,21 @@ from matplotlib.figure import Figure
 import random
 import requests
 import os
-import json
 
 import config
+from utils.utils import (
+    normalize_city_name,
+    city_key,
+    is_fallback,
+    display_fallback_status,
+    describe_fallback_status
+)
+from utils.logger import Logger
+from utils.unit_converter import UnitConverter
+
 # Ensure required directories exist at app startup
 for folder in {config.OUTPUT["data_dir"], config.OUTPUT["log_dir"]}:
     os.makedirs(folder, exist_ok=True)
-
-class Logger:
-    '''Centralized logger with timestamp, level, optional file + JSON output.'''
-
-    LOG_FOLDER = config.OUTPUT.get("log_dir", "data")  # default fallback
-    PLAIN_LOG = os.path.join(LOG_FOLDER, "weather.log")
-    JSON_LOG = os.path.join(LOG_FOLDER, "weather.jsonl")
-
-    @staticmethod
-    def _timestamp():
-        '''Returns current timestamp in YYYY-MM-DD HH:MM:SS format.'''
-        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    @staticmethod
-    def info(msg): Logger._log("INFO", msg)
-    @staticmethod
-    def warn(msg): Logger._log("WARN", msg)
-    @staticmethod
-    def error(msg): Logger._log("ERROR", msg)
-
-
-    @staticmethod
-    def _log(level, msg):
-        '''Logs a message with the specified level, timestamp, and writes to files.'''
-        ts = Logger._timestamp()
-        formatted = f"[{level}] {ts} {msg}"
-        print(formatted)
-        Logger._write_to_files(level, ts, msg)
-
-    @staticmethod
-    def _write_to_files(level, ts, msg):
-        '''Writes log entry to both plain text and JSON files.'''
-        with open(Logger.PLAIN_LOG, "a", encoding="utf-8") as f:
-            f.write(f"[{level}] {ts} {msg}\n")
-
-        log_entry = {
-            "timestamp": ts,
-            "level": level,
-            "message": msg
-        }
-        with open(Logger.JSON_LOG, "a", encoding="utf-8") as f:
-            f.write(json.dumps(log_entry) + "\n")
-
 
 class SampleWeatherGenerator:
     '''Generates simulated metric weather data.'''
@@ -87,90 +53,7 @@ class SampleWeatherGenerator:
                 'pressure': random.uniform(990, 1035)   # hPa
             })
         return data
-
-class UnitConverter:
-    '''Utility class for converting between explicit weather units.'''
-
-    TEMP_UNITS = ("C", "F")
-    PRESSURE_UNITS = ("hPa", "inHg")
-    WIND_UNITS = ("m/s", "mph")
-
-    @staticmethod
-    def convert_temperature(value, from_unit, to_unit):
-        '''Converts temperature between Celsius and Fahrenheit.'''
-        C, F = UnitConverter.TEMP_UNITS
-        if from_unit == to_unit:
-            return value
-        if from_unit == F and to_unit == C:
-            return (value - 32) * 5 / 9
-        if from_unit == C and to_unit == F:
-            return (value * 9 / 5) + 32
-        raise ValueError(f"Unsupported temperature conversion: {from_unit} to {to_unit}")
-
-    @staticmethod
-    def convert_pressure(value, from_unit, to_unit):
-        '''Converts pressure between hPa and inHg.'''
-        HPA, INHG = UnitConverter.PRESSURE_UNITS
-        if from_unit == to_unit:
-            return value
-        if from_unit == HPA and to_unit == INHG:
-            return value * 0.02953
-        if from_unit == INHG and to_unit == HPA:
-            return value / 0.02953
-        raise ValueError(f"Unsupported pressure conversion: {from_unit} to {to_unit}")
-
-    @staticmethod
-    def convert_wind_speed(value, from_unit, to_unit):
-        '''Converts wind speed between m/s and mph.'''
-        if from_unit == to_unit:
-            return value
-        if from_unit == "m/s" and to_unit == "mph":
-            return value * 2.23694
-        if from_unit == "mph" and to_unit == "m/s":
-            return value / 2.23694
-        raise ValueError(f"Unsupported wind speed conversion: {from_unit} to {to_unit}")
-    
-    @staticmethod
-    def get_unit_label(metric, unit_system):
-        '''Returns the unit label for a given metric based on the unit system (imperial or metric).'''
-        return config.UNITS["metric_units"].get(metric, {}).get(unit_system, "")
-
-    @staticmethod
-    def format_value(metric, val, unit_system):
-        '''Formats the metric value for display based on the unit system and metric type.'''
-        if val is None:
-            return "--"
         
-        unit = UnitConverter.get_unit_label(metric, unit_system)
-            
-        if metric == "temperature":
-            return f"{val:.1f} {unit}"
-        elif metric == "humidity":
-            return f"{val} {unit}"
-        elif metric in ["pressure", "wind_speed"]:
-            return f"{val:.2f} {unit}"
-        return f"{val} {unit}" if unit else str(val)
-
-def display_fallback_status(fallback_used):
-    '''Returns fallback status label for display based on boolean.'''
-    return "(Simulated)" if fallback_used else ""
-
-def describe_fallback_status(fallback_used):
-    '''Returns descriptive fallback status for logging based on boolean.'''
-    return "(Simulated)" if fallback_used else "Live"
-
-def is_fallback(data):
-    '''Returns True if the data was generated as a fallback.'''
-    return data.get('source') == 'simulated'
-
-def normalize_city_name(name):
-    '''Strips whitespace and capitalizes each word of the city name.'''
-    return name.strip().title()
-
-def city_key(name):
-    '''Generates a normalized key for city name to ensure consistent API calls and logging.'''
-    return normalize_city_name(name).lower().replace(" ", "_")
-    
 
 class WeatherAPIService:
     '''Handles fetching current weather data from OpenWeatherMap API with fallback to simulated data.'''
@@ -265,6 +148,7 @@ class WeatherAPIService:
         fallback_data = self.fallback.generate(city)
         fallback_data[-1]['source'] = 'simulated'
         return fallback_data[-1], error_msg
+
 
 class WeatherDataManager:
     '''Manages weather data fetching and storage, including fallback handling.'''
@@ -559,11 +443,11 @@ class WeatherViewModel:
         self.unit = unit
 
         self.metrics = {}
-        for key in KEY_TO_DISPLAY:
+        for key in config.KEY_TO_DISPLAY:
             raw_value = data.get(key, "--")
             display_val = UnitConverter.format_value(key, raw_value, unit)
             self.metrics[key] = display_val
-            
+
 
 class WeatherDashboardLogic:
     '''Handles the rendering logic for the dashboard.'''
@@ -767,6 +651,7 @@ class WeatherDashboardMain:
         ]
         chart_widget['values'] = visible
         self.gui_vars['chart'].set(visible[0] if visible else "")
+
 
 if __name__ == "__main__":
     '''Main entry point for the Weather Dashboard application.'''
