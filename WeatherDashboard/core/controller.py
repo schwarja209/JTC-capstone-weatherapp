@@ -2,6 +2,7 @@
 Main controller for coordinating weather data operations.
 """
 
+from typing import Tuple, List, Any
 import tkinter.messagebox as messagebox
 
 from WeatherDashboard import config
@@ -19,7 +20,7 @@ class WeatherDashboardController:
     This class replaces WeatherDashboardLogic with a cleaner separation of responsibilities.
     '''
     
-    def __init__(self, state, data_service, widgets):
+    def __init__(self, state: Any, data_service: Any, widgets: Any) -> None:
         self.service = data_service
         self.widgets = widgets
         self.state = state
@@ -28,7 +29,7 @@ class WeatherDashboardController:
         self.rate_limiter = RateLimiter()
         self.error_handler = WeatherErrorHandler()
     
-    def update_weather_display(self, city_name, unit_system):
+    def update_weather_display(self, city_name: str, unit_system: str) -> bool:
         '''Coordinates fetching and displaying weather data.'''
         # Input validation
         if not isinstance(city_name, str):
@@ -94,7 +95,7 @@ class WeatherDashboardController:
             self.error_handler.handle_unexpected_error(str(e))
             return False
 
-    def update_chart(self):
+    def update_chart(self) -> None:
         '''Updates the chart with historical weather data for the selected city and metric.'''
         try:
             city, days, metric_key, unit = self._get_chart_settings()
@@ -111,7 +112,7 @@ class WeatherDashboardController:
             messagebox.showerror("Chart Error", f"Unexpected error: {e}")
             Logger.error(f"Unexpected chart error: {e}")
 
-    def _get_chart_settings(self):
+    def _get_chart_settings(self) -> Tuple[str, int, str, str]:
         '''Retrieves the current settings for chart display: city, date range, metric key, and unit.'''
         raw_city = self.state.get_current_city()
         if not raw_city or not raw_city.strip():
@@ -130,7 +131,7 @@ class WeatherDashboardController:
         
         return city, days, metric_key, unit
     
-    def _build_chart_series(self, city, days, metric_key, unit):
+    def _build_chart_series(self, city: str, days: int, metric_key: str, unit: str) -> Tuple[List[str], List[Any]]:
         '''Builds the x and y axis values for the chart based on historical data.'''
         data = self.service.get_historical_data(city, days, unit)
 
@@ -144,11 +145,11 @@ class WeatherDashboardController:
         y_vals = [d[metric_key] for d in data if metric_key in d]
         return x_vals, y_vals
     
-    def _render_chart(self, x_vals, y_vals, metric_key, city, unit):
+    def _render_chart(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit: str) -> None:
         '''Renders the chart with the provided x and y values for the specified metric and city.'''
         self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback=True)
 
-    def _get_chart_metric_key(self):
+    def _get_chart_metric_key(self) -> str:
         '''Determines the metric key for the chart based on user selection.'''
         display_name = self.state.get_current_chart_metric()
         

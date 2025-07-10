@@ -4,5 +4,9 @@ Contains all UI widgets and their management.
 """
 
 __all__ = [
-    "dashboard_widgets"
+    "dashboard_widgets",
+    "title_widgets",
+    "control_widgets", 
+    "metric_widgets",
+    "chart_widgets"
 ]

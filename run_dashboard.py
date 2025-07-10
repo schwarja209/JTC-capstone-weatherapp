@@ -2,7 +2,7 @@ if __name__ == "__main__":
     import sys
     import os
 
-    # Ensure project root is in path (optional safety)
+    # Ensure project root is in path
     sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
     # Import and launch the app

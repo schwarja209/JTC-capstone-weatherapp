@@ -2,6 +2,7 @@
 Data management for weather information including fetching, storage, and unit conversion.
 """
 
+from typing import Dict, List, Tuple, Any, Optional
 from datetime import datetime, timedelta
 
 from WeatherDashboard import config
@@ -18,11 +19,11 @@ from WeatherDashboard.services.weather_service import WeatherAPIService
 
 class WeatherDataManager:
     '''Manages weather data fetching and storage, including fallback handling.'''
-    def __init__(self):
+    def __init__(self) -> None:
         self.api_service = WeatherAPIService()
         self.weather_data = {}
 
-    def fetch_current(self, city, unit_system):
+    def fetch_current(self, city: str, unit_system: str) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
         '''Fetches current weather data for a city, using fallback if API call fails.
         
         Args:
@@ -48,7 +49,7 @@ class WeatherDataManager:
 
         return converted_data, use_fallback, error_exception
     
-    def convert_units(self, data, unit_system):
+    def convert_units(self, data: Dict[str, Any], unit_system: str) -> Dict[str, Any]:
         '''Converts weather data units based on the selected UI unit system (metric or imperial).'''
         validate_unit_system(unit_system)
 
@@ -68,7 +69,7 @@ class WeatherDataManager:
             'wind_speed': UnitConverter.convert_wind_speed
         }
         
-        conversion_errors = []  # Track conversion failures
+        conversion_errors: List[str] = []  # Track conversion failures
 
         # Apply conversions using config-defined units
         for field, converter_func in converters.items():
@@ -88,11 +89,11 @@ class WeatherDataManager:
 
         return converted
 
-    def get_historical(self, city, num_days):
+    def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
         '''Fetches historical weather data for a city. Currently always defaults to fallback.'''
         return self.api_service.fallback.generate(city, num_days)
 
-    def get_recent_data(self, city, days_back=7):
+    def get_recent_data(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
         '''Returns recent weather data for a city from the last N days.
         
         Args:
@@ -112,7 +113,7 @@ class WeatherDataManager:
             if entry.get('date', datetime.now()).date() >= cutoff_date
         ]
 
-    def write_to_file(self, city, data, unit_system):
+    def write_to_file(self, city: str, data: Dict[str, Any], unit_system: str) -> None:
         '''Writes formatted weather data to a log file with timestamp and unit system information.'''
         log_entry = self.format_data_for_logging(city, data, unit_system)
         with open(config.OUTPUT["log"], "a", encoding="utf-8") as f:
@@ -121,7 +122,7 @@ class WeatherDataManager:
         status = format_fallback_status(is_fallback(data), "log")
         Logger.info(f"Weather data written for {city_key(city)} - {status}")
 
-    def format_data_for_logging(self, city, data, unit_system):
+    def format_data_for_logging(self, city: str, data: Dict[str, Any], unit_system: str) -> str:
         '''Formats weather data for logging to a file with timestamp and unit system information.'''
         timestamp = data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
         lines = [
@@ -135,7 +136,7 @@ class WeatherDataManager:
         ]
         return "\n".join(lines)
     
-    def cleanup_old_data(self, days_to_keep=30):
+    def cleanup_old_data(self, days_to_keep: int = 30) -> None:
         '''Removes weather data older than specified days to free memory.'''
         cutoff_date = datetime.now() - timedelta(days=days_to_keep)
         
