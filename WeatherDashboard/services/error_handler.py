@@ -62,3 +62,8 @@ class WeatherErrorHandler:
         '''Handles unexpected errors.'''
         Logger.error(f"Unexpected error: {error}")
         messagebox.showerror("Error", f"Unexpected error: {error}")
+    
+    @staticmethod
+    def handle_rate_limit_error(wait_time: float) -> None:
+        """Handles rate limit errors with appropriate user messaging."""
+        messagebox.showinfo("Rate Limit", f"Please wait {wait_time:.0f} more seconds before making another request.")

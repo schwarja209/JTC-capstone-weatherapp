@@ -358,3 +358,14 @@
 [ERROR] 2025-07-10 02:09:01 API failure for Sifhapifh - City not found: City not found. Switching to simulated data.
 [INFO] 2025-07-10 02:09:04 Weather data written for sifhapifh - Simulated
 [ERROR] 2025-07-10 02:09:15 Input validation error: Invalid application state: City name cannot be empty
+[INFO] 2025-07-10 19:45:00 Weather data written for new_york - Live
+[INFO] 2025-07-10 19:45:03 Weather data written for new_york - Live
+[INFO] 2025-07-10 19:45:09 Weather data written for new_york - Live
+[INFO] 2025-07-10 19:45:13 Weather data written for new_york - Live
+[INFO] 2025-07-10 19:45:20 Weather data written for new_york - Live
+[ERROR] 2025-07-10 19:45:23 Input validation error: Invalid application state: City name cannot be empty
+[INFO] 2025-07-10 19:45:29 Weather data written for popoh - Live
+[ERROR] 2025-07-10 19:45:36 API failure for Ouugoig - City not found: City not found. Switching to simulated data.
+[INFO] 2025-07-10 19:45:38 Weather data written for ouugoig - Simulated
+[ERROR] 2025-07-10 19:45:49 Input validation error: Invalid application state: At least one metric must be visible
+[ERROR] 2025-07-10 19:46:03 Input validation error: Invalid application state: At least one metric must be visible

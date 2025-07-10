@@ -146,7 +146,8 @@ class WeatherDashboardMain:
 
     def update_chart_dropdown(self) -> None:
         '''Updates the chart dropdown based on the current visibility settings.'''
-        self.state.update_chart_dropdown_options()
+        if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
+            self.ui_renderer.control_widgets.update_chart_dropdown_options()
     
     def _handle_async_complete(self, success: bool, next_callback: Optional[callable] = None) -> None:
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:

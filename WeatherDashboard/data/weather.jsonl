@@ -358,3 +358,14 @@
 {"timestamp": "2025-07-10 02:09:01", "level": "ERROR", "message": "API failure for Sifhapifh - City not found: City not found. Switching to simulated data."}
 {"timestamp": "2025-07-10 02:09:04", "level": "INFO", "message": "Weather data written for sifhapifh - Simulated"}
 {"timestamp": "2025-07-10 02:09:15", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
+{"timestamp": "2025-07-10 19:45:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 19:45:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 19:45:09", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 19:45:13", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 19:45:20", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 19:45:23", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
+{"timestamp": "2025-07-10 19:45:29", "level": "INFO", "message": "Weather data written for popoh - Live"}
+{"timestamp": "2025-07-10 19:45:36", "level": "ERROR", "message": "API failure for Ouugoig - City not found: City not found. Switching to simulated data."}
+{"timestamp": "2025-07-10 19:45:38", "level": "INFO", "message": "Weather data written for ouugoig - Simulated"}
+{"timestamp": "2025-07-10 19:45:49", "level": "ERROR", "message": "Input validation error: Invalid application state: At least one metric must be visible"}
+{"timestamp": "2025-07-10 19:46:03", "level": "ERROR", "message": "Input validation error: Invalid application state: At least one metric must be visible"}

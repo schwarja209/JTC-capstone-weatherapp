@@ -2,7 +2,7 @@
 Centralized state management for the Weather Dashboard application.
 """
 
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 import tkinter as tk
 from WeatherDashboard import config
 
@@ -147,26 +147,16 @@ class WeatherDashboardState:
                 widgets['value'].grid(row=row_counter, column=3, sticky=tk.W, pady=5)
                 widgets['value'].config(text=metric_displays[metric_key])
                 row_counter += 1
-    
-    def update_chart_dropdown_options(self) -> None:
-        """Update chart dropdown based on visible metrics."""
-        if not self.chart_widget:
-            return
-        
-        # Get display names of visible metrics
+
+    def get_chart_dropdown_data(self) -> Tuple[List[str], bool]:
+        """Get data for chart dropdown update (UI-agnostic)."""
         visible_metrics = self.get_visible_metrics()
         visible_display_names = [
             config.KEY_TO_DISPLAY[key] for key in visible_metrics
         ]
         
-        if not visible_display_names:
-            self.chart_widget['values'] = ["No metrics selected"]
-            self.chart.set("No metrics selected")
-            self.chart_widget.configure(state="disabled")
-        else:
-            self.chart_widget['values'] = visible_display_names
-            self.chart.set(visible_display_names[0])
-            self.chart_widget.configure(state="readonly")
+        has_metrics = bool(visible_display_names)
+        return visible_display_names, has_metrics
     
     # CHART METHODS
     def is_chart_available(self) -> bool:

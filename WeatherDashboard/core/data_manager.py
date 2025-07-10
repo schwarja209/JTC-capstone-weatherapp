@@ -9,7 +9,6 @@ from WeatherDashboard import config
 from WeatherDashboard.utils.utils import (
     city_key,
     is_fallback,
-    format_fallback_status,
     validate_unit_system
 )
 from WeatherDashboard.utils.logger import Logger
@@ -130,8 +129,8 @@ class WeatherDataManager:
             with open(config.OUTPUT["log"], "a", encoding="utf-8") as f:
                 f.write(log_entry)
 
-            status = format_fallback_status(is_fallback(data), "log")
-            Logger.info(f"Weather data written for {city_key(city)} - {status}")
+            fallback_text = "Simulated" if is_fallback(data) else "Live"
+            Logger.info(f"Weather data written for {city_key(city)} - {fallback_text}")
             
         except (OSError, IOError, PermissionError) as e:
             Logger.error(f"Failed to write weather data to file: {e}")

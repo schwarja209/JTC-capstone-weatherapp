@@ -2,7 +2,7 @@
 Chart widgets for displaying weather trends.
 """
 
-from typing import List, Any, Optional
+from typing import List, Any, Optional, Dict
 import tkinter as tk
 from tkinter import ttk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -72,6 +72,17 @@ class ChartWidgets:
         """Registers chart components with the state manager."""
         self.state.register_chart_widgets(self.chart_canvas, self.chart_fig, self.chart_ax)
     
+    def _format_chart_labels(self, metric_key: str, city: str, unit_system: str, fallback: bool) -> Dict[str, str]:
+        """Formats chart labels based on metric and settings."""
+        label = config.KEY_TO_DISPLAY.get(metric_key, metric_key.title())
+        unit = UnitConverter.get_unit_label(metric_key, unit_system)
+        
+        return {
+            'title': f"{label} {format_fallback_status(fallback, 'display')} in {city}",
+            'xlabel': "Date", 
+            'ylabel': f"{label} ({unit})"
+        }
+
     def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool = False) -> None:
         """Updates the chart display with new data."""
         if not self.state.is_chart_available():
@@ -82,13 +93,11 @@ class ChartWidgets:
         self.chart_ax.clear()
         self.chart_ax.plot(x_vals, y_vals, marker="o")
 
-        # Configure chart labels
-        label = config.KEY_TO_DISPLAY.get(metric_key, metric_key.title())
-        unit = UnitConverter.get_unit_label(metric_key, unit_system)
-
-        self.chart_ax.set_title(f"{label} {format_fallback_status(fallback, 'display')} in {city}")
-        self.chart_ax.set_xlabel("Date")
-        self.chart_ax.set_ylabel(f"{label} ({unit})")
+        # Get formatted labels
+        labels = self._format_chart_labels(metric_key, city, unit_system, fallback)
+        self.chart_ax.set_title(labels['title'])
+        self.chart_ax.set_xlabel(labels['xlabel'])
+        self.chart_ax.set_ylabel(labels['ylabel'])
 
         # Format and draw
         self.chart_fig.autofmt_xdate(rotation=45)

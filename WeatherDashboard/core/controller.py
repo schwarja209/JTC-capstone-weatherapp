@@ -31,6 +31,19 @@ class WeatherDashboardController:
     
     def update_weather_display(self, city_name: str, unit_system: str) -> bool:
         '''Coordinates fetching and displaying weather data.'''
+        # Validate inputs and state
+        if not self._validate_inputs_and_state(city_name, unit_system):
+            return False
+        
+        # Check rate limiting
+        if not self._check_rate_limiting():
+            return False
+        
+        # Fetch and process data
+        return self._fetch_and_display_data(city_name, unit_system)
+
+    def _validate_inputs_and_state(self, city_name: str, unit_system: str) -> bool:
+        '''Validates input parameters and application state.'''
         # Input validation
         if not isinstance(city_name, str):
             self.error_handler.handle_input_validation_error("City name must be text")
@@ -50,20 +63,27 @@ class WeatherDashboardController:
             self.error_handler.handle_input_validation_error(error_msg)
             return False
         
-        # Rate limiting
+        return True
+
+    def _check_rate_limiting(self) -> bool:
+        '''Checks rate limiting and handles rate limit errors.'''
         if not self.rate_limiter.can_make_request():
             wait_time = self.rate_limiter.get_wait_time()
             Logger.warn("Fetch blocked due to rate limiting.")
-            messagebox.showinfo("Rate Limit", f"Please wait {wait_time:.0f} more seconds before making another request.")
+            # Delegate UI messaging to error handler
+            self.error_handler.handle_rate_limit_error(wait_time)
             return False
 
         self.rate_limiter.record_request()
+        return True
 
+    def _fetch_and_display_data(self, city_name: str, unit_system: str) -> bool:
+        '''Fetches weather data and updates the display.'''
         try:
             # Fetch data
             city, raw_data, error_exception = self.service.get_city_data(city_name, unit_system)
             
-            #Store data in centralized state instead of scattered variables
+            # Store data in centralized state instead of scattered variables
             self.state.set_weather_data(raw_data, is_fallback=bool(error_exception))
 
             # Create view model

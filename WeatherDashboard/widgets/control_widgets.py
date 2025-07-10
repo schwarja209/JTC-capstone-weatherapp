@@ -141,6 +141,23 @@ class ControlWidgets:
         self.state.reset_button = self.reset_button
         self.state.progress_label = self.progress_label
     
+    def update_chart_dropdown_options(self) -> None:
+        """Update chart dropdown based on visible metrics."""
+        if not hasattr(self.state, 'chart_widget') or not self.state.chart_widget:
+            return
+        
+        # Get data from state (UI-agnostic)
+        visible_display_names, has_metrics = self.state.get_chart_dropdown_data()
+        
+        if not visible_display_names:
+            self.state.chart_widget['values'] = ["No metrics selected"]
+            self.state.chart.set("No metrics selected")
+            self.state.chart_widget.configure(state="disabled")
+        else:
+            self.state.chart_widget['values'] = visible_display_names
+            self.state.chart.set(visible_display_names[0])
+            self.state.chart_widget.configure(state="readonly")
+    
     # LOADING STATE METHODS
     def set_loading_state(self, is_loading: bool, message: str = "") -> None:
         """Sets the loading state of the controls."""
