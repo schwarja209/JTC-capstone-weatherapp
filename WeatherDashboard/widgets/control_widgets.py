@@ -3,7 +3,7 @@
 Control widgets for user input and actions.
 """
 
-from typing import Dict, Any, Callable
+from typing import Dict, Any, Callable, Optional
 import tkinter as tk
 from tkinter import ttk
 
@@ -21,8 +21,12 @@ class ControlWidgets:
         
         # Widget references
         self.city_entry: Optional[ttk.Entry] = None
+        self.update_button: Optional[ttk.Button] = None
+        self.reset_button: Optional[ttk.Button] = None
+        self.progress_label: Optional[ttk.Label] = None
         
         self._create_all_controls()
+        self._register_widgets_with_state()
     
     def _create_all_controls(self) -> None:
         """Creates all control widgets in organized sections."""
@@ -32,6 +36,7 @@ class ControlWidgets:
             self._create_metric_visibility()
             self._create_chart_controls()
             self._create_action_buttons()
+            self._create_progress_indicator()
             self._configure_grid_weights()
             self._bind_events()
         except Exception as e:
@@ -92,19 +97,31 @@ class ControlWidgets:
 
     def _create_action_buttons(self) -> None:
         """Creates update and reset buttons."""
-        ttk.Button(
+        self.update_button = ttk.Button(
             self.parent, 
             text="Update Weather", 
             command=self.callbacks.get('update'), 
             style="MainButton.TButton"
-        ).grid(row=1, column=2, pady=10, sticky=tk.E)
+        )
+        self.update_button.grid(row=1, column=2, pady=10, sticky=tk.E)
         
-        ttk.Button(
+        self.reset_button = ttk.Button(
             self.parent, 
             text="Reset", 
             command=self.callbacks.get('reset'), 
             style="MainButton.TButton"
-        ).grid(row=2, column=2, pady=5, sticky=tk.E)
+        )
+        self.reset_button.grid(row=2, column=2, pady=5, sticky=tk.E)
+
+    def _create_progress_indicator(self) -> None:
+        """Creates a progress indicator for async operations."""
+        self.progress_label = ttk.Label(
+            self.parent, 
+            text="", 
+            style="LabelValue.TLabel",
+            foreground="blue"
+        )
+        self.progress_label.grid(row=8, column=0, columnspan=3, pady=5)
 
     def _configure_grid_weights(self) -> None:
         """Configures grid column weights for proper layout."""
@@ -116,3 +133,48 @@ class ControlWidgets:
         if self.city_entry and self.callbacks.get('update'):
             # Enter key in city field triggers update
             self.city_entry.bind("<Return>", lambda e: self.callbacks['update']())
+
+    def _register_widgets_with_state(self) -> None:
+        """Registers widget references with state for loading management."""
+        # Register buttons for loading state management
+        self.state.update_button = self.update_button
+        self.state.reset_button = self.reset_button
+        self.state.progress_label = self.progress_label
+    
+    # LOADING STATE METHODS
+    def set_loading_state(self, is_loading: bool, message: str = "") -> None:
+        """Sets the loading state of the controls."""
+        if is_loading:
+            self._disable_controls()
+            self._show_progress(message)
+        else:
+            self._enable_controls()
+            self._hide_progress()
+    
+    def _disable_controls(self) -> None:
+        """Disables controls during loading."""
+        if self.update_button:
+            self.update_button.configure(state='disabled', text="Loading...")
+        if self.reset_button:
+            self.reset_button.configure(state='disabled')
+        if self.city_entry:
+            self.city_entry.configure(state='disabled')
+    
+    def _enable_controls(self) -> None:
+        """Re-enables controls after loading."""
+        if self.update_button:
+            self.update_button.configure(state='normal', text="Update Weather")
+        if self.reset_button:
+            self.reset_button.configure(state='normal')
+        if self.city_entry:
+            self.city_entry.configure(state='normal')
+    
+    def _show_progress(self, message: str) -> None:
+        """Shows progress message."""
+        if self.progress_label:
+            self.progress_label.configure(text=f"🔄 {message}", foreground="blue")
+    
+    def _hide_progress(self) -> None:
+        """Hides progress message."""
+        if self.progress_label:
+            self.progress_label.configure(text="", foreground="blue")

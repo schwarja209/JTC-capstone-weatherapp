@@ -353,3 +353,8 @@
 [INFO] 2025-07-10 01:29:08 Weather data written for new_york - Live
 [INFO] 2025-07-10 01:29:14 Weather data written for boston - Live
 [INFO] 2025-07-10 01:29:21 Weather data written for boston - Live
+[INFO] 2025-07-10 02:08:48 Weather data written for new_york - Live
+[INFO] 2025-07-10 02:08:55 Weather data written for boston - Live
+[ERROR] 2025-07-10 02:09:01 API failure for Sifhapifh - City not found: City not found. Switching to simulated data.
+[INFO] 2025-07-10 02:09:04 Weather data written for sifhapifh - Simulated
+[ERROR] 2025-07-10 02:09:15 Input validation error: Invalid application state: City name cannot be empty

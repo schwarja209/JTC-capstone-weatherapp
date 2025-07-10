@@ -353,3 +353,8 @@
 {"timestamp": "2025-07-10 01:29:08", "level": "INFO", "message": "Weather data written for new_york - Live"}
 {"timestamp": "2025-07-10 01:29:14", "level": "INFO", "message": "Weather data written for boston - Live"}
 {"timestamp": "2025-07-10 01:29:21", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-10 02:08:48", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 02:08:55", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-10 02:09:01", "level": "ERROR", "message": "API failure for Sifhapifh - City not found: City not found. Switching to simulated data."}
+{"timestamp": "2025-07-10 02:09:04", "level": "INFO", "message": "Weather data written for sifhapifh - Simulated"}
+{"timestamp": "2025-07-10 02:09:15", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
