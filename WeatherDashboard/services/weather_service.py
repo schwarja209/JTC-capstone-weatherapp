@@ -123,9 +123,9 @@ class WeatherAPIClient:
     def _validate_request(self, city):
         """Validates the city input for non-empty and API key presence."""
         if not city.strip():
-            raise ValueError("City name cannot be empty")  # Changed from ValidationError
+            raise ValidationError("City name cannot be empty")
         if not self.api_key:
-            raise ValueError("Missing API key - application will use simulated data only")  # Changed from ValidationError
+            raise ValidationError("Missing API key - application will use simulated data only")  # Changed from ValidationError
 
 
 class WeatherDataParser:

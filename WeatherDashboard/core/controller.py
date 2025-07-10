@@ -1,0 +1,162 @@
+"""
+Main controller for coordinating weather data operations.
+"""
+
+import tkinter.messagebox as messagebox
+
+from WeatherDashboard import config
+from WeatherDashboard.utils.utils import normalize_city_name, validate_unit_system
+from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.utils.rate_limiter import RateLimiter
+from WeatherDashboard.services.error_handler import WeatherErrorHandler
+from WeatherDashboard.services.api_exceptions import ValidationError
+from WeatherDashboard.core.view_models import WeatherViewModel
+
+
+class WeatherDashboardController:
+    '''Coordinates weather data operations without mixing concerns.
+    
+    This class replaces WeatherDashboardLogic with a cleaner separation of responsibilities.
+    '''
+    
+    def __init__(self, state, data_service, widgets):
+        self.service = data_service
+        self.widgets = widgets
+        self.state = state
+        
+        # Initialize helper classes
+        self.rate_limiter = RateLimiter()
+        self.error_handler = WeatherErrorHandler()
+    
+    def update_weather_display(self, city_name, unit_system):
+        '''Coordinates fetching and displaying weather data.'''
+        # Input validation
+        if not isinstance(city_name, str):
+            self.error_handler.handle_input_validation_error("City name must be text")
+            return False
+        
+        # Unit validation
+        try:
+            validate_unit_system(unit_system)
+        except ValueError as e:
+            self.error_handler.handle_input_validation_error(str(e))
+            return False
+        
+        # State validation
+        state_errors = self.state.validate_current_state()
+        if state_errors:
+            error_msg = "Invalid application state: " + "; ".join(state_errors)
+            self.error_handler.handle_input_validation_error(error_msg)
+            return False
+        
+        # Rate limiting
+        if not self.rate_limiter.can_make_request():
+            wait_time = self.rate_limiter.get_wait_time()
+            Logger.warn("Fetch blocked due to rate limiting.")
+            messagebox.showinfo("Rate Limit", f"Please wait {wait_time:.0f} more seconds before making another request.")
+            return False
+
+        self.rate_limiter.record_request()
+
+        try:
+            # Fetch data
+            city, raw_data, error_exception = self.service.get_city_data(city_name, unit_system)
+            
+            #Store data in centralized state instead of scattered variables
+            self.state.set_weather_data(raw_data, is_fallback=bool(error_exception))
+
+            # Create view model
+            view_model = WeatherViewModel(city, raw_data, unit_system)
+            
+            # Handle any errors
+            should_continue = self.error_handler.handle_weather_error(error_exception, view_model.city_name)
+            if not should_continue:
+                return False
+            
+            # Use state methods for display updates instead of scattered widget access
+            self.state.update_city_display(
+                city_name=view_model.city_name,
+                date_str=view_model.date_str,
+                status=view_model.status
+            )
+
+            # Update display
+            self.state.update_metric_display(view_model.metrics)
+            
+            # Log the data
+            self.service.write_to_log(city, raw_data, unit_system)
+            return True
+
+        except ValidationError as e:
+            self.error_handler.handle_input_validation_error(str(e))
+            return False
+        except Exception as e:
+            self.error_handler.handle_unexpected_error(str(e))
+            return False
+
+    def update_chart(self):
+        '''Updates the chart with historical weather data for the selected city and metric.'''
+        try:
+            city, days, metric_key, unit = self._get_chart_settings()
+            x_vals, y_vals = self._build_chart_series(city, days, metric_key, unit)
+            self._render_chart(x_vals, y_vals, metric_key, city, unit)
+
+        except KeyError as e:
+            messagebox.showerror("Chart Error", str(e))
+            Logger.warn(f"Chart error: {e}")
+        except ValueError as e:
+            messagebox.showerror("Chart Data Error", str(e))
+            Logger.warn(f"Chart data error: {e}")
+        except Exception as e:
+            messagebox.showerror("Chart Error", f"Unexpected error: {e}")
+            Logger.error(f"Unexpected chart error: {e}")
+
+    def _get_chart_settings(self):
+        '''Retrieves the current settings for chart display: city, date range, metric key, and unit.'''
+        raw_city = self.state.get_current_city()
+        if not raw_city or not raw_city.strip():
+            raise ValueError("City name is required for chart display")
+        
+        city = normalize_city_name(raw_city)
+        days = config.CHART["range_options"].get(self.state.get_current_range(), 7)
+        
+        if days <= 0:
+            raise ValueError(f"Invalid date range: {days} days")
+        
+        metric_key = self._get_chart_metric_key()
+        unit = self.state.get_current_unit_system()
+        
+        validate_unit_system(unit)  # Ensure unit system is valid
+        
+        return city, days, metric_key, unit
+    
+    def _build_chart_series(self, city, days, metric_key, unit):
+        '''Builds the x and y axis values for the chart based on historical data.'''
+        data = self.service.get_historical_data(city, days, unit)
+
+        if not data:
+            raise ValueError(f"No historical data available for {city}.")
+
+        if not all(metric_key in d for d in data):
+            print(f"Warning: Some data entries are missing '{metric_key}'")
+
+        x_vals = [d['date'].strftime("%Y-%m-%d") for d in data]  # Dynamic axis values
+        y_vals = [d[metric_key] for d in data if metric_key in d]
+        return x_vals, y_vals
+    
+    def _render_chart(self, x_vals, y_vals, metric_key, city, unit):
+        '''Renders the chart with the provided x and y values for the specified metric and city.'''
+        self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback=True)
+
+    def _get_chart_metric_key(self):
+        '''Determines the metric key for the chart based on user selection.'''
+        display_name = self.state.get_current_chart_metric()
+        
+        # Handle special case when no metrics are selected
+        if display_name == "No metrics selected":
+            raise ValueError("Please select at least one metric to display in the chart.")
+        
+        metric_key = config.DISPLAY_TO_KEY.get(display_name)
+        if not metric_key:
+            raise KeyError(f"Invalid chart metric: '{display_name}'. Please select a valid metric.")
+        return metric_key

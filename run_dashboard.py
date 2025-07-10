@@ -6,7 +6,7 @@ if __name__ == "__main__":
     sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
     # Import and launch the app
-    from WeatherDashboard.main import WeatherDashboardMain
+    from WeatherDashboard.gui.main_window import WeatherDashboardMain
     import tkinter as tk
 
     root = tk.Tk()

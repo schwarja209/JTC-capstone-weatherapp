@@ -3,6 +3,7 @@ Default/static data configuration for the Weather Dashboard application.
 """
 
 import os
+from pathlib import Path
 
 # ================================
 # 1. ENVIRONMENT LOADING (separate concern)
@@ -113,13 +114,13 @@ class FilePathsManager:
     def get_output_paths():
         """Returns all output file paths and directories."""
         # Output Files & Directories
-        base_dir = os.path.dirname(__file__)
-        data_dir = os.path.join(base_dir, "data")
+        base_dir = Path(__file__).parent
+        data_dir = base_dir / "data"
         
         return {
-            "data_dir": data_dir,
-            "log_dir": data_dir,
-            "log": os.path.join(data_dir, "output.txt")
+            "data_dir": str(data_dir),
+            "log_dir": str(data_dir), 
+            "log": str(data_dir / "output.txt")
         }
 
 # ================================
