@@ -1,0 +1,1001 @@
+
+
+Time: 2025-07-01 00:52:21
+City: New York
+Temperature: 76.6 °F
+Humidity: 88 %
+Pressure: 29.88 inHg
+Wind Speed: 5.75 mph
+Conditions: Light Rain
+
+Time: 2025-07-01 19:43:17
+City: new_york
+Temperature: 77.7 °F
+Humidity: 84 %
+Pressure: 29.80 inHg
+Wind Speed: 14.97 mph
+Conditions: Mist
+
+Time: 2025-07-01 19:44:35
+City: new_york
+Temperature: 77.7 °F
+Humidity: 84 %
+Pressure: 29.80 inHg
+Wind Speed: 14.97 mph
+Conditions: Mist
+
+Time: 2025-07-01 19:44:43
+City: new_york
+Temperature: 25.4 °C
+Humidity: 84 %
+Pressure: 1009.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Mist
+
+Time: 2025-07-01 19:44:48
+City: boston
+Temperature: 30.8 °C
+Humidity: 54 %
+Pressure: 1007.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-01 19:45:24
+City: new_york
+Temperature: 77.7 °F
+Humidity: 84 %
+Pressure: 29.80 inHg
+Wind Speed: 14.97 mph
+Conditions: Mist
+
+Time: 2025-07-02 21:11:52
+City: new_york
+Temperature: 77.2 °F
+Humidity: 81 %
+Pressure: 29.80 inHg
+Wind Speed: 6.91 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 15:36:47
+City: new_york
+Temperature: 89.2 °F
+Humidity: 42 %
+Pressure: 30.00 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 15:46:52
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 30.00 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 15:47:11
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 30.00 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 15:47:18
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 30.00 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 15:47:22
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 30.00 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 15:48:06
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 30.00 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:32:53
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:33:05
+City: oijhoih
+Temperature: 62.6 °F
+Humidity: 35 %
+Pressure: 29.76 inHg
+Wind Speed: 4.47 mph
+Conditions: Sunny
+
+Time: 2025-07-06 16:33:13
+City: 
+Temperature: 93.2 °F
+Humidity: 70 %
+Pressure: 30.04 inHg
+Wind Speed: 20.13 mph
+Conditions: Rainy
+
+Time: 2025-07-06 16:33:33
+City: boston
+Temperature: 92.4 °F
+Humidity: 50 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-06 16:35:08
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:35:27
+City: 
+Temperature: 73.4 °F
+Humidity: 53 %
+Pressure: 29.81 inHg
+Wind Speed: 15.66 mph
+Conditions: Sunny
+
+Time: 2025-07-06 16:38:23
+City: pojpoj
+Temperature: 82.4 °F
+Humidity: 64 %
+Pressure: 30.03 inHg
+Wind Speed: 13.42 mph
+Conditions: Snowy
+
+Time: 2025-07-06 16:40:59
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:41:04
+City: new_york
+Temperature: 31.7 °C
+Humidity: 42 %
+Pressure: 1015.00 hPa
+Wind Speed: 6.17 m/s
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:41:09
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:41:13
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:41:20
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:41:29
+City: ihoih
+Temperature: 95.0 °F
+Humidity: 30 %
+Pressure: 29.49 inHg
+Wind Speed: 11.18 mph
+Conditions: Snowy
+
+Time: 2025-07-06 16:44:24
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:44:38
+City: asiodnfpaosj
+Temperature: 64.4 °F
+Humidity: 41 %
+Pressure: 29.23 inHg
+Wind Speed: 13.42 mph
+Conditions: Cloudy
+
+Time: 2025-07-06 16:46:37
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:46:45
+City: oihoih
+Temperature: 44.6 °F
+Humidity: 33 %
+Pressure: 30.12 inHg
+Wind Speed: 2.24 mph
+Conditions: Rainy
+
+Time: 2025-07-06 16:47:04
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:49:01
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:49:11
+City: asfoihao
+Temperature: 66.2 °F
+Humidity: 52 %
+Pressure: 30.25 inHg
+Wind Speed: 11.18 mph
+Conditions: Sunny
+
+Time: 2025-07-06 16:52:33
+City: new_york
+Temperature: 88.9 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:52:46
+City: pojpoj
+Temperature: 86.0 °F
+Humidity: 77 %
+Pressure: 29.28 inHg
+Wind Speed: 4.47 mph
+Conditions: Snowy
+
+Time: 2025-07-06 16:56:23
+City: new_york
+Temperature: 88.9 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:56:31
+City: ouighig
+Temperature: 42.8 °F
+Humidity: 59 %
+Pressure: 29.98 inHg
+Wind Speed: 13.42 mph
+Conditions: Cloudy
+
+Time: 2025-07-06 16:58:19
+City: new_york
+Temperature: 88.9 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:58:34
+City: liasfhapoh
+Temperature: 69.8 °F
+Humidity: 43 %
+Pressure: 29.37 inHg
+Wind Speed: 22.37 mph
+Conditions: Rainy
+
+Time: 2025-07-06 16:59:26
+City: new_york
+Temperature: 88.9 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 16:59:34
+City: asdfhpoh
+Temperature: 69.8 °F
+Humidity: 80 %
+Pressure: 30.05 inHg
+Wind Speed: 8.95 mph
+Conditions: Snowy
+
+Time: 2025-07-06 17:01:01
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:01:05
+City: pohpho
+Temperature: 91.4 °F
+Humidity: 78 %
+Pressure: 29.30 inHg
+Wind Speed: 15.66 mph
+Conditions: Sunny
+
+Time: 2025-07-06 17:02:05
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:02:09
+City: asdoifhohg
+Temperature: 80.6 °F
+Humidity: 70 %
+Pressure: 30.06 inHg
+Wind Speed: 22.37 mph
+Conditions: Cloudy
+
+Time: 2025-07-06 17:03:42
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:03:47
+City: sdfsdg
+Temperature: 82.4 °F
+Humidity: 90 %
+Pressure: 30.11 inHg
+Wind Speed: 15.66 mph
+Conditions: Sunny
+
+Time: 2025-07-06 17:03:59
+City: new_york
+Temperature: 89.0 °F
+Humidity: 42 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:11:44
+City: new_york
+Temperature: 71.6 °F
+Humidity: 67 %
+Pressure: 29.38 inHg
+Wind Speed: 8.95 mph
+Conditions: Rainy
+
+Time: 2025-07-06 17:12:12
+City: new_york
+Temperature: 71.6 °F
+Humidity: 37 %
+Pressure: 29.98 inHg
+Wind Speed: 17.90 mph
+Conditions: Sunny
+
+Time: 2025-07-06 17:12:18
+City: new_york
+Temperature: 102.2 °F
+Humidity: 62 %
+Pressure: 30.20 inHg
+Wind Speed: 8.95 mph
+Conditions: Rainy
+
+Time: 2025-07-06 17:12:39
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:13:24
+City: new_york
+Temperature: 82.4 °F
+Humidity: 53 %
+Pressure: 30.11 inHg
+Wind Speed: 2.24 mph
+Conditions: Sunny
+
+Time: 2025-07-06 17:15:02
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:15:08
+City: sdoigshdop
+Temperature: 84.2 °F
+Humidity: 48 %
+Pressure: 30.55 inHg
+Wind Speed: 17.90 mph
+Conditions: Snowy
+
+Time: 2025-07-06 17:17:48
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:18:03
+City: sdfsg
+Temperature: 37.4 °F
+Humidity: 52 %
+Pressure: 29.34 inHg
+Wind Speed: 0.00 mph
+Conditions: Rainy
+
+Time: 2025-07-06 17:18:14
+City: boston
+Temperature: 91.6 °F
+Humidity: 50 %
+Pressure: 29.91 inHg
+Wind Speed: 19.57 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-06 17:18:14
+City: boston
+Temperature: 91.6 °F
+Humidity: 50 %
+Pressure: 29.91 inHg
+Wind Speed: 19.57 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-06 17:19:22
+City: new_york
+Temperature: 89.0 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:22:04
+City: new_york
+Temperature: 89.3 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:22:11
+City: new_york
+Temperature: 89.3 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 17:26:15
+City: new_york
+Temperature: 89.3 °F
+Humidity: 43 %
+Pressure: 29.97 inHg
+Wind Speed: 13.80 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:04:37
+City: new_york
+Temperature: 87.2 °F
+Humidity: 52 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:04:51
+City: new_york
+Temperature: 87.2 °F
+Humidity: 52 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:04:56
+City: new_york
+Temperature: 87.2 °F
+Humidity: 52 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:05:04
+City: new_york
+Temperature: 87.2 °F
+Humidity: 52 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:05:09
+City: new_york
+Temperature: 87.2 °F
+Humidity: 52 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:20:53
+City: new_york
+Temperature: 30.5 °F
+Humidity: 53 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:21:09
+City: new_york
+Temperature: 30.5 °F
+Humidity: 53 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:21:18
+City: new_york
+Temperature: 30.5 °C
+Humidity: 53 %
+Pressure: 1015.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:21:25
+City: new_york
+Temperature: 30.5 °F
+Humidity: 53 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:23:11
+City: new_york
+Temperature: 30.5 °F
+Humidity: 53 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:23:20
+City: new_york
+Temperature: 30.5 °C
+Humidity: 53 %
+Pressure: 1015.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:37:06
+City: new_york
+Temperature: 85.9 °F
+Humidity: 56 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:38:48
+City: new_york
+Temperature: 85.9 °F
+Humidity: 56 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:41:19
+City: new_york
+Temperature: 85.6 °F
+Humidity: 57 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:41:28
+City: new_york
+Temperature: 85.6 °F
+Humidity: 57 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:41:32
+City: new_york
+Temperature: 85.6 °F
+Humidity: 57 %
+Pressure: 29.97 inHg
+Wind Speed: 14.97 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 19:42:09
+City: boston
+Temperature: 85.2 °F
+Humidity: 56 %
+Pressure: 29.94 inHg
+Wind Speed: 5.01 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-06 20:21:01
+City: new_york
+Temperature: 84.1 °F
+Humidity: 61 %
+Pressure: 29.97 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 20:21:08
+City: new_york
+Temperature: 84.1 °F
+Humidity: 61 %
+Pressure: 29.97 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 20:21:16
+City: boston
+Temperature: 84.4 °F
+Humidity: 56 %
+Pressure: 29.94 inHg
+Wind Speed: 4.00 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-06 20:21:22
+City: boston
+Temperature: 84.4 °F
+Humidity: 56 %
+Pressure: 29.94 inHg
+Wind Speed: 4.00 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-06 20:28:13
+City: new_york
+Temperature: 84.1 °F
+Humidity: 61 %
+Pressure: 29.97 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 20:28:22
+City: new_york
+Temperature: 84.1 °F
+Humidity: 61 %
+Pressure: 29.97 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 20:28:29
+City: boston
+Temperature: 83.9 °F
+Humidity: 56 %
+Pressure: 29.94 inHg
+Wind Speed: 17.27 mph
+Conditions: Few Clouds
+
+Time: 2025-07-06 20:28:41
+City: ihfdosihfd
+Temperature: 84.2 °F
+Humidity: 60 %
+Pressure: 29.69 inHg
+Wind Speed: 11.18 mph
+Conditions: Snowy
+
+Time: 2025-07-06 20:46:04
+City: new_york
+Temperature: 82.5 °F
+Humidity: 65 %
+Pressure: 30.00 inHg
+Wind Speed: 11.99 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 20:46:11
+City: new_york
+Temperature: 82.5 °F
+Humidity: 65 %
+Pressure: 30.00 inHg
+Wind Speed: 11.99 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 20:46:21
+City: new_york
+Temperature: 82.5 °F
+Humidity: 65 %
+Pressure: 30.00 inHg
+Wind Speed: 11.99 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 20:46:30
+City: boston
+Temperature: 82.8 °F
+Humidity: 58 %
+Pressure: 29.97 inHg
+Wind Speed: 7.00 mph
+Conditions: Few Clouds
+
+Time: 2025-07-06 21:29:17
+City: new_york
+Temperature: 81.2 °F
+Humidity: 70 %
+Pressure: 29.97 inHg
+Wind Speed: 15.01 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:36:07
+City: new_york
+Temperature: 80.7 °F
+Humidity: 71 %
+Pressure: 30.00 inHg
+Wind Speed: 15.99 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:38:49
+City: new_york
+Temperature: 81.3 °F
+Humidity: 69 %
+Pressure: 29.97 inHg
+Wind Speed: 15.99 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:44:30
+City: new_york
+Temperature: 80.7 °F
+Humidity: 71 %
+Pressure: 30.00 inHg
+Wind Speed: 15.99 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:47:04
+City: new_york
+Temperature: 80.7 °F
+Humidity: 71 %
+Pressure: 30.00 inHg
+Wind Speed: 15.99 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:57:34
+City: new_york
+Temperature: 80.8 °F
+Humidity: 71 %
+Pressure: 30.00 inHg
+Wind Speed: 15.01 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:57:38
+City: new_york
+Temperature: 27.1 °C
+Humidity: 71 %
+Pressure: 1016.00 hPa
+Wind Speed: 6.71 m/s
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:57:42
+City: new_york
+Temperature: 27.1 °C
+Humidity: 71 %
+Pressure: 1016.00 hPa
+Wind Speed: 6.71 m/s
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:57:47
+City: new_york
+Temperature: 27.1 °C
+Humidity: 71 %
+Pressure: 1016.00 hPa
+Wind Speed: 6.71 m/s
+Conditions: Clear Sky
+
+Time: 2025-07-06 21:57:52
+City: boston
+Temperature: 26.6 °C
+Humidity: 61 %
+Pressure: 1015.00 hPa
+Wind Speed: 5.66 m/s
+Conditions: Few Clouds
+
+Time: 2025-07-06 21:57:59
+City: new_york
+Temperature: 27.1 °C
+Humidity: 71 %
+Pressure: 1016.00 hPa
+Wind Speed: 6.71 m/s
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:37:23
+City: new_york
+Temperature: 80.0 °F
+Humidity: 74 %
+Pressure: 30.00 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:37:30
+City: new_york
+Temperature: 80.0 °F
+Humidity: 74 %
+Pressure: 30.00 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:37:41
+City: new_york
+Temperature: 80.0 °F
+Humidity: 74 %
+Pressure: 30.00 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:37:46
+City: dsgdfs
+Temperature: 33.8 °F
+Humidity: 38 %
+Pressure: 29.88 inHg
+Wind Speed: 20.13 mph
+Conditions: Sunny
+
+Time: 2025-07-06 22:38:11
+City: new_york
+Temperature: 80.0 °F
+Humidity: 74 %
+Pressure: 30.00 inHg
+Wind Speed: 13.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:39:30
+City: new_york
+Temperature: 80.2 °F
+Humidity: 74 %
+Pressure: 29.97 inHg
+Wind Speed: 14.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:39:34
+City: boston
+Temperature: 78.8 °F
+Humidity: 63 %
+Pressure: 29.97 inHg
+Wind Speed: 16.11 mph
+Conditions: Few Clouds
+
+Time: 2025-07-06 22:40:30
+City: new_york
+Temperature: 80.2 °F
+Humidity: 74 %
+Pressure: 29.97 inHg
+Wind Speed: 14.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:40:36
+City: boston
+Temperature: 78.8 °F
+Humidity: 63 %
+Pressure: 29.97 inHg
+Wind Speed: 16.11 mph
+Conditions: Few Clouds
+
+Time: 2025-07-06 22:40:48
+City: new_york
+Temperature: 80.2 °F
+Humidity: 74 %
+Pressure: 29.97 inHg
+Wind Speed: 14.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:40:57
+City: new_york
+Temperature: 80.2 °F
+Humidity: 74 %
+Pressure: 29.97 inHg
+Wind Speed: 14.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:41:06
+City: new_york
+Temperature: 80.2 °F
+Humidity: 74 %
+Pressure: 29.97 inHg
+Wind Speed: 14.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:41:10
+City: new_york
+Temperature: 80.2 °F
+Humidity: 74 %
+Pressure: 29.97 inHg
+Wind Speed: 14.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:41:35
+City: new_york
+Temperature: 80.0 °F
+Humidity: 74 %
+Pressure: 30.00 inHg
+Wind Speed: 12.66 mph
+Conditions: Clear Sky
+
+Time: 2025-07-06 22:41:39
+City: boston
+Temperature: 78.8 °F
+Humidity: 63 %
+Pressure: 29.97 inHg
+Wind Speed: 16.11 mph
+Conditions: Few Clouds
+
+Time: 2025-07-06 22:41:47
+City: new_york
+Temperature: 80.0 °F
+Humidity: 74 %
+Pressure: 30.00 inHg
+Wind Speed: 12.66 mph
+Conditions: Clear Sky
+
+Time: 2025-07-07 00:38:27
+City: new_york
+Temperature: 78.4 °F
+Humidity: 80 %
+Pressure: 30.00 inHg
+Wind Speed: 10.36 mph
+Conditions: Clear Sky
+
+Time: 2025-07-07 00:38:35
+City: boston
+Temperature: 75.5 °F
+Humidity: 69 %
+Pressure: 29.97 inHg
+Wind Speed: 7.00 mph
+Conditions: Clear Sky
+
+Time: 2025-07-09 19:50:21
+City: new_york
+Temperature: 86.5 °F
+Humidity: 58 %
+Pressure: 29.91 inHg
+Wind Speed: 12.66 mph
+Conditions: Few Clouds
+
+Time: 2025-07-09 19:50:57
+City: new_york
+Temperature: 86.5 °F
+Humidity: 58 %
+Pressure: 29.91 inHg
+Wind Speed: 12.66 mph
+Conditions: Few Clouds
+
+Time: 2025-07-09 19:51:03
+City: new_york
+Temperature: 86.5 °F
+Humidity: 58 %
+Pressure: 29.91 inHg
+Wind Speed: 12.66 mph
+Conditions: Few Clouds
+
+Time: 2025-07-09 19:51:11
+City: new_york
+Temperature: 86.5 °F
+Humidity: 58 %
+Pressure: 29.91 inHg
+Wind Speed: 12.66 mph
+Conditions: Few Clouds

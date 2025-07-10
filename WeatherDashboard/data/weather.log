@@ -1,0 +1,338 @@
+[INFO] 2025-07-01 00:52:21 Fetched current weather for city
+[INFO] 2025-07-01 00:52:21 Weather data written for New York - Live
+[INFO] 2025-07-01 19:43:17 Fetched current weather for city
+[INFO] 2025-07-01 19:43:17 Weather data written for new_york - Live
+[INFO] 2025-07-01 19:44:35 Fetched current weather for city
+[INFO] 2025-07-01 19:44:35 Weather data written for new_york - Live
+[INFO] 2025-07-01 19:44:43 Fetched current weather for city
+[INFO] 2025-07-01 19:44:43 Weather data written for new_york - Live
+[INFO] 2025-07-01 19:44:48 Fetched current weather for city
+[INFO] 2025-07-01 19:44:48 Weather data written for boston - Live
+[INFO] 2025-07-01 19:45:24 Fetched current weather for city
+[INFO] 2025-07-01 19:45:24 Weather data written for new_york - Live
+[INFO] 2025-07-02 21:11:52 Fetched current weather for city
+[INFO] 2025-07-02 21:11:52 Weather data written for new_york - Live
+[INFO] 2025-07-06 15:36:47 Fetched current weather for city
+[INFO] 2025-07-06 15:36:47 Weather data written for new_york - Live
+[INFO] 2025-07-06 15:46:52 Fetched current weather for city
+[INFO] 2025-07-06 15:46:52 Weather data written for new_york - Live
+[INFO] 2025-07-06 15:47:11 Fetched current weather for city
+[INFO] 2025-07-06 15:47:11 Weather data written for new_york - Live
+[INFO] 2025-07-06 15:47:18 Fetched current weather for city
+[INFO] 2025-07-06 15:47:18 Weather data written for new_york - Live
+[WARN] 2025-07-06 15:47:19 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 15:47:22 Fetched current weather for city
+[INFO] 2025-07-06 15:47:22 Weather data written for new_york - Live
+[WARN] 2025-07-06 15:47:22 Fetch blocked due to rate limiting.
+[WARN] 2025-07-06 15:47:29 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Safsfa&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 15:47:30 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Safsfa&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 15:47:32 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Safsfa&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 15:47:32 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Safsfa&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for safsfa
+[WARN] 2025-07-06 15:47:36 Input error: not enough values to unpack (expected 3, got 2)
+[ERROR] 2025-07-06 15:47:52 ValueError: City is empty - Using fallback data for 
+[WARN] 2025-07-06 15:47:54 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 15:48:06 Fetched current weather for city
+[INFO] 2025-07-06 15:48:06 Weather data written for new_york - Live
+[INFO] 2025-07-06 15:57:25 Fetched current weather for city
+[WARN] 2025-07-06 15:57:27 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 15:57:29 Fetched current weather for city
+[WARN] 2025-07-06 15:57:30 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:05:39 Fetched current weather for city
+[WARN] 2025-07-06 16:05:42 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:08:03 Fetched current weather for city
+[WARN] 2025-07-06 16:08:05 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:08:41 Fetched current weather for city
+[WARN] 2025-07-06 16:08:42 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:10:27 Fetched current weather for city
+[WARN] 2025-07-06 16:10:29 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:11:37 Fetched current weather for city
+[WARN] 2025-07-06 16:11:39 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:12:19 Fetched current weather for city
+[WARN] 2025-07-06 16:12:20 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:15:41 Fetched current weather for city
+[WARN] 2025-07-06 16:15:42 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:15:59 Fetched current weather for city
+[WARN] 2025-07-06 16:16:00 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:29:05 Fetched current weather for city
+[WARN] 2025-07-06 16:29:07 Input error: not enough values to unpack (expected 3, got 2)
+[INFO] 2025-07-06 16:32:53 Fetched current weather for city
+[INFO] 2025-07-06 16:32:53 Weather data written for new_york - Live
+[WARN] 2025-07-06 16:33:02 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oijhoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:33:03 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oijhoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:33:05 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oijhoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:33:05 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oijhoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for oijhoih
+[WARN] 2025-07-06 16:33:05 Using fallback for oijhoih: Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oijhoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:33:09 Weather data written for oijhoih - (Simulated)
+[ERROR] 2025-07-06 16:33:13 ValueError: City is empty - Using fallback data for 
+[WARN] 2025-07-06 16:33:13 Using fallback for : ValueError: City is empty
+[INFO] 2025-07-06 16:33:16 Weather data written for  - (Simulated)
+[INFO] 2025-07-06 16:33:33 Fetched current weather for city
+[INFO] 2025-07-06 16:33:33 Weather data written for boston - Live
+[INFO] 2025-07-06 16:35:08 Fetched current weather for city
+[INFO] 2025-07-06 16:35:08 Weather data written for new_york - Live
+[ERROR] 2025-07-06 16:35:27 ValueError: City is empty - Using fallback data for 
+[WARN] 2025-07-06 16:35:27 Using fallback for : ValueError: City is empty
+[INFO] 2025-07-06 16:36:33 Weather data written for  - (Simulated)
+[WARN] 2025-07-06 16:38:20 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:38:21 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:38:23 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:38:23 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for pojpoj
+[WARN] 2025-07-06 16:38:23 Using fallback for Pojpoj: Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:38:25 Weather data written for pojpoj - (Simulated)
+[INFO] 2025-07-06 16:40:59 Fetched current weather for city
+[INFO] 2025-07-06 16:40:59 Weather data written for new_york - Live
+[INFO] 2025-07-06 16:41:04 Fetched current weather for city
+[INFO] 2025-07-06 16:41:04 Weather data written for new_york - Live
+[INFO] 2025-07-06 16:41:09 Fetched current weather for city
+[INFO] 2025-07-06 16:41:09 Weather data written for new_york - Live
+[WARN] 2025-07-06 16:41:09 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 16:41:13 Fetched current weather for city
+[INFO] 2025-07-06 16:41:13 Weather data written for new_york - Live
+[INFO] 2025-07-06 16:41:20 Fetched current weather for city
+[INFO] 2025-07-06 16:41:20 Weather data written for new_york - Live
+[WARN] 2025-07-06 16:41:26 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:41:27 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:41:29 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:41:29 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for ihoih
+[WARN] 2025-07-06 16:41:29 Using fallback for Ihoih: Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:41:31 Weather data written for ihoih - (Simulated)
+[ERROR] 2025-07-06 16:41:35 ValueError: City is empty - Using fallback data for 
+[INFO] 2025-07-06 16:44:24 Fetched current weather for city
+[INFO] 2025-07-06 16:44:24 Weather data written for new_york - Live
+[ERROR] 2025-07-06 16:44:28 City is empty: City is empty - Using fallback data for 
+[WARN] 2025-07-06 16:44:34 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asiodnfpaosj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:44:35 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asiodnfpaosj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:44:38 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asiodnfpaosj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:44:38 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asiodnfpaosj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for asiodnfpaosj
+[WARN] 2025-07-06 16:44:38 Using fallback for Asiodnfpaosj: Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asiodnfpaosj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:44:40 Weather data written for asiodnfpaosj - (Simulated)
+[INFO] 2025-07-06 16:46:37 Fetched current weather for city
+[INFO] 2025-07-06 16:46:37 Weather data written for new_york - Live
+[WARN] 2025-07-06 16:46:41 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:46:43 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:46:45 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:46:45 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for oihoih
+[WARN] 2025-07-06 16:46:45 Using fallback for Oihoih: Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Oihoih&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:46:47 Weather data written for oihoih - (Simulated)
+[INFO] 2025-07-06 16:47:04 Fetched current weather for city
+[INFO] 2025-07-06 16:47:04 Weather data written for new_york - Live
+[ERROR] 2025-07-06 16:47:07 City is empty: City is empty - Using fallback data for 
+[INFO] 2025-07-06 16:49:01 Fetched current weather for city
+[INFO] 2025-07-06 16:49:01 Weather data written for new_york - Live
+[ERROR] 2025-07-06 16:49:04 City is empty: City is empty - Using fallback data for 
+[WARN] 2025-07-06 16:49:08 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asfoihao&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:49:09 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asfoihao&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:49:11 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asfoihao&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:49:11 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asfoihao&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for asfoihao
+[WARN] 2025-07-06 16:49:11 Using fallback for Asfoihao: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asfoihao&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:49:15 Weather data written for asfoihao - (Simulated)
+[INFO] 2025-07-06 16:52:33 Fetched current weather for city
+[INFO] 2025-07-06 16:52:33 Weather data written for new_york - Live
+[ERROR] 2025-07-06 16:52:38 City is empty: City is empty - Using fallback data for 
+[WARN] 2025-07-06 16:52:43 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:52:44 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:52:46 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:52:46 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for pojpoj
+[WARN] 2025-07-06 16:52:46 Using fallback for Pojpoj: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Pojpoj&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:52:48 Weather data written for pojpoj - (Simulated)
+[INFO] 2025-07-06 16:56:23 Fetched current weather for city
+[INFO] 2025-07-06 16:56:23 Weather data written for new_york - Live
+[WARN] 2025-07-06 16:56:28 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ouighig&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:56:29 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ouighig&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:56:31 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ouighig&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:56:31 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ouighig&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for ouighig
+[WARN] 2025-07-06 16:56:31 Using fallback for Ouighig: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Ouighig&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:56:33 Weather data written for ouighig - (Simulated)
+[INFO] 2025-07-06 16:58:19 Fetched current weather for city
+[INFO] 2025-07-06 16:58:19 Weather data written for new_york - Live
+[ERROR] 2025-07-06 16:58:24 City is empty: City is empty - Using fallback data for 
+[WARN] 2025-07-06 16:58:31 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Liasfhapoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:58:32 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Liasfhapoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:58:34 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Liasfhapoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:58:34 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Liasfhapoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for liasfhapoh
+[WARN] 2025-07-06 16:58:34 Using fallback for Liasfhapoh: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Liasfhapoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:58:36 Weather data written for liasfhapoh - (Simulated)
+[INFO] 2025-07-06 16:59:26 Fetched current weather for city
+[INFO] 2025-07-06 16:59:26 Weather data written for new_york - Live
+[WARN] 2025-07-06 16:59:31 API call failed (attempt 1), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asdfhpoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[WARN] 2025-07-06 16:59:32 API call failed (attempt 2), retrying: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asdfhpoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:59:34 API call failed after 3 attempts: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asdfhpoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[ERROR] 2025-07-06 16:59:34 Network/API issue: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asdfhpoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric - Using fallback data for asdfhpoh
+[WARN] 2025-07-06 16:59:34 Using fallback for Asdfhpoh: 404 Client Error: Not Found for url: https://api.openweathermap.org/data/2.5/weather?q=Asdfhpoh&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric
+[INFO] 2025-07-06 16:59:36 Weather data written for asdfhpoh - (Simulated)
+[INFO] 2025-07-06 17:01:01 Fetched current weather for city
+[INFO] 2025-07-06 17:01:01 Weather data written for new_york - Live
+[ERROR] 2025-07-06 17:01:05 Missing keys in API response.: Missing keys in API response. - Using fallback data for pohpho
+[WARN] 2025-07-06 17:01:05 Using fallback for Pohpho: Missing keys in API response.
+[INFO] 2025-07-06 17:01:06 Weather data written for pohpho - (Simulated)
+[INFO] 2025-07-06 17:02:05 Fetched current weather for city
+[INFO] 2025-07-06 17:02:05 Weather data written for new_york - Live
+[ERROR] 2025-07-06 17:02:09 Missing keys in API response.: Missing keys in API response. - Using fallback data for asdoifhohg
+[WARN] 2025-07-06 17:02:09 Using fallback for Asdoifhohg: Missing keys in API response.
+[INFO] 2025-07-06 17:02:10 Weather data written for asdoifhohg - (Simulated)
+[INFO] 2025-07-06 17:03:42 Fetched current weather for city
+[INFO] 2025-07-06 17:03:42 Weather data written for new_york - Live
+[ERROR] 2025-07-06 17:03:47 City 'sdfsdg' not found: City 'sdfsdg' not found - Using fallback data for sdfsdg
+[INFO] 2025-07-06 17:03:48 Weather data written for sdfsdg - (Simulated)
+[ERROR] 2025-07-06 17:03:52 City is empty: City is empty - Using fallback data for 
+[INFO] 2025-07-06 17:03:59 Fetched current weather for city
+[INFO] 2025-07-06 17:03:59 Weather data written for new_york - Live
+[ERROR] 2025-07-06 17:04:03 City is empty: City is empty - Using fallback data for 
+[ERROR] 2025-07-06 17:11:44 City 'new_york' not found: City 'new_york' not found - Using fallback data for new_york
+[INFO] 2025-07-06 17:11:47 Weather data written for new_york - (Simulated)
+[ERROR] 2025-07-06 17:12:12 City 'new_york' not found: City 'new_york' not found - Using fallback data for new_york
+[INFO] 2025-07-06 17:12:14 Weather data written for new_york - (Simulated)
+[ERROR] 2025-07-06 17:12:18 City 'new_york' not found: City 'new_york' not found - Using fallback data for new_york
+[INFO] 2025-07-06 17:12:20 Weather data written for new_york - (Simulated)
+[INFO] 2025-07-06 17:12:39 Fetched current weather for city
+[INFO] 2025-07-06 17:12:39 Weather data written for new_york - Live
+[ERROR] 2025-07-06 17:13:24 City 'new_york' not found: City 'new_york' not found - Using fallback data for new_york
+[INFO] 2025-07-06 17:14:18 Weather data written for new_york - (Simulated)
+[INFO] 2025-07-06 17:15:02 Fetched current weather for city
+[INFO] 2025-07-06 17:15:02 Weather data written for new_york - Live
+[ERROR] 2025-07-06 17:15:08 City 'sdoigshdop' not found: City 'sdoigshdop' not found - Using fallback data for sdoigshdop
+[INFO] 2025-07-06 17:15:10 Weather data written for sdoigshdop - (Simulated)
+[INFO] 2025-07-06 17:17:48 Fetched current weather for city
+[INFO] 2025-07-06 17:17:48 Weather data written for new_york - Live
+[WARN] 2025-07-06 17:17:49 Fetch blocked due to rate limiting.
+[ERROR] 2025-07-06 17:18:03 City 'sdfsg' not found: City 'sdfsg' not found - Using fallback data for sdfsg
+[INFO] 2025-07-06 17:18:04 Weather data written for sdfsg - (Simulated)
+[INFO] 2025-07-06 17:18:14 Fetched current weather for city
+[INFO] 2025-07-06 17:18:14 Weather data written for boston - Live
+[INFO] 2025-07-06 17:18:14 Fetched current weather for city
+[INFO] 2025-07-06 17:18:14 Weather data written for boston - Live
+[INFO] 2025-07-06 17:19:22 Fetched current weather for city
+[INFO] 2025-07-06 17:19:22 Weather data written for new_york - Live
+[WARN] 2025-07-06 17:19:24 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 17:22:04 Fetched current weather for city
+[INFO] 2025-07-06 17:22:04 Weather data written for new_york - Live
+[WARN] 2025-07-06 17:22:06 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 17:22:11 Fetched current weather for city
+[INFO] 2025-07-06 17:22:11 Weather data written for new_york - Live
+[ERROR] 2025-07-06 17:24:33 Unexpected error during GUI setup: name 'self' is not defined
+[INFO] 2025-07-06 17:26:15 Fetched current weather for city
+[INFO] 2025-07-06 17:26:15 Weather data written for new_york - Live
+[INFO] 2025-07-06 19:04:37 Weather data written for new_york - Live
+[INFO] 2025-07-06 19:04:51 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:04:54 Chart data error: Please select at least one metric to display in the chart.
+[INFO] 2025-07-06 19:04:56 Weather data written for new_york - Live
+[INFO] 2025-07-06 19:05:04 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:05:05 Chart data error: Please select at least one metric to display in the chart.
+[INFO] 2025-07-06 19:05:09 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:20:53 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[INFO] 2025-07-06 19:20:53 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:20:56 Fetch blocked due to rate limiting.
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[INFO] 2025-07-06 19:21:09 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:09 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:11 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 19:21:18 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[INFO] 2025-07-06 19:21:25 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:25 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:26 Fetch blocked due to rate limiting.
+[WARN] 2025-07-06 19:21:28 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:28 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:28 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:28 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:28 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:28 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:21:28 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[WARN] 2025-07-06 19:23:11 Failed to convert temperature: Unsupported temperature conversion: °C to °F
+[INFO] 2025-07-06 19:23:11 Weather data written for new_york - Live
+[INFO] 2025-07-06 19:23:20 Weather data written for new_york - Live
+[ERROR] 2025-07-06 19:33:01 Unexpected error: type object 'UnitConverter' has no attribute 'TEMP_UNITS'
+[INFO] 2025-07-06 19:37:06 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:37:09 Fetch blocked due to rate limiting.
+[ERROR] 2025-07-06 19:37:15 Unexpected chart error: name 'random' is not defined
+[INFO] 2025-07-06 19:38:48 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:38:50 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 19:41:19 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:41:19 Chart update blocked due to rate limiting.
+[WARN] 2025-07-06 19:41:21 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 19:41:28 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:41:28 Chart update blocked due to rate limiting.
+[WARN] 2025-07-06 19:41:28 Fetch blocked due to rate limiting.
+[WARN] 2025-07-06 19:41:30 Chart update blocked due to rate limiting.
+[INFO] 2025-07-06 19:41:32 Weather data written for new_york - Live
+[WARN] 2025-07-06 19:41:32 Chart update blocked due to rate limiting.
+[ERROR] 2025-07-06 19:41:38 Unexpected error: name 'requests' is not defined
+[WARN] 2025-07-06 19:41:38 Chart update blocked due to rate limiting.
+[ERROR] 2025-07-06 19:41:48 Unexpected error: name 'requests' is not defined
+[WARN] 2025-07-06 19:41:48 Chart update blocked due to rate limiting.
+[INFO] 2025-07-06 19:42:09 Weather data written for boston - Live
+[WARN] 2025-07-06 19:42:09 Chart update blocked due to rate limiting.
+[WARN] 2025-07-06 19:42:11 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 20:21:01 Weather data written for new_york - Live
+[INFO] 2025-07-06 20:21:08 Weather data written for new_york - Live
+[WARN] 2025-07-06 20:21:10 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 20:21:16 Weather data written for boston - Live
+[INFO] 2025-07-06 20:21:22 Weather data written for boston - Live
+[WARN] 2025-07-06 20:21:24 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 20:28:13 Weather data written for new_york - Live
+[WARN] 2025-07-06 20:28:16 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 20:28:22 Weather data written for new_york - Live
+[INFO] 2025-07-06 20:28:29 Weather data written for boston - Live
+[ERROR] 2025-07-06 20:28:33 Unexpected error: City name cannot be empty
+[WARN] 2025-07-06 20:28:35 Chart data error: City name is required for chart display
+[ERROR] 2025-07-06 20:28:41 API failure for ihfdosihfd - City not found: City not found. Switching to simulated data.
+[INFO] 2025-07-06 20:28:43 Weather data written for ihfdosihfd - (Simulated)
+[INFO] 2025-07-06 20:46:04 Weather data written for new_york - Live
+[INFO] 2025-07-06 20:46:11 Weather data written for new_york - Live
+[INFO] 2025-07-06 20:46:21 Weather data written for new_york - Live
+[INFO] 2025-07-06 20:46:30 Weather data written for boston - Live
+[INFO] 2025-07-06 21:29:17 Weather data written for new_york - Live
+[WARN] 2025-07-06 21:29:20 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 21:36:07 Weather data written for new_york - Live
+[ERROR] 2025-07-06 21:36:11 Unexpected chart error: cannot unpack non-iterable NoneType object
+[INFO] 2025-07-06 21:38:49 Weather data written for new_york - Live
+[ERROR] 2025-07-06 21:38:51 Unexpected chart error: 'WeatherDashboardCoordinator' object has no attribute 'gui_vars'
+[INFO] 2025-07-06 21:44:30 Weather data written for new_york - Live
+[ERROR] 2025-07-06 21:44:32 Unexpected chart error: 'WeatherDashboardCoordinator' object has no attribute 'gui_vars'
+[INFO] 2025-07-06 21:47:04 Weather data written for new_york - Live
+[INFO] 2025-07-06 21:57:34 Weather data written for new_york - Live
+[INFO] 2025-07-06 21:57:38 Weather data written for new_york - Live
+[INFO] 2025-07-06 21:57:42 Weather data written for new_york - Live
+[INFO] 2025-07-06 21:57:47 Weather data written for new_york - Live
+[INFO] 2025-07-06 21:57:52 Weather data written for boston - Live
+[INFO] 2025-07-06 21:57:59 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:37:23 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:37:30 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:37:41 Weather data written for new_york - Live
+[ERROR] 2025-07-06 22:37:46 API failure for Dsgdfs - City not found: City not found. Switching to simulated data.
+[INFO] 2025-07-06 22:37:48 Weather data written for dsgdfs - Simulated
+[ERROR] 2025-07-06 22:37:53 Input validation error: City name cannot be empty
+[WARN] 2025-07-06 22:37:56 Chart data error: City name is required for chart display
+[INFO] 2025-07-06 22:38:11 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:39:30 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:39:34 Weather data written for boston - Live
+[INFO] 2025-07-06 22:40:30 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:40:36 Weather data written for boston - Live
+[WARN] 2025-07-06 22:40:39 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 22:40:48 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:40:57 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:41:06 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:41:10 Weather data written for new_york - Live
+[WARN] 2025-07-06 22:41:12 Fetch blocked due to rate limiting.
+[INFO] 2025-07-06 22:41:35 Weather data written for new_york - Live
+[INFO] 2025-07-06 22:41:39 Weather data written for boston - Live
+[INFO] 2025-07-06 22:41:47 Weather data written for new_york - Live
+[WARN] 2025-07-06 22:41:50 Fetch blocked due to rate limiting.
+[INFO] 2025-07-07 00:38:27 Weather data written for new_york - Live
+[INFO] 2025-07-07 00:38:35 Weather data written for boston - Live
+[INFO] 2025-07-09 19:50:21 Weather data written for new_york - Live
+[INFO] 2025-07-09 19:50:57 Weather data written for new_york - Live
+[INFO] 2025-07-09 19:51:03 Weather data written for new_york - Live
+[INFO] 2025-07-09 19:51:11 Weather data written for new_york - Live
