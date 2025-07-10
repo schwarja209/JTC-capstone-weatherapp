@@ -12,6 +12,7 @@ import tkinter as tk
 
 try:
     from WeatherDashboard import config
+    config.validate_config()  # Validate configuration at startup
 except ValueError as e:
     print(f"Configuration error: {e}")
     import sys

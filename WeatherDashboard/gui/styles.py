@@ -5,7 +5,7 @@ Style configuration for GUI elements.
 from tkinter import ttk
 
 
-def configure_styles():
+def configure_styles() -> None:
     '''Configures the styles for the GUI elements.'''
     style = ttk.Style()
     style.configure("FrameLabel.TLabelframe.Label", font=('Arial', 15, 'bold'))

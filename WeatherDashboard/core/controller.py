@@ -103,14 +103,25 @@ class WeatherDashboardController:
             self._render_chart(x_vals, y_vals, metric_key, city, unit)
 
         except KeyError as e:
-            messagebox.showerror("Chart Error", str(e))
-            Logger.warn(f"Chart error: {e}")
+            self._handle_chart_error("Chart configuration error", e)
         except ValueError as e:
-            messagebox.showerror("Chart Data Error", str(e))
-            Logger.warn(f"Chart data error: {e}")
+            self._handle_chart_error("Chart data error", e)
         except Exception as e:
-            messagebox.showerror("Chart Error", f"Unexpected error: {e}")
-            Logger.error(f"Unexpected chart error: {e}")
+            self._handle_chart_error("Unexpected chart error", e)
+
+    def _handle_chart_error(self, error_type: str, error: Exception) -> None:
+        """Handles chart errors with proper recovery."""
+        Logger.error(f"{error_type}: {error}")
+        messagebox.showwarning("Chart Error", f"{error_type}. Chart will be cleared.")
+        
+        # Clear the chart gracefully
+        try:
+            if self.state.is_chart_available():
+                self.state.chart_ax.clear()
+                self.state.chart_ax.text(0.5, 0.5, 'Chart unavailable\nPlease check settings', ha='center', va='center', transform=self.state.chart_ax.transAxes)
+                self.state.chart_canvas.draw()
+        except Exception as recovery_error:
+            Logger.error(f"Failed to clear chart after error: {recovery_error}")
 
     def _get_chart_settings(self) -> Tuple[str, int, str, str]:
         '''Retrieves the current settings for chart display: city, date range, metric key, and unit.'''

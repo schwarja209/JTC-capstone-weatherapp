@@ -17,20 +17,20 @@ class Logger:
     JSON_LOG = os.path.join(LOG_FOLDER, "weather.jsonl")
 
     @staticmethod
-    def _timestamp():
+    def _timestamp() -> str:
         '''Returns current timestamp in YYYY-MM-DD HH:MM:SS format.'''
         return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     @staticmethod
-    def info(msg): Logger._log("INFO", msg)
+    def info(msg: str) -> None: Logger._log("INFO", msg)
     @staticmethod
-    def warn(msg): Logger._log("WARN", msg)
+    def warn(msg: str) -> None: Logger._log("WARN", msg)
     @staticmethod
-    def error(msg): Logger._log("ERROR", msg)
+    def error(msg: str) -> None: Logger._log("ERROR", msg)
 
 
     @staticmethod
-    def _log(level, msg):
+    def _log(level: str, msg: str) -> None:
         '''Logs a message with the specified level, timestamp, and writes to files.'''
         ts = Logger._timestamp()
         formatted = f"[{level}] {ts} {msg}"
@@ -41,7 +41,7 @@ class Logger:
         Logger._write_to_files(level, ts, msg)
 
     @staticmethod
-    def _write_to_files(level, ts, msg):
+    def _write_to_files(level: str, ts: str, msg: str) -> None:
         '''Writes log entry to both plain text and JSON files.'''
         # Ensure log directory exists before writing
         try:

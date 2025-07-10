@@ -3,6 +3,7 @@ Weather service layer for the Weather Dashboard application.
 Handles API communication, data parsing, validation, and fallback logic.
 """
 
+from typing import Dict, Any, Tuple
 import time
 import requests
 from datetime import datetime
@@ -20,7 +21,7 @@ from WeatherDashboard.services.api_exceptions import (
 from WeatherDashboard.services.fallback_generator import SampleWeatherGenerator
 
 
-def fetch_with_retry(url, params, retries=2, delay=1):
+def fetch_with_retry(url: str, params: Dict[str, Any], retries: int = 2, delay: int = 1) -> requests.Response:
     """Attempts to fetch data from the API with retry and exponential backoff.
     
     Raises:
@@ -71,7 +72,7 @@ def fetch_with_retry(url, params, retries=2, delay=1):
                 raise WeatherAPIError(f"API request failed: {e}")
 
 
-def validate_api_response(data):
+def validate_api_response(data: Dict[str, Any]) -> None:
     """Validates structure and key presence in API response.
     
     Raises:
@@ -92,11 +93,11 @@ def validate_api_response(data):
 class WeatherAPIClient:
     """Handles raw API communication with OpenWeatherMap."""
     
-    def __init__(self, api_url, api_key):
+    def __init__(self, api_url: str, api_key: str) -> None:
         self.api_url = api_url
         self.api_key = api_key
     
-    def fetch_raw_data(self, city):
+    def fetch_raw_data(self, city: str) -> Dict[str, Any]:
         """Fetches raw JSON data from the weather API."""
         self._validate_request(city)
         
@@ -106,7 +107,7 @@ class WeatherAPIClient:
         try:
             data = response.json()
         except ValueError as e:  # Covers json.JSONDecodeError in older Python versions
-            raise ValueError(f"Invalid JSON response from weather API: {e}")
+            raise ValueError(f"Invalid JSON response from weather API: {e}") from e
         except Exception as e:
             raise ValueError(f"Failed to parse API response: {e}")
         
@@ -120,7 +121,7 @@ class WeatherAPIClient:
         validate_api_response(data)
         return data
     
-    def _validate_request(self, city):
+    def _validate_request(self, city: str) -> None:
         """Validates the city input for non-empty and API key presence."""
         if not city.strip():
             raise ValidationError("City name cannot be empty")
@@ -132,7 +133,7 @@ class WeatherDataParser:
     """Handles parsing raw API data into structured weather data."""
     
     @staticmethod
-    def parse_weather_data(data):
+    def parse_weather_data(data: Dict[str, Any]) -> Dict[str, Any]:
         """Parses the raw weather data from the API response into a structured format."""
         # TODO:
         # rain = data.get("rain", {})
@@ -154,7 +155,7 @@ class WeatherDataValidator:
     """Handles validation of parsed weather data."""
     
     @staticmethod
-    def validate_weather_data(d):
+    def validate_weather_data(d: Dict[str, Any]) -> None:
         """Performs basic sanity checks on the parsed weather data."""
         
         numeric_fields = ['temperature', 'humidity', 'wind_speed', 'pressure']
@@ -179,7 +180,7 @@ class WeatherDataValidator:
 class WeatherAPIService:
     """Handles fetching current weather data from OpenWeatherMap API with fallback to simulated data."""
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.api = config.API_BASE_URL
         self.key = config.API_KEY
         self.fallback = SampleWeatherGenerator()
@@ -189,7 +190,7 @@ class WeatherAPIService:
         self._data_parser = WeatherDataParser()
         self._data_validator = WeatherDataValidator()
 
-    def fetch_current(self, city):
+    def fetch_current(self, city: str) -> Tuple[Dict[str, Any], bool, str]:
         """Fetches current weather data for a given city using OpenWeatherMap API."""
         try:
             data = self._get_api_data(city)

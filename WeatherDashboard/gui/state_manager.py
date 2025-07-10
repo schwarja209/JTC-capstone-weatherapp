@@ -2,6 +2,7 @@
 Centralized state management for the Weather Dashboard application.
 """
 
+from typing import List, Dict, Any, Optional
 import tkinter as tk
 from WeatherDashboard import config
 
@@ -45,47 +46,47 @@ class WeatherDashboardState:
     
     # BACKWARD COMPATIBILITY METHODS
     # These methods maintain the same interface as the original gui_vars dictionary
-    def get(self, key):
+    def get(self, key: str) -> Any:
         """Get method for backward compatibility with gui_vars['key'] access."""
         return getattr(self, key, None)
     
-    def __getitem__(self, key):
+    def __getitem__(self, key: str) -> Any:
         """Dictionary-style access for backward compatibility."""
         return getattr(self, key, None)
     
-    def __setitem__(self, key, value):
+    def __setitem__(self, key: str, value: Any) -> None:
         """Dictionary-style assignment for backward compatibility."""
         setattr(self, key, value)
     
     # STATE ACCESS METHODS
     # These provide cleaner access to state values
-    def get_current_city(self):
+    def get_current_city(self) -> str:
         """Get current city name."""
         return self.city.get()
     
-    def get_current_unit_system(self):
+    def get_current_unit_system(self) -> str:
         """Get current unit system (metric/imperial)."""
         return self.unit.get()
     
-    def get_current_range(self):
+    def get_current_range(self) -> str:
         """Get current date range selection."""
         return self.range.get()
     
-    def get_current_chart_metric(self):
+    def get_current_chart_metric(self) -> str:
         """Get current chart metric selection."""
         return self.chart.get()
     
-    def is_metric_visible(self, metric_key):
+    def is_metric_visible(self, metric_key: str) -> bool:
         """Check if a metric is currently visible."""
         var = self.visibility.get(metric_key)
         return var.get() if var else False
     
-    def get_visible_metrics(self):
+    def get_visible_metrics(self) -> List[str]:
         """Get list of currently visible metric keys."""
         return [key for key, var in self.visibility.items() if var.get()]
     
     # STATE MODIFICATION METHODS    
-    def reset_to_defaults(self):
+    def reset_to_defaults(self) -> None:
         """Reset all input controls to default values (preserves original method name)."""
         self.city.set(config.DEFAULTS["city"])
         self.unit.set(config.DEFAULTS["unit"])
@@ -95,23 +96,23 @@ class WeatherDashboardState:
         for key, var in self.visibility.items():
             var.set(config.DEFAULTS["visibility"].get(key, False))
     
-    def set_weather_data(self, weather_data, is_fallback=False):
+    def set_weather_data(self, weather_data: Optional[Dict[str, Any]], is_fallback: bool = False) -> None:
         """Store current weather data (new functionality for better state management)."""
         self.current_weather_data = weather_data
         self.fallback_active = is_fallback
         self.last_update_time = weather_data.get('date') if weather_data else None
     
-    def get_weather_data(self):
+    def get_weather_data(self) -> Optional[Dict[str, Any]]:
         """Get current weather data (new functionality)."""
         return self.current_weather_data
     
-    def is_using_fallback(self):
+    def is_using_fallback(self) -> bool:
         """Check if currently using fallback data (new functionality)."""
         return self.fallback_active
     
     # DISPLAY UPDATE METHODS
     # These encapsulate display logic that was previously scattered
-    def update_city_display(self, city_name, date_str, status=""):
+    def update_city_display(self, city_name: str, date_str: str, status: str = "") -> None:
         """Update city-related display elements."""
         if self.city_label:
             self.city_label.config(text=city_name)
@@ -122,7 +123,7 @@ class WeatherDashboardState:
         if self.status_label:
             self.status_label.config(text=status)
     
-    def update_metric_display(self, metric_displays):
+    def update_metric_display(self, metric_displays: Dict[str, str]) -> None:
         """Update all metric displays based on visibility.
         
         Args:
@@ -147,7 +148,7 @@ class WeatherDashboardState:
                 widgets['value'].config(text=metric_displays[metric_key])
                 row_counter += 1
     
-    def update_chart_dropdown_options(self):
+    def update_chart_dropdown_options(self) -> None:
         """Update chart dropdown based on visible metrics."""
         if not self.chart_widget:
             return
@@ -168,18 +169,18 @@ class WeatherDashboardState:
             self.chart_widget.configure(state="readonly")
     
     # CHART METHODS
-    def is_chart_available(self):
+    def is_chart_available(self) -> bool:
         """Check if chart widgets are available."""
         return self.chart_ax is not None
     
-    def register_chart_widgets(self, canvas, figure, axes):
+    def register_chart_widgets(self, canvas: Optional[Any], figure: Optional[Any], axes: Optional[Any]) -> None:
         """Register chart widgets with state."""
         self.chart_canvas = canvas
         self.chart_fig = figure
         self.chart_ax = axes
     
     # VALIDATION METHODS    
-    def validate_current_state(self):
+    def validate_current_state(self) -> List[str]:
         """Validate current state and return any errors."""
         errors = []
         
@@ -196,7 +197,7 @@ class WeatherDashboardState:
         
         return errors
     
-    def get_current_settings_summary(self):
+    def get_current_settings_summary(self) -> Dict[str, Any]:
         """Get a summary of current settings for logging/debugging."""
         return {
             'city': self.get_current_city(),
@@ -207,7 +208,7 @@ class WeatherDashboardState:
             'fallback_active': self.is_using_fallback(),
         }
     
-    def __repr__(self):
+    def __repr__(self) -> str:
         """String representation for debugging."""
         summary = self.get_current_settings_summary()
         return f"WeatherDashboardState({summary})"

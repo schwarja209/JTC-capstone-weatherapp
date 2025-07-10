@@ -37,6 +37,8 @@ class ChartWidgets:
         except Exception as e:
             Logger.error(f"Failed to create chart widgets: {e}")
             self._create_fallback_display()
+            # Register None values to indicate chart is unavailable
+            self.state.register_chart_widgets(None, None, None)
     
     def _setup_matplotlib_components(self) -> None:
         """Sets up matplotlib Figure, Axes, and Canvas."""
@@ -57,10 +59,11 @@ class ChartWidgets:
     
     def _create_fallback_display(self) -> None:
         """Creates a simple fallback when matplotlib fails."""
-        fallback_label = ttk.Label(self.parent, text="Chart unavailable")
-        fallback_label.pack()
+        # Create a simple fallback label
+        self.fallback_label = ttk.Label(self.parent, text="Chart unavailable - matplotlib failed to load")
+        self.fallback_label.pack(expand=True)
         
-        # Set components to None
+        # Set components to None to indicate unavailability
         self.chart_fig = None
         self.chart_ax = None
         self.chart_canvas = None

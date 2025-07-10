@@ -5,6 +5,7 @@ input validation, and unexpected exceptions.
 Provides user-friendly messages and logging for different error types.
 """
 
+from typing import Optional
 import tkinter.messagebox as messagebox
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.services.api_exceptions import (
@@ -18,7 +19,7 @@ class WeatherErrorHandler:
     '''Handles error presentation and user messaging for weather data operations.'''
     
     @staticmethod
-    def handle_weather_error(error_exception, city_name):
+    def handle_weather_error(error_exception: Optional[Exception], city_name: str) -> bool:
         '''Handles weather-related errors and shows appropriate user messages.
         
         Returns:
@@ -51,13 +52,13 @@ class WeatherErrorHandler:
             return True
 
     @staticmethod
-    def handle_input_validation_error(error):
+    def handle_input_validation_error(error: Exception) -> None:
         '''Handles input validation errors.'''
         Logger.error(f"Input validation error: {error}")
         messagebox.showerror("Input Error", str(error))
 
     @staticmethod
-    def handle_unexpected_error(error):
+    def handle_unexpected_error(error: Exception) -> None:
         '''Handles unexpected errors.'''
         Logger.error(f"Unexpected error: {error}")
         messagebox.showerror("Error", f"Unexpected error: {error}")

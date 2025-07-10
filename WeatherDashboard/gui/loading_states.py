@@ -6,7 +6,6 @@ from typing import Optional, Callable, Dict, Any
 import tkinter as tk
 from tkinter import ttk
 import threading
-import time
 
 
 class LoadingStateManager:
@@ -15,7 +14,6 @@ class LoadingStateManager:
     def __init__(self, state: Any) -> None:
         self.state = state
         self.is_loading = False
-        self.loading_widgets: Dict[str, ttk.Widget] = {}
         self.original_button_states: Dict[str, str] = {}
     
     def start_loading(self, operation_name: str = "Loading...") -> None:
@@ -46,7 +44,7 @@ class LoadingStateManager:
         for button_name in buttons_to_disable:
             button = getattr(self.state, button_name, None)
             if button:
-                self.original_button_states[button_name] = str(button['state'])
+                self.original_button_states[button_name] = str(button.cget('state'))
                 button.configure(state='disabled')
     
     def _enable_buttons(self) -> None:
@@ -121,56 +119,20 @@ class AsyncWeatherOperation:
         thread = threading.Thread(target=background_task, daemon=True)
         thread.start()
     
-    def fetch_chart_async(self, on_complete: Optional[Callable] = None) -> None:
-        """Updates chart in background thread."""
-        
-        def background_task():
-            try:
-                self._schedule_ui_update(self.loading_manager.start_loading, "Updating chart...")
-                
-                # Update chart in background
-                self.controller.update_chart()
-                
-                def complete_task():
-                    self.loading_manager.stop_loading()
-                    if on_complete:
-                        on_complete(True)
-                
-                self._schedule_ui_update(complete_task)
-                
-            except Exception as e:
-                def handle_error():
-                    self.loading_manager.stop_loading()
-                    if on_complete:
-                        on_complete(False)
-                
-                self._schedule_ui_update(handle_error)
-        
-        thread = threading.Thread(target=background_task, daemon=True)
-        thread.start()
-    
     def _schedule_ui_update(self, func: Callable, *args) -> None:
         """Safely schedules UI updates from background thread."""
-        # Use tkinter's thread-safe method to update UI
-        if hasattr(self.controller.state, 'city_label') and self.controller.state.city_label:
-            root = self.controller.state.city_label.winfo_toplevel()
-            root.after_idle(lambda: func(*args))
-
-
-# Progress widget
-class ProgressWidget:
-    """A simple progress indicator widget."""
-    def __init__(self, parent: ttk.Frame) -> None:
-        self.parent = parent
-        self.progress_var = tk.StringVar()
-        self.progress_label = ttk.Label(parent, textvariable=self.progress_var)
-        self.progress_label.pack(pady=5)
-    
-    def show_progress(self, message: str) -> None:
-        """Shows progress message."""
-        self.progress_var.set(message)
-        self.progress_label.configure(foreground="blue")
-    
-    def hide_progress(self) -> None:
-        """Hides progress message."""
-        self.progress_var.set("")
+        try:
+            if hasattr(self, 'controller') and self.controller and hasattr(self.controller, 'state'):
+                state = self.controller.state
+                if hasattr(state, 'city_label') and state.city_label:
+                    try:
+                        root = state.city_label.winfo_toplevel()
+                        root.after_idle(lambda: func(*args))
+                        return
+                    except tk.TclError:
+                        # Widget was destroyed, fall back to direct call
+                        pass
+            # Fallback: execute directly (not thread-safe but won't crash)
+            func(*args)
+        except Exception as e:
+            print(f"Error scheduling UI update: {e}")

@@ -2,26 +2,27 @@
 Rate limiting utility for API requests.
 """
 
+from typing import Optional
 from datetime import datetime
 
 class RateLimiter:
     '''Handles rate limiting for API requests.'''
     
-    def __init__(self, min_interval_seconds=3):
+    def __init__(self, min_interval_seconds: int = 3) -> None:
         self.min_interval = min_interval_seconds
         self.last_request_time = None
     
-    def can_make_request(self):
+    def can_make_request(self) -> bool:
         '''Returns True if enough time has passed since the last request.'''
         if not self.last_request_time:
             return True
         return (datetime.now() - self.last_request_time).total_seconds() > self.min_interval
     
-    def record_request(self):
+    def record_request(self) -> None:
         '''Records that a request was made at this time.'''
         self.last_request_time = datetime.now()
     
-    def get_wait_time(self):
+    def get_wait_time(self) -> float:
         '''Returns seconds to wait before next request, or 0 if ready.'''
         if not self.last_request_time:
             return 0

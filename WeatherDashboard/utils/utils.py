@@ -2,11 +2,13 @@
 Single function utilities for the Weather Dashboard application.
 '''
 
-def is_fallback(data):
+from typing import Dict, Any
+
+def is_fallback(data: Dict[str, Any]) -> bool:
     '''Returns True if the data was generated as a fallback.'''
     return data.get('source') == 'simulated'
 
-def format_fallback_status(fallback_used, format_type="display"):
+def format_fallback_status(fallback_used: bool, format_type: str = "display") -> str:
     '''Returns fallback status text based on boolean and format type.
     
     Args:
@@ -26,7 +28,7 @@ def format_fallback_status(fallback_used, format_type="display"):
     else:
         raise ValueError(f"Invalid format_type: {format_type}. Use 'display' or 'log'")
 
-def normalize_city_name(name):
+def normalize_city_name(name: str) -> str:
     '''Normalizes city name for display: strips whitespace and title-cases each word.
     
     Args:
@@ -44,7 +46,7 @@ def normalize_city_name(name):
     
     return normalized
 
-def city_key(name):
+def city_key(name: str) -> str:
     '''Generates a normalized key for city name for consistent storage/lookup.
     
     Args:
@@ -56,7 +58,7 @@ def city_key(name):
     normalized = normalize_city_name(name)  # This also validates the input
     return normalized.lower().replace(" ", "_")
 
-def validate_unit_system(unit_system):
+def validate_unit_system(unit_system: str) -> str:
     '''Validates that the unit system is either 'metric' or 'imperial'.
     
     Args:

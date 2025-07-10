@@ -9,17 +9,17 @@ from WeatherDashboard.gui.styles import configure_styles
 
 class WeatherDashboardGUIFrames:
     '''Creates and manages the main GUI frames for the weather dashboard.'''
-    def __init__(self, root):
+    def __init__(self, root: tk.Tk) -> None:
         self.root = root
         self.frames = {}
         self.create_styles()
         self.create_frames()
 
-    def create_styles(self):
+    def create_styles(self) -> None:
         '''Configures the styles for the GUI elements.'''
         configure_styles()
 
-    def create_frames(self):
+    def create_frames(self) -> None:
         '''Creates the main frames for the dashboard layout.'''
         self.frames["title"] = ttk.Frame(self.root, padding="10")
         self.frames["title"].grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E))

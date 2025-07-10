@@ -23,6 +23,10 @@ class WeatherDataManager:
         self.api_service = WeatherAPIService()
         self.weather_data = {}
 
+        # Track when we last cleaned up data
+        self._last_cleanup = datetime.now()
+        self._cleanup_interval_hours = 24  # Cleanup every 24 hours
+
     def fetch_current(self, city: str, unit_system: str) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
         '''Fetches current weather data for a city, using fallback if API call fails.
         
@@ -35,6 +39,12 @@ class WeatherDataManager:
         # All API and fallback data is assumed to be in metric units and converted downstream.
         # If this changes in future (e.g., new fallback with imperial), update convert_units().
         converted_data = self.convert_units(raw_data, unit_system)
+
+        # Periodic cleanup check
+        current_time = datetime.now()
+        if (current_time - self._last_cleanup).total_seconds() > (self._cleanup_interval_hours * 3600):
+            self.cleanup_old_data()
+            self._last_cleanup = current_time
 
         key = city_key(city)
         existing_data = self.weather_data.setdefault(key, [])
@@ -115,12 +125,18 @@ class WeatherDataManager:
 
     def write_to_file(self, city: str, data: Dict[str, Any], unit_system: str) -> None:
         '''Writes formatted weather data to a log file with timestamp and unit system information.'''
-        log_entry = self.format_data_for_logging(city, data, unit_system)
-        with open(config.OUTPUT["log"], "a", encoding="utf-8") as f:
-            f.write(log_entry)
+        try:
+            log_entry = self.format_data_for_logging(city, data, unit_system)
+            with open(config.OUTPUT["log"], "a", encoding="utf-8") as f:
+                f.write(log_entry)
 
-        status = format_fallback_status(is_fallback(data), "log")
-        Logger.info(f"Weather data written for {city_key(city)} - {status}")
+            status = format_fallback_status(is_fallback(data), "log")
+            Logger.info(f"Weather data written for {city_key(city)} - {status}")
+            
+        except (OSError, IOError, PermissionError) as e:
+            Logger.error(f"Failed to write weather data to file: {e}")
+        except Exception as e:
+            Logger.error(f"Unexpected error writing weather data: {e}")
 
     def format_data_for_logging(self, city: str, data: Dict[str, Any], unit_system: str) -> str:
         '''Formats weather data for logging to a file with timestamp and unit system information.'''

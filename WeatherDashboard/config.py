@@ -74,17 +74,30 @@ class ConfigDerivedValues:
     @staticmethod
     def get_key_to_display_mapping():
         """Derives display labels from metrics configuration."""
-        return {k: v['label'] for k, v in WeatherDashboardConfig.METRICS.items()}
+        try:
+            return {k: v['label'] for k, v in WeatherDashboardConfig.METRICS.items()}
+        except (KeyError, TypeError, AttributeError) as e:
+            print(f"Error creating key to display mapping: {e}")
+            return {}  # Return empty dict as fallback
     
     @staticmethod
     def get_display_to_key_mapping():
         """Derives key lookup from display labels."""
-        return {v['label']: k for k, v in WeatherDashboardConfig.METRICS.items()}
+        try:
+            return {v['label']: k for k, v in WeatherDashboardConfig.METRICS.items()}
+        except (KeyError, TypeError, AttributeError) as e:
+            print(f"Error creating display to key mapping: {e}")
+            return {}  # Return empty dict as fallback
+
     
     @staticmethod
     def get_default_visibility():
         """Derives default visibility settings from metrics."""
-        return {k: v['visible'] for k, v in WeatherDashboardConfig.METRICS.items()}
+        try:
+            return {k: v['visible'] for k, v in WeatherDashboardConfig.METRICS.items()}
+        except (KeyError, TypeError, AttributeError) as e:
+            print(f"Error creating default visibility: {e}")
+            return {}  # Return empty dict as fallback
 
 # ================================
 # 4. DEFAULTS MANAGER (separate concern)
@@ -230,9 +243,6 @@ UNITS = WeatherDashboardConfig.UNITS
 # Output Files & Directories
 OUTPUT = FilePathsManager.get_output_paths()
 
-def validate_config():
+def validate_config() -> None:
     """Validates that all required configuration keys exist and have expected structure."""
     return ConfigValidator.validate_config()
-
-# Validate configuration on import
-validate_config()
