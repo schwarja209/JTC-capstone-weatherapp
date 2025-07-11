@@ -1,5 +1,13 @@
 """
 Metric display widgets for current weather data.
+
+This module provides comprehensive metric display widgets for showing current
+weather information including city/date headers, weather metrics with visibility
+controls, and integrated weather alert status indicators. Manages dynamic
+metric visibility and alert notifications.
+
+Classes:
+    MetricDisplayWidgets: Main metric display manager with alerts integration
 """
 
 from typing import Dict, Any, Optional
@@ -11,9 +19,33 @@ from WeatherDashboard.features.alerts.alert_display import AlertStatusIndicator
 
 
 class MetricDisplayWidgets:
-    """Manages the display of current weather metrics."""
+    """Manages the display of current weather metrics and alert status.
     
+    Creates and manages the current weather display tab including city/date
+    headers, dynamic weather metric displays with visibility controls, and
+    integrated weather alert status indicators. Coordinates with the state
+    manager for metric visibility and provides alert notifications.
+    
+    Attributes:
+        parent: Parent frame container
+        state: Application state manager
+        metric_labels: Dictionary of metric display widgets by metric key
+        city_label: City name display label
+        date_label: Date/time display label
+        alert_status_widget: Alert status indicator widget
+        alert_text_label: Alert text notification label
+    """
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
+        """Initialize the metric display widgets.
+        
+        Creates city/date headers, weather metric displays with visibility
+        controls, alert status indicators, and registers all widgets with
+        the state manager for coordinated updates.
+        
+        Args:
+            parent_frame: Parent TTK frame to contain the metric displays
+            state: Application state manager for widget coordination
+        """
         self.parent = parent_frame
         self.state = state
         
@@ -28,14 +60,23 @@ class MetricDisplayWidgets:
         self._create_all_metrics()
     
     def _create_all_metrics(self) -> None:
-        """Creates all metric display widgets."""
+        """Create all metric display widgets in organized sections.
+        
+        Orchestrates the creation of city/date headers, weather metric displays,
+        alert status indicators, and registers all widgets with state manager
+        for coordinated updates and visibility management.
+        """
         self._create_header_info()
         self._create_weather_metrics()
         self._create_alert_status()
         self._register_with_state()
     
     def _create_header_info(self) -> None:
-        """Creates city and date display labels."""
+        """Create city and date display headers.
+        
+        Creates labeled display widgets for city name and date/time information
+        positioned at the top of the metrics display area.
+        """
         # City label
         ttk.Label(self.parent, text="City:", style="LabelName.TLabel").grid(row=0, column=0, sticky=tk.W, pady=5)
         self.city_label = ttk.Label(self.parent, text="--", width=15, style="LabelValue.TLabel")
@@ -47,7 +88,12 @@ class MetricDisplayWidgets:
         self.date_label.grid(row=1, column=1, sticky=tk.W, pady=5)
     
     def _create_weather_metrics(self) -> None:
-        """Creates labels for each weather metric subject to visibility."""
+        """Create weather metric display widgets with visibility controls.
+        
+        Creates label/value widget pairs for each weather metric defined in
+        configuration. Widgets are initially positioned but their visibility
+        is managed dynamically by the state manager based on user preferences.
+        """
         for i, metric_key in enumerate(config.KEY_TO_DISPLAY):
             row = 0 + i
             
@@ -66,7 +112,12 @@ class MetricDisplayWidgets:
             }
     
     def _create_alert_status(self) -> None:
-        """Creates alert status indicator widget with text label."""
+        """Create alert status indicator and notification widgets.
+        
+        Creates an alert status frame containing both a clickable alert icon
+        widget and a text label for alert notifications. The alert widget
+        provides visual indication of weather alerts and allows user interaction.
+        """
         # Create a frame to hold both alert widget and text
         alert_frame = ttk.Frame(self.parent)
         alert_frame.grid(row=2, column=0, columnspan=2, padx=5, sticky=tk.W)
@@ -103,7 +154,7 @@ class MetricDisplayWidgets:
                 self.alert_text_label.configure(text="", foreground="gray")
     
     def _register_with_state(self) -> None:
-        """Registers widget references with the state manager."""
+        """Register widget references with the state manager."""
         self.state.metric_labels = self.metric_labels
         self.state.city_label = self.city_label
         self.state.date_label = self.date_label

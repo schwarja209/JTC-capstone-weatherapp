@@ -1,8 +1,13 @@
-'''
-This module provides a standardized logging interface for the Weather Dashboard application,
-including both plain text and structured JSON logging.
-It handles different log levels (INFO, WARN, ERROR) and timestamps each entry.
-Logs are written to both a plain text file and a JSON Lines file for easy parsing.'''
+"""
+Standardized logging interface for the Weather Dashboard application.
+
+This module provides a centralized logging system with both plain text and
+structured JSON logging capabilities. Handles different log levels, timestamps,
+and writes to multiple output formats for easy parsing and analysis.
+
+Classes:
+    Logger: Static logging utility with multiple output formats and severity levels
+"""
 
 import os
 import json
@@ -11,27 +16,49 @@ from datetime import datetime
 from WeatherDashboard import config
 
 class Logger:
-    '''Standardized logging interface for the Weather Dashboard application.'''
+    """Standardized logging interface for the Weather Dashboard application.
+    
+    Provides static methods for logging at different severity levels with
+    automatic timestamping and dual-format output (plain text and JSON Lines).
+    Handles file creation, directory setup, and error recovery gracefully.
+    
+    Attributes:
+        LOG_FOLDER: Directory path for log file storage
+        PLAIN_LOG: Path to plain text log file
+        JSON_LOG: Path to JSON Lines log file
+    """
     LOG_FOLDER = config.OUTPUT.get("log_dir", "data")  # default fallback
     PLAIN_LOG = os.path.join(LOG_FOLDER, "weather.log")
     JSON_LOG = os.path.join(LOG_FOLDER, "weather.jsonl")
 
     @staticmethod
     def _timestamp() -> str:
-        '''Returns current timestamp in YYYY-MM-DD HH:MM:SS format.'''
-        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        """Return current timestamp in YYYY-MM-DD HH:MM:SS format."""
+        return datetime.now().strftime("%Y-%m-%d %H:%M:SS")
 
     @staticmethod
-    def info(msg: str) -> None: Logger._log("INFO", msg)
+    def info(msg: str) -> None: 
+        """Log an informational message."""
+        Logger._log("INFO", msg)
+    
     @staticmethod
-    def warn(msg: str) -> None: Logger._log("WARN", msg)
+    def warn(msg: str) -> None: 
+        """Log a warning message."""
+        Logger._log("WARN", msg)
+    
     @staticmethod
-    def error(msg: str) -> None: Logger._log("ERROR", msg)
-
+    def error(msg: str) -> None: 
+        """Log an error message."""
+        Logger._log("ERROR", msg)
 
     @staticmethod
     def _log(level: str, msg: str) -> None:
-        '''Logs a message with the specified level, timestamp, and writes to files.'''
+        """Log a message with the specified level, timestamp, and write to files.
+        
+        Args:
+            level: Log level (INFO, WARN, ERROR)
+            msg: Message to log
+        """
         ts = Logger._timestamp()
         formatted = f"[{level}] {ts} {msg}"
         try:
@@ -42,7 +69,15 @@ class Logger:
 
     @staticmethod
     def _write_to_files(level: str, ts: str, msg: str) -> None:
-        '''Writes log entry to both plain text and JSON files.'''
+        """Write log entry to both plain text and JSON files.
+        
+        Creates log directory if needed and handles file writing errors gracefully.
+        
+        Args:
+            level: Log level string
+            ts: Timestamp string
+            msg: Message to write
+        """
         # Ensure log directory exists before writing
         try:
             os.makedirs(Logger.LOG_FOLDER, exist_ok=True)

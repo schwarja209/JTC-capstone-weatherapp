@@ -1,8 +1,15 @@
 """
 WeatherDashboard Error Handler Module
+
 Handles errors related to weather data operations, including API errors,
-input validation, and unexpected exceptions.
-Provides user-friendly messages and logging for different error types.
+input validation, and unexpected exceptions. Provides user-friendly 
+messages and logging for different error types.
+
+Features theme-aware error messaging to support optimistic, pessimistic,
+and neutral user experience modes.
+
+Classes:
+    WeatherErrorHandler: Main error handling class with theme support
 """
 
 from typing import Optional
@@ -16,16 +23,84 @@ from WeatherDashboard.services.api_exceptions import (
 )
 
 class WeatherErrorHandler:
-    '''Handles error presentation and user messaging for weather data operations.'''
+    """Handles error presentation and user messaging for weather data operations.
     
-    @staticmethod
-    def handle_weather_error(error_exception: Optional[Exception], city_name: str) -> bool:
-        '''Handles weather-related errors and shows appropriate user messages.
+    Provides theme-aware error messaging and user notification handling for
+    weather-related operations. Supports optimistic, pessimistic, and neutral
+    themes with appropriate message formatting and UI interaction patterns.
+    
+    Attributes:
+        current_theme: Current theme mode for message formatting
+        _message_templates: Dictionary of theme-specific message templates
+    """
+    def __init__(self, theme: str = 'neutral'):
+        """Initialize the error handler with specified theme.
         
+        Sets up theme-aware message templates for different error types
+        and user experience modes.
+        
+        Args:
+            theme: Initial theme mode ('neutral', 'optimistic', 'pessimistic')
+        """
+        self.current_theme = theme
+        self._message_templates = {
+            'city_not_found': {
+                'neutral': "City '{}' not found",
+                'optimistic': "Let's try a different city! '{}' isn't available right now",
+                'pessimistic': "'{}' does not exist in our records"
+            },
+            'rate_limit': {
+                'neutral': "API rate limit exceeded. Using simulated data for '{}'",
+                'optimistic': "Taking a quick break! Showing sample data for '{}' instead", 
+                'pessimistic': "Request quota exhausted. Degraded service active for '{}'"
+            },
+            'network_error': {
+                'neutral': "Network problem detected. Using simulated data for '{}'",
+                'optimistic': "Connection hiccup! No worries, showing backup data for '{}'",
+                'pessimistic': "Network failure. System compromised. Fallback data for '{}'"
+            }
+        }
+    
+    def set_theme(self, theme: str) -> None:
+        """Set the current theme for message formatting.
+        
+        Args:
+            theme: Theme to set ('neutral', 'optimistic', 'pessimistic')
+        """
+        if theme in ['neutral', 'optimistic', 'pessimistic']:
+            self.current_theme = theme
+        else:
+            Logger.warn(f"Unknown theme: {theme}, keeping current theme")
+    
+    def _format_message(self, template_key: str, *args) -> str:
+        """Format error message based on current theme and template.
+        
+        Retrieves the appropriate message template for the current theme and
+        formats it with provided arguments. Falls back to neutral theme if
+        current theme template is not available.
+        
+        Args:
+            template_key: Key identifying the message template to use
+            *args: Arguments to format into the message template
+            
+        Returns:
+            str: Formatted message appropriate for current theme
+        """
+        template = self._message_templates.get(template_key, {})
+        message_template = template.get(self.current_theme, template.get('neutral', '{}'))
+        return message_template.format(*args)
+
+    def handle_weather_error(self, error_exception: Optional[Exception], city_name: str) -> bool:
+        """Handles weather-related errors and shows appropriate user messages.
+        
+        Args:
+            error_exception: The exception that occurred, or None if no error
+            city_name: Name of the city being processed
+            
         Returns:
             bool: True if the error was handled and operation should continue,
                   False if the operation should be aborted.
-        '''
+        """
         if not error_exception:
             return True
             
@@ -35,15 +110,18 @@ class WeatherErrorHandler:
             return False
         elif isinstance(error_exception, CityNotFoundError):
             # City not found - show error but continue with fallback
-            messagebox.showerror("City Not Found", str(error_exception))
+            message = self._format_message('city_not_found', city_name)
+            messagebox.showerror("City Not Found", message)
             return True
         elif isinstance(error_exception, RateLimitError):
             # Rate limit - show specific message
-            messagebox.showerror("Rate Limit", f"API rate limit exceeded. Using simulated data for '{city_name}'.")
+            message = self._format_message('rate_limit', city_name)
+            messagebox.showerror("Rate Limit", message)
             return True
         elif isinstance(error_exception, NetworkError):
             # Network issues - show network-specific message
-            messagebox.showwarning("Network Issue", f"Network problem detected. Using simulated data for '{city_name}'.")
+            message = self._format_message('network_error', city_name)
+            messagebox.showwarning("Network Issue", message)
             return True
         else:
             # Other API errors - show general fallback notice
@@ -51,19 +129,28 @@ class WeatherErrorHandler:
             messagebox.showinfo("Notice", f"No live data available for '{city_name}'. Simulated data is shown.")
             return True
 
-    @staticmethod
-    def handle_input_validation_error(error: Exception) -> None:
-        '''Handles input validation errors.'''
+    def handle_input_validation_error(self, error: Exception) -> None:
+        """Handles input validation errors.
+        
+        Args:
+            error: The validation error that occurred
+        """
         Logger.error(f"Input validation error: {error}")
         messagebox.showerror("Input Error", str(error))
 
-    @staticmethod
-    def handle_unexpected_error(error: Exception) -> None:
-        '''Handles unexpected errors.'''
+    def handle_unexpected_error(self, error: Exception) -> None:
+        """Handles unexpected errors.
+        
+        Args:
+            error: The unexpected error that occurred
+        """
         Logger.error(f"Unexpected error: {error}")
         messagebox.showerror("Error", f"Unexpected error: {error}")
     
-    @staticmethod
-    def handle_rate_limit_error(wait_time: float) -> None:
-        """Handles rate limit errors with appropriate user messaging."""
+    def handle_rate_limit_error(self, wait_time: float) -> None:
+        """Handle rate limit errors with appropriate user messaging.
+        
+        Args:
+            wait_time: Number of seconds to wait before retrying
+        """
         messagebox.showinfo("Rate Limit", f"Please wait {wait_time:.0f} more seconds before making another request.")

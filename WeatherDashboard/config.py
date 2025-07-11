@@ -1,5 +1,25 @@
 """
-Default/static data configuration for the Weather Dashboard application.
+Configuration settings for the Weather Dashboard application.
+
+This module centralizes all configuration constants, default values, API settings,
+UI display mappings, unit definitions, alert thresholds, and application-wide
+constants. Provides a single source of truth for all configurable aspects of
+the Weather Dashboard with validation and derived value generation.
+
+Configuration Categories:
+    API: OpenWeatherMap API configuration
+    METRICS: Unified metric definitions with visibility settings
+    CHART: Chart display and data range settings
+    UNITS: Unit system definitions and conversions
+    ALERT_THRESHOLDS: Weather alert threshold configuration
+    DEFAULTS: Default values for UI components and application settings
+    OUTPUT: File paths and logging configuration
+    
+Functions:
+    get_key_to_display_mapping: Generate display labels from metrics
+    get_display_to_key_mapping: Generate key lookup from display labels
+    get_default_visibility: Generate default visibility settings
+    validate_config: Comprehensive configuration validation
 """
 
 import os
@@ -67,7 +87,11 @@ ALERT_THRESHOLDS = {
 # 3. DERIVED VALUES (backward compatibility)
 # ================================
 def get_key_to_display_mapping():
-    """Derives display labels from metrics configuration."""
+    """Generate display labels from metrics configuration.
+    
+    Returns:
+        Dict[str, str]: Mapping from metric keys to display labels
+    """
     try:
         return {k: v['label'] for k, v in METRICS.items()}
     except (KeyError, TypeError, AttributeError) as e:
@@ -75,7 +99,11 @@ def get_key_to_display_mapping():
         return {}  # Return empty dict as fallback
 
 def get_display_to_key_mapping():
-    """Derives key lookup from display labels."""
+    """Generate key lookup from display labels.
+    
+    Returns:
+        Dict[str, str]: Mapping from display labels to metric keys
+    """
     try:
         return {v['label']: k for k, v in METRICS.items()}
     except (KeyError, TypeError, AttributeError) as e:
@@ -83,7 +111,11 @@ def get_display_to_key_mapping():
         return {}  # Return empty dict as fallback
 
 def get_default_visibility():
-    """Derives default visibility settings from metrics."""
+    """Generate default visibility settings from metrics configuration.
+    
+    Returns:
+        Dict[str, bool]: Mapping from metric keys to default visibility states
+    """
     try:
         return {k: v['visible'] for k, v in METRICS.items()}
     except (KeyError, TypeError, AttributeError) as e:
@@ -125,7 +157,14 @@ OUTPUT = {
 # 6. CONFIGURATION VALIDATION
 # ================================
 def validate_config() -> None:
-    """Validates that all required configuration keys exist and have expected structure."""
+    """Validate that all required configuration keys exist and have expected structure.
+    
+    Performs comprehensive validation of all configuration sections including
+    METRICS, DEFAULTS, UNITS, CHART, OUTPUT, and ALERT_THRESHOLDS structures.
+    
+    Raises:
+        ValueError: If any configuration is invalid or missing required keys
+    """
     # Check METRICS structure
     for metric_key, metric_data in METRICS.items():
         if not isinstance(metric_data, dict):

@@ -1,20 +1,38 @@
-'''
-Utility package for shared helper functions and reusable modules.
-This module provides a UnitConverter class for converting between different weather units
-and formatting values for display in the Weather Dashboard application.
-It includes methods for temperature, pressure, and wind speed conversions,
-as well as unit label retrieval and value formatting based on the selected unit system.
-'''
+"""
+Unit conversion utilities for weather data.
+
+This module provides comprehensive unit conversion functions for weather
+metrics including temperature, pressure, wind speed, and formatting utilities.
+Supports conversion between metric and imperial units with proper error handling
+and config-driven unit mappings.
+
+Classes:
+    UnitConverter: Static utility class for weather unit conversions and formatting
+"""
 
 from typing import Tuple, Any
 from WeatherDashboard import config
 
 class UnitConverter:
-    '''Utility class for converting between explicit weather units using config-driven mappings.'''
-
+    """Utility class for converting between explicit weather units using config-driven mappings.
+        
+        Provides static methods for converting temperature, pressure, wind speed, and
+        other weather metrics between different unit systems. Uses configuration-driven
+        unit mappings for flexibility and includes formatting utilities for display.
+        """
     @staticmethod
     def _get_unit_symbols(metric: str) -> Tuple[str, str]:
-        '''Gets the metric and imperial unit symbols from config for a given metric.'''
+        """Get the metric and imperial unit symbols from config for a given metric.
+        
+        Args:
+            metric: Metric name to look up unit symbols for
+            
+        Returns:
+            Tuple[str, str]: Metric unit symbol, imperial unit symbol
+            
+        Raises:
+            WeatherDashboardError: If unit configuration not found for metric
+        """
         try:
             units = config.UNITS["metric_units"][metric]
             return units["metric"], units["imperial"]
@@ -24,7 +42,19 @@ class UnitConverter:
 
     @staticmethod
     def convert_temperature(value: float, from_unit: str, to_unit: str) -> float:
-        '''Converts temperature between Celsius and Fahrenheit using config units.'''
+        """Convert temperature between Celsius and Fahrenheit using config units.
+        
+        Args:
+            value: Temperature value to convert
+            from_unit: Source unit (°C or °F)
+            to_unit: Target unit (°C or °F)
+            
+        Returns:
+            float: Converted temperature value
+            
+        Raises:
+            ValueError: If conversion between specified units is not supported
+        """
         metric_unit, imperial_unit = UnitConverter._get_unit_symbols("temperature")
         
         if from_unit == to_unit:
@@ -37,7 +67,19 @@ class UnitConverter:
 
     @staticmethod
     def convert_pressure(value: float, from_unit: str, to_unit: str) -> float:
-        '''Converts pressure between hPa and inHg using config units.'''
+        """Convert pressure between hPa and inHg using config units.
+        
+        Args:
+            value: Pressure value to convert
+            from_unit: Source unit (hPa or inHg)
+            to_unit: Target unit (hPa or inHg)
+            
+        Returns:
+            float: Converted pressure value
+            
+        Raises:
+            ValueError: If conversion between specified units is not supported
+        """
         metric_unit, imperial_unit = UnitConverter._get_unit_symbols("pressure")
         
         if from_unit == to_unit:
@@ -50,7 +92,19 @@ class UnitConverter:
 
     @staticmethod
     def convert_wind_speed(value: float, from_unit: str, to_unit: str) -> float:
-        '''Converts wind speed between m/s and mph using config units.'''
+        """Convert wind speed between m/s and mph using config units.
+        
+        Args:
+            value: Wind speed value to convert
+            from_unit: Source unit (m/s or mph)
+            to_unit: Target unit (m/s or mph)
+            
+        Returns:
+            float: Converted wind speed value
+            
+        Raises:
+            ValueError: If conversion between specified units is not supported
+        """
         metric_unit, imperial_unit = UnitConverter._get_unit_symbols("wind_speed")
         
         if from_unit == to_unit:
@@ -63,7 +117,7 @@ class UnitConverter:
     
     @staticmethod
     def get_unit_label(metric: str, unit_system: str) -> str:
-        '''Returns the unit label for a given metric based on the unit system (imperial or metric).'''
+        """Return the unit label for a given metric based on the unit system."""
         try:
             return config.UNITS["metric_units"][metric][unit_system]
         except KeyError:
@@ -74,7 +128,19 @@ class UnitConverter:
 
     @staticmethod
     def format_value(metric: str, val: Any, unit_system: str) -> str:
-        '''Formats the metric value for display based on the unit system and metric type.'''
+        """Format the metric value for display based on the unit system and metric type.
+        
+        Formats weather values with appropriate precision and units for display.
+        Handles None values gracefully and applies metric-specific formatting rules.
+        
+        Args:
+            metric: Metric name for formatting rules
+            val: Value to format (can be None)
+            unit_system: Unit system for unit labels ('metric' or 'imperial')
+            
+        Returns:
+            str: Formatted value string with units, or '--' if value is None
+        """
         if val is None:
             return "--"
         

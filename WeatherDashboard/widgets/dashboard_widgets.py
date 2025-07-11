@@ -1,5 +1,13 @@
 """
-Main widget coordinator for the weather dashboard.
+Main widget coordinator for the Weather Dashboard application.
+
+This module provides the primary widget coordination class that manages
+all UI components including control widgets, metric displays, charts,
+and tabbed interfaces. Orchestrates widget initialization, updates,
+and event handling throughout the application.
+
+Classes:
+    WeatherDashboardWidgets: Main widget coordinator and manager
 """
 
 from typing import Dict, Any, Callable, List, Optional
@@ -15,9 +23,35 @@ from WeatherDashboard.widgets.tabbed_widgets import TabbedDisplayWidgets
 from WeatherDashboard.widgets.status_bar_widgets import StatusBarWidgets
 
 class WeatherDashboardWidgets:
-    """Coordinates all widget components for the weather dashboard."""
+    """Manage all widget components and UI updates for the Weather Dashboard.
     
+    Coordinates the initialization and management of all UI components including
+    control widgets, metric displays, chart widgets, and tabbed interfaces.
+    Provides a unified interface for widget updates and event handling.
+    
+    Attributes:
+        frames: Dictionary of UI frame containers
+        state: Application state manager
+        update_callback: Callback function for update button events
+        clear_callback: Callback function for clear/reset button events
+        dropdown_callback: Callback function for dropdown change events
+        control_widgets: Control panel widget manager
+        metric_widgets: Metric display widget manager
+        chart_widgets: Chart display widget manager
+    """
     def __init__(self, frames: Dict[str, ttk.Frame], state: Any, update_cb: Callable, clear_cb: Callable, dropdown_cb: Callable) -> None:
+        """Initialize the widget coordinator with all UI components.
+        
+        Sets up all widget managers and connects them to the application state
+        and callback functions for proper event handling.
+        
+        Args:
+            frames: Dictionary of UI frame containers
+            state: Application state manager
+            update_cb: Callback function for update button events
+            clear_cb: Callback function for clear/reset button events
+            dropdown_cb: Callback function for dropdown change events
+        """
         self.frames = frames
         self.state = state
         
@@ -37,7 +71,16 @@ class WeatherDashboardWidgets:
         self._initialize_all_widgets()
     
     def _initialize_all_widgets(self) -> None:
-        """Initializes all widget components with proper error handling."""
+        """Initialize all widget components with proper error handling.
+        
+        Creates all widget sections in the correct order with comprehensive
+        error handling. If any widget creation fails, displays appropriate
+        error messages and re-raises the exception.
+        
+        Raises:
+            tk.TclError: If GUI widget creation fails
+            Exception: For other unexpected errors during setup
+        """
         try:
             self._create_title_section()
             self._create_control_section()
@@ -54,11 +97,19 @@ class WeatherDashboardWidgets:
             raise
     
     def _create_title_section(self) -> None:
-        """Creates the title widget."""
+        """Create the title widget section.
+        
+        Initializes the title display widget in the title frame for
+        showing the application header and branding.
+        """
         self.title_widget = TitleWidget(self.frames["title"])
     
     def _create_control_section(self) -> None:
-        """Creates the control widgets."""
+        """Create the control widgets section.
+        
+        Initializes the control panel with input fields, buttons, and
+        dropdowns, connecting them to the appropriate callback functions.
+        """
         self.control_widgets = ControlWidgets(
             self.frames["control"], 
             self.state, 
@@ -66,14 +117,22 @@ class WeatherDashboardWidgets:
         )
     
     def _create_tabbed_section(self) -> None:
-        """Creates the tabbed interface for metrics and charts."""
+        """Create the control widgets section.
+        
+        Initializes the control panel with input fields, buttons, and
+        dropdowns, connecting them to the appropriate callback functions.
+        """
         self.tabbed_widgets = TabbedDisplayWidgets(
             self.frames["tabbed"], 
             self.state
         )
 
     def _create_status_bar_section(self) -> None:
-        """Creates the status bar widgets."""
+        """Create the control widgets section.
+        
+        Initializes the control panel with input fields, buttons, and
+        dropdowns, connecting them to the appropriate callback functions.
+        """
         self.status_bar_widgets = StatusBarWidgets(
             self.frames["status_bar"],
             self.state
@@ -81,7 +140,19 @@ class WeatherDashboardWidgets:
     
     # DELEGATION METHODS    
     def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool = False) -> None:
-        """Delegates chart updates to the tabbed chart widget component."""
+        """Update the chart display with new data.
+        
+        Delegates chart rendering to the chart widget manager with proper
+        error handling and fallback indication.
+        
+        Args:
+            x_vals: X-axis values (typically dates)
+            y_vals: Y-axis values (metric data)
+            metric_key: Weather metric being charted
+            city: City name for chart title
+            unit: Unit system for axis labeling
+            fallback: True if using fallback/simulated data
+        """
         if self.chart_widgets:  # Uses the property accessor
             self.chart_widgets.update_chart_display(
                 x_vals, y_vals, metric_key, city, unit_system, fallback
@@ -90,14 +161,22 @@ class WeatherDashboardWidgets:
     # For backward compatibility
     @property
     def metric_widgets(self):
-        """Access to metric widgets through tabbed interface."""
+        """Create the control widgets section.
+        
+        Initializes the control panel with input fields, buttons, and
+        dropdowns, connecting them to the appropriate callback functions.
+        """
         if self.tabbed_widgets:
             return self.tabbed_widgets.get_metric_widgets()
         return None
 
     @property
     def chart_widgets(self):
-        """Access to chart widgets through tabbed interface."""
+        """Access to chart widgets through tabbed interface.
+        
+        Returns:
+            Chart widget manager from the tabbed interface, or None if not available
+        """
         if self.tabbed_widgets:
             return self.tabbed_widgets.get_chart_widgets()
         return None

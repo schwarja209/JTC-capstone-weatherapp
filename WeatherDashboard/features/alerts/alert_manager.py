@@ -1,5 +1,13 @@
 """
-Complete alert detection and management system.
+Weather alert management system.
+
+This module provides comprehensive weather alert processing including
+threshold monitoring, alert generation, severity assessment, and alert
+status management. Supports configurable alert conditions and real-time
+weather monitoring for user notifications.
+
+Classes:
+    AlertManager: Main alert processing and management system
 """
 
 from typing import List, Dict, Any
@@ -10,10 +18,33 @@ from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
 
 class WeatherAlert:
-    """Individual weather alert data structure."""
+    """Individual weather alert data structure.
     
-    def __init__(self, alert_type: str, severity: str, title: str, 
-                 message: str, icon: str, value: float, threshold: float):
+    Represents a single weather alert with all relevant information including
+    severity, messaging, thresholds, and timing data.
+    
+    Attributes:
+        alert_type: Type/category of the alert
+        severity: Alert severity level ('warning', 'caution', 'watch')
+        title: Short descriptive title for the alert
+        message: Detailed alert message for display
+        icon: Emoji icon representing the alert type
+        value: Current weather value that triggered the alert
+        threshold: Threshold value that was exceeded
+        timestamp: When the alert was generated
+    """
+    def __init__(self, alert_type: str, severity: str, title: str, message: str, icon: str, value: float, threshold: float):
+        """Initialize a weather alert.
+        
+        Args:
+            alert_type: Type/category of the alert
+            severity: Alert severity level ('warning', 'caution', 'watch')
+            title: Short descriptive title for the alert
+            message: Detailed alert message for display
+            icon: Emoji icon representing the alert type
+            value: Current weather value that triggered the alert
+            threshold: Threshold value that was exceeded
+        """
         self.alert_type = alert_type
         self.severity = severity  # 'warning', 'caution', 'watch'
         self.title = title
@@ -24,12 +55,30 @@ class WeatherAlert:
         self.timestamp = datetime.now()
     
     def __repr__(self) -> str:
+        """String representation for debugging.
+        
+        Returns:
+            str: Formatted string showing alert severity and title
+        """
         return f"WeatherAlert({self.severity}: {self.title})"
 
 class AlertManager:
-    """Complete alert detection system."""
+    """Manage weather alerts and threshold monitoring.
     
+    Processes weather data against configurable thresholds to generate
+    appropriate alerts for users. Handles alert severity assessment,
+    storage of active alerts, and provides status information for UI display.
+    
+    Attributes:
+        state: Application state manager for alert status updates
+        active_alerts: List of currently active weather alerts
+    """
     def __init__(self, state_manager):
+        """Initialize the alert manager.
+        
+        Args:
+            state: Application state manager for alert status updates
+        """
         self.state = state_manager
         self.active_alerts: List[WeatherAlert] = []
         self.alert_history: List[WeatherAlert] = []
@@ -38,8 +87,16 @@ class AlertManager:
         self.thresholds = config.DEFAULTS["alert_thresholds"]
         
     def check_weather_alerts(self, weather_data: Dict[str, Any]) -> List[WeatherAlert]:
-        """
-        Check weather data for alert conditions on visible metrics only.
+        """Check weather data against alert thresholds and return any alerts.
+        
+        Evaluates current weather conditions against configured alert thresholds
+        and generates appropriate alerts with severity levels and descriptions.
+        
+        Args:
+            weather_data: Current weather data to evaluate
+            
+        Returns:
+            List[Dict[str, Any]]: List of generated alerts with severity and descriptions
         """
         new_alerts = []
         
@@ -82,7 +139,15 @@ class AlertManager:
         return new_alerts
 
     def _get_converted_threshold(self, threshold_key: str, unit_system: str) -> float:
-        """Get threshold converted to current unit system."""
+        """Get threshold converted to current unit system.
+        
+        Args:
+            threshold_key: Configuration key for the threshold
+            unit_system: Target unit system ('metric' or 'imperial')
+            
+        Returns:
+            float: Threshold value converted to the specified unit system
+        """
         threshold_value = self.thresholds[threshold_key]
         
         # Config thresholds are always in metric, convert if needed
@@ -100,7 +165,11 @@ class AlertManager:
             return threshold_value  # humidity doesn't need conversion
 
     def _get_visible_metrics(self) -> List[str]:
-        """Get list of currently visible metrics."""
+        """Get list of currently visible metrics.
+        
+        Returns:
+            List[str]: List of metric keys that are currently visible in the UI
+        """
         visible = []
         if hasattr(self.state, 'visibility'):
             for metric_key, var in self.state.visibility.items():
@@ -109,7 +178,14 @@ class AlertManager:
         return visible
     
     def _check_temperature_alerts(self, temperature: float) -> List[WeatherAlert]:
-        """Check for temperature-based alerts."""
+        """Check for temperature-based alerts.
+        
+        Args:
+            temperature: Current temperature value to evaluate
+            
+        Returns:
+            List[WeatherAlert]: List of temperature-related alerts generated
+        """
         alerts = []
 
         # Get current unit system from state
@@ -148,7 +224,14 @@ class AlertManager:
         return alerts
     
     def _check_wind_alerts(self, wind_speed: float) -> List[WeatherAlert]:
-        """Check for wind-based alerts."""
+        """Check for wind-based alerts.
+        
+        Args:
+            wind_speed: Current wind speed value to evaluate
+            
+        Returns:
+            List[WeatherAlert]: List of wind-related alerts generated
+        """
         alerts = []
         
         # Get current unit system from state
@@ -180,7 +263,14 @@ class AlertManager:
         return alerts
     
     def _check_pressure_alerts(self, pressure: float) -> List[WeatherAlert]:
-        """Check for pressure-based alerts (storm systems)."""
+        """Check for pressure-based alerts indicating storm systems.
+        
+        Args:
+            pressure: Current atmospheric pressure value to evaluate
+            
+        Returns:
+            List[WeatherAlert]: List of pressure-related alerts generated
+        """
         alerts = []
         
         # Get current unit system from state
@@ -206,7 +296,14 @@ class AlertManager:
         return alerts
     
     def _check_humidity_alerts(self, humidity: float) -> List[WeatherAlert]:
-        """Check for humidity-based alerts."""
+        """Check for humidity-based alerts.
+        
+        Args:
+            humidity: Current humidity percentage to evaluate
+            
+        Returns:
+            List[WeatherAlert]: List of humidity-related alerts generated
+        """
         alerts = []
         
         high_threshold = self.thresholds['humidity_high']

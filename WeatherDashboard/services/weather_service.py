@@ -1,6 +1,19 @@
 """
 Weather service layer for the Weather Dashboard application.
-Handles API communication, data parsing, validation, and fallback logic.
+
+This module provides comprehensive weather API integration including HTTP
+communication, data parsing, validation, error handling, and fallback logic.
+Implements retry mechanisms, rate limiting, and robust error recovery.
+
+Functions:
+    fetch_with_retry: HTTP request function with retry and exponential backoff
+    validate_api_response: API response structure validation
+
+Classes:
+    WeatherAPIClient: Raw API communication with OpenWeatherMap
+    WeatherDataParser: Parsing raw API data into structured format
+    WeatherDataValidator: Validation of parsed weather data
+    WeatherAPIService: Main service orchestrating all weather operations
 """
 
 from typing import Dict, Any, Tuple
@@ -22,12 +35,24 @@ from WeatherDashboard.services.fallback_generator import SampleWeatherGenerator
 
 
 def fetch_with_retry(url: str, params: Dict[str, Any], retries: int = 2, delay: int = 1) -> requests.Response:
-    """Attempts to fetch data from the API with retry and exponential backoff.
+    """Attempt to fetch data from the API with retry and exponential backoff.
     
+    Implements robust HTTP request handling with automatic retries for
+    transient failures and exponential backoff to avoid overwhelming servers.
+    
+    Args:
+        url: API endpoint URL to request
+        params: Query parameters for the request
+        retries: Maximum number of retry attempts (default 2)
+        delay: Initial delay between retries in seconds (default 1)
+        
+    Returns:
+        requests.Response: Successful HTTP response object
+        
     Raises:
-        RateLimitError: When rate limit is exceeded
-        CityNotFoundError: When city is not found (404)
-        NetworkError: For other network/connection issues
+        RateLimitError: When rate limit is exceeded (429 status)
+        CityNotFoundError: When city is not found (404 status)
+        NetworkError: For network/connection issues and timeouts
         WeatherAPIError: For other API-related errors
     """
     for attempt in range(retries + 1):
@@ -73,8 +98,14 @@ def fetch_with_retry(url: str, params: Dict[str, Any], retries: int = 2, delay: 
 
 
 def validate_api_response(data: Dict[str, Any]) -> None:
-    """Validates structure and key presence in API response.
+    """Validate structure and key presence in API response.
     
+    Checks that the API response contains all required keys and has the
+    expected structure for weather data processing.
+    
+    Args:
+        data: API response data dictionary to validate
+        
     Raises:
         ValidationError: When required keys are missing or data is malformed
     """
@@ -91,14 +122,43 @@ def validate_api_response(data: Dict[str, Any]) -> None:
 
 
 class WeatherAPIClient:
-    """Handles raw API communication with OpenWeatherMap."""
+    """Handle raw API communication with OpenWeatherMap.
     
+    Manages HTTP requests to the OpenWeatherMap API with proper authentication,
+    error handling, and response validation. Provides a clean interface for
+    raw weather data retrieval.
+    
+    Attributes:
+        api_url: Base URL for OpenWeatherMap API
+        api_key: API authentication key
+    """
     def __init__(self, api_url: str, api_key: str) -> None:
+        """Initialize the weather API client.
+        
+        Args:
+            api_url: Base URL for the OpenWeatherMap API
+            api_key: API authentication key
+        """
         self.api_url = api_url
         self.api_key = api_key
     
     def fetch_raw_data(self, city: str) -> Dict[str, Any]:
-        """Fetches raw JSON data from the weather API."""
+        """Fetch raw JSON data from the weather API.
+        
+        Makes HTTP request to OpenWeatherMap API for current weather data,
+        validates the response, and returns parsed JSON data.
+        
+        Args:
+            city: City name to fetch weather data for
+            
+        Returns:
+            Dict[str, Any]: Raw weather data from API
+            
+        Raises:
+            ValidationError: If city name is invalid or API key is missing
+            CityNotFoundError: If city is not found in API
+            Various API errors: Based on HTTP response status
+        """
         self._validate_request(city)
         
         params = {"q": city, "appid": self.api_key, "units": "metric"}  # hardcoded always in metric, for consistency
@@ -122,7 +182,14 @@ class WeatherAPIClient:
         return data
     
     def _validate_request(self, city: str) -> None:
-        """Validates the city input for non-empty and API key presence."""
+        """Validate the city input and API key presence.
+        
+        Args:
+            city: City name to validate
+            
+        Raises:
+            ValidationError: If city name is empty or API key is missing
+        """
         if not city.strip():
             raise ValidationError("City name cannot be empty")
         if not self.api_key:
@@ -130,11 +197,25 @@ class WeatherAPIClient:
 
 
 class WeatherDataParser:
-    """Handles parsing raw API data into structured weather data."""
+    """Handle parsing raw API data into structured weather data.
     
+    Converts raw OpenWeatherMap API responses into a standardized internal
+    format for use throughout the application. Handles data extraction,
+    unit conversion, and formatting.
+    """
     @staticmethod
     def parse_weather_data(data: Dict[str, Any]) -> Dict[str, Any]:
-        """Parses the raw weather data from the API response into a structured format."""
+        """Parse the raw weather data from the API response into a structured format.
+        
+        Extracts relevant weather information from OpenWeatherMap API response
+        and converts it into the application's internal data structure.
+        
+        Args:
+            data: Raw API response data dictionary
+            
+        Returns:
+            Dict[str, Any]: Structured weather data with standardized keys
+        """
         # TODO:
         # rain = data.get("rain", {})
         # snow = data.get("snow", {})
@@ -152,12 +233,25 @@ class WeatherDataParser:
 
 
 class WeatherDataValidator:
-    """Handles validation of parsed weather data."""
+    """Handle validation of parsed weather data.
     
+    Performs sanity checks on weather data to ensure values are within
+    reasonable ranges and data types are correct. Helps identify corrupted
+    or invalid data from API responses.
+    """
     @staticmethod
     def validate_weather_data(d: Dict[str, Any]) -> None:
-        """Performs basic sanity checks on the parsed weather data."""
+        """Perform basic sanity checks on the parsed weather data.
         
+        Validates that weather values are within expected ranges and have
+        correct data types. Helps catch corrupted or invalid API data.
+        
+        Args:
+            d: Parsed weather data dictionary to validate
+            
+        Raises:
+            ValueError: If any weather values are outside expected ranges
+        """
         numeric_fields = ['temperature', 'humidity', 'wind_speed', 'pressure']
         for field in numeric_fields:
             if not isinstance(d.get(field), (int, float)):
@@ -178,9 +272,26 @@ class WeatherDataValidator:
 
 
 class WeatherAPIService:
-    """Handles fetching current weather data from OpenWeatherMap API with fallback to simulated data."""
+    """Handle fetching current weather data from OpenWeatherMap API with fallback to simulated data.
     
+    Main service class that orchestrates weather data retrieval, parsing, validation,
+    and fallback handling. Provides a high-level interface for weather data access
+    with comprehensive error handling and automatic fallback to simulated data.
+    
+    Attributes:
+        api: OpenWeatherMap API base URL
+        key: API authentication key
+        fallback: Fallback data generator for simulated weather data
+        _api_client: Internal API client for HTTP communication
+        _data_parser: Internal data parser for response processing
+        _data_validator: Internal data validator for sanity checks
+    """
     def __init__(self) -> None:
+        """Initialize the weather API service.
+        
+        Sets up API configuration, fallback data generator, and internal
+        components for API communication, data parsing, and validation.
+        """
         self.api = config.API_BASE_URL
         self.key = config.API_KEY
         self.fallback = SampleWeatherGenerator()
@@ -191,7 +302,21 @@ class WeatherAPIService:
         self._data_validator = WeatherDataValidator()
 
     def fetch_current(self, city: str) -> Tuple[Dict[str, Any], bool, str]:
-        """Fetches current weather data for a given city using OpenWeatherMap API."""
+        """Fetch current weather data for a given city using OpenWeatherMap API.
+        
+        Attempts to retrieve live weather data from the API. If the API call fails
+        for any reason, automatically falls back to simulated weather data to
+        ensure the application continues to function.
+        
+        Args:
+            city: City name to fetch weather data for
+            
+        Returns:
+            Tuple containing:
+                - Dict[str, Any]: Weather data (live or simulated)
+                - bool: True if fallback data was used, False for live data
+                - Exception: Exception object if API failed, None for success
+        """
         try:
             data = self._get_api_data(city)
             parsed = self._parse_weather_data(data)
@@ -223,19 +348,52 @@ class WeatherAPIService:
             return data, used, msg
 
     def _get_api_data(self, city):
-        """Fetches raw weather data from OpenWeatherMap API for the specified city."""
+        """Fetch raw weather data from OpenWeatherMap API for the specified city.
+        
+        Args:
+            city: City name to fetch data for
+            
+        Returns:
+            Dict[str, Any]: Raw API response data
+        """
         return self._api_client.fetch_raw_data(city)
 
     def _parse_weather_data(self, data):
-        """Parses the raw weather data from the API response into a structured format."""
+        """Parse the raw weather data from the API response into a structured format.
+        
+        Args:
+            data: Raw API response data
+            
+        Returns:
+            Dict[str, Any]: Parsed and structured weather data
+        """
         return self._data_parser.parse_weather_data(data)
 
     def _validate_weather_data(self, d):
-        """Performs basic sanity checks on the parsed weather data."""
+        """Perform basic sanity checks on the parsed weather data.
+        
+        Args:
+            d: Parsed weather data to validate
+            
+        Raises:
+            ValueError: If weather data fails validation checks
+        """
         self._data_validator.validate_weather_data(d)
     
     def _generate_fallback_response(self, city, msg, exc):
-        """Uses simulated data generator when API call fails."""
+        """Use simulated data generator when API call fails.
+        
+        Generates fallback weather data when the API is unavailable, ensuring
+        the application continues to function with simulated data.
+        
+        Args:
+            city: City name for fallback data generation
+            msg: Error message describing the failure
+            exc: Exception that caused the API failure
+            
+        Returns:
+            Tuple containing fallback weather data, fallback flag, and exception
+        """
         Logger.error(f"API failure for {city} - {msg}: {exc}. Switching to simulated data.")
 
         fallback_data = self.fallback.generate(city)

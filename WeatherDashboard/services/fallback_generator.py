@@ -1,12 +1,36 @@
+"""
+Simulated weather data generation for fallback scenarios.
+
+This module provides weather data simulation when live API data is unavailable.
+Generates realistic weather patterns with randomized values within appropriate
+ranges for different climate types and seasonal variations.
+
+Classes:
+    SampleWeatherGenerator: Main fallback weather data generator
+"""
+
 from typing import List, Dict, Any
 import random
 from datetime import datetime, timedelta
 
 class SampleWeatherGenerator:
-    """Generates simulated metric weather data."""
+    """Generates simulated weather data for fallback scenarios.
     
+    Creates realistic weather data when live API data is unavailable, using
+    randomized values within appropriate ranges for different climate types.
+    Provides consistent metric units and realistic weather patterns.
+    
+    Attributes:
+        source_unit: Base unit system for generated data (always metric)
+        temp_ranges: Temperature ranges for different climate types
+        random: Random number generator for data variation
+    """    
     def __init__(self) -> None:
-        """Initializes the generator with default units."""
+        """Initialize the weather data generator.
+        
+        Sets up temperature ranges for different climate types, initializes
+        random number generator, and configures base unit system for data generation.
+        """
         self.source_unit = "metric"
         self.temp_ranges = {
             'default': (5, 30),      # Default range - Celsius

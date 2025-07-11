@@ -1,12 +1,24 @@
 """
 Style configuration for GUI elements.
+
+This module provides centralized styling configuration for all tkinter
+GUI components in the Weather Dashboard. Defines fonts, colors, padding,
+and visual appearance settings for consistent UI theming.
+
+Functions:
+    configure_styles: Apply comprehensive styling to all GUI components
 """
 
 from tkinter import ttk
 
 
 def configure_styles() -> None:
-    '''Configures the styles for the GUI elements.'''
+    """Configure comprehensive styles for all GUI elements.
+    
+    Applies consistent styling including fonts, colors, padding, and
+    visual effects to labels, buttons, frames, notebooks, and other
+    tkinter components throughout the application.
+    """
     style = ttk.Style()
     style.configure("FrameLabel.TLabelframe.Label", font=('Arial', 15, 'bold'))
     style.configure("LabelName.TLabel", font=('Arial', 10, 'bold'))

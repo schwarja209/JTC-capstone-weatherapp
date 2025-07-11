@@ -1,5 +1,12 @@
 """
 Main controller for coordinating weather data operations.
+
+This module provides the central controller class that coordinates weather data
+fetching, processing, display updates, and error handling. Supports theme-aware
+operations and comprehensive error recovery.
+
+Classes:
+    WeatherDashboardController: Main controller coordinating all weather operations
 """
 
 from typing import Tuple, List, Any
@@ -16,25 +23,62 @@ from WeatherDashboard.features.alerts.alert_manager import AlertManager
 
 
 class WeatherDashboardController:
-    '''Coordinates weather data operations without mixing concerns.
+    """Coordinate weather data operations with clean separation of concerns.
     
-    This class replaces WeatherDashboardLogic with a cleaner separation of responsibilities.
-    '''
+    Central controller that orchestrates weather data fetching, processing,
+    display updates, chart rendering, and error handling. Provides theme-aware
+    error messaging and comprehensive state management.
     
-    def __init__(self, state: Any, data_service: Any, widgets: Any) -> None:
+    Attributes:
+        service: Weather data service for API operations
+        widgets: UI widget manager for display updates
+        state: Application state manager
+        current_theme: Current theme for error messaging
+        error_handler: Error handler with theme support
+        recovery_manager: Error recovery and retry manager
+        rate_limiter: API rate limiting manager
+        alert_manager: Weather alert processing manager
+    """    
+    def __init__(self, state: Any, data_service: Any, widgets: Any, theme: str = 'neutral') -> None:
+        """Initialize the weather dashboard controller.
+        
+        Args:
+            state: Application state manager
+            data_service: Weather data service for API operations
+            widgets: UI widget manager for display updates
+            theme: Initial theme for error messaging ('neutral', 'optimistic', 'pessimistic')
+        """
         self.service = data_service
         self.widgets = widgets
         self.state = state
+        self.current_theme = theme
         
         # Initialize helper classes
         self.rate_limiter = RateLimiter()
-        self.error_handler = WeatherErrorHandler()
+        self.error_handler = WeatherErrorHandler(theme)
 
         # Initialize alert system
         self.alert_manager = AlertManager(state)
     
+    def set_theme(self, theme: str) -> None:
+        """Set theme for error handling and future theme system integration."""
+        self.current_theme = theme
+        self.error_handler.set_theme(theme)
+        Logger.info(f"Controller theme set to: {theme}")
+    
     def update_weather_display(self, city_name: str, unit_system: str) -> bool:
-        '''Coordinates fetching and displaying weather data.'''
+        """Coordinate fetching and displaying weather data with enhanced error handling.
+        
+        Validates inputs, checks rate limits, fetches weather data, and updates
+        the display. Includes comprehensive error handling and retry logic.
+        
+        Args:
+            city_name: Name of the city to fetch weather for
+            unit_system: Unit system for display ('metric' or 'imperial')
+            
+        Returns:
+            bool: True if operation succeeded, False if it failed
+        """
         # Validate inputs and state
         if not self._validate_inputs_and_state(city_name, unit_system):
             return False
@@ -47,7 +91,15 @@ class WeatherDashboardController:
         return self._fetch_and_display_data(city_name, unit_system)
 
     def _validate_inputs_and_state(self, city_name: str, unit_system: str) -> bool:
-        '''Validates input parameters and application state.'''
+        """Validate input parameters and application state with enhanced error reporting.
+        
+        Args:
+            city_name: City name to validate
+            unit_system: Unit system to validate
+            
+        Returns:
+            bool: True if validation passed, False otherwise
+        """
         # Input validation
         if not isinstance(city_name, str):
             self.error_handler.handle_input_validation_error("City name must be text")
@@ -70,7 +122,11 @@ class WeatherDashboardController:
         return True
 
     def _check_rate_limiting(self) -> bool:
-        '''Checks rate limiting and handles rate limit errors.'''
+        """Check rate limiting and handle rate limit errors with theme-aware messaging.
+        
+        Returns:
+            bool: True if request can proceed, False if rate limited
+        """
         if not self.rate_limiter.can_make_request():
             wait_time = self.rate_limiter.get_wait_time()
             Logger.warn("Fetch blocked due to rate limiting.")
@@ -82,7 +138,15 @@ class WeatherDashboardController:
         return True
 
     def _fetch_and_display_data(self, city_name: str, unit_system: str) -> bool:
-        '''Fetches weather data and updates the display.'''
+        """Fetch weather data and update the display with comprehensive error handling.
+        
+        Args:
+            city_name: Name of the city to fetch weather for
+            unit_system: Unit system for the data
+            
+        Returns:
+            bool: True if operation succeeded, False otherwise
+        """
         try:
             # Fetch data
             city, raw_data, error_exception = self.service.get_city_data(city_name, unit_system)
@@ -94,11 +158,11 @@ class WeatherDashboardController:
             view_model = WeatherViewModel(city, raw_data, unit_system)
             
             # Handle any errors
-            should_continue = self.error_handler.handle_weather_error(error_exception, view_model.city_name)
+            should_continue = self.error_handler.handle_weather_error(error_exception, city)
             if not should_continue:
                 return False
             
-            # Use state methods for display updates instead of scattered widget access
+            # Update display components
             self.state.update_city_display(
                 city_name=view_model.city_name,
                 date_str=view_model.date_str
@@ -144,7 +208,7 @@ class WeatherDashboardController:
             return False
 
     def show_weather_alerts(self) -> None:
-        """Manually display weather alerts popup."""
+        """Display weather alerts popup with enhanced error handling."""
         from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
         
         active_alerts = self.alert_manager.get_active_alerts()
@@ -162,7 +226,11 @@ class WeatherDashboardController:
             messagebox.showinfo("Weather Alerts", "No active weather alerts.")
 
     def update_chart(self) -> None:
-        '''Updates the chart with historical weather data for the selected city and metric.'''
+        """Update the chart with historical weather data for the selected city and metric.
+        
+        Retrieves chart settings, builds data series, and renders the chart
+        with comprehensive error handling and recovery.
+        """
         try:
             city, days, metric_key, unit = self._get_chart_settings()
             x_vals, y_vals = self._build_chart_series(city, days, metric_key, unit)
@@ -176,7 +244,12 @@ class WeatherDashboardController:
             self._handle_chart_error("Unexpected chart error", e)
 
     def _handle_chart_error(self, error_type: str, error: Exception) -> None:
-        """Handles chart errors with proper recovery."""
+        """Handle chart errors with proper recovery.
+        
+        Args:
+            error_type: Type/category of the chart error
+            error: The exception that occurred
+        """
         Logger.error(f"{error_type}: {error}")
         messagebox.showwarning("Chart Error", f"{error_type}. Chart will be cleared.")
         
@@ -190,7 +263,14 @@ class WeatherDashboardController:
             Logger.error(f"Failed to clear chart after error: {recovery_error}")
 
     def _get_chart_settings(self) -> Tuple[str, int, str, str]:
-        '''Retrieves the current settings for chart display: city, date range, metric key, and unit.'''
+        """Retrieve the current settings for chart display.
+        
+        Returns:
+            Tuple[str, int, str, str]: city, days, metric_key, unit_system
+            
+        Raises:
+            ValueError: If city name is empty or date range is invalid
+        """
         raw_city = self.state.get_current_city()
         if not raw_city or not raw_city.strip():
             raise ValueError("City name is required for chart display")
@@ -209,7 +289,20 @@ class WeatherDashboardController:
         return city, days, metric_key, unit
     
     def _build_chart_series(self, city: str, days: int, metric_key: str, unit: str) -> Tuple[List[str], List[Any]]:
-        '''Builds the x and y axis values for the chart based on historical data.'''
+        """Build the x and y axis values for the chart based on historical data.
+        
+        Args:
+            city: City name for data retrieval
+            days: Number of days of historical data to retrieve
+            metric_key: Weather metric to chart
+            unit: Unit system for the data
+            
+        Returns:
+            Tuple[List[str], List[Any]]: x_values (dates), y_values (metric data)
+            
+        Raises:
+            ValueError: If no historical data is available
+        """
         data = self.service.get_historical_data(city, days, unit)
 
         if not data:
@@ -223,11 +316,19 @@ class WeatherDashboardController:
         return x_vals, y_vals
     
     def _render_chart(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit: str) -> None:
-        '''Renders the chart with the provided x and y values for the specified metric and city.'''
+        """Render the chart with the provided x and y values.
+        
+        Args:
+            x_vals: X-axis values (typically dates)
+            y_vals: Y-axis values (metric data)
+            metric_key: Weather metric being charted
+            city: City name for chart title
+            unit: Unit system for labeling
+        """
         self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback=True)
 
     def _get_chart_metric_key(self) -> str:
-        '''Determines the metric key for the chart based on user selection.'''
+        """Determine the metric key for the chart based on user selection."""
         display_name = self.state.get_current_chart_metric()
         
         # Handle special case when no metrics are selected

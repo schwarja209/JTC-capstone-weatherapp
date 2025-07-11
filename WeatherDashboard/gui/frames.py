@@ -1,5 +1,12 @@
 """
-GUI frame creation and management.
+GUI frame management for the Weather Dashboard application.
+
+This module provides frame management and layout organization for the
+Weather Dashboard UI. Creates and organizes the main window structure
+with proper frame hierarchy and layout management.
+
+Classes:
+    WeatherDashboardGUIFrames: Main frame manager and layout coordinator
 """
 
 import tkinter as tk
@@ -8,19 +15,41 @@ from WeatherDashboard.gui.styles import configure_styles
 
 
 class WeatherDashboardGUIFrames:
-    '''Creates and manages the main GUI frames for the weather dashboard.'''
+    """Manage the main window frames and layout for the Weather Dashboard.
+    
+    Creates and organizes the main UI frame structure including title area,
+    control panels, tabbed content area, chart display, and status bar.
+    Provides proper layout management and frame hierarchy.
+    
+    Attributes:
+        root: Main tkinter window
+        frames: Dictionary containing all created frame widgets
+    """
     def __init__(self, root: tk.Tk) -> None:
+        """Create the main frames for the dashboard layout.
+        
+        Sets up the primary frame structure including title, controls, tabbed
+        content area, and status bar with proper grid layout and weight configuration.
+        """
         self.root = root
         self.frames = {}
         self.create_styles()
         self.create_frames()
 
     def create_styles(self) -> None:
-        '''Configures the styles for the GUI elements.'''
+        """Configure the styles for the GUI elements.
+        
+        Applies the application-wide styling configuration to ensure
+        consistent visual appearance across all UI components.
+        """
         configure_styles()
 
     def create_frames(self) -> None:
-        '''Creates the main frames for the dashboard layout.'''
+        """Create the main frames for the dashboard layout.
+        
+        Sets up the primary frame structure including title, controls, tabbed
+        content area, and status bar with proper grid layout and weight configuration.
+        """
         self.frames["title"] = ttk.Frame(self.root, padding="10")
         self.frames["title"].grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E))
 

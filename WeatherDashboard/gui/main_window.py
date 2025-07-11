@@ -1,5 +1,13 @@
 """
 Main window and application initialization.
+
+This module provides the primary application window and orchestrates the
+initialization of all components including state management, UI widgets,
+business logic, and async operations. Serves as the main entry point for
+the GUI application.
+
+Classes:
+    WeatherDashboardMain: Primary application window and component coordinator
 """
 
 from typing import Optional
@@ -15,8 +23,33 @@ from WeatherDashboard.core.controller import WeatherDashboardController
 
 
 class WeatherDashboardMain:
-    '''Main application class for the Weather Dashboard.'''
+    """Main application class for the Weather Dashboard.
+    
+    Orchestrates the initialization and coordination of all application components
+    including state management, UI widgets, business logic controllers, data
+    services, and async operation handling.
+    
+    Attributes:
+        root: Main tkinter window
+        state: Application state manager
+        frames: GUI frame manager
+        data_manager: Weather data management service
+        ui_renderer: UI widget coordinator
+        service: Weather data service layer
+        controller: Main business logic controller
+        loading_manager: Async loading state manager
+        async_operations: Async weather operation handler
+    """
     def __init__(self, root) -> None:
+        """Initialize the main weather dashboard application.
+        
+        Sets up all application components including state management, UI widgets,
+        business logic, data services, and async operations. Connects all systems
+        and prepares the application for user interaction.
+        
+        Args:
+            root: Main tkinter window instance
+        """
         self.root = root
         self.state = WeatherDashboardState() 
         self.frames = WeatherDashboardGUIFrames(root)
@@ -39,7 +72,8 @@ class WeatherDashboardMain:
         self.controller = WeatherDashboardController(
             state=self.state,
             data_service=self.service,
-            widgets=self.ui_renderer
+            widgets=self.ui_renderer,
+            theme='neutral'
         )
 
         # Initialize async components
@@ -52,7 +86,11 @@ class WeatherDashboardMain:
         self.update_chart_dropdown()
 
     def _connect_alert_system(self) -> None:
-        """Connect alert system to UI components."""
+        """Connect alert system to UI components.
+        
+        Links the alert status widget to the alert display callback for
+        user interaction with weather alerts.
+        """
         # Access through tabbed widgets property
         if (hasattr(self.ui_renderer, 'metric_widgets') and 
             self.ui_renderer.metric_widgets and
@@ -62,12 +100,20 @@ class WeatherDashboardMain:
             alert_widget.set_click_callback(self.show_alerts)
 
     def show_alerts(self) -> None:
-        """Show weather alerts popup."""
+        """Show weather alerts popup.
+        
+        Displays active weather alerts in a popup dialog. Called when
+        user clicks on the alert status indicator.
+        """
         if hasattr(self.controller, 'show_weather_alerts'):
             self.controller.show_weather_alerts()
 
     def load_initial_display(self) -> None:
-        '''Fetches and displays the initial city's weather data on startup. (async)'''
+        """Fetch and display the initial city's weather data on startup.
+        
+        Loads weather data for the default city asynchronously and updates
+        the chart display. Prevents concurrent operations during startup.
+        """
         # Prevent concurrent operations
         if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
             return
@@ -91,7 +137,11 @@ class WeatherDashboardMain:
         )
 
     def _store_button_references(self) -> None:
-        """Store button references for loading state management."""
+        """Store button references for loading state management.
+        
+        Connects control widget buttons to the state manager so the loading
+        manager can access and manage button states during async operations.
+        """
         # Connect control widget buttons to state for loading manager access
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
             control_widgets = self.ui_renderer.control_widgets
@@ -103,7 +153,12 @@ class WeatherDashboardMain:
                 self.state.reset_button = control_widgets.reset_button
 
     def on_update_clicked_async(self) -> None:
-        '''Handles the update button click event with async weather fetching.'''
+        """Handle the update button click event with async weather fetching.
+        
+        Initiates asynchronous weather data fetching for the currently selected
+        city and unit system. Prevents concurrent operations and updates both
+        weather display and chart upon completion.
+        """
         # Prevent concurrent operations
         if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
             return
@@ -130,7 +185,12 @@ class WeatherDashboardMain:
         )
 
     def on_clear_clicked(self) -> None:
-        '''Handles the reset button click event to reset input controls to default values (but does not clear display output).'''
+        """Handle the reset button click event to reset input controls to default values.
+        
+        Resets all user inputs to default values and loads weather data for the
+        default city. Does not clear display output - updates with default city data.
+        Prevents concurrent operations during reset process.
+        """
         # Prevent concurrent operations
         if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
             return
@@ -161,12 +221,20 @@ class WeatherDashboardMain:
         )
 
     def update_chart_dropdown(self) -> None:
-        '''Updates the chart dropdown based on the current visibility settings.'''
+        """Update the chart dropdown based on the current visibility settings.
+        
+        Refreshes the chart metric dropdown options to reflect currently visible
+        metrics. Called when metric visibility settings change.
+        """
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
             self.ui_renderer.control_widgets.update_chart_dropdown_options()
 
     def cancel_current_operation(self) -> None:
-        """Cancel any currently running async operation."""
+        """Cancel any currently running async operation.
+        
+        Stops any active background weather fetching operation and resets
+        the UI to normal state. Safe to call even when no operation is running.
+        """
         if hasattr(self, 'async_operations'):
             self.async_operations.cancel_current_operation()
             
@@ -179,20 +247,17 @@ class WeatherDashboardMain:
             self.ui_renderer.control_widgets.set_loading_state(False)
     
     def _handle_async_complete(self, success: bool, next_callback: Optional[callable] = None) -> None:
+        """Handle completion of async operations.
+        
+        Resets UI loading state and calls optional completion callback.
+        Used internally to clean up after async weather operations.
+        
+        Args:
+            success: True if the async operation succeeded
+            next_callback: Optional callback to execute after cleanup
+        """
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
             self.ui_renderer.control_widgets.set_loading_state(False)
         
         if next_callback:
             next_callback(success)
-
-
-    # LEGACY SYNC METHOD (for fallback/testing)   
-    # def on_update_clicked(self) -> None:
-    #     '''Handles the update button click event to fetch and display weather data.'''
-    #     success = self.controller.update_weather_display(
-    #         self.state.get_current_city(),
-    #         self.state.get_current_unit_system()
-    #     )
-
-    #     if success:
-    #         self.controller.update_chart()

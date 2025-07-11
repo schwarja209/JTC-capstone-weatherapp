@@ -1,5 +1,12 @@
 """
 Data management for weather information including fetching, storage, and unit conversion.
+
+This module provides comprehensive weather data management including API communication,
+fallback data generation, unit conversion, data storage, and memory management.
+Handles both live API data and simulated fallback data seamlessly.
+
+Classes:
+    WeatherDataManager: Main data management class with API integration and fallback handling
 """
 
 from typing import Dict, List, Tuple, Any, Optional
@@ -17,8 +24,23 @@ from WeatherDashboard.services.weather_service import WeatherAPIService
 
 
 class WeatherDataManager:
-    '''Manages weather data fetching and storage, including fallback handling.'''
+    """Manage weather data fetching and storage, including fallback handling.
+    
+    Coordinates weather API calls, fallback data generation, unit conversion,
+    and data storage. Provides automatic cleanup and memory management for
+    stored weather data.
+    
+    Attributes:
+        api_service: Weather API service for external data fetching
+        weather_data: Dictionary storing weather data by city key
+        _last_cleanup: Timestamp of last data cleanup operation
+        _cleanup_interval_hours: Hours between automatic cleanup operations
+    """
     def __init__(self) -> None:
+        """Initialize the weather data manager.
+        
+        Sets up the API service, data storage, and automatic cleanup tracking.
+        """
         self.api_service = WeatherAPIService()
         self.weather_data = {}
 
@@ -27,12 +49,22 @@ class WeatherDataManager:
         self._cleanup_interval_hours = 24  # Cleanup every 24 hours
 
     def fetch_current(self, city: str, unit_system: str) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
-        '''Fetches current weather data for a city, using fallback if API call fails.
+        """Fetch current weather data for a city, using fallback if API call fails.
+        
+        Attempts to fetch live weather data from API, converts units as needed,
+        and stores the data for future reference. Performs automatic cleanup
+        periodically to manage memory usage.
         
         Args:
-            city (str): Normalized city name (expected to already be processed)
-            unit_system (str): Target unit system for the data
-        '''
+            city: Normalized city name (expected to already be processed)
+            unit_system: Target unit system for the data ('metric' or 'imperial')
+            
+        Returns:
+            Tuple containing:
+                - Dict[str, Any]: Weather data with converted units
+                - bool: True if fallback data was used
+                - Optional[Exception]: Exception if API call failed, None otherwise
+        """
         raw_data, use_fallback, error_exception = self.api_service.fetch_current(city)
 
         # All API and fallback data is assumed to be in metric units and converted downstream.
@@ -59,7 +91,19 @@ class WeatherDataManager:
         return converted_data, use_fallback, error_exception
     
     def convert_units(self, data: Dict[str, Any], unit_system: str) -> Dict[str, Any]:
-        '''Converts weather data units based on the selected UI unit system (metric or imperial).'''
+        """Convert weather data units based on the selected UI unit system.
+        
+        Converts temperature, pressure, and wind speed from metric (API default)
+        to imperial units when requested. Logs conversion errors and continues
+        with original values if conversion fails.
+        
+        Args:
+            data: Weather data dictionary with metric units
+            unit_system: Target unit system ('metric' or 'imperial')
+            
+        Returns:
+            Dict[str, Any]: Weather data with converted units
+        """
         validate_unit_system(unit_system)
 
         # Skip conversion if already in target system
@@ -99,21 +143,33 @@ class WeatherDataManager:
         return converted
 
     def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
-        '''Fetches historical weather data for a city. Currently always defaults to fallback.'''
+        """Fetch historical weather data for a city.
+        
+        Currently generates simulated historical data using the fallback generator.
+        Future versions may integrate with historical weather APIs.
+        
+        Args:
+            city: City name for historical data
+            num_days: Number of days of historical data to generate
+            
+        Returns:
+            List[Dict[str, Any]]: List of historical weather data entries
+        """
         return self.api_service.fallback.generate(city, num_days)
 
     def get_recent_data(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
-        '''Returns recent weather data for a city from the last N days.
+        """Return recent weather data for a city from the last N days.
+        
+        Retrieves stored weather data entries within the specified time window.
+        Reserved for future features like trend analysis or prediction.
         
         Args:
             city: City name
             days_back: Number of days to look back (default 7)
         
         Returns:
-            List of weather data entries from the specified time period
-        
-        Note: Reserved for future features like trend analysis or prediction.
-        '''
+            List[Dict[str, Any]]: Weather data entries from the specified time period
+        """
         city_data = self.weather_data.get(city_key(city), [])
         cutoff_date = datetime.now().date() - timedelta(days=days_back)
         
@@ -123,7 +179,16 @@ class WeatherDataManager:
         ]
 
     def write_to_file(self, city: str, data: Dict[str, Any], unit_system: str) -> None:
-        '''Writes formatted weather data to a log file with timestamp and unit system information.'''
+        """Write formatted weather data to a log file with timestamp and unit system information.
+        
+        Creates a formatted log entry with timestamp, city, and all weather metrics
+        in the specified unit system. Handles file I/O errors gracefully.
+        
+        Args:
+            city: City name for the log entry
+            data: Weather data dictionary to log
+            unit_system: Unit system for formatting ('metric' or 'imperial')
+        """
         try:
             log_entry = self.format_data_for_logging(city, data, unit_system)
             with open(config.OUTPUT["log"], "a", encoding="utf-8") as f:
@@ -138,7 +203,19 @@ class WeatherDataManager:
             Logger.error(f"Unexpected error writing weather data: {e}")
 
     def format_data_for_logging(self, city: str, data: Dict[str, Any], unit_system: str) -> str:
-        '''Formats weather data for logging to a file with timestamp and unit system information.'''
+        """Format weather data for logging to a file with timestamp and unit system information.
+        
+        Creates a multi-line formatted string with timestamp, city, and all weather
+        metrics properly formatted with units.
+        
+        Args:
+            city: City name for the log entry
+            data: Weather data dictionary to format
+            unit_system: Unit system for value formatting ('metric' or 'imperial')
+            
+        Returns:
+            str: Formatted log entry string ready for file writing
+        """
         timestamp = data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
         lines = [
             f"\n\nTime: {timestamp}",
@@ -152,7 +229,14 @@ class WeatherDataManager:
         return "\n".join(lines)
     
     def cleanup_old_data(self, days_to_keep: int = 30) -> None:
-        '''Removes weather data older than specified days to free memory.'''
+        """Remove weather data older than specified days to free memory.
+        
+        Iterates through all stored weather data and removes entries older
+        than the specified threshold to prevent memory bloat.
+        
+        Args:
+            days_to_keep: Number of days of data to retain (default 30)
+        """
         cutoff_date = datetime.now() - timedelta(days=days_to_keep)
         
         for city_key, data_list in self.weather_data.items():

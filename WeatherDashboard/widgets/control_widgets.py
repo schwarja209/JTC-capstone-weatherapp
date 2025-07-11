@@ -1,6 +1,13 @@
-
 """
 Control widgets for user input and actions.
+
+This module provides comprehensive control panel widgets for user interaction
+including city input, unit selection, metric visibility controls, chart settings,
+and action buttons. Manages loading states, event handling, and coordinates
+with callbacks for application control flow.
+
+Classes:
+    ControlWidgets: Main control panel manager with inputs, selections, and actions
 """
 
 from typing import Dict, Any, Callable, Optional
@@ -12,9 +19,34 @@ from WeatherDashboard.utils.logger import Logger
 
 
 class ControlWidgets:
-    """Manages all control panel widgets including inputs, selections, and buttons."""
+    """Manages all control panel widgets including inputs, selections, and buttons.
     
+    Creates and manages the complete control panel interface including city input
+    field, unit system radio buttons, metric visibility checkboxes, chart controls,
+    and action buttons. Handles loading states, keyboard events, and coordinates
+    with application callbacks for user interactions.
+    
+    Attributes:
+        parent: Parent frame container
+        state: Application state manager
+        callbacks: Dictionary of callback functions for user actions
+        city_entry: City name input field
+        update_button: Weather update action button
+        reset_button: Settings reset action button
+        cancel_button: Operation cancel button
+    """
     def __init__(self, parent_frame: ttk.Frame, state: Any, callbacks: Dict[str, Callable]) -> None:
+        """Initialize the control widgets with complete control panel.
+        
+        Creates all control panel sections including city input, unit selection,
+        metric visibility controls, chart settings, and action buttons. Configures
+        grid layout, binds events, and registers widgets with state manager.
+        
+        Args:
+            parent_frame: Parent TTK frame to contain the control panel
+            state: Application state manager for widget coordination
+            callbacks: Dictionary of callback functions for user actions
+        """
         self.parent = parent_frame
         self.state = state
         self.callbacks = callbacks
@@ -29,7 +61,12 @@ class ControlWidgets:
         self._register_widgets_with_state()
     
     def _create_all_controls(self) -> None:
-        """Creates all control widgets in organized sections."""
+        """Create all control widgets in organized sections with error handling.
+        
+        Orchestrates the creation of city input, unit selection, metric visibility
+        controls, chart settings, and action buttons. Configures layout and events,
+        with comprehensive error handling and logging for debugging failures.
+        """
         try:
             self._create_city_input()
             self._create_unit_selection()
@@ -43,13 +80,21 @@ class ControlWidgets:
             raise
 
     def _create_city_input(self) -> None:
-        """Creates city input field."""
+        """Create city name input field with label.
+        
+        Creates a labeled text entry field for city name input, bound to the
+        state city variable for automatic state synchronization.
+        """
         ttk.Label(self.parent, text="City:", style="LabelName.TLabel").grid(row=1, column=0, sticky=tk.W, pady=5)
         self.city_entry = ttk.Entry(self.parent, textvariable=self.state.city)
         self.city_entry.grid(row=1, column=1, sticky=tk.W)
 
     def _create_unit_selection(self) -> None:
-        """Creates unit selection radio buttons."""
+        """Create unit system selection radio buttons.
+        
+        Creates Imperial and Metric radio button options for temperature,
+        wind speed, and pressure unit selection, bound to state unit variable.
+        """
         ttk.Label(self.parent, text="Units:", style="LabelName.TLabel").grid(row=2, column=0, sticky=tk.W, pady=5)
         ttk.Radiobutton(
             self.parent, 
@@ -66,7 +111,11 @@ class ControlWidgets:
         ).grid(row=3, column=1, sticky=tk.W)
 
     def _create_metric_visibility(self) -> None:
-        """Creates metric visibility checkboxes."""
+        """Create metric visibility control checkboxes.
+        
+        Creates checkboxes for each weather metric allowing users to control
+        which metrics are displayed. Updates chart dropdown when changed.
+        """
         ttk.Label(self.parent, text="Show Metrics:", style="LabelName.TLabel").grid(row=4, column=0, sticky=tk.W, pady=5)
         
         for i, (metric_key, var) in enumerate(self.state.visibility.items()):
@@ -80,7 +129,11 @@ class ControlWidgets:
             checkbox.grid(row=5 + i // 2, column=i % 2, sticky=tk.W)
 
     def _create_chart_controls(self) -> None:
-        """Creates chart metric and date range selectors."""
+        """Create chart configuration controls.
+        
+        Creates dropdown selectors for chart metric selection and date range
+        options, allowing users to customize the historical weather chart display.
+        """
         # Chart metric selector
         ttk.Label(self.parent, text="Chart Metric:", style="LabelName.TLabel").grid(row=4, column=2, sticky=tk.E, pady=5)
         chart_cb = ttk.Combobox(self.parent, textvariable=self.state.chart, state="readonly")
@@ -95,7 +148,11 @@ class ControlWidgets:
         range_cb.grid(row=7, column=2, sticky=tk.E)
 
     def _create_action_buttons(self) -> None:
-        """Creates update and reset buttons."""
+        """Create main action buttons for user operations.
+        
+        Creates Update Weather, Reset, and Cancel buttons with appropriate
+        styling and callback connections for primary user actions.
+        """
         self.update_button = ttk.Button(
             self.parent, 
             text="Update Weather", 
@@ -121,18 +178,18 @@ class ControlWidgets:
         self.cancel_button.grid(row=3, column=2, pady=5, sticky=tk.E)
 
     def _configure_grid_weights(self) -> None:
-        """Configures grid column weights for proper layout."""
+        """Configure grid column weights for proper layout."""
         for i in range(3):
             self.parent.columnconfigure(i, weight=1)
     
     def _bind_events(self) -> None:
-        """Binds keyboard events for better UX."""
+        """Bind keyboard events for better UX."""
         if self.city_entry and self.callbacks.get('update'):
             # Enter key in city field triggers update
             self.city_entry.bind("<Return>", lambda e: self.callbacks['update']())
 
     def _register_widgets_with_state(self) -> None:
-        """Registers widget references with state for loading management."""
+        """Register widget references with state for loading management."""
         # Register buttons for loading state management
         self.state.update_button = self.update_button
         self.state.reset_button = self.reset_button
@@ -144,7 +201,7 @@ class ControlWidgets:
             return
         
         # Get data from state (UI-agnostic)
-        visible_display_names, has_metrics = self.state.get_chart_dropdown_data()
+        visible_display_names, has_metrics = self.state.get_current_chart_dropdown_data()
         
         if not visible_display_names:
             self.state.chart_widget['values'] = ["No metrics selected"]
