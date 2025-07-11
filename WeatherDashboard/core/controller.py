@@ -12,6 +12,7 @@ from WeatherDashboard.utils.rate_limiter import RateLimiter
 from WeatherDashboard.services.error_handler import WeatherErrorHandler
 from WeatherDashboard.services.api_exceptions import ValidationError
 from WeatherDashboard.core.view_models import WeatherViewModel
+from WeatherDashboard.features.alerts.alert_manager import AlertManager
 
 
 class WeatherDashboardController:
@@ -28,6 +29,9 @@ class WeatherDashboardController:
         # Initialize helper classes
         self.rate_limiter = RateLimiter()
         self.error_handler = WeatherErrorHandler()
+
+        # Initialize alert system
+        self.alert_manager = AlertManager(state)
     
     def update_weather_display(self, city_name: str, unit_system: str) -> bool:
         '''Coordinates fetching and displaying weather data.'''
@@ -103,6 +107,15 @@ class WeatherDashboardController:
 
             # Update display
             self.state.update_metric_display(view_model.metrics)
+
+            # Check for weather alerts after successful data update
+            if raw_data:
+                # raw_data is already unit-converted by the data service
+                alerts = self.alert_manager.check_weather_alerts(raw_data)
+                # Update alert status widget if it exists
+                if (hasattr(self.widgets, 'metric_widgets') and 
+                    hasattr(self.widgets.metric_widgets, 'alert_status_widget')):
+                    self.widgets.metric_widgets.alert_status_widget.update_status(alerts)
             
             # Log the data
             self.service.write_to_log(city, raw_data, unit_system)
@@ -114,6 +127,24 @@ class WeatherDashboardController:
         except Exception as e:
             self.error_handler.handle_unexpected_error(str(e))
             return False
+
+    def show_weather_alerts(self) -> None:
+        """Manually display weather alerts popup."""
+        from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
+        
+        active_alerts = self.alert_manager.get_active_alerts()
+        if active_alerts:
+            # Get parent window for popup
+            parent = None
+            if (hasattr(self.widgets, 'frames') and 
+                isinstance(self.widgets.frames, dict) and 
+                'title' in self.widgets.frames):
+                parent = self.widgets.frames['title']
+            
+            SimpleAlertPopup(parent, active_alerts)
+        else:
+            from tkinter import messagebox
+            messagebox.showinfo("Weather Alerts", "No active weather alerts.")
 
     def update_chart(self) -> None:
         '''Updates the chart with historical weather data for the selected city and metric.'''

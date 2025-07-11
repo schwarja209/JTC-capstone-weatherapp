@@ -374,3 +374,76 @@
 {"timestamp": "2025-07-10 20:21:41", "level": "INFO", "message": "Weather data written for new_york - Live"}
 {"timestamp": "2025-07-10 20:21:42", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
 {"timestamp": "2025-07-10 20:21:45", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 21:15:54", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 21:16:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 21:16:27", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 21:16:35", "level": "ERROR", "message": "Input validation error: Invalid application state: At least one metric must be visible"}
+{"timestamp": "2025-07-10 21:16:57", "level": "ERROR", "message": "API failure for Dpshpdghsp - City not found: City not found. Switching to simulated data."}
+{"timestamp": "2025-07-10 21:16:59", "level": "INFO", "message": "Weather data written for dpshpdghsp - Simulated"}
+{"timestamp": "2025-07-10 21:17:02", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
+{"timestamp": "2025-07-10 21:17:09", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 22:04:52", "level": "ERROR", "message": "API failure for TestCity - City not found: City not found. Switching to simulated data."}
+{"timestamp": "2025-07-10 22:06:37", "level": "ERROR", "message": "API failure for TestCity - City not found: City not found. Switching to simulated data."}
+{"timestamp": "2025-07-10 22:07:45", "level": "ERROR", "message": "API failure for TestCity - City not found: City not found. Switching to simulated data."}
+{"timestamp": "2025-07-10 23:49:49", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:39:48", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.1\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:39:48", "level": "WARN", "message": "Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)"}
+{"timestamp": "2025-07-11 00:39:48", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:39:52", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.1\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:39:52", "level": "WARN", "message": "Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)"}
+{"timestamp": "2025-07-11 00:39:52", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:39:53", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-11 00:39:57", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.1\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:39:57", "level": "WARN", "message": "Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)"}
+{"timestamp": "2025-07-11 00:39:57", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:40:01", "level": "ERROR", "message": "API failure for Sfaffs - City not found: City not found. Switching to simulated data."}
+{"timestamp": "2025-07-11 00:40:02", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 15.8\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:40:02", "level": "WARN", "message": "Weather alert: Low Pressure Alert - Low pressure system detected: 29.6 hPa (threshold: 980.0 hPa)"}
+{"timestamp": "2025-07-11 00:40:02", "level": "INFO", "message": "Weather data written for sfaffs - Simulated"}
+{"timestamp": "2025-07-11 00:40:05", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
+{"timestamp": "2025-07-11 00:40:29", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.1\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:40:29", "level": "WARN", "message": "Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)"}
+{"timestamp": "2025-07-11 00:40:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:41:28", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 23.4\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:41:28", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:41:39", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.1\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:41:39", "level": "WARN", "message": "Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)"}
+{"timestamp": "2025-07-11 00:41:39", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:54:49", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 73.9\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:54:49", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:54:53", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 73.9\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:54:53", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:55:25", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 73.9\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:55:25", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:55:29", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 23.3\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:55:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:55:33", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 23.3\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:55:33", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:55:38", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 23.3\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:55:38", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:55:44", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:55:52", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 23.3\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:55:52", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 00:55:58", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 73.9\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 00:55:58", "level": "WARN", "message": "Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)"}
+{"timestamp": "2025-07-11 00:55:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:01:40", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 165.1\u00b0F (threshold: 50.0\u00b0C)"}
+{"timestamp": "2025-07-11 01:01:40", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:01:48", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 165.1\u00b0F (threshold: 50.0\u00b0C)"}
+{"timestamp": "2025-07-11 01:01:48", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:07:38", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 165.1\u00b0F (threshold: 50.0\u00b0F)"}
+{"timestamp": "2025-07-11 01:07:38", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:09:43", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.0\u00b0F (threshold: 50.0\u00b0F)"}
+{"timestamp": "2025-07-11 01:09:43", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:09:51", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.0\u00b0F (threshold: 50.0\u00b0F)"}
+{"timestamp": "2025-07-11 01:09:51", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:09:58", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.0\u00b0F (threshold: 50.0\u00b0F)"}
+{"timestamp": "2025-07-11 01:09:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:10:02", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.0\u00b0F (threshold: 50.0\u00b0F)"}
+{"timestamp": "2025-07-11 01:10:02", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:10:06", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 23.3\u00b0C (threshold: 10.0\u00b0C)"}
+{"timestamp": "2025-07-11 01:10:06", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:10:12", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:10:22", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 74.0\u00b0F (threshold: 50.0\u00b0F)"}
+{"timestamp": "2025-07-11 01:10:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 01:10:23", "level": "WARN", "message": "Fetch blocked due to rate limiting."}

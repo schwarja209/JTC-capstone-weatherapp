@@ -2,6 +2,13 @@
 """
 Quick test runner for development.
 """
+
+import sys
+import os
+
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, project_root)
+
 from tests.test_runner import run_all_tests
 
 if __name__ == '__main__':

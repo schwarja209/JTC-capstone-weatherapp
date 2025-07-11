@@ -53,6 +53,16 @@ UNITS = {
     }
 }
 
+# NEW: Alert Threshold Configuration
+ALERT_THRESHOLDS = {
+    'temperature_high': 35.0,      # °C - Hot weather warning
+    'temperature_low': -10.0,      # °C - Cold weather warning  
+    'wind_speed_high': 15.0,       # m/s - High wind warning
+    'pressure_low': 980.0,         # hPa - Storm system warning
+    'humidity_high': 85.0,         # % - High humidity discomfort
+    'humidity_low': 15.0,          # % - Low humidity warning
+}
+
 # ================================
 # 3. DERIVED VALUES (backward compatibility)
 # ================================
@@ -94,7 +104,8 @@ DEFAULTS = {
     "unit": "imperial",
     "range": "Last 7 Days",
     "chart": "Temperature",
-    "visibility": DEFAULT_VISIBILITY
+    "visibility": DEFAULT_VISIBILITY,
+    "alert_thresholds": ALERT_THRESHOLDS 
 }
 
 # ================================
@@ -125,7 +136,7 @@ def validate_config() -> None:
             raise ValueError(f"METRICS['{metric_key}']['visible'] must be boolean")
     
     # Check DEFAULTS structure
-    required_default_keys = ['city', 'unit', 'range', 'chart', 'visibility']
+    required_default_keys = ['city', 'unit', 'range', 'chart', 'visibility', 'alert_thresholds']
     for key in required_default_keys:
         if key not in DEFAULTS:
             raise ValueError(f"Missing required DEFAULTS key: '{key}'")
@@ -168,6 +179,17 @@ def validate_config() -> None:
     for key in required_output_keys:
         if key not in OUTPUT:
             raise ValueError(f"Missing required OUTPUT key: '{key}'")
+        
+    # Validate alert thresholds
+    if not isinstance(ALERT_THRESHOLDS, dict):
+        raise ValueError("ALERT_THRESHOLDS must be a dictionary")
+    
+    required_thresholds = ['temperature_high', 'temperature_low', 'wind_speed_high', 'pressure_low']
+    for threshold in required_thresholds:
+        if threshold not in ALERT_THRESHOLDS:
+            raise ValueError(f"Missing required alert threshold: '{threshold}'")
+        if not isinstance(ALERT_THRESHOLDS[threshold], (int, float)):
+            raise ValueError(f"Alert threshold '{threshold}' must be a number")
     
     # Check API key
     if not API_KEY:

@@ -374,3 +374,76 @@
 [INFO] 2025-07-10 20:21:41 Weather data written for new_york - Live
 [WARN] 2025-07-10 20:21:42 Fetch blocked due to rate limiting.
 [INFO] 2025-07-10 20:21:45 Weather data written for new_york - Live
+[INFO] 2025-07-10 21:15:54 Weather data written for new_york - Live
+[INFO] 2025-07-10 21:16:11 Weather data written for new_york - Live
+[INFO] 2025-07-10 21:16:27 Weather data written for new_york - Live
+[ERROR] 2025-07-10 21:16:35 Input validation error: Invalid application state: At least one metric must be visible
+[ERROR] 2025-07-10 21:16:57 API failure for Dpshpdghsp - City not found: City not found. Switching to simulated data.
+[INFO] 2025-07-10 21:16:59 Weather data written for dpshpdghsp - Simulated
+[ERROR] 2025-07-10 21:17:02 Input validation error: Invalid application state: City name cannot be empty
+[INFO] 2025-07-10 21:17:09 Weather data written for new_york - Live
+[ERROR] 2025-07-10 22:04:52 API failure for TestCity - City not found: City not found. Switching to simulated data.
+[ERROR] 2025-07-10 22:06:37 API failure for TestCity - City not found: City not found. Switching to simulated data.
+[ERROR] 2025-07-10 22:07:45 API failure for TestCity - City not found: City not found. Switching to simulated data.
+[INFO] 2025-07-10 23:49:49 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:39:48 Weather alert: High Temperature Alert - Temperature is very high: 74.1°C (threshold: 10.0°C)
+[WARN] 2025-07-11 00:39:48 Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)
+[INFO] 2025-07-11 00:39:48 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:39:52 Weather alert: High Temperature Alert - Temperature is very high: 74.1°C (threshold: 10.0°C)
+[WARN] 2025-07-11 00:39:52 Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)
+[INFO] 2025-07-11 00:39:52 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:39:53 Fetch blocked due to rate limiting.
+[WARN] 2025-07-11 00:39:57 Weather alert: High Temperature Alert - Temperature is very high: 74.1°C (threshold: 10.0°C)
+[WARN] 2025-07-11 00:39:57 Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)
+[INFO] 2025-07-11 00:39:57 Weather data written for new_york - Live
+[ERROR] 2025-07-11 00:40:01 API failure for Sfaffs - City not found: City not found. Switching to simulated data.
+[WARN] 2025-07-11 00:40:02 Weather alert: High Temperature Alert - Temperature is very high: 15.8°C (threshold: 10.0°C)
+[WARN] 2025-07-11 00:40:02 Weather alert: Low Pressure Alert - Low pressure system detected: 29.6 hPa (threshold: 980.0 hPa)
+[INFO] 2025-07-11 00:40:02 Weather data written for sfaffs - Simulated
+[ERROR] 2025-07-11 00:40:05 Input validation error: Invalid application state: City name cannot be empty
+[WARN] 2025-07-11 00:40:29 Weather alert: High Temperature Alert - Temperature is very high: 74.1°C (threshold: 10.0°C)
+[WARN] 2025-07-11 00:40:29 Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)
+[INFO] 2025-07-11 00:40:29 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:41:28 Weather alert: High Temperature Alert - Temperature is very high: 23.4°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:41:28 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:41:39 Weather alert: High Temperature Alert - Temperature is very high: 74.1°C (threshold: 10.0°C)
+[WARN] 2025-07-11 00:41:39 Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)
+[INFO] 2025-07-11 00:41:39 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:54:49 Weather alert: High Temperature Alert - Temperature is very high: 73.9°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:54:49 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:54:53 Weather alert: High Temperature Alert - Temperature is very high: 73.9°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:54:53 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:55:25 Weather alert: High Temperature Alert - Temperature is very high: 73.9°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:55:25 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:55:29 Weather alert: High Temperature Alert - Temperature is very high: 23.3°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:55:29 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:55:33 Weather alert: High Temperature Alert - Temperature is very high: 23.3°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:55:33 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:55:38 Weather alert: High Temperature Alert - Temperature is very high: 23.3°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:55:38 Weather data written for new_york - Live
+[INFO] 2025-07-11 00:55:44 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:55:52 Weather alert: High Temperature Alert - Temperature is very high: 23.3°C (threshold: 10.0°C)
+[INFO] 2025-07-11 00:55:52 Weather data written for new_york - Live
+[WARN] 2025-07-11 00:55:58 Weather alert: High Temperature Alert - Temperature is very high: 73.9°C (threshold: 10.0°C)
+[WARN] 2025-07-11 00:55:58 Weather alert: Low Pressure Alert - Low pressure system detected: 30.0 hPa (threshold: 980.0 hPa)
+[INFO] 2025-07-11 00:55:58 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:01:40 Weather alert: High Temperature Alert - Temperature is very high: 165.1°F (threshold: 50.0°C)
+[INFO] 2025-07-11 01:01:40 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:01:48 Weather alert: High Temperature Alert - Temperature is very high: 165.1°F (threshold: 50.0°C)
+[INFO] 2025-07-11 01:01:48 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:07:38 Weather alert: High Temperature Alert - Temperature is very high: 165.1°F (threshold: 50.0°F)
+[INFO] 2025-07-11 01:07:38 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:09:43 Weather alert: High Temperature Alert - Temperature is very high: 74.0°F (threshold: 50.0°F)
+[INFO] 2025-07-11 01:09:43 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:09:51 Weather alert: High Temperature Alert - Temperature is very high: 74.0°F (threshold: 50.0°F)
+[INFO] 2025-07-11 01:09:51 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:09:58 Weather alert: High Temperature Alert - Temperature is very high: 74.0°F (threshold: 50.0°F)
+[INFO] 2025-07-11 01:09:58 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:10:02 Weather alert: High Temperature Alert - Temperature is very high: 74.0°F (threshold: 50.0°F)
+[INFO] 2025-07-11 01:10:02 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:10:06 Weather alert: High Temperature Alert - Temperature is very high: 23.3°C (threshold: 10.0°C)
+[INFO] 2025-07-11 01:10:06 Weather data written for new_york - Live
+[INFO] 2025-07-11 01:10:12 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:10:22 Weather alert: High Temperature Alert - Temperature is very high: 74.0°F (threshold: 50.0°F)
+[INFO] 2025-07-11 01:10:22 Weather data written for new_york - Live
+[WARN] 2025-07-11 01:10:23 Fetch blocked due to rate limiting.

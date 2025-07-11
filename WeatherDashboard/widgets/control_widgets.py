@@ -23,6 +23,7 @@ class ControlWidgets:
         self.city_entry: Optional[ttk.Entry] = None
         self.update_button: Optional[ttk.Button] = None
         self.reset_button: Optional[ttk.Button] = None
+        self.cancel_button: Optional[ttk.Button] = None
         self.progress_label: Optional[ttk.Label] = None
         
         self._create_all_controls()
@@ -148,6 +149,8 @@ class ControlWidgets:
         self.state.update_button = self.update_button
         self.state.reset_button = self.reset_button
         self.state.progress_label = self.progress_label
+        self.state.cancel_button = self.cancel_button
+
     
     def update_chart_dropdown_options(self) -> None:
         """Update chart dropdown based on visible metrics."""
@@ -182,6 +185,8 @@ class ControlWidgets:
             self.update_button.configure(state='disabled', text="Loading...")
         if self.reset_button:
             self.reset_button.configure(state='disabled')
+        if self.cancel_button:
+            self.cancel_button.configure(state='normal')
         if self.city_entry:
             self.city_entry.configure(state='disabled')
     
@@ -191,6 +196,8 @@ class ControlWidgets:
             self.update_button.configure(state='normal', text="Update Weather")
         if self.reset_button:
             self.reset_button.configure(state='normal')
+        if self.cancel_button:
+            self.cancel_button.configure(state='disabled') 
         if self.city_entry:
             self.city_entry.configure(state='normal')
     

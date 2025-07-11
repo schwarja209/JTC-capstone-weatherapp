@@ -31,6 +31,9 @@ class WeatherDashboardMain:
             dropdown_cb=self.update_chart_dropdown
         )
 
+        # Connect alert system to UI
+        self._connect_alert_system()
+
         # Initialize business logic
         self.service = WeatherDataService(self.data_manager)
         self.controller = WeatherDashboardController(
@@ -47,6 +50,20 @@ class WeatherDashboardMain:
         self._store_button_references()
 
         self.update_chart_dropdown()
+
+    def _connect_alert_system(self) -> None:
+        """Connect alert system to UI components."""
+        # Connect alert status widget to controller
+        if (hasattr(self.ui_renderer, 'metric_widgets') and 
+            hasattr(self.ui_renderer.metric_widgets, 'alert_status_widget')):
+            
+            alert_widget = self.ui_renderer.metric_widgets.alert_status_widget
+            alert_widget.set_click_callback(self.show_alerts)
+
+    def show_alerts(self) -> None:
+        """Show weather alerts popup."""
+        if hasattr(self.controller, 'show_weather_alerts'):
+            self.controller.show_weather_alerts()
 
     def load_initial_display(self) -> None:
         '''Fetches and displays the initial city's weather data on startup. (async)'''

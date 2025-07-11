@@ -2,11 +2,12 @@
 Metric display widgets for current weather data.
 """
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 import tkinter as tk
 from tkinter import ttk
 
 from WeatherDashboard import config
+from WeatherDashboard.features.alerts.alert_display import AlertStatusIndicator
 
 
 class MetricDisplayWidgets:
@@ -20,7 +21,10 @@ class MetricDisplayWidgets:
         self.metric_labels: Dict[str, Dict[str, ttk.Label]] = {}
         self.city_label: Optional[ttk.Label] = None
         self.date_label: Optional[ttk.Label] = None
-        self.status_label: Optional[ttk.Label] = None
+        self.data_status_label: Optional[ttk.Label] = None
+
+        # Alert status widget
+        self.alert_status_widget: Optional[AlertStatusIndicator] = None
         
         self._create_all_metrics()
     
@@ -29,6 +33,7 @@ class MetricDisplayWidgets:
         self._create_header_info()
         self._create_weather_metrics()
         self._create_status_display()
+        self._create_alert_status()
         self._register_with_state()
     
     def _create_header_info(self) -> None:
@@ -64,17 +69,23 @@ class MetricDisplayWidgets:
     
     def _create_status_display(self) -> None:
         """Creates status label for API fallback or error messages."""
-        self.status_label = ttk.Label(
+        self.data_status_label = ttk.Label(
             self.parent, 
             text="", 
             foreground="red", 
             style="LabelValue.TLabel"
         )
-        self.status_label.grid(row=10, column=0, columnspan=2, sticky=tk.W, pady=5)
+        self.data_status_label.grid(row=10, column=0, columnspan=2, sticky=tk.W, pady=5)
+    
+    def _create_alert_status(self) -> None:
+        """Creates alert status indicator widget."""
+        self.alert_status_widget = AlertStatusIndicator(self.parent)
+        self.alert_status_widget.grid(row=2, column=0, padx=5, sticky=tk.W)
     
     def _register_with_state(self) -> None:
         """Registers widget references with the state manager."""
         self.state.metric_labels = self.metric_labels
         self.state.city_label = self.city_label
         self.state.date_label = self.date_label
-        self.state.status_label = self.status_label
+        self.state.data_status_label = self.data_status_label
+        self.state.alert_status_widget = self.alert_status_widget 

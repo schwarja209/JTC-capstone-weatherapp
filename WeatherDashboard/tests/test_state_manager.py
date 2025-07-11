@@ -7,20 +7,38 @@ Tests state management functionality including:
 - Reset to defaults behavior
 - Chart dropdown data generation
 """
+
 import unittest
+import tkinter as tk
 from unittest.mock import patch
+
 from WeatherDashboard.gui.state_manager import WeatherDashboardState
 
 class TestWeatherDashboardState(unittest.TestCase):
     def setUp(self):
-        with patch('WeatherDashboard.config.DEFAULTS', {
+        # Create a root window for Tkinter variables
+        self.root = tk.Tk()
+        self.root.withdraw()  # Hide the window during tests
+        
+        # Patch config.DEFAULTS during both creation AND reset
+        self.config_patch = patch('WeatherDashboard.config.DEFAULTS', {
             'city': 'Test City',
             'unit': 'metric', 
             'range': 'Last 7 Days',
             'chart': 'Temperature',
             'visibility': {'temperature': True, 'humidity': False}
-        }):
-            self.state = WeatherDashboardState()
+        })
+        self.config_patch.start()
+        
+        self.state = WeatherDashboardState()
+    
+    def tearDown(self):
+        # Stop the config patch
+        self.config_patch.stop()
+        
+        # Clean up the root window after each test
+        if self.root:
+            self.root.destroy()
     
     def test_get_current_values(self):
         """Test getting current state values."""
@@ -34,7 +52,7 @@ class TestWeatherDashboardState(unittest.TestCase):
         self.state.city.set("Changed City")
         self.state.unit.set("imperial")
         
-        # Reset
+        # Reset (this will use the mocked config.DEFAULTS)
         self.state.reset_to_defaults()
         
         # Verify reset worked
