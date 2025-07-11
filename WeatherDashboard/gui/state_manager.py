@@ -31,7 +31,6 @@ class WeatherDashboardState:
         self.metric_labels = {}
         self.city_label = None
         self.date_label = None
-        self.status_label = None
         self.chart_widget = None
         
         # Chart components (maintained from WeatherDashboardWidgets)
@@ -119,9 +118,6 @@ class WeatherDashboardState:
         
         if self.date_label:
             self.date_label.config(text=date_str)
-        
-        if self.status_label:
-            self.status_label.config(text=status)
     
     def update_metric_display(self, metric_displays: Dict[str, str]) -> None:
         """Update all metric displays based on visibility.
@@ -157,6 +153,25 @@ class WeatherDashboardState:
         
         has_metrics = bool(visible_display_names)
         return visible_display_names, has_metrics
+    
+    def update_status_bar_system(self, message: str, status_type: str = "info") -> None:
+        """Update system status in status bar."""
+        if hasattr(self, 'system_status_label') and self.system_status_label:
+            colors = {
+                "info": "green",
+                "warning": "orange", 
+                "error": "red",
+                "loading": "blue"
+            }
+            self.system_status_label.configure(
+                text=message,
+                foreground=colors.get(status_type, "green")
+            )
+
+    def update_status_bar_data(self, message: str) -> None:
+        """Update data status in status bar."""
+        if hasattr(self, 'data_status_label') and self.data_status_label:
+            self.data_status_label.configure(text=message)
     
     # CHART METHODS
     def is_chart_available(self) -> bool:

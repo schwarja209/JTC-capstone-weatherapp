@@ -68,12 +68,12 @@ class LoadingStateManager:
     
     def _show_loading_status(self, message: str) -> None:
         """Shows loading message in status label."""
-        if self.state.progress_label:
+        if hasattr(self.state, 'progress_label') and self.state.progress_label:
             self.state.progress_label.configure(text=f"🔄 {message}", foreground="blue")
     
     def _hide_loading_status(self) -> None:
         """Hides loading message."""
-        if self.state.progress_label:
+        if hasattr(self.state, 'progress_label') and self.state.progress_label:
             self.state.progress_label.configure(text="", foreground="blue")
     
     def _start_progress_indicator(self) -> None:

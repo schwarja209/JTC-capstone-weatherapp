@@ -24,7 +24,6 @@ class ControlWidgets:
         self.update_button: Optional[ttk.Button] = None
         self.reset_button: Optional[ttk.Button] = None
         self.cancel_button: Optional[ttk.Button] = None
-        self.progress_label: Optional[ttk.Label] = None
         
         self._create_all_controls()
         self._register_widgets_with_state()
@@ -37,7 +36,6 @@ class ControlWidgets:
             self._create_metric_visibility()
             self._create_chart_controls()
             self._create_action_buttons()
-            self._create_progress_indicator()
             self._configure_grid_weights()
             self._bind_events()
         except Exception as e:
@@ -122,16 +120,6 @@ class ControlWidgets:
         )
         self.cancel_button.grid(row=3, column=2, pady=5, sticky=tk.E)
 
-    def _create_progress_indicator(self) -> None:
-        """Creates a progress indicator for async operations."""
-        self.progress_label = ttk.Label(
-            self.parent, 
-            text="", 
-            style="LabelValue.TLabel",
-            foreground="blue"
-        )
-        self.progress_label.grid(row=8, column=0, columnspan=3, pady=5)
-
     def _configure_grid_weights(self) -> None:
         """Configures grid column weights for proper layout."""
         for i in range(3):
@@ -148,9 +136,7 @@ class ControlWidgets:
         # Register buttons for loading state management
         self.state.update_button = self.update_button
         self.state.reset_button = self.reset_button
-        self.state.progress_label = self.progress_label
         self.state.cancel_button = self.cancel_button
-
     
     def update_chart_dropdown_options(self) -> None:
         """Update chart dropdown based on visible metrics."""
@@ -202,11 +188,13 @@ class ControlWidgets:
             self.city_entry.configure(state='normal')
     
     def _show_progress(self, message: str) -> None:
-        """Shows progress message."""
-        if self.progress_label:
-            self.progress_label.configure(text=f"🔄 {message}", foreground="blue")
-    
+        """Shows progress message in status bar."""
+        # Delegate to status bar instead of local progress label
+        if hasattr(self.state, 'progress_label') and self.state.progress_label:
+            self.state.progress_label.configure(text=f"🔄 {message}", foreground="blue")
+
     def _hide_progress(self) -> None:
-        """Hides progress message."""
-        if self.progress_label:
-            self.progress_label.configure(text="", foreground="blue")
+        """Hides progress message in status bar."""
+        # Delegate to status bar instead of local progress label
+        if hasattr(self.state, 'progress_label') and self.state.progress_label:
+            self.state.progress_label.configure(text="", foreground="blue")

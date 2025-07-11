@@ -101,21 +101,36 @@ class WeatherDashboardController:
             # Use state methods for display updates instead of scattered widget access
             self.state.update_city_display(
                 city_name=view_model.city_name,
-                date_str=view_model.date_str,
-                status=view_model.status
+                date_str=view_model.date_str
             )
 
             # Update display
             self.state.update_metric_display(view_model.metrics)
 
+            # Update status bar with data source info
+            data_status = f"{view_model.city_name} ({'Simulated' if error_exception else 'Live'})"
+            self.state.update_status_bar_data(data_status)
+
+            if error_exception:
+                # Simulated data - make it red/warning
+                if hasattr(self.state, 'data_status_label') and self.state.data_status_label:
+                    self.state.data_status_label.configure(foreground="red")
+            else:
+                # Live data - make it green/normal  
+                if hasattr(self.state, 'data_status_label') and self.state.data_status_label:
+                    self.state.data_status_label.configure(foreground="darkgreen")
+                
+            self.state.update_status_bar_system("Data updated", "info")
+
             # Check for weather alerts after successful data update
             if raw_data:
                 # raw_data is already unit-converted by the data service
                 alerts = self.alert_manager.check_weather_alerts(raw_data)
-                # Update alert status widget if it exists
+                # Update alert status widget if it exists. Access through tabbed widgets property
                 if (hasattr(self.widgets, 'metric_widgets') and 
+                    self.widgets.metric_widgets and
                     hasattr(self.widgets.metric_widgets, 'alert_status_widget')):
-                    self.widgets.metric_widgets.alert_status_widget.update_status(alerts)
+                    self.widgets.metric_widgets.update_alert_display(alerts)
             
             # Log the data
             self.service.write_to_log(city, raw_data, unit_system)

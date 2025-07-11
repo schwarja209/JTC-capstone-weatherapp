@@ -53,8 +53,9 @@ class WeatherDashboardMain:
 
     def _connect_alert_system(self) -> None:
         """Connect alert system to UI components."""
-        # Connect alert status widget to controller
+        # Access through tabbed widgets property
         if (hasattr(self.ui_renderer, 'metric_widgets') and 
+            self.ui_renderer.metric_widgets and
             hasattr(self.ui_renderer.metric_widgets, 'alert_status_widget')):
             
             alert_widget = self.ui_renderer.metric_widgets.alert_status_widget
@@ -100,8 +101,6 @@ class WeatherDashboardMain:
                 self.state.update_button = control_widgets.update_button
             if hasattr(control_widgets, 'reset_button'):
                 self.state.reset_button = control_widgets.reset_button
-            if hasattr(control_widgets, 'progress_label'):
-                self.state.progress_label = control_widgets.progress_label
 
     def on_update_clicked_async(self) -> None:
         '''Handles the update button click event with async weather fetching.'''
