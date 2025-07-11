@@ -113,6 +113,14 @@ class ControlWidgets:
         )
         self.reset_button.grid(row=2, column=2, pady=5, sticky=tk.E)
 
+        self.cancel_button = ttk.Button(
+            self.parent, 
+            text="Cancel", 
+            command=self.callbacks.get('cancel'), 
+            style="MainButton.TButton"
+        )
+        self.cancel_button.grid(row=3, column=2, pady=5, sticky=tk.E)
+
     def _create_progress_indicator(self) -> None:
         """Creates a progress indicator for async operations."""
         self.progress_label = ttk.Label(

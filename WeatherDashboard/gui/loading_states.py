@@ -7,6 +7,9 @@ import tkinter as tk
 from tkinter import ttk
 import threading
 
+from WeatherDashboard.services.api_exceptions import ValidationError
+from WeatherDashboard.utils.logger import Logger
+
 
 class LoadingStateManager:
     """Manages loading indicators and button states during async operations."""
@@ -35,6 +38,13 @@ class LoadingStateManager:
         self._enable_buttons()
         self._hide_loading_status()
         self._stop_progress_indicator()
+    
+    def update_progress(self, message: str) -> None:
+        """Updates progress message during ongoing operation."""
+        if not self.is_loading:
+            return  # Don't update if not in loading state
+        
+        self._show_loading_status(message)
     
     def _disable_buttons(self) -> None:
         """Disables interactive buttons during loading."""
@@ -81,22 +91,60 @@ class LoadingStateManager:
 
 
 class AsyncWeatherOperation:
-    """Handles async weather operations with proper threading."""
+    """Handles async weather operations with proper threading and cancellation support."""
     
     def __init__(self, controller: Any, loading_manager: LoadingStateManager) -> None:
         self.controller = controller
         self.loading_manager = loading_manager
+        self.current_thread: Optional[threading.Thread] = None
+        self.cancel_event = threading.Event()
+    
+    def cancel_current_operation(self) -> None:
+        """Cancel the currently running operation."""
+        if self.current_thread and self.current_thread.is_alive():
+            self.cancel_event.set()
+            Logger.info("Cancelling current weather operation")
+            # Stop loading UI state
+            self._schedule_ui_update(self.loading_manager.stop_loading)
     
     def fetch_weather_async(self, city_name: str, unit_system: str, on_complete: Optional[Callable] = None) -> None:
-        """Fetches weather data in background thread."""
+        """Fetches weather data in background thread with cancellation support."""
+        
+        # Cancel any existing operation first
+        self.cancel_current_operation()
+        self.cancel_event.clear()
         
         def background_task():
             try:
-                # Start loading in main thread
-                self._schedule_ui_update(self.loading_manager.start_loading, "Fetching weather...")
+                # Check for cancellation before starting
+                if self.cancel_event.is_set():
+                    return
+                
+                # Step 1: Start loading
+                self._schedule_ui_update(self.loading_manager.start_loading, "Initializing...")
+                
+                # Step 2: Input validation (simulated delay for demonstration)
+                if self.cancel_event.is_set():
+                    return
+                self._schedule_ui_update(self.loading_manager.update_progress, "Validating input...")
+                
+                # Step 3: API call
+                if self.cancel_event.is_set():
+                    return
+                self._schedule_ui_update(self.loading_manager.update_progress, "Fetching weather data...")
                 
                 # Do the actual work in background
                 success = self.controller.update_weather_display(city_name, unit_system)
+                
+                # Step 4: Processing data
+                if self.cancel_event.is_set():
+                    return
+                self._schedule_ui_update(self.loading_manager.update_progress, "Processing weather data...")
+                
+                # Check for cancellation before completion
+                if self.cancel_event.is_set():
+                    self._schedule_ui_update(self.loading_manager.stop_loading)
+                    return
                 
                 # Handle completion in main thread
                 def complete_task():
@@ -106,18 +154,44 @@ class AsyncWeatherOperation:
                 
                 self._schedule_ui_update(complete_task)
                 
-            except Exception as e:
-                # Handle errors in main thread
-                def handle_error():
+            except (ConnectionError, TimeoutError) as e:
+                if self.cancel_event.is_set():
+                    return  # Don't show error if operation was cancelled
+                
+                def handle_network_error():
                     self.loading_manager.stop_loading()
-                    if self.controller.error_handler:
+                    if hasattr(self.controller, 'error_handler') and self.controller.error_handler:
+                        from WeatherDashboard.services.api_exceptions import NetworkError
+                        network_error = NetworkError(f"Network error during async operation: {e}")
+                        self.controller.error_handler.handle_weather_error(network_error, city_name)
+                
+                self._schedule_ui_update(handle_network_error)
+
+            except ValidationError as e:
+                if self.cancel_event.is_set():
+                    return
+                
+                def handle_validation_error():
+                    self.loading_manager.stop_loading()
+                    if hasattr(self.controller, 'error_handler') and self.controller.error_handler:
+                        self.controller.error_handler.handle_input_validation_error(str(e))
+                
+                self._schedule_ui_update(handle_validation_error)
+
+            except Exception as e:
+                if self.cancel_event.is_set():
+                    return
+                
+                def handle_unexpected_error():
+                    self.loading_manager.stop_loading()
+                    if hasattr(self.controller, 'error_handler') and self.controller.error_handler:
                         self.controller.error_handler.handle_unexpected_error(str(e))
                 
-                self._schedule_ui_update(handle_error)
+                self._schedule_ui_update(handle_unexpected_error)
         
-        # Start background thread
-        thread = threading.Thread(target=background_task, daemon=True)
-        thread.start()
+        # Start background thread and store reference
+        self.current_thread = threading.Thread(target=background_task, daemon=True)
+        self.current_thread.start()
     
     def _schedule_ui_update(self, func: Callable, *args) -> None:
         """Safely schedules UI updates from background thread."""

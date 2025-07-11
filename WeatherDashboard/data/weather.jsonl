@@ -369,3 +369,8 @@
 {"timestamp": "2025-07-10 19:45:38", "level": "INFO", "message": "Weather data written for ouugoig - Simulated"}
 {"timestamp": "2025-07-10 19:45:49", "level": "ERROR", "message": "Input validation error: Invalid application state: At least one metric must be visible"}
 {"timestamp": "2025-07-10 19:46:03", "level": "ERROR", "message": "Input validation error: Invalid application state: At least one metric must be visible"}
+{"timestamp": "2025-07-10 20:19:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 20:21:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 20:21:41", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-10 20:21:42", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-10 20:21:45", "level": "INFO", "message": "Weather data written for new_york - Live"}

@@ -369,3 +369,8 @@
 [INFO] 2025-07-10 19:45:38 Weather data written for ouugoig - Simulated
 [ERROR] 2025-07-10 19:45:49 Input validation error: Invalid application state: At least one metric must be visible
 [ERROR] 2025-07-10 19:46:03 Input validation error: Invalid application state: At least one metric must be visible
+[INFO] 2025-07-10 20:19:58 Weather data written for new_york - Live
+[INFO] 2025-07-10 20:21:03 Weather data written for new_york - Live
+[INFO] 2025-07-10 20:21:41 Weather data written for new_york - Live
+[WARN] 2025-07-10 20:21:42 Fetch blocked due to rate limiting.
+[INFO] 2025-07-10 20:21:45 Weather data written for new_york - Live

@@ -148,6 +148,19 @@ class WeatherDashboardMain:
         '''Updates the chart dropdown based on the current visibility settings.'''
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
             self.ui_renderer.control_widgets.update_chart_dropdown_options()
+
+    def cancel_current_operation(self) -> None:
+        """Cancel any currently running async operation."""
+        if hasattr(self, 'async_operations'):
+            self.async_operations.cancel_current_operation()
+            
+        # Reset operation flag
+        if hasattr(self, '_operation_in_progress'):
+            self._operation_in_progress = False
+    
+        # Reset UI state
+        if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
+            self.ui_renderer.control_widgets.set_loading_state(False)
     
     def _handle_async_complete(self, success: bool, next_callback: Optional[callable] = None) -> None:
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
