@@ -94,13 +94,14 @@ class WeatherDataService:
     def write_to_log(self, city: str, data: Dict[str, Any], unit: str) -> None:
         """Write weather data to the log file.
         
-        Delegates to the data manager for formatted logging of weather data
-        with timestamp and unit system information.
-        
         Args:
             city: City name for the log entry
             data: Weather data to log
             unit_system: Unit system for formatting ('metric' or 'imperial')
         """
-        validate_unit_system(unit)
+        try:
+            validate_unit_system(unit)
+        except ValueError as e:
+            raise ValidationError(str(e))
+        
         self.data_manager.write_to_file(city, data, unit)

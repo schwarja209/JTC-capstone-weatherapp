@@ -58,7 +58,7 @@ class ControlWidgets:
         self.cancel_button: Optional[ttk.Button] = None
         
         self._create_all_controls()
-        self._register_widgets_with_state()
+        self._register_with_state()
     
     def _create_all_controls(self) -> None:
         """Create all control widgets in organized sections with error handling.
@@ -188,7 +188,7 @@ class ControlWidgets:
             # Enter key in city field triggers update
             self.city_entry.bind("<Return>", lambda e: self.callbacks['update']())
 
-    def _register_widgets_with_state(self) -> None:
+    def _register_with_state(self) -> None:
         """Register widget references with state for loading management."""
         # Register buttons for loading state management
         self.state.update_button = self.update_button

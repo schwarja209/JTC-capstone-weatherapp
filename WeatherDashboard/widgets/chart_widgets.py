@@ -119,7 +119,9 @@ class ChartWidgets:
     
     def _register_with_state(self) -> None:
         """Register chart components with the state manager."""
-        self.state.register_chart_widgets(self.chart_canvas, self.chart_fig, self.chart_ax)
+        self.state.chart_canvas = self.chart_canvas
+        self.state.chart_fig = self.chart_fig  
+        self.state.chart_ax = self.chart_ax
     
     def _format_chart_labels(self, metric_key: str, city: str, unit_system: str, fallback: bool) -> Dict[str, str]:
         """Formats chart labels based on metric and settings."""

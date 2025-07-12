@@ -95,7 +95,7 @@ class WeatherDashboardController:
         
         Args:
             city_name: City name to validate
-            unit_system: Unit system to validate
+            unit_system: Unit system parameter (validated by service layer)
             
         Returns:
             bool: True if validation passed, False otherwise
@@ -103,13 +103,6 @@ class WeatherDashboardController:
         # Input validation
         if not isinstance(city_name, str):
             self.error_handler.handle_input_validation_error("City name must be text")
-            return False
-        
-        # Unit validation
-        try:
-            validate_unit_system(unit_system)
-        except ValueError as e:
-            self.error_handler.handle_input_validation_error(str(e))
             return False
         
         # State validation

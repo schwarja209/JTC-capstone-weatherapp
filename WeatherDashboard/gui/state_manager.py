@@ -222,18 +222,6 @@ class WeatherDashboardState:
         """Check if chart widgets are available for rendering."""
         return self.chart_ax is not None
     
-    def register_chart_widgets(self, canvas: Optional[Any], figure: Optional[Any], axes: Optional[Any]) -> None:
-        """Register chart widgets with state manager.
-        
-        Args:
-            canvas: Matplotlib canvas widget
-            figure: Matplotlib figure object
-            axes: Matplotlib axes object
-        """
-        self.chart_canvas = canvas
-        self.chart_fig = figure
-        self.chart_ax = axes
-    
     # VALIDATION METHODS    
     def validate_current_state(self) -> List[str]:
         """Validate current state and return any errors.

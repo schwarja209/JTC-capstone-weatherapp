@@ -490,3 +490,9 @@
 {"timestamp": "2025-07-11 10:15:09", "level": "INFO", "message": "Weather data written for anchorage - Live"}
 {"timestamp": "2025-07-11 10:18:03", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
 {"timestamp": "2025-07-11 10:18:20", "level": "ERROR", "message": "Input validation error: Invalid application state: At least one metric must be visible"}
+{"timestamp": "2025-07-11 21:44:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 21:45:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-11 21:46:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 41.5\u00b0C (threshold: 35.0\u00b0C)"}
+{"timestamp": "2025-07-11 21:46:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-11 21:46:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 106.7\u00b0F (threshold: 95.0\u00b0F)"}
+{"timestamp": "2025-07-11 21:46:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}

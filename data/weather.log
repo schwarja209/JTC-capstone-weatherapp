@@ -490,3 +490,9 @@
 [INFO] 2025-07-11 10:15:09 Weather data written for anchorage - Live
 [ERROR] 2025-07-11 10:18:03 Input validation error: Invalid application state: City name cannot be empty
 [ERROR] 2025-07-11 10:18:20 Input validation error: Invalid application state: At least one metric must be visible
+[INFO] 2025-07-11 21:44:SS Weather data written for new_york - Live
+[INFO] 2025-07-11 21:45:SS Weather data written for new_york - Live
+[WARN] 2025-07-11 21:46:SS Weather alert: High Temperature Alert - Temperature is very high: 41.5°C (threshold: 35.0°C)
+[INFO] 2025-07-11 21:46:SS Weather data written for phoenix - Live
+[WARN] 2025-07-11 21:46:SS Weather alert: High Temperature Alert - Temperature is very high: 106.7°F (threshold: 95.0°F)
+[INFO] 2025-07-11 21:46:SS Weather data written for phoenix - Live

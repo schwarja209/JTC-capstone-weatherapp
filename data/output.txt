@@ -1655,3 +1655,35 @@ Humidity: 88 %
 Pressure: 29.65 inHg
 Wind Speed: 3.44 mph
 Conditions: Broken Clouds
+
+Time: 2025-07-11 21:44:15
+City: new_york
+Temperature: 76.1 °F
+Humidity: 83 %
+Pressure: 30.03 inHg
+Wind Speed: 10.36 mph
+Conditions: Few Clouds
+
+Time: 2025-07-11 21:45:48
+City: new_york
+Temperature: 24.5 °C
+Humidity: 83 %
+Pressure: 1017.00 hPa
+Wind Speed: 4.63 m/s
+Conditions: Few Clouds
+
+Time: 2025-07-11 21:46:10
+City: phoenix
+Temperature: 41.5 °C
+Humidity: 18 %
+Pressure: 1006.00 hPa
+Wind Speed: 9.26 m/s
+Conditions: Few Clouds
+
+Time: 2025-07-11 21:46:27
+City: phoenix
+Temperature: 106.7 °F
+Humidity: 18 %
+Pressure: 29.71 inHg
+Wind Speed: 20.71 mph
+Conditions: Few Clouds

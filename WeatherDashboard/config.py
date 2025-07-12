@@ -144,7 +144,7 @@ DEFAULTS = {
 # 5. FILE PATHS
 # ================================
 # Output Files & Directories
-base_dir = Path(__file__).parent
+base_dir = Path(__file__).parent.parent
 data_dir = base_dir / "data"
 
 OUTPUT = {

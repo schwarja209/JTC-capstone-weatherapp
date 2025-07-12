@@ -378,7 +378,10 @@ class WeatherAPIService:
         Raises:
             ValueError: If weather data fails validation checks
         """
-        self._data_validator.validate_weather_data(d)
+        try:
+            self._data_validator.validate_weather_data(d)
+        except ValueError as e:
+            raise ValidationError(str(e))
     
     def _generate_fallback_response(self, city, msg, exc):
         """Use simulated data generator when API call fails.
