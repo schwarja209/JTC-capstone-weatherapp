@@ -11,6 +11,7 @@ Classes:
 """
 
 from typing import Optional
+import threading
 import tkinter.messagebox as messagebox
 
 from WeatherDashboard.gui.state_manager import WeatherDashboardState
@@ -31,6 +32,7 @@ class WeatherDashboardMain:
     
     Attributes:
         root: Main tkinter window
+        _operation_lock: Threading lock for operation state protection
         state: Application state manager
         frames: GUI frame manager
         data_manager: Weather data management service
@@ -51,6 +53,7 @@ class WeatherDashboardMain:
             root: Main tkinter window instance
         """
         self.root = root
+        self._operation_lock = threading.Lock()
         self.state = WeatherDashboardState() 
         self.frames = WeatherDashboardGUIFrames(root)
         self.data_manager = WeatherDataManager()
@@ -115,10 +118,10 @@ class WeatherDashboardMain:
         the chart display. Prevents concurrent operations during startup.
         """
         # Prevent concurrent operations
-        if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
-            return
-        
-        self._operation_in_progress = True
+        with self._operation_lock:
+            if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
+                return
+            self._operation_in_progress = True
         
         def on_weather_complete(success: bool) -> None:
             if success:
@@ -126,7 +129,8 @@ class WeatherDashboardMain:
                 self.controller.update_chart()
         
         def operation_finished(success: bool):
-            self._operation_in_progress = False
+            with self._operation_lock:
+                self._operation_in_progress = False
             on_weather_complete(success)
         
         # Load initial data asynchronously
@@ -160,10 +164,10 @@ class WeatherDashboardMain:
         weather display and chart upon completion.
         """
         # Prevent concurrent operations
-        if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
-            return
-        
-        self._operation_in_progress = True
+        with self._operation_lock:
+            if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
+                return
+            self._operation_in_progress = True
         
         def on_weather_complete(success: bool) -> None:
             if success:
@@ -171,7 +175,8 @@ class WeatherDashboardMain:
                 self.controller.update_chart()
         
         def operation_finished(success: bool):
-            self._operation_in_progress = False
+            with self._operation_lock:
+                self._operation_in_progress = False
             self._handle_async_complete(success, on_weather_complete)
 
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
@@ -192,10 +197,10 @@ class WeatherDashboardMain:
         Prevents concurrent operations during reset process.
         """
         # Prevent concurrent operations
-        if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
-            return
-        
-        self._operation_in_progress = True
+        with self._operation_lock:
+            if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
+                return
+            self._operation_in_progress = True
         
         self.state.reset_to_defaults()
         messagebox.showinfo("Reset", "Dashboard reset to default values.")
@@ -231,18 +236,17 @@ class WeatherDashboardMain:
 
     def cancel_current_operation(self) -> None:
         """Cancel any currently running async operation.
-        
-        Stops any active background weather fetching operation and resets
-        the UI to normal state. Safe to call even when no operation is running.
-        """
-        if hasattr(self, 'async_operations'):
-            self.async_operations.cancel_current_operation()
-            
-        # Reset operation flag
-        if hasattr(self, '_operation_in_progress'):
-            self._operation_in_progress = False
     
-        # Reset UI state
+        Stops any active background weather fetching operation and resets
+        the UI to normal state. Uses thread-safe locking to prevent race
+        conditions with completion handlers. Safe to call even when no 
+        operation is running.
+        """
+        with self._operation_lock:
+            if hasattr(self, 'async_operations'):
+                self.async_operations.cancel_current_operation()
+    
+        # UI reset can happen immediately
         if hasattr(self.ui_renderer, 'control_widgets') and self.ui_renderer.control_widgets:
             self.ui_renderer.control_widgets.set_loading_state(False)
     

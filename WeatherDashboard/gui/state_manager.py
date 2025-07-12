@@ -246,21 +246,6 @@ class WeatherDashboardState:
         
         return errors
     
-    def get_current_settings_summary(self) -> Dict[str, Any]:
-        """Get a summary of current settings for logging/debugging.
-        
-        Returns:
-            Dict[str, Any]: Dictionary containing all current state values
-        """
-        return {
-            'city': self.get_current_city(),
-            'unit_system': self.get_current_unit_system(),
-            'date_range': self.get_current_range(),
-            'chart_metric': self.get_current_chart_metric(),
-            'visible_metrics': self.get_visible_metrics(),
-            'fallback_active': self.is_using_fallback(),
-        }
-    
     def __repr__(self) -> str:
         """String representation for debugging.
         

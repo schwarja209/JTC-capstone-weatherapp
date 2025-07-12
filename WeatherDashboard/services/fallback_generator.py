@@ -42,7 +42,19 @@ class SampleWeatherGenerator:
         self.random = random
     
     def generate(self, city: str, num_days: int = 7) -> List[Dict[str, Any]]:
-        """Generates simulated weather data for a given city over a specified number of days."""
+        """Generate simulated weather data for a given city over a specified number of days.
+        
+        Creates realistic weather patterns with randomized values within appropriate
+        ranges for different climate types. Uses base temperature with daily variations.
+        
+        Args:
+            city: City name for weather data generation
+            num_days: Number of days of historical data to generate (default 7)
+            
+        Returns:
+            List[Dict[str, Any]]: List of weather data entries with date, temperature,
+                                humidity, conditions, wind_speed, and pressure
+        """
         data = []
         temp_min, temp_max = self.temp_ranges['default']
         base_temp = self.random.randint(temp_min, temp_max)

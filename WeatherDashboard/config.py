@@ -154,7 +154,18 @@ OUTPUT = {
 }
 
 # ================================
-# 6. CONFIGURATION VALIDATION
+# 6. MEMORY MANAGEMENT
+# ================================
+MEMORY = {
+    "max_cities_stored": 50,        # Maximum number of cities to keep in memory
+    "max_entries_per_city": 30,     # Maximum weather entries per city (existing)
+    "max_total_entries": 1000,      # Global maximum entries across all cities
+    "cleanup_interval_hours": 24,   # Hours between automatic cleanup (existing)
+    "aggressive_cleanup_threshold": 0.8  # Trigger aggressive cleanup at 80% of limits
+}
+
+# ================================
+# 7. CONFIGURATION VALIDATION
 # ================================
 def validate_config() -> None:
     """Validate that all required configuration keys exist and have expected structure.
@@ -230,6 +241,24 @@ def validate_config() -> None:
         if not isinstance(ALERT_THRESHOLDS[threshold], (int, float)):
             raise ValueError(f"Alert threshold '{threshold}' must be a number")
     
+    # Check MEMORY structure
+    try:
+        MEMORY
+    except NameError:
+        raise ValueError("Missing 'MEMORY' configuration section")
+    
+    required_memory_keys = ['max_cities_stored', 'max_entries_per_city', 'max_total_entries', 'cleanup_interval_hours']
+    for key in required_memory_keys:
+        if key not in MEMORY:
+            raise ValueError(f"Missing required MEMORY key: '{key}'")
+        if not isinstance(MEMORY[key], (int, float)) or MEMORY[key] <= 0:
+            raise ValueError(f"MEMORY['{key}'] must be a positive number")
+    
+    # Special validation for threshold (should be 0-1)
+    if 'aggressive_cleanup_threshold' in MEMORY:
+        if not 0 < MEMORY['aggressive_cleanup_threshold'] <= 1:
+            raise ValueError("MEMORY['aggressive_cleanup_threshold'] must be between 0 and 1")
+
     # Check API key
     if not API_KEY:
         print("Warning: No API key found. Application will use fallback data only.")

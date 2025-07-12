@@ -1,3 +1,11 @@
+"""
+Convenience runner for the Weather Dashboard application.
+
+Simple entry point script that sets up the Python path and launches
+the Weather Dashboard from the project root directory. Provides an
+easy way to run the application without navigating to the package directory.
+"""
+
 if __name__ == "__main__":
     import sys
     import os

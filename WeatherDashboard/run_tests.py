@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
+
 """
-Quick test runner for development.
+Test runner for the Weather Dashboard application.
+
+Discovers and executes all unit tests in the tests directory with proper
+error reporting and exit codes for CI/CD integration. Provides a simple
+way to run the complete test suite during development.
 """
 
 import sys

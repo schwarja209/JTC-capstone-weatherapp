@@ -34,7 +34,7 @@ class WeatherDataManager:
         api_service: Weather API service for external data fetching
         weather_data: Dictionary storing weather data by city key
         _last_cleanup: Timestamp of last data cleanup operation
-        _cleanup_interval_hours: Hours between automatic cleanup operations
+        _cleanup_interval_hours: Hours between automatic cleanup operations (from config)
     """
     def __init__(self) -> None:
         """Initialize the weather data manager.
@@ -46,7 +46,7 @@ class WeatherDataManager:
 
         # Track when we last cleaned up data
         self._last_cleanup = datetime.now()
-        self._cleanup_interval_hours = 24  # Cleanup every 24 hours
+        self._cleanup_interval_hours = config.MEMORY["cleanup_interval_hours"]  # Cleanup every ___ hours
 
     def fetch_current(self, city: str, unit_system: str) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
         """Fetch current weather data for a city, using fallback if API call fails.
@@ -71,10 +71,13 @@ class WeatherDataManager:
         # If this changes in future (e.g., new fallback with imperial), update convert_units().
         converted_data = self.convert_units(raw_data, unit_system)
 
-        # Periodic cleanup check
+        # Memory pressure and periodic cleanup check
         current_time = datetime.now()
-        if (current_time - self._last_cleanup).total_seconds() > (self._cleanup_interval_hours * 3600):
-            self.cleanup_old_data()
+        should_cleanup = (current_time - self._last_cleanup).total_seconds() > (self._cleanup_interval_hours * 3600)
+        memory_pressure = self._check_memory_pressure()
+
+        if should_cleanup or memory_pressure:
+            self.cleanup_old_data(force_memory_cleanup=memory_pressure)
             self._last_cleanup = current_time
 
         key = city_key(city)
@@ -84,7 +87,7 @@ class WeatherDataManager:
         if not existing_data or (last_date and current_date and last_date.date() != current_date.date()):
             existing_data.append(converted_data)
             # Limit stored data to prevent memory issues (keep last 30 entries per city)
-            max_entries = 30
+            max_entries = config.MEMORY["max_entries_per_city"]
             if len(existing_data) > max_entries:
                 existing_data[:] = existing_data[-max_entries:]  # Keep only the most recent entries
 
@@ -228,20 +231,71 @@ class WeatherDataManager:
         ]
         return "\n".join(lines)
     
-    def cleanup_old_data(self, days_to_keep: int = 30) -> None:
-        """Remove weather data older than specified days to free memory.
-        
-        Iterates through all stored weather data and removes entries older
-        than the specified threshold to prevent memory bloat.
+    def cleanup_old_data(self, days_to_keep: int = 30, force_memory_cleanup: bool = False) -> None:
+        """Remove old weather data and manage memory usage.
         
         Args:
             days_to_keep: Number of days of data to retain (default 30)
+            force_memory_cleanup: Force aggressive cleanup regardless of age
         """
         cutoff_date = datetime.now() - timedelta(days=days_to_keep)
         
+        # First pass: Remove old entries
         for city_key, data_list in self.weather_data.items():
-            # Filter out entries older than cutoff date
             self.weather_data[city_key] = [
                 entry for entry in data_list 
                 if entry.get('date', datetime.now()) >= cutoff_date
             ]
+        
+        # Second pass: Handle memory pressure
+        if force_memory_cleanup or self._check_memory_pressure():
+            self._aggressive_memory_cleanup()
+        
+        # Third pass: Remove empty city entries
+        empty_cities = [city for city, data in self.weather_data.items() if not data]
+        for city in empty_cities:
+            del self.weather_data[city]
+    
+    def _check_memory_pressure(self) -> bool:
+        """Check if we're approaching memory limits.
+        
+        Returns:
+            bool: True if memory cleanup is needed
+        """
+        total_entries = sum(len(entries) for entries in self.weather_data.values())
+        cities_count = len(self.weather_data)
+        
+        threshold = config.MEMORY["aggressive_cleanup_threshold"]
+
+        return (cities_count > config.MEMORY["max_cities_stored"] * threshold or 
+            total_entries > config.MEMORY["max_total_entries"] * threshold)
+    
+    def _aggressive_memory_cleanup(self) -> None:
+        """Perform aggressive memory cleanup when limits exceeded."""
+        # Sort cities by last access time (most recent data first)
+        city_last_access = {}
+        for city, entries in self.weather_data.items():
+            if entries:
+                latest_date = max(entry.get('date', datetime.min) for entry in entries)
+                city_last_access[city] = latest_date
+        
+        # Keep only the most recently accessed cities
+        cities_by_recency = sorted(city_last_access.items(), 
+                                key=lambda x: x[1], reverse=True)
+        
+        # Remove least recently used cities
+        if len(cities_by_recency) > config.MEMORY["max_cities_stored"]:
+            cities_to_remove = cities_by_recency[config.MEMORY["max_cities_stored"]:]
+            for city, _ in cities_to_remove:
+                del self.weather_data[city]
+        
+        # If still over total entry limit, trim entries per city
+        total_entries = sum(len(entries) for entries in self.weather_data.values())
+        if total_entries > config.MEMORY["max_total_entries"]:
+            target_per_city = config.MEMORY["max_total_entries"] // len(self.weather_data)
+            target_per_city = max(5, min(target_per_city, config.MEMORY["max_entries_per_city"]))
+            
+            for city in self.weather_data:
+                if len(self.weather_data[city]) > target_per_city:
+                    # Keep most recent entries
+                    self.weather_data[city] = self.weather_data[city][-target_per_city:]

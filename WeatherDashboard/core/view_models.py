@@ -114,5 +114,12 @@ class WeatherViewModel:
         return '_conversion_warnings' in self.raw_data
 
     def get_metric_value(self, metric_key: str) -> str:
-        """Get a specific formatted metric value."""
+        """Get a specific formatted metric value.
+        
+        Args:
+            metric_key: Key of the metric to retrieve (e.g., 'temperature', 'humidity')
+            
+        Returns:
+            str: Formatted metric value with units, or '--' if not available
+        """
         return self.metrics.get(metric_key, "--")
