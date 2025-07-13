@@ -78,7 +78,7 @@ Each ADR follows the format:
 
 ## ADR-003: Mixed State Access Patterns
 
-**Status**: Accepted
+**Status**: Superseded by ADR-029
 
 **Context**: GUI components need different types of state access - direct binding for widgets vs. encapsulated access for business logic.
 
@@ -202,7 +202,7 @@ Each ADR follows the format:
 
 ## ADR-007: Widget Registration Pattern
 
-**Status**: Accepted
+**Status**: Deprecated
 
 **Context**: Widgets need to be accessible from other components (controllers, loading managers) for updates and state changes.
 
@@ -210,6 +210,8 @@ Each ADR follows the format:
 - All widget classes implement `_register_with_state()` method
 - Direct assignment pattern: `self.state.widget_name = self.widget`
 - Widgets register themselves during initialization
+
+**Note**: This pattern was deprecated during architecture modernization as widget registration was simplified and centralized through the widget coordinator pattern.
 
 **Rationale**:
 - Simple and direct approach suitable for GUI applications
@@ -233,7 +235,7 @@ Each ADR follows the format:
 
 ## ADR-008: Configuration Management
 
-**Status**: Accepted
+**Status**: Superseded by ADR-026
 
 **Context**: Application needs centralized configuration for API settings, UI defaults, thresholds, and unit mappings.
 
@@ -243,6 +245,8 @@ Each ADR follows the format:
 - Derived value functions for backward compatibility
 - Environment variable loading for API keys
 - Comprehensive validation function
+
+**Note**: Superseded by ADR-026 which simplified the configuration system by removing derived value functions and using direct access patterns.
 
 **Rationale**:
 - Single source of truth for all configuration
@@ -266,7 +270,7 @@ Each ADR follows the format:
 
 ## ADR-009: Error Handling with Theme Support
 
-**Status**: Accepted
+**Status**: Enhanced by ADR-028
 
 **Context**: Error messages should be user-friendly and support different presentation styles for future theme system.
 
@@ -275,6 +279,8 @@ Each ADR follows the format:
 - `WeatherErrorHandler` with theme-specific message templates
 - Graceful error presentation with appropriate UI responses
 - Foundation for future optimistic/pessimistic theme messaging
+
+**Note**: Enhanced by ADR-028 which standardized error handling patterns across all architectural layers.
 
 **Rationale**:
 - Better user experience with friendly error messages
@@ -362,7 +368,7 @@ Each ADR follows the format:
 
 ## ADR-012: Type Hints and Documentation
 
-**Status**: Accepted
+**Status**: Enhanced by ADR-030
 
 **Context**: Large codebase needs clear interfaces and documentation for maintainability.
 
@@ -371,6 +377,8 @@ Each ADR follows the format:
 - Use `Any` for GUI components where specific typing is complex
 - Detailed docstrings for complex methods, brief for simple ones
 - Avoid over-documentation of obvious functionality
+
+**Note**: Enhanced by ADR-030 which established hybrid documentation standards.
 
 **Rationale**:
 - Type hints provide excellent IDE support and catch errors early
@@ -692,7 +700,7 @@ WeatherDashboard/
 
 ## ADR-022: Documentation Standards and Approach
 
-**Status**: Accepted
+**Status**: Superseded by ADR-030
 
 **Context**: Large codebase needs consistent documentation that aids understanding without being verbose.
 
@@ -702,6 +710,8 @@ WeatherDashboard/
 - Brief, single-line docstrings for simple getters and setters
 - Type hints provide interface documentation
 - Avoid over-documenting obvious functionality
+
+**Note**: Superseded by ADR-030 which established more specific hybrid documentation standards.
 
 **Rationale**:
 - Documentation should add value, not noise
@@ -821,6 +831,176 @@ WeatherDashboard/
 
 ---
 
+## ADR-026: Configuration System Simplification
+
+**Status**: Accepted
+
+**Context**: Configuration system had redundant derived value functions and constants that added unnecessary complexity.
+
+**Decision**: Simplify configuration to direct access patterns:
+- Remove `get_key_to_display_mapping()`, `get_display_to_key_mapping()`, `get_default_visibility()` functions
+- Eliminate `KEY_TO_DISPLAY`, `DISPLAY_TO_KEY`, `DEFAULT_VISIBILITY` constants
+- Use direct access: `config.METRICS[key]['label']` instead of derived mappings
+- Update DEFAULTS to generate visibility directly: `{k: v['visible'] for k, v in METRICS.items()}`
+
+**Rationale**:
+- Eliminates ~70 lines of redundant code
+- Single source of truth for metric definitions
+- Simpler, more direct access patterns
+- Easier maintenance without abstraction layers
+- No performance benefit from pre-computed mappings in this use case
+
+**Alternatives**:
+- Keep derived value functions for backward compatibility
+- Create property-based access instead of functions
+- Move derived values to separate module
+
+**Consequences**:
+- ✅ Significantly cleaner configuration code
+- ✅ Single source of truth established
+- ✅ Direct access patterns throughout codebase
+- ✅ Easier to understand and maintain
+- ❌ Breaking change requiring updates across multiple files
+- ❌ Slightly more verbose access in some cases
+
+---
+
+## ADR-027: Memory Management Streamlining
+
+**Status**: Accepted
+
+**Context**: Data manager had over-engineered memory management with multiple cleanup strategies for simple use case.
+
+**Decision**: Simplify memory management to single, effective approach:
+- Replace complex `_check_memory_pressure()` with simple `_simple_memory_check()`
+- Streamline `cleanup_old_data()` method to remove three-pass system
+- Eliminate complex `_aggressive_memory_cleanup()` with LRU algorithms
+- Keep essential memory safeguards with direct limit checks
+
+**Rationale**:
+- Removes ~50 lines of complex logic
+- Single cleanup strategy easier to understand and maintain
+- Adequate for typical weather app usage patterns
+- Maintains memory protection without over-engineering
+- Simpler code reduces potential bugs
+
+**Alternatives**:
+- Keep complex system for theoretical scalability
+- Remove memory management entirely
+- Implement different cleanup algorithms
+
+**Consequences**:
+- ✅ Much simpler, maintainable memory management
+- ✅ Adequate protection for typical usage
+- ✅ Easier to debug and modify
+- ✅ Reduced complexity and potential bug surface
+- ❌ Less sophisticated memory optimization
+- ❌ May not scale to extremely heavy usage (not a concern for this app)
+
+---
+
+## ADR-028: Error Handling Standardization
+
+**Status**: Accepted
+
+**Context**: Application had multiple error handling patterns across different architectural layers causing inconsistency.
+
+**Decision**: Standardize error handling patterns across all layers:
+- **Utilities**: Raise standard Python exceptions (`ValueError`, etc.)
+- **Services**: Convert to custom exceptions at boundaries (`ValidationError`, `NetworkError`, etc.)
+- **Controllers**: Use error_handler for all error presentation with helper methods
+- **Widgets**: Consistent error handling with graceful degradation
+
+**Rationale**:
+- Clear responsibility boundaries (services convert, controllers handle)
+- Consistent error presentation throughout application
+- Better user experience with professional error recovery
+- Foundation ready for theme-aware error messaging
+- Eliminates error handling variance across components
+
+**Alternatives**:
+- Allow mixed error handling patterns per component
+- Use only standard exceptions throughout
+- Implement complex error handling framework
+
+**Consequences**:
+- ✅ Consistent, professional error handling across all layers
+- ✅ Clear architectural boundaries and responsibilities
+- ✅ Better user experience with graceful degradation
+- ✅ Foundation ready for theme system integration
+- ❌ Requires service-layer exception conversion
+- ❌ More structured approach requires discipline to maintain
+
+---
+
+## ADR-029: Widget State Access Patterns
+
+**Status**: Accepted
+
+**Context**: Widgets had inconsistent state access patterns, some using risky direct access that could cause runtime errors.
+
+**Decision**: Standardize to safe widget state access patterns:
+- **Safe Access Pattern**: `self.state.visibility.get(metric_key, tk.BooleanVar()).get()`
+- **Helper Methods**: Consistent helper methods across widget classes
+- **Error Handling**: Proper try/catch blocks with logging for state access failures
+- **No Risky Direct Access**: Eliminate patterns like `self.state.visibility[metric_key]` without safety checks
+
+**Rationale**:
+- Prevents runtime KeyError exceptions from missing state keys
+- Consistent access patterns across all widget files
+- Proper error handling with graceful degradation
+- Professional safety practices throughout UI code
+- Easier debugging with consistent error logging
+
+**Alternatives**:
+- Keep mixed access patterns
+- Always use direct access (risky)
+- Create complex state management wrapper
+
+**Consequences**:
+- ✅ No more runtime errors from missing state keys
+- ✅ Consistent, safe access patterns throughout UI
+- ✅ Better error handling and debugging capabilities
+- ✅ Professional robustness in widget interactions
+- ❌ Slightly more verbose access code
+- ❌ Need to maintain consistent patterns across team
+
+---
+
+## ADR-030: Hybrid Documentation Standards
+
+**Status**: Accepted
+
+**Context**: Codebase had mixed documentation styles - some over-detailed for simple methods, others under-documented for complex methods.
+
+**Decision**: Implement hybrid documentation approach:
+- **Detailed Documentation**: For methods with 3+ parameters, complex business logic, or non-obvious behavior
+- **Brief Documentation**: For simple getters/setters, obvious utility functions, or methods with clear purpose
+- **Consistent Standards**: Type hints provide interface documentation, docstrings add value not noise
+- **Professional Balance**: Avoid over-documenting obvious functionality while ensuring complex methods are well-explained
+
+**Rationale**:
+- Documentation should add value, not create maintenance overhead
+- Complex methods need explanation, simple ones need brief identification
+- Type hints already document interfaces effectively
+- Professional codebase standards without documentation bloat
+- Consistent approach across entire codebase
+
+**Alternatives**:
+- Minimal documentation approach (brief for everything)
+- Comprehensive documentation (detailed for everything)
+- Auto-generated documentation only
+
+**Consequences**:
+- ✅ Good balance of helpful information and maintainability
+- ✅ Documentation that actually gets read and used
+- ✅ Consistent professional standards across codebase
+- ✅ Reduced maintenance overhead for obvious functionality
+- ❌ Requires judgment calls about complexity level
+- ❌ Need ongoing consistency maintenance
+
+---
+
 ## Future Theme System Decisions (To Be Documented)
 
 The following architectural decisions will be documented as the dual-theme satirical weather system is developed:
@@ -842,5 +1022,5 @@ This ADR document should be updated whenever:
 - Theme system development introduces new architectural patterns
 - Significant refactoring changes existing architectural approaches
 
-**Last Updated**: [Current Date]
-**Next Review**: [When theme system development begins]
+**Last Updated**: Current Session (Added ADRs 026-030 for recent architecture modernization)
+**Next Review**: When theme system development begins
