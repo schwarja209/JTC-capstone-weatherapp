@@ -23,7 +23,7 @@ import os
 from pathlib import Path
 
 # ================================
-# 1. ENVIRONMENT LOADING
+# 1. API & ENVIRONMENT CONFIGURATION  
 # ================================
 # Attempt to load environment variables from a .env file
 # This accounts for error if 'dotenv' is not installed (like on github actions testing)
@@ -33,15 +33,15 @@ try:
 except ImportError:
     print("Warning: 'dotenv' not found. Skipping .env loading.")
 
-# ================================
-# 2. CORE CONFIGURATION VALUES
-# ================================
 # API Configuration
 API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 API_UV_URL = "https://api.openweathermap.org/data/2.5/uvi"
 API_AIR_QUALITY_URL = "https://api.openweathermap.org/data/2.5/air_pollution"
 API_KEY = os.getenv("OPENWEATHER_API_KEY")  # load from .env
 
+# ================================
+# 2. CORE WEATHER METRICS DEFINITIONS
+# ================================
 # Unified Metric Definitions
 METRICS = {
     # Original metrics
@@ -102,6 +102,17 @@ METRIC_GROUPS = {
     }
 }
 
+# Enhanced display mappings for when metrics are combined
+ENHANCED_DISPLAY_LABELS = {
+    'temperature': 'Temperature (with feels-like)',
+    'temp_min': "Today's Range (min/max)", 
+    'wind_speed': 'Wind (speed & direction)',
+    'conditions': 'Conditions (with icon)'
+}
+
+# ================================
+# 3. UNITS & MEASUREMENT SYSTEMS
+# ================================
 # Metric Units Mapping
 UNITS = {
     'metric_units': {
@@ -149,13 +160,11 @@ CHART = {
     }
 }
 
-# Enhanced display mappings for when metrics are combined
-ENHANCED_DISPLAY_LABELS = {
-    'temperature': 'Temperature (with feels-like)',
-    'temp_min': "Today's Range (min/max)", 
-    'wind_speed': 'Wind (speed & direction)',
-    'conditions': 'Conditions (with icon)'
-}
+# ====================================
+# 4. ALERTS CONFIGURATION & THRESHOLDS
+# ====================================
+# Alert priority configuration
+ALERT_PRIORITY_ORDER = ['warning', 'caution', 'watch']
 
 # Alert Threshold Configuration
 ALERT_THRESHOLDS = {
@@ -180,30 +189,8 @@ ALERT_THRESHOLDS = {
     'comfort_score_low': 30,          # Score - Uncomfortable conditions
 }
 
-# Icon selection for display
-WEATHER_ICONS = {
-    '01d': '☀️',   # clear sky day
-    '01n': '🌙',   # clear sky night
-    '02d': '🌤️',   # few clouds day
-    '02n': '🌙',   # few clouds night
-    '03d': '☁️',   # scattered clouds
-    '03n': '☁️',   # scattered clouds
-    '04d': '☁️',   # broken clouds
-    '04n': '☁️',   # broken clouds
-    '09d': '🌧️',   # shower rain
-    '09n': '🌧️',   # shower rain
-    '10d': '🌦️',   # rain day
-    '10n': '🌧️',   # rain night
-    '11d': '⛈️',   # thunderstorm
-    '11n': '⛈️',   # thunderstorm
-    '13d': '🌨️',   # snow
-    '13n': '🌨️',   # snow
-    '50d': '🌫️',   # mist
-    '50n': '🌫️',   # mist
-}
-
 # ================================
-# 4. DEFAULTS (backward compatibility with original variable names)
+# 5. APPLICATION DEFAULTS
 # ================================
 # Control Frame Defaults
 DEFAULTS = {
@@ -216,7 +203,7 @@ DEFAULTS = {
 }
 
 # ================================
-# 5. FILE PATHS
+# 6. SYSTEM CONFIGURATION
 # ================================
 # Output Files & Directories
 base_dir = Path(__file__).parent.parent
@@ -228,9 +215,6 @@ OUTPUT = {
     "log": str(data_dir / "output.txt")
 }
 
-# ================================
-# 6. MEMORY MANAGEMENT
-# ================================
 MEMORY = {
     "max_cities_stored": 50,        # Maximum number of cities to keep in memory
     "max_entries_per_city": 30,     # Maximum weather entries per city (existing)
@@ -285,5 +269,5 @@ def validate_config() -> None:
     if not all(isinstance(MEMORY.get(key, 0), (int, float)) and MEMORY.get(key, 0) > 0 
                for key in ['max_cities_stored', 'max_entries_per_city', 'max_total_entries']):
         raise ValueError("Memory configuration must contain positive numbers")
-    
+
     print("Configuration validation passed successfully.")

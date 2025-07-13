@@ -14,10 +14,13 @@ from typing import Dict, Any, Callable, Optional
 import tkinter as tk
 from tkinter import ttk
 
-from WeatherDashboard import config
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.logger import Logger
 
 
+# ================================
+# 1. INITIALIZATION & SETUP
+# ================================
 class ControlWidgets:
     """Manages all control panel widgets including inputs, selections, and buttons.
     
@@ -86,13 +89,16 @@ class ControlWidgets:
             Logger.error(f"Failed to create control widgets: {e}")
             raise
 
+# ================================
+# 2. BASIC INPUT CONTROLS
+# ================================
     def _create_city_input(self) -> None:
         """Create city name input field with label.
         
         Creates a labeled text entry field for city name input, bound to the
         state city variable for automatic state synchronization.
         """
-        ttk.Label(self.parent, text="City:", style="LabelName.TLabel").grid(row=1, column=0, sticky=tk.W, pady=5)
+        ttk.Label(self.parent, text="City:", style="LabelName.TLabel").grid(row=1, column=0, sticky=tk.W, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         self.city_entry = ttk.Entry(self.parent, textvariable=self.state.city)
         self.city_entry.grid(row=1, column=1, sticky=tk.W)
 
@@ -102,7 +108,7 @@ class ControlWidgets:
         Creates Imperial and Metric radio button options for temperature,
         wind speed, and pressure unit selection, bound to state unit variable.
         """
-        ttk.Label(self.parent, text="Units:", style="LabelName.TLabel").grid(row=2, column=0, sticky=tk.W, pady=5)
+        ttk.Label(self.parent, text="Units:", style="LabelName.TLabel").grid(row=2, column=0, sticky=tk.W, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         ttk.Radiobutton(
             self.parent, 
             text="Imperial (°F, mph, inHg)", 
@@ -117,28 +123,31 @@ class ControlWidgets:
             value="metric"
         ).grid(row=3, column=1, sticky=tk.W)
 
+# ================================
+# 3. METRIC VISIBILITY CONTROLS  
+# ================================
     def _create_metric_visibility(self):
         """Create metric visibility controls using existing two-column design."""
         
         # Main section header (unchanged)
         # Main section header with select/clear buttons
         header_frame = ttk.Frame(self.parent)
-        header_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=(5,10))
+        header_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=styles.CONTROL_PANEL_CONFIG['padding']['header'])
 
         ttk.Label(header_frame, text="Metrics Visibility:", style="LabelName.TLabel").pack(side=tk.LEFT)
 
         # Add Select All / Clear All buttons
         ttk.Button(header_frame, text="Select All", command=self._select_all_metrics, 
-                style="MainButton.TButton").pack(side=tk.LEFT, padx=(10,5))
+                style="MainButton.TButton").pack(side=tk.LEFT, padx=styles.CONTROL_PANEL_CONFIG['padding']['button_group'])
         ttk.Button(header_frame, text="Clear All", command=self._clear_all_metrics, 
-                style="MainButton.TButton").pack(side=tk.LEFT, padx=5)
+                style="MainButton.TButton").pack(side=tk.LEFT, padx=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         
         current_row = 5
         
         # Iterate through metric groups with cleaner logic
         for group_key, group_config in config.METRIC_GROUPS.items():
             current_row = self._add_metric_group_two_column(group_config, current_row)
-            current_row += 1  # Extra space between groups
+            current_row += styles.CONTROL_PANEL_CONFIG['spacing']['section'] # Extra space between groups
 
     def _add_metric_group_two_column(self, group_config, start_row):
         """Add metric group with existing two-column layout, cleaner logic.
@@ -154,7 +163,7 @@ class ControlWidgets:
         
         # Group header (unchanged design)
         ttk.Label(self.parent, text=f"{group_config['label']}:", style="LabelName.TLabel").grid(
-            row=current_row, column=0, sticky=tk.W, pady=(10,2))
+            row=current_row, column=0, sticky=tk.W, pady=styles.CONTROL_PANEL_CONFIG['spacing']['group'])
         current_row += 1
         
         # Add metrics in two-column layout with cleaner logic
@@ -186,8 +195,27 @@ class ControlWidgets:
             variable=self._get_metric_visibility_var(metric_key),
             command=self.callbacks.get('dropdown_update')
         )
-        checkbox.grid(row=row, column=col, sticky=tk.W, padx=(10,0))
+        checkbox.grid(row=row, column=col, sticky=tk.W, padx=styles.CONTROL_PANEL_CONFIG['padding']['checkbox'])
 
+    def _select_all_metrics(self) -> None:
+        """Select all metric visibility checkboxes."""
+        for metric_key, var in self.state.visibility.items():
+            var.set(True)
+        # Update chart dropdown after changing visibility
+        if self.callbacks.get('dropdown_update'):
+            self.callbacks['dropdown_update']()
+
+    def _clear_all_metrics(self) -> None:
+        """Clear all metric visibility checkboxes."""
+        for metric_key, var in self.state.visibility.items():
+            var.set(False)
+        # Update chart dropdown after changing visibility
+        if self.callbacks.get('dropdown_update'):
+            self.callbacks['dropdown_update']()
+
+# ================================
+# 4. CHART & ACTION CONTROLS
+# ================================
     def _create_chart_controls(self) -> None:
         """Create chart configuration controls.
         
@@ -195,13 +223,13 @@ class ControlWidgets:
         options, allowing users to customize the historical weather chart display.
         """
         # Chart metric selector
-        ttk.Label(self.parent, text="Chart Metric:", style="LabelName.TLabel").grid(row=4, column=2, sticky=tk.E, pady=5)
+        ttk.Label(self.parent, text="Chart Metric:", style="LabelName.TLabel").grid(row=4, column=2, sticky=tk.E, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         chart_cb = ttk.Combobox(self.parent, textvariable=self.state.chart, state="readonly")
         chart_cb.grid(row=5, column=2, sticky=tk.E)
         self.state.chart_widget = chart_cb
 
         # Date range selector
-        ttk.Label(self.parent, text="Date Range:", style="LabelName.TLabel").grid(row=6, column=2, sticky=tk.E, pady=5)
+        ttk.Label(self.parent, text="Date Range:", style="LabelName.TLabel").grid(row=6, column=2, sticky=tk.E, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         range_cb = ttk.Combobox(self.parent, textvariable=self.state.range, state="readonly")
         range_cb['values'] = list(config.CHART["range_options"].keys())
         range_cb.current(0)
@@ -227,7 +255,7 @@ class ControlWidgets:
             command=self.callbacks.get('reset'), 
             style="MainButton.TButton"
         )
-        self.reset_button.grid(row=2, column=2, pady=5, sticky=tk.E)
+        self.reset_button.grid(row=2, column=2, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
 
         self.cancel_button = ttk.Button(
             self.parent, 
@@ -235,19 +263,8 @@ class ControlWidgets:
             command=self.callbacks.get('cancel'), 
             style="MainButton.TButton"
         )
-        self.cancel_button.grid(row=3, column=2, pady=5, sticky=tk.E)
+        self.cancel_button.grid(row=3, column=2, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
 
-    def _configure_grid_weights(self) -> None:
-        """Configure grid column weights for proper layout."""
-        for i in range(3):
-            self.parent.columnconfigure(i, weight=1)
-    
-    def _bind_events(self) -> None:
-        """Bind keyboard events for better UX."""
-        if self.city_entry and self.callbacks.get('update'):
-            # Enter key in city field triggers update
-            self.city_entry.bind("<Return>", lambda e: self.callbacks['update']())
-    
     def update_chart_dropdown_options(self):
         """Update chart dropdown using centralized metric configuration with error handling."""
         try:
@@ -292,41 +309,23 @@ class ControlWidgets:
             except Exception:
                 pass  # If even the fallback fails, just continue
 
-    def _is_group_visible(self, group_config):
-        """Check if any display metrics in this group are visible using standardized access."""
-        return any(
-            self._is_metric_visible(display_metric)
-            for display_metric in group_config['display_metrics']
-        )
-
-    def _is_metric_chartable(self, metric_key: str) -> bool:
-        """Check if a metric makes sense to chart based on user requirements.
-        
-        Excludes:
-        - Non-numeric metrics (conditions, weather_main, weather_id, weather_icon)
-        - Wind direction and gusts (not meaningful for trend charts)
-        - Individual precipitation metrics (use combined precipitation instead)
-        """
-        # Non-numeric metrics that can't be charted
-        non_chartable = {
-            'conditions', 'weather_main', 'weather_id', 'weather_icon'
-        }
-        
-        # Wind metrics that don't make sense for trending
-        non_trending_wind = {
-            'wind_direction', 'wind_gust'
-        }
-        
-        # Raw precipitation details (simplified rain/snow are chartable)
-        raw_precipitation_details = {
-            'rain_1h', 'rain_3h', 'snow_1h', 'snow_3h'
-        }
-        
-        excluded_metrics = non_chartable | non_trending_wind | raw_precipitation_details
-        
-        return metric_key not in excluded_metrics
+# ================================
+# 5. LAYOUT & EVENT HANDLING
+# ================================
+    def _configure_grid_weights(self) -> None:
+        """Configure grid column weights for proper layout."""
+        for i in range(3):
+            self.parent.columnconfigure(i, weight=1)
     
-    # LOADING STATE METHODS
+    def _bind_events(self) -> None:
+        """Bind keyboard events for better UX."""
+        if self.city_entry and self.callbacks.get('update'):
+            # Enter key in city field triggers update
+            self.city_entry.bind("<Return>", lambda e: self.callbacks['update']())
+
+# ================================
+# 6. LOADING STATE MANAGEMENT
+# ================================
     def set_loading_state(self, is_loading: bool, message: str = "") -> None:
         """Sets the loading state of the controls."""
         if is_loading:
@@ -367,19 +366,40 @@ class ControlWidgets:
         """Hides progress message in status bar."""
         # Delegate to status bar instead of local progress label
         pass
-    
-    def _select_all_metrics(self) -> None:
-        """Select all metric visibility checkboxes."""
-        for metric_key, var in self.state.visibility.items():
-            var.set(True)
-        # Update chart dropdown after changing visibility
-        if self.callbacks.get('dropdown_update'):
-            self.callbacks['dropdown_update']()
 
-    def _clear_all_metrics(self) -> None:
-        """Clear all metric visibility checkboxes."""
-        for metric_key, var in self.state.visibility.items():
-            var.set(False)
-        # Update chart dropdown after changing visibility
-        if self.callbacks.get('dropdown_update'):
-            self.callbacks['dropdown_update']()
+# ================================
+# 7. CHART UTILITY METHODS
+# ================================
+    def _is_group_visible(self, group_config):
+        """Check if any display metrics in this group are visible using standardized access."""
+        return any(
+            self._is_metric_visible(display_metric)
+            for display_metric in group_config['display_metrics']
+        )
+
+    def _is_metric_chartable(self, metric_key: str) -> bool:
+        """Check if a metric makes sense to chart based on user requirements.
+        
+        Excludes:
+        - Non-numeric metrics (conditions, weather_main, weather_id, weather_icon)
+        - Wind direction and gusts (not meaningful for trend charts)
+        - Individual precipitation metrics (use combined precipitation instead)
+        """
+        # Non-numeric metrics that can't be charted
+        non_chartable = {
+            'conditions', 'weather_main', 'weather_id', 'weather_icon'
+        }
+        
+        # Wind metrics that don't make sense for trending
+        non_trending_wind = {
+            'wind_direction', 'wind_gust'
+        }
+        
+        # Raw precipitation details (simplified rain/snow are chartable)
+        raw_precipitation_details = {
+            'rain_1h', 'rain_3h', 'snow_1h', 'snow_3h'
+        }
+        
+        excluded_metrics = non_chartable | non_trending_wind | raw_precipitation_details
+        
+        return metric_key not in excluded_metrics

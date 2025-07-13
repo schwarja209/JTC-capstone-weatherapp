@@ -14,6 +14,8 @@ import tkinter as tk
 from tkinter import ttk
 from typing import Optional, Any
 
+from WeatherDashboard import styles
+
 class StatusBarWidgets:
     """Manages the status bar display at bottom of application.
     
@@ -63,10 +65,10 @@ class StatusBarWidgets:
             style="LabelValue.TLabel",
             foreground="green"
         )
-        self.system_status_label.pack(side=tk.LEFT, padx=5)
+        self.system_status_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['system'])
         
         # Separator
-        ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=5)
+        ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=styles.STATUS_BAR_CONFIG['padding']['separator'])
         
         # Center section: Progress indicator  
         self.progress_label = ttk.Label(
@@ -75,7 +77,7 @@ class StatusBarWidgets:
             style="LabelValue.TLabel", 
             foreground="blue"
         )
-        self.progress_label.pack(side=tk.LEFT, padx=10)
+        self.progress_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['progress'])
         
         # Right section: Data source information
         self.data_status_label = ttk.Label(
@@ -84,16 +86,11 @@ class StatusBarWidgets:
             style="LabelValue.TLabel",
             foreground="gray"
         )
-        self.data_status_label.pack(side=tk.RIGHT, padx=5)
+        self.data_status_label.pack(side=tk.RIGHT, padx=styles.STATUS_BAR_CONFIG['padding']['data'])
     
     def update_system_status(self, message: str, status_type: str = "info") -> None:
         """Updates main system status message."""
-        colors = {
-            "info": "green",
-            "warning": "orange", 
-            "error": "red",
-            "loading": "blue"
-        }
+        colors = styles.STATUS_BAR_CONFIG['colors']
         
         if self.system_status_label:
             self.system_status_label.configure(

@@ -23,6 +23,9 @@ from WeatherDashboard.core.data_service import WeatherDataService
 from WeatherDashboard.core.controller import WeatherDashboardController
 
 
+# ================================
+# 1. APPLICATION INITIALIZATION
+# ================================
 class WeatherDashboardMain:
     """Main application class for the Weather Dashboard.
 
@@ -105,49 +108,9 @@ class WeatherDashboardMain:
             if alert_widget:
                 alert_widget.set_click_callback(self.show_alerts)
 
-    def show_alerts(self) -> None:
-        """Show weather alerts popup.
-        
-        Displays active weather alerts in a popup dialog. Called when
-        user clicks on the alert status indicator.
-        """
-        if hasattr(self.controller, 'show_weather_alerts'):
-            self.controller.show_weather_alerts()
-
-    def load_initial_display(self) -> None:
-        """Fetch and display the initial city's weather data on startup.
-        
-        Loads weather data for the default city asynchronously and updates
-        the chart display. Prevents concurrent operations during startup.
-        """
-        # Prevent concurrent operations
-        with self._operation_lock:
-            if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
-                return
-            self._operation_in_progress = True
-        
-        # Set loading state for initial load
-        if self.widgets.control_widgets:
-            self.widgets.control_widgets.set_loading_state(True, "Loading...")
-
-        def operation_finished(success: bool):
-            with self._operation_lock:
-                self._operation_in_progress = False
-            
-            # Clear loading state
-            if self.widgets.control_widgets:
-                self.widgets.control_widgets.set_loading_state(False)
-            
-            if success:
-                self.controller.update_chart()
-        
-        # Load initial data asynchronously
-        self.async_operations.fetch_weather_async(
-            self.state.get_current_city(),
-            self.state.get_current_unit_system(),
-            on_complete=operation_finished
-        )
-
+# ================================
+# 2. EVENT HANDLERS
+# ================================
     def on_update_clicked_async(self) -> None:
         """Handle the update button click event with async weather fetching.
         
@@ -217,14 +180,51 @@ class WeatherDashboardMain:
             on_complete=operation_finished
         )
 
-    def update_chart_dropdown(self) -> None:
-        """Update the chart dropdown based on the current visibility settings.
+    def show_alerts(self) -> None:
+        """Show weather alerts popup.
         
-        Refreshes the chart metric dropdown options to reflect currently visible
-        metrics. Called when metric visibility settings change.
+        Displays active weather alerts in a popup dialog. Called when
+        user clicks on the alert status indicator.
         """
+        if hasattr(self.controller, 'show_weather_alerts'):
+            self.controller.show_weather_alerts()
+
+# ================================
+# 3. ASYNC OPERATION MANAGEMENT
+# ================================
+    def load_initial_display(self) -> None:
+        """Fetch and display the initial city's weather data on startup.
+        
+        Loads weather data for the default city asynchronously and updates
+        the chart display. Prevents concurrent operations during startup.
+        """
+        # Prevent concurrent operations
+        with self._operation_lock:
+            if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
+                return
+            self._operation_in_progress = True
+        
+        # Set loading state for initial load
         if self.widgets.control_widgets:
-            self.widgets.control_widgets.update_chart_dropdown_options()
+            self.widgets.control_widgets.set_loading_state(True, "Loading...")
+
+        def operation_finished(success: bool):
+            with self._operation_lock:
+                self._operation_in_progress = False
+            
+            # Clear loading state
+            if self.widgets.control_widgets:
+                self.widgets.control_widgets.set_loading_state(False)
+            
+            if success:
+                self.controller.update_chart()
+        
+        # Load initial data asynchronously
+        self.async_operations.fetch_weather_async(
+            self.state.get_current_city(),
+            self.state.get_current_unit_system(),
+            on_complete=operation_finished
+        )
 
     def cancel_current_operation(self) -> None:
         """Cancel any currently running async operation.
@@ -257,3 +257,15 @@ class WeatherDashboardMain:
         
         if next_callback:
             next_callback(success)
+
+# ================================
+# 4. UI UPDATE METHODS
+# ================================
+    def update_chart_dropdown(self) -> None:
+        """Update the chart dropdown based on the current visibility settings.
+        
+        Refreshes the chart metric dropdown options to reflect currently visible
+        metrics. Called when metric visibility settings change.
+        """
+        if self.widgets.control_widgets:
+            self.widgets.control_widgets.update_chart_dropdown_options()

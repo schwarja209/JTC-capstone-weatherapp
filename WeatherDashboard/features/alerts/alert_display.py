@@ -12,8 +12,11 @@ Classes:
 
 import tkinter as tk
 from tkinter import ttk, messagebox
-from typing import List, Optional, Callable
+from typing import List, Callable
+
+from WeatherDashboard import config, styles
 from WeatherDashboard.features.alerts.alert_manager import WeatherAlert
+
 
 class AlertStatusIndicator:
     """Compact weather alert status indicator widget.
@@ -45,7 +48,7 @@ class AlertStatusIndicator:
             self.status_frame,
             text="🔔",
             cursor="hand2",
-            font=("Arial", 12)
+            font=styles.WIDGET_LAYOUT['alert_status']['default_font']
         )
         self.status_label.pack()
         
@@ -78,38 +81,66 @@ class AlertStatusIndicator:
         self.status_frame.pack(**kwargs)
     
     def update_status(self, alerts: List[WeatherAlert]):
-        """Update the alert status indicator based on active alerts.
+        """Update the alert status indicator with enhanced visual styling.
         
-        Changes the indicator appearance, color, and tooltip based on
-        alert count and severity levels.
+        Changes the indicator appearance, color, and behavior based on
+        alert count, severity levels, and priority.
         
         Args:
             alerts: List of currently active weather alerts
         """
         if not alerts:
-            self.status_label.configure(text="🔔", foreground="gray")
+            self.status_label.configure(text="🔔", foreground="gray", background="")
             self.tooltip_text = "No active alerts"
+            self._stop_animation()
             return
+        
+        # Get highest priority alert
+        priority_order = config.ALERT_PRIORITY_ORDER
+        highest_severity = None
+        
+        for severity in priority_order:
+            if any(alert.severity == severity for alert in alerts):
+                highest_severity = severity
+                break
+        
+        if not highest_severity:
+            highest_severity = alerts[0].severity  # Fallback
+        
+        # Get visual styling for highest severity
+        alert_style = styles.ALERT_SEVERITY_COLORS[highest_severity]
         
         # Count by severity
         warnings = len([a for a in alerts if a.severity == 'warning'])
-        cautions = len([a for a in alerts if a.severity == 'caution'])
+        cautions = len([a for a in alerts if a.severity == 'caution']) 
         watches = len([a for a in alerts if a.severity == 'watch'])
-        
         total_count = len(alerts)
         
+        # Update icon and styling
+        self.status_label.configure(
+            text=f"{alert_style['icon']} {total_count}",
+            foreground=alert_style['color'],
+            background=alert_style['background'],
+            relief="raised",
+            borderwidth=2
+        )
+        
+        # Create detailed tooltip
+        severity_counts = []
         if warnings > 0:
-            self.status_label.configure(text="⚠️", foreground="red")
-            self.tooltip_text = f"{warnings} warning(s), {total_count} total alerts"
-        elif cautions > 0:
-            self.status_label.configure(text="🔶", foreground="orange")
-            self.tooltip_text = f"{cautions} caution(s), {total_count} total alerts"
-        elif watches > 0:
-            self.status_label.configure(text="👁️", foreground="blue")
-            self.tooltip_text = f"{watches} watch alert(s)"
+            severity_counts.append(f"{warnings} warning(s)")
+        if cautions > 0:
+            severity_counts.append(f"{cautions} caution(s)")
+        if watches > 0:
+            severity_counts.append(f"{watches} watch(es)")
+        
+        self.tooltip_text = f"Active alerts: {', '.join(severity_counts)}"
+        
+        # Start animation for warnings
+        if highest_severity == 'warning':
+            self._start_pulse_animation()
         else:
-            self.status_label.configure(text="🔔", foreground="blue")
-            self.tooltip_text = f"{total_count} active alerts"
+            self._stop_animation()
     
     def set_click_callback(self, callback: Callable):
         """Set callback function for when indicator is clicked.
@@ -131,6 +162,37 @@ class AlertStatusIndicator:
             # Default behavior - show simple message
             messagebox.showinfo("Alerts", f"Alert system active.\n{self.tooltip_text}")
 
+    def _start_pulse_animation(self):
+        """Start pulsing animation for critical alerts."""
+        if not hasattr(self, '_animation_active'):
+            self._animation_active = True
+            self._animation_step = 0
+            self._pulse_animation()
+
+    def _stop_animation(self):
+        """Stop any running animations."""
+        self._animation_active = False
+        if hasattr(self, '_animation_job'):
+            self.status_label.after_cancel(self._animation_job)
+
+    def _pulse_animation(self):
+        """Pulse the alert indicator for critical warnings."""
+        if not getattr(self, '_animation_active', False):
+            return
+        
+        # Use centralized animation configuration
+        anim_config = styles.ALERT_DISPLAY_CONFIG['animation_settings']
+        pulse_colors = anim_config['pulse_colors']
+        interval = anim_config['flash_interval']
+        
+        color = pulse_colors[self._animation_step % len(pulse_colors)]
+        self.status_label.configure(foreground=color)
+        self._animation_step += 1
+        
+        # Schedule next animation frame
+        self._animation_job = self.status_label.after(interval, self._pulse_animation)
+
+
 class SimpleAlertPopup:
     """Simple popup window for displaying alerts.
     
@@ -151,7 +213,18 @@ class SimpleAlertPopup:
         self.alerts = alerts
         self.window = tk.Toplevel(parent) if parent else tk.Tk()
         self.window.title("Weather Alerts")
-        self.window.geometry("400x300")
+        
+        # Calculate dynamic window size based on number of alerts
+        popup_config = styles.WIDGET_LAYOUT['alert_popup']
+        base_height = popup_config['base_height']
+        alert_height = popup_config['alert_height'] 
+        max_height = popup_config['max_height']
+        
+        calculated_height = base_height + (len(alerts) * alert_height)
+        window_height = min(calculated_height, max_height)
+        
+        popup_config = styles.WIDGET_LAYOUT['alert_popup']
+        self.window.geometry(f"{popup_config['width']}x{window_height}")
         
         if parent:
             self.window.transient(parent)
@@ -160,33 +233,60 @@ class SimpleAlertPopup:
         self._center_window()
     
     def _create_display(self):
-        """Create the main alert display layout.
+        """Create the main alert display layout with scrollable content.
         
-        Sets up the popup window content including title, alert list,
+        Sets up the popup window content including title, scrollable alert list,
         and control buttons.
         """
         # Main frame
-        main_frame = ttk.Frame(self.window, padding="15")
+        main_frame = ttk.Frame(self.window, padding="10")
         main_frame.pack(fill=tk.BOTH, expand=True)
         
         # Title
         alert_count = len(self.alerts)
         title_text = f"Weather Alerts ({alert_count} active)"
         
-        title_label = ttk.Label(main_frame, text=title_text, font=("Arial", 14, "bold"))
+        title_label = ttk.Label(main_frame, text=title_text, style="AlertTitle.TLabel")
         title_label.pack(pady=(0, 10))
         
-        # Alert list
+        # Create scrollable frame for alerts (only if needed)
         if self.alerts:
-            for alert in self.alerts:
-                self._create_alert_item(main_frame, alert)
+            if len(self.alerts) > 4:  # Only add scrollbar if more than 4 alerts
+                # Create canvas and scrollbar for scrolling
+                canvas = tk.Canvas(main_frame, highlightthickness=0)
+                scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
+                scrollable_frame = ttk.Frame(canvas)
+                
+                # Configure scrolling
+                scrollable_frame.bind(
+                    "<Configure>",
+                    lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+                )
+                
+                canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+                canvas.configure(yscrollcommand=scrollbar.set)
+                
+                # Pack canvas and scrollbar
+                canvas.pack(side="left", fill="both", expand=True)
+                scrollbar.pack(side="right", fill="y")
+                
+                # Add alerts to scrollable frame
+                for alert in self.alerts:
+                    self._create_alert_item(scrollable_frame, alert)
+                
+                # Bind mousewheel to canvas for scrolling
+                def _on_mousewheel(event):
+                    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+                
+                canvas.bind("<MouseWheel>", _on_mousewheel)
+            else:
+                # Direct display for 4 or fewer alerts (no scrolling needed)
+                for alert in self.alerts:
+                    self._create_alert_item(main_frame, alert)
         else:
             no_alerts_label = ttk.Label(main_frame, text="No active alerts")
-            no_alerts_label.pack()
-        
-        # Close button
-        ttk.Button(main_frame, text="Close", command=self.window.destroy).pack(pady=(10, 0))
-    
+            no_alerts_label.pack()  
+
     def _create_alert_item(self, parent, alert: WeatherAlert):
         """Create display for individual alert.
         
@@ -199,13 +299,15 @@ class SimpleAlertPopup:
         alert_frame.pack(fill=tk.X, pady=3)
         
         # Alert message
-        message_label = ttk.Label(alert_frame, text=alert.message, wraplength=350)
+        message_label = ttk.Label(alert_frame, text=alert.message, wraplength=styles.WIDGET_LAYOUT['alert_status']['message_wrap_length'])
         message_label.pack(anchor=tk.W)
         
         # Time and severity
         time_str = alert.timestamp.strftime("%H:%M:%S")
         info_text = f"Severity: {alert.severity.upper()} | Time: {time_str}"
-        info_label = ttk.Label(alert_frame, text=info_text, foreground="gray")
+        info_label = ttk.Label(alert_frame, text=info_text, style="LabelValue.TLabel")
+        # Then configure the color separately if needed
+        info_label.configure(foreground="gray")
         info_label.pack(anchor=tk.W)
     
     def _center_window(self):

@@ -7,6 +7,9 @@ modules, services, utilities, and UI components.
 
 Modules:
     config: Application configuration and constants
+    styles: Visual styling and theme configuration
 """
 
-__all__ = ["config"]
+__all__ = [
+    "config", "styles"
+    ]

@@ -10,7 +10,7 @@ Classes:
 """
 
 from typing import Dict, Any
-from WeatherDashboard import config
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.utils import is_fallback, format_fallback_status
 from WeatherDashboard.utils.unit_converter import UnitConverter
 
@@ -106,10 +106,23 @@ class WeatherViewModel:
             feels_like = self.raw_data.get('feels_like')
             if temp is None:
                 return "--"
+            
             temp_str = UnitConverter.format_value('temperature', temp, self.unit_system)
-            if feels_like is not None and feels_like != temp:
-                feels_str = UnitConverter.format_value('feels_like', feels_like, self.unit_system)
-                return f"{temp_str} (feels like {feels_str})"
+            
+            if feels_like is not None:
+                difference = abs(feels_like - temp)
+                # Only show "feels like" if difference is significant (>2 degrees)
+                threshold = 2.0 if self.unit_system == 'metric' else 3.6  # ~2°C or ~4°F
+                
+                if difference >= threshold:
+                    feels_str = UnitConverter.format_value('feels_like', feels_like, self.unit_system)
+                    
+                    # Determine if feels warmer or cooler
+                    if feels_like > temp:
+                        return f"{temp_str} (feels {feels_str} ↑)"
+                    else:
+                        return f"{temp_str} (feels {feels_str} ↓)"
+            
             return temp_str
         
         elif display_type == 'temp_range':
@@ -164,7 +177,7 @@ class WeatherViewModel:
     def _get_weather_icon(self) -> str:
         """Convert weather icon code to emoji."""
         icon_code = self.raw_data.get('weather_icon', '')
-        return config.WEATHER_ICONS.get(icon_code, '')
+        return styles.WEATHER_ICONS.get(icon_code, '')
 
     def get_display_data(self) -> Dict[str, Any]:
         """Return all formatted data as a comprehensive dictionary.

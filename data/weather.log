@@ -809,3 +809,93 @@
 [INFO] 2025-07-13 05:08:SS Weather data written for new_york - Live
 [WARN] 2025-07-13 05:08:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
 [INFO] 2025-07-13 05:08:SS Weather data written for phoenix - Live
+[INFO] 2025-07-13 14:39:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:39:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 14:39:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:40:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 14:40:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:40:SS Weather alert: High Temperature Alert - Temperature is very high: 38.1°C (threshold: 35.0°C)
+[WARN] 2025-07-13 14:40:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 14:40:SS Weather data written for phoenix - Live
+[WARN] 2025-07-13 14:40:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 14:40:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:40:SS Weather alert: High Temperature Alert - Temperature is very high: 38.1°C (threshold: 35.0°C)
+[WARN] 2025-07-13 14:40:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 14:40:SS Weather data written for phoenix - Live
+[INFO] 2025-07-13 14:46:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:46:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 14:46:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:46:SS Weather alert: High Temperature Alert - Temperature is very high: 101.1°F (threshold: 95.0°F)
+[WARN] 2025-07-13 14:46:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 14:46:SS Weather data written for phoenix - Live
+[WARN] 2025-07-13 14:47:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 14:47:SS Weather data written for new_york - Live
+[INFO] 2025-07-13 14:51:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:51:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-13 14:51:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 14:51:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:51:SS Weather alert: High Temperature Alert - Temperature is very high: 101.2°F (threshold: 95.0°F)
+[WARN] 2025-07-13 14:51:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 14:51:SS Weather data written for phoenix - Live
+[WARN] 2025-07-13 14:51:SS Weather alert: High Temperature Alert - Temperature is very high: 38.5°C (threshold: 35.0°C)
+[WARN] 2025-07-13 14:51:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 14:51:SS Weather data written for phoenix - Live
+[WARN] 2025-07-13 14:51:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 14:51:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:51:SS Weather alert: High Temperature Alert - Temperature is very high: 38.5°C (threshold: 35.0°C)
+[WARN] 2025-07-13 14:51:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 14:51:SS Weather data written for phoenix - Live
+[WARN] 2025-07-13 14:52:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 14:52:SS Weather data written for jacksonville,_illinois - Live
+[WARN] 2025-07-13 14:52:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 14:52:SS Weather data written for carrollton,_illinois - Live
+[WARN] 2025-07-13 14:53:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 14:53:SS Weather data written for springfield,_illinois - Live
+[WARN] 2025-07-13 14:53:SS Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)
+[WARN] 2025-07-13 14:53:SS Weather alert: Heavy Rain Alert - Heavy rainfall detected: 24.8 mm/hour (threshold: 10.0 mm)
+[WARN] 2025-07-13 14:53:SS Weather alert: Low Visibility Alert - Reduced visibility: 1.6 km (threshold: 3.0 km)
+[WARN] 2025-07-13 14:53:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 14:53:SS Weather data written for perryville,_missouri - Live
+[INFO] 2025-07-13 14:57:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 14:57:SS Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)
+[INFO] 2025-07-13 14:57:SS Weather data written for perryville,_missouri - Live
+[WARN] 2025-07-13 14:57:SS Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)
+[WARN] 2025-07-13 14:57:SS Weather alert: Heavy Rain Alert - Heavy rainfall detected: 1.0 in/hour (threshold: 0.4 in)
+[WARN] 2025-07-13 14:57:SS Weather alert: Low Visibility Alert - Reduced visibility: 0.6 mi (threshold: 2.0 mi)
+[WARN] 2025-07-13 14:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 14:57:SS Weather data written for perryville,_missouri - Live
+[INFO] 2025-07-13 15:01:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 15:02:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 15:02:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 15:02:SS Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)
+[WARN] 2025-07-13 15:02:SS Weather alert: Low Visibility Alert - Reduced visibility: 0.6 mi (threshold: 2.0 mi)
+[WARN] 2025-07-13 15:02:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 15:02:SS Weather data written for perryville,_missouri - Live
+[INFO] 2025-07-13 15:05:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 15:05:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 15:05:SS Weather data written for new_york - Live
+[INFO] 2025-07-13 15:23:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 15:23:SS Weather alert: High Temperature Alert - Temperature is very high: 102.1°F (threshold: 95.0°F)
+[WARN] 2025-07-13 15:23:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 15:23:SS Weather data written for phoenix - Live
+[WARN] 2025-07-13 15:23:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 15:23:SS Weather data written for new_york - Live
+[WARN] 2025-07-13 15:24:SS Weather alert: High Humidity Alert - Very humid conditions: 94% (threshold: 85%)
+[WARN] 2025-07-13 15:24:SS Weather alert: Low Visibility Alert - Reduced visibility: 1.9 mi (threshold: 2.0 mi)
+[WARN] 2025-07-13 15:24:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 15:24:SS Weather data written for perryville,_missouri - Live
+[INFO] 2025-07-13 15:24:SS Weather data written for anchorage - Live
+[WARN] 2025-07-13 15:24:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-13 15:24:SS Weather data written for beijing - Live
+[WARN] 2025-07-13 15:24:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 15:24:SS Weather data written for new_orleans - Live
+[WARN] 2025-07-13 15:25:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-13 15:25:SS Weather data written for new_orleans - Live
+[WARN] 2025-07-13 15:25:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-13 15:25:SS Weather data written for new_york - Live
+[ERROR] 2025-07-13 17:49:SS Failed to create control widgets: 'header'
+[ERROR] 2025-07-13 17:49:SS Unexpected error during GUI setup: 'header'
+[ERROR] 2025-07-13 17:51:SS Unexpected error: module 'WeatherDashboard.config' has no attribute 'METRIC_COLOR_RANGES'
+[ERROR] 2025-07-13 17:53:SS Unexpected error: unknown option "-padx"
+[ERROR] 2025-07-13 17:56:SS Unexpected error: unknown option "-padx"
+[ERROR] 2025-07-13 17:57:SS Unexpected error: unknown option "-padx"

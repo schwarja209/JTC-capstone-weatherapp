@@ -10,6 +10,7 @@ Modules:
     unit_converter: Weather unit conversion and formatting utilities
     logger: Centralized logging system with multiple output formats
     rate_limiter: API request rate limiting and throttling
+    derived_metrics: Calculations for derived metrics
 """
 
 __all__ = [

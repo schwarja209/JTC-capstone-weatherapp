@@ -11,7 +11,7 @@ Classes:
 
 import tkinter as tk
 from tkinter import ttk
-from WeatherDashboard.gui.styles import configure_styles
+from WeatherDashboard import styles
 
 
 class WeatherDashboardGUIFrames:
@@ -42,7 +42,7 @@ class WeatherDashboardGUIFrames:
         Applies the application-wide styling configuration to ensure
         consistent visual appearance across all UI components.
         """
-        configure_styles()
+        styles.configure_styles()
 
     def create_frames(self) -> None:
         """Create the main frames for the dashboard layout.

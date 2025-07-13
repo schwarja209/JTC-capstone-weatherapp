@@ -48,6 +48,9 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 ### Project Structure
 ```
 WeatherDashboard/
+│   ├── styles.py           # Visual styling
+│   ├── config.py           # Metric and default configurations
+│   └── main.py
 ├── core/                    # Business logic and data management
 │   ├── controller.py        # Main orchestration controller
 │   ├── data_manager.py      # Weather data storage and processing
@@ -57,7 +60,6 @@ WeatherDashboard/
 │   ├── main_window.py       # Application window coordination
 │   ├── state_manager.py     # Centralized state management
 │   ├── frames.py           # Layout management
-│   ├── styles.py           # Visual styling
 │   └── loading_states.py   # Async operation UI handling
 ├── widgets/                 # Specialized UI components
 │   ├── dashboard_widgets.py # Main widget coordinator
