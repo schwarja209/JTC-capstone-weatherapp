@@ -114,7 +114,98 @@ class UnitConverter:
         if from_unit == imperial_unit and to_unit == metric_unit:  # mph to m/s
             return value / 2.23694
         raise ValueError(f"Unsupported wind speed conversion: {from_unit} to {to_unit}")
-    
+
+    @staticmethod
+    def convert_visibility(value: float, from_unit: str, to_unit: str) -> float:
+        """Convert visibility distance between kilometers and miles.
+        
+        Args:
+            value: Visibility value to convert
+            from_unit: Source unit (km or mi)
+            to_unit: Target unit (km or mi)
+            
+        Returns:
+            float: Converted visibility value
+            
+        Raises:
+            ValueError: If conversion between specified units is not supported
+        """
+        if from_unit == to_unit:
+            return value
+        if from_unit == "km" and to_unit == "mi":  # km to miles
+            return value * 0.621371
+        if from_unit == "mi" and to_unit == "km":  # miles to km
+            return value / 0.621371
+        raise ValueError(f"Unsupported visibility conversion: {from_unit} to {to_unit}")
+
+    @staticmethod
+    def convert_precipitation(value: float, from_unit: str, to_unit: str) -> float:
+        """Convert precipitation between millimeters and inches.
+        
+        Args:
+            value: Precipitation value to convert
+            from_unit: Source unit (mm or in)
+            to_unit: Target unit (mm or in)
+            
+        Returns:
+            float: Converted precipitation value
+            
+        Raises:
+            ValueError: If conversion between specified units is not supported
+        """
+        if from_unit == to_unit:
+            return value
+        if from_unit == "mm" and to_unit == "in":  # mm to inches
+            return value * 0.0393701
+        if from_unit == "in" and to_unit == "mm":  # inches to mm
+            return value / 0.0393701
+        raise ValueError(f"Unsupported precipitation conversion: {from_unit} to {to_unit}")
+
+    @staticmethod
+    def convert_heat_index(value: float, from_unit: str, to_unit: str) -> float:
+        """Convert heat index between Celsius and Fahrenheit.
+        
+        Args:
+            value: Heat index value to convert
+            from_unit: Source unit (°C or °F)
+            to_unit: Target unit (°C or °F)
+            
+        Returns:
+            float: Converted heat index value
+        """
+        # Heat index uses same conversion as temperature
+        return UnitConverter.convert_temperature(value, from_unit, to_unit)
+
+    @staticmethod
+    def convert_wind_chill(value: float, from_unit: str, to_unit: str) -> float:
+        """Convert wind chill between Celsius and Fahrenheit.
+        
+        Args:
+            value: Wind chill value to convert
+            from_unit: Source unit (°C or °F)
+            to_unit: Target unit (°C or °F)
+            
+        Returns:
+            float: Converted wind chill value
+        """
+        # Wind chill uses same conversion as temperature
+        return UnitConverter.convert_temperature(value, from_unit, to_unit)
+
+    @staticmethod
+    def convert_dew_point(value: float, from_unit: str, to_unit: str) -> float:
+        """Convert dew point between Celsius and Fahrenheit.
+        
+        Args:
+            value: Dew point value to convert
+            from_unit: Source unit (°C or °F)
+            to_unit: Target unit (°C or °F)
+            
+        Returns:
+            float: Converted dew point value
+        """
+        # Dew point uses same conversion as temperature
+        return UnitConverter.convert_temperature(value, from_unit, to_unit)
+
     @staticmethod
     def get_unit_label(metric: str, unit_system: str) -> str:
         """Return the unit label for a given metric based on the unit system."""
@@ -153,7 +244,35 @@ class UnitConverter:
         elif metric in ["pressure", "wind_speed"]:
             return f"{val:.2f} {unit}"
         elif metric == "conditions":
-            return str(val)  # No unit needed
+            return str(val)
+        elif metric in ["feels_like", "temp_min", "temp_max"]:
+            return f"{val:.1f} {unit}"
+        elif metric in ["wind_gust"]:
+            return f"{val:.2f} {unit}"
+        elif metric == "wind_direction":
+            return f"{val:.0f} {unit}"
+        elif metric in ["visibility"]:
+            return f"{val:.1f} {unit}"
+        elif metric == "cloud_cover":
+            return f"{val} {unit}"
+        elif metric in ["rain", "snow"]:
+            return f"{val:.1f} {unit}"
+        elif metric in ["rain_1h", "rain_3h", "snow_1h", "snow_3h"]:
+            return f"{val:.1f} {unit}"
+        elif metric in ["weather_main", "weather_id", "weather_icon"]:
+            return str(val)
+        elif metric in ["heat_index", "wind_chill", "dew_point"]:
+            return f"{val:.1f} {unit}"
+        elif metric == "precipitation_probability":
+            return f"{val:.0f} {unit}"
+        elif metric == "weather_comfort_score":
+            return f"{val:.0f} {unit}"
+        elif metric == "uv_index":
+            return f"{val:.0f} {unit}"
+        elif metric == "air_quality_index":
+            return f"{val} {unit}"
+        elif metric == "air_quality_description":
+            return str(val)
         
         # Import logger only when needed to avoid circular imports
         from WeatherDashboard.utils.logger import Logger

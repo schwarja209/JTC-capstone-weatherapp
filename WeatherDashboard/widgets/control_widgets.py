@@ -58,8 +58,15 @@ class ControlWidgets:
         self.cancel_button: Optional[ttk.Button] = None
         
         self._create_all_controls()
-        self._register_with_state()
     
+    def _get_metric_visibility_var(self, metric_key: str) -> tk.BooleanVar:
+        """Safely get metric visibility variable with fallback."""
+        return self.state.visibility.get(metric_key, tk.BooleanVar())
+    
+    def _is_metric_visible(self, metric_key: str) -> bool:
+        """Safely check if a metric is currently visible."""
+        return self._get_metric_visibility_var(metric_key).get()
+
     def _create_all_controls(self) -> None:
         """Create all control widgets in organized sections with error handling.
         
@@ -110,23 +117,76 @@ class ControlWidgets:
             value="metric"
         ).grid(row=3, column=1, sticky=tk.W)
 
-    def _create_metric_visibility(self) -> None:
-        """Create metric visibility control checkboxes.
+    def _create_metric_visibility(self):
+        """Create metric visibility controls using existing two-column design."""
         
-        Creates checkboxes for each weather metric allowing users to control
-        which metrics are displayed. Updates chart dropdown when changed.
+        # Main section header (unchanged)
+        # Main section header with select/clear buttons
+        header_frame = ttk.Frame(self.parent)
+        header_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=(5,10))
+
+        ttk.Label(header_frame, text="Metrics Visibility:", style="LabelName.TLabel").pack(side=tk.LEFT)
+
+        # Add Select All / Clear All buttons
+        ttk.Button(header_frame, text="Select All", command=self._select_all_metrics, 
+                style="MainButton.TButton").pack(side=tk.LEFT, padx=(10,5))
+        ttk.Button(header_frame, text="Clear All", command=self._clear_all_metrics, 
+                style="MainButton.TButton").pack(side=tk.LEFT, padx=5)
+        
+        current_row = 5
+        
+        # Iterate through metric groups with cleaner logic
+        for group_key, group_config in config.METRIC_GROUPS.items():
+            current_row = self._add_metric_group_two_column(group_config, current_row)
+            current_row += 1  # Extra space between groups
+
+    def _add_metric_group_two_column(self, group_config, start_row):
+        """Add metric group with existing two-column layout, cleaner logic.
+        
+        Args:
+            group_config: Group configuration from METRIC_GROUPS
+            start_row: Starting row position
+            
+        Returns:
+            int: Next available row after this group
         """
-        ttk.Label(self.parent, text="Show Metrics:", style="LabelName.TLabel").grid(row=4, column=0, sticky=tk.W, pady=5)
+        current_row = start_row
         
-        for i, (metric_key, var) in enumerate(self.state.visibility.items()):
-            label = config.KEY_TO_DISPLAY.get(metric_key, metric_key.title())
-            checkbox = ttk.Checkbutton(
-                self.parent, 
-                text=label, 
-                variable=var, 
-                command=self.callbacks.get('dropdown_update')
-            )
-            checkbox.grid(row=5 + i // 2, column=i % 2, sticky=tk.W)
+        # Group header (unchanged design)
+        ttk.Label(self.parent, text=f"{group_config['label']}:", style="LabelName.TLabel").grid(
+            row=current_row, column=0, sticky=tk.W, pady=(10,2))
+        current_row += 1
+        
+        # Add metrics in two-column layout with cleaner logic
+        metrics_to_add = [m for m in group_config['display_metrics'] if m in self.state.visibility]
+        
+        for i, metric_key in enumerate(metrics_to_add):
+            row = current_row + (i // 2)  # Integer division for row calculation
+            col = i % 2  # Modulo for column (0 or 1)
+            
+            self._add_single_checkbox(metric_key, row, col)
+        
+        # Calculate next available row
+        rows_used = (len(metrics_to_add) + 1) // 2  # Ceiling division
+        return current_row + rows_used
+
+    def _add_single_checkbox(self, metric_key, row, col):
+        """Add single checkbox at specified position with safe state access.
+        
+        Args:
+            metric_key: Metric key
+            row: Grid row
+            col: Grid column (0 or 1)
+        """
+        display_label = config.ENHANCED_DISPLAY_LABELS.get(metric_key, config.METRICS[metric_key]['label'])
+        
+        checkbox = ttk.Checkbutton(
+            self.parent, 
+            text=display_label, 
+            variable=self._get_metric_visibility_var(metric_key),
+            command=self.callbacks.get('dropdown_update')
+        )
+        checkbox.grid(row=row, column=col, sticky=tk.W, padx=(10,0))
 
     def _create_chart_controls(self) -> None:
         """Create chart configuration controls.
@@ -187,30 +247,84 @@ class ControlWidgets:
         if self.city_entry and self.callbacks.get('update'):
             # Enter key in city field triggers update
             self.city_entry.bind("<Return>", lambda e: self.callbacks['update']())
-
-    def _register_with_state(self) -> None:
-        """Register widget references with state for loading management."""
-        # Register buttons for loading state management
-        self.state.update_button = self.update_button
-        self.state.reset_button = self.reset_button
-        self.state.cancel_button = self.cancel_button
     
-    def update_chart_dropdown_options(self) -> None:
-        """Update chart dropdown based on visible metrics."""
-        if not hasattr(self.state, 'chart_widget') or not self.state.chart_widget:
-            return
+    def update_chart_dropdown_options(self):
+        """Update chart dropdown using centralized metric configuration with error handling."""
+        try:
+            if not hasattr(self.state, 'chart_widget') or not self.state.chart_widget:
+                Logger.warn("Chart widget not available for dropdown update")
+                return
+            
+            chart_metrics = set()  # Use set to automatically handle duplicates
+            
+            # Collect unique chartable metrics from visible groups
+            for group_key, group_config in config.METRIC_GROUPS.items():
+                if self._is_group_visible(group_config):
+                    for chart_metric in group_config['chart_metrics']:
+                        if self._is_metric_chartable(chart_metric):
+                            chart_metrics.add(chart_metric)
+            
+            # Convert to display names and sort for consistent order
+            chart_display_names = sorted([
+                config.METRICS[metric]['label'] for metric in chart_metrics
+            ])
+            
+            # Update dropdown
+            if not chart_display_names:
+                self.state.chart_widget['values'] = ["No metrics selected"]
+                self.state.chart.set("No metrics selected")
+                self.state.chart_widget.configure(state="disabled")
+            else:
+                self.state.chart_widget['values'] = chart_display_names
+                current_selection = self.state.chart.get()
+                if current_selection not in chart_display_names:
+                    self.state.chart.set(chart_display_names[0])
+                self.state.chart_widget.configure(state="readonly")
+                
+        except Exception as e:
+            Logger.error(f"Failed to update chart dropdown options: {e}")
+            # Graceful degradation - set to disabled state
+            try:
+                if hasattr(self.state, 'chart_widget') and self.state.chart_widget:
+                    self.state.chart_widget['values'] = ["Error updating options"]
+                    self.state.chart.set("Error updating options")
+                    self.state.chart_widget.configure(state="disabled")
+            except Exception:
+                pass  # If even the fallback fails, just continue
+
+    def _is_group_visible(self, group_config):
+        """Check if any display metrics in this group are visible using standardized access."""
+        return any(
+            self._is_metric_visible(display_metric)
+            for display_metric in group_config['display_metrics']
+        )
+
+    def _is_metric_chartable(self, metric_key: str) -> bool:
+        """Check if a metric makes sense to chart based on user requirements.
         
-        # Get data from state (UI-agnostic)
-        visible_display_names, has_metrics = self.state.get_current_chart_dropdown_data()
+        Excludes:
+        - Non-numeric metrics (conditions, weather_main, weather_id, weather_icon)
+        - Wind direction and gusts (not meaningful for trend charts)
+        - Individual precipitation metrics (use combined precipitation instead)
+        """
+        # Non-numeric metrics that can't be charted
+        non_chartable = {
+            'conditions', 'weather_main', 'weather_id', 'weather_icon'
+        }
         
-        if not visible_display_names:
-            self.state.chart_widget['values'] = ["No metrics selected"]
-            self.state.chart.set("No metrics selected")
-            self.state.chart_widget.configure(state="disabled")
-        else:
-            self.state.chart_widget['values'] = visible_display_names
-            self.state.chart.set(visible_display_names[0])
-            self.state.chart_widget.configure(state="readonly")
+        # Wind metrics that don't make sense for trending
+        non_trending_wind = {
+            'wind_direction', 'wind_gust'
+        }
+        
+        # Raw precipitation details (simplified rain/snow are chartable)
+        raw_precipitation_details = {
+            'rain_1h', 'rain_3h', 'snow_1h', 'snow_3h'
+        }
+        
+        excluded_metrics = non_chartable | non_trending_wind | raw_precipitation_details
+        
+        return metric_key not in excluded_metrics
     
     # LOADING STATE METHODS
     def set_loading_state(self, is_loading: bool, message: str = "") -> None:
@@ -247,11 +361,25 @@ class ControlWidgets:
     def _show_progress(self, message: str) -> None:
         """Shows progress message in status bar."""
         # Delegate to status bar instead of local progress label
-        if hasattr(self.state, 'progress_label') and self.state.progress_label:
-            self.state.progress_label.configure(text=f"🔄 {message}", foreground="blue")
+        pass
 
     def _hide_progress(self) -> None:
         """Hides progress message in status bar."""
         # Delegate to status bar instead of local progress label
-        if hasattr(self.state, 'progress_label') and self.state.progress_label:
-            self.state.progress_label.configure(text="", foreground="blue")
+        pass
+    
+    def _select_all_metrics(self) -> None:
+        """Select all metric visibility checkboxes."""
+        for metric_key, var in self.state.visibility.items():
+            var.set(True)
+        # Update chart dropdown after changing visibility
+        if self.callbacks.get('dropdown_update'):
+            self.callbacks['dropdown_update']()
+
+    def _clear_all_metrics(self) -> None:
+        """Clear all metric visibility checkboxes."""
+        for metric_key, var in self.state.visibility.items():
+            var.set(False)
+        # Update chart dropdown after changing visibility
+        if self.callbacks.get('dropdown_update'):
+            self.callbacks['dropdown_update']()

@@ -16,6 +16,7 @@ from tkinter import ttk
 
 from WeatherDashboard import config
 from WeatherDashboard.features.alerts.alert_display import AlertStatusIndicator
+from WeatherDashboard.utils.logger import Logger
 
 
 class MetricDisplayWidgets:
@@ -59,17 +60,107 @@ class MetricDisplayWidgets:
         
         self._create_all_metrics()
     
+    def update_metric_display(self, metric_displays: Dict[str, str]) -> None:
+        """Update metric displays using centralized configuration."""
+        # Clear all existing displays first
+        for metric_key in config.METRICS:
+            if metric_key in self.metric_labels:
+                widgets = self.metric_labels[metric_key]
+                widgets['label'].grid_forget()
+                widgets['value'].grid_forget()
+        
+        # Define display order for each column section
+        left_column_order = ['conditions', 'temperature', 'humidity', 'rain', 'snow', 'precipitation_probability', 'wind_chill', 'heat_index', 'weather_comfort_score']
+        right_column_order = ['cloud_cover', 'temp_min', 'wind_speed', 'pressure', 'visibility', 'dew_point', 'uv_index', 'air_quality_description']
+
+        left_row = 0
+        right_row = 0
+        
+        # Process left column metrics (columns 2-3)
+        for display_metric in left_column_order:
+            if self._is_metric_visible(display_metric):
+                should_display = True
+                label = ""
+                value = ""
+
+                # Determine display data and label
+                if display_metric == 'temperature':
+                    label = 'Temperature:'
+                    value = metric_displays.get('enhanced_temperature', '--')
+                elif display_metric == 'conditions':
+                    label = 'Conditions:'
+                    value = metric_displays.get('enhanced_conditions', '--')
+                elif display_metric in ['rain', 'snow']:
+                    label = f"{config.METRICS[display_metric]['label']}:"
+                    value = metric_displays.get(display_metric, '--')
+                    if value == '--' or value == '0.0 mm' or value == '0.0 in':
+                        should_display = False # Skip if no precipitation
+                elif display_metric in ['wind_chill', 'heat_index', 'weather_comfort_score', 'precipitation_probability']:
+                    label = f"{config.METRICS[display_metric]['label']}:"
+                    value = metric_displays.get(display_metric, '--')
+                    # Skip wind chill and heat index if they're None (not applicable)
+                    if display_metric in ['wind_chill', 'heat_index'] and value == '--':
+                        should_display = False
+                else:
+                    # Standard individual metric
+                    label = f"{config.METRICS[display_metric]['label']}:"
+                    value = metric_displays.get(display_metric, '--')
+                
+                if should_display:
+                    self._show_metric_at_position(display_metric, label, value, left_row, 2, 3)
+                    left_row += 1
+        
+        # Process right column metrics (columns 4-5)  
+        for display_metric in right_column_order:
+            if self._is_metric_visible(display_metric):
+                # Determine display data and label
+                if display_metric == 'temp_min':
+                    label = "Today's Range:"
+                    value = metric_displays.get('temp_range', '--')
+                elif display_metric == 'wind_speed':
+                    label = 'Wind:'
+                    value = metric_displays.get('enhanced_wind', '--')
+                elif display_metric in ['dew_point', 'uv_index', 'air_quality_description']:
+                    label = f"{config.METRICS[display_metric]['label']}:"
+                    value = metric_displays.get(display_metric, '--')
+                else:
+                    # Standard individual metric
+                    label = f"{config.METRICS[display_metric]['label']}:"
+                    value = metric_displays.get(display_metric, '--')
+                
+                self._show_metric_at_position(display_metric, label, value, right_row, 4, 5)
+                right_row += 1
+
+    def _show_metric_at_position(self, metric_key: str, label_text: str, value_text: str, row: int, label_col: int, value_col: int) -> None:
+        """Helper method to show a metric at specific grid position."""
+        if metric_key in self.metric_labels:
+            widgets = self.metric_labels[metric_key]
+            widgets['label'].configure(text=label_text)
+            widgets['value'].configure(text=value_text)
+            
+            # Add extra padding for column 4 (right section)
+            padx = (20, 0) if label_col == 4 else (0, 0)
+            
+            widgets['label'].grid(row=row, column=label_col, sticky=tk.W, pady=5, padx=padx)
+            widgets['value'].grid(row=row, column=value_col, sticky=tk.W, pady=5)
+
+    def _is_metric_visible(self, metric_key: str) -> bool:
+        """Check if a specific metric is currently visible using standardized access."""
+        try:
+            return self.state.visibility.get(metric_key, tk.BooleanVar()).get()
+        except (AttributeError, KeyError) as e:
+            Logger.warn(f"Failed to check visibility for metric '{metric_key}': {e}")
+            return False
+    
     def _create_all_metrics(self) -> None:
         """Create all metric display widgets in organized sections.
         
         Orchestrates the creation of city/date headers, weather metric displays,
-        alert status indicators, and registers all widgets with state manager
-        for coordinated updates and visibility management.
+        and alert status indicators for coordinated updates and visibility management.
         """
         self._create_header_info()
         self._create_weather_metrics()
         self._create_alert_status()
-        self._register_with_state()
     
     def _create_header_info(self) -> None:
         """Create city and date display headers.
@@ -94,11 +185,11 @@ class MetricDisplayWidgets:
         configuration. Widgets are initially positioned but their visibility
         is managed dynamically by the state manager based on user preferences.
         """
-        for i, metric_key in enumerate(config.KEY_TO_DISPLAY):
+        for i, metric_key in enumerate(config.METRICS):
             row = 0 + i
             
             # Create label and value widgets
-            name_label = ttk.Label(self.parent, text=f"{config.KEY_TO_DISPLAY[metric_key]}:", style="LabelName.TLabel")
+            name_label = ttk.Label(self.parent, text=f"{config.METRICS[metric_key]['label']}:", style="LabelName.TLabel")
             value_label = ttk.Label(self.parent, text="--", style="LabelValue.TLabel")
             
             # Position them (initially visible, will be managed by state)
@@ -152,11 +243,3 @@ class MetricDisplayWidgets:
                     self.alert_text_label.configure(text="Information", foreground="orange")
             else:
                 self.alert_text_label.configure(text="", foreground="gray")
-    
-    def _register_with_state(self) -> None:
-        """Register widget references with the state manager."""
-        self.state.metric_labels = self.metric_labels
-        self.state.city_label = self.city_label
-        self.state.date_label = self.date_label
-        self.state.alert_status_widget = self.alert_status_widget
-        self.state.alert_text_label = self.alert_text_label

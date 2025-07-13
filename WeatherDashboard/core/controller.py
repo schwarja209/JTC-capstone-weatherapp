@@ -9,7 +9,7 @@ Classes:
     WeatherDashboardController: Main controller coordinating all weather operations
 """
 
-from typing import Tuple, List, Any
+from typing import Tuple, List, Any, Dict, Optional
 import tkinter.messagebox as messagebox
 
 from WeatherDashboard import config
@@ -90,6 +90,42 @@ class WeatherDashboardController:
         # Fetch and process data
         return self._fetch_and_display_data(city_name, unit_system)
 
+    def update_chart(self) -> None:
+        """Update the chart with historical weather data for the selected city and metric.
+        
+        Retrieves chart settings, builds data series, and renders the chart
+        with comprehensive error handling and recovery.
+        """
+        try:
+            city, days, metric_key, unit = self._get_chart_settings()
+            x_vals, y_vals = self._build_chart_series(city, days, metric_key, unit)
+            self._render_chart(x_vals, y_vals, metric_key, city, unit)
+
+        except KeyError as e:
+            self._handle_chart_error("Chart configuration error", e)
+        except ValueError as e:
+            self._handle_chart_error("Chart data error", e)
+        except Exception as e:
+            self._handle_chart_error("Unexpected chart error", e)
+
+    def show_weather_alerts(self) -> None:
+        """Display weather alerts popup with enhanced error handling."""
+        from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
+        
+        active_alerts = self.alert_manager.get_active_alerts()
+        if active_alerts:
+            # Get parent window for popup
+            parent = None
+            if (hasattr(self.widgets, 'frames') and 
+                isinstance(self.widgets.frames, dict) and 
+                'title' in self.widgets.frames):
+                parent = self.widgets.frames['title']
+            
+            SimpleAlertPopup(parent, active_alerts)
+        else:
+            from tkinter import messagebox
+            messagebox.showinfo("Weather Alerts", "No active weather alerts.")
+
     def _validate_inputs_and_state(self, city_name: str, unit_system: str) -> bool:
         """Validate input parameters and application state with enhanced error reporting.
         
@@ -131,7 +167,7 @@ class WeatherDashboardController:
         return True
 
     def _fetch_and_display_data(self, city_name: str, unit_system: str) -> bool:
-        """Fetch weather data and update the display with comprehensive error handling.
+        """Fetch weather data and update the display with standardized error handling.
         
         Args:
             city_name: Name of the city to fetch weather for
@@ -143,118 +179,68 @@ class WeatherDashboardController:
         try:
             # Fetch data
             city, raw_data, error_exception = self.service.get_city_data(city_name, unit_system)
-            
-            # Store data in centralized state instead of scattered variables
-            self.state.set_weather_data(raw_data, is_fallback=bool(error_exception))
 
             # Create view model
             view_model = WeatherViewModel(city, raw_data, unit_system)
             
-            # Handle any errors
+            # Handle any errors using standardized error handler
             should_continue = self.error_handler.handle_weather_error(error_exception, city)
             if not should_continue:
                 return False
             
-            # Update display components
-            self.state.update_city_display(
-                city_name=view_model.city_name,
-                date_str=view_model.date_str
-            )
-
-            # Update display
-            self.state.update_metric_display(view_model.metrics)
-
-            # Update status bar with data source info
-            data_status = f"{view_model.city_name} ({'Simulated' if error_exception else 'Live'})"
-            self.state.update_status_bar_data(data_status)
-
-            if error_exception:
-                # Simulated data - make it red/warning
-                if hasattr(self.state, 'data_status_label') and self.state.data_status_label:
-                    self.state.data_status_label.configure(foreground="red")
-            else:
-                # Live data - make it green/normal  
-                if hasattr(self.state, 'data_status_label') and self.state.data_status_label:
-                    self.state.data_status_label.configure(foreground="darkgreen")
-                
-            self.state.update_status_bar_system("Data updated", "info")
-
-            # Check for weather alerts after successful data update
-            if raw_data:
-                # raw_data is already unit-converted by the data service
-                alerts = self.alert_manager.check_weather_alerts(raw_data)
-                # Update alert status widget if it exists. Access through tabbed widgets property
-                if (hasattr(self.widgets, 'metric_widgets') and 
-                    self.widgets.metric_widgets and
-                    hasattr(self.widgets.metric_widgets, 'alert_status_widget')):
-                    self.widgets.metric_widgets.update_alert_display(alerts)
+            # Update all display components
+            self._update_display_components(view_model, raw_data, error_exception)
             
             # Log the data
             self.service.write_to_log(city, raw_data, unit_system)
             return True
 
         except ValidationError as e:
-            self.error_handler.handle_input_validation_error(str(e))
-            return False
+            return self._handle_controller_error("validation", str(e))
         except Exception as e:
-            self.error_handler.handle_unexpected_error(str(e))
-            return False
+            return self._handle_controller_error("unexpected", str(e))
 
-    def show_weather_alerts(self) -> None:
-        """Display weather alerts popup with enhanced error handling."""
-        from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
-        
-        active_alerts = self.alert_manager.get_active_alerts()
-        if active_alerts:
-            # Get parent window for popup
-            parent = None
-            if (hasattr(self.widgets, 'frames') and 
-                isinstance(self.widgets.frames, dict) and 
-                'title' in self.widgets.frames):
-                parent = self.widgets.frames['title']
-            
-            SimpleAlertPopup(parent, active_alerts)
-        else:
-            from tkinter import messagebox
-            messagebox.showinfo("Weather Alerts", "No active weather alerts.")
-
-    def update_chart(self) -> None:
-        """Update the chart with historical weather data for the selected city and metric.
-        
-        Retrieves chart settings, builds data series, and renders the chart
-        with comprehensive error handling and recovery.
-        """
-        try:
-            city, days, metric_key, unit = self._get_chart_settings()
-            x_vals, y_vals = self._build_chart_series(city, days, metric_key, unit)
-            self._render_chart(x_vals, y_vals, metric_key, city, unit)
-
-        except KeyError as e:
-            self._handle_chart_error("Chart configuration error", e)
-        except ValueError as e:
-            self._handle_chart_error("Chart data error", e)
-        except Exception as e:
-            self._handle_chart_error("Unexpected chart error", e)
-
-    def _handle_chart_error(self, error_type: str, error: Exception) -> None:
-        """Handle chart errors with proper recovery.
+    def _update_display_components(self, view_model: 'WeatherViewModel', raw_data: Dict[str, Any], error_exception: Optional[Exception]) -> None:
+        """Update all display components with weather data.
         
         Args:
-            error_type: Type/category of the chart error
-            error: The exception that occurred
+            view_model: Formatted weather view model
+            raw_data: Raw weather data for alerts
+            error_exception: Any error that occurred during data fetch
         """
-        Logger.error(f"{error_type}: {error}")
-        messagebox.showwarning("Chart Error", f"{error_type}. Chart will be cleared.")
+        # Update metric display headers
+        if hasattr(self.widgets, 'metric_widgets') and self.widgets.metric_widgets:
+            if hasattr(self.widgets.metric_widgets, 'city_label') and self.widgets.metric_widgets.city_label:
+                self.widgets.metric_widgets.city_label.config(text=view_model.city_name)
+            if hasattr(self.widgets.metric_widgets, 'date_label') and self.widgets.metric_widgets.date_label:
+                self.widgets.metric_widgets.date_label.config(text=view_model.date_str)
+            
+            # Update metric display
+            self.widgets.metric_widgets.update_metric_display(view_model.metrics)
         
-        # Clear the chart gracefully
-        try:
-            if self.state.is_chart_available():
-                self.state.chart_ax.clear()
-                self.state.chart_ax.text(0.5, 0.5, 'Chart unavailable\nPlease check settings', ha='center', va='center', transform=self.state.chart_ax.transAxes)
-                self.state.chart_canvas.draw()
-        except Exception as recovery_error:
-            Logger.error(f"Failed to clear chart after error: {recovery_error}")
-
+        # Update status bar
+        self._update_status_bar(view_model.city_name, error_exception)
+        
+        # Update alerts
+        self._update_weather_alerts(raw_data)
+    
+    def _update_status_bar(self, city_name: str, error_exception: Optional[Exception]) -> None:
+        """Update status bar with data source information."""
+        if hasattr(self.widgets, 'status_bar_widgets') and self.widgets.status_bar_widgets:
+            data_status = f"{city_name} ({'Simulated' if error_exception else 'Live'})"
+            status_color = "red" if error_exception else "darkgreen"
+            self.widgets.status_bar_widgets.update_data_status(data_status, color=status_color)
+            self.widgets.status_bar_widgets.update_system_status("Data updated", "info")
+    
+    def _update_weather_alerts(self, raw_data: Dict[str, Any]) -> None:
+        """Update weather alerts display."""
+        if raw_data:
+            alerts = self.alert_manager.check_weather_alerts(raw_data)
+            if (hasattr(self.widgets, 'metric_widgets') and 
+                self.widgets.metric_widgets and
+                hasattr(self.widgets.metric_widgets, 'alert_status_widget')):
+                self.widgets.metric_widgets.update_alert_display(alerts)
+    
     def _get_chart_settings(self) -> Tuple[str, int, str, str]:
         """Retrieve the current settings for chart display.
         
@@ -328,7 +314,47 @@ class WeatherDashboardController:
         if display_name == "No metrics selected":
             raise ValueError("Please select at least one metric to display in the chart.")
         
-        metric_key = config.DISPLAY_TO_KEY.get(display_name)
+        # Find metric key by matching display label
+        metric_key = None
+        for key, metric_data in config.METRICS.items():
+            if metric_data['label'] == display_name:
+                metric_key = key
+                break
         if not metric_key:
             raise KeyError(f"Invalid chart metric: '{display_name}'. Please select a valid metric.")
         return metric_key
+    
+    def _handle_controller_error(self, error_type: str, error_message: str) -> bool:
+        """Standardized error handling for controller operations.
+        
+        Args:
+            error_type: Type of error ('validation', 'unexpected', etc.)
+            error_message: Error message to handle
+            
+        Returns:
+            bool: Always False to indicate operation failure
+        """
+        if error_type == "validation":
+            self.error_handler.handle_input_validation_error(error_message)
+        else:
+            self.error_handler.handle_unexpected_error(error_message)
+        return False
+
+    def _handle_chart_error(self, error_type: str, error: Exception) -> None:
+        """Handle chart errors with proper recovery.
+        
+        Args:
+            error_type: Type/category of the chart error
+            error: The exception that occurred
+        """
+        Logger.error(f"{error_type}: {error}")
+        messagebox.showwarning("Chart Error", f"{error_type}. Chart will be cleared.")
+        
+        # Clear the chart gracefully
+        try:
+            if hasattr(self.widgets, 'chart_widget') and self.widgets.chart_widget:
+                self.widgets.chart_widget.ax.clear()
+                self.widgets.chart_widget.ax.text(0.5, 0.5, 'Chart unavailable\nPlease check settings', ha='center', va='center', transform=self.widgets.chart_widget.ax.transAxes)
+                self.widgets.chart_widget.canvas.draw()
+        except Exception as recovery_error:
+            Logger.error(f"Failed to clear chart after error: {recovery_error}")

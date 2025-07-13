@@ -48,7 +48,6 @@ class StatusBarWidgets:
         self.data_status_label: Optional[ttk.Label] = None
         
         self._create_status_sections()
-        self._register_with_state()
     
     def _create_status_sections(self) -> None:
         """Create the three-section status bar layout.
@@ -87,17 +86,6 @@ class StatusBarWidgets:
         )
         self.data_status_label.pack(side=tk.RIGHT, padx=5)
     
-    def _register_with_state(self) -> None:
-        """Register status bar widgets with state manager.
-        
-        Makes status bar widgets accessible through the state manager for
-        updates from other application components including controllers,
-        loading managers, and async operations.
-        """
-        self.state.system_status_label = self.system_status_label
-        self.state.progress_label = self.progress_label
-        self.state.data_status_label = self.data_status_label
-    
     def update_system_status(self, message: str, status_type: str = "info") -> None:
         """Updates main system status message."""
         colors = {
@@ -118,12 +106,12 @@ class StatusBarWidgets:
         if self.progress_label:
             self.progress_label.configure(text=message)
     
-    def update_data_status(self, message: str) -> None:
-        """Updates data source information."""
+    def update_data_status(self, message: str, color: str = "gray") -> None:
+        """Updates data source information with optional color coding."""
         if self.data_status_label:
             # Safety check for None values
             display_message = str(message) if message is not None else "No data"
-            self.data_status_label.configure(text=display_message)
+            self.data_status_label.configure(text=display_message, foreground=color)
     
     def clear_progress(self) -> None:
         """Clears progress indicator."""

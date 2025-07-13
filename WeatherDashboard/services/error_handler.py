@@ -5,8 +5,8 @@ Handles errors related to weather data operations, including API errors,
 input validation, and unexpected exceptions. Provides user-friendly 
 messages and logging for different error types.
 
-Features theme-aware error messaging to support optimistic, pessimistic,
-and neutral user experience modes.
+Provides theme-aware error messaging foundation for optimistic, pessimistic,
+and neutral user experience modes in the dual-theme system.
 
 Classes:
     WeatherErrorHandler: Main error handling class with theme support

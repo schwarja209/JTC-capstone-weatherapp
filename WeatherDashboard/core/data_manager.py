@@ -71,13 +71,13 @@ class WeatherDataManager:
         # If this changes in future (e.g., new fallback with imperial), update convert_units().
         converted_data = self.convert_units(raw_data, unit_system)
 
-        # Memory pressure and periodic cleanup check
+        # Simple cleanup: time-based OR memory limits exceeded
         current_time = datetime.now()
         should_cleanup = (current_time - self._last_cleanup).total_seconds() > (self._cleanup_interval_hours * 3600)
-        memory_pressure = self._check_memory_pressure()
+        memory_over_limit = self._simple_memory_check()
 
-        if should_cleanup or memory_pressure:
-            self.cleanup_old_data(force_memory_cleanup=memory_pressure)
+        if should_cleanup or memory_over_limit:
+            self.cleanup_old_data()
             self._last_cleanup = current_time
 
         key = city_key(city)
@@ -122,7 +122,21 @@ class WeatherDataManager:
         converters = {
             'temperature': UnitConverter.convert_temperature,
             'pressure': UnitConverter.convert_pressure,
-            'wind_speed': UnitConverter.convert_wind_speed
+            'wind_speed': UnitConverter.convert_wind_speed,
+            'feels_like': UnitConverter.convert_temperature,
+            'temp_min': UnitConverter.convert_temperature,
+            'temp_max': UnitConverter.convert_temperature,
+            'wind_gust': UnitConverter.convert_wind_speed,
+            'visibility': UnitConverter.convert_visibility,
+            'rain': UnitConverter.convert_precipitation,
+            'snow': UnitConverter.convert_precipitation,
+            'rain_1h': UnitConverter.convert_precipitation,
+            'rain_3h': UnitConverter.convert_precipitation,
+            'snow_1h': UnitConverter.convert_precipitation,
+            'snow_3h': UnitConverter.convert_precipitation,
+            'heat_index': UnitConverter.convert_heat_index,
+            'wind_chill': UnitConverter.convert_wind_chill,
+            'dew_point': UnitConverter.convert_dew_point
         }
         
         conversion_errors: List[str] = []  # Track conversion failures
@@ -146,33 +160,11 @@ class WeatherDataManager:
         return converted
 
     def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
-        """Fetch historical weather data for a city.
-        
-        Currently generates simulated historical data using the fallback generator.
-        Future versions may integrate with historical weather APIs.
-        
-        Args:
-            city: City name for historical data
-            num_days: Number of days of historical data to generate
-            
-        Returns:
-            List[Dict[str, Any]]: List of historical weather data entries
-        """
+        """Generate historical weather data for a city."""
         return self.api_service.fallback.generate(city, num_days)
 
     def get_recent_data(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
-        """Return recent weather data for a city from the last N days.
-        
-        Retrieves stored weather data entries within the specified time window.
-        Reserved for future features like trend analysis or prediction.
-        
-        Args:
-            city: City name
-            days_back: Number of days to look back (default 7)
-        
-        Returns:
-            List[Dict[str, Any]]: Weather data entries from the specified time period
-        """
+        """Return recent weather data for a city from the last N days."""
         city_data = self.weather_data.get(city_key(city), [])
         cutoff_date = datetime.now().date() - timedelta(days=days_back)
         
@@ -201,24 +193,15 @@ class WeatherDataManager:
             Logger.info(f"Weather data written for {city_key(city)} - {fallback_text}")
             
         except (OSError, IOError, PermissionError) as e:
-            Logger.error(f"Failed to write weather data to file: {e}")
+            # Raise as custom exception for controller to handle via error_handler
+            from WeatherDashboard.services.api_exceptions import WeatherDashboardError
+            raise WeatherDashboardError(f"Failed to write weather data to file: {e}")
         except Exception as e:
-            Logger.error(f"Unexpected error writing weather data: {e}")
+            from WeatherDashboard.services.api_exceptions import WeatherDashboardError
+            raise WeatherDashboardError(f"Unexpected error writing weather data: {e}")
 
     def format_data_for_logging(self, city: str, data: Dict[str, Any], unit_system: str) -> str:
-        """Format weather data for logging to a file with timestamp and unit system information.
-        
-        Creates a multi-line formatted string with timestamp, city, and all weather
-        metrics properly formatted with units.
-        
-        Args:
-            city: City name for the log entry
-            data: Weather data dictionary to format
-            unit_system: Unit system for value formatting ('metric' or 'imperial')
-            
-        Returns:
-            str: Formatted log entry string ready for file writing
-        """
+        """Format weather data for file logging."""
         timestamp = data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
         lines = [
             f"\n\nTime: {timestamp}",
@@ -231,71 +214,38 @@ class WeatherDataManager:
         ]
         return "\n".join(lines)
     
-    def cleanup_old_data(self, days_to_keep: int = 30, force_memory_cleanup: bool = False) -> None:
+    def cleanup_old_data(self, days_to_keep: int = 30) -> None:
         """Remove old weather data and manage memory usage.
         
         Args:
             days_to_keep: Number of days of data to retain (default 30)
-            force_memory_cleanup: Force aggressive cleanup regardless of age
         """
         cutoff_date = datetime.now() - timedelta(days=days_to_keep)
         
-        # First pass: Remove old entries
+        # Remove old entries and enforce per-city limits
         for city_key, data_list in self.weather_data.items():
-            self.weather_data[city_key] = [
+            # Filter by date
+            recent_data = [
                 entry for entry in data_list 
                 if entry.get('date', datetime.now()) >= cutoff_date
             ]
+            # Enforce per-city entry limit
+            max_entries = config.MEMORY["max_entries_per_city"]
+            self.weather_data[city_key] = recent_data[-max_entries:]
         
-        # Second pass: Handle memory pressure
-        if force_memory_cleanup or self._check_memory_pressure():
-            self._aggressive_memory_cleanup()
-        
-        # Third pass: Remove empty city entries
+        # Remove empty city entries
         empty_cities = [city for city, data in self.weather_data.items() if not data]
         for city in empty_cities:
             del self.weather_data[city]
     
-    def _check_memory_pressure(self) -> bool:
-        """Check if we're approaching memory limits.
+    def _simple_memory_check(self) -> bool:
+        """Check if memory limits are exceeded.
         
         Returns:
-            bool: True if memory cleanup is needed
+            bool: True if cleanup is needed due to memory limits
         """
         total_entries = sum(len(entries) for entries in self.weather_data.values())
         cities_count = len(self.weather_data)
         
-        threshold = config.MEMORY["aggressive_cleanup_threshold"]
-
-        return (cities_count > config.MEMORY["max_cities_stored"] * threshold or 
-            total_entries > config.MEMORY["max_total_entries"] * threshold)
-    
-    def _aggressive_memory_cleanup(self) -> None:
-        """Perform aggressive memory cleanup when limits exceeded."""
-        # Sort cities by last access time (most recent data first)
-        city_last_access = {}
-        for city, entries in self.weather_data.items():
-            if entries:
-                latest_date = max(entry.get('date', datetime.min) for entry in entries)
-                city_last_access[city] = latest_date
-        
-        # Keep only the most recently accessed cities
-        cities_by_recency = sorted(city_last_access.items(), 
-                                key=lambda x: x[1], reverse=True)
-        
-        # Remove least recently used cities
-        if len(cities_by_recency) > config.MEMORY["max_cities_stored"]:
-            cities_to_remove = cities_by_recency[config.MEMORY["max_cities_stored"]:]
-            for city, _ in cities_to_remove:
-                del self.weather_data[city]
-        
-        # If still over total entry limit, trim entries per city
-        total_entries = sum(len(entries) for entries in self.weather_data.values())
-        if total_entries > config.MEMORY["max_total_entries"]:
-            target_per_city = config.MEMORY["max_total_entries"] // len(self.weather_data)
-            target_per_city = max(5, min(target_per_city, config.MEMORY["max_entries_per_city"]))
-            
-            for city in self.weather_data:
-                if len(self.weather_data[city]) > target_per_city:
-                    # Keep most recent entries
-                    self.weather_data[city] = self.weather_data[city][-target_per_city:]
+        return (cities_count > config.MEMORY["max_cities_stored"] or 
+                total_entries > config.MEMORY["max_total_entries"])

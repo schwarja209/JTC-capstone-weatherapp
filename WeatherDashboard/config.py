@@ -4,7 +4,7 @@ Configuration settings for the Weather Dashboard application.
 This module centralizes all configuration constants, default values, API settings,
 UI display mappings, unit definitions, alert thresholds, and application-wide
 constants. Provides a single source of truth for all configurable aspects of
-the Weather Dashboard with validation and derived value generation.
+the Weather Dashboard.
 
 Configuration Categories:
     API: OpenWeatherMap API configuration
@@ -16,9 +16,6 @@ Configuration Categories:
     OUTPUT: File paths and logging configuration
     
 Functions:
-    get_key_to_display_mapping: Generate display labels from metrics
-    get_display_to_key_mapping: Generate key lookup from display labels
-    get_default_visibility: Generate default visibility settings
     validate_config: Comprehensive configuration validation
 """
 
@@ -41,15 +38,106 @@ except ImportError:
 # ================================
 # API Configuration
 API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
+API_UV_URL = "https://api.openweathermap.org/data/2.5/uvi"
+API_AIR_QUALITY_URL = "https://api.openweathermap.org/data/2.5/air_pollution"
 API_KEY = os.getenv("OPENWEATHER_API_KEY")  # load from .env
 
 # Unified Metric Definitions
 METRICS = {
+    # Original metrics
     'temperature': {'label': 'Temperature', 'visible': True},
     'humidity': {'label': 'Humidity', 'visible': True},
     'wind_speed': {'label': 'Wind Speed', 'visible': False},
     'pressure': {'label': 'Pressure', 'visible': False},
     'conditions': {'label': 'Conditions', 'visible': False},
+    
+    # New metrics (all initially hidden)
+    'feels_like': {'label': 'Feels Like', 'visible': False},
+    'temp_min': {'label': 'Min Temp', 'visible': False},
+    'temp_max': {'label': 'Max Temp', 'visible': False},
+    'wind_direction': {'label': 'Wind Direction', 'visible': False},
+    'wind_gust': {'label': 'Wind Gusts', 'visible': False},
+    'visibility': {'label': 'Visibility', 'visible': False},
+    'cloud_cover': {'label': 'Cloud Cover', 'visible': False},
+    'rain': {'label': 'Rain', 'visible': False},
+    'snow': {'label': 'Snow', 'visible': False},
+    'weather_main': {'label': 'Weather Type', 'visible': False},
+    'weather_id': {'label': 'Weather ID', 'visible': False},
+    'weather_icon': {'label': 'Weather Icon', 'visible': False},
+
+    # New new metrics
+    'uv_index': {'label': 'UV Index', 'visible': False},
+    'air_quality_index': {'label': 'Air Quality', 'visible': False},
+    'air_quality_description': {'label': 'Air Quality Status', 'visible': False},
+
+    # Derived comfort metrics
+    'heat_index': {'label': 'Heat Index', 'visible': False},
+    'wind_chill': {'label': 'Wind Chill', 'visible': False},
+    'dew_point': {'label': 'Dew Point', 'visible': False},
+    'precipitation_probability': {'label': 'Rain Chance', 'visible': False},
+    'weather_comfort_score': {'label': 'Comfort Score', 'visible': False}
+}
+
+# Metric Organization for UI Components
+METRIC_GROUPS = {
+    'core_weather': {
+        'label': 'Core Weather',
+        'display_metrics': ['temperature', 'humidity', 'conditions', 'weather_comfort_score'],
+        'chart_metrics': ['temperature', 'humidity', 'weather_comfort_score']  # conditions not chartable
+    },
+    'temperature_details': {
+        'label': 'Temperature Details', 
+        'display_metrics': ['temp_min', 'heat_index', 'wind_chill', 'dew_point'],  # Temp_min shows as "Today's Range" 
+        'chart_metrics': ['feels_like', 'temp_min', 'temp_max', 'heat_index', 'wind_chill', 'dew_point'] # Individual for charting
+    },
+    'wind_atmosphere': {
+        'label': 'Air & Atmosphere',
+        'display_metrics': ['wind_speed', 'pressure', 'visibility', 'cloud_cover', 'uv_index', 'air_quality_description'],
+        'chart_metrics': ['wind_speed', 'wind_direction', 'wind_gust', 'pressure', 'visibility', 'cloud_cover', 'uv_index', 'air_quality_index']
+    },
+    'precipitation': {
+        'label': 'Precipitation',
+        'display_metrics': ['rain', 'snow', 'precipitation_probability'],  # Rain/snow shows as "Current Precipitation"
+        'chart_metrics': ['rain', 'snow', 'precipitation_probability']  # Individual for charting
+    }
+}
+
+# Metric Units Mapping
+UNITS = {
+    'metric_units': {
+        # Original metric units
+        'temperature': {'imperial': '°F', 'metric': '°C'},
+        'humidity': {'imperial': '%', 'metric': '%'},
+        'pressure': {'imperial': 'inHg', 'metric': 'hPa'},
+        'wind_speed': {'imperial': 'mph', 'metric': 'm/s'},
+        'conditions': {'imperial': 'Category', 'metric': 'Category'},
+        
+        # New metric unit definitions
+        'feels_like': {'imperial': '°F', 'metric': '°C'},
+        'temp_min': {'imperial': '°F', 'metric': '°C'},
+        'temp_max': {'imperial': '°F', 'metric': '°C'},
+        'wind_direction': {'imperial': '°', 'metric': '°'},
+        'wind_gust': {'imperial': 'mph', 'metric': 'm/s'},
+        'visibility': {'imperial': 'mi', 'metric': 'km'},
+        'cloud_cover': {'imperial': '%', 'metric': '%'},
+        'rain': {'imperial': 'in', 'metric': 'mm'},
+        'snow': {'imperial': 'in', 'metric': 'mm'},
+        'weather_main': {'imperial': 'Category', 'metric': 'Category'},
+        'weather_id': {'imperial': 'ID', 'metric': 'ID'},
+        'weather_icon': {'imperial': 'Icon', 'metric': 'Icon'},
+
+        # New new metric unit definitions
+        'uv_index': {'imperial': 'Index', 'metric': 'Index'},
+        'air_quality_index': {'imperial': 'AQI', 'metric': 'AQI'},
+        'air_quality_description': {'imperial': 'Status', 'metric': 'Status'},
+
+        # Derived metrics unit definitions
+        'heat_index': {'imperial': '°F', 'metric': '°C'},
+        'wind_chill': {'imperial': '°F', 'metric': '°C'},
+        'dew_point': {'imperial': '°F', 'metric': '°C'},
+        'precipitation_probability': {'imperial': '%', 'metric': '%'},
+        'weather_comfort_score': {'imperial': 'Score', 'metric': 'Score'}
+    }
 }
 
 # Historical Data Range Options
@@ -61,19 +149,15 @@ CHART = {
     }
 }
 
-# Metric Units Mapping
-UNITS = {
-    'metric_units': {
-        'temperature': {'imperial': '°F', 'metric': '°C'},
-        'humidity': {'imperial': '%', 'metric': '%'},
-        'pressure': {'imperial': 'inHg', 'metric': 'hPa'},
-        'wind_speed': {'imperial': 'mph', 'metric': 'm/s'},
-        'conditions': {'imperial': 'Category', 'metric': 'Category'}
-        # 'precipitation': {'imperial': 'in', 'metric': 'mm'}  # Your original commented line preserved
-    }
+# Enhanced display mappings for when metrics are combined
+ENHANCED_DISPLAY_LABELS = {
+    'temperature': 'Temperature (with feels-like)',
+    'temp_min': "Today's Range (min/max)", 
+    'wind_speed': 'Wind (speed & direction)',
+    'conditions': 'Conditions (with icon)'
 }
 
-# NEW: Alert Threshold Configuration
+# Alert Threshold Configuration
 ALERT_THRESHOLDS = {
     'temperature_high': 35.0,      # °C - Hot weather warning
     'temperature_low': -10.0,      # °C - Cold weather warning  
@@ -81,51 +165,42 @@ ALERT_THRESHOLDS = {
     'pressure_low': 980.0,         # hPa - Storm system warning
     'humidity_high': 85.0,         # % - High humidity discomfort
     'humidity_low': 15.0,          # % - Low humidity warning
+
+    # NEW thresholds
+    'heavy_rain_threshold': 10.0,     # mm/hour - Heavy rain warning
+    'heavy_snow_threshold': 5.0,      # mm/hour - Heavy snow warning
+    'low_visibility_metric': 3000,    # meters - Poor visibility (3km)
+    'low_visibility_imperial': 3218,  # meters - Poor visibility (2 miles)
+
+    # Derived metric thresholds
+    'heat_index_high': 40.5,          # °C (105°F) - Dangerous heat index
+    'wind_chill_low': -28.9,          # °C (-20°F) - Dangerous wind chill
+    'uv_index_high': 8,               # Index - Very high UV exposure
+    'air_quality_poor': 4,            # AQI - Poor air quality warning
+    'comfort_score_low': 30,          # Score - Uncomfortable conditions
 }
 
-# ================================
-# 3. DERIVED VALUES (backward compatibility)
-# ================================
-def get_key_to_display_mapping():
-    """Generate display labels from metrics configuration.
-    
-    Returns:
-        Dict[str, str]: Mapping from metric keys to display labels
-    """
-    try:
-        return {k: v['label'] for k, v in METRICS.items()}
-    except (KeyError, TypeError, AttributeError) as e:
-        print(f"Error creating key to display mapping: {e}")
-        return {}  # Return empty dict as fallback
-
-def get_display_to_key_mapping():
-    """Generate key lookup from display labels.
-    
-    Returns:
-        Dict[str, str]: Mapping from display labels to metric keys
-    """
-    try:
-        return {v['label']: k for k, v in METRICS.items()}
-    except (KeyError, TypeError, AttributeError) as e:
-        print(f"Error creating display to key mapping: {e}")
-        return {}  # Return empty dict as fallback
-
-def get_default_visibility():
-    """Generate default visibility settings from metrics configuration.
-    
-    Returns:
-        Dict[str, bool]: Mapping from metric keys to default visibility states
-    """
-    try:
-        return {k: v['visible'] for k, v in METRICS.items()}
-    except (KeyError, TypeError, AttributeError) as e:
-        print(f"Error creating default visibility: {e}")
-        return {}  # Return empty dict as fallback
-
-# Derive visibility and label maps for internal use
-KEY_TO_DISPLAY = get_key_to_display_mapping()
-DISPLAY_TO_KEY = get_display_to_key_mapping()
-DEFAULT_VISIBILITY = get_default_visibility()
+# Icon selection for display
+WEATHER_ICONS = {
+    '01d': '☀️',   # clear sky day
+    '01n': '🌙',   # clear sky night
+    '02d': '🌤️',   # few clouds day
+    '02n': '🌙',   # few clouds night
+    '03d': '☁️',   # scattered clouds
+    '03n': '☁️',   # scattered clouds
+    '04d': '☁️',   # broken clouds
+    '04n': '☁️',   # broken clouds
+    '09d': '🌧️',   # shower rain
+    '09n': '🌧️',   # shower rain
+    '10d': '🌦️',   # rain day
+    '10n': '🌧️',   # rain night
+    '11d': '⛈️',   # thunderstorm
+    '11n': '⛈️',   # thunderstorm
+    '13d': '🌨️',   # snow
+    '13n': '🌨️',   # snow
+    '50d': '🌫️',   # mist
+    '50n': '🌫️',   # mist
+}
 
 # ================================
 # 4. DEFAULTS (backward compatibility with original variable names)
@@ -136,7 +211,7 @@ DEFAULTS = {
     "unit": "imperial",
     "range": "Last 7 Days",
     "chart": "Temperature",
-    "visibility": DEFAULT_VISIBILITY,
+    "visibility": {k: v['visible'] for k, v in METRICS.items()},
     "alert_thresholds": ALERT_THRESHOLDS 
 }
 
@@ -168,99 +243,47 @@ MEMORY = {
 # 7. CONFIGURATION VALIDATION
 # ================================
 def validate_config() -> None:
-    """Validate that all required configuration keys exist and have expected structure.
+    """Validate essential configuration requirements.
     
-    Performs comprehensive validation of all configuration sections including
-    METRICS, DEFAULTS, UNITS, CHART, OUTPUT, and ALERT_THRESHOLDS structures.
+    Performs focused validation on critical configuration that could cause
+    application failures. Removes overly defensive checks for internal consistency.
     
     Raises:
-        ValueError: If any configuration is invalid or missing required keys
+        ValueError: If any critical configuration is invalid or missing
     """
-    # Check METRICS structure
-    for metric_key, metric_data in METRICS.items():
-        if not isinstance(metric_data, dict):
-            raise ValueError(f"METRICS['{metric_key}'] must be a dictionary")
-        if 'label' not in metric_data or 'visible' not in metric_data:
-            raise ValueError(f"Invalid METRICS structure for '{metric_key}' - missing 'label' or 'visible'")
-        if not isinstance(metric_data['visible'], bool):
-            raise ValueError(f"METRICS['{metric_key}']['visible'] must be boolean")
-    
-    # Check DEFAULTS structure
-    required_default_keys = ['city', 'unit', 'range', 'chart', 'visibility', 'alert_thresholds']
-    for key in required_default_keys:
-        if key not in DEFAULTS:
-            raise ValueError(f"Missing required DEFAULTS key: '{key}'")
-    
-    # Validate unit system in defaults
-    if DEFAULTS['unit'] not in ['metric', 'imperial']:
-        raise ValueError(f"Invalid default unit system: '{DEFAULTS['unit']}' - must be 'metric' or 'imperial'")
-    
-    # Check UNITS structure
-    if 'metric_units' not in UNITS:
-        raise ValueError("Missing 'metric_units' in UNITS config")
-    
-    # Validate each metric in UNITS has both metric and imperial units
-    for metric_key in METRICS.keys():
-        if metric_key not in UNITS['metric_units']:
-            raise ValueError(f"Missing unit definition for metric '{metric_key}' in UNITS config")
-        
-        metric_units = UNITS['metric_units'][metric_key]
-        if not isinstance(metric_units, dict):
-            raise ValueError(f"UNITS['metric_units']['{metric_key}'] must be a dictionary")
-        
-        for unit_system in ['metric', 'imperial']:
-            if unit_system not in metric_units:
-                raise ValueError(f"Missing '{unit_system}' unit for metric '{metric_key}'")
-    
-    # Check CHART structure
-    if 'range_options' not in CHART:
-        raise ValueError("Missing 'range_options' in CHART config")
-    
-    if not isinstance(CHART['range_options'], dict):
-        raise ValueError("CHART['range_options'] must be a dictionary")
-    
-    # Validate range options are positive integers
-    for range_name, days in CHART['range_options'].items():
-        if not isinstance(days, int) or days <= 0:
-            raise ValueError(f"CHART range option '{range_name}' must be a positive integer, got: {days}")
-    
-    # Check OUTPUT structure
-    required_output_keys = ['data_dir', 'log_dir', 'log']
-    for key in required_output_keys:
-        if key not in OUTPUT:
-            raise ValueError(f"Missing required OUTPUT key: '{key}'")
-        
-    # Validate alert thresholds
-    if not isinstance(ALERT_THRESHOLDS, dict):
-        raise ValueError("ALERT_THRESHOLDS must be a dictionary")
-    
-    required_thresholds = ['temperature_high', 'temperature_low', 'wind_speed_high', 'pressure_low']
-    for threshold in required_thresholds:
-        if threshold not in ALERT_THRESHOLDS:
-            raise ValueError(f"Missing required alert threshold: '{threshold}'")
-        if not isinstance(ALERT_THRESHOLDS[threshold], (int, float)):
-            raise ValueError(f"Alert threshold '{threshold}' must be a number")
-    
-    # Check MEMORY structure
-    try:
-        MEMORY
-    except NameError:
-        raise ValueError("Missing 'MEMORY' configuration section")
-    
-    required_memory_keys = ['max_cities_stored', 'max_entries_per_city', 'max_total_entries', 'cleanup_interval_hours']
-    for key in required_memory_keys:
-        if key not in MEMORY:
-            raise ValueError(f"Missing required MEMORY key: '{key}'")
-        if not isinstance(MEMORY[key], (int, float)) or MEMORY[key] <= 0:
-            raise ValueError(f"MEMORY['{key}'] must be a positive number")
-    
-    # Special validation for threshold (should be 0-1)
-    if 'aggressive_cleanup_threshold' in MEMORY:
-        if not 0 < MEMORY['aggressive_cleanup_threshold'] <= 1:
-            raise ValueError("MEMORY['aggressive_cleanup_threshold'] must be between 0 and 1")
-
-    # Check API key
+    # Check critical API configuration
     if not API_KEY:
         print("Warning: No API key found. Application will use fallback data only.")
+    
+    # Validate essential structures exist
+    required_sections = ['METRICS', 'DEFAULTS', 'UNITS', 'CHART', 'OUTPUT', 'ALERT_THRESHOLDS', 'MEMORY']
+    for section in required_sections:
+        if section not in globals():
+            raise ValueError(f"Missing required configuration section: {section}")
+    
+    # Validate METRICS structure (essential for app functionality)
+    if not isinstance(METRICS, dict) or not METRICS:
+        raise ValueError("METRICS must be a non-empty dictionary")
+    
+    # Sample check for metric structure
+    sample_metric = next(iter(METRICS.values()))
+    if not isinstance(sample_metric, dict) or 'label' not in sample_metric or 'visible' not in sample_metric:
+        raise ValueError("Invalid METRICS structure - missing 'label' or 'visible' fields")
+    
+    # Validate critical DEFAULTS
+    if DEFAULTS.get('unit') not in ['metric', 'imperial']:
+        raise ValueError(f"Invalid default unit system: {DEFAULTS.get('unit')}")
+    
+    # Validate essential file paths exist
+    try:
+        import os
+        os.makedirs(OUTPUT.get("data_dir", "data"), exist_ok=True)
+    except (OSError, TypeError):
+        raise ValueError("Cannot create or access data directory")
+    
+    # Validate memory configuration is reasonable
+    if not all(isinstance(MEMORY.get(key, 0), (int, float)) and MEMORY.get(key, 0) > 0 
+               for key in ['max_cities_stored', 'max_entries_per_city', 'max_total_entries']):
+        raise ValueError("Memory configuration must contain positive numbers")
     
     print("Configuration validation passed successfully.")

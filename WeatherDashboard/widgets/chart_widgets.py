@@ -58,6 +58,7 @@ class ChartWidgets:
         self.chart_canvas: Optional[FigureCanvasTkAgg] = None
         self.chart_fig: Optional[Figure] = None
         self.chart_ax: Optional[Any] = None
+        self.chart_error: Optional[str] = None
         
         self._create_chart()
     
@@ -71,13 +72,13 @@ class ChartWidgets:
         try:
             self._setup_matplotlib_components()
             self._configure_initial_chart()
-            self._register_with_state()
+            self.chart_error = None  # Clear any previous errors
             
         except Exception as e:
-            Logger.error(f"Failed to create chart widgets: {e}")
+            Logger.error(f"Chart initialization failed: {e}")
             self._create_fallback_display()
-            # Register None values to indicate chart is unavailable
-            self.state.register_chart_widgets(None, None, None)
+            # Store error state for controller to check later
+            self.chart_error = str(e)
     
     def _setup_matplotlib_components(self) -> None:
         """Set up matplotlib Figure, Axes, and Canvas components.
@@ -117,15 +118,9 @@ class ChartWidgets:
         self.chart_ax = None
         self.chart_canvas = None
     
-    def _register_with_state(self) -> None:
-        """Register chart components with the state manager."""
-        self.state.chart_canvas = self.chart_canvas
-        self.state.chart_fig = self.chart_fig  
-        self.state.chart_ax = self.chart_ax
-    
     def _format_chart_labels(self, metric_key: str, city: str, unit_system: str, fallback: bool) -> Dict[str, str]:
         """Formats chart labels based on metric and settings."""
-        label = config.KEY_TO_DISPLAY.get(metric_key, metric_key.title())
+        label = config.METRICS.get(metric_key, {}).get('label', metric_key.title())
         unit = UnitConverter.get_unit_label(metric_key, unit_system)
         
         return {
@@ -136,7 +131,7 @@ class ChartWidgets:
 
     def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool = False) -> None:
         """Updates the chart display with new data."""
-        if not self.state.is_chart_available():
+        if not (hasattr(self, 'chart_canvas') and hasattr(self, 'chart_ax') and self.chart_ax is not None):
             Logger.warn("Chart display unavailable - matplotlib setup failed")
             return
 

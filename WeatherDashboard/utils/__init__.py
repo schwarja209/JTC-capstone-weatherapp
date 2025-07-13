@@ -16,5 +16,6 @@ __all__ = [
     "utils",
     "unit_converter", 
     "logger",
-    "rate_limiter"
+    "rate_limiter",
+    "derived_metrics"
 ]

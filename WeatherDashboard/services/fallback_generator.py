@@ -60,13 +60,68 @@ class SampleWeatherGenerator:
         base_temp = self.random.randint(temp_min, temp_max)
         for i in range(num_days):
             date = datetime.now() - timedelta(days=num_days - 1 - i)
+            temp = base_temp + self.random.randint(-15, 15)
+            humidity = self.random.randint(30, 90)     # %
+            wind = self.random.randint(0, 10)          # %
+            conditions = self.random.choice(['Sunny', 'Cloudy', 'Rainy', 'Snowy'])
+
+            is_rainy = conditions == 'Rainy'
+            is_snowy = conditions == 'Snowy'
+
+            rain_amount = self.random.uniform(0.1, 5.0) if is_rainy else None
+            snow_amount = self.random.uniform(0.1, 3.0) if is_snowy else None
+
             data.append({
                 'date': date,
-                'temperature': base_temp + self.random.randint(-15, 15),
-                'humidity': self.random.randint(30, 90),     # %
-                # TODO: 'precipitation': self.random.uniform(0, 2),  # All precipitation values and handling is on hold for now
-                'conditions': self.random.choice(['Sunny', 'Cloudy', 'Rainy', 'Snowy']),
-                'wind_speed': self.random.randint(0, 10),    # m/s
-                'pressure': self.random.uniform(990, 1035)   # hPa
+                # Original fields
+                'temperature': temp,
+                'humidity': humidity,
+                'conditions': conditions,
+                'wind_speed': wind,
+                'pressure': self.random.uniform(990, 1035),  # hPa
+                
+                # Extended temperature metrics
+                'feels_like': temp + self.random.randint(-3, 3),  # Slight variation from actual temp
+                'temp_min': temp - self.random.randint(2, 8),     # Lower than current temp
+                'temp_max': temp + self.random.randint(2, 8),     # Higher than current temp
+                
+                # Enhanced wind information
+                'wind_direction': self.random.randint(0, 360),    # Random compass direction
+                'wind_gust': wind + self.random.randint(0, 5) if wind > 0 else None,  # Gusts only if windy
+                
+                # Visibility and atmospheric conditions
+                'visibility': self.random.randint(5000, 20000),   # 5-20km in meters
+                'cloud_cover': self.random.randint(0, 100),       # 0-100% cloud cover
+                
+                # Simplified precipitation (new)
+                'rain': rain_amount,
+                'snow': snow_amount,
+                
+                # Keep detailed for completeness
+                'rain_1h': rain_amount,
+                'rain_3h': rain_amount * 3 if rain_amount else None,
+                'snow_1h': snow_amount,
+                'snow_3h': snow_amount * 3 if snow_amount else None,
+
+                # Enhanced weather categorization
+                'weather_main': conditions,
+                'weather_id': self.random.choice([800, 801, 500, 600]) if conditions != 'Sunny' else 800,
+                'weather_icon': self.random.choice(['01d', '02d', '10d', '13d']),
+
+                # Add UV and Air Quality simulation
+                'uv_index': self.random.randint(1, 11),  # UV index 1-11
+                'air_quality_index': self.random.randint(1, 5),  # AQI 1-5
+                'air_quality_description': self.random.choice(['Good', 'Fair', 'Moderate', 'Poor']),
+                
+                # Coordinates for consistency
+                'latitude': 40.7128 + self.random.uniform(-0.1, 0.1),  # Near NYC
+                'longitude': -74.0060 + self.random.uniform(-0.1, 0.1),
+
+                # Derived comfort metrics simulation
+                'heat_index': temp + self.random.uniform(0, 5) if temp > 20 else None,  # Only when warm
+                'wind_chill': temp - self.random.uniform(2, 8) if temp < 10 and wind > 3 else None,  # Only when cold and windy
+                'dew_point': temp - self.random.uniform(5, 15),  # Always present, typically lower than temp
+                'precipitation_probability': self.random.uniform(10, 80),  # 10-80% chance
+                'weather_comfort_score': self.random.uniform(30, 95)  # Comfort score 30-95
             })
         return data

@@ -9,7 +9,7 @@ Classes:
     WeatherViewModel: Transforms raw weather data into display-ready format
 """
 
-from typing import Dict, Any, Union
+from typing import Dict, Any
 from WeatherDashboard import config
 from WeatherDashboard.utils.utils import is_fallback, format_fallback_status
 from WeatherDashboard.utils.unit_converter import UnitConverter
@@ -78,40 +78,120 @@ class WeatherViewModel:
         return status
 
     def _format_metrics(self) -> Dict[str, str]:
-        """Format all weather metrics for display.
-        
-        Converts all weather metric values to properly formatted strings
-        with appropriate units and precision for UI display.
+        """Format weather metrics with enhanced display combinations.
         
         Returns:
             Dict[str, str]: Dictionary mapping metric keys to formatted display values
         """
         metrics = {}
-        for key in config.KEY_TO_DISPLAY:
-            raw_value = self.raw_data.get(key, "--")
-            display_val = UnitConverter.format_value(key, raw_value, self.unit_system)
-            metrics[key] = display_val
+
+        # Process ALL individual metrics first
+        for metric_key in config.METRICS:
+            raw_value = self.raw_data.get(metric_key)
+            display_val = UnitConverter.format_value(metric_key, raw_value, self.unit_system)
+            metrics[metric_key] = display_val
+        
+        # Add enhanced combination displays
+        metrics['enhanced_temperature'] = self._format_enhanced_display('temperature')
+        metrics['temp_range'] = self._format_enhanced_display('temp_range')
+        metrics['enhanced_conditions'] = self._format_enhanced_display('conditions')
+        metrics['enhanced_wind'] = self._format_enhanced_display('wind')
+        
         return metrics
 
-    def get_display_data(self) -> Dict[str, Union[str, Dict[str, str]]]:
-        """Return all formatted data as a dictionary.
+    def _format_enhanced_display(self, display_type: str) -> str:
+        """Consolidated enhanced formatting for complex metrics."""
+        if display_type == 'temperature':
+            temp = self.raw_data.get('temperature')
+            feels_like = self.raw_data.get('feels_like')
+            if temp is None:
+                return "--"
+            temp_str = UnitConverter.format_value('temperature', temp, self.unit_system)
+            if feels_like is not None and feels_like != temp:
+                feels_str = UnitConverter.format_value('feels_like', feels_like, self.unit_system)
+                return f"{temp_str} (feels like {feels_str})"
+            return temp_str
         
-        Provides a convenient interface for accessing all formatted display
-        data without exposing internal ViewModel structure.
+        elif display_type == 'temp_range':
+            temp_min = self.raw_data.get('temp_min')
+            temp_max = self.raw_data.get('temp_max')
+            if temp_min is None or temp_max is None:
+                return "--"
+            min_str = UnitConverter.format_value('temp_min', temp_min, self.unit_system)
+            max_str = UnitConverter.format_value('temp_max', temp_max, self.unit_system)
+            return f"{min_str} - {max_str}"
+        
+        elif display_type == 'conditions':
+            conditions = self.raw_data.get('conditions', '--')
+            icon = self._get_weather_icon()
+            return f"{icon} {conditions}" if icon else str(conditions)
+        
+        elif display_type == 'wind':
+            wind_speed = self.raw_data.get('wind_speed')
+            wind_direction = self.raw_data.get('wind_direction')
+            wind_gust = self.raw_data.get('wind_gust')
+            
+            if wind_speed is None:
+                return "--"
+            
+            speed_str = UnitConverter.format_value('wind_speed', wind_speed, self.unit_system)
+            
+            # Add direction if available
+            if wind_direction is not None:
+                compass = self._degrees_to_compass(wind_direction)
+                wind_info = f"{speed_str} from {compass}"
+            else:
+                wind_info = speed_str
+            
+            # Add gusts if available and significant
+            if wind_gust is not None and wind_gust > wind_speed:
+                gust_str = UnitConverter.format_value('wind_gust', wind_gust, self.unit_system)
+                wind_info += f", gusts {gust_str}"
+            
+            return wind_info
+        
+        return "--"
+
+    def _degrees_to_compass(self, degrees: float) -> str:
+        """Convert wind direction degrees to compass direction."""
+        if degrees is None:
+            return ""
+        
+        directions = ["N","NNE","NE","ENE","E","ESE","SE","SSE",
+                    "S","SSW","SW","WSW","W","WNW","NW","NNW"]
+        return directions[int((degrees + 11.25) / 22.5) % 16]
+
+    def _get_weather_icon(self) -> str:
+        """Convert weather icon code to emoji."""
+        icon_code = self.raw_data.get('weather_icon', '')
+        return config.WEATHER_ICONS.get(icon_code, '')
+
+    def get_display_data(self) -> Dict[str, Any]:
+        """Return all formatted data as a comprehensive dictionary.
+        
+        Provides a complete interface for accessing all formatted display data.
+        Useful for future features like theme system processing, data export,
+        and API endpoints.
         
         Returns:
-            Dict containing all formatted display data including city, date, status, and metrics
+            Dict containing complete formatted display data including city, date, 
+            status, individual metrics, and enhanced display combinations
         """
         return {
             'city_name': self.city_name,
             'date_str': self.date_str,
             'status': self.status,
-            'metrics': self.metrics
+            'individual_metrics': self.metrics,
+            'enhanced_displays': {
+                'enhanced_temperature': self.metrics.get('enhanced_temperature', '--'),
+                'temp_range': self.metrics.get('temp_range', '--'),
+                'enhanced_conditions': self.metrics.get('enhanced_conditions', '--'),
+                'enhanced_wind': self.metrics.get('enhanced_wind', '--')
+            },
+            'raw_data_available': bool(self.raw_data),
+            'has_conversion_warnings': '_conversion_warnings' in self.raw_data,
+            'unit_system': self.unit_system
         }
-
-    def has_warnings(self) -> bool:
-        """Check if there are any warnings to display."""
-        return '_conversion_warnings' in self.raw_data
 
     def get_metric_value(self, metric_key: str) -> str:
         """Get a specific formatted metric value.
