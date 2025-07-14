@@ -30,12 +30,31 @@ def configure_styles() -> None:
     style.configure("Title.TLabel", font=('Comic Sans MS', 20, 'bold'))
     style.configure("AlertTitle.TLabel", font=('Arial', 14, 'bold'))
     style.configure("AlertText.TLabel", font=('Arial', 9, 'bold'))
+    style.configure("GrayLabel.TLabel", font=('Arial', 10), foreground="gray")
     
     style.configure("TNotebook", background="lightgray")
     style.configure("TNotebook.Tab", padding=[12, 8], font=("Arial", 12, "bold"))
     style.map("TNotebook.Tab",
              background=[("selected", "lightblue"), ("active", "lightgreen")],
              foreground=[("selected", "darkblue"), ("active", "darkgreen")])
+    
+    # System status styles for different states
+    style.configure("SystemStatusReady.TLabel", font=('Arial', 10))
+    style.configure("SystemStatusWarning.TLabel", font=('Arial', 10))
+    style.configure("SystemStatusError.TLabel", font=('Arial', 10))
+
+    style.map("SystemStatusReady.TLabel", foreground=[('!disabled', 'green')])
+    style.map("SystemStatusWarning.TLabel", foreground=[('!disabled', 'orange')])
+    style.map("SystemStatusError.TLabel", foreground=[('!disabled', 'red')])
+
+    # Data status styles  
+    style.configure("DataStatusLive.TLabel", font=('Arial', 10))
+    style.configure("DataStatusSimulated.TLabel", font=('Arial', 10))
+    style.configure("DataStatusNone.TLabel", font=('Arial', 10))
+
+    style.map("DataStatusLive.TLabel", foreground=[('!disabled', 'green')])
+    style.map("DataStatusSimulated.TLabel", foreground=[('!disabled', 'red')])
+    style.map("DataStatusNone.TLabel", foreground=[('!disabled', 'gray')])
 
 
 # =================================
@@ -128,6 +147,125 @@ ALERT_SEVERITY_COLORS = {
     }
 }
 
+ALERT_DEFINITIONS = {
+    'temperature_high': {
+        'threshold_key': 'temperature_high',
+        'check_function': lambda val, thresh: val > thresh,
+        'severity': 'warning',
+        'icon': '🔥',
+        'title': 'High Temperature Alert',
+        'message_template': 'Temperature is very high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
+        'unit_type': 'temperature'
+    },
+    'temperature_low': {
+        'threshold_key': 'temperature_low',
+        'check_function': lambda val, thresh: val < thresh,
+        'severity': 'warning', 
+        'icon': '🥶',
+        'title': 'Low Temperature Alert',
+        'message_template': 'Temperature is very low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
+        'unit_type': 'temperature'
+    },
+    'wind_speed_high': {
+        'threshold_key': 'wind_speed_high',
+        'check_function': lambda val, thresh: val > thresh,
+        'severity_function': lambda val, thresh: 'warning' if val > thresh * 1.5 else 'caution',
+        'icon': '💨',
+        'title': 'High Wind Alert', 
+        'message_template': 'Strong winds detected: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
+        'unit_type': 'wind_speed'
+    },
+    'pressure_low': {
+        'threshold_key': 'pressure_low',
+        'check_function': lambda val, thresh: val < thresh,
+        'severity': 'watch',
+        'icon': '⛈️',
+        'title': 'Low Pressure Alert',
+        'message_template': 'Low pressure system detected: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
+        'unit_type': 'pressure'
+    },
+    'humidity_high': {
+        'threshold_key': 'humidity_high',
+        'check_function': lambda val, thresh: val > thresh,
+        'severity': 'caution',
+        'icon': '💧',
+        'title': 'High Humidity Alert',
+        'message_template': 'Very humid conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
+        'unit_type': 'percent'
+    },
+    'humidity_low': {
+        'threshold_key': 'humidity_low',
+        'check_function': lambda val, thresh: val < thresh,
+        'severity': 'caution',
+        'icon': '🏜️',
+        'title': 'Low Humidity Alert',
+        'message_template': 'Very dry conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
+        'unit_type': 'percent'
+    },
+    'heavy_rain': {
+        'threshold_key': 'heavy_rain_threshold',
+        'check_function': lambda val, thresh: val > thresh,
+        'severity': 'warning',
+        'icon': '🌧️',
+        'title': 'Heavy Rain Alert',
+        'message_template': 'Heavy rainfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
+        'unit_type': 'precipitation'
+    },
+    'heavy_snow': {
+        'threshold_key': 'heavy_snow_threshold',
+        'check_function': lambda val, thresh: val > thresh,
+        'severity': 'warning',
+        'icon': '🌨️',
+        'title': 'Heavy Snow Alert',
+        'message_template': 'Heavy snowfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
+        'unit_type': 'precipitation'
+    },
+    'low_visibility': {
+        'threshold_key': 'low_visibility_metric',
+        'check_function': lambda val, thresh: val < thresh,
+        'severity': 'caution',
+        'icon': '🌫️',
+        'title': 'Low Visibility Alert',
+        'message_template': 'Reduced visibility: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
+        'unit_type': 'visibility'
+    },
+    'heat_index_high': {
+        'threshold_key': 'heat_index_high',
+        'check_function': lambda val, thresh: val > thresh,
+        'severity': 'warning',
+        'icon': '🔥',
+        'title': 'Dangerous Heat Index',
+        'message_template': 'Heat index is dangerously high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
+        'unit_type': 'temperature'
+    },
+    'wind_chill_low': {
+        'threshold_key': 'wind_chill_low',
+        'check_function': lambda val, thresh: val < thresh,
+        'severity': 'warning',
+        'icon': '🥶',
+        'title': 'Dangerous Wind Chill',
+        'message_template': 'Wind chill is dangerously low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
+        'unit_type': 'temperature'
+    },
+    'uv_index_high': {
+        'threshold_key': 'uv_index_high',
+        'check_function': lambda val, thresh: val > thresh,
+        'severity': 'caution',
+        'icon': '☀️',
+        'title': 'High UV Index Alert',
+        'message_template': 'Very high UV exposure: {value:.0f} (threshold: {threshold:.0f})',
+        'unit_type': 'index'
+    },
+    'air_quality_poor': {
+        'threshold_key': 'air_quality_poor',
+        'check_function': lambda val, thresh: val >= thresh,
+        'severity_function': lambda val, thresh: 'warning' if val == 5 else 'caution',
+        'icon': '😷',
+        'title': 'Poor Air Quality Alert',
+        'message_template': 'Air quality is poor: AQI {value:.0f} (threshold: AQI {threshold:.0f})',
+        'unit_type': 'index'
+    }
+}
 
 # =================================
 # 4. WEATHER DISPLAY STYLING
@@ -249,4 +387,43 @@ COMFORT_THRESHOLDS = {
     'good': (50, 70),      # Yellow zone
     'very_good': (70, 85), # Light green zone
     'excellent': (85, 100) # Green zone
+}
+
+# =================================
+# 5. DIALOG SYSTEM STYLING
+# =================================
+DIALOG_CONFIG = {
+    'error_titles': {
+        'city_not_found': 'City Not Found',
+        'rate_limit': 'Rate Limit',
+        'network_issue': 'Network Issue', 
+        'input_error': 'Input Error',
+        'general_error': 'Error',
+        'notice': 'Notice'
+    },
+    'dialog_types': {
+        'error': 'showerror',
+        'warning': 'showwarning',
+        'info': 'showinfo'
+    }
+}
+
+# =================================
+# 6. LOADING STATE STYLING
+# =================================
+LOADING_CONFIG = {
+    'icons': {
+        'progress': '🔄',
+        'waiting': '⏳'
+    },
+    'colors': {
+        'loading': 'blue',
+        'default': 'black'
+    },
+    'messages': {
+        'default': 'Fetching weather data...',
+        'initializing': 'Initializing...',
+        'validating': 'Validating input...',
+        'processing': 'Processing weather data...'
+    }
 }

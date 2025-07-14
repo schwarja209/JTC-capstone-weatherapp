@@ -14,6 +14,8 @@ Classes:
 
 from typing import Optional
 import tkinter.messagebox as messagebox
+
+from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.services.api_exceptions import (
     ValidationError,
@@ -111,22 +113,23 @@ class WeatherErrorHandler:
         elif isinstance(error_exception, CityNotFoundError):
             # City not found - show error but continue with fallback
             message = self._format_message('city_not_found', city_name)
-            messagebox.showerror("City Not Found", message)
+            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['city_not_found'], message)
             return True
         elif isinstance(error_exception, RateLimitError):
             # Rate limit - show specific message
             message = self._format_message('rate_limit', city_name)
-            messagebox.showerror("Rate Limit", message)
+            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['rate_limit'], message)
             return True
         elif isinstance(error_exception, NetworkError):
             # Network issues - show network-specific message
             message = self._format_message('network_error', city_name)
-            messagebox.showwarning("Network Issue", message)
+            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['warning'])(styles.DIALOG_CONFIG['error_titles']['network_issue'], message)
             return True
         else:
             # Other API errors - show general fallback notice
             Logger.warn(f"Using fallback for {city_name}: {error_exception}")
-            messagebox.showinfo("Notice", f"No live data available for '{city_name}'. Simulated data is shown.")
+            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['info'])(
+            styles.DIALOG_CONFIG['error_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
             return True
 
     def handle_input_validation_error(self, error: Exception) -> None:
@@ -136,7 +139,7 @@ class WeatherErrorHandler:
             error: The validation error that occurred
         """
         Logger.error(f"Input validation error: {error}")
-        messagebox.showerror("Input Error", str(error))
+        getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['input_error'], str(error))
 
     def handle_unexpected_error(self, error: Exception) -> None:
         """Handles unexpected errors.
@@ -145,7 +148,7 @@ class WeatherErrorHandler:
             error: The unexpected error that occurred
         """
         Logger.error(f"Unexpected error: {error}")
-        messagebox.showerror("Error", f"Unexpected error: {error}")
+        getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['general_error'], f"Unexpected error: {error}")
     
     def handle_rate_limit_error(self, wait_time: float) -> None:
         """Handle rate limit errors with appropriate user messaging.
@@ -153,4 +156,4 @@ class WeatherErrorHandler:
         Args:
             wait_time: Number of seconds to wait before retrying
         """
-        messagebox.showinfo("Rate Limit", f"Please wait {wait_time:.0f} more seconds before making another request.")
+        getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['info'])(styles.DIALOG_CONFIG['error_titles']['rate_limit'], f"Please wait {wait_time:.0f} more seconds before making another request.")

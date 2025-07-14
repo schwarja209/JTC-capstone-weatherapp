@@ -44,7 +44,7 @@ class AlertStatusIndicator:
         self.status_frame = ttk.Frame(parent_frame)
         
         # Alert icon/text label
-        self.status_label = ttk.Label(
+        self.status_label = tk.Label(
             self.status_frame,
             text="🔔",
             cursor="hand2",
@@ -90,7 +90,7 @@ class AlertStatusIndicator:
             alerts: List of currently active weather alerts
         """
         if not alerts:
-            self.status_label.configure(text="🔔", foreground="gray", background="")
+            self.status_label.configure(text="🔔", foreground="gray")
             self.tooltip_text = "No active alerts"
             self._stop_animation()
             return
@@ -117,13 +117,7 @@ class AlertStatusIndicator:
         total_count = len(alerts)
         
         # Update icon and styling
-        self.status_label.configure(
-            text=f"{alert_style['icon']} {total_count}",
-            foreground=alert_style['color'],
-            background=alert_style['background'],
-            relief="raised",
-            borderwidth=2
-        )
+        self.status_label.configure(foreground=alert_style['color'])
         
         # Create detailed tooltip
         severity_counts = []
@@ -305,9 +299,9 @@ class SimpleAlertPopup:
         # Time and severity
         time_str = alert.timestamp.strftime("%H:%M:%S")
         info_text = f"Severity: {alert.severity.upper()} | Time: {time_str}"
-        info_label = ttk.Label(alert_frame, text=info_text, style="LabelValue.TLabel")
+        info_label = ttk.Label(alert_frame, text=info_text, style="GrayLabel.TLabel")
         # Then configure the color separately if needed
-        info_label.configure(foreground="gray")
+        # info_label.configure(style="LabelValue.TLabel")
         info_label.pack(anchor=tk.W)
     
     def _center_window(self):

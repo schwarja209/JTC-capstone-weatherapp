@@ -10,6 +10,7 @@ Classes:
 """
 
 from typing import Tuple, Dict, Any, List, Optional
+
 from WeatherDashboard.utils.utils import (
     normalize_city_name,
     validate_unit_system

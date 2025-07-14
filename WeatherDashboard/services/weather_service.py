@@ -35,93 +35,9 @@ from WeatherDashboard.services.api_exceptions import (
 from WeatherDashboard.services.fallback_generator import SampleWeatherGenerator
 
 
-def fetch_with_retry(url: str, params: Dict[str, Any], retries: int = 2, delay: int = 1) -> requests.Response:
-    """Attempt to fetch data from the API with retry and exponential backoff.
-    
-    Implements robust HTTP request handling with automatic retries for
-    transient failures and exponential backoff to avoid overwhelming servers.
-    
-    Args:
-        url: API endpoint URL to request
-        params: Query parameters for the request
-        retries: Maximum number of retry attempts (default 2)
-        delay: Initial delay between retries in seconds (default 1)
-        
-    Returns:
-        requests.Response: Successful HTTP response object
-        
-    Raises:
-        RateLimitError: When rate limit is exceeded (429 status)
-        CityNotFoundError: When city is not found (404 status)
-        NetworkError: For network/connection issues and timeouts
-        WeatherAPIError: For other API-related errors
-    """
-    for attempt in range(retries + 1):
-        try:
-            response = requests.get(url, params=params, timeout=5)
-            
-            # Handle specific status codes
-            if response.status_code == 429:
-                raise RateLimitError("Rate limit exceeded (Too Many Requests)")
-            if response.status_code == 404:
-                raise CityNotFoundError("City not found")
-            
-            response.raise_for_status()
-            return response
-            
-        except RateLimitError:
-            # Don't retry rate limit errors
-            raise
-        except CityNotFoundError:
-            # Don't retry city not found errors
-            raise
-        except requests.exceptions.Timeout as e:
-            if attempt < retries:
-                Logger.warn(f"Timeout on attempt {attempt + 1}, retrying: {e}")
-                time.sleep(delay * (2 ** attempt))
-            else:
-                Logger.error(f"API timeout after {retries + 1} attempts: {e}")
-                raise NetworkError(f"Request timed out after {retries + 1} attempts")
-        except requests.exceptions.ConnectionError as e:
-            if attempt < retries:
-                Logger.warn(f"Connection error on attempt {attempt + 1}, retrying: {e}")
-                time.sleep(delay * (2 ** attempt))
-            else:
-                Logger.error(f"Connection failed after {retries + 1} attempts: {e}")
-                raise NetworkError(f"Connection failed after {retries + 1} attempts")
-        except requests.exceptions.RequestException as e:
-            if attempt < retries:
-                Logger.warn(f"API call failed (attempt {attempt + 1}), retrying: {e}")
-                time.sleep(delay * (2 ** attempt))
-            else:
-                Logger.error(f"API call failed after {retries + 1} attempts: {e}")
-                raise WeatherAPIError(f"API request failed: {e}")
-
-
-def validate_api_response(data: Dict[str, Any]) -> None:
-    """Validate structure and key presence in API response.
-    
-    Checks that the API response contains all required keys and has the
-    expected structure for weather data processing.
-    
-    Args:
-        data: API response data dictionary to validate
-        
-    Raises:
-        ValidationError: When required keys are missing or data is malformed
-    """
-    required = {"main", "weather", "wind"}
-    if not all(k in data for k in required):
-        missing = required - set(data.keys())
-        raise ValidationError(f"Missing keys in API response: {missing}")
-    
-    if "temp" not in data["main"]:
-        raise ValidationError("Temperature missing from 'main' section")
-    
-    if not isinstance(data["weather"], list) or not data["weather"]:
-        raise ValidationError("Malformed 'weather' data - expected non-empty list")
-
-
+# ================================
+# 1. API CLIENT & COMMUNICATION
+# ================================
 class WeatherAPIClient:
     """Handle raw API communication with OpenWeatherMap.
     
@@ -219,6 +135,9 @@ class WeatherAPIClient:
             raise ValidationError("Missing API key - application will use simulated data only")  # Changed from ValidationError
 
 
+# ================================
+# 2. DATA PARSING & TRANSFORMATION  
+# ================================
 class WeatherDataParser:
     """Handle parsing raw API data into structured weather data.
     
@@ -364,6 +283,9 @@ class WeatherDataParser:
         return derived
 
 
+# =================================
+# 3. DATA VALIDATION & VERIFICATION
+# =================================
 class WeatherDataValidator:
     """Handle validation of parsed weather data.
     
@@ -440,6 +362,9 @@ class WeatherDataValidator:
                     raise ValueError(f"Invalid {precip_field}: {d[precip_field]}mm (must be between 0-200mm)")
 
 
+# ================================
+# 4. MAIN SERVICE ORCHESTRATION
+# ================================
 class WeatherAPIService:
     """Main service orchestrating all weather data operations.
     Handle fetching current weather data from OpenWeatherMap API with fallback to simulated data.
@@ -541,3 +466,92 @@ class WeatherAPIService:
         current_data['source'] = 'simulated'
         
         return current_data, True, exc
+    
+
+# ================================
+# 5. UTILITY FUNCTIONS
+# ================================
+def fetch_with_retry(url: str, params: Dict[str, Any], retries: int = 2, delay: int = 1) -> requests.Response:
+    """Attempt to fetch data from the API with retry and exponential backoff.
+    
+    Implements robust HTTP request handling with automatic retries for
+    transient failures and exponential backoff to avoid overwhelming servers.
+    
+    Args:
+        url: API endpoint URL to request
+        params: Query parameters for the request
+        retries: Maximum number of retry attempts (default 2)
+        delay: Initial delay between retries in seconds (default 1)
+        
+    Returns:
+        requests.Response: Successful HTTP response object
+        
+    Raises:
+        RateLimitError: When rate limit is exceeded (429 status)
+        CityNotFoundError: When city is not found (404 status)
+        NetworkError: For network/connection issues and timeouts
+        WeatherAPIError: For other API-related errors
+    """
+    for attempt in range(retries + 1):
+        try:
+            response = requests.get(url, params=params, timeout=5)
+            
+            # Handle specific status codes
+            if response.status_code == 429:
+                raise RateLimitError("Rate limit exceeded (Too Many Requests)")
+            if response.status_code == 404:
+                raise CityNotFoundError("City not found")
+            
+            response.raise_for_status()
+            return response
+            
+        except RateLimitError:
+            # Don't retry rate limit errors
+            raise
+        except CityNotFoundError:
+            # Don't retry city not found errors
+            raise
+        except requests.exceptions.Timeout as e:
+            if attempt < retries:
+                Logger.warn(f"Timeout on attempt {attempt + 1}, retrying: {e}")
+                time.sleep(delay * (2 ** attempt))
+            else:
+                Logger.error(f"API timeout after {retries + 1} attempts: {e}")
+                raise NetworkError(f"Request timed out after {retries + 1} attempts")
+        except requests.exceptions.ConnectionError as e:
+            if attempt < retries:
+                Logger.warn(f"Connection error on attempt {attempt + 1}, retrying: {e}")
+                time.sleep(delay * (2 ** attempt))
+            else:
+                Logger.error(f"Connection failed after {retries + 1} attempts: {e}")
+                raise NetworkError(f"Connection failed after {retries + 1} attempts")
+        except requests.exceptions.RequestException as e:
+            if attempt < retries:
+                Logger.warn(f"API call failed (attempt {attempt + 1}), retrying: {e}")
+                time.sleep(delay * (2 ** attempt))
+            else:
+                Logger.error(f"API call failed after {retries + 1} attempts: {e}")
+                raise WeatherAPIError(f"API request failed: {e}")
+
+def validate_api_response(data: Dict[str, Any]) -> None:
+    """Validate structure and key presence in API response.
+    
+    Checks that the API response contains all required keys and has the
+    expected structure for weather data processing.
+    
+    Args:
+        data: API response data dictionary to validate
+        
+    Raises:
+        ValidationError: When required keys are missing or data is malformed
+    """
+    required = {"main", "weather", "wind"}
+    if not all(k in data for k in required):
+        missing = required - set(data.keys())
+        raise ValidationError(f"Missing keys in API response: {missing}")
+    
+    if "temp" not in data["main"]:
+        raise ValidationError("Temperature missing from 'main' section")
+    
+    if not isinstance(data["weather"], list) or not data["weather"]:
+        raise ValidationError("Malformed 'weather' data - expected non-empty list")

@@ -899,3 +899,106 @@
 {"timestamp": "2025-07-13 17:53:SS", "level": "ERROR", "message": "Unexpected error: unknown option \"-padx\""}
 {"timestamp": "2025-07-13 17:56:SS", "level": "ERROR", "message": "Unexpected error: unknown option \"-padx\""}
 {"timestamp": "2025-07-13 17:57:SS", "level": "ERROR", "message": "Unexpected error: unknown option \"-padx\""}
+{"timestamp": "2025-07-13 18:17:SS", "level": "ERROR", "message": "Unexpected error: unknown option \"-padx\""}
+{"timestamp": "2025-07-13 18:19:SS", "level": "ERROR", "message": "GUI widget creation failed: unknown color name \"\""}
+{"timestamp": "2025-07-13 18:20:SS", "level": "ERROR", "message": "Unexpected error: unknown option \"-padx\""}
+{"timestamp": "2025-07-13 18:21:SS", "level": "ERROR", "message": "Unexpected error: unknown option \"-padx\""}
+{"timestamp": "2025-07-13 18:38:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 18:39:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 18:39:SS", "level": "ERROR", "message": "Unexpected error: module 'WeatherDashboard.config' has no attribute 'ALERT_SEVERITY_COLORS'"}
+{"timestamp": "2025-07-13 18:39:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-13 18:39:SS", "level": "ERROR", "message": "API failure for Aasgdgs - CityNotFoundError: City 'Aasgdgs' not found. Switching to simulated data."}
+{"timestamp": "2025-07-13 18:39:SS", "level": "INFO", "message": "Weather data written for aasgdgs - Simulated"}
+{"timestamp": "2025-07-13 18:40:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 18:40:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 18:40:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 107.2°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "WARN", "message": "Weather alert: Dangerous Heat Index - Heat index is dangerously high: 104.9°F (threshold: 104.9°F)"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "ERROR", "message": "API failure for Asfasg - CityNotFoundError: City 'Asfasg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-13 18:41:SS", "level": "INFO", "message": "Weather data written for asfasg - Simulated"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
+{"timestamp": "2025-07-13 18:41:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: At least one metric must be visible"}
+{"timestamp": "2025-07-13 18:42:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 18:42:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 19:29:SS", "level": "ERROR", "message": "Unexpected error: 'StatusBarWidgets' object has no attribute 'update_system_status'"}
+{"timestamp": "2025-07-13 19:31:SS", "level": "ERROR", "message": "Unexpected error: 'StatusBarWidgets' object has no attribute 'update_system_status'"}
+{"timestamp": "2025-07-13 19:31:SS", "level": "ERROR", "message": "Unexpected error: 'StatusBarWidgets' object has no attribute 'update_system_status'"}
+{"timestamp": "2025-07-13 19:40:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 19:40:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 19:40:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 19:41:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 106.9°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-13 19:41:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-13 19:41:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-13 19:41:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 19:41:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:20:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:20:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:20:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:23:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:23:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:23:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:23:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 105.6°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-13 21:23:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:23:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 40.9°C (threshold: 35.0°C)"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:24:SS", "level": "INFO", "message": "Weather data written for new_orleans - Live"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 14 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "INFO", "message": "Weather data written for bogota,_colombia - Live"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 12 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "INFO", "message": "Weather data written for acapulco - Live"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 104.9°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-13 21:25:SS", "level": "INFO", "message": "Weather data written for houston,_texas - Live"}
+{"timestamp": "2025-07-13 21:28:SS", "level": "ERROR", "message": "Failed to update chart dropdown options: name 'group_config' is not defined"}
+{"timestamp": "2025-07-13 21:28:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:28:SS", "level": "ERROR", "message": "Chart configuration error: \"Invalid chart metric: 'Error updating options'. Please select a valid metric.\""}
+{"timestamp": "2025-07-13 21:31:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 21:31:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 22:57:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 22:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 22:57:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 101.4°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "INFO", "message": "Weather data written for beijing - Live"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "INFO", "message": "Weather data written for new_orleans - Live"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 101.4°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-13 22:58:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-13 23:00:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)"}
+{"timestamp": "2025-07-13 23:00:SS", "level": "INFO", "message": "Weather data written for buenos_aires - Live"}
+{"timestamp": "2025-07-13 23:01:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-13 23:01:SS", "level": "INFO", "message": "Weather data written for los_angeles - Live"}
+{"timestamp": "2025-07-13 23:20:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 23:20:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 23:20:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 23:20:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 23:36:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 86% (threshold: 85%)"}
+{"timestamp": "2025-07-13 23:36:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-13 23:36:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 86% (threshold: 85%)"}
+{"timestamp": "2025-07-13 23:36:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-13 23:36:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:22:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:22:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:22:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:22:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:22:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}

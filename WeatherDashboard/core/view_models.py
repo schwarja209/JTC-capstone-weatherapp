@@ -10,6 +10,7 @@ Classes:
 """
 
 from typing import Dict, Any
+
 from WeatherDashboard import config, styles
 from WeatherDashboard.utils.utils import is_fallback, format_fallback_status
 from WeatherDashboard.utils.unit_converter import UnitConverter

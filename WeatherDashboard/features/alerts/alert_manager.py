@@ -13,7 +13,7 @@ Classes:
 from typing import List, Dict, Any
 from datetime import datetime
 
-from WeatherDashboard import config
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
 
@@ -87,126 +87,8 @@ class AlertManager:
         self.thresholds = config.ALERT_THRESHOLDS
 
     def _get_alert_definitions(self) -> Dict[str, Dict[str, Any]]:
-        """Define all alert types with their configuration."""
-        return {
-            'temperature_high': {
-                'threshold_key': 'temperature_high',
-                'check_function': lambda val, thresh: val > thresh,
-                'severity': 'warning',
-                'icon': '🔥',
-                'title': 'High Temperature Alert',
-                'message_template': 'Temperature is very high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-                'unit_type': 'temperature'
-            },
-            'temperature_low': {
-                'threshold_key': 'temperature_low',
-                'check_function': lambda val, thresh: val < thresh,
-                'severity': 'warning', 
-                'icon': '🥶',
-                'title': 'Low Temperature Alert',
-                'message_template': 'Temperature is very low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-                'unit_type': 'temperature'
-            },
-            'wind_speed_high': {
-                'threshold_key': 'wind_speed_high',
-                'check_function': lambda val, thresh: val > thresh,
-                'severity_function': lambda val, thresh: 'warning' if val > thresh * 1.5 else 'caution',
-                'icon': '💨',
-                'title': 'High Wind Alert', 
-                'message_template': 'Strong winds detected: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
-                'unit_type': 'wind_speed'
-            },
-            'pressure_low': {
-                'threshold_key': 'pressure_low',
-                'check_function': lambda val, thresh: val < thresh,
-                'severity': 'watch',
-                'icon': '⛈️',
-                'title': 'Low Pressure Alert',
-                'message_template': 'Low pressure system detected: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
-                'unit_type': 'pressure'
-            },
-            'humidity_high': {
-                'threshold_key': 'humidity_high',
-                'check_function': lambda val, thresh: val > thresh,
-                'severity': 'caution',
-                'icon': '💧',
-                'title': 'High Humidity Alert',
-                'message_template': 'Very humid conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
-                'unit_type': 'percent'
-            },
-            'humidity_low': {
-                'threshold_key': 'humidity_low',
-                'check_function': lambda val, thresh: val < thresh,
-                'severity': 'caution',
-                'icon': '🏜️',
-                'title': 'Low Humidity Alert',
-                'message_template': 'Very dry conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
-                'unit_type': 'percent'
-            },
-            'heavy_rain': {
-                'threshold_key': 'heavy_rain_threshold',
-                'check_function': lambda val, thresh: val > thresh,
-                'severity': 'warning',
-                'icon': '🌧️',
-                'title': 'Heavy Rain Alert',
-                'message_template': 'Heavy rainfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
-                'unit_type': 'precipitation'
-            },
-            'heavy_snow': {
-                'threshold_key': 'heavy_snow_threshold',
-                'check_function': lambda val, thresh: val > thresh,
-                'severity': 'warning',
-                'icon': '🌨️',
-                'title': 'Heavy Snow Alert',
-                'message_template': 'Heavy snowfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
-                'unit_type': 'precipitation'
-            },
-            'low_visibility': {
-                'threshold_key': 'low_visibility_metric',  # Will be handled specially
-                'check_function': lambda val, thresh: val < thresh,
-                'severity': 'caution',
-                'icon': '🌫️',
-                'title': 'Low Visibility Alert',
-                'message_template': 'Reduced visibility: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
-                'unit_type': 'visibility'
-            },
-            'heat_index_high': {
-                'threshold_key': 'heat_index_high',
-                'check_function': lambda val, thresh: val > thresh,
-                'severity': 'warning',
-                'icon': '🔥',
-                'title': 'Dangerous Heat Index',
-                'message_template': 'Heat index is dangerously high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-                'unit_type': 'temperature'
-            },
-            'wind_chill_low': {
-                'threshold_key': 'wind_chill_low',
-                'check_function': lambda val, thresh: val < thresh,
-                'severity': 'warning',
-                'icon': '🥶',
-                'title': 'Dangerous Wind Chill',
-                'message_template': 'Wind chill is dangerously low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-                'unit_type': 'temperature'
-            },
-            'uv_index_high': {
-                'threshold_key': 'uv_index_high',
-                'check_function': lambda val, thresh: val > thresh,
-                'severity': 'caution',
-                'icon': '☀️',
-                'title': 'High UV Index Alert',
-                'message_template': 'Very high UV exposure: {value:.0f} (threshold: {threshold:.0f})',
-                'unit_type': 'index'
-            },
-            'air_quality_poor': {
-                'threshold_key': 'air_quality_poor',
-                'check_function': lambda val, thresh: val >= thresh,
-                'severity_function': lambda val, thresh: 'warning' if val == 5 else 'caution',
-                'icon': '😷',
-                'title': 'Poor Air Quality Alert',
-                'message_template': 'Air quality is poor: AQI {value:.0f} (threshold: AQI {threshold:.0f})',
-                'unit_type': 'index'
-            }
-        }
+        """Return alert definitions from centralized styling configuration."""
+        return styles.ALERT_DEFINITIONS
     
     def _check_generic_alert(self, alert_type: str, value: float, weather_data: Dict[str, Any] = None) -> List[WeatherAlert]:
         """Generic method to check any alert type using the definitions table.

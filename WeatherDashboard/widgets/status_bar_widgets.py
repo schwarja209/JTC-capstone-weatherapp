@@ -62,8 +62,7 @@ class StatusBarWidgets:
         self.system_status_label = ttk.Label(
             self.parent, 
             text="Ready", 
-            style="LabelValue.TLabel",
-            foreground="green"
+            style="SystemStatus.TLabel"
         )
         self.system_status_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['system'])
         
@@ -74,8 +73,7 @@ class StatusBarWidgets:
         self.progress_label = ttk.Label(
             self.parent,
             text="",
-            style="LabelValue.TLabel", 
-            foreground="blue"
+            style="ProgressStatus.TLabel"
         )
         self.progress_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['progress'])
         
@@ -83,33 +81,42 @@ class StatusBarWidgets:
         self.data_status_label = ttk.Label(
             self.parent,
             text="No data",
-            style="LabelValue.TLabel",
-            foreground="gray"
+            style="DataStatus.TLabel"
         )
         self.data_status_label.pack(side=tk.RIGHT, padx=styles.STATUS_BAR_CONFIG['padding']['data'])
     
+    def update_data_status(self, message: str, color: str = "gray") -> None:
+        """Updates data source information with dynamic color styling."""
+        if self.data_status_label:
+            display_message = str(message) if message is not None else "No data"
+            self.data_status_label.configure(text=display_message)
+            
+            # Switch style based on data source type
+            if "simulated" in display_message.lower() or "fallback" in display_message.lower():
+                self.data_status_label.configure(style="DataStatusSimulated.TLabel")
+            elif "live" in display_message.lower() or display_message == "Live data":
+                self.data_status_label.configure(style="DataStatusLive.TLabel")
+            else:
+                self.data_status_label.configure(style="DataStatusNone.TLabel")
+    
     def update_system_status(self, message: str, status_type: str = "info") -> None:
         """Updates main system status message."""
-        colors = styles.STATUS_BAR_CONFIG['colors']
-        
         if self.system_status_label:
-            self.system_status_label.configure(
-                text=message,
-                foreground=colors.get(status_type, "green")
-            )
-    
+            self.system_status_label.configure(text=message)
+            
+            # Switch style based on status type
+            if status_type == "error":
+                self.system_status_label.configure(style="SystemStatusError.TLabel")
+            elif status_type == "warning":
+                self.system_status_label.configure(style="SystemStatusWarning.TLabel")
+            else:  # "info" or default
+                self.system_status_label.configure(style="SystemStatusReady.TLabel")
+
     def update_progress(self, message: str) -> None:
         """Updates progress indicator."""
         if self.progress_label:
             self.progress_label.configure(text=message)
-    
-    def update_data_status(self, message: str, color: str = "gray") -> None:
-        """Updates data source information with optional color coding."""
-        if self.data_status_label:
-            # Safety check for None values
-            display_message = str(message) if message is not None else "No data"
-            self.data_status_label.configure(text=display_message, foreground=color)
-    
+     
     def clear_progress(self) -> None:
         """Clears progress indicator."""
         if self.progress_label:

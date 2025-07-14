@@ -14,6 +14,7 @@ from typing import Optional, Callable, Dict, Any
 import tkinter as tk
 import threading
 
+from WeatherDashboard import styles
 from WeatherDashboard.services.api_exceptions import ValidationError
 from WeatherDashboard.utils.logger import Logger
 
@@ -116,7 +117,9 @@ class LoadingStateManager:
         """
         try:
             if hasattr(self.state, 'progress_label') and self.state.progress_label:
-                self.state.progress_label.configure(text=f"🔄 {message}", foreground="blue")
+                icon = styles.LOADING_CONFIG['icons']['progress']
+                color = styles.LOADING_CONFIG['colors']['loading']
+                self.state.progress_label.configure(text=f"{icon} {message}", foreground=color)
         except tk.TclError as e:
             Logger.warn(f"Failed to show loading status: {e}")
     
@@ -124,7 +127,8 @@ class LoadingStateManager:
         """Hide loading message from status label."""
         try:
             if hasattr(self.state, 'progress_label') and self.state.progress_label:
-                self.state.progress_label.configure(text="", foreground="blue")
+                color = styles.LOADING_CONFIG['colors']['loading']
+                self.state.progress_label.configure(text="", foreground=color)
         except tk.TclError as e:
             Logger.warn(f"Failed to hide loading status: {e}")
     
@@ -132,7 +136,9 @@ class LoadingStateManager:
         """Start a simple progress animation indicator."""
         try:
             if hasattr(self.state, 'progress_var') and self.state.progress_var:
-                self.state.progress_var.set("⏳ Fetching weather data...")
+                wait_icon = styles.LOADING_CONFIG['icons']['waiting']
+                default_msg = styles.LOADING_CONFIG['messages']['default']
+                self.state.progress_var.set(f"{wait_icon} {default_msg}")
         except tk.TclError as e:
             Logger.warn(f"Failed to start progress indicator: {e}")
     

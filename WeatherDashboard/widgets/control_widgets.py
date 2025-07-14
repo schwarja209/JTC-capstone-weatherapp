@@ -276,10 +276,9 @@ class ControlWidgets:
             
             # Collect unique chartable metrics from visible groups
             for group_key, group_config in config.METRIC_GROUPS.items():
-                if self._is_group_visible(group_config):
-                    for chart_metric in group_config['chart_metrics']:
-                        if self._is_metric_chartable(chart_metric):
-                            chart_metrics.add(chart_metric)
+                for chart_metric in group_config['chart_metrics']:
+                    if self._is_metric_chartable(chart_metric) and self._is_metric_visible(chart_metric):
+                        chart_metrics.add(chart_metric)
             
             # Convert to display names and sort for consistent order
             chart_display_names = sorted([

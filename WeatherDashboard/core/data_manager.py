@@ -23,6 +23,9 @@ from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.services.weather_service import WeatherAPIService
 
 
+# ================================
+# 1. INITIALIZATION & SETUP
+# ================================
 class WeatherDataManager:
     """Manage weather data fetching and storage, including fallback handling.
     
@@ -48,6 +51,9 @@ class WeatherDataManager:
         self._last_cleanup = datetime.now()
         self._cleanup_interval_hours = config.MEMORY["cleanup_interval_hours"]  # Cleanup every ___ hours
 
+# ================================  
+# 2. DATA FETCHING & HISTORY
+# ================================
     def fetch_current(self, city: str, unit_system: str) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
         """Fetch current weather data for a city, using fallback if API call fails.
         
@@ -92,7 +98,24 @@ class WeatherDataManager:
                 existing_data[:] = existing_data[-max_entries:]  # Keep only the most recent entries
 
         return converted_data, use_fallback, error_exception
-    
+
+    def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
+        """Generate historical weather data for a city."""
+        return self.api_service.fallback.generate(city, num_days)
+
+    def get_recent_data(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
+        """Return recent weather data for a city from the last N days."""
+        city_data = self.weather_data.get(city_key(city), [])
+        cutoff_date = datetime.now().date() - timedelta(days=days_back)
+        
+        return [
+            entry for entry in city_data 
+            if entry.get('date', datetime.now()).date() >= cutoff_date
+        ]
+
+# ================================
+# 3. DATA PROCESSING
+# ================================
     def convert_units(self, data: Dict[str, Any], unit_system: str) -> Dict[str, Any]:
         """Convert weather data units based on the selected UI unit system.
         
@@ -159,20 +182,9 @@ class WeatherDataManager:
 
         return converted
 
-    def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
-        """Generate historical weather data for a city."""
-        return self.api_service.fallback.generate(city, num_days)
-
-    def get_recent_data(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
-        """Return recent weather data for a city from the last N days."""
-        city_data = self.weather_data.get(city_key(city), [])
-        cutoff_date = datetime.now().date() - timedelta(days=days_back)
-        
-        return [
-            entry for entry in city_data 
-            if entry.get('date', datetime.now()).date() >= cutoff_date
-        ]
-
+# ================================
+# 4. FILE I/O & LOGGING
+# ================================
     def write_to_file(self, city: str, data: Dict[str, Any], unit_system: str) -> None:
         """Write formatted weather data to a log file with timestamp and unit system information.
         
@@ -213,7 +225,10 @@ class WeatherDataManager:
             f"Conditions: {data.get('conditions', '--')}"
         ]
         return "\n".join(lines)
-    
+
+# ================================
+# 5. MEMORY MANAGEMENT & CLEANUP
+# ================================    
     def cleanup_old_data(self, days_to_keep: int = 30) -> None:
         """Remove old weather data and manage memory usage.
         
@@ -237,7 +252,7 @@ class WeatherDataManager:
         empty_cities = [city for city, data in self.weather_data.items() if not data]
         for city in empty_cities:
             del self.weather_data[city]
-    
+
     def _simple_memory_check(self) -> bool:
         """Check if memory limits are exceeded.
         
