@@ -1002,3 +1002,39 @@
 {"timestamp": "2025-07-14 00:22:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
 {"timestamp": "2025-07-14 00:22:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
 {"timestamp": "2025-07-14 00:22:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:56:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:56:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 97.9°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "INFO", "message": "Weather data written for phoenix - Live"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:57:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty; At least one metric must be visible"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "ERROR", "message": "API failure for Asfsasgg - CityNotFoundError: City 'Asfsasgg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-14 00:58:SS", "level": "INFO", "message": "Weather data written for asfsasgg - Simulated"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "ERROR", "message": "API failure for Asfsasgg - CityNotFoundError: City 'Asfsasgg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "INFO", "message": "Weather data written for asfsasgg - Simulated"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-14 00:58:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}

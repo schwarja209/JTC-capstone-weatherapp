@@ -1002,3 +1002,39 @@
 [WARN] 2025-07-14 00:22:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
 [WARN] 2025-07-14 00:22:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
 [INFO] 2025-07-14 00:22:SS Weather data written for new_york - Live
+[WARN] 2025-07-14 00:56:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[INFO] 2025-07-14 00:56:SS Weather data written for new_york - Live
+[WARN] 2025-07-14 00:57:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[INFO] 2025-07-14 00:57:SS Weather data written for new_york - Live
+[WARN] 2025-07-14 00:57:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-14 00:57:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[WARN] 2025-07-14 00:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-14 00:57:SS Weather data written for new_york - Live
+[WARN] 2025-07-14 00:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-14 00:57:SS Weather data written for boston - Live
+[WARN] 2025-07-14 00:57:SS Weather alert: High Temperature Alert - Temperature is very high: 97.9°F (threshold: 95.0°F)
+[WARN] 2025-07-14 00:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-14 00:57:SS Weather data written for phoenix - Live
+[WARN] 2025-07-14 00:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-14 00:57:SS Weather data written for phoenix - Live
+[WARN] 2025-07-14 00:57:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[INFO] 2025-07-14 00:57:SS Weather data written for new_york - Live
+[ERROR] 2025-07-14 00:58:SS Input validation error: Invalid application state: City name cannot be empty
+[ERROR] 2025-07-14 00:58:SS Input validation error: Invalid application state: City name cannot be empty; At least one metric must be visible
+[WARN] 2025-07-14 00:58:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-14 00:58:SS API failure for Asfsasgg - CityNotFoundError: City 'Asfsasgg' not found. Switching to simulated data.
+[INFO] 2025-07-14 00:58:SS Weather data written for asfsasgg - Simulated
+[WARN] 2025-07-14 00:58:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-14 00:58:SS API failure for Asfsasgg - CityNotFoundError: City 'Asfsasgg' not found. Switching to simulated data.
+[WARN] 2025-07-14 00:58:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-14 00:58:SS Weather data written for asfsasgg - Simulated
+[WARN] 2025-07-14 00:58:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[WARN] 2025-07-14 00:58:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-14 00:58:SS Weather data written for new_york - Live
+[WARN] 2025-07-14 00:58:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[WARN] 2025-07-14 00:58:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-14 00:58:SS Weather data written for new_york - Live
+[WARN] 2025-07-14 00:58:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-14 00:58:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[WARN] 2025-07-14 00:58:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-14 00:58:SS Weather data written for new_york - Live
