@@ -294,9 +294,11 @@ class AsyncWeatherOperation:
     
     def _schedule_ui_update(self, func: Callable, *args) -> None:
         """Safely schedule UI updates from background thread.
-        
+    
         Ensures thread-safe UI updates by using tkinter's after_idle method
-        when possible, with fallback to direct execution.
+        when possible, with fallback to direct execution. Handles widget
+        destruction gracefully and prevents UI crashes from background threads.
+        Critical for async operations that need to update the UI.
         
         Args:
             func: Function to execute in the main thread

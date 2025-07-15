@@ -11,6 +11,7 @@ Modules:
     logger: Centralized logging system with multiple output formats
     rate_limiter: API request rate limiting and throttling
     derived_metrics: Calculations for derived metrics
+    color_utils: Color utility functions for weather dashboard styling
 """
 
 __all__ = [
@@ -18,5 +19,6 @@ __all__ = [
     "unit_converter", 
     "logger",
     "rate_limiter",
-    "derived_metrics"
+    "derived_metrics",
+    "color_utils"
 ]

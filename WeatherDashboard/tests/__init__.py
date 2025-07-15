@@ -18,5 +18,9 @@ __all__ = [
     "test_unit_converter", 
     "test_state_manager",
     "test_utils",
-    "test_runner"
+    "test_runner",
+    "test_alert_manager",
+    "test_controller",
+    "test_derived_metrics",
+    "test_weather_service"
 ]

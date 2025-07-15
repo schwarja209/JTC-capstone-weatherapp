@@ -94,7 +94,7 @@ class DerivedMetricsCalculator:
         conditions. Not a meteorological forecast.
         
         Args:
-            pressure: Atmospheric pressure in hPa
+            pressure: Atmospheric pressure in hPa (can be None)
             humidity: Relative humidity percentage (0-100)
             conditions: Current weather condition description
             
@@ -104,7 +104,8 @@ class DerivedMetricsCalculator:
         base_prob = 0
         
         # Pressure influence (lower pressure increases probability)
-        if pressure < 1000:
+        # Handle None pressure gracefully
+        if pressure is not None and pressure < 1000:
             base_prob += (1000 - pressure) * 2
         
         # Humidity influence (higher humidity increases probability)

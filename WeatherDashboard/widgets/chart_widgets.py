@@ -130,7 +130,16 @@ class ChartWidgets:
         }
 
     def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool = False) -> None:
-        """Updates the chart display with new data."""
+        """Updates the chart display with new data.
+        
+        Args:
+            x_vals: X-axis values (typically dates)
+            y_vals: Y-axis values (metric data points)
+            metric_key: Weather metric being charted
+            city: City name for chart title
+            unit_system: Unit system for axis labeling
+            fallback: Whether data comes from fallback/simulated source
+        """
         if not (hasattr(self, 'chart_canvas') and hasattr(self, 'chart_ax') and self.chart_ax is not None):
             Logger.warn("Chart display unavailable - matplotlib setup failed")
             return

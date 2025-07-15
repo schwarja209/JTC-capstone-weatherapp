@@ -202,11 +202,16 @@ class WeatherDashboardController:
 
     def _update_display_components(self, view_model: 'WeatherViewModel', raw_data: Dict[str, Any], error_exception: Optional[Exception]) -> None:
         """Update all display components with weather data.
+    
+        Coordinates updates across metric displays, status bar, and alert system.
+        Updates city/date headers, metric values with color coding, system status
+        messages, and processes weather alerts for display. Handles UI component
+        availability gracefully with error logging.
         
         Args:
-            view_model: Formatted weather view model
-            raw_data: Raw weather data for alerts
-            error_exception: Any error that occurred during data fetch
+            view_model: Formatted weather view model with display-ready data
+            raw_data: Raw weather data for alert processing and status determination
+            error_exception: Any error that occurred during data fetch, affects status display
         """
         # Update metric display headers
         if hasattr(self.widgets, 'metric_widgets') and self.widgets.metric_widgets:
