@@ -29,10 +29,13 @@ for folder in {config.OUTPUT["data_dir"], config.OUTPUT["log_dir"]}:
 if not Logger.test_logging_health():
     print("Warning: Logging system health check failed")
 
-if __name__ == "__main__":
-    '''Main entry point for the Weather Dashboard application.'''
+def main():
+    """Main entry point for the Weather Dashboard application."""
     root = tk.Tk()
     root.title("Weather Dashboard")
     app = WeatherDashboardMain(root)
     app.load_initial_display()
     root.mainloop()
+
+if __name__ == "__main__":
+    main()
