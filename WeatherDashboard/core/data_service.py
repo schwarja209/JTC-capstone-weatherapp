@@ -10,11 +10,9 @@ Classes:
 """
 
 from typing import Tuple, Dict, Any, List, Optional
+import threading
 
-from WeatherDashboard.utils.utils import (
-    normalize_city_name,
-    validate_unit_system
-)
+from WeatherDashboard.utils.validation_utils import ValidationUtils
 from WeatherDashboard.services.api_exceptions import ValidationError
 
 
@@ -36,61 +34,75 @@ class WeatherDataService:
         """
         self.data_manager = data_manager
 
-    def get_city_data(self, city_name: str, unit_system: str) -> Tuple[str, Dict[str, Any], Optional[Exception]]:
-        """Fetch weather data for a city with the specified unit system.
+    def _validate_inputs(self, city_name: str, unit_system: str) -> Tuple[str, str]:
+        """Validate and normalize inputs with consistent error handling.
         
-        Retrieves current weather data through the data manager with proper
-        unit conversion and normalization of city names.
+        Returns:
+            Tuple[str, str]: Validated city name and unit system
+        """
+        try:
+            city_errors = ValidationUtils.validate_city_name(city_name)
+            if city_errors:
+                raise ValueError(city_errors[0])
+            city = city_name.strip().title()
+            
+            unit_errors = ValidationUtils.validate_unit_system(unit_system)
+            if unit_errors:
+                raise ValueError(unit_errors[0])
+            return city, unit_system
+        except ValueError as e:
+            raise ValidationError(str(e))
+
+    def get_city_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[str, Dict[str, Any], Optional[Exception]]:
+        """Get weather data for a city with comprehensive error handling and normalization.
+        
+        Fetches current weather data through data manager, handles city name normalization,
+        unit system validation, and provides consistent error handling. Converts service-level
+        exceptions to appropriate application-level exceptions per ADR-004.
         
         Args:
-            city_name: Name of the city to fetch weather for
-            unit_system: Unit system for the weather data ('metric' or 'imperial')
-            
+            city: Raw city name input (will be normalized)
+            unit_system: Target unit system ('metric' or 'imperial')
+        
         Returns:
             Tuple containing:
                 - str: Normalized city name
-                - Dict[str, Any]: Weather data with converted units
-                - Optional[Exception]: Exception if fetch failed, None for success
+                - Dict[str, Any]: Weather data in requested units
+                - Optional[Exception]: Error that occurred, None if successful
+                
+        Side Effects:
+            Logs data operations via data manager
+            May trigger data cleanup operations
         """
-        # Normalize once at the entry point
-        try:
-            city = normalize_city_name(city_name)
-            validate_unit_system(unit_system) 
-        except ValueError as e:
-            # Convert to our custom exception for consistent error handling
-            raise ValidationError(str(e))
+        validated_city, validated_unit = self._validate_inputs(city_name, unit_system)
+
+        data, use_fallback, error_exception = self.data_manager.fetch_current(validated_city, validated_unit, cancel_event)
         
-        data, use_fallback, error_exception = self.data_manager.fetch_current(city, unit_system)
-        
-        return city, data, error_exception
+        return validated_city, data, error_exception
 
     def get_historical_data(self, city_name: str, num_days: int, unit_system: str) -> List[Dict[str, Any]]:
-        """Get historical weather data for a city.
+        """Get historical weather data for a city with unit conversion.
         
-        Retrieves historical weather data through the data manager with
-        proper unit conversion for the specified time period.
+        Retrieves historical weather data through data manager and applies
+        unit conversion to match the requested unit system. Handles validation
+        of input parameters and provides consistent data formatting.
         
         Args:
-            city: City name for historical data
+            city: Target city name for historical data
             days: Number of days of historical data to retrieve
-            unit_system: Unit system for the data ('metric' or 'imperial')
+            unit_system: Target unit system for data formatting
             
         Returns:
-            List[Dict[str, Any]]: List of historical weather data entries
+            List[Dict[str, Any]]: Historical weather data entries with converted units
         """
-        # Normalize once at the entry point
-        try:
-            city = normalize_city_name(city_name)
-            validate_unit_system(unit_system) 
-        except ValueError as e:
-            raise ValidationError(str(e))
+        validated_city, validated_unit = self._validate_inputs(city_name, unit_system)
         
-        raw = self.data_manager.get_historical(city, num_days)
+        raw = self.data_manager.get_historical(validated_city, num_days)
 
         source_unit = "metric"  # Same as generator’s output
-        if unit_system == source_unit:
+        if validated_unit == source_unit:
             return raw
-        return [self.data_manager.convert_units(d, unit_system) for d in raw]
+        return [self.data_manager.convert_units(d, validated_unit) for d in raw]
 
     def write_to_log(self, city: str, data: Dict[str, Any], unit: str) -> None:
         """Write weather data to the log file.
@@ -99,10 +111,7 @@ class WeatherDataService:
             city: City name for the log entry
             data: Weather data to log
             unit_system: Unit system for formatting ('metric' or 'imperial')
-        """
-        try:
-            validate_unit_system(unit)
-        except ValueError as e:
-            raise ValidationError(str(e))
+        """       
+        validated_city, validated_unit = self._validate_inputs(city, unit)
         
-        self.data_manager.write_to_file(city, data, unit)
+        self.data_manager.write_to_file(validated_city, data, validated_unit)

@@ -4174,3 +4174,770 @@
 [ERROR] 2025-07-16 02:05:SS API failure for D[Pks[Gdpk - CityNotFoundError: City 'D[Pks[Gdpk' not found. Switching to simulated data.
 [INFO] 2025-07-16 02:05:SS Weather data written for d[pks[gdpk - Simulated
 [ERROR] 2025-07-16 02:05:SS Input validation error: Invalid application state: City name cannot be empty
+[TEST] Health check at 2025-07-16 20:48:SS
+[INFO] 2025-07-16 20:48:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-16 23:20:SS
+[INFO] 2025-07-16 23:20:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-17 00:43:SS
+[INFO] 2025-07-17 00:43:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-17 00:59:SS
+[INFO] 2025-07-17 00:59:SS Weather data written for new_york - Live
+[WARN] 2025-07-17 00:59:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-17 00:59:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-17 01:36:SS
+[WARN] 2025-07-17 01:36:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: fetch_with_retry() missing 1 required positional argument: 'retries'
+[ERROR] 2025-07-17 01:36:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-17 01:36:SS Weather data written for new_york - Simulated
+[WARN] 2025-07-17 01:36:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: fetch_with_retry() missing 1 required positional argument: 'retries'
+[ERROR] 2025-07-17 01:36:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-17 01:36:SS Weather data written for new_york - Simulated
+[WARN] 2025-07-17 01:36:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: fetch_with_retry() missing 1 required positional argument: 'retries'
+[ERROR] 2025-07-17 01:36:SS API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data.
+[WARN] 2025-07-17 01:36:SS Weather alert: High Temperature Alert - Temperature is very high: 98.6°F (threshold: 95.0°F)
+[INFO] 2025-07-17 01:36:SS Weather data written for boston - Simulated
+[TEST] Health check at 2025-07-17 01:40:SS
+[INFO] 2025-07-17 01:40:SS Weather data written for new_york - Live
+[INFO] 2025-07-17 01:41:SS Weather data written for boston - Live
+[TEST] Health check at 2025-07-17 02:02:SS
+[INFO] 2025-07-17 02:02:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-17 19:41:SS
+[WARN] 2025-07-17 19:41:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 19:41:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[TEST] Health check at 2025-07-17 19:41:SS
+[TEST] Health check at 2025-07-17 19:43:SS
+[WARN] 2025-07-17 19:43:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 19:43:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-17 19:43:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 19:43:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-17 19:43:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-17 19:43:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-17 19:44:SS
+[TEST] Health check at 2025-07-17 19:45:SS
+[WARN] 2025-07-17 19:45:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=42.3584&lon=-71.0598&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002B045FFA490>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[WARN] 2025-07-17 19:46:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 19:46:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-17 19:46:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 19:46:SS API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts
+[INFO] 2025-07-17 19:46:SS Weather data written for boston - Live
+[TEST] Health check at 2025-07-17 19:55:SS
+[TEST] Health check at 2025-07-17 19:58:SS
+[TEST] Health check at 2025-07-17 19:59:SS
+[WARN] 2025-07-17 19:59:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 19:59:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-17 19:59:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 19:59:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-17 19:59:SS API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data.
+[INFO] 2025-07-17 19:59:SS Weather data written for boston - Simulated
+[WARN] 2025-07-17 20:03:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-17 20:03:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[TEST] Health check at 2025-07-17 20:56:SS
+[TEST] Health check at 2025-07-17 23:30:SS
+[INFO] 2025-07-17 23:30:SS Weather data written for boston - Live
+[TEST] Health check at 2025-07-18 01:15:SS
+[INFO] 2025-07-18 01:15:SS Weather data written for boston - Live
+[WARN] 2025-07-18 01:15:SS Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)
+[INFO] 2025-07-18 01:15:SS Weather data written for boston - Live
+[WARN] 2025-07-18 01:15:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-18 01:15:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-18 01:15:SS API failure for Asfaf - CityNotFoundError: City 'Asfaf' not found. Switching to simulated data.
+[INFO] 2025-07-18 01:15:SS Weather data written for asfaf - Simulated
+[WARN] 2025-07-18 01:16:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-18 01:16:SS API failure for Asfaf - CityNotFoundError: City 'Asfaf' not found. Switching to simulated data.
+[INFO] 2025-07-18 01:16:SS Weather data written for asfaf - Simulated
+[ERROR] 2025-07-18 01:16:SS Input validation error: Invalid application state: City name is invalid: cannot be empty
+[ERROR] 2025-07-18 01:16:SS Input validation error: Invalid application state: City name is invalid: cannot be empty; Metric selection is invalid: at least one metric must be visible
+[TEST] Health check at 2025-07-18 14:23:SS
+[WARN] 2025-07-18 14:23:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[TEST] Health check at 2025-07-18 18:59:SS
+[WARN] 2025-07-18 18:59:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 18:59:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 18:59:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 18:59:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-18 18:59:SS API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data.
+[ERROR] 2025-07-18 18:59:SS Unexpected error: Unit configuration 'precipitation' not found
+[TEST] Health check at 2025-07-18 19:12:SS
+[WARN] 2025-07-18 19:12:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Boston&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001EE78F4B4D0>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[WARN] 2025-07-18 19:13:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Boston&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001EE7D68AC10>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[ERROR] 2025-07-18 19:13:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:13:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-18 19:13:SS API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data.
+[WARN] 2025-07-18 19:13:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[INFO] 2025-07-18 19:13:SS Weather data written for boston - Simulated
+[ERROR] 2025-07-18 19:13:SS Unexpected chart error: Unit configuration 'precipitation' not found
+[TEST] Health check at 2025-07-18 19:21:SS
+[WARN] 2025-07-18 19:22:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:22:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 19:22:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:22:SS API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts
+[WARN] 2025-07-18 19:23:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-18 19:23:SS Weather data written for boston - Live
+[WARN] 2025-07-18 19:23:SS Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported
+[ERROR] 2025-07-18 19:23:SS Failed to convert fields: rain from metric to imperial: conversion failed
+[WARN] 2025-07-18 19:23:SS Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported
+[ERROR] 2025-07-18 19:23:SS Failed to convert fields: rain from metric to imperial: conversion failed
+[WARN] 2025-07-18 19:23:SS Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported
+[ERROR] 2025-07-18 19:23:SS Failed to convert fields: rain from metric to imperial: conversion failed
+[WARN] 2025-07-18 19:25:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:25:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 19:25:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:25:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-18 19:25:SS API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data.
+[WARN] 2025-07-18 19:25:SS Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported
+[ERROR] 2025-07-18 19:25:SS Failed to convert fields: rain from metric to imperial: conversion failed
+[ERROR] 2025-07-18 19:25:SS Unexpected error: Failed to convert rain from mm to in: conversion type not supported
+[TEST] Health check at 2025-07-18 19:29:SS
+[WARN] 2025-07-18 19:30:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=42.3584&lon=-71.0598&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025DE50FA350>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[WARN] 2025-07-18 19:30:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 19:30:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=42.3584&lon=-71.0598&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025DE50FA710>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[WARN] 2025-07-18 19:30:SS API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts
+[WARN] 2025-07-18 19:30:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:31:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 19:31:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:31:SS API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts
+[INFO] 2025-07-18 19:31:SS Weather data written for boston - Live
+[TEST] Health check at 2025-07-18 19:32:SS
+[TEST] Health check at 2025-07-18 19:33:SS
+[WARN] 2025-07-18 19:33:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:33:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 19:33:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:33:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-18 19:33:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-18 19:33:SS Weather data written for new_york - Simulated
+[WARN] 2025-07-18 19:34:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B3A7BB8E10>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[WARN] 2025-07-18 19:34:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 19:34:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 19:34:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-18 19:34:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-18 19:34:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-18 19:50:SS
+[ERROR] 2025-07-18 19:50:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 19:50:SS Using fallback for New York: Testing mode
+[INFO] 2025-07-18 19:50:SS Weather data written for new_york - Simulated
+[ERROR] 2025-07-18 19:50:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 19:50:SS Using fallback for New York: Testing mode
+[WARN] 2025-07-18 19:50:SS Weather alert: High Temperature Alert - Temperature is very high: 104.0°F (threshold: 95.0°F)
+[WARN] 2025-07-18 19:50:SS Weather alert: Dangerous Heat Index - Heat index is dangerously high: 116.8°F (threshold: 104.9°F)
+[INFO] 2025-07-18 19:50:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-18 19:51:SS
+[TEST] Health check at 2025-07-18 19:51:SS
+[WARN] 2025-07-18 19:52:SS Connection error on attempt 1, retrying: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+[TEST] Health check at 2025-07-18 20:08:SS
+[WARN] 2025-07-18 20:08:SS Connection error on attempt 1, retrying: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+[WARN] 2025-07-18 20:10:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=30)
+[WARN] 2025-07-18 20:10:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=30)
+[INFO] 2025-07-18 20:11:SS Weather data written for new_york - Live
+[WARN] 2025-07-18 20:12:SS Connection error on attempt 1, retrying: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+[TEST] Health check at 2025-07-18 21:19:SS
+[WARN] 2025-07-18 21:19:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 21:19:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-18 21:19:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-18 21:19:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-18 21:19:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-18 21:20:SS Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)
+[INFO] 2025-07-18 21:20:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-18 21:33:SS
+[ERROR] 2025-07-18 21:33:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 21:33:SS Using fallback for New York: Testing mode
+[WARN] 2025-07-18 21:33:SS Weather alert: High Humidity Alert - Very humid conditions: 90% (threshold: 85%)
+[INFO] 2025-07-18 21:33:SS Weather data written for new_york - Simulated
+[ERROR] 2025-07-18 21:33:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 21:33:SS Using fallback for New York: Testing mode
+[WARN] 2025-07-18 21:33:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[WARN] 2025-07-18 21:33:SS Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)
+[INFO] 2025-07-18 21:33:SS Weather data written for new_york - Simulated
+[ERROR] 2025-07-18 21:33:SS Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible
+[ERROR] 2025-07-18 21:33:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 21:33:SS Using fallback for New York: Testing mode
+[WARN] 2025-07-18 21:33:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[WARN] 2025-07-18 21:33:SS Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-18 21:33:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-18 22:45:SS
+[ERROR] 2025-07-18 22:45:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 22:45:SS Using fallback for New York: Testing mode
+[ERROR] 2025-07-18 22:45:SS Unexpected error: StateUtils.is_metric_visible() missing 1 required positional argument: 'metric_key'
+[TEST] Health check at 2025-07-18 23:05:SS
+[ERROR] 2025-07-18 23:05:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 23:05:SS Using fallback for New York: Testing mode
+[WARN] 2025-07-18 23:05:SS Weather alert: High Temperature Alert - Temperature is very high: 104.0°F (threshold: 95.0°F)
+[INFO] 2025-07-18 23:05:SS Weather data written for new_york - Simulated
+[ERROR] 2025-07-18 23:05:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 23:05:SS Using fallback for New York: Testing mode
+[INFO] 2025-07-18 23:05:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-18 23:05:SS
+[ERROR] 2025-07-18 23:05:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 23:05:SS Using fallback for New York: Testing mode
+[INFO] 2025-07-18 23:05:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-18 23:55:SS
+[ERROR] 2025-07-18 23:55:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-18 23:55:SS Using fallback for New York: Testing mode
+[INFO] 2025-07-18 23:55:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-18 23:56:SS
+[INFO] 2025-07-18 23:56:SS Weather data written for new_york - Live
+[WARN] 2025-07-18 23:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-18 23:57:SS Weather data written for new_york - Live
+[ERROR] 2025-07-18 23:57:SS Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible
+[WARN] 2025-07-18 23:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-18 23:57:SS Weather data written for new_york - Live
+[WARN] 2025-07-18 23:57:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-18 23:57:SS Weather data written for boston - Live
+[TEST] Health check at 2025-07-19 01:32:SS
+[INFO] 2025-07-19 01:32:SS Weather data written for new_york - Live
+[WARN] 2025-07-19 01:32:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-19 01:32:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-19 01:33:SS
+[INFO] 2025-07-19 01:33:SS Weather data written for new_york - Live
+[INFO] 2025-07-19 01:33:SS Weather data written for new_york - Live
+[INFO] 2025-07-19 01:33:SS Weather data written for new_york - Live
+[WARN] 2025-07-19 01:33:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-19 01:33:SS API failure for Oihdosih - CityNotFoundError: City 'Oihdosih' not found. Switching to simulated data.
+[INFO] 2025-07-19 01:33:SS Weather data written for oihdosih - Simulated
+[ERROR] 2025-07-19 01:33:SS Input validation error: Input validation failed: City name is invalid: contains invalid characters (only letters, spaces, hyphens, and apostrophes allowed)
+[TEST] Health check at 2025-07-19 02:18:SS
+[INFO] 2025-07-19 02:18:SS Weather data written for new_york - Live
+[WARN] 2025-07-19 02:18:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-19 02:18:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-19 02:18:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 01:46:SS
+[INFO] 2025-07-20 01:46:SS title widget created successfully
+[INFO] 2025-07-20 01:46:SS control widgets created successfully
+[INFO] 2025-07-20 01:46:SS metric display widgets created successfully
+[INFO] 2025-07-20 01:46:SS chart widgets created successfully
+[INFO] 2025-07-20 01:46:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 01:46:SS status bar widgets created successfully
+[INFO] 2025-07-20 01:46:SS dashboard widgets created successfully
+[INFO] 2025-07-20 01:46:SS Weather data written for new_york - Live
+[WARN] 2025-07-20 01:46:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-20 01:46:SS Weather data written for new_york - Live
+[ERROR] 2025-07-20 01:47:SS Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[WARN] 2025-07-20 01:47:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-20 01:47:SS Weather data written for new_york - Live
+[WARN] 2025-07-20 01:47:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-20 01:47:SS API failure for Asfasfas - CityNotFoundError: City 'Asfasfas' not found. Switching to simulated data.
+[WARN] 2025-07-20 01:47:SS Weather alert: High Temperature Alert - Temperature is very high: 40.0°C (threshold: 35.0°C)
+[WARN] 2025-07-20 01:47:SS Weather alert: Dangerous Heat Index - Heat index is dangerously high: 44.1°C (threshold: 40.5°C)
+[WARN] 2025-07-20 01:47:SS Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-20 01:47:SS Weather data written for asfasfas - Simulated
+[ERROR] 2025-07-20 01:47:SS Input validation error: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-20 01:47:SS Input validation error: Input validation failed: City name is invalid: cannot be empty
+[WARN] 2025-07-20 01:47:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-20 01:47:SS API failure for Sdgsdg - CityNotFoundError: City 'Sdgsdg' not found. Switching to simulated data.
+[WARN] 2025-07-20 01:48:SS Weather alert: High Temperature Alert - Temperature is very high: 43.0°C (threshold: 35.0°C)
+[WARN] 2025-07-20 01:48:SS Weather alert: Dangerous Heat Index - Heat index is dangerously high: 74.7°C (threshold: 40.5°C)
+[INFO] 2025-07-20 01:48:SS Weather data written for sdgsdg - Simulated
+[WARN] 2025-07-20 01:48:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-20 01:48:SS API failure for Sdgsdg - CityNotFoundError: City 'Sdgsdg' not found. Switching to simulated data.
+[WARN] 2025-07-20 01:48:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-20 01:48:SS Weather data written for sdgsdg - Simulated
+[WARN] 2025-07-20 01:48:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-20 01:48:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 02:12:SS
+[INFO] 2025-07-20 02:12:SS title widget created successfully
+[INFO] 2025-07-20 02:12:SS control widgets created successfully
+[INFO] 2025-07-20 02:12:SS metric display widgets created successfully
+[INFO] 2025-07-20 02:12:SS chart widgets created successfully
+[INFO] 2025-07-20 02:12:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 02:12:SS status bar widgets created successfully
+[INFO] 2025-07-20 02:12:SS dashboard widgets created successfully
+[INFO] 2025-07-20 02:12:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 02:33:SS
+[INFO] 2025-07-20 02:33:SS title widget created successfully
+[INFO] 2025-07-20 02:33:SS control widgets created successfully
+[INFO] 2025-07-20 02:33:SS metric display widgets created successfully
+[INFO] 2025-07-20 02:33:SS chart widgets created successfully
+[INFO] 2025-07-20 02:33:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 02:33:SS status bar widgets created successfully
+[INFO] 2025-07-20 02:33:SS dashboard widgets created successfully
+[INFO] 2025-07-20 02:33:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 02:40:SS
+[INFO] 2025-07-20 02:40:SS title widget created successfully
+[INFO] 2025-07-20 02:40:SS control widgets created successfully
+[INFO] 2025-07-20 02:40:SS metric display widgets created successfully
+[INFO] 2025-07-20 02:40:SS chart widgets created successfully
+[INFO] 2025-07-20 02:40:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 02:40:SS status bar widgets created successfully
+[INFO] 2025-07-20 02:40:SS dashboard widgets created successfully
+[INFO] 2025-07-20 02:40:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 02:45:SS
+[INFO] 2025-07-20 02:45:SS Starting WeatherDashboard v0.1.0
+[INFO] 2025-07-20 02:45:SS title widget created successfully
+[INFO] 2025-07-20 02:45:SS control widgets created successfully
+[INFO] 2025-07-20 02:45:SS metric display widgets created successfully
+[INFO] 2025-07-20 02:45:SS chart widgets created successfully
+[INFO] 2025-07-20 02:45:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 02:45:SS status bar widgets created successfully
+[INFO] 2025-07-20 02:45:SS dashboard widgets created successfully
+[INFO] 2025-07-20 02:45:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 02:47:SS
+[INFO] 2025-07-20 02:47:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard by Jacob Schwartz
+[INFO] 2025-07-20 02:47:SS title widget created successfully
+[INFO] 2025-07-20 02:47:SS control widgets created successfully
+[INFO] 2025-07-20 02:47:SS metric display widgets created successfully
+[INFO] 2025-07-20 02:47:SS chart widgets created successfully
+[INFO] 2025-07-20 02:47:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 02:47:SS status bar widgets created successfully
+[INFO] 2025-07-20 02:47:SS dashboard widgets created successfully
+[INFO] 2025-07-20 02:47:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 02:54:SS
+[INFO] 2025-07-20 02:54:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 02:54:SS title widget created successfully
+[INFO] 2025-07-20 02:54:SS control widgets created successfully
+[INFO] 2025-07-20 02:54:SS metric display widgets created successfully
+[INFO] 2025-07-20 02:54:SS chart widgets created successfully
+[INFO] 2025-07-20 02:54:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 02:54:SS status bar widgets created successfully
+[INFO] 2025-07-20 02:54:SS dashboard widgets created successfully
+[INFO] 2025-07-20 02:54:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 13:41:SS
+[INFO] 2025-07-20 13:41:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 13:41:SS title widget created successfully
+[INFO] 2025-07-20 13:41:SS control widgets created successfully
+[INFO] 2025-07-20 13:41:SS metric display widgets created successfully
+[INFO] 2025-07-20 13:41:SS chart widgets created successfully
+[INFO] 2025-07-20 13:41:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 13:41:SS status bar widgets created successfully
+[INFO] 2025-07-20 13:41:SS dashboard widgets created successfully
+[WARN] 2025-07-20 13:41:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 13:41:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 13:41:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 13:41:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 13:41:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 13:41:SS Weather alert: High Temperature Alert - Temperature is very high: 98.6°F (threshold: 95.0°F)
+[INFO] 2025-07-20 13:41:SS Weather data written for new_york - Simulated
+[WARN] 2025-07-20 13:42:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 13:42:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 13:42:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 13:42:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 13:42:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 13:42:SS Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-20 13:42:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 14:05:SS
+[INFO] 2025-07-20 14:05:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 14:05:SS title widget created successfully
+[INFO] 2025-07-20 14:05:SS control widgets created successfully
+[INFO] 2025-07-20 14:05:SS metric display widgets created successfully
+[INFO] 2025-07-20 14:05:SS chart widgets created successfully
+[INFO] 2025-07-20 14:05:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 14:05:SS status bar widgets created successfully
+[INFO] 2025-07-20 14:05:SS dashboard widgets created successfully
+[TEST] Health check at 2025-07-20 14:05:SS
+[INFO] 2025-07-20 14:05:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 14:05:SS title widget created successfully
+[INFO] 2025-07-20 14:05:SS control widgets created successfully
+[INFO] 2025-07-20 14:05:SS metric display widgets created successfully
+[INFO] 2025-07-20 14:05:SS chart widgets created successfully
+[INFO] 2025-07-20 14:05:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 14:05:SS status bar widgets created successfully
+[INFO] 2025-07-20 14:05:SS dashboard widgets created successfully
+[ERROR] 2025-07-20 14:05:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-20 14:05:SS Using fallback for New York: Testing mode
+[INFO] 2025-07-20 14:05:SS Weather data written for new_york - Simulated
+[ERROR] 2025-07-20 14:05:SS API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-20 14:05:SS Using fallback for New York: Testing mode
+[INFO] 2025-07-20 14:05:SS Weather data written for new_york - Simulated
+[ERROR] 2025-07-20 14:05:SS API failure for Boston - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-20 14:05:SS Using fallback for Boston: Testing mode
+[INFO] 2025-07-20 14:05:SS Weather data written for boston - Simulated
+[ERROR] 2025-07-20 14:05:SS API failure for Boston - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-20 14:05:SS Using fallback for Boston: Testing mode
+[WARN] 2025-07-20 14:06:SS Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-20 14:06:SS Weather data written for boston - Simulated
+[TEST] Health check at 2025-07-20 14:13:SS
+[INFO] 2025-07-20 14:13:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 14:13:SS title widget created successfully
+[INFO] 2025-07-20 14:13:SS control widgets created successfully
+[INFO] 2025-07-20 14:13:SS metric display widgets created successfully
+[INFO] 2025-07-20 14:13:SS chart widgets created successfully
+[INFO] 2025-07-20 14:13:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 14:13:SS status bar widgets created successfully
+[INFO] 2025-07-20 14:13:SS dashboard widgets created successfully
+[INFO] 2025-07-20 14:13:SS Cancelling current weather operation
+[WARN] 2025-07-20 14:13:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[TEST] Health check at 2025-07-20 14:13:SS
+[INFO] 2025-07-20 14:13:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 14:13:SS title widget created successfully
+[INFO] 2025-07-20 14:13:SS control widgets created successfully
+[INFO] 2025-07-20 14:13:SS metric display widgets created successfully
+[INFO] 2025-07-20 14:13:SS chart widgets created successfully
+[INFO] 2025-07-20 14:13:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 14:13:SS status bar widgets created successfully
+[INFO] 2025-07-20 14:13:SS dashboard widgets created successfully
+[INFO] 2025-07-20 14:13:SS Cancelling current weather operation
+[WARN] 2025-07-20 14:14:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 14:14:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 14:14:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 14:14:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 14:14:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 14:14:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:08:SS
+[INFO] 2025-07-20 15:08:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:08:SS title widget created successfully
+[INFO] 2025-07-20 15:08:SS control widgets created successfully
+[INFO] 2025-07-20 15:08:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:08:SS chart widgets created successfully
+[INFO] 2025-07-20 15:08:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:08:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:08:SS dashboard widgets created successfully
+[INFO] 2025-07-20 15:08:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:08:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:08:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:08:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:13:SS
+[INFO] 2025-07-20 15:13:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:13:SS title widget created successfully
+[INFO] 2025-07-20 15:13:SS control widgets created successfully
+[INFO] 2025-07-20 15:13:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:13:SS chart widgets created successfully
+[INFO] 2025-07-20 15:13:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:13:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:13:SS dashboard widgets created successfully
+[INFO] 2025-07-20 15:13:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:13:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:13:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:13:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:15:SS
+[INFO] 2025-07-20 15:15:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:15:SS title widget created successfully
+[INFO] 2025-07-20 15:15:SS control widgets created successfully
+[INFO] 2025-07-20 15:15:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:15:SS chart widgets created successfully
+[INFO] 2025-07-20 15:15:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:15:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:15:SS dashboard widgets created successfully
+[INFO] 2025-07-20 15:15:SS Cancelling current weather operation
+[INFO] 2025-07-20 15:15:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:15:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 15:15:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 15:16:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 15:16:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:16:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:16:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 15:16:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:16:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:16:SS Weather data written for new_york - Simulated
+[INFO] 2025-07-20 15:16:SS Weather data written for new_york - Simulated
+[WARN] 2025-07-20 15:16:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 15:16:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:16:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:16:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:16:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:18:SS
+[INFO] 2025-07-20 15:18:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:18:SS title widget created successfully
+[INFO] 2025-07-20 15:18:SS control widgets created successfully
+[INFO] 2025-07-20 15:18:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:18:SS chart widgets created successfully
+[INFO] 2025-07-20 15:18:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:18:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:18:SS dashboard widgets created successfully
+[INFO] 2025-07-20 15:19:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:19:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:19:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 15:19:SS Weather alert: High Humidity Alert - Very humid conditions: 86% (threshold: 85%)
+[INFO] 2025-07-20 15:19:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:21:SS
+[INFO] 2025-07-20 15:21:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:21:SS title widget created successfully
+[INFO] 2025-07-20 15:21:SS control widgets created successfully
+[INFO] 2025-07-20 15:21:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:21:SS chart widgets created successfully
+[INFO] 2025-07-20 15:21:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:21:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:21:SS dashboard widgets created successfully
+[WARN] 2025-07-20 15:21:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:21:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001A2BF92B110>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))
+[WARN] 2025-07-20 15:22:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 15:22:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 15:22:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 15:22:SS API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts
+[WARN] 2025-07-20 15:22:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 15:23:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:23:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 15:23:SS Weather data written for new_york - Live
+[WARN] 2025-07-20 15:23:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 15:23:SS Cancelling current weather operation
+[INFO] 2025-07-20 15:23:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:23:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 15:23:SS Cancelling current weather operation
+[INFO] 2025-07-20 15:23:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:23:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-20 15:23:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:23:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:23:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:23:SS Weather data written for new_york - Simulated
+[ERROR] 2025-07-20 15:24:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 15:24:SS API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts
+[INFO] 2025-07-20 15:24:SS Weather data written for new_york - Live
+[INFO] 2025-07-20 15:24:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 15:41:SS
+[INFO] 2025-07-20 15:41:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:41:SS title widget created successfully
+[INFO] 2025-07-20 15:41:SS control widgets created successfully
+[INFO] 2025-07-20 15:41:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:41:SS chart widgets created successfully
+[INFO] 2025-07-20 15:41:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:41:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:41:SS dashboard widgets created successfully
+[INFO] 2025-07-20 15:41:SS Cancelling current weather operation
+[WARN] 2025-07-20 15:41:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 15:41:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:41:SS Weather data written for new_york - Simulated
+[WARN] 2025-07-20 15:41:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:42:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[ERROR] 2025-07-20 15:42:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:42:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 15:42:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:42:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:42:SS
+[INFO] 2025-07-20 15:42:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:42:SS title widget created successfully
+[INFO] 2025-07-20 15:42:SS control widgets created successfully
+[INFO] 2025-07-20 15:42:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:42:SS chart widgets created successfully
+[INFO] 2025-07-20 15:42:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:42:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:42:SS dashboard widgets created successfully
+[WARN] 2025-07-20 15:42:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:42:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:42:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=40.7143&lon=-74.006&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001DF1F2CB890>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))
+[ERROR] 2025-07-20 15:42:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:42:SS API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts
+[WARN] 2025-07-20 15:42:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:42:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[ERROR] 2025-07-20 15:42:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:42:SS API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts
+[INFO] 2025-07-20 15:42:SS Weather data written for new_york - Live
+[WARN] 2025-07-20 15:43:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001DF1F2C91D0>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))
+[WARN] 2025-07-20 15:43:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[ERROR] 2025-07-20 15:43:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:43:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 15:43:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 15:43:SS Weather alert: High Temperature Alert - Temperature is very high: 102.2°F (threshold: 95.0°F)
+[WARN] 2025-07-20 15:43:SS Weather alert: Dangerous Heat Index - Heat index is dangerously high: 119.3°F (threshold: 104.9°F)
+[INFO] 2025-07-20 15:43:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:44:SS
+[INFO] 2025-07-20 15:44:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:44:SS title widget created successfully
+[INFO] 2025-07-20 15:44:SS control widgets created successfully
+[INFO] 2025-07-20 15:44:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:44:SS chart widgets created successfully
+[INFO] 2025-07-20 15:44:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:44:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:44:SS dashboard widgets created successfully
+[WARN] 2025-07-20 15:44:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:44:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[ERROR] 2025-07-20 15:44:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 15:44:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 15:44:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 15:44:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 15:50:SS
+[INFO] 2025-07-20 15:50:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 15:50:SS title widget created successfully
+[INFO] 2025-07-20 15:50:SS control widgets created successfully
+[INFO] 2025-07-20 15:50:SS metric display widgets created successfully
+[INFO] 2025-07-20 15:50:SS chart widgets created successfully
+[INFO] 2025-07-20 15:50:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 15:50:SS status bar widgets created successfully
+[INFO] 2025-07-20 15:50:SS dashboard widgets created successfully
+[WARN] 2025-07-20 15:50:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B26AFFBA10>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))
+[WARN] 2025-07-20 15:50:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B26D68B110>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))
+[ERROR] 2025-07-20 15:50:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B26D68B9D0>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))
+[WARN] 2025-07-20 15:50:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 15:50:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 15:50:SS Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)
+[INFO] 2025-07-20 15:50:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 16:12:SS
+[INFO] 2025-07-20 16:12:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 16:12:SS title widget created successfully
+[INFO] 2025-07-20 16:12:SS control widgets created successfully
+[INFO] 2025-07-20 16:12:SS metric display widgets created successfully
+[INFO] 2025-07-20 16:12:SS chart widgets created successfully
+[INFO] 2025-07-20 16:12:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 16:12:SS status bar widgets created successfully
+[INFO] 2025-07-20 16:12:SS dashboard widgets created successfully
+[WARN] 2025-07-20 16:12:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 16:12:SS Cancelling current weather operation
+[WARN] 2025-07-20 16:12:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 16:13:SS Cancelling current weather operation
+[INFO] 2025-07-20 16:13:SS Cancelling current weather operation
+[INFO] 2025-07-20 16:13:SS Cancelling current weather operation
+[WARN] 2025-07-20 16:13:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-20 16:13:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 16:13:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=40.7143&lon=-74.006&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000257BFADB610>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[INFO] 2025-07-20 16:13:SS Cancelling current weather operation
+[WARN] 2025-07-20 16:13:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 16:13:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 16:13:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 16:13:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 16:13:SS Weather data written for new_york - Simulated
+[INFO] 2025-07-20 16:13:SS Weather data written for new_york - Simulated
+[INFO] 2025-07-20 16:13:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 21:52:SS
+[INFO] 2025-07-20 21:52:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 21:52:SS title widget created successfully
+[INFO] 2025-07-20 21:52:SS control widgets created successfully
+[INFO] 2025-07-20 21:52:SS metric display widgets created successfully
+[INFO] 2025-07-20 21:52:SS chart widgets created successfully
+[INFO] 2025-07-20 21:52:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 21:52:SS status bar widgets created successfully
+[INFO] 2025-07-20 21:52:SS dashboard widgets created successfully
+[INFO] 2025-07-20 21:52:SS Cancelling current weather operation
+[WARN] 2025-07-20 21:52:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 21:52:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 21:52:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 21:52:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 21:52:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[WARN] 2025-07-20 21:52:SS Weather alert: High Temperature Alert - Temperature is very high: 96.8°F (threshold: 95.0°F)
+[WARN] 2025-07-20 21:52:SS Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)
+[INFO] 2025-07-20 21:52:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 21:57:SS
+[INFO] 2025-07-20 21:57:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 21:57:SS title widget created successfully
+[INFO] 2025-07-20 21:57:SS control widgets created successfully
+[INFO] 2025-07-20 21:57:SS metric display widgets created successfully
+[INFO] 2025-07-20 21:57:SS chart widgets created successfully
+[INFO] 2025-07-20 21:57:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 21:57:SS status bar widgets created successfully
+[INFO] 2025-07-20 21:57:SS dashboard widgets created successfully
+[INFO] 2025-07-20 21:57:SS Cancelling current weather operation
+[WARN] 2025-07-20 21:57:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 21:58:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 21:58:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 21:58:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 21:58:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 21:58:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 21:59:SS
+[INFO] 2025-07-20 21:59:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 21:59:SS title widget created successfully
+[INFO] 2025-07-20 21:59:SS control widgets created successfully
+[INFO] 2025-07-20 21:59:SS metric display widgets created successfully
+[INFO] 2025-07-20 21:59:SS chart widgets created successfully
+[INFO] 2025-07-20 21:59:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 21:59:SS status bar widgets created successfully
+[INFO] 2025-07-20 21:59:SS dashboard widgets created successfully
+[INFO] 2025-07-20 21:59:SS DEBUG: cancel_event = None, timeout will be 10
+[INFO] 2025-07-20 22:00:SS Cancelling current weather operation
+[WARN] 2025-07-20 22:00:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B2ECDFBA10>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))
+[WARN] 2025-07-20 22:00:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 22:00:SS DEBUG: cancel_event = None, timeout will be 10
+[WARN] 2025-07-20 22:00:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[INFO] 2025-07-20 22:00:SS DEBUG: cancel_event = None, timeout will be 10
+[INFO] 2025-07-20 22:00:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 22:03:SS
+[INFO] 2025-07-20 22:03:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 22:03:SS title widget created successfully
+[INFO] 2025-07-20 22:03:SS control widgets created successfully
+[INFO] 2025-07-20 22:03:SS metric display widgets created successfully
+[INFO] 2025-07-20 22:03:SS chart widgets created successfully
+[INFO] 2025-07-20 22:03:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 22:03:SS status bar widgets created successfully
+[INFO] 2025-07-20 22:03:SS dashboard widgets created successfully
+[INFO] 2025-07-20 22:03:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:03:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x1e9f481d1d0: unset>
+[INFO] 2025-07-20 22:03:SS DEBUG: cancel_event = <threading.Event at 0x1e9f481d1d0: unset>, timeout will be 2
+[INFO] 2025-07-20 22:03:SS Cancelling current weather operation
+[WARN] 2025-07-20 22:03:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 22:03:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 22:03:SS Weather data written for new_york - Simulated
+[INFO] 2025-07-20 22:04:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x1e9f481d1d0: unset>
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event = <threading.Event at 0x1e9f481d1d0: unset>, timeout will be 2
+[INFO] 2025-07-20 22:04:SS Cancelling current weather operation
+[WARN] 2025-07-20 22:04:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 22:04:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 22:04:SS Weather data written for new_york - Simulated
+[INFO] 2025-07-20 22:04:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x1e9f481d1d0: unset>
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event = <threading.Event at 0x1e9f481d1d0: unset>, timeout will be 2
+[WARN] 2025-07-20 22:04:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 22:04:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[ERROR] 2025-07-20 22:04:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 22:04:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 22:04:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 22:04:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 22:04:SS
+[INFO] 2025-07-20 22:04:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 22:04:SS title widget created successfully
+[INFO] 2025-07-20 22:04:SS control widgets created successfully
+[INFO] 2025-07-20 22:04:SS metric display widgets created successfully
+[INFO] 2025-07-20 22:04:SS chart widgets created successfully
+[INFO] 2025-07-20 22:04:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 22:04:SS status bar widgets created successfully
+[INFO] 2025-07-20 22:04:SS dashboard widgets created successfully
+[INFO] 2025-07-20 22:04:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x19ba4274f50: unset>
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event = <threading.Event at 0x19ba4274f50: unset>, timeout will be 2
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event = <threading.Event at 0x19ba4274f50: unset>, timeout will be 2
+[WARN] 2025-07-20 22:04:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 22:04:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[ERROR] 2025-07-20 22:04:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 22:04:SS API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts
+[INFO] 2025-07-20 22:04:SS DEBUG: cancel_event = <threading.Event at 0x19ba4274f50: unset>, timeout will be 2
+[WARN] 2025-07-20 22:04:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 22:05:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[ERROR] 2025-07-20 22:05:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)
+[WARN] 2025-07-20 22:05:SS API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts
+[INFO] 2025-07-20 22:05:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-20 22:08:SS
+[INFO] 2025-07-20 22:08:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 22:08:SS title widget created successfully
+[INFO] 2025-07-20 22:08:SS control widgets created successfully
+[INFO] 2025-07-20 22:08:SS metric display widgets created successfully
+[INFO] 2025-07-20 22:08:SS chart widgets created successfully
+[INFO] 2025-07-20 22:08:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 22:08:SS status bar widgets created successfully
+[INFO] 2025-07-20 22:08:SS dashboard widgets created successfully
+[INFO] 2025-07-20 22:08:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:08:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x1faa9939090: unset>
+[INFO] 2025-07-20 22:08:SS DEBUG: cancel_event = <threading.Event at 0x1faa9939090: unset>, timeout will be 2
+[WARN] 2025-07-20 22:08:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 22:08:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 22:08:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 22:08:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 22:08:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 22:09:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-20 22:09:SS
+[INFO] 2025-07-20 22:09:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-20 22:09:SS title widget created successfully
+[INFO] 2025-07-20 22:09:SS control widgets created successfully
+[INFO] 2025-07-20 22:09:SS metric display widgets created successfully
+[INFO] 2025-07-20 22:09:SS chart widgets created successfully
+[INFO] 2025-07-20 22:09:SS tabbed display widgets created successfully
+[INFO] 2025-07-20 22:09:SS status bar widgets created successfully
+[INFO] 2025-07-20 22:09:SS dashboard widgets created successfully
+[INFO] 2025-07-20 22:09:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:09:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x200eaa08f50: unset>
+[INFO] 2025-07-20 22:09:SS DEBUG: cancel_event = <threading.Event at 0x200eaa08f50: unset>, timeout will be 2
+[INFO] 2025-07-20 22:09:SS Cancelling current weather operation
+[WARN] 2025-07-20 22:09:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 22:09:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 22:09:SS Weather data written for new_york - Simulated
+[INFO] 2025-07-20 22:09:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:09:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x200eaa08f50: unset>
+[INFO] 2025-07-20 22:09:SS DEBUG: cancel_event = <threading.Event at 0x200eaa08f50: unset>, timeout will be 2
+[INFO] 2025-07-20 22:09:SS Cancelling current weather operation
+[WARN] 2025-07-20 22:09:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user
+[ERROR] 2025-07-20 22:09:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 22:09:SS Weather data written for new_york - Simulated
+[INFO] 2025-07-20 22:09:SS DEBUG: fetch_weather_async called with enable_cancellation=True
+[INFO] 2025-07-20 22:09:SS DEBUG: cancel_event_to_pass = <threading.Event at 0x200eaa08f50: unset>
+[INFO] 2025-07-20 22:09:SS DEBUG: cancel_event = <threading.Event at 0x200eaa08f50: unset>, timeout will be 2
+[WARN] 2025-07-20 22:10:SS Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 22:10:SS Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[ERROR] 2025-07-20 22:10:SS API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)
+[WARN] 2025-07-20 22:10:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts
+[ERROR] 2025-07-20 22:10:SS API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data.
+[INFO] 2025-07-20 22:10:SS Weather data written for new_york - Simulated
+[TEST] Health check at 2025-07-21 00:07:SS
+[INFO] 2025-07-21 00:07:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-21 00:07:SS title widget created successfully
+[INFO] 2025-07-21 00:07:SS control widgets created successfully
+[INFO] 2025-07-21 00:07:SS metric display widgets created successfully
+[INFO] 2025-07-21 00:07:SS chart widgets created successfully
+[INFO] 2025-07-21 00:07:SS tabbed display widgets created successfully
+[INFO] 2025-07-21 00:07:SS status bar widgets created successfully
+[INFO] 2025-07-21 00:07:SS dashboard widgets created successfully
+[INFO] 2025-07-21 00:07:SS Weather data written for new_york - Live
+[INFO] 2025-07-21 00:07:SS Weather data written for new_york - Live
+[WARN] 2025-07-21 00:07:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-21 00:07:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-21 00:07:SS Weather data written for new_york - Live

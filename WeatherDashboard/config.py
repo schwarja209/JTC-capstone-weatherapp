@@ -38,6 +38,10 @@ API_BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 API_UV_URL = "https://api.openweathermap.org/data/2.5/uvi"
 API_AIR_QUALITY_URL = "https://api.openweathermap.org/data/2.5/air_pollution"
 API_KEY = os.getenv("OPENWEATHER_API_KEY")  # load from .env
+API_TIMEOUT_SECONDS = 10 # Configurable timeout for API requests
+API_RETRY_ATTEMPTS = 2 # API Service constants
+API_RETRY_BASE_DELAY = 1
+FORCE_FALLBACK_MODE = False # Temporarily disable API calls
 
 # ================================
 # 2. CORE WEATHER METRICS DEFINITIONS
@@ -110,6 +114,11 @@ ENHANCED_DISPLAY_LABELS = {
     'conditions': 'Conditions (with icon)'
 }
 
+# NWS Standard Formula Thresholds
+HEAT_INDEX_THRESHOLD_F = 80
+WIND_CHILL_TEMP_THRESHOLD_F = 50
+WIND_CHILL_SPEED_THRESHOLD_MPH = 3
+
 # ================================
 # 3. UNITS & MEASUREMENT SYSTEMS
 # ================================
@@ -151,13 +160,17 @@ UNITS = {
     }
 }
 
-# Historical Data Range Options
+# Historical Data Range Options and Chart Display Values
 CHART = {
     "range_options": {
         'Last 7 Days': 7,
         'Last 14 Days': 14,
         'Last 30 Days': 30
-    }
+    },
+    'chart_figure_width': 8,           # Chart figure width in inches
+    'chart_figure_height': 3,          # Chart figure height in inches  
+    'chart_dpi': 100,                  # Chart resolution in DPI
+    'chart_rotation_degrees': 45       # X-axis label rotation angle
 }
 
 # ====================================
@@ -206,12 +219,13 @@ DEFAULTS = {
 # 6. SYSTEM CONFIGURATION
 # ================================
 # Output Files & Directories
-base_dir = Path(__file__).parent.parent
-data_dir = base_dir / "data"
+package_dir = Path(__file__).parent
+data_dir = package_dir / "data"
+logs_dir = package_dir / "logs"
 
 OUTPUT = {
     "data_dir": str(data_dir),
-    "log_dir": str(data_dir), 
+    "log_dir": str(logs_dir), 
     "log": str(data_dir / "output.txt")
 }
 
@@ -220,30 +234,58 @@ MEMORY = {
     "max_entries_per_city": 30,     # Maximum weather entries per city (existing)
     "max_total_entries": 1000,      # Global maximum entries across all cities
     "cleanup_interval_hours": 24,   # Hours between automatic cleanup (existing)
-    "aggressive_cleanup_threshold": 0.8  # Trigger aggressive cleanup at 80% of limits
+    "aggressive_cleanup_threshold": 0.8,  # Trigger aggressive cleanup at 80% of limits
+    "max_alert_history_size": 100   # Alert system constant
+}
+
+ERROR_MESSAGES = {
+    'validation': "{field} is invalid: {reason}",
+    'missing': "{field} is required but not provided",
+    'not_found': "{resource} '{name}' not found",
+    'conversion': "Failed to convert {field} from {from_unit} to {to_unit}: {reason}",
+    'api_error': "API request failed for {endpoint}: {reason}",
+    'config_error': "Configuration error in {section}: {reason}",
+    'file_error': "Failed to write {info} to {file}: {reason}",
+    'state_error': "Invalid state: {reason}"
 }
 
 # ================================
 # 7. CONFIGURATION VALIDATION
 # ================================
 def validate_config() -> None:
-    """Validate essential configuration requirements.
+    """Validate essential configuration requirements for application startup.
     
-    Performs focused validation on critical configuration that could cause
-    application failures. Removes overly defensive checks for internal consistency.
+    Performs comprehensive validation on critical configuration including API keys,
+    configuration structure integrity, default values, file path accessibility,
+    and memory configuration. Provides specific error messages for common
+    configuration issues and creates required directories.
+    
+    Validates:
+        - API key presence and basic format
+        - Required configuration sections (METRICS, DEFAULTS, etc.)
+        - METRICS structure with required fields
+        - Default unit system validity
+        - File path creation and accessibility
+        - Memory configuration value ranges
     
     Raises:
         ValueError: If any critical configuration is invalid or missing
+        
+    Side Effects:
+        Creates data directory if it doesn't exist
+        Prints warning messages for API key issues
     """
     # Check critical API configuration
     if not API_KEY:
         print("Warning: No API key found. Application will use fallback data only.")
+    elif len(API_KEY.strip()) < 10:  # Basic length check
+        print("Warning: API key appears invalid. Application may fail to fetch live data.")
     
     # Validate essential structures exist
     required_sections = ['METRICS', 'DEFAULTS', 'UNITS', 'CHART', 'OUTPUT', 'ALERT_THRESHOLDS', 'MEMORY']
     for section in required_sections:
         if section not in globals():
-            raise ValueError(f"Missing required configuration section: {section}")
+            raise ValueError(ERROR_MESSAGES['config_error'].format(section="memory configuration", reason="must contain positive numbers"))
     
     # Validate METRICS structure (essential for app functionality)
     if not isinstance(METRICS, dict) or not METRICS:
@@ -266,8 +308,14 @@ def validate_config() -> None:
         raise ValueError("Cannot create or access data directory")
     
     # Validate memory configuration is reasonable
+    memory_keys = ['max_cities_stored', 'max_entries_per_city', 'max_total_entries', 'cleanup_interval_hours']
     if not all(isinstance(MEMORY.get(key, 0), (int, float)) and MEMORY.get(key, 0) > 0 
-               for key in ['max_cities_stored', 'max_entries_per_city', 'max_total_entries']):
+            for key in memory_keys):
         raise ValueError("Memory configuration must contain positive numbers")
 
+    # Add validation for threshold (should be between 0 and 1)
+    threshold = MEMORY.get('aggressive_cleanup_threshold', 0)
+    if not isinstance(threshold, (int, float)) or not (0 < threshold <= 1):
+        raise ValueError(ERROR_MESSAGES['validation'].format(field="Aggressive cleanup threshold", reason="must be a number between 0 and 1"))
+    
     print("Configuration validation passed successfully.")

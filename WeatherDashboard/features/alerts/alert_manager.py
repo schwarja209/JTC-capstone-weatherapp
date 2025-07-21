@@ -16,6 +16,8 @@ from datetime import datetime
 from WeatherDashboard import config, styles
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
+from WeatherDashboard.utils.state_utils import StateUtils
+
 
 class WeatherAlert:
     """Individual weather alert data structure.
@@ -55,11 +57,7 @@ class WeatherAlert:
         self.timestamp = datetime.now()
     
     def __repr__(self) -> str:
-        """String representation for debugging.
-        
-        Returns:
-            str: Formatted string showing alert severity and title
-        """
+        """String representation for debugging."""
         return f"WeatherAlert({self.severity}: {self.title})"
 
 class AlertManager:
@@ -74,11 +72,7 @@ class AlertManager:
         active_alerts: List of currently active weather alerts
     """
     def __init__(self, state_manager):
-        """Initialize the alert manager.
-        
-        Args:
-            state: Application state manager for alert status updates
-        """
+        """Initialize the alert manager."""
         self.state = state_manager
         self.active_alerts: List[WeatherAlert] = []
         self.alert_history: List[WeatherAlert] = []
@@ -91,7 +85,11 @@ class AlertManager:
         return styles.ALERT_DEFINITIONS
     
     def _check_generic_alert(self, alert_type: str, value: float, weather_data: Dict[str, Any] = None) -> List[WeatherAlert]:
-        """Generic method to check any alert type using the definitions table.
+        """Check alert condition using configurable definitions and create alerts.
+    
+        Retrieves alert definition, converts thresholds for current unit system,
+        applies check function, determines severity (static or dynamic), and
+        creates appropriate alert objects with formatted messages.
         
         Args:
             alert_type: Type of alert to check (key from alert definitions)
@@ -99,7 +97,7 @@ class AlertManager:
             weather_data: Full weather data dict (for special cases like precipitation)
             
         Returns:
-            List of alerts generated
+            List of WeatherAlert objects if conditions met, empty list otherwise
         """
         alert_def = self._get_alert_definitions().get(alert_type)
         if not alert_def:
@@ -182,14 +180,26 @@ class AlertManager:
         return unit_map.get(unit_type, '')
 
     def check_weather_alerts(self, weather_data: Dict[str, Any]) -> List[WeatherAlert]:
-        """Check weather data against alert thresholds using the generic system."""
+        """Check weather data against alert thresholds and generate appropriate alerts.
+
+        Processes current weather data against all configured alert thresholds,
+        generates alerts for exceeded conditions, manages alert history, and
+        returns active alerts for UI display. Only checks metrics that are
+        currently visible to the user.
+
+        Args:
+            weather_data: Dictionary containing current weather measurements
+            
+        Returns:
+            List[WeatherAlert]: Currently active weather alerts
+        """
         new_alerts = []
         
         # Clear previous alerts
         self.active_alerts.clear()
         
         # Get visible metrics from state
-        visible_metrics = self._get_visible_metrics()
+        visible_metrics = StateUtils.get_visible_metrics(self.state)
         
         # Map visible metrics to alert types and values
         alert_checks = [
@@ -219,8 +229,8 @@ class AlertManager:
             self.alert_history.extend(new_alerts)
             
             # Keep history manageable (last 100 alerts)
-            if len(self.alert_history) > 100:
-                self.alert_history = self.alert_history[-100:]
+            if len(self.alert_history) > config.MEMORY['max_alert_history_size']:
+                self.alert_history = self.alert_history[-config.MEMORY['max_alert_history_size']:]
             
             # Log all new alerts
             for alert in new_alerts:
@@ -255,19 +265,6 @@ class AlertManager:
             return UnitConverter.convert_precipitation(threshold_value, 'mm', 'in')
         else:
             return threshold_value  # humidity, etc. don't need conversion
-
-    def _get_visible_metrics(self) -> List[str]:
-        """Get list of currently visible metrics.
-        
-        Returns:
-            List[str]: List of metric keys that are currently visible in the UI
-        """
-        visible = []
-        if hasattr(self.state, 'visibility'):
-            for metric_key, var in self.state.visibility.items():
-                if hasattr(var, 'get') and var.get():
-                    visible.append(metric_key)
-        return visible
     
     def get_active_alerts(self) -> List[WeatherAlert]:
         """Get currently active alerts."""

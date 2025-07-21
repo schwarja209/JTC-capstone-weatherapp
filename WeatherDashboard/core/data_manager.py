@@ -3,7 +3,12 @@ Data management for weather information including fetching, storage, and unit co
 
 This module provides comprehensive weather data management including API communication,
 fallback data generation, unit conversion, data storage, and memory management.
-Handles both live API data and simulated fallback data seamlessly.
+Handles both live API data and simulated fallback data seamlessly with automatic
+cleanup algorithms and data validation.
+
+Features include automatic memory management with time-based and limit-based cleanup,
+comprehensive unit conversion between metric and imperial systems, and intelligent
+fallback to simulated data when APIs are unavailable.
 
 Classes:
     WeatherDataManager: Main data management class with API integration and fallback handling
@@ -11,15 +16,13 @@ Classes:
 
 from typing import Dict, List, Tuple, Any, Optional
 from datetime import datetime, timedelta
+import threading
 
 from WeatherDashboard import config
-from WeatherDashboard.utils.utils import (
-    city_key,
-    is_fallback,
-    validate_unit_system
-)
+from WeatherDashboard.utils.utils import city_key, is_fallback
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
+from WeatherDashboard.utils.validation_utils import ValidationUtils
 from WeatherDashboard.services.weather_service import WeatherAPIService
 
 
@@ -54,24 +57,28 @@ class WeatherDataManager:
 # ================================  
 # 2. DATA FETCHING & HISTORY
 # ================================
-    def fetch_current(self, city: str, unit_system: str) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
-        """Fetch current weather data for a city, using fallback if API call fails.
+    def fetch_current(self, city: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
+        """Fetch current weather data with comprehensive error handling, fallback and cancellation support.
         
-        Attempts to fetch live weather data from API, converts units as needed,
-        and stores the data for future reference. Performs automatic cleanup
-        periodically to manage memory usage.
+        Attempts to retrieve live weather data from API service with automatic fallback
+        to simulated data on failure. Handles unit conversion, data validation, and
+        error recovery. Provides detailed error information for troubleshooting.
         
         Args:
-            city: Normalized city name (expected to already be processed)
-            unit_system: Target unit system for the data ('metric' or 'imperial')
+            city: Target city name for weather data retrieval
+            unit_system: Unit system for data formatting ('metric' or 'imperial')
             
         Returns:
             Tuple containing:
-                - Dict[str, Any]: Weather data with converted units
-                - bool: True if fallback data was used
-                - Optional[Exception]: Exception if API call failed, None otherwise
+                - Dict[str, Any]: Weather data (live or fallback)
+                - bool: True if fallback data used, False if live data
+                - Optional[Exception]: Error that occurred, None if successful
+                
+        Side Effects:
+            May log error messages and warnings via Logger
+            Updates internal error tracking for monitoring
         """
-        raw_data, use_fallback, error_exception = self.api_service.fetch_current(city)
+        raw_data, use_fallback, error_exception = self.api_service.fetch_current(city, cancel_event)
 
         # All API and fallback data is assumed to be in metric units and converted downstream.
         # If this changes in future (e.g., new fallback with imperial), update convert_units().
@@ -84,7 +91,7 @@ class WeatherDataManager:
 
         if should_cleanup or memory_over_limit:
             self.cleanup_old_data()
-            self._last_cleanup = current_time
+            self._last_cleanup = datetime.now()
 
         key = city_key(city)
         existing_data = self.weather_data.setdefault(key, [])
@@ -104,7 +111,17 @@ class WeatherDataManager:
         return self.api_service.fallback.generate(city, num_days)
 
     def get_recent_data(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
-        """Return recent weather data for a city from the last N days."""
+        """Return recent weather data for a city from the last N days.
+        
+        Useful for future features like weather history tracking.
+
+        Args:
+            city: Target city name for data retrieval
+            days_back: Number of days to look back (default 7)
+
+        Returns:
+            List[Dict[str, Any]]: Recent weather data entries for the specified time period
+        """
         city_data = self.weather_data.get(city_key(city), [])
         cutoff_date = datetime.now().date() - timedelta(days=days_back)
         
@@ -130,7 +147,9 @@ class WeatherDataManager:
         Returns:
             Dict[str, Any]: Weather data with converted units
         """
-        validate_unit_system(unit_system)
+        unit_errors = ValidationUtils.validate_unit_system(unit_system)
+        if unit_errors:
+            raise ValueError(unit_errors[0])
 
         # Skip conversion if already in target system
         if unit_system == "metric":
@@ -172,13 +191,14 @@ class WeatherDataManager:
                     to_unit = unit_config[field]["imperial"]  # To imperial
                     converted[field] = converter_func(data[field], from_unit, to_unit)
                 except (ValueError, TypeError, KeyError) as e:
-                    Logger.warn(f"Failed to convert {field}: {e}")
+                    Logger.warn(config.ERROR_MESSAGES['conversion'].format(field=field, from_unit="metric", to_unit="imperial", reason=str(e))) # For debugging
                     conversion_errors.append(field)
                     # Keep original value if conversion fails
         
         
         if conversion_errors: # Track which fields failed conversion
             converted['_conversion_warnings'] = f"Some units could not be converted: {', '.join(conversion_errors)}"
+            Logger.error(config.ERROR_MESSAGES['conversion'].format(field=f"fields: {', '.join(conversion_errors)}", from_unit="metric", to_unit="imperial", reason="conversion failed"))
 
         return converted
 
@@ -207,7 +227,7 @@ class WeatherDataManager:
         except (OSError, IOError, PermissionError) as e:
             # Raise as custom exception for controller to handle via error_handler
             from WeatherDashboard.services.api_exceptions import WeatherDashboardError
-            raise WeatherDashboardError(f"Failed to write weather data to file: {e}")
+            raise WeatherDashboardError(config.ERROR_MESSAGES['file_error'].format(info="weather data", file=config.OUTPUT["log"], reason=str(e)))
         except Exception as e:
             from WeatherDashboard.services.api_exceptions import WeatherDashboardError
             raise WeatherDashboardError(f"Unexpected error writing weather data: {e}")

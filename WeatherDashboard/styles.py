@@ -3,7 +3,13 @@ Style configuration for GUI elements.
 
 This module provides centralized styling configuration for all tkinter
 GUI components in the Weather Dashboard. Defines fonts, colors, padding,
-and visual appearance settings for consistent UI theming.
+visual appearance settings, alert definitions, metric color ranges, and
+weather icon mappings for consistent UI theming.
+
+Contains comprehensive styling definitions including TTK styles, layout
+configurations, alert severity styling, weather icon mappings, and metric
+color determination ranges. Serves as the foundation for the future
+satirical theme system.
 
 Functions:
     configure_styles: Apply comprehensive styling to all GUI components
@@ -18,9 +24,18 @@ from tkinter import ttk
 def configure_styles() -> None:
     """Configure comprehensive styles for all GUI elements.
     
-    Applies consistent styling including fonts, colors, padding, and
-    visual effects to labels, buttons, frames, notebooks, and other
-    tkinter components throughout the application.
+    Applies consistent styling across the entire application including fonts,
+    colors, padding, borders, and visual effects. Configures TTK styles for
+    labels, buttons, frames, notebooks, status indicators, and specialized
+    components. Sets up theme-aware styling foundation and establishes
+    visual hierarchy through font sizes and color schemes.
+    
+    Configured Elements:
+        - Label styles (frame labels, values, names, titles, alerts)
+        - Button styles (main buttons with padding and fonts)
+        - Notebook styles (tabs with hover and selection effects)
+        - Status styles (system, data, and progress indicators)
+        - Specialized styles (gray labels, alert text)
     """
     style = ttk.Style()
     style.configure("FrameLabel.TLabelframe.Label", font=('Arial', 15, 'bold'))

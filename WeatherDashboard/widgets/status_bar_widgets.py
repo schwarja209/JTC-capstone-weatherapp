@@ -15,8 +15,12 @@ from tkinter import ttk
 from typing import Optional, Any
 
 from WeatherDashboard import styles
+from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.utils.widget_utils import WidgetUtils
+from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
-class StatusBarWidgets:
+
+class StatusBarWidgets(BaseWidgetManager):
     """Manages the status bar display at bottom of application.
     
     Creates and manages a three-section status bar with system status,
@@ -32,7 +36,7 @@ class StatusBarWidgets:
         data_status_label: Right section - data source information
     """
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
-        """Initialize the status bar with three status sections.
+        """Initialize the status bar  with error handling.
         
         Creates left (system), center (progress), and right (data) status sections
         with appropriate styling, separators, and registers widgets with state manager.
@@ -41,52 +45,51 @@ class StatusBarWidgets:
             parent_frame: Parent TTK frame to contain the status bar
             state: Application state manager for widget registration
         """
-        self.parent = parent_frame
-        self.state = state
-        
         # Widget references
         self.system_status_label: Optional[ttk.Label] = None
         self.progress_label: Optional[ttk.Label] = None  
         self.data_status_label: Optional[ttk.Label] = None
         
-        self._create_status_sections()
+        # Initialize base class with error handling
+        super().__init__(parent_frame, state, "status bar widgets")
+        
+        # Create widgets with standardized error handling
+        if not self.safe_create_widgets():
+            Logger.warn("Status bar widgets created with errors - some functionality may be limited")
     
-    def _create_status_sections(self) -> None:
-        """Create the three-section status bar layout.
+    def _create_widgets(self) -> None:
+        """Create the three-section status bar layout with base class error handling.
         
         Creates left section for system status, center section for progress
         indicators, and right section for data source information. Includes
         visual separators and appropriate styling for each section.
         """
-        # Left section: System status
-        self.system_status_label = ttk.Label(
-            self.parent, 
-            text="Ready", 
-            style="SystemStatus.TLabel"
-        )
+        # Left section: System status using SafeWidgetCreator
+        self.system_status_label = SafeWidgetCreator.create_label(self.parent, "Ready", "SystemStatus.TLabel")
         self.system_status_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['system'])
-        
+
         # Separator
         ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=styles.STATUS_BAR_CONFIG['padding']['separator'])
-        
-        # Center section: Progress indicator  
-        self.progress_label = ttk.Label(
-            self.parent,
-            text="",
-            style="ProgressStatus.TLabel"
-        )
+
+        # Center section: Progress indicator using SafeWidgetCreator
+        self.progress_label = SafeWidgetCreator.create_label(self.parent, "", "ProgressStatus.TLabel")
         self.progress_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['progress'])
-        
-        # Right section: Data source information
-        self.data_status_label = ttk.Label(
-            self.parent,
-            text="No data",
-            style="DataStatus.TLabel"
-        )
+
+        # Right section: Data source information using SafeWidgetCreator
+        self.data_status_label = SafeWidgetCreator.create_label(self.parent, "No data", "DataStatus.TLabel")
         self.data_status_label.pack(side=tk.RIGHT, padx=styles.STATUS_BAR_CONFIG['padding']['data'])
     
     def update_data_status(self, message: str, color: str = "gray") -> None:
-        """Updates data source information with dynamic color styling."""
+        """Updates data source information with dynamic color styling.
+        
+        Updates the right section of the status bar with data source information
+        and applies appropriate styling based on whether data is live, simulated,
+        or unavailable.
+        
+        Args:
+            message: Data source status message to display
+            color: Color for message display (unused, styling handled by message content)
+        """
         if self.data_status_label:
             display_message = str(message) if message is not None else "No data"
             self.data_status_label.configure(text=display_message)
@@ -100,7 +103,15 @@ class StatusBarWidgets:
                 self.data_status_label.configure(style="DataStatusNone.TLabel")
     
     def update_system_status(self, message: str, status_type: str = "info") -> None:
-        """Updates main system status message."""
+        """Update main system status message with appropriate styling.
+
+        Updates the left section with system status and applies color-coded
+        styling based on status type (error, warning, info).
+
+        Args:
+            message: Status message to display
+            status_type: Type of status ("error", "warning", "info")
+        """
         if self.system_status_label:
             self.system_status_label.configure(text=message)
             
@@ -113,17 +124,17 @@ class StatusBarWidgets:
                 self.system_status_label.configure(style="SystemStatusReady.TLabel")
 
     def update_progress(self, message: str) -> None:
-        """Updates progress indicator."""
+        """Updates progress indicator in center section."""
         if self.progress_label:
             self.progress_label.configure(text=message)
      
     def clear_progress(self) -> None:
-        """Clears progress indicator."""
+        """Clears progress indicator in center section."""
         if self.progress_label:
             self.progress_label.configure(text="")
     
     def clear_all(self) -> None:
-        """Resets status bar to default state."""
+        """Resets all three status bar sections to default states."""
         self.update_system_status("Ready", "info")
         self.clear_progress()
         self.update_data_status("No data")

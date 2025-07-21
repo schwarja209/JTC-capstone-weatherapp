@@ -32,21 +32,13 @@ class LoadingStateManager:
     """
     
     def __init__(self, state: Any) -> None:
-        """Initialize the loading state manager.
-        
-        Args:
-            state: Application state manager containing UI widget references
-        """
+        """Initialize the loading state manager."""
         self.state = state
         self.is_loading = False
         self.original_button_states: Dict[str, str] = {}
     
     def start_loading(self, operation_name: str = "Loading...") -> None:
-        """Start loading state - disables buttons, shows spinner.
-        
-        Args:
-            operation_name: Name of the operation being performed, shown to user
-        """
+        """Start loading state - disables buttons, shows spinner."""
         if self.is_loading:
             return  # Already loading
         
@@ -66,11 +58,7 @@ class LoadingStateManager:
         self._stop_progress_indicator()
     
     def update_progress(self, message: str) -> None:
-        """Update progress message during ongoing operation.
-        
-        Args:
-            message: Progress message to display to user
-        """
+        """Update progress message during ongoing operation."""
         if not self.is_loading:
             return  # Don't update if not in loading state
         
@@ -110,11 +98,7 @@ class LoadingStateManager:
         self.original_button_states.clear()
     
     def _show_loading_status(self, message: str) -> None:
-        """Show loading message in status label.
-        
-        Args:
-            message: Loading message to display
-        """
+        """Show loading message in status label."""
         try:
             if hasattr(self.state, 'progress_label') and self.state.progress_label:
                 icon = styles.LOADING_CONFIG['icons']['progress']
@@ -164,14 +148,9 @@ class AsyncWeatherOperation:
         cancel_event: Threading event for operation cancellation
     """    
     def __init__(self, controller: Any, loading_manager: LoadingStateManager) -> None:
-        """Initialize async weather operation manager.
-        
-        Args:
-            controller: Weather dashboard controller for data operations
-            loading_manager: Loading state manager for UI updates
-        """
-        self.controller = controller
-        self.loading_manager = loading_manager
+        """Initialize async weather operation manager."""
+        self.controller = controller # Weather dashboard controller for data operations
+        self.loading_manager = loading_manager # Loading state manager for UI updates
         self.current_thread: Optional[threading.Thread] = None
         self.cancel_event = threading.Event()
     
@@ -187,7 +166,7 @@ class AsyncWeatherOperation:
             # Stop loading UI state
             self._schedule_ui_update(self.loading_manager.stop_loading)
     
-    def fetch_weather_async(self, city_name: str, unit_system: str, on_complete: Optional[Callable] = None) -> None:
+    def fetch_weather_async(self, city_name: str, unit_system: str, on_complete: Optional[Callable] = None, enable_cancellation: bool = True) -> None:
         """Fetch weather data in background thread with cancellation support.
         
         Starts a background thread to fetch weather data while providing
@@ -198,11 +177,15 @@ class AsyncWeatherOperation:
             city_name: Name of the city to fetch weather for
             unit_system: Unit system for the weather data ('metric' or 'imperial')
             on_complete: Optional callback function called when operation completes
-        """        
-        # Cancel any existing operation first
-        self.cancel_current_operation()
-        self.cancel_event.clear()
-        
+        """
+        if enable_cancellation:
+            # Cancel any existing operation first
+            self.cancel_current_operation()
+            self.cancel_event.clear()
+            cancel_event_to_pass = self.cancel_event
+        else:
+            cancel_event_to_pass = None  # No cancellation = long timeout
+
         def background_task():
             """Execute weather data fetching in background thread.
             
@@ -212,35 +195,40 @@ class AsyncWeatherOperation:
             """
             try:
                 # Check for cancellation before starting
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     return
                 
                 # Step 1: Start loading
                 self._schedule_ui_update(self.loading_manager.start_loading, "Initializing...")
                 
                 # Step 2: Input validation (simulated delay for demonstration)
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     return
                 self._schedule_ui_update(self.loading_manager.update_progress, "Validating input...")
                 
                 # Step 3: API call
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     return
                 self._schedule_ui_update(self.loading_manager.update_progress, "Fetching weather data...")
                 
                 # Do the actual work in background
-                success = self.controller.update_weather_display(city_name, unit_system)
+                success = self.controller.update_weather_display(city_name, unit_system, cancel_event_to_pass)
                 
                 # Step 4: Processing data
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     return
                 self._schedule_ui_update(self.loading_manager.update_progress, "Processing weather data...")
                 
                 # Check for cancellation before completion
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     self._schedule_ui_update(self.loading_manager.stop_loading)
                     return
                 
+                def is_cancelled():
+                    return hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set()
+                if is_cancelled():
+                    return
+
                 # Handle completion in main thread
                 def complete_task():
                     """Complete the async operation and call completion callback."""
@@ -251,7 +239,7 @@ class AsyncWeatherOperation:
                 self._schedule_ui_update(complete_task)
                 
             except (ConnectionError, TimeoutError) as e:
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     return  # Don't show error if operation was cancelled
                 
                 def handle_network_error():
@@ -265,7 +253,7 @@ class AsyncWeatherOperation:
                 self._schedule_ui_update(handle_network_error)
 
             except ValidationError as e:
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     return
                 
                 def handle_validation_error():
@@ -277,7 +265,7 @@ class AsyncWeatherOperation:
                 self._schedule_ui_update(handle_validation_error)
 
             except Exception as e:
-                if self.cancel_event.is_set():
+                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
                     return
                 
                 def handle_unexpected_error():

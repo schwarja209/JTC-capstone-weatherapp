@@ -54,6 +54,10 @@ class WeatherViewModel:
     def _format_date(self) -> str:
         """Format the date for display.
         
+        Converts datetime object to display string format. Handles both explicit
+        date values from weather data and current time fallback for real-time data.
+        Provides consistent date formatting across different data sources.
+
         Returns:
             str: Formatted date string in YYYY-MM-DD format, or '--' if no date available
         """
@@ -101,7 +105,18 @@ class WeatherViewModel:
         return metrics
 
     def _format_enhanced_display(self, display_type: str) -> str:
-        """Consolidated enhanced formatting for complex metrics."""
+        """Format complex metric displays with enhanced user-friendly presentation.
+    
+        Handles special formatting for temperature (with feels-like), temperature ranges,
+        weather conditions (with icons), and wind information (with direction/gusts).
+        
+        Args:
+            display_type: Type of enhanced display ('temperature', 'temp_range', 
+                        'conditions', 'wind')
+            
+        Returns:
+            str: Formatted display string with enhanced information, or '--' if unavailable
+        """
         if display_type == 'temperature':
             temp = self.raw_data.get('temperature')
             feels_like = self.raw_data.get('feels_like')

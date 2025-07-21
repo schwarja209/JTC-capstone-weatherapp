@@ -9,40 +9,52 @@ Classes:
     TitleWidget: Simple title display widget with customizable text
 """
 
+from typing import Optional
 from tkinter import ttk
 
+from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
-class TitleWidget:
+
+class TitleWidget(BaseWidgetManager):
     """Simple title display widget for the dashboard header.
-    
-    Creates and manages a styled title label for the application header.
-    Provides a clean, prominent display of the application name with
-    support for runtime title updates and consistent styling.
-    
+
     Attributes:
         parent: Parent frame container
         title: Current title text string
+        title_label: Title display label widget
     """
     def __init__(self, parent_frame: ttk.Frame, title: str = "Weather Dashboard") -> None:
-        """Initialize the title widget with specified text.
-        
-        Args:
-            parent_frame: Parent TTK frame to contain the title label
-            title: Title text to display (default: "Weather Dashboard")
-        """
-        self.parent = parent_frame
-        self.title = title
-        self._create_title()
+        """Initialize the title widget with specified text."""
+        # Add version to default title
+        if title == "Weather Dashboard":
+            try:
+                from WeatherDashboard import get_version
+                version = get_version()
+                title = f"Weather Dashboard (v{version})"
+            except (ImportError, AttributeError) as e:
+                Logger.warn(f"Could not get version info: {e}")
+                title = "Weather Dashboard"
 
-    def _create_title(self) -> None:
-        """Create and display the title label widget.
+        self.title = title
+        self.title_label: Optional[ttk.Label] = None
         
-        Creates a TTK label with the title text using the "Title.TLabel" style
-        and packs it into the parent frame for display.
-        """
-        label = ttk.Label(self.parent, text=self.title, style="Title.TLabel")
-        label.pack()
+        # Initialize base class with error handling
+        super().__init__(parent_frame, None, "title widget")
+        
+        # Create widgets with standardized error handling
+        if not self.safe_create_widgets():
+            Logger.warn("Title widget created with errors - title may not display")
+
+    def _create_widgets(self) -> None:
+        """Create and display the title label widget."""
+        self.title_label = SafeWidgetCreator.create_label(self.parent, self.title, "Title.TLabel")
+        self.title_label.pack()
     
+    @widget_error_handler("title update")
     def update_title(self, new_title: str) -> None:
         """Updates the title text (for future customization)."""
         self.title = new_title
+
+        if self.title_label:
+            self.title_label.configure(text=new_title)

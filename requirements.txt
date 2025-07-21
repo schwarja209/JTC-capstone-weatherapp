@@ -1,0 +1,31 @@
+# Python version requirement
+python_requires>=3.8
+
+
+# Weather Dashboard Dependencies:
+
+# Core HTTP library for API requests
+requests>=2.31.0
+
+# GUI framework (usually included with Python)
+# If tkinter issues occur, install: python3-tk (Linux) or reinstall Python with tkinter
+
+# Environment variable loading (.env file support)
+python-dotenv>=1.0.0
+
+# Plotting and charting library
+matplotlib>=3.7.0
+
+# Additional urllib3 for robust HTTP handling (requests dependency)
+urllib3>=2.0.0
+
+# Development and testing dependencies
+# Uncomment if you plan to add testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code quality tools (optional)
+# Uncomment if you want linting/formatting
+# flake8>=6.0.0
+# black>=23.0.0
+# isort>=5.12.0

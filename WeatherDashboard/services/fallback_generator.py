@@ -9,9 +9,9 @@ Classes:
     SampleWeatherGenerator: Main fallback weather data generator
 """
 
-from typing import List, Dict, Any
 import random
 from datetime import datetime, timedelta
+from typing import List, Dict, Any
 
 class SampleWeatherGenerator:
     """Generates simulated weather data for fallback scenarios.
@@ -26,12 +26,8 @@ class SampleWeatherGenerator:
         random: Random number generator for data variation
     """    
     def __init__(self) -> None:
-        """Initialize the weather data generator.
-        
-        Sets up temperature ranges for different climate types, initializes
-        random number generator, and configures base unit system for data generation.
-        """
-        self.source_unit = "metric"
+        """Initialize the weather data generator."""
+        self.source_unit = "metric"  # base unit system
         self.temp_ranges = {
             'default': (5, 30),      # Default range - Celsius
             'arctic': (-20, 10),     # Cold climates

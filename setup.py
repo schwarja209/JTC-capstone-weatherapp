@@ -19,17 +19,8 @@ from setuptools import setup, find_packages
 import os
 
 
-def read_requirements(filename):
-    """Read requirements from a file."""
-    try:
-        with open(filename, 'r', encoding='utf-8') as f:
-            return [line.strip() for line in f if line.strip() and not line.startswith('#')]
-    except FileNotFoundError:
-        return []
-
-
 def read_long_description():
-    """Read the long description from README file."""
+    """Read the long description from README file for package metadata."""
     try:
         with open('README.md', 'r', encoding='utf-8') as f:
             return f.read()
@@ -37,14 +28,18 @@ def read_long_description():
         return "A satirical weather dashboard application"
 
 
-# Read version from the package
+# Version management
 def get_version():
-    """Get version from the package."""
+    """Get version from package __init__.py file."""
+    version_file = os.path.join("WeatherDashboard", "__init__.py")
     try:
-        from WeatherDashboard import __version__
-        return __version__
-    except ImportError:
-        return "0.1.0"  # Fallback version
+        with open(version_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                if line.startswith('__version__'):
+                    return line.split('=')[1].strip().strip('"').strip("'")
+    except (FileNotFoundError, IndexError):
+        pass
+    return "0.1.0"  # Fallback version
 
 
 setup(
@@ -73,35 +68,28 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=[
-        "requests>=2.25.0",
-        "matplotlib>=3.3.0",
+        "requests>=2.31.0",
+        "matplotlib>=3.7.0",
+        "python-dotenv>=1.0.0",
     ],
     extras_require={
         "dev": [
-            "pytest>=6.0",
-            "pytest-cov>=2.10",
+            "pytest>=7.4.0",
+            "pytest-cov>=4.1.0",
             "black>=21.0",
             "flake8>=3.8",
             "mypy>=0.800",
             "pre-commit>=2.10",
         ],
         "test": [
-            "pytest>=6.0",
-            "pytest-cov>=2.10",
+            "pytest>=7.4.0",
+            "pytest-cov>=4.1.0",
             "pytest-mock>=3.0",
         ],
     },
     entry_points={
         "console_scripts": [
             "weather-dashboard=WeatherDashboard.main:main",
-        ],
-    },
-    include_package_data=True,
-    package_data={
-        "WeatherDashboard": [
-            "data/*.json",
-            "logs/.gitkeep",
-            "*.md",
         ],
     },
     zip_safe=False,

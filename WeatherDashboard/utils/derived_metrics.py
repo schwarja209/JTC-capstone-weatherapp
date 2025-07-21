@@ -9,6 +9,8 @@ All temperature inputs should be in the specified units per function.
 import math
 from typing import Optional
 
+from WeatherDashboard import config
+
 class DerivedMetricsCalculator:
     """Calculate derived weather metrics from basic weather data.
     
@@ -30,7 +32,7 @@ class DerivedMetricsCalculator:
         Returns:
             Heat index in Fahrenheit, or None if conditions don't warrant calculation
         """
-        if temp_f < 80:
+        if temp_f < config.HEAT_INDEX_THRESHOLD_F:
             return None
             
         # Rothfusz regression equation (NWS standard)
@@ -55,7 +57,7 @@ class DerivedMetricsCalculator:
         Returns:
             Wind chill in Fahrenheit, or None if conditions don't warrant calculation
         """
-        if temp_f > 50 or wind_mph < 3:
+        if temp_f > config.WIND_CHILL_TEMP_THRESHOLD_F or wind_mph < config.WIND_CHILL_SPEED_THRESHOLD_MPH:
             return None
             
         # NWS wind chill formula

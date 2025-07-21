@@ -4174,3 +4174,770 @@
 {"timestamp": "2025-07-16 02:05:SS", "level": "ERROR", "message": "API failure for D[Pks[Gdpk - CityNotFoundError: City 'D[Pks[Gdpk' not found. Switching to simulated data."}
 {"timestamp": "2025-07-16 02:05:SS", "level": "INFO", "message": "Weather data written for d[pks[gdpk - Simulated"}
 {"timestamp": "2025-07-16 02:05:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: City name cannot be empty"}
+{"timestamp": "Health check at 2025-07-16 20:48:SS", "test": true}
+{"timestamp": "2025-07-16 20:48:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-16 23:20:SS", "test": true}
+{"timestamp": "2025-07-16 23:20:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-17 00:43:SS", "test": true}
+{"timestamp": "2025-07-17 00:43:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-17 00:59:SS", "test": true}
+{"timestamp": "2025-07-17 00:59:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-17 00:59:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-17 00:59:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-17 01:36:SS", "test": true}
+{"timestamp": "2025-07-17 01:36:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: fetch_with_retry() missing 1 required positional argument: 'retries'"}
+{"timestamp": "2025-07-17 01:36:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-17 01:36:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-17 01:36:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: fetch_with_retry() missing 1 required positional argument: 'retries'"}
+{"timestamp": "2025-07-17 01:36:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-17 01:36:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-17 01:36:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: fetch_with_retry() missing 1 required positional argument: 'retries'"}
+{"timestamp": "2025-07-17 01:36:SS", "level": "ERROR", "message": "API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data."}
+{"timestamp": "2025-07-17 01:36:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 98.6°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-17 01:36:SS", "level": "INFO", "message": "Weather data written for boston - Simulated"}
+{"timestamp": "Health check at 2025-07-17 01:40:SS", "test": true}
+{"timestamp": "2025-07-17 01:40:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-17 01:41:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "Health check at 2025-07-17 02:02:SS", "test": true}
+{"timestamp": "2025-07-17 02:02:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-17 19:41:SS", "test": true}
+{"timestamp": "2025-07-17 19:41:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:41:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "Health check at 2025-07-17 19:41:SS", "test": true}
+{"timestamp": "Health check at 2025-07-17 19:43:SS", "test": true}
+{"timestamp": "2025-07-17 19:43:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:43:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:43:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:43:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-17 19:43:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-17 19:43:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-17 19:44:SS", "test": true}
+{"timestamp": "Health check at 2025-07-17 19:45:SS", "test": true}
+{"timestamp": "2025-07-17 19:45:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=42.3584&lon=-71.0598&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002B045FFA490>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-17 19:46:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:46:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:46:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:46:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-17 19:46:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "Health check at 2025-07-17 19:55:SS", "test": true}
+{"timestamp": "Health check at 2025-07-17 19:58:SS", "test": true}
+{"timestamp": "Health check at 2025-07-17 19:59:SS", "test": true}
+{"timestamp": "2025-07-17 19:59:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:59:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:59:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 19:59:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-17 19:59:SS", "level": "ERROR", "message": "API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data."}
+{"timestamp": "2025-07-17 19:59:SS", "level": "INFO", "message": "Weather data written for boston - Simulated"}
+{"timestamp": "2025-07-17 20:03:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-17 20:03:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "Health check at 2025-07-17 20:56:SS", "test": true}
+{"timestamp": "Health check at 2025-07-17 23:30:SS", "test": true}
+{"timestamp": "2025-07-17 23:30:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "Health check at 2025-07-18 01:15:SS", "test": true}
+{"timestamp": "2025-07-18 01:15:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-18 01:15:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-07-18 01:15:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-18 01:15:SS", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-18 01:15:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-18 01:15:SS", "level": "ERROR", "message": "API failure for Asfaf - CityNotFoundError: City 'Asfaf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 01:15:SS", "level": "INFO", "message": "Weather data written for asfaf - Simulated"}
+{"timestamp": "2025-07-18 01:16:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-18 01:16:SS", "level": "ERROR", "message": "API failure for Asfaf - CityNotFoundError: City 'Asfaf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 01:16:SS", "level": "INFO", "message": "Weather data written for asfaf - Simulated"}
+{"timestamp": "2025-07-18 01:16:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-18 01:16:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: City name is invalid: cannot be empty; Metric selection is invalid: at least one metric must be visible"}
+{"timestamp": "Health check at 2025-07-18 14:23:SS", "test": true}
+{"timestamp": "2025-07-18 14:23:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "Health check at 2025-07-18 18:59:SS", "test": true}
+{"timestamp": "2025-07-18 18:59:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 18:59:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 18:59:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 18:59:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 18:59:SS", "level": "ERROR", "message": "API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 18:59:SS", "level": "ERROR", "message": "Unexpected error: Unit configuration 'precipitation' not found"}
+{"timestamp": "Health check at 2025-07-18 19:12:SS", "test": true}
+{"timestamp": "2025-07-18 19:12:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Boston&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001EE78F4B4D0>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-18 19:13:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=Boston&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001EE7D68AC10>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-18 19:13:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:13:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 19:13:SS", "level": "ERROR", "message": "API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 19:13:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-18 19:13:SS", "level": "INFO", "message": "Weather data written for boston - Simulated"}
+{"timestamp": "2025-07-18 19:13:SS", "level": "ERROR", "message": "Unexpected chart error: Unit configuration 'precipitation' not found"}
+{"timestamp": "Health check at 2025-07-18 19:21:SS", "test": true}
+{"timestamp": "2025-07-18 19:22:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:22:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:22:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:22:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "WARN", "message": "Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "ERROR", "message": "Failed to convert fields: rain from metric to imperial: conversion failed"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "WARN", "message": "Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "ERROR", "message": "Failed to convert fields: rain from metric to imperial: conversion failed"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "WARN", "message": "Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported"}
+{"timestamp": "2025-07-18 19:23:SS", "level": "ERROR", "message": "Failed to convert fields: rain from metric to imperial: conversion failed"}
+{"timestamp": "2025-07-18 19:25:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:25:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:25:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:25:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 19:25:SS", "level": "ERROR", "message": "API failure for Boston - CityNotFoundError: City 'Boston' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 19:25:SS", "level": "WARN", "message": "Failed to convert rain from metric to imperial: Failed to convert rain from mm to in: conversion type not supported"}
+{"timestamp": "2025-07-18 19:25:SS", "level": "ERROR", "message": "Failed to convert fields: rain from metric to imperial: conversion failed"}
+{"timestamp": "2025-07-18 19:25:SS", "level": "ERROR", "message": "Unexpected error: Failed to convert rain from mm to in: conversion type not supported"}
+{"timestamp": "Health check at 2025-07-18 19:29:SS", "test": true}
+{"timestamp": "2025-07-18 19:30:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=42.3584&lon=-71.0598&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025DE50FA350>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-18 19:30:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:30:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=42.3584&lon=-71.0598&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000025DE50FA710>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-18 19:30:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 19:30:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:31:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:31:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:31:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 19:31:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "Health check at 2025-07-18 19:32:SS", "test": true}
+{"timestamp": "Health check at 2025-07-18 19:33:SS", "test": true}
+{"timestamp": "2025-07-18 19:33:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:33:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:33:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:33:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 19:33:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 19:33:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-18 19:34:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B3A7BB8E10>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-18 19:34:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:34:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 19:34:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 19:34:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 19:34:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-18 19:50:SS", "test": true}
+{"timestamp": "2025-07-18 19:50:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 19:50:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 19:50:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-18 19:50:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 19:50:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 19:50:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 104.0°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-18 19:50:SS", "level": "WARN", "message": "Weather alert: Dangerous Heat Index - Heat index is dangerously high: 116.8°F (threshold: 104.9°F)"}
+{"timestamp": "2025-07-18 19:50:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-18 19:51:SS", "test": true}
+{"timestamp": "Health check at 2025-07-18 19:51:SS", "test": true}
+{"timestamp": "2025-07-18 19:52:SS", "level": "WARN", "message": "Connection error on attempt 1, retrying: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"}
+{"timestamp": "Health check at 2025-07-18 20:08:SS", "test": true}
+{"timestamp": "2025-07-18 20:08:SS", "level": "WARN", "message": "Connection error on attempt 1, retrying: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"}
+{"timestamp": "2025-07-18 20:10:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=30)"}
+{"timestamp": "2025-07-18 20:10:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=30)"}
+{"timestamp": "2025-07-18 20:11:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-18 20:12:SS", "level": "WARN", "message": "Connection error on attempt 1, retrying: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"}
+{"timestamp": "Health check at 2025-07-18 21:19:SS", "test": true}
+{"timestamp": "2025-07-18 21:19:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 21:19:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 21:19:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-18 21:19:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-18 21:19:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-18 21:20:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)"}
+{"timestamp": "2025-07-18 21:20:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-18 21:33:SS", "test": true}
+{"timestamp": "2025-07-18 21:33:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 90% (threshold: 85%)"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)"}
+{"timestamp": "2025-07-18 21:33:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-18 22:45:SS", "test": true}
+{"timestamp": "2025-07-18 22:45:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 22:45:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 22:45:SS", "level": "ERROR", "message": "Unexpected error: StateUtils.is_metric_visible() missing 1 required positional argument: 'metric_key'"}
+{"timestamp": "Health check at 2025-07-18 23:05:SS", "test": true}
+{"timestamp": "2025-07-18 23:05:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 23:05:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 23:05:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 104.0°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-18 23:05:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-18 23:05:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 23:05:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 23:05:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-18 23:05:SS", "test": true}
+{"timestamp": "2025-07-18 23:05:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 23:05:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 23:05:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-18 23:55:SS", "test": true}
+{"timestamp": "2025-07-18 23:55:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-18 23:55:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-18 23:55:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-18 23:56:SS", "test": true}
+{"timestamp": "2025-07-18 23:56:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-18 23:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-18 23:57:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-18 23:57:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible"}
+{"timestamp": "2025-07-18 23:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-18 23:57:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-18 23:57:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-18 23:57:SS", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "Health check at 2025-07-19 01:32:SS", "test": true}
+{"timestamp": "2025-07-19 01:32:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-19 01:32:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-19 01:32:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-19 01:33:SS", "test": true}
+{"timestamp": "2025-07-19 01:33:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-19 01:33:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-19 01:33:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-19 01:33:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-19 01:33:SS", "level": "ERROR", "message": "API failure for Oihdosih - CityNotFoundError: City 'Oihdosih' not found. Switching to simulated data."}
+{"timestamp": "2025-07-19 01:33:SS", "level": "INFO", "message": "Weather data written for oihdosih - Simulated"}
+{"timestamp": "2025-07-19 01:33:SS", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: contains invalid characters (only letters, spaces, hyphens, and apostrophes allowed)"}
+{"timestamp": "Health check at 2025-07-19 02:18:SS", "test": true}
+{"timestamp": "2025-07-19 02:18:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-19 02:18:SS", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-19 02:18:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-19 02:18:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 01:46:SS", "test": true}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-20 01:46:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "ERROR", "message": "API failure for Asfasfas - CityNotFoundError: City 'Asfasfas' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 01:47:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 40.0°C (threshold: 35.0°C)"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "WARN", "message": "Weather alert: Dangerous Heat Index - Heat index is dangerously high: 44.1°C (threshold: 40.5°C)"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "INFO", "message": "Weather data written for asfasfas - Simulated"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-20 01:47:SS", "level": "ERROR", "message": "API failure for Sdgsdg - CityNotFoundError: City 'Sdgsdg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 01:48:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 43.0°C (threshold: 35.0°C)"}
+{"timestamp": "2025-07-20 01:48:SS", "level": "WARN", "message": "Weather alert: Dangerous Heat Index - Heat index is dangerously high: 74.7°C (threshold: 40.5°C)"}
+{"timestamp": "2025-07-20 01:48:SS", "level": "INFO", "message": "Weather data written for sdgsdg - Simulated"}
+{"timestamp": "2025-07-20 01:48:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-20 01:48:SS", "level": "ERROR", "message": "API failure for Sdgsdg - CityNotFoundError: City 'Sdgsdg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 01:48:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-20 01:48:SS", "level": "INFO", "message": "Weather data written for sdgsdg - Simulated"}
+{"timestamp": "2025-07-20 01:48:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-20 01:48:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 02:12:SS", "test": true}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 02:12:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 02:33:SS", "test": true}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 02:33:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 02:40:SS", "test": true}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 02:40:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 02:45:SS", "test": true}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 02:45:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 02:47:SS", "test": true}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard by Jacob Schwartz"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 02:47:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 02:54:SS", "test": true}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 02:54:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 13:41:SS", "test": true}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 13:41:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 98.6°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-20 13:41:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 13:42:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 13:42:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 13:42:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 13:42:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 13:42:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 13:42:SS", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)"}
+{"timestamp": "2025-07-20 13:42:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 14:05:SS", "test": true}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "Health check at 2025-07-20 14:05:SS", "test": true}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-20 14:05:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-20 14:05:SS", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "ERROR", "message": "API failure for Boston - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-20 14:05:SS", "level": "WARN", "message": "Using fallback for Boston: Testing mode"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "INFO", "message": "Weather data written for boston - Simulated"}
+{"timestamp": "2025-07-20 14:05:SS", "level": "ERROR", "message": "API failure for Boston - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-20 14:05:SS", "level": "WARN", "message": "Using fallback for Boston: Testing mode"}
+{"timestamp": "2025-07-20 14:06:SS", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)"}
+{"timestamp": "2025-07-20 14:06:SS", "level": "INFO", "message": "Weather data written for boston - Simulated"}
+{"timestamp": "Health check at 2025-07-20 14:13:SS", "test": true}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "Health check at 2025-07-20 14:13:SS", "test": true}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 14:13:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 14:14:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 14:14:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 14:14:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 14:14:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 14:14:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 14:14:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:08:SS", "test": true}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:08:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:08:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:13:SS", "test": true}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:13:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:13:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:15:SS", "test": true}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:15:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:16:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:16:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:16:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:16:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:18:SS", "test": true}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:18:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:19:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:19:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:19:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:19:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 86% (threshold: 85%)"}
+{"timestamp": "2025-07-20 15:19:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:21:SS", "test": true}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:21:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001A2BF92B110>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))"}
+{"timestamp": "2025-07-20 15:22:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:22:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:22:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:22:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:22:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:23:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:23:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 15:24:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 15:24:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:24:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-20 15:24:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 15:41:SS", "test": true}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:41:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 15:41:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:42:SS", "test": true}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=40.7143&lon=-74.006&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001DF1F2CB890>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:42:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-20 15:43:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001DF1F2C91D0>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))"}
+{"timestamp": "2025-07-20 15:43:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:43:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:43:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:43:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:43:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 102.2°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-20 15:43:SS", "level": "WARN", "message": "Weather alert: Dangerous Heat Index - Heat index is dangerously high: 119.3°F (threshold: 104.9°F)"}
+{"timestamp": "2025-07-20 15:43:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:44:SS", "test": true}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:44:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:44:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 15:50:SS", "test": true}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B26AFFBA10>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B26D68B110>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B26D68B9D0>, 'Connection to api.openweathermap.org timed out. (connect timeout=2)'))"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 15:50:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 87% (threshold: 85%)"}
+{"timestamp": "2025-07-20 15:50:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 16:12:SS", "test": true}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 16:12:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-20 16:13:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/uvi?lat=40.7143&lon=-74.006&appid=7783fb83fb21fe6a23cafa0927e48af5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000257BFADB610>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 16:13:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 16:13:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 16:13:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 21:52:SS", "test": true}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 21:52:SS", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 96.8°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)"}
+{"timestamp": "2025-07-20 21:52:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 21:57:SS", "test": true}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 21:57:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 21:58:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 21:58:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 21:58:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 21:58:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 21:58:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 21:59:SS", "test": true}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 21:59:SS", "level": "INFO", "message": "DEBUG: cancel_event = None, timeout will be 10"}
+{"timestamp": "2025-07-20 22:00:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 22:00:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?q=New+York&appid=7783fb83fb21fe6a23cafa0927e48af5&units=metric (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001B2ECDFBA10>, 'Connection to api.openweathermap.org timed out. (connect timeout=10)'))"}
+{"timestamp": "2025-07-20 22:00:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:00:SS", "level": "INFO", "message": "DEBUG: cancel_event = None, timeout will be 10"}
+{"timestamp": "2025-07-20 22:00:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:00:SS", "level": "INFO", "message": "DEBUG: cancel_event = None, timeout will be 10"}
+{"timestamp": "2025-07-20 22:00:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 22:03:SS", "test": true}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x1e9f481d1d0: unset>"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x1e9f481d1d0: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 22:03:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 22:03:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x1e9f481d1d0: unset>"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x1e9f481d1d0: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x1e9f481d1d0: unset>"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x1e9f481d1d0: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 22:04:SS", "test": true}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x19ba4274f50: unset>"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x19ba4274f50: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x19ba4274f50: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/uvi: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x19ba4274f50: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:04:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:05:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:05:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=2)"}
+{"timestamp": "2025-07-20 22:05:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/air_pollution: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 22:05:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "Health check at 2025-07-20 22:08:SS", "test": true}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x1faa9939090: unset>"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x1faa9939090: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 22:08:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-20 22:09:SS", "test": true}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x200eaa08f50: unset>"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x200eaa08f50: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x200eaa08f50: unset>"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x200eaa08f50: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request cancelled by user"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: fetch_weather_async called with enable_cancellation=True"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: cancel_event_to_pass = <threading.Event at 0x200eaa08f50: unset>"}
+{"timestamp": "2025-07-20 22:09:SS", "level": "INFO", "message": "DEBUG: cancel_event = <threading.Event at 0x200eaa08f50: unset>, timeout will be 2"}
+{"timestamp": "2025-07-20 22:10:SS", "level": "WARN", "message": "Timeout on attempt 1, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:10:SS", "level": "WARN", "message": "Timeout on attempt 2, retrying: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:10:SS", "level": "ERROR", "message": "API timeout after 3 attempts: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Read timed out. (read timeout=10)"}
+{"timestamp": "2025-07-20 22:10:SS", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: Request timed out after 3 attempts"}
+{"timestamp": "2025-07-20 22:10:SS", "level": "ERROR", "message": "API failure for New York - CityNotFoundError: City 'New York' not found. Switching to simulated data."}
+{"timestamp": "2025-07-20 22:10:SS", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "Health check at 2025-07-21 00:07:SS", "test": true}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-21 00:07:SS", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-21 00:07:SS", "level": "INFO", "message": "Weather data written for new_york - Live"}

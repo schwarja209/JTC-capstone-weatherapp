@@ -10,14 +10,17 @@ Classes:
     TabbedDisplayWidgets: Main tabbed interface manager with metrics and chart tabs
 """
 
-from typing import Any
+from typing import Any, Optional
 import tkinter as tk
 from tkinter import ttk
 
+from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 from WeatherDashboard.widgets.metric_widgets import MetricDisplayWidgets
 from WeatherDashboard.widgets.chart_widgets import ChartWidgets
 
-class TabbedDisplayWidgets:
+
+class TabbedDisplayWidgets(BaseWidgetManager):
     """Manages tabbed interface for metrics and chart display.
     
     Creates and manages a notebook widget with two main tabs:
@@ -37,7 +40,7 @@ class TabbedDisplayWidgets:
         chart_widgets: Widget manager for chart tab content
     """
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
-        """Initialize the tabbed display interface.
+        """Initialize the tabbed display interface with error handling
         
         Creates the notebook widget, sets up individual tabs for metrics and charts,
         initializes content widgets for each tab, and binds tab change events for
@@ -46,29 +49,55 @@ class TabbedDisplayWidgets:
         Args:
             parent_frame: Parent TTK frame to contain the tabbed interface
             state: Application state manager for widget coordination and data updates
-        """
-        self.parent = parent_frame
-        self.state = state
+        """        
+        # Widget references
+        self.notebook: Optional[ttk.Notebook] = None
+        self.metrics_frame: Optional[ttk.Frame] = None
+        self.chart_frame: Optional[ttk.Frame] = None
+        self.metric_widgets: Optional[MetricDisplayWidgets] = None
+        self.chart_widgets: Optional[ChartWidgets] = None
         
+        # Initialize base class with error handling
+        super().__init__(parent_frame, state, "tabbed display widgets")
+        
+        # Create widgets with standardized error handling
+        if not self.safe_create_widgets():
+            Logger.warn("Tabbed display widgets created with errors - some functionality may be limited")
+    
+    def _create_widgets(self) -> None:
+        """Create tabbed interface with notebook and content widgets.
+
+        Creates TTK Notebook, sets up individual tab frames, adds tabs with
+        appropriate labels, initializes content widgets for each tab, and
+        binds event handlers for tab switching.
+        """
         # Create notebook (tab container)
         self.notebook = ttk.Notebook(self.parent)
         self.notebook.pack(fill=tk.BOTH, expand=True)
         
-        # Create tab frames
-        self.metrics_frame = ttk.Frame(self.notebook)
-        self.chart_frame = ttk.Frame(self.notebook)
+        # Create tab frames using SafeWidgetCreator
+        self.metrics_frame = SafeWidgetCreator.create_frame(self.notebook)
+        self.chart_frame = SafeWidgetCreator.create_frame(self.notebook)
         
         # Add tabs to notebook
-        self.notebook.add(self.metrics_frame, text="Current Weather")
-        self.notebook.add(self.chart_frame, text="Weather Trends")
+        if self.metrics_frame:
+            self.notebook.add(self.metrics_frame, text="Current Weather")
+        if self.chart_frame:
+            self.notebook.add(self.chart_frame, text="Weather Trends")
         
         # Initialize tab content widgets
-        self.metric_widgets = MetricDisplayWidgets(self.metrics_frame, state)
-        self.chart_widgets = ChartWidgets(self.chart_frame, state)
-        
-        # Bind tab change event for future enhancements
-        self.notebook.bind("<<NotebookTabChanged>>", self._on_tab_changed)
-    
+        self.metric_widgets = MetricDisplayWidgets(self.metrics_frame, self.state)
+        self.chart_widgets = ChartWidgets(self.chart_frame, self.state)
+
+        # Bind events
+        self._bind_events()
+
+    @widget_error_handler("event binding")
+    def _bind_events(self) -> None:
+        """Bind tab change events with error handling."""
+        if self.notebook:
+            self.notebook.bind("<<NotebookTabChanged>>", self._on_tab_changed)
+
     def get_metric_widgets(self) -> MetricDisplayWidgets:
         """Returns metric widgets for external access."""
         return self.metric_widgets
@@ -86,7 +115,7 @@ class TabbedDisplayWidgets:
         self.notebook.select(self.chart_frame)
     
     def get_current_tab(self) -> str:
-        """Return current active tab name."""
+        """Return current active tab identifier."""
         current_tab = self.notebook.select()
         current_tab_widget = self.notebook.nametowidget(current_tab)
         
@@ -96,17 +125,9 @@ class TabbedDisplayWidgets:
             return "chart"
         return "unknown"
     
+    @widget_error_handler("tab change")
     def _on_tab_changed(self, event):
-        """Handle tab change events and coordinate tab-specific actions.
-        
-        Called automatically when user switches between tabs. Currently serves
-        as a placeholder for future enhancements like refreshing chart data when
-        switching to the chart tab or updating metric displays when switching
-        to the metrics tab.
-        
-        Args:
-            event: TTK NotebookTabChanged event object containing tab change details
-        """
+        """Handle tab change events (placeholder for future features)."""
         current_tab = self.get_current_tab()
         # Could add logic here like refreshing chart when switching to chart tab
         # For now, just a placeholder for future features

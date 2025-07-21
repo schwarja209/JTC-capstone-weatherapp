@@ -15,6 +15,7 @@ from datetime import datetime
 
 from WeatherDashboard import config
 
+
 class Logger:
     """Standardized logging interface for the Weather Dashboard application.
     
@@ -132,7 +133,7 @@ class Logger:
                 f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
                 
         except (OSError, IOError, PermissionError) as e:
-            print(f"Warning: Could not write to JSON log file {Logger.JSON_LOG}: {e}")
+            print(f"Warning: {config.ERROR_MESSAGES['file_error'].format(info='log data', file=Logger.PLAIN_LOG, reason=str(e))}")
         except json.JSONEncodeError as e:
             # Fallback: try with ASCII-safe encoding
             try:

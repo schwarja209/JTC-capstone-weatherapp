@@ -65,20 +65,12 @@ class AlertStatusIndicator:
         self.update_status([])
     
     def grid(self, **kwargs):
-        """Allow grid positioning of the status frame.
-        
-        Args:
-            **kwargs: Grid positioning arguments passed to frame.grid()
-        """
-        self.status_frame.grid(**kwargs)
+        """Allow grid positioning of the status frame."""
+        self.status_frame.grid(**kwargs) # Grid positioning arguments passed to frame.grid()
     
     def pack(self, **kwargs):
-        """Allow pack positioning of the status frame.
-        
-        Args:
-            **kwargs: Pack positioning arguments passed to frame.pack()
-        """
-        self.status_frame.pack(**kwargs)
+        """Allow pack positioning of the status frame."""
+        self.status_frame.pack(**kwargs) # Pack positioning arguments passed to frame.pack()
     
     def update_status(self, alerts: List[WeatherAlert]):
         """Update the alert status indicator with enhanced visual styling.
@@ -137,19 +129,11 @@ class AlertStatusIndicator:
             self._stop_animation()
     
     def set_click_callback(self, callback: Callable):
-        """Set callback function for when indicator is clicked.
-        
-        Args:
-            callback: Function to call when indicator is clicked
-        """
+        """Set click callback function."""
         self.on_click_callback = callback
     
     def _on_click(self, event):
-        """Handle click on status indicator.
-        
-        Args:
-            event: Tkinter click event object
-        """
+        """Handle click on status indicator."""
         if self.on_click_callback:
             self.on_click_callback()
         else:

@@ -892,6 +892,27 @@ WeatherDashboard/
 - ❌ Breaking change requiring updates across multiple files
 - ❌ Slightly more verbose access in some cases
 
+**Clarification**
+This ADR specifically targets derived mapping functions and computed constants that duplicate information already available through direct configuration access. It does NOT apply to architectural design data structures that serve legitimate organizational purposes.
+
+**Scope of ADR-026**:
+- ✅ REMOVED: Functional mappings like `get_key_to_display_mapping()`, `get_display_to_key_mapping()`
+- ✅ REMOVED: Computed constants like `KEY_TO_DISPLAY`, `DISPLAY_TO_KEY`, `DEFAULT_VISIBILITY`
+- ✅ REPLACED: Direct access patterns like `config.METRICS[key]['label']`
+
+**Outside Scope of ADR-026**:
+- ❌ RETAINED: `ENHANCED_DISPLAY_LABELS` - Design feature for enhanced metric display formatting
+- ❌ RETAINED: `METRIC_GROUPS` - UI organization structure for widget layout and grouping
+- ❌ RETAINED: Other architectural data structures that serve design purposes beyond simple mapping
+
+**Rationale for Retention**:
+`ENHANCED_DISPLAY_LABELS` and `METRIC_GROUPS` are not simple derived mappings but rather design-driven data structures that:
+
+1. Serve specific UI/UX requirements for enhanced display formatting
+2. Provide logical organization for complex widget layouts
+3. Support future development features and satirical enhancement functionality
+4. Cannot be replaced by simple direct access to base `METRICS` configuration
+
 ---
 
 ## ADR-027: Memory Management Streamlining
@@ -1108,6 +1129,77 @@ WeatherDashboard/
 
 ---
 
+## ADR-033: GUI-Coupled State Management
+
+**Status**: Accepted
+
+**Context**: Application state management needed to support reactive GUI updates while maintaining simple, maintainable code for a desktop tkinter application.
+
+**Decision**: Implement state management with direct tkinter variable coupling rather than decoupled observer patterns.
+
+**Rationale**:
+- Direct widget binding enables reactive UI: `ttk.Entry(textvariable=self.state.city)`
+- Automatic UI updates when state changes without manual event handling
+- Simple, maintainable code suitable for desktop GUI application
+- Eliminates need for complex observer/pub-sub patterns for UI synchronization
+- Pragmatic approach for single-platform tkinter application
+
+**Alternatives**:
+- Decoupled state management with observer pattern (added complexity)
+- Separate GUI state and business state objects (data synchronization overhead)
+- Manual UI update methods (prone to inconsistency and bugs)
+
+**Consequences**:
+- ✅ Simple, direct widget binding and automatic UI updates
+- ✅ Maintainable code without complex event handling
+- ✅ No synchronization bugs between state and UI
+- ✅ Excellent developer experience for GUI development
+- ❌ State manager requires GUI context (impacts testability)
+- ❌ Cannot reuse state management in headless scenarios
+- ❌ Tests require tkinter root window setup
+
+**Testing Impact**: Tests must initialize tkinter context but this is acceptable trade-off for desktop application simplicity.
+
+---
+
+## ADR-034: Direct Configuration Access Pattern
+
+**Status**: Accepted
+
+**Context**: Application components need access to configuration data including metrics definitions, alert thresholds, chart settings, and API configuration across multiple modules.
+
+**Decision**: Use direct configuration access (`config.METRICS`, `config.ALERT_THRESHOLDS`, etc.) throughout the application rather than implementing configuration management abstraction layers.
+
+**Rationale**:
+- Configuration is immutable after application startup
+- No runtime configuration changes required for weather dashboard functionality
+- Direct access provides simple, performant lookups
+- Centralized validation at startup (`config.validate_config()`) catches errors early
+- Easy to test with mock patches of config module
+- Eliminates unnecessary abstraction overhead for static configuration
+
+**Alternatives**:
+- Configuration manager class with getter methods (unnecessary abstraction)
+- Dependency injection of config objects (added complexity without benefit)
+- Configuration caching system (premature optimization for static data)
+- Runtime configuration change notification system (not required)
+
+**Consequences**:
+- ✅ Simple, direct configuration access throughout application
+- ✅ No performance overhead from abstraction layers
+- ✅ Easy to understand and maintain configuration usage
+- ✅ Centralized validation ensures configuration integrity at startup
+- ✅ Straightforward testing with configuration patches
+- ❌ No runtime configuration change capability (not needed)
+- ❌ No access control per configuration section (not required)
+- ❌ Modules directly coupled to config structure (acceptable trade-off)
+
+**Usage Examples**: `config.METRICS[key]['label']`, `config.ALERT_THRESHOLDS['temperature_high']`, `config.CHART["range_options"]`
+
+**Validation**: All configuration validated once at startup via `config.validate_config()` in main.py.
+
+---
+
 ## Future Satirical System Decisions (To Be Documented)
 
 The following architectural decisions will be documented as the dual-theme satirical weather system is developed:
@@ -1124,7 +1216,7 @@ The following architectural decisions will be documented as the dual-theme satir
 ## Current Implementation Status Assessment
 
 ### **Architecture Completeness: Exceptional**
-- **51 modular files** with clean separation of concerns
+- **66 modular files** with clean separation of concerns
 - **No significant bugs or code quality issues** found in comprehensive review
 - **Professional error handling** with theme support already implemented
 - **Complete weather feature set** ready for satirical enhancement

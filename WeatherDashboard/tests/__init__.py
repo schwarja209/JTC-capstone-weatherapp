@@ -11,13 +11,13 @@ Modules:
     test_state_manager: Tests for application state management
     test_utils: Tests for general utility functions
     test_runner: Test discovery and execution coordination
-    test_alert_manager: Tests weather alert system functionality including
-    test_controller: Tests core business logic orchestration including
-    test_derived_metrics: Tests derived weather metric calculations including
-    test_weather_service: Tests API integration, data parsing, validation, and error handling including
-    test_view_models: Tests view model data formatting and presentation logic including
-    test_color_utils: Tests color determination logic for metric values including
-    test_error_handler: Tests theme-aware error handling including
+    test_alert_manager: Tests weather alert system functionality 
+    test_controller: Tests core business logic orchestration 
+    test_derived_metrics: Tests derived weather metric calculations 
+    test_weather_service: Tests API integration, data parsing, validation, and error handling 
+    test_view_models: Tests view model data formatting and presentation logic 
+    test_color_utils: Tests color determination logic for metric values 
+    test_error_handler: Tests theme-aware error handling 
 """
 
 __all__ = [

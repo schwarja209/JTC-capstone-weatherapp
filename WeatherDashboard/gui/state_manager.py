@@ -3,6 +3,11 @@ Centralized state management for the Weather Dashboard application.
 
 This module provides UI state management including user input variables,
 metric visibility settings, state validation, and clean access methods.
+Uses direct tkinter variable coupling for reactive UI updates per ADR-033.
+
+The state manager is intentionally coupled to tkinter to enable direct widget
+binding and automatic UI updates, trading testability for simplicity and
+maintainability in this desktop GUI application.
 
 Classes:
     WeatherDashboardState: UI state manager with validation and access methods
@@ -10,7 +15,9 @@ Classes:
 
 from typing import List
 import tkinter as tk
+
 from WeatherDashboard import config
+from WeatherDashboard.utils.validation_utils import ValidationUtils
 
 
 class WeatherDashboardState:
@@ -83,30 +90,6 @@ class WeatherDashboardState:
         
         for key, var in self.visibility.items():
             var.set(config.DEFAULTS["visibility"].get(key, False))
-    
-    # VALIDATION METHODS    
-    def validate_current_state(self) -> List[str]:
-        """Validate current state and return any errors.
-        
-        Checks city name, unit system, and visible metrics for validity.
-        
-        Returns:
-            List[str]: List of validation error messages, empty if valid
-        """
-        errors = []
-        
-        city = self.get_current_city()
-        if not city or not city.strip():
-            errors.append("City name cannot be empty")
-        
-        unit_system = self.get_current_unit_system()
-        if unit_system not in ['metric', 'imperial']:
-            errors.append(f"Invalid unit system: {unit_system}")
-        
-        if not self.get_visible_metrics():
-            errors.append("At least one metric must be visible")
-        
-        return errors
     
     def __repr__(self) -> str:
         """String representation for debugging."""

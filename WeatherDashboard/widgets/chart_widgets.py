@@ -13,34 +13,38 @@ Classes:
 from typing import List, Any, Optional, Dict
 import tkinter as tk
 from tkinter import ttk
+
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
 from WeatherDashboard import config
+from WeatherDashboard.utils.utils import format_fallback_status
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
-from WeatherDashboard.utils.utils import format_fallback_status
+from WeatherDashboard.utils.widget_utils import WidgetUtils
+from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
-class ChartWidgets:
+class ChartWidgets(BaseWidgetManager):
     """Manages matplotlib chart display for weather trends and historical data.
     
     Creates and manages matplotlib Figure, Axes, and Canvas components for
     displaying weather trend charts. Handles chart initialization, data
     visualization, error recovery, and provides fallback displays when
     matplotlib fails to load. Integrates with state manager for chart
-    component coordination.
+    component coordination and inherits standardized error handling.
     
     Attributes:
         parent: Parent frame container
         state: Application state manager
-        chart_canvas: Matplotlib canvas widget (None if failed)
-        chart_fig: Matplotlib figure object (None if failed)
-        chart_ax: Matplotlib axes object (None if failed)
-        fallback_label: Fallback label widget when matplotlib fails
+        chart_canvas: Matplotlib canvas widget (None if initialization failed)
+        chart_fig: Matplotlib figure object (None if initialization failed)
+        chart_ax: Matplotlib axes object (None if initialization failed)
+        chart_error: Error message if chart creation failed
+        fallback_label: Fallback label widget displayed when matplotlib fails
     """
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
-        """Initialize the chart widgets with matplotlib integration.
+        """Initialize the chart widgets with error handling.
         
         Attempts to create matplotlib components (Figure, Axes, Canvas) for
         chart display. If matplotlib initialization fails, creates a fallback
@@ -51,18 +55,21 @@ class ChartWidgets:
             parent_frame: Parent TTK frame to contain the chart display
             state: Application state manager for chart component registration
         """
-        self.parent = parent_frame
-        self.state = state
-        
         # Chart components
         self.chart_canvas: Optional[FigureCanvasTkAgg] = None
         self.chart_fig: Optional[Figure] = None
         self.chart_ax: Optional[Any] = None
         self.chart_error: Optional[str] = None
+        self.fallback_label: Optional[ttk.Label] = None
         
-        self._create_chart()
-    
-    def _create_chart(self) -> None:
+        # Initialize base class with error handling
+        super().__init__(parent_frame, state, "chart widgets")
+        
+        # Create widgets with standardized error handling
+        if not self.safe_create_widgets():
+            Logger.warn("Chart widgets created with errors - fallback display active")
+     
+    def _create_widgets(self) -> None:
         """Create matplotlib chart display with comprehensive error handling.
         
         Attempts to initialize matplotlib components and configure the chart display.
@@ -75,19 +82,14 @@ class ChartWidgets:
             self.chart_error = None  # Clear any previous errors
             
         except Exception as e:
-            Logger.error(f"Chart initialization failed: {e}")
+            Logger.error(config.ERROR_MESSAGES['config_error'].format(section="chart initialization", reason=str(e)))
             self._create_fallback_display()
             # Store error state for controller to check later
             self.chart_error = str(e)
     
     def _setup_matplotlib_components(self) -> None:
-        """Set up matplotlib Figure, Axes, and Canvas components.
-        
-        Creates the matplotlib Figure with specified dimensions, adds a subplot
-        for chart rendering, and creates the Tkinter canvas widget for embedding
-        the chart in the GUI.
-        """
-        self.chart_fig = Figure(figsize=(8, 3), dpi=100)
+        """Set up matplotlib Figure, Axes, and Canvas components."""
+        self.chart_fig = Figure(figsize=(config.CHART['chart_figure_width'], config.CHART['chart_figure_height']), dpi=config.CHART['chart_dpi'])
         self.chart_ax = self.chart_fig.add_subplot(111)
         self.chart_canvas = FigureCanvasTkAgg(self.chart_fig, master=self.parent)
     
@@ -102,6 +104,7 @@ class ChartWidgets:
             self.chart_canvas.draw()
             self.chart_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
     
+    @widget_error_handler("fallback display")
     def _create_fallback_display(self) -> None:
         """Create fallback display when matplotlib initialization fails.
         
@@ -109,8 +112,8 @@ class ChartWidgets:
         all chart components to None to signal to other parts of the application
         that chart functionality is not available.
         """
-        # Create a simple fallback label
-        self.fallback_label = ttk.Label(self.parent, text="Chart unavailable - matplotlib failed to load")
+        # Create a simple fallback label using SafeWidgetCreator
+        self.fallback_label = SafeWidgetCreator.create_label(self.parent, "Chart unavailable - matplotlib failed to load")
         self.fallback_label.pack(expand=True)
         
         # Set components to None to indicate unavailability
@@ -141,7 +144,7 @@ class ChartWidgets:
             fallback: Whether data comes from fallback/simulated source
         """
         if not (hasattr(self, 'chart_canvas') and hasattr(self, 'chart_ax') and self.chart_ax is not None):
-            Logger.warn("Chart display unavailable - matplotlib setup failed")
+            Logger.warn(config.ERROR_MESSAGES['config_error'].format(section="chart display", reason="matplotlib setup failed"))
             return
 
         # Clear and plot new data
@@ -155,6 +158,6 @@ class ChartWidgets:
         self.chart_ax.set_ylabel(labels['ylabel'])
 
         # Format and draw
-        self.chart_fig.autofmt_xdate(rotation=45)
+        self.chart_fig.autofmt_xdate(rotation=config.CHART['chart_rotation_degrees'])
         self.chart_fig.tight_layout()
         self.chart_canvas.draw()

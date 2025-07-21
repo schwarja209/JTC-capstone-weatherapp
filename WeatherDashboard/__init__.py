@@ -38,8 +38,9 @@ __description__ = "A satirical weather dashboard"
 try:
     from . import config
     from . import styles
+    # Imports successful - config and styles available at package level
 except ImportError:
-    # Handle import errors gracefully during setup
+    # Import errors during setup/installation - modules not available
     pass
 
 # Ensure backward compatibility
@@ -52,14 +53,12 @@ __all__ = [
     "styles",
 ]
 
-
 def get_version():
-    """Return the package version."""
+    """Return the package version string."""
     return __version__
 
-
 def get_package_info():
-    """Return comprehensive package information."""
+    """Return comprehensive package information dictionary."""
     return {
         "name": "WeatherDashboard",
         "version": __version__,
@@ -71,7 +70,12 @@ def get_package_info():
 
 # Package initialization
 def _initialize_package():
-    """Initialize package-level settings and validation."""
+    """Initialize package-level settings and create required directories.
+    
+    Creates logs and data directories within the package, sets up .gitkeep files
+    for version control, and suppresses matplotlib warnings. Handles directory
+    creation errors gracefully to prevent import failures during installation.
+    """
     import os
     import warnings
     

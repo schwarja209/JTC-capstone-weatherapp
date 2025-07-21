@@ -37,19 +37,11 @@ class WeatherDashboardGUIFrames:
         self.create_frames()
 
     def create_styles(self) -> None:
-        """Configure the styles for the GUI elements.
-        
-        Applies the application-wide styling configuration to ensure
-        consistent visual appearance across all UI components.
-        """
+        """Configure the styles for the GUI elements."""
         styles.configure_styles()
 
     def create_frames(self) -> None:
-        """Create the main frames for the dashboard layout.
-        
-        Sets up the primary frame structure including title, controls, tabbed
-        content area, and status bar with proper grid layout and weight configuration.
-        """
+        """Create the main frames for the dashboard layout."""
         self.frames["title"] = ttk.Frame(self.root, padding="10")
         self.frames["title"].grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E))
 
@@ -61,7 +53,6 @@ class WeatherDashboardGUIFrames:
 
         self.frames["status_bar"] = ttk.Frame(self.root, padding="5")
         self.frames["status_bar"].grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
-
 
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=0)

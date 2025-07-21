@@ -14,6 +14,7 @@ from typing import Optional
 import threading
 import tkinter.messagebox as messagebox
 
+from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.gui.state_manager import WeatherDashboardState
 from WeatherDashboard.gui.frames import WeatherDashboardGUIFrames
 from WeatherDashboard.gui.loading_states import LoadingStateManager, AsyncWeatherOperation
@@ -91,6 +92,7 @@ class WeatherDashboardMain:
             frames=frames.frames,
             state=self.state,
             update_cb=self.on_update_clicked_async,
+            cancel_cb=self.cancel_current_operation,
             clear_cb=self.on_clear_clicked,
             dropdown_cb=self.update_chart_dropdown
         )
@@ -181,11 +183,7 @@ class WeatherDashboardMain:
         )
 
     def show_alerts(self) -> None:
-        """Show weather alerts popup.
-        
-        Displays active weather alerts in a popup dialog. Called when
-        user clicks on the alert status indicator.
-        """
+        """Show weather alerts popup."""
         if hasattr(self.controller, 'show_weather_alerts'):
             self.controller.show_weather_alerts()
 
@@ -223,7 +221,8 @@ class WeatherDashboardMain:
         self.async_operations.fetch_weather_async(
             self.state.get_current_city(),
             self.state.get_current_unit_system(),
-            on_complete=operation_finished
+            on_complete=operation_finished,
+            enable_cancellation=True  # Use long timeout for startup
         )
 
     def cancel_current_operation(self) -> None:
@@ -237,35 +236,27 @@ class WeatherDashboardMain:
         with self._operation_lock:
             if hasattr(self, 'async_operations'):
                 self.async_operations.cancel_current_operation()
+            
+            # Reset operation flag when cancelling
+            if hasattr(self, '_operation_in_progress'):
+                self._operation_in_progress = False
     
         # UI reset can happen immediately
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(False)
     
     def _handle_async_complete(self, success: bool, next_callback: Optional[callable] = None) -> None:
-        """Handle completion of async operations.
-        
-        Resets UI loading state and calls optional completion callback.
-        Used internally to clean up after async weather operations.
-        
-        Args:
-            success: True if the async operation succeeded
-            next_callback: Optional callback to execute after cleanup
-        """
+        """Handle completion of async operations."""
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(False)
         
-        if next_callback:
+        if next_callback: # Optional callback to execute after cleanup
             next_callback(success)
 
 # ================================
 # 4. UI UPDATE METHODS
 # ================================
     def update_chart_dropdown(self) -> None:
-        """Update the chart dropdown based on the current visibility settings.
-        
-        Refreshes the chart metric dropdown options to reflect currently visible
-        metrics. Called when metric visibility settings change.
-        """
+        """Update the chart dropdown based on the current visibility settings."""
         if self.widgets.control_widgets:
             self.widgets.control_widgets.update_chart_dropdown_options()

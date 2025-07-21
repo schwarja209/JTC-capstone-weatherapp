@@ -64,11 +64,7 @@ class WeatherErrorHandler:
         }
     
     def set_theme(self, theme: str) -> None:
-        """Set the current theme for message formatting.
-        
-        Args:
-            theme: Theme to set ('neutral', 'optimistic', 'pessimistic')
-        """
+        """Set the current theme for message formatting."""
         if theme in ['neutral', 'optimistic', 'pessimistic']:
             self.current_theme = theme
         else:
@@ -128,32 +124,19 @@ class WeatherErrorHandler:
         else:
             # Other API errors - show general fallback notice
             Logger.warn(f"Using fallback for {city_name}: {error_exception}")
-            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['info'])(
-            styles.DIALOG_CONFIG['error_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
+            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['info'])(styles.DIALOG_CONFIG['error_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
             return True
 
     def handle_input_validation_error(self, error: Exception) -> None:
-        """Handles input validation errors.
-        
-        Args:
-            error: The validation error that occurred
-        """
+        """Handles input validation errors."""
         Logger.error(f"Input validation error: {error}")
         getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['input_error'], str(error))
 
     def handle_unexpected_error(self, error: Exception) -> None:
-        """Handles unexpected errors.
-        
-        Args:
-            error: The unexpected error that occurred
-        """
+        """Handles unexpected errors."""
         Logger.error(f"Unexpected error: {error}")
         getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['general_error'], f"Unexpected error: {error}")
     
     def handle_rate_limit_error(self, wait_time: float) -> None:
-        """Handle rate limit errors with appropriate user messaging.
-        
-        Args:
-            wait_time: Number of seconds to wait before retrying
-        """
+        """Handle rate limit errors with appropriate user messaging."""
         getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['info'])(styles.DIALOG_CONFIG['error_titles']['rate_limit'], f"Please wait {wait_time:.0f} more seconds before making another request.")

@@ -16,7 +16,7 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 - **Alert System**: Added weather alert thresholds and notification system with severity levels
 - **Expanded Metrics**: Comprehensive metric expansion, including derived comfort metrics
 - **Advanced Features**: Complete implementation of professional weather features
-- **Current State**: Production-ready application with 51 modular files, comprehensive testing, and consistent architectural patterns
+- **Current State**: Production-ready application with 66 modular files, comprehensive testing, and consistent architectural patterns
 
 ## Features
 
@@ -59,7 +59,7 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 
 ### Project Structure
 ```
-WeatherDashboard/                   # Main application package (51 files total)
+WeatherDashboard/                   # Main application package (66 files total)
 │   ├── styles.py                   # Comprehensive visual styling and color coding
 │   ├── config.py                   # Complete metric and configuration management
 │   └── main.py                     # Application entry point
@@ -74,11 +74,12 @@ WeatherDashboard/                   # Main application package (51 files total)
 │   ├── frames.py                   # Layout management
 │   └── loading_states.py           # Async operation UI handling with cancellation
 ├── widgets/                        # Specialized UI components (7 files)
+│   ├── base_widgets.py             # Base widget classes with standardized error handling
 │   ├── dashboard_widgets.py        # Main widget coordinator
 │   ├── control_widgets.py          # Input controls and buttons with advanced features
+│   ├── tabbed_widgets.py           # Tab management
 │   ├── metric_widgets.py           # Weather metric displays with color coding
 │   ├── chart_widgets.py            # Matplotlib chart integration with fallback handling
-│   ├── tabbed_widgets.py           # Tab management
 │   ├── status_bar_widgets.py       # Status and progress indicators
 │   └── title_widgets.py            # Title bar display
 ├── services/                       # External integrations (4 files)
@@ -92,20 +93,31 @@ WeatherDashboard/                   # Main application package (51 files total)
 │   │   └── alert_manager.py        # Alert management system with comprehensive thresholds
 │   ├── theme_switcher.py           # Future theme management (placeholder)
 │   ├── tomorrows_guess.py          # Future prediction features (placeholder)
-│   └── weather_history_tracker.py # Future history analysis (placeholder)
+│   └── weather_history_tracker.py  # Future history analysis (placeholder)
 ├── utils/                          # Common utilities (6 files)
 │   ├── logger.py                   # Multi-format logging with health checking
 │   ├── rate_limiter.py             # API rate limiting with exponential backoff
 │   ├── unit_converter.py           # Comprehensive weather unit conversions
 │   ├── derived_metrics.py          # Professional weather calculations (NWS formulas)
+│   ├── api_utils.py                # API data parsing utilities
 │   ├── color_utils.py              # Centralized color determination for metrics
+│   ├── state_utils.py              # Widget visibility utility functions
+│   ├── validation_utils.py         # Centralized validation utilities
+│   ├── widget_utils.py             # Centralized widget positioning and creation utilities
 │   └── utils.py                    # General helper functions
 └── tests/                          # Comprehensive test suite (5 files)
-    ├── test_data_manager.py         # Data management functionality tests
-    ├── test_state_manager.py        # State management validation tests
-    ├── test_unit_converter.py       # Unit conversion accuracy tests
-    ├── test_utils.py                # Utility function reliability tests
-    └── test_runner.py               # Test discovery and execution coordination
+    ├── test_alert_manager.py       # Tests weather alert system functionality 
+    ├── test_color_utils.py         # Tests color determination logic for metric values 
+    ├── test_controller.py          # Tests core business logic orchestration 
+    ├── test_data_manager.py        # Data management functionality tests
+    ├── test_derived_metrics.py     # Tests derived weather metric calculations 
+    ├── test_error_handler.py       # Tests theme-aware error handling 
+    ├── test_state_manager.py       # State management validation tests
+    ├── test_unit_converter.py      # Unit conversion accuracy tests
+    ├── test_utils.py               # Utility function reliability tests
+    ├── test_view_models            # Tests view model data formatting and presentation logic 
+    ├── test_weather_service        # Tests API integration, data parsing, validation, and error handling
+    └── test_runner.py              # Test discovery and execution coordination
 ```
 
 ### Design Principles
@@ -233,6 +245,7 @@ python run_tests.py
 - **Widget State Consistency**: Safe access patterns preventing potential runtime errors
 - **Import Optimization**: Clean, well-utilized imports throughout codebase
 - **Complete Feature Implementation**: All advanced weather features fully implemented
+- **Made Cancel Button Functional**: Rewired cancel button to actually cancel stalled API calls
 
 ## Future Development
 
@@ -288,6 +301,7 @@ The current architecture serves as a complete foundation for a **dual-theme sati
 - **Error Handling Standardization**: Consistent patterns across all layers (ADR-028)
 - **Widget State Access Patterns**: Safe, standardized access throughout UI (ADR-029)
 - **Documentation Standards**: Balanced hybrid approach (ADR-030)
+- **Mimic real API call cancellation**: Uses delay reduction and retry removal as cancellation shortcut
 
 ## License
 
