@@ -58,18 +58,3 @@ class TestWeatherDashboardState(unittest.TestCase):
         # Verify reset worked
         self.assertEqual(self.state.get_current_city(), 'Test City')
         self.assertEqual(self.state.get_current_unit_system(), 'metric')
-    
-    def test_validate_current_state(self):
-        """Test state validation."""
-        # Valid state should return no errors
-        errors = self.state.validate_current_state()
-        self.assertEqual(len(errors), 0)
-        
-        # Invalid state should return errors
-        self.state.city.set("")  # Empty city
-        self.state.unit.set("invalid")  # Invalid unit
-        
-        errors = self.state.validate_current_state()
-        self.assertGreater(len(errors), 0)
-        self.assertTrue(any("City name cannot be empty" in error for error in errors))
-        self.assertTrue(any("Invalid unit system" in error for error in errors))

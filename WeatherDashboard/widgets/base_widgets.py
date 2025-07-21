@@ -150,7 +150,7 @@ class SafeWidgetCreator:
     
     @staticmethod
     @widget_error_handler("radiobutton")
-    def create_radiobutton(parent: ttk.Frame, text: str, variable: Any,  value: Any, **kwargs) -> ttk.Radiobutton:
+    def create_radiobutton(parent: ttk.Frame, text: str, variable: Any, value: Any, **kwargs) -> ttk.Radiobutton:
         """Create radiobutton with error handling."""
         return ttk.Radiobutton(parent, text=text, variable=variable, value=value, **kwargs)
     

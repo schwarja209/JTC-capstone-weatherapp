@@ -15,7 +15,7 @@ import tkinter as tk
 import threading
 
 from WeatherDashboard import styles
-from WeatherDashboard.services.api_exceptions import ValidationError
+from WeatherDashboard.services.api_exceptions import ValidationError, NetworkError
 from WeatherDashboard.utils.logger import Logger
 
 
@@ -177,14 +177,14 @@ class AsyncWeatherOperation:
             city_name: Name of the city to fetch weather for
             unit_system: Unit system for the weather data ('metric' or 'imperial')
             on_complete: Optional callback function called when operation completes
+            enable_cancellation: Whether to enable cancellation support
         """
+        # Setup cancellation
+        cancel_event_to_pass = self.cancel_event if enable_cancellation else None
         if enable_cancellation:
             # Cancel any existing operation first
             self.cancel_current_operation()
             self.cancel_event.clear()
-            cancel_event_to_pass = self.cancel_event
-        else:
-            cancel_event_to_pass = None  # No cancellation = long timeout
 
         def background_task():
             """Execute weather data fetching in background thread.
@@ -195,19 +195,19 @@ class AsyncWeatherOperation:
             """
             try:
                 # Check for cancellation before starting
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     return
                 
                 # Step 1: Start loading
                 self._schedule_ui_update(self.loading_manager.start_loading, "Initializing...")
                 
                 # Step 2: Input validation (simulated delay for demonstration)
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     return
                 self._schedule_ui_update(self.loading_manager.update_progress, "Validating input...")
                 
                 # Step 3: API call
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     return
                 self._schedule_ui_update(self.loading_manager.update_progress, "Fetching weather data...")
                 
@@ -215,18 +215,13 @@ class AsyncWeatherOperation:
                 success = self.controller.update_weather_display(city_name, unit_system, cancel_event_to_pass)
                 
                 # Step 4: Processing data
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     return
                 self._schedule_ui_update(self.loading_manager.update_progress, "Processing weather data...")
                 
                 # Check for cancellation before completion
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     self._schedule_ui_update(self.loading_manager.stop_loading)
-                    return
-                
-                def is_cancelled():
-                    return hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set()
-                if is_cancelled():
                     return
 
                 # Handle completion in main thread
@@ -239,21 +234,20 @@ class AsyncWeatherOperation:
                 self._schedule_ui_update(complete_task)
                 
             except (ConnectionError, TimeoutError) as e:
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     return  # Don't show error if operation was cancelled
                 
                 def handle_network_error():
                     """Handle network errors by stopping loading and showing error message."""
                     self.loading_manager.stop_loading()
                     if hasattr(self.controller, 'error_handler') and self.controller.error_handler:
-                        from WeatherDashboard.services.api_exceptions import NetworkError
                         network_error = NetworkError(f"Network error during async operation: {e}")
                         self.controller.error_handler.handle_weather_error(network_error, city_name)
                 
                 self._schedule_ui_update(handle_network_error)
 
             except ValidationError as e:
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     return
                 
                 def handle_validation_error():
@@ -265,7 +259,7 @@ class AsyncWeatherOperation:
                 self._schedule_ui_update(handle_validation_error)
 
             except Exception as e:
-                if hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set():
+                if self._is_cancelled():
                     return
                 
                 def handle_unexpected_error():
@@ -279,6 +273,10 @@ class AsyncWeatherOperation:
         # Start background thread and store reference
         self.current_thread = threading.Thread(target=background_task, daemon=True)
         self.current_thread.start()
+    
+    def _is_cancelled(self) -> bool:
+        """Check if the current operation has been cancelled."""
+        return (hasattr(self, 'cancel_event') and self.cancel_event and self.cancel_event.is_set())
     
     def _schedule_ui_update(self, func: Callable, *args) -> None:
         """Safely schedule UI updates from background thread.

@@ -49,37 +49,37 @@ FORCE_FALLBACK_MODE = False # Temporarily disable API calls
 # Unified Metric Definitions
 METRICS = {
     # Original metrics
-    'temperature': {'label': 'Temperature', 'visible': True},
-    'humidity': {'label': 'Humidity', 'visible': True},
-    'wind_speed': {'label': 'Wind Speed', 'visible': False},
-    'pressure': {'label': 'Pressure', 'visible': False},
-    'conditions': {'label': 'Conditions', 'visible': False},
+    'temperature': {'label': 'Temperature', 'visible': True, 'chartable': True},
+    'humidity': {'label': 'Humidity', 'visible': True, 'chartable': True},
+    'wind_speed': {'label': 'Wind Speed', 'visible': False, 'chartable': True},
+    'pressure': {'label': 'Pressure', 'visible': False, 'chartable': True},
+    'conditions': {'label': 'Conditions', 'visible': False, 'chartable': False},
     
     # New metrics (all initially hidden)
-    'feels_like': {'label': 'Feels Like', 'visible': False},
-    'temp_min': {'label': 'Min Temp', 'visible': False},
-    'temp_max': {'label': 'Max Temp', 'visible': False},
-    'wind_direction': {'label': 'Wind Direction', 'visible': False},
-    'wind_gust': {'label': 'Wind Gusts', 'visible': False},
-    'visibility': {'label': 'Visibility', 'visible': False},
-    'cloud_cover': {'label': 'Cloud Cover', 'visible': False},
-    'rain': {'label': 'Rain', 'visible': False},
-    'snow': {'label': 'Snow', 'visible': False},
-    'weather_main': {'label': 'Weather Type', 'visible': False},
-    'weather_id': {'label': 'Weather ID', 'visible': False},
-    'weather_icon': {'label': 'Weather Icon', 'visible': False},
+    'feels_like': {'label': 'Feels Like', 'visible': False, 'chartable': True},
+    'temp_min': {'label': 'Min Temp', 'visible': False, 'chartable': True},
+    'temp_max': {'label': 'Max Temp', 'visible': False, 'chartable': True},
+    'wind_direction': {'label': 'Wind Direction', 'visible': False, 'chartable': False},
+    'wind_gust': {'label': 'Wind Gusts', 'visible': False, 'chartable': False},
+    'visibility': {'label': 'Visibility', 'visible': False, 'chartable': True},
+    'cloud_cover': {'label': 'Cloud Cover', 'visible': False, 'chartable': True},
+    'rain': {'label': 'Rain', 'visible': False, 'chartable': True},
+    'snow': {'label': 'Snow', 'visible': False, 'chartable': True},
+    'weather_main': {'label': 'Weather Type', 'visible': False, 'chartable': False},
+    'weather_id': {'label': 'Weather ID', 'visible': False, 'chartable': False},
+    'weather_icon': {'label': 'Weather Icon', 'visible': False, 'chartable': False},
 
     # New new metrics
-    'uv_index': {'label': 'UV Index', 'visible': False},
-    'air_quality_index': {'label': 'Air Quality', 'visible': False},
-    'air_quality_description': {'label': 'Air Quality Status', 'visible': False},
+    'uv_index': {'label': 'UV Index', 'visible': False, 'chartable': True},
+    'air_quality_index': {'label': 'Air Quality', 'visible': False, 'chartable': True},
+    'air_quality_description': {'label': 'Air Quality Status', 'visible': False, 'chartable': True},
 
     # Derived comfort metrics
-    'heat_index': {'label': 'Heat Index', 'visible': False},
-    'wind_chill': {'label': 'Wind Chill', 'visible': False},
-    'dew_point': {'label': 'Dew Point', 'visible': False},
-    'precipitation_probability': {'label': 'Rain Chance', 'visible': False},
-    'weather_comfort_score': {'label': 'Comfort Score', 'visible': False}
+    'heat_index': {'label': 'Heat Index', 'visible': False, 'chartable': True},
+    'wind_chill': {'label': 'Wind Chill', 'visible': False, 'chartable': True},
+    'dew_point': {'label': 'Dew Point', 'visible': False, 'chartable': True},
+    'precipitation_probability': {'label': 'Rain Chance', 'visible': False, 'chartable': True},
+    'weather_comfort_score': {'label': 'Comfort Score', 'visible': False, 'chartable': True}
 }
 
 # Metric Organization for UI Components
@@ -246,7 +246,10 @@ ERROR_MESSAGES = {
     'api_error': "API request failed for {endpoint}: {reason}",
     'config_error': "Configuration error in {section}: {reason}",
     'file_error': "Failed to write {info} to {file}: {reason}",
-    'state_error': "Invalid state: {reason}"
+    'state_error': "Invalid state: {reason}",
+    'directory_error': "Directory operation failed for {path}: {reason}",
+    'initialization_error': "Initialization failed for {component}: {reason}",
+    'structure_error': "Invalid structure in {section}: {reason}"
 }
 
 # ================================
@@ -285,37 +288,59 @@ def validate_config() -> None:
     required_sections = ['METRICS', 'DEFAULTS', 'UNITS', 'CHART', 'OUTPUT', 'ALERT_THRESHOLDS', 'MEMORY']
     for section in required_sections:
         if section not in globals():
-            raise ValueError(ERROR_MESSAGES['config_error'].format(section="memory configuration", reason="must contain positive numbers"))
+            raise ValueError(ERROR_MESSAGES['config_error'].format(
+                section=section, 
+                reason="required configuration section missing"
+            ))
     
     # Validate METRICS structure (essential for app functionality)
     if not isinstance(METRICS, dict) or not METRICS:
-        raise ValueError("METRICS must be a non-empty dictionary")
+        raise ValueError(ERROR_MESSAGES['config_error'].format(
+            section="METRICS", 
+            reason="must be a non-empty dictionary"
+        ))
     
     # Sample check for metric structure
     sample_metric = next(iter(METRICS.values()))
     if not isinstance(sample_metric, dict) or 'label' not in sample_metric or 'visible' not in sample_metric:
-        raise ValueError("Invalid METRICS structure - missing 'label' or 'visible' fields")
+        raise ValueError(ERROR_MESSAGES['config_error'].format(
+            section="METRICS structure", 
+            reason="missing required 'label' or 'visible' fields"
+        ))
     
     # Validate critical DEFAULTS
     if DEFAULTS.get('unit') not in ['metric', 'imperial']:
-        raise ValueError(f"Invalid default unit system: {DEFAULTS.get('unit')}")
+        raise ValueError(ERROR_MESSAGES['validation'].format(
+            field="Default unit system", 
+            reason=f"'{DEFAULTS.get('unit')}' is invalid. Must be 'metric' or 'imperial'"
+        ))
     
     # Validate essential file paths exist
     try:
         import os
         os.makedirs(OUTPUT.get("data_dir", "data"), exist_ok=True)
-    except (OSError, TypeError):
-        raise ValueError("Cannot create or access data directory")
+    except (OSError, TypeError) as e:
+        raise ValueError(ERROR_MESSAGES['config_error'].format(
+            section="output directories", 
+            reason=f"cannot create or access data directory: {e}"
+        ))
     
     # Validate memory configuration is reasonable
     memory_keys = ['max_cities_stored', 'max_entries_per_city', 'max_total_entries', 'cleanup_interval_hours']
-    if not all(isinstance(MEMORY.get(key, 0), (int, float)) and MEMORY.get(key, 0) > 0 
-            for key in memory_keys):
-        raise ValueError("Memory configuration must contain positive numbers")
+    for key in memory_keys:
+        value = MEMORY.get(key, 0)
+        if not isinstance(value, (int, float)) or value <= 0:
+            raise ValueError(ERROR_MESSAGES['validation'].format(
+                field=f"Memory configuration '{key}'", 
+                reason="must be a positive number"
+            ))
 
     # Add validation for threshold (should be between 0 and 1)
     threshold = MEMORY.get('aggressive_cleanup_threshold', 0)
     if not isinstance(threshold, (int, float)) or not (0 < threshold <= 1):
-        raise ValueError(ERROR_MESSAGES['validation'].format(field="Aggressive cleanup threshold", reason="must be a number between 0 and 1"))
+        raise ValueError(ERROR_MESSAGES['validation'].format(
+            field="Aggressive cleanup threshold", 
+            reason="must be a number between 0 and 1"
+        ))
     
     print("Configuration validation passed successfully.")

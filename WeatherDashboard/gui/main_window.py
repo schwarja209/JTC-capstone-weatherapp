@@ -125,16 +125,6 @@ class WeatherDashboardMain:
             if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
                 return
             self._operation_in_progress = True
-        
-        def on_weather_complete(success: bool) -> None:
-            if success:
-                # Update chart after weather data loads (but don't reset operation flag yet)
-                self.controller.update_chart()
-        
-        def operation_finished(success: bool):
-            with self._operation_lock:
-                self._operation_in_progress = False
-            self._handle_async_complete(success, on_weather_complete)
 
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(True, "Fetching weather...")
@@ -143,7 +133,7 @@ class WeatherDashboardMain:
         self.async_operations.fetch_weather_async(
             self.state.get_current_city(),
             self.state.get_current_unit_system(),
-            on_complete=operation_finished
+            on_complete=self._create_update_operation_callback()
         )
 
     def on_clear_clicked(self) -> None:
@@ -163,24 +153,34 @@ class WeatherDashboardMain:
         messagebox.showinfo("Reset", "Dashboard reset to default values.")
         self.update_chart_dropdown()
 
-        # Load default city data asynchronously after reset
-        def on_weather_complete(success: bool) -> None:
-            if success:
-                # Update chart after weather data loads (but don't reset operation flag yet)
-                self.controller.update_chart()
-        
-        def operation_finished(success: bool):
-            self._operation_in_progress = False
-            self._handle_async_complete(success, on_weather_complete)
-
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(True, "Loading default city...")
 
         self.async_operations.fetch_weather_async(
             self.state.get_current_city(),
             self.state.get_current_unit_system(),
-            on_complete=operation_finished
+            on_complete=self._create_clear_operation_callback()
         )
+
+    def _create_update_operation_callback(self) -> callable:
+        """Create callback function for update operation completion."""
+        def operation_finished(success: bool):
+            with self._operation_lock:
+                self._operation_in_progress = False
+            self._handle_async_complete(success, self._update_chart_on_success)
+        return operation_finished
+
+    def _create_clear_operation_callback(self) -> callable:
+        """Create callback function for clear operation completion."""
+        def operation_finished(success: bool):
+            self._operation_in_progress = False
+            self._handle_async_complete(success, self._update_chart_on_success)
+        return operation_finished
+    
+    def _update_chart_on_success(self, success: bool) -> None:
+        """Update chart after successful weather data load."""
+        if success:
+            self.controller.update_chart()
 
     def show_alerts(self) -> None:
         """Show weather alerts popup."""

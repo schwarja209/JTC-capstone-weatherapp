@@ -348,15 +348,4 @@ class ControlWidgets(BaseWidgetManager):
         - Wind direction and gusts (not meaningful for trend charts)
         - Individual precipitation metrics (use combined precipitation instead)
         """
-        # Non-numeric metrics that can't be charted
-        non_chartable = {'conditions', 'weather_main', 'weather_id', 'weather_icon'}
-        
-        # Wind metrics that don't make sense for trending
-        non_trending_wind = {'wind_direction', 'wind_gust'}
-        
-        # Raw precipitation details (simplified rain/snow are chartable)
-        raw_precipitation_details = {'rain_1h', 'rain_3h', 'snow_1h', 'snow_3h'}
-        
-        excluded_metrics = non_chartable | non_trending_wind | raw_precipitation_details
-        
-        return metric_key not in excluded_metrics
+        return config.METRICS.get(metric_key, {}).get('chartable', False)

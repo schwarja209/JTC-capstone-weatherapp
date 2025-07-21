@@ -128,7 +128,9 @@ class WeatherViewModel:
             if feels_like is not None:
                 difference = abs(feels_like - temp)
                 # Only show "feels like" if difference is significant (>2 degrees)
-                threshold = 2.0 if self.unit_system == 'metric' else 3.6  # ~2°C or ~4°F
+                TEMP_DIFF_THRESHOLD_METRIC = 2.0  # °C
+                TEMP_DIFF_THRESHOLD_IMPERIAL = 3.6  # °F
+                threshold = TEMP_DIFF_THRESHOLD_METRIC if self.unit_system == 'metric' else TEMP_DIFF_THRESHOLD_IMPERIAL
                 
                 if difference >= threshold:
                     feels_str = UnitConverter.format_value('feels_like', feels_like, self.unit_system)

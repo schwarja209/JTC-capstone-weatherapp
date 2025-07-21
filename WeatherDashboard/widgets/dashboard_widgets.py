@@ -54,6 +54,7 @@ class WeatherDashboardWidgets(BaseWidgetManager):
             update_cb: Callback function for update button events
             clear_cb: Callback function for clear/reset button events
             dropdown_cb: Callback function for dropdown change events
+            cancel_cb: Callback function for operation cancellation
         """
         self.frames = frames
         
@@ -72,7 +73,7 @@ class WeatherDashboardWidgets(BaseWidgetManager):
         self.status_bar_widgets: Optional[StatusBarWidgets] = None
         
         # Initialize base class with error handling
-        super().__init__(frames.get('title'), state, "dashboard widgets")
+        super().__init__(None, state, "dashboard widgets")
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
