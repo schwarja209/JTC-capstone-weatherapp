@@ -50,10 +50,10 @@ class ValidationUtils:
             errors.append(config.ERROR_MESSAGES['validation'].format(
                 field="City name", reason="cannot be longer than 100 characters"))
         
-        # Character validation (allow letters, spaces, hyphens, apostrophes)
-        if not re.match(r"^[a-zA-Z\s\-'\.]+$", cleaned_name):
+        # Character validation (allow letters, spaces, hyphens, apostrophes, and commas)
+        if not re.match(r"^[a-zA-Z\s\-'\.,]+$", cleaned_name):
             errors.append(config.ERROR_MESSAGES['validation'].format(
-                field="City name", reason="contains invalid characters (only letters, spaces, hyphens, and apostrophes allowed)"))
+                field="City name", reason="contains invalid characters (only letters, spaces, hyphens, commas, and apostrophes allowed)"))
         
         return errors
     

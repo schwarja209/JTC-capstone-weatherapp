@@ -50,8 +50,7 @@ class UnitConverter:
     }
 
     @staticmethod
-    def _generic_convert(value: float, from_unit: str, to_unit: str, 
-                        conversion_type: str) -> float:
+    def _generic_convert(value: float, from_unit: str, to_unit: str, conversion_type: str) -> float:
         """Generic conversion function for all unit types.
         
         Args:
@@ -206,7 +205,22 @@ class UnitConverter:
     
     @staticmethod
     def format_value(metric: str, val: Any, unit_system: str) -> str:
-        """Data-driven value formatting - replaces 15+ elif statements."""
+        """Format a value with appropriate units and precision based on metric type and unit system.
+    
+        Performs comprehensive value formatting using centralized configuration to determine
+        appropriate units, precision, and display format for weather metrics. Handles None
+        values, applies unit system-specific formatting, and provides consistent fallback
+        behavior for unknown metric types.
+        
+        Args:
+            metric_type (str): Type of metric to format (temperature, humidity, pressure, etc.)
+            value: Numeric value to format, or None for missing data
+            unit_system (str): Target unit system ('metric' or 'imperial')
+        
+        Returns:
+            str: Formatted value with appropriate units (e.g., "25.0 °C", "77.0 °F", "60 %")
+                or "--" for missing data
+        """    
         if val is None:
             return "--"
         

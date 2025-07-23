@@ -1,3 +1,46 @@
-.env
+# === OS-specific files ===
+.DS_Store
+Thumbs.db
+
+# === IDE/editor configs ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# === Python cache and build artifacts ===
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# === Virtual environments ===
+env/
+venv/
+ENV/
+.venv/
+
+# === Environment variables ===
+.env
+
+# === Test outputs ===
+.pytest_cache/
+tests/__pycache__/
+tests/.pytest_cache/
+.coverage
+coverage.xml
+nosetests.xml
+htmlcov/
+.tox/
+.hypothesis/
+*.cover
+
+# === User data and logs ===
+*.log
+WeatherDashboard/data/
+WeatherDashboard/logs/

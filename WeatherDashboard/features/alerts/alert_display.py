@@ -15,7 +15,7 @@ from tkinter import ttk, messagebox
 from typing import List, Callable
 
 from WeatherDashboard import config, styles
-from WeatherDashboard.features.alerts.alert_manager import WeatherAlert
+from .alert_manager import WeatherAlert
 
 
 class AlertStatusIndicator:

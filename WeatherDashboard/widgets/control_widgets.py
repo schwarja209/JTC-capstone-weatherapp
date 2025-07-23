@@ -231,7 +231,24 @@ class ControlWidgets(BaseWidgetManager):
         self.cancel_button.grid(row=3, column=2, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
 
     def update_chart_dropdown_options(self):
-        """Update chart dropdown using centralized metric configuration with error handling."""
+        """Update chart dropdown options based on metric visibility and chartability configuration.
+        
+        Performs comprehensive filtering of available metrics for chart display by evaluating
+        both user visibility preferences and intrinsic metric chartability. Updates the chart
+        dropdown with filtered options and maintains current selection when possible.
+        
+        Filtering Process:
+            1. Retrieves all metrics from centralized METRICS configuration
+            2. Filters by user visibility settings (checkbox states)
+            3. Filters by chartable property (metrics suitable for time-series display)
+            4. Preserves current dropdown selection if still valid after filtering
+            5. Falls back to first available option if current selection invalids
+            
+        Side Effects:
+            - Modifies chart_metric_dropdown values list
+            - May change current dropdown selection
+            - Triggers dropdown widget refresh
+        """
         try:
             if (not hasattr(self.state, 'chart_widget') or not self.state.chart_widget or not hasattr(self.state, 'chart')):
                 Logger.warn("Chart widget not available for dropdown update")

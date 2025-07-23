@@ -21,7 +21,6 @@ from WeatherDashboard import config
 from WeatherDashboard.utils.utils import format_fallback_status
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
-from WeatherDashboard.utils.widget_utils import WidgetUtils
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 

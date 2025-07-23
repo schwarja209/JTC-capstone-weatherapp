@@ -1,16 +1,14 @@
 """
 Single function utilities for the Weather Dashboard application.
 
-This module provides general utility functions for data validation, formatting,
-string manipulation, and common operations used throughout the Weather Dashboard.
-Includes functions for city name processing, unit validation, and status formatting.
+This module provides general utility functions for formatting, string manipulation,
+and common operations used throughout the Weather Dashboard.
+Includes functions for city name processing and status formatting.
 
 Functions:
     is_fallback: Check if weather data is from fallback source
     format_fallback_status: Format status messages for fallback data
-    normalize_city_name: Standardize city name formatting
     city_key: Generate consistent city keys for data storage
-    validate_unit_system: Validate unit system parameters
 """
 
 from typing import Dict, Any

@@ -22,6 +22,10 @@ Functions:
 import os
 from pathlib import Path
 
+# centralizing config info
+from .alert_config import ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER
+
+
 # ================================
 # 1. API & ENVIRONMENT CONFIGURATION  
 # ================================
@@ -173,35 +177,6 @@ CHART = {
     'chart_rotation_degrees': 45       # X-axis label rotation angle
 }
 
-# ====================================
-# 4. ALERTS CONFIGURATION & THRESHOLDS
-# ====================================
-# Alert priority configuration
-ALERT_PRIORITY_ORDER = ['warning', 'caution', 'watch']
-
-# Alert Threshold Configuration
-ALERT_THRESHOLDS = {
-    'temperature_high': 35.0,      # °C - Hot weather warning
-    'temperature_low': -10.0,      # °C - Cold weather warning  
-    'wind_speed_high': 15.0,       # m/s - High wind warning
-    'pressure_low': 980.0,         # hPa - Storm system warning
-    'humidity_high': 85.0,         # % - High humidity discomfort
-    'humidity_low': 15.0,          # % - Low humidity warning
-
-    # NEW thresholds
-    'heavy_rain_threshold': 10.0,     # mm/hour - Heavy rain warning
-    'heavy_snow_threshold': 5.0,      # mm/hour - Heavy snow warning
-    'low_visibility_metric': 3000,    # meters - Poor visibility (3km)
-    'low_visibility_imperial': 3218,  # meters - Poor visibility (2 miles)
-
-    # Derived metric thresholds
-    'heat_index_high': 40.5,          # °C (105°F) - Dangerous heat index
-    'wind_chill_low': -28.9,          # °C (-20°F) - Dangerous wind chill
-    'uv_index_high': 8,               # Index - Very high UV exposure
-    'air_quality_poor': 4,            # AQI - Poor air quality warning
-    'comfort_score_low': 30,          # Score - Uncomfortable conditions
-}
-
 # ================================
 # 5. APPLICATION DEFAULTS
 # ================================
@@ -211,7 +186,7 @@ DEFAULTS = {
     "unit": "imperial",
     "range": "Last 7 Days",
     "chart": "Temperature",
-    "visibility": {k: v['visible'] for k, v in METRICS.items()},
+    "visibility": {k: v['visible'] for k, v in METRICS.items()}, # Generate visibility defaults from METRICS configuration
     "alert_thresholds": ALERT_THRESHOLDS 
 }
 
@@ -219,15 +194,22 @@ DEFAULTS = {
 # 6. SYSTEM CONFIGURATION
 # ================================
 # Output Files & Directories
-package_dir = Path(__file__).parent
-data_dir = package_dir / "data"
-logs_dir = package_dir / "logs"
+PACKAGE_DIR = Path(__file__).parent
+DATA_DIR = PACKAGE_DIR / "data"
+LOGS_DIR = PACKAGE_DIR / "logs"
 
 OUTPUT = {
-    "data_dir": str(data_dir),
-    "log_dir": str(logs_dir), 
-    "log": str(data_dir / "output.txt")
+    "data_dir": str(DATA_DIR),
+    "log_dir": str(LOGS_DIR), 
+    "log": str(DATA_DIR / "output.txt")
 }
+
+def ensure_directories():
+    """Create required directories if they don't exist."""
+    import os
+    os.makedirs(DATA_DIR, exist_ok=True)
+    os.makedirs(LOGS_DIR, exist_ok=True)
+    return True # for validation
 
 MEMORY = {
     "max_cities_stored": 50,        # Maximum number of cities to keep in memory
@@ -257,19 +239,6 @@ ERROR_MESSAGES = {
 # ================================
 def validate_config() -> None:
     """Validate essential configuration requirements for application startup.
-    
-    Performs comprehensive validation on critical configuration including API keys,
-    configuration structure integrity, default values, file path accessibility,
-    and memory configuration. Provides specific error messages for common
-    configuration issues and creates required directories.
-    
-    Validates:
-        - API key presence and basic format
-        - Required configuration sections (METRICS, DEFAULTS, etc.)
-        - METRICS structure with required fields
-        - Default unit system validity
-        - File path creation and accessibility
-        - Memory configuration value ranges
     
     Raises:
         ValueError: If any critical configuration is invalid or missing
@@ -335,7 +304,7 @@ def validate_config() -> None:
                 reason="must be a positive number"
             ))
 
-    # Add validation for threshold (should be between 0 and 1)
+    # Add validation for cleanup threshold (should be between 0 and 1)
     threshold = MEMORY.get('aggressive_cleanup_threshold', 0)
     if not isinstance(threshold, (int, float)) or not (0 < threshold <= 1):
         raise ValueError(ERROR_MESSAGES['validation'].format(
@@ -343,4 +312,4 @@ def validate_config() -> None:
             reason="must be a number between 0 and 1"
         ))
     
-    print("Configuration validation passed successfully.")
+    return True

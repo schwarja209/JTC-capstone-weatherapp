@@ -2,7 +2,7 @@
 python_requires>=3.8
 
 
-# Weather Dashboard Dependencies:
+# Weather Dashboard Dependencies
 
 # Core HTTP library for API requests
 requests>=2.31.0
@@ -16,13 +16,10 @@ python-dotenv>=1.0.0
 # Plotting and charting library
 matplotlib>=3.7.0
 
-# Additional urllib3 for robust HTTP handling (requests dependency)
-urllib3>=2.0.0
-
 # Development and testing dependencies
-# Uncomment if you plan to add testing
 pytest>=7.4.0
 pytest-cov>=4.1.0
+pytest-mock>=3.0
 
 # Code quality tools (optional)
 # Uncomment if you want linting/formatting

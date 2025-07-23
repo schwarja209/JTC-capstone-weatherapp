@@ -17,7 +17,6 @@ from typing import List
 import tkinter as tk
 
 from WeatherDashboard import config
-from WeatherDashboard.utils.validation_utils import ValidationUtils
 
 
 class WeatherDashboardState:

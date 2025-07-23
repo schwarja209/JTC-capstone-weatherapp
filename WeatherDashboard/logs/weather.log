@@ -4969,3 +4969,1853 @@
 [WARN] 2025-07-21 02:37:SS Fetch blocked due to rate limiting.
 [WARN] 2025-07-21 02:37:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
 [INFO] 2025-07-21 02:37:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-21 11:54:SS
+[INFO] 2025-07-21 11:54:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-21 11:54:SS title widget created successfully
+[INFO] 2025-07-21 11:54:SS control widgets created successfully
+[INFO] 2025-07-21 11:54:SS metric display widgets created successfully
+[INFO] 2025-07-21 11:54:SS chart widgets created successfully
+[INFO] 2025-07-21 11:54:SS tabbed display widgets created successfully
+[INFO] 2025-07-21 11:54:SS status bar widgets created successfully
+[INFO] 2025-07-21 11:54:SS dashboard widgets created successfully
+[ERROR] 2025-07-21 11:54:SS Unexpected error: StatusBarWidgets.update_data_status() got an unexpected keyword argument 'color'
+[TEST] Health check at 2025-07-21 11:55:SS
+[INFO] 2025-07-21 11:55:SS Starting WeatherDashboard v0.1.0: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-21 11:55:SS title widget created successfully
+[INFO] 2025-07-21 11:55:SS control widgets created successfully
+[INFO] 2025-07-21 11:55:SS metric display widgets created successfully
+[INFO] 2025-07-21 11:55:SS chart widgets created successfully
+[INFO] 2025-07-21 11:55:SS tabbed display widgets created successfully
+[INFO] 2025-07-21 11:55:SS status bar widgets created successfully
+[INFO] 2025-07-21 11:55:SS dashboard widgets created successfully
+[INFO] 2025-07-21 11:55:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-21 19:46:SS
+[INFO] 2025-07-21 19:46:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-21 19:46:SS title widget created successfully
+[INFO] 2025-07-21 19:46:SS control widgets created successfully
+[INFO] 2025-07-21 19:46:SS metric display widgets created successfully
+[INFO] 2025-07-21 19:46:SS chart widgets created successfully
+[INFO] 2025-07-21 19:46:SS tabbed display widgets created successfully
+[INFO] 2025-07-21 19:46:SS status bar widgets created successfully
+[INFO] 2025-07-21 19:46:SS dashboard widgets created successfully
+[INFO] 2025-07-21 19:46:SS Weather data written for new_york - Live
+[WARN] 2025-07-21 19:46:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-21 19:46:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-21 19:54:SS
+[INFO] 2025-07-21 19:54:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-21 19:54:SS title widget created successfully
+[INFO] 2025-07-21 19:54:SS control widgets created successfully
+[INFO] 2025-07-21 19:54:SS metric display widgets created successfully
+[INFO] 2025-07-21 19:54:SS chart widgets created successfully
+[INFO] 2025-07-21 19:54:SS tabbed display widgets created successfully
+[INFO] 2025-07-21 19:54:SS status bar widgets created successfully
+[INFO] 2025-07-21 19:54:SS dashboard widgets created successfully
+[INFO] 2025-07-21 19:54:SS Weather data written for new_york - Live
+[WARN] 2025-07-21 19:54:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-21 19:54:SS Weather data written for new_york - Live
+[TEST] Health check at 2025-07-22 01:08:SS
+[INFO] 2025-07-22 01:08:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-22 01:08:SS title widget created successfully
+[INFO] 2025-07-22 01:08:SS control widgets created successfully
+[INFO] 2025-07-22 01:08:SS metric display widgets created successfully
+[INFO] 2025-07-22 01:08:SS chart widgets created successfully
+[INFO] 2025-07-22 01:08:SS tabbed display widgets created successfully
+[INFO] 2025-07-22 01:08:SS status bar widgets created successfully
+[INFO] 2025-07-22 01:08:SS dashboard widgets created successfully
+[INFO] 2025-07-22 01:08:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 01:09:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:09:SS Weather data written for new_york - Live
+[ERROR] 2025-07-22 01:09:SS Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[WARN] 2025-07-22 01:09:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:09:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 01:09:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-22 01:09:SS API failure for Asfafsg - CityNotFoundError: City 'Asfafsg' not found. Switching to simulated data.
+[INFO] 2025-07-22 01:09:SS Weather data written for asfafsg - Simulated
+[ERROR] 2025-07-22 01:09:SS Input validation error: Input validation failed: City name is invalid: cannot be empty
+[WARN] 2025-07-22 01:09:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:09:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 01:09:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-22 01:09:SS Weather data written for phoenix - Live
+[WARN] 2025-07-22 01:09:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-22 01:09:SS Weather data written for new_orleans - Live
+[WARN] 2025-07-22 01:10:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-22 01:10:SS Weather data written for new_orleans - Live
+[WARN] 2025-07-22 01:10:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-22 01:10:SS Weather data written for new_orleans - Live
+[WARN] 2025-07-22 01:10:SS Weather alert: High Humidity Alert - Very humid conditions: 93% (threshold: 85%)
+[INFO] 2025-07-22 01:10:SS Weather data written for buenos_aires - Live
+[TEST] Health check at 2025-07-22 01:11:SS
+[INFO] 2025-07-22 01:11:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-22 01:11:SS title widget created successfully
+[INFO] 2025-07-22 01:11:SS control widgets created successfully
+[INFO] 2025-07-22 01:11:SS metric display widgets created successfully
+[INFO] 2025-07-22 01:11:SS chart widgets created successfully
+[INFO] 2025-07-22 01:11:SS tabbed display widgets created successfully
+[INFO] 2025-07-22 01:11:SS status bar widgets created successfully
+[INFO] 2025-07-22 01:11:SS dashboard widgets created successfully
+[INFO] 2025-07-22 01:11:SS Weather data written for new_york - Live
+[INFO] 2025-07-22 01:11:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 01:11:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-22 01:11:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:11:SS Weather data written for new_york - Live
+[ERROR] 2025-07-22 01:11:SS Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-22 01:11:SS Input validation error: Input validation failed: City name is invalid: cannot be empty
+[WARN] 2025-07-22 01:11:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-22 01:11:SS API failure for Afagaa - CityNotFoundError: City 'Afagaa' not found. Switching to simulated data.
+[WARN] 2025-07-22 01:11:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-22 01:11:SS Weather data written for afagaa - Simulated
+[WARN] 2025-07-22 01:12:SS Weather alert: High Humidity Alert - Very humid conditions: 100% (threshold: 85%)
+[WARN] 2025-07-22 01:12:SS Weather alert: High UV Index Alert - Very high UV exposure: 14 (threshold: 8)
+[INFO] 2025-07-22 01:12:SS Weather data written for bogota - Live
+[WARN] 2025-07-22 01:12:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:12:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 01:12:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:12:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 01:12:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:12:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 01:12:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 01:12:SS Weather data written for new_york - Live
+[INFO] 2025-07-22 18:04:SS Starting Weather Dashboard application
+[INFO] 2025-07-22 18:04:SS Validating application configuration
+[INFO] 2025-07-22 18:04:SS Main configuration validation completed successfully
+[INFO] 2025-07-22 18:04:SS Validating alert system configuration
+[INFO] 2025-07-22 18:04:SS Alert configuration validation completed successfully
+[TEST] Health check at 2025-07-22 18:04:SS
+[INFO] 2025-07-22 18:04:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-22 18:04:SS title widget created successfully
+[INFO] 2025-07-22 18:04:SS control widgets created successfully
+[INFO] 2025-07-22 18:04:SS metric display widgets created successfully
+[INFO] 2025-07-22 18:04:SS chart widgets created successfully
+[INFO] 2025-07-22 18:04:SS tabbed display widgets created successfully
+[INFO] 2025-07-22 18:04:SS status bar widgets created successfully
+[INFO] 2025-07-22 18:04:SS dashboard widgets created successfully
+[INFO] 2025-07-22 18:04:SS Weather data written for new_york - Live
+[INFO] 2025-07-22 20:19:SS Loading Weather Dashboard application
+[INFO] 2025-07-22 20:19:SS Creating required directories
+[INFO] 2025-07-22 20:19:SS Directory creation completed successfully
+[INFO] 2025-07-22 20:19:SS Validating application configuration
+[INFO] 2025-07-22 20:19:SS Main configuration validation completed successfully
+[INFO] 2025-07-22 20:19:SS Validating alert system configuration
+[INFO] 2025-07-22 20:19:SS Alert configuration validation completed successfully
+[TEST] Health check at 2025-07-22 20:19:SS
+[INFO] 2025-07-22 20:19:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-22 20:19:SS title widget created successfully
+[INFO] 2025-07-22 20:19:SS control widgets created successfully
+[INFO] 2025-07-22 20:19:SS metric display widgets created successfully
+[INFO] 2025-07-22 20:19:SS chart widgets created successfully
+[INFO] 2025-07-22 20:19:SS tabbed display widgets created successfully
+[INFO] 2025-07-22 20:19:SS status bar widgets created successfully
+[INFO] 2025-07-22 20:19:SS dashboard widgets created successfully
+[INFO] 2025-07-22 20:19:SS Weather data written for new_york - Live
+[ERROR] 2025-07-22 20:19:SS Unexpected error: 'low_visibility_imperial'
+[INFO] 2025-07-22 20:22:SS Loading Weather Dashboard application
+[INFO] 2025-07-22 20:22:SS Creating required directories
+[INFO] 2025-07-22 20:22:SS Directory creation completed successfully
+[INFO] 2025-07-22 20:22:SS Validating application configuration
+[INFO] 2025-07-22 20:22:SS Main configuration validation completed successfully
+[INFO] 2025-07-22 20:22:SS Validating alert system configuration
+[INFO] 2025-07-22 20:22:SS Alert configuration validation completed successfully
+[TEST] Health check at 2025-07-22 20:22:SS
+[INFO] 2025-07-22 20:22:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-22 20:22:SS title widget created successfully
+[INFO] 2025-07-22 20:22:SS control widgets created successfully
+[INFO] 2025-07-22 20:22:SS metric display widgets created successfully
+[INFO] 2025-07-22 20:22:SS chart widgets created successfully
+[INFO] 2025-07-22 20:22:SS tabbed display widgets created successfully
+[INFO] 2025-07-22 20:22:SS status bar widgets created successfully
+[INFO] 2025-07-22 20:22:SS dashboard widgets created successfully
+[INFO] 2025-07-22 20:22:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 20:22:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-22 20:22:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 20:22:SS Weather data written for new_york - Live
+[ERROR] 2025-07-22 20:23:SS Input validation error: Input validation failed: City name is invalid: contains invalid characters (only letters, spaces, hyphens, and apostrophes allowed)
+[WARN] 2025-07-22 20:23:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-22 20:23:SS Weather data written for roanoke - Live
+[ERROR] 2025-07-22 20:24:SS Input validation error: Input validation failed: City name is invalid: contains invalid characters (only letters, spaces, hyphens, and apostrophes allowed)
+[WARN] 2025-07-22 20:24:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-22 20:24:SS Weather data written for jacksonville - Live
+[ERROR] 2025-07-22 20:24:SS Input validation error: Input validation failed: City name is invalid: contains invalid characters (only letters, spaces, hyphens, and apostrophes allowed)
+[INFO] 2025-07-22 20:26:SS Loading Weather Dashboard application
+[INFO] 2025-07-22 20:26:SS Creating required directories
+[INFO] 2025-07-22 20:26:SS Directory creation completed successfully
+[INFO] 2025-07-22 20:26:SS Validating application configuration
+[INFO] 2025-07-22 20:26:SS Main configuration validation completed successfully
+[INFO] 2025-07-22 20:26:SS Validating alert system configuration
+[INFO] 2025-07-22 20:26:SS Alert configuration validation completed successfully
+[TEST] Health check at 2025-07-22 20:26:SS
+[INFO] 2025-07-22 20:26:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-22 20:26:SS title widget created successfully
+[INFO] 2025-07-22 20:26:SS control widgets created successfully
+[INFO] 2025-07-22 20:26:SS metric display widgets created successfully
+[INFO] 2025-07-22 20:26:SS chart widgets created successfully
+[INFO] 2025-07-22 20:26:SS tabbed display widgets created successfully
+[INFO] 2025-07-22 20:26:SS status bar widgets created successfully
+[INFO] 2025-07-22 20:26:SS dashboard widgets created successfully
+[INFO] 2025-07-22 20:26:SS Weather data written for new_york - Live
+[INFO] 2025-07-22 20:26:SS Weather data written for knoxville,_tennessee - Live
+[INFO] 2025-07-22 20:27:SS Loading Weather Dashboard application
+[INFO] 2025-07-22 20:27:SS Creating required directories
+[INFO] 2025-07-22 20:27:SS Directory creation completed successfully
+[INFO] 2025-07-22 20:27:SS Validating application configuration
+[INFO] 2025-07-22 20:27:SS Main configuration validation completed successfully
+[INFO] 2025-07-22 20:27:SS Validating alert system configuration
+[INFO] 2025-07-22 20:27:SS Alert configuration validation completed successfully
+[TEST] Health check at 2025-07-22 20:27:SS
+[INFO] 2025-07-22 20:27:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-22 20:27:SS title widget created successfully
+[INFO] 2025-07-22 20:27:SS control widgets created successfully
+[INFO] 2025-07-22 20:27:SS metric display widgets created successfully
+[INFO] 2025-07-22 20:27:SS chart widgets created successfully
+[INFO] 2025-07-22 20:27:SS tabbed display widgets created successfully
+[INFO] 2025-07-22 20:27:SS status bar widgets created successfully
+[INFO] 2025-07-22 20:27:SS dashboard widgets created successfully
+[INFO] 2025-07-22 20:27:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 20:27:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-22 20:27:SS Weather alert: High Humidity Alert - Very humid conditions: 93% (threshold: 85%)
+[INFO] 2025-07-22 20:27:SS Weather data written for brunswick_county,_north_carolina - Live
+[WARN] 2025-07-22 20:27:SS Weather alert: High Humidity Alert - Very humid conditions: 93% (threshold: 85%)
+[WARN] 2025-07-22 20:27:SS Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-22 20:27:SS Weather data written for brunswick_county,_north_carolina - Live
+[WARN] 2025-07-22 20:28:SS Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-22 20:28:SS Weather data written for savannah,_georgia - Live
+[WARN] 2025-07-22 20:28:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-22 20:28:SS Weather data written for new_york - Live
+[WARN] 2025-07-22 21:43:SS API response is not a dictionary: <class 'NoneType'>
+[WARN] 2025-07-22 21:43:SS API response is not a dictionary: <class 'list'>
+[WARN] 2025-07-22 21:43:SS API response is not a dictionary: <class 'str'>
+[WARN] 2025-07-22 21:43:SS API response is not a dictionary: <class 'int'>
+[WARN] 2025-07-22 21:43:SS API response missing required sections: ['missing_section']
+[WARN] 2025-07-22 21:43:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-22 21:43:SS Controller theme set to: optimistic
+[ERROR] 2025-07-22 21:43:SS Chart configuration error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='1982912565936'>
+[ERROR] 2025-07-22 21:43:SS Chart data error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='1982912311856'>
+[WARN] 2025-07-22 21:43:SS Fetch blocked due to rate limiting.
+[ERROR] 2025-07-22 21:43:SS Input validation error: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-22 21:43:SS Input validation error: Input validation failed: City name is invalid: must be a string, got int
+[WARN] 2025-07-22 21:43:SS API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-22 21:43:SS API failure for TestCity - CityNotFoundError: City 'TestCity' not found. Switching to simulated data.
+[WARN] 2025-07-22 21:43:SS Using fallback for TestCity: API error
+[WARN] 2025-07-22 21:43:SS Using fallback for TestCity: Generic error
+[WARN] 2025-07-22 21:43:SS Using fallback for TestCity: API service unavailable
+[WARN] 2025-07-22 21:43:SS Using fallback for TestCity: Unknown error
+[WARN] 2025-07-22 21:43:SS Unknown theme: invalid_theme, keeping current theme
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 21:43:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 21:43:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to get visible metrics: Variable error
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 21:43:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 21:43:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 21:43:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 21:43:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set all metrics visibility: Keys error
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 21:43:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'nonexistent': Too early to create variable: no default root window
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 21:43:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 21:43:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 21:43:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 21:43:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 21:43:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 21:43:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 21:43:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-22 21:43:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[ERROR] 2025-07-22 21:43:SS API failure for InvalidCity - CityNotFoundError: City not found. Switching to simulated data.
+[ERROR] 2025-07-22 21:43:SS Unexpected error in fetch_current for New York: Invalid temperature
+[ERROR] 2025-07-22 21:43:SS API failure for New York - Unexpected error: Invalid temperature. Switching to simulated data.
+[ERROR] 2025-07-22 21:43:SS API failure for TestCity - API Error: Test error. Switching to simulated data.
+[WARN] 2025-07-22 21:43:SS Connection error on attempt 1, retrying: Connection failed
+[WARN] 2025-07-22 21:43:SS API call failed (attempt 1), retrying: Other error
+[ERROR] 2025-07-22 21:43:SS API call failed after 2 attempts: Other error
+[WARN] 2025-07-22 21:43:SS Timeout on attempt 1, retrying: Persistent timeout
+[WARN] 2025-07-22 21:43:SS Timeout on attempt 2, retrying: Persistent timeout
+[ERROR] 2025-07-22 21:43:SS API timeout after 3 attempts: Persistent timeout
+[WARN] 2025-07-22 21:43:SS Timeout on attempt 1, retrying: Timeout 1
+[WARN] 2025-07-22 21:43:SS Timeout on attempt 2, retrying: Timeout 2
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 21:47:SS Weather alert: High Temp - Hot
+[WARN] 2025-07-22 21:47:SS Weather alert: High Wind - Windy
+[WARN] 2025-07-22 21:47:SS Weather alert: Low Pressure - Stormy
+[WARN] 2025-07-22 21:47:SS Weather alert: High Humidity - Humid
+[WARN] 2025-07-22 21:47:SS Weather alert: High Temperature Alert - Temperature is very high: 38.0°C (threshold: 35.0°C)
+[WARN] 2025-07-22 21:48:SS API response is not a dictionary: <class 'NoneType'>
+[WARN] 2025-07-22 21:48:SS API response is not a dictionary: <class 'list'>
+[WARN] 2025-07-22 21:48:SS API response is not a dictionary: <class 'str'>
+[WARN] 2025-07-22 21:48:SS API response is not a dictionary: <class 'int'>
+[WARN] 2025-07-22 21:48:SS API response missing required sections: ['missing_section']
+[WARN] 2025-07-22 22:20:SS API response is not a dictionary: <class 'NoneType'>
+[WARN] 2025-07-22 22:20:SS API response is not a dictionary: <class 'list'>
+[WARN] 2025-07-22 22:20:SS API response is not a dictionary: <class 'str'>
+[WARN] 2025-07-22 22:20:SS API response is not a dictionary: <class 'int'>
+[WARN] 2025-07-22 22:20:SS API response missing required sections: ['missing_section']
+[WARN] 2025-07-22 22:20:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-22 22:20:SS Controller theme set to: optimistic
+[ERROR] 2025-07-22 22:20:SS Chart configuration error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='3233432454208'>
+[ERROR] 2025-07-22 22:20:SS Chart data error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='3233433266432'>
+[WARN] 2025-07-22 22:20:SS Fetch blocked due to rate limiting.
+[ERROR] 2025-07-22 22:20:SS Input validation error: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-22 22:20:SS Input validation error: Input validation failed: City name is invalid: must be a string, got int
+[WARN] 2025-07-22 22:24:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-22 22:25:SS Controller theme set to: optimistic
+[ERROR] 2025-07-22 22:25:SS Chart configuration error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='1715983185104'>
+[ERROR] 2025-07-22 22:25:SS Chart data error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='1715987792960'>
+[WARN] 2025-07-22 22:25:SS Fetch blocked due to rate limiting.
+[ERROR] 2025-07-22 22:25:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='1715987325888'>
+[ERROR] 2025-07-22 22:25:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='1715983182416'>
+[ERROR] 2025-07-22 22:25:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='1715983184768'>
+[WARN] 2025-07-22 22:26:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-22 22:26:SS Controller theme set to: optimistic
+[ERROR] 2025-07-22 22:26:SS Chart configuration error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='2472493897376'>
+[ERROR] 2025-07-22 22:26:SS Chart data error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='2472494071888'>
+[WARN] 2025-07-22 22:26:SS Fetch blocked due to rate limiting.
+[ERROR] 2025-07-22 22:26:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2472490061840'>
+[ERROR] 2025-07-22 22:26:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2472494390912'>
+[ERROR] 2025-07-22 22:26:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2472490067552'>
+[WARN] 2025-07-22 22:38:SS Using fallback for TestCity: API error
+[WARN] 2025-07-22 22:38:SS Using fallback for TestCity: Generic error
+[WARN] 2025-07-22 22:38:SS Using fallback for TestCity: API service unavailable
+[WARN] 2025-07-22 22:38:SS Using fallback for TestCity: Unknown error
+[WARN] 2025-07-22 22:38:SS Unknown theme: invalid_theme, keeping current theme
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:45:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-22 22:45:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 22:45:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to get visible metrics: Variable error
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 22:45:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 22:45:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:45:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 22:45:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 22:45:SS Visibility variable '123' not found
+[WARN] 2025-07-22 22:45:SS Visibility variable '123' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to check visibility for metric '[]': unhashable type: 'list'
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to check visibility for metric '{}': unhashable type: 'dict'
+[WARN] 2025-07-22 22:45:SS Visibility variable '' not found
+[WARN] 2025-07-22 22:45:SS Visibility variable '' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set all metrics visibility: Keys error
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 22:45:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'nonexistent': Too early to create variable: no default root window
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to set visibility for metric 'temperature': Too early to create variable: no default root window
+[WARN] 2025-07-22 22:45:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:45:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 22:45:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 22:45:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 22:45:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 22:45:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:49:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-22 22:49:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-22 22:49:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 22:49:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: failed to get visible metrics: Variable error
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 22:49:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 22:49:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:49:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 22:49:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 22:49:SS Visibility variable '123' not found
+[WARN] 2025-07-22 22:49:SS Visibility variable '123' not found
+[WARN] 2025-07-22 22:49:SS Visibility variable '' not found
+[WARN] 2025-07-22 22:49:SS Visibility variable '' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: failed to set all metrics visibility: Keys error
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 22:49:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 22:49:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 22:49:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 22:49:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 22:49:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 22:49:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 22:49:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 22:49:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'temperature': Tcl error
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'temperature': Runtime error
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'temperature': Value error
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'temperature': Generic exception
+[WARN] 2025-07-22 23:04:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'temperature': Variable error
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 23:04:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 23:04:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'error_metric': Variable error
+[WARN] 2025-07-22 23:04:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:04:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:04:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:04:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:04:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:04:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to set all metrics visibility: Keys error
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:04:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 23:04:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 23:04:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 23:04:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 23:04:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:09:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'temperature': Tcl error
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'temperature': Runtime error
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'temperature': Value error
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'temperature': Generic exception
+[WARN] 2025-07-22 23:09:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:09:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'temperature': Variable error
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 23:09:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 23:09:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'error_metric': Variable error
+[WARN] 2025-07-22 23:09:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:09:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:09:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:09:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:09:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:09:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:09:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:09:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:09:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 23:09:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 23:09:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 23:09:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 23:09:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:10:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'temperature': Tcl error
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'temperature': Runtime error
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'temperature': Value error
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'temperature': Generic exception
+[WARN] 2025-07-22 23:10:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:10:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'temperature': Variable error
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 23:10:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 23:10:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'error_metric': Variable error
+[WARN] 2025-07-22 23:10:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:10:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:10:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:10:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:10:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:10:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:10:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:10:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:10:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 23:10:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 23:10:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 23:10:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 23:10:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'temperature': Tcl error
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'temperature': Runtime error
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'temperature': Value error
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'temperature': Generic exception
+[WARN] 2025-07-22 23:13:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:13:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'temperature': Variable error
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 23:13:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 23:13:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 23:13:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'error_metric': Variable error
+[WARN] 2025-07-22 23:13:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:13:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:13:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:13:SS Visibility variable '123' not found
+[WARN] 2025-07-22 23:13:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:13:SS Visibility variable '' not found
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:13:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:13:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:13:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 23:13:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 23:13:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 23:13:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 23:13:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 23:16:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-22 23:16:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-22 23:42:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-22 23:42:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-22 23:45:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-22 23:45:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-22 23:50:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-22 23:50:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-22 23:51:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-22 23:51:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-22 23:58:SS Weather alert: High Temp - Hot
+[WARN] 2025-07-22 23:58:SS Weather alert: High Wind - Windy
+[WARN] 2025-07-22 23:58:SS Weather alert: Low Pressure - Stormy
+[WARN] 2025-07-22 23:58:SS Weather alert: High Humidity - Humid
+[WARN] 2025-07-22 23:58:SS Weather alert: High Temperature Alert - Temperature is very high: 38.0°C (threshold: 35.0°C)
+[WARN] 2025-07-22 23:58:SS API response is not a dictionary: <class 'NoneType'>
+[WARN] 2025-07-22 23:58:SS API response is not a dictionary: <class 'list'>
+[WARN] 2025-07-22 23:58:SS API response is not a dictionary: <class 'str'>
+[WARN] 2025-07-22 23:58:SS API response is not a dictionary: <class 'int'>
+[WARN] 2025-07-22 23:58:SS API response missing required sections: ['missing_section']
+[WARN] 2025-07-22 23:58:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-22 23:58:SS Controller theme set to: optimistic
+[ERROR] 2025-07-22 23:58:SS Chart configuration error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='2769293263936'>
+[ERROR] 2025-07-22 23:58:SS Chart data error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='2769303135840'>
+[WARN] 2025-07-22 23:58:SS Fetch blocked due to rate limiting.
+[ERROR] 2025-07-22 23:58:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2769303136176'>
+[ERROR] 2025-07-22 23:58:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2769302665408'>
+[ERROR] 2025-07-22 23:58:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2769302636592'>
+[WARN] 2025-07-22 23:58:SS Using fallback for TestCity: API service unavailable
+[WARN] 2025-07-22 23:58:SS Using fallback for TestCity: Unknown error
+[WARN] 2025-07-22 23:58:SS Unknown theme: invalid_theme, keeping current theme
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'temperature': Tcl error
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'temperature': Runtime error
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'temperature': Value error
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'temperature': Generic exception
+[WARN] 2025-07-22 23:58:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:58:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'temperature': Variable error
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-22 23:58:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-22 23:58:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-22 23:58:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'error_metric': Variable error
+[WARN] 2025-07-22 23:58:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:58:SS Visibility variable 'None' not found
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-22 23:58:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to set visibility for metric 'nonexistent': No master specified and tkinter is configured to not support default root
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-22 23:58:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-22 23:58:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-22 23:58:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-22 23:58:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-22 23:58:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-22 23:58:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-22 23:58:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-22 23:58:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[ERROR] 2025-07-22 23:58:SS API failure for InvalidCity - CityNotFoundError: City not found. Switching to simulated data.
+[ERROR] 2025-07-22 23:58:SS Unexpected error in fetch_current for New York: Invalid temperature
+[ERROR] 2025-07-22 23:58:SS API failure for New York - Unexpected error: Invalid temperature. Switching to simulated data.
+[ERROR] 2025-07-22 23:58:SS API failure for TestCity - API Error: Test error. Switching to simulated data.
+[WARN] 2025-07-22 23:58:SS Connection error on attempt 1, retrying: Connection failed
+[WARN] 2025-07-22 23:58:SS API call failed (attempt 1), retrying: Other error
+[ERROR] 2025-07-22 23:58:SS API call failed after 2 attempts: Other error
+[WARN] 2025-07-22 23:58:SS Timeout on attempt 1, retrying: Persistent timeout
+[WARN] 2025-07-22 23:58:SS Timeout on attempt 2, retrying: Persistent timeout
+[ERROR] 2025-07-22 23:58:SS API timeout after 3 attempts: Persistent timeout
+[WARN] 2025-07-22 23:58:SS Timeout on attempt 1, retrying: Timeout 1
+[WARN] 2025-07-22 23:58:SS Timeout on attempt 2, retrying: Timeout 2
+[INFO] 2025-07-23 00:01:SS Loading Weather Dashboard application
+[INFO] 2025-07-23 00:01:SS Creating required directories
+[INFO] 2025-07-23 00:01:SS Directory creation completed successfully
+[INFO] 2025-07-23 00:01:SS Validating application configuration
+[INFO] 2025-07-23 00:01:SS Main configuration validation completed successfully
+[INFO] 2025-07-23 00:01:SS Validating alert system configuration
+[INFO] 2025-07-23 00:01:SS Alert configuration validation completed successfully
+[TEST] Health check at 2025-07-23 00:01:SS
+[INFO] 2025-07-23 00:01:SS Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-23 00:01:SS title widget created successfully
+[INFO] 2025-07-23 00:01:SS control widgets created successfully
+[INFO] 2025-07-23 00:01:SS metric display widgets created successfully
+[INFO] 2025-07-23 00:01:SS chart widgets created successfully
+[INFO] 2025-07-23 00:01:SS tabbed display widgets created successfully
+[INFO] 2025-07-23 00:01:SS status bar widgets created successfully
+[INFO] 2025-07-23 00:01:SS dashboard widgets created successfully
+[INFO] 2025-07-23 00:01:SS Weather data written for new_york - Live
+[WARN] 2025-07-23 00:01:SS Fetch blocked due to rate limiting.
+[WARN] 2025-07-23 00:01:SS Weather alert: Low Visibility Alert - Reduced visibility: 6.2 mi (threshold: 3000.0 mi)
+[WARN] 2025-07-23 00:01:SS Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-23 00:01:SS Weather data written for new_york - Live
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 00:03:SS Weather alert: High Temp - Hot
+[WARN] 2025-07-23 00:03:SS Weather alert: High Wind - Windy
+[WARN] 2025-07-23 00:03:SS Weather alert: Low Pressure - Stormy
+[WARN] 2025-07-23 00:03:SS Weather alert: High Humidity - Humid
+[WARN] 2025-07-23 00:03:SS Weather alert: High Temperature Alert - Temperature is very high: 38.0°C (threshold: 35.0°C)
+[WARN] 2025-07-23 00:03:SS API response is not a dictionary: <class 'NoneType'>
+[WARN] 2025-07-23 00:03:SS API response is not a dictionary: <class 'list'>
+[WARN] 2025-07-23 00:03:SS API response is not a dictionary: <class 'str'>
+[WARN] 2025-07-23 00:03:SS API response is not a dictionary: <class 'int'>
+[WARN] 2025-07-23 00:03:SS API response missing required sections: ['missing_section']
+[WARN] 2025-07-23 00:03:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-23 00:03:SS Controller theme set to: optimistic
+[ERROR] 2025-07-23 00:03:SS Chart configuration error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='1975070425840'>
+[ERROR] 2025-07-23 00:03:SS Chart data error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='1975070651936'>
+[WARN] 2025-07-23 00:03:SS Fetch blocked due to rate limiting.
+[ERROR] 2025-07-23 00:03:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='1975071095648'>
+[ERROR] 2025-07-23 00:03:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='1975071080528'>
+[ERROR] 2025-07-23 00:03:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='1975070262672'>
+[WARN] 2025-07-23 00:04:SS Using fallback for TestCity: API error
+[WARN] 2025-07-23 00:04:SS Using fallback for TestCity: Generic error
+[WARN] 2025-07-23 00:04:SS Using fallback for TestCity: API service unavailable
+[WARN] 2025-07-23 00:04:SS Using fallback for TestCity: Unknown error
+[WARN] 2025-07-23 00:04:SS Unknown theme: invalid_theme, keeping current theme
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'temperature': Tcl error
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'temperature': Runtime error
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'temperature': Value error
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'temperature': Generic exception
+[WARN] 2025-07-23 00:04:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-23 00:04:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'temperature': Variable error
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-23 00:04:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-23 00:04:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-23 00:04:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'error_metric': Variable error
+[WARN] 2025-07-23 00:04:SS Visibility variable 'None' not found
+[WARN] 2025-07-23 00:04:SS Visibility variable 'None' not found
+[WARN] 2025-07-23 00:04:SS Visibility variable '123' not found
+[WARN] 2025-07-23 00:04:SS Visibility variable '123' not found
+[WARN] 2025-07-23 00:04:SS Visibility variable '' not found
+[WARN] 2025-07-23 00:04:SS Visibility variable '' not found
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-23 00:04:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 00:04:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 00:04:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-23 00:04:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-23 00:04:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-23 00:04:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-23 00:04:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-23 00:04:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-23 00:04:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[ERROR] 2025-07-23 00:04:SS API failure for InvalidCity - CityNotFoundError: City not found. Switching to simulated data.
+[ERROR] 2025-07-23 00:04:SS Unexpected error in fetch_current for New York: Invalid temperature
+[ERROR] 2025-07-23 00:04:SS API failure for New York - Unexpected error: Invalid temperature. Switching to simulated data.
+[ERROR] 2025-07-23 00:04:SS API failure for TestCity - API Error: Test error. Switching to simulated data.
+[WARN] 2025-07-23 00:04:SS Connection error on attempt 1, retrying: Connection failed
+[WARN] 2025-07-23 00:04:SS API call failed (attempt 1), retrying: Other error
+[ERROR] 2025-07-23 00:04:SS API call failed after 2 attempts: Other error
+[WARN] 2025-07-23 00:04:SS Timeout on attempt 1, retrying: Persistent timeout
+[WARN] 2025-07-23 00:04:SS Timeout on attempt 2, retrying: Persistent timeout
+[ERROR] 2025-07-23 00:04:SS API timeout after 3 attempts: Persistent timeout
+[WARN] 2025-07-23 00:04:SS Timeout on attempt 1, retrying: Timeout 1
+[WARN] 2025-07-23 00:04:SS Timeout on attempt 2, retrying: Timeout 2
+[WARN] 2025-07-23 01:02:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-23 01:02:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-23 01:03:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-23 01:03:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-23 01:03:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-23 01:03:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-23 01:08:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-23 01:08:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-23 01:08:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-23 01:08:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-23 01:08:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-23 01:08:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[ERROR] 2025-07-23 01:25:SS Failed to configure grid weights: 'NoneType' object has no attribute 'columnconfigure'
+[ERROR] 2025-07-23 01:25:SS Failed to create widgets in failing_function: Test exception
+[ERROR] 2025-07-23 01:25:SS Failed to position widget pair at row 0: 'NoneType' object has no attribute 'grid'
+[ERROR] 2025-07-23 01:26:SS Failed to configure grid weights: 'NoneType' object has no attribute 'columnconfigure'
+[ERROR] 2025-07-23 01:26:SS Failed to create widgets in failing_function: Test exception
+[ERROR] 2025-07-23 01:26:SS Failed to position widget pair at row 0: 'NoneType' object has no attribute 'grid'
+[ERROR] 2025-07-23 01:27:SS Failed to configure grid weights: 'NoneType' object has no attribute 'columnconfigure'
+[ERROR] 2025-07-23 01:27:SS Failed to create widgets in failing_function: Test exception
+[ERROR] 2025-07-23 01:27:SS Failed to configure grid weights: 'NoneType' object has no attribute 'columnconfigure'
+[ERROR] 2025-07-23 01:27:SS Failed to position widget pair at row 0: 'NoneType' object has no attribute 'grid'
+[WARN] 2025-07-23 01:27:SS Connection error on attempt 1, retrying: Connection failed
+[WARN] 2025-07-23 01:27:SS API call failed (attempt 1), retrying: Other error
+[ERROR] 2025-07-23 01:27:SS API call failed after 2 attempts: Other error
+[WARN] 2025-07-23 01:27:SS Timeout on attempt 1, retrying: Persistent timeout
+[WARN] 2025-07-23 01:27:SS Timeout on attempt 2, retrying: Persistent timeout
+[ERROR] 2025-07-23 01:27:SS API timeout after 3 attempts: Persistent timeout
+[WARN] 2025-07-23 01:27:SS Timeout on attempt 1, retrying: Timeout 1
+[WARN] 2025-07-23 01:27:SS Timeout on attempt 2, retrying: Timeout 2
+[ERROR] 2025-07-23 01:27:SS API failure for InvalidCity - CityNotFoundError: City not found. Switching to simulated data.
+[ERROR] 2025-07-23 01:27:SS Unexpected error in fetch_current for New York: Invalid temperature
+[ERROR] 2025-07-23 01:27:SS API failure for New York - Unexpected error: Invalid temperature. Switching to simulated data.
+[ERROR] 2025-07-23 01:27:SS API failure for TestCity - API Error: Test error. Switching to simulated data.
+[WARN] 2025-07-23 01:32:SS Connection error on attempt 1, retrying: Connection failed
+[WARN] 2025-07-23 01:32:SS API call failed (attempt 1), retrying: Other error
+[ERROR] 2025-07-23 01:32:SS API call failed after 2 attempts: Other error
+[WARN] 2025-07-23 01:32:SS Timeout on attempt 1, retrying: Persistent timeout
+[WARN] 2025-07-23 01:32:SS Timeout on attempt 2, retrying: Persistent timeout
+[ERROR] 2025-07-23 01:32:SS API timeout after 3 attempts: Persistent timeout
+[WARN] 2025-07-23 01:32:SS Timeout on attempt 1, retrying: Timeout 1
+[WARN] 2025-07-23 01:32:SS Timeout on attempt 2, retrying: Timeout 2
+[ERROR] 2025-07-23 01:32:SS API failure for InvalidCity - CityNotFoundError: City not found. Switching to simulated data.
+[ERROR] 2025-07-23 01:32:SS Unexpected error in fetch_current for New York: Invalid temperature
+[ERROR] 2025-07-23 01:32:SS API failure for New York - Unexpected error: Invalid temperature. Switching to simulated data.
+[ERROR] 2025-07-23 01:32:SS API failure for TestCity - API Error: Test error. Switching to simulated data.
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: Hot - Very hot
+[WARN] 2025-07-23 01:33:SS Weather alert: High Temp - Hot
+[WARN] 2025-07-23 01:33:SS Weather alert: High Wind - Windy
+[WARN] 2025-07-23 01:33:SS Weather alert: Low Pressure - Stormy
+[WARN] 2025-07-23 01:33:SS Weather alert: High Humidity - Humid
+[WARN] 2025-07-23 01:33:SS Weather alert: High Temperature Alert - Temperature is very high: 38.0°C (threshold: 35.0°C)
+[WARN] 2025-07-23 01:33:SS API response is not a dictionary: <class 'NoneType'>
+[WARN] 2025-07-23 01:33:SS API response is not a dictionary: <class 'list'>
+[WARN] 2025-07-23 01:33:SS API response is not a dictionary: <class 'str'>
+[WARN] 2025-07-23 01:33:SS API response is not a dictionary: <class 'int'>
+[WARN] 2025-07-23 01:33:SS API response missing required sections: ['missing_section']
+[WARN] 2025-07-23 01:33:SS Fetch blocked due to rate limiting.
+[INFO] 2025-07-23 01:33:SS Controller theme set to: optimistic
+[ERROR] 2025-07-23 01:33:SS Chart configuration error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='2598903532240'>
+[ERROR] 2025-07-23 01:33:SS Chart data error: <MagicMock name='config.ERROR_MESSAGES.__getitem__().format()' id='2598903172464'>
+[WARN] 2025-07-23 01:33:SS Fetch blocked due to rate limiting.
+[ERROR] 2025-07-23 01:33:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2598903539632'>
+[ERROR] 2025-07-23 01:33:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2598903173136'>
+[ERROR] 2025-07-23 01:33:SS Input validation error: <MagicMock name='ValidationUtils.format_validation_errors()' id='2598903548624'>
+[WARN] 2025-07-23 01:33:SS Using fallback for TestCity: API error
+[WARN] 2025-07-23 01:33:SS Using fallback for TestCity: Generic error
+[WARN] 2025-07-23 01:33:SS Using fallback for TestCity: API service unavailable
+[WARN] 2025-07-23 01:33:SS Using fallback for TestCity: Unknown error
+[WARN] 2025-07-23 01:33:SS Unknown theme: invalid_theme, keeping current theme
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'temperature': Tcl error
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'temperature': Missing attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'temperature': Runtime error
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'temperature': Value error
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'temperature': Type error
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'temperature': Generic exception
+[WARN] 2025-07-23 01:33:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-23 01:33:SS Visibility variable 'temperature' not found
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'temperature': Variable error
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: visibility variable for 'invalid1' is not a tkinter variable
+[WARN] 2025-07-23 01:33:SS Visibility variable 'invalid2' not found
+[WARN] 2025-07-23 01:33:SS Invalid state: visibility variable for 'invalid' is not a tkinter variable
+[WARN] 2025-07-23 01:33:SS Visibility variable 'nonexistent_metric' not found
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'error_metric': Variable error
+[WARN] 2025-07-23 01:33:SS Visibility variable 'None' not found
+[WARN] 2025-07-23 01:33:SS Visibility variable 'None' not found
+[WARN] 2025-07-23 01:33:SS Visibility variable '123' not found
+[WARN] 2025-07-23 01:33:SS Visibility variable '123' not found
+[WARN] 2025-07-23 01:33:SS Visibility variable '' not found
+[WARN] 2025-07-23 01:33:SS Visibility variable '' not found
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to set visibility for metric 'temperature': Set error
+[WARN] 2025-07-23 01:33:SS Visibility variable 'nonexistent' not found
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility for metric 'temperature'
+[WARN] 2025-07-23 01:33:SS Invalid state: state manager missing visibility attribute
+[WARN] 2025-07-23 01:33:SS Invalid state: visibility variable for 'string_value' is not a tkinter variable
+[WARN] 2025-07-23 01:33:SS Invalid state: visibility variable for 'number_value' is not a tkinter variable
+[WARN] 2025-07-23 01:33:SS Visibility variable 'none_value' not found
+[WARN] 2025-07-23 01:33:SS Invalid state: visibility variable for 'list_value' is not a tkinter variable
+[WARN] 2025-07-23 01:33:SS Invalid state: failed to check visibility for metric 'dict_value': get expected at least 1 argument, got 0
+[WARN] 2025-07-23 01:33:SS Unrecognized metric key: unknown_metric
+[WARN] 2025-07-23 01:33:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[WARN] 2025-07-23 01:33:SS Unit label 'metric 'unknown_metric' in system 'metric'' not found
+[ERROR] 2025-07-23 01:33:SS API failure for InvalidCity - CityNotFoundError: City not found. Switching to simulated data.
+[ERROR] 2025-07-23 01:33:SS Unexpected error in fetch_current for New York: Invalid temperature
+[ERROR] 2025-07-23 01:33:SS API failure for New York - Unexpected error: Invalid temperature. Switching to simulated data.
+[ERROR] 2025-07-23 01:33:SS API failure for TestCity - API Error: Test error. Switching to simulated data.
+[WARN] 2025-07-23 01:33:SS Connection error on attempt 1, retrying: Connection failed
+[WARN] 2025-07-23 01:33:SS API call failed (attempt 1), retrying: Other error
+[ERROR] 2025-07-23 01:33:SS API call failed after 2 attempts: Other error
+[WARN] 2025-07-23 01:33:SS Timeout on attempt 1, retrying: Persistent timeout
+[WARN] 2025-07-23 01:33:SS Timeout on attempt 2, retrying: Persistent timeout
+[ERROR] 2025-07-23 01:33:SS API timeout after 3 attempts: Persistent timeout
+[WARN] 2025-07-23 01:33:SS Timeout on attempt 1, retrying: Timeout 1
+[WARN] 2025-07-23 01:33:SS Timeout on attempt 2, retrying: Timeout 2
+[ERROR] 2025-07-23 01:33:SS Failed to configure grid weights: 'NoneType' object has no attribute 'columnconfigure'
+[ERROR] 2025-07-23 01:33:SS Failed to create widgets in failing_function: Test exception
+[ERROR] 2025-07-23 01:33:SS Failed to configure grid weights: 'NoneType' object has no attribute 'columnconfigure'
+[ERROR] 2025-07-23 01:33:SS Failed to position widget pair at row 0: 'NoneType' object has no attribute 'grid'

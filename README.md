@@ -59,52 +59,56 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 
 ### Project Structure
 ```
-WeatherDashboard/                   # Main application package (66 files total)
-│   ├── styles.py                   # Comprehensive visual styling and color coding
-│   ├── config.py                   # Complete metric and configuration management
-│   └── main.py                     # Application entry point
-├── core/                           # Business logic and data management (4 files)
-│   ├── controller.py               # Main orchestration controller with theme support
-│   ├── data_manager.py             # Weather data storage and processing
-│   ├── data_service.py             # Service layer abstraction
-│   └── view_models.py              # Display-ready data formatting with enhanced displays
-├── gui/                            # User interface components (4 files)
-│   ├── main_window.py              # Application window coordination with async support
-│   ├── state_manager.py            # Centralized state management
-│   ├── frames.py                   # Layout management
-│   └── loading_states.py           # Async operation UI handling with cancellation
-├── widgets/                        # Specialized UI components (7 files)
-│   ├── base_widgets.py             # Base widget classes with standardized error handling
-│   ├── dashboard_widgets.py        # Main widget coordinator
-│   ├── control_widgets.py          # Input controls and buttons with advanced features
-│   ├── tabbed_widgets.py           # Tab management
-│   ├── metric_widgets.py           # Weather metric displays with color coding
-│   ├── chart_widgets.py            # Matplotlib chart integration with fallback handling
-│   ├── status_bar_widgets.py       # Status and progress indicators
-│   └── title_widgets.py            # Title bar display
-├── services/                       # External integrations (4 files)
-│   ├── weather_service.py          # OpenWeatherMap API client with retry logic
-│   ├── error_handler.py            # Theme-aware error management (satirical foundation)
-│   ├── fallback_generator.py       # Comprehensive simulated weather data
-│   └── api_exceptions.py           # Custom exception hierarchy
-├── features/                       # Specialized functionality (6 files)
-│   ├── alerts/                     # Weather alert system (2 files)
-│   │   ├── alert_display.py        # Alert display components with severity styling
-│   │   └── alert_manager.py        # Alert management system with comprehensive thresholds
-│   ├── theme_switcher.py           # Future theme management (placeholder)
-│   ├── tomorrows_guess.py          # Future prediction features (placeholder)
-│   └── weather_history_tracker.py  # Future history analysis (placeholder)
-├── utils/                          # Common utilities (6 files)
-│   ├── logger.py                   # Multi-format logging with health checking
-│   ├── rate_limiter.py             # API rate limiting with exponential backoff
-│   ├── unit_converter.py           # Comprehensive weather unit conversions
-│   ├── derived_metrics.py          # Professional weather calculations (NWS formulas)
-│   ├── api_utils.py                # API data parsing utilities
-│   ├── color_utils.py              # Centralized color determination for metrics
-│   ├── state_utils.py              # Widget visibility utility functions
-│   ├── validation_utils.py         # Centralized validation utilities
-│   ├── widget_utils.py             # Centralized widget positioning and creation utilities
-│   └── utils.py                    # General helper functions
+Project
+│   ├── run_dashboard.py                # Weather Dashboard Application Launcher
+│   ├── run_tests.py                    # Test runner for the Weather Dashboard application
+│   └── setup.py                        # Setup script for Weather Dashboard application
+├── WeatherDashboard/                   # Main application package (66 files total)
+│   │   ├── styles.py                   # Comprehensive visual styling and color coding
+│   │   ├── config.py                   # Complete metric and configuration management
+│   │   └── main.py                     # Application entry point
+│   ├── core/                           # Business logic and data management (4 files)
+│   │   ├── controller.py               # Main orchestration controller with theme support
+│   │   ├── data_manager.py             # Weather data storage and processing
+│   │   ├── data_service.py             # Service layer abstraction
+│   │   └── view_models.py              # Display-ready data formatting with enhanced displays
+│   ├── gui/                            # User interface components (4 files)
+│   │   ├── main_window.py              # Application window coordination with async support
+│   │   ├── state_manager.py            # Centralized state management
+│   │   ├── frames.py                   # Layout management
+│   │   └── loading_states.py           # Async operation UI handling with cancellation
+│   ├── widgets/                        # Specialized UI components (7 files)
+│   │   ├── base_widgets.py             # Base widget classes with standardized error handling
+│   │   ├── dashboard_widgets.py        # Main widget coordinator
+│   │   ├── control_widgets.py          # Input controls and buttons with advanced features
+│   │   ├── tabbed_widgets.py           # Tab management
+│   │   ├── metric_widgets.py           # Weather metric displays with color coding
+│   │   ├── chart_widgets.py            # Matplotlib chart integration with fallback handling
+│   │   ├── status_bar_widgets.py       # Status and progress indicators
+│   │   └── title_widgets.py            # Title bar display
+│   ├── services/                       # External integrations (4 files)
+│   │   ├── weather_service.py          # OpenWeatherMap API client with retry logic
+│   │   ├── error_handler.py            # Theme-aware error management (satirical foundation)
+│   │   ├── fallback_generator.py       # Comprehensive simulated weather data
+│   │   └── api_exceptions.py           # Custom exception hierarchy
+│   ├── features/                       # Specialized functionality (6 files)
+│   │   ├── alerts/                     # Weather alert system (2 files)
+│   │   │   ├── alert_display.py        # Alert display components with severity styling
+│   │   │   └── alert_manager.py        # Alert management system with comprehensive thresholds
+│   │   ├── theme_switcher.py           # Future theme management (placeholder)
+│   │   ├── tomorrows_guess.py          # Future prediction features (placeholder)
+│   │   └── weather_history_tracker.py  # Future history analysis (placeholder)
+│   └── utils/                          # Common utilities (6 files)
+│       ├── logger.py                   # Multi-format logging with health checking
+│       ├── rate_limiter.py             # API rate limiting with exponential backoff
+│       ├── unit_converter.py           # Comprehensive weather unit conversions
+│       ├── derived_metrics.py          # Professional weather calculations (NWS formulas)
+│       ├── api_utils.py                # API data parsing utilities
+│       ├── color_utils.py              # Centralized color determination for metrics
+│       ├── state_utils.py              # Widget visibility utility functions
+│       ├── validation_utils.py         # Centralized validation utilities
+│       ├── widget_utils.py             # Centralized widget positioning and creation utilities
+│       └── utils.py                    # General helper functions
 └── tests/                          # Comprehensive test suite (5 files)
     ├── test_alert_manager.py       # Tests weather alert system functionality 
     ├── test_color_utils.py         # Tests color determination logic for metric values 

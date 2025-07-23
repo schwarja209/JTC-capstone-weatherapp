@@ -106,34 +106,6 @@ class AlertManager:
         alerts = []
         unit_system = self.state.get_current_unit_system()
         
-        # Handle special cases that need custom logic
-        if alert_type == 'low_visibility':
-            # Custom visibility handling (convert units for display)
-            unit_system = self.state.get_current_unit_system()
-            if unit_system == 'imperial':
-                threshold_meters = self._get_converted_threshold('low_visibility_imperial', unit_system)
-                vis_display = value * 0.000621371  # meters to miles
-                threshold_display = threshold_meters * 0.000621371
-                unit = 'mi'
-            else:
-                threshold_meters = self._get_converted_threshold('low_visibility_metric', unit_system)
-                vis_display = value / 1000  # meters to kilometers  
-                threshold_display = threshold_meters / 1000
-                unit = 'km'
-            
-            if value < threshold_meters:
-                alert = WeatherAlert(
-                    alert_type='low_visibility',
-                    severity='caution',
-                    title='Low Visibility Alert',
-                    message=f'Reduced visibility: {vis_display:.1f} {unit} (threshold: {threshold_display:.1f} {unit})',
-                    icon='🌫️',
-                    value=vis_display,
-                    threshold=threshold_display
-                )
-                return [alert]
-            return []
-        
         # Get converted threshold
         threshold = self._get_converted_threshold(alert_def['threshold_key'], unit_system)
         

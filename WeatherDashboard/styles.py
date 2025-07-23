@@ -17,18 +17,15 @@ Functions:
 
 from tkinter import ttk
 
+# centralizing style info
+from .alert_config import ALERT_DEFINITIONS, ALERT_SEVERITY_COLORS, ALERT_DISPLAY_CONFIG
+
 
 # =================================
 # 1. TTK STYLE CONFIGURATION
 # =================================
 def configure_styles() -> None:
     """Configure comprehensive styles for all GUI elements.
-    
-    Applies consistent styling across the entire application including fonts,
-    colors, padding, borders, and visual effects. Configures TTK styles for
-    labels, buttons, frames, notebooks, status indicators, and specialized
-    components. Sets up theme-aware styling foundation and establishes
-    visual hierarchy through font sizes and color schemes.
     
     Configured Elements:
         - Label styles (frame labels, values, names, titles, alerts)
@@ -118,167 +115,6 @@ STATUS_BAR_CONFIG = {
         'warning': 'orange', 
         'error': 'red',
         'loading': 'blue'
-    }
-}
-
-
-# =================================
-# 3. ALERT SYSTEM STYLING
-# =================================
-# Alert display styling configuration
-ALERT_DISPLAY_CONFIG = {
-    'badge_font': ("Arial", 8),
-    'badge_size': {'width': 2, 'height': 1},
-    'badge_border': {'relief': "solid", 'borderwidth': 1},
-    'column_padding': {'right_section': (20, 0), 'left_section': (0, 0)},
-    'alert_text_padding': {'padx': 5, 'pady': 2},
-    'alert_text_border': {'relief': "raised", 'borderwidth': 1},
-    'fallback_icon': '⚠️',
-    'animation_settings': {
-        'pulse_colors': ['red', 'darkred', 'red'],
-        'flash_interval': 500
-    }
-}
-
-# Alert severity visual styling
-ALERT_SEVERITY_COLORS = {
-    'warning': {
-        'color': 'darkred',
-        'background': '#ffe6e6',  # Light red background
-        'icon': '⚠️',
-        'border': 'red'
-    },
-    'caution': {
-        'color': 'darkorange', 
-        'background': '#fff3e6',  # Light orange background
-        'icon': '🔶',
-        'border': 'orange'
-    },
-    'watch': {
-        'color': 'darkblue',
-        'background': '#e6f3ff',  # Light blue background  
-        'icon': '👁️',
-        'border': 'blue'
-    }
-}
-
-ALERT_DEFINITIONS = {
-    'temperature_high': {
-        'threshold_key': 'temperature_high',
-        'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
-        'icon': '🔥',
-        'title': 'High Temperature Alert',
-        'message_template': 'Temperature is very high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-        'unit_type': 'temperature'
-    },
-    'temperature_low': {
-        'threshold_key': 'temperature_low',
-        'check_function': lambda val, thresh: val < thresh,
-        'severity': 'warning', 
-        'icon': '🥶',
-        'title': 'Low Temperature Alert',
-        'message_template': 'Temperature is very low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-        'unit_type': 'temperature'
-    },
-    'wind_speed_high': {
-        'threshold_key': 'wind_speed_high',
-        'check_function': lambda val, thresh: val > thresh,
-        'severity_function': lambda val, thresh: 'warning' if val > thresh * 1.5 else 'caution',
-        'icon': '💨',
-        'title': 'High Wind Alert', 
-        'message_template': 'Strong winds detected: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
-        'unit_type': 'wind_speed'
-    },
-    'pressure_low': {
-        'threshold_key': 'pressure_low',
-        'check_function': lambda val, thresh: val < thresh,
-        'severity': 'watch',
-        'icon': '⛈️',
-        'title': 'Low Pressure Alert',
-        'message_template': 'Low pressure system detected: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
-        'unit_type': 'pressure'
-    },
-    'humidity_high': {
-        'threshold_key': 'humidity_high',
-        'check_function': lambda val, thresh: val > thresh,
-        'severity': 'caution',
-        'icon': '💧',
-        'title': 'High Humidity Alert',
-        'message_template': 'Very humid conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
-        'unit_type': 'percent'
-    },
-    'humidity_low': {
-        'threshold_key': 'humidity_low',
-        'check_function': lambda val, thresh: val < thresh,
-        'severity': 'caution',
-        'icon': '🏜️',
-        'title': 'Low Humidity Alert',
-        'message_template': 'Very dry conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
-        'unit_type': 'percent'
-    },
-    'heavy_rain': {
-        'threshold_key': 'heavy_rain_threshold',
-        'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
-        'icon': '🌧️',
-        'title': 'Heavy Rain Alert',
-        'message_template': 'Heavy rainfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
-        'unit_type': 'precipitation'
-    },
-    'heavy_snow': {
-        'threshold_key': 'heavy_snow_threshold',
-        'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
-        'icon': '🌨️',
-        'title': 'Heavy Snow Alert',
-        'message_template': 'Heavy snowfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
-        'unit_type': 'precipitation'
-    },
-    'low_visibility': {
-        'threshold_key': 'low_visibility_metric',
-        'check_function': lambda val, thresh: val < thresh,
-        'severity': 'caution',
-        'icon': '🌫️',
-        'title': 'Low Visibility Alert',
-        'message_template': 'Reduced visibility: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
-        'unit_type': 'visibility'
-    },
-    'heat_index_high': {
-        'threshold_key': 'heat_index_high',
-        'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
-        'icon': '🔥',
-        'title': 'Dangerous Heat Index',
-        'message_template': 'Heat index is dangerously high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-        'unit_type': 'temperature'
-    },
-    'wind_chill_low': {
-        'threshold_key': 'wind_chill_low',
-        'check_function': lambda val, thresh: val < thresh,
-        'severity': 'warning',
-        'icon': '🥶',
-        'title': 'Dangerous Wind Chill',
-        'message_template': 'Wind chill is dangerously low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-        'unit_type': 'temperature'
-    },
-    'uv_index_high': {
-        'threshold_key': 'uv_index_high',
-        'check_function': lambda val, thresh: val > thresh,
-        'severity': 'caution',
-        'icon': '☀️',
-        'title': 'High UV Index Alert',
-        'message_template': 'Very high UV exposure: {value:.0f} (threshold: {threshold:.0f})',
-        'unit_type': 'index'
-    },
-    'air_quality_poor': {
-        'threshold_key': 'air_quality_poor',
-        'check_function': lambda val, thresh: val >= thresh,
-        'severity_function': lambda val, thresh: 'warning' if val == 5 else 'caution',
-        'icon': '😷',
-        'title': 'Poor Air Quality Alert',
-        'message_template': 'Air quality is poor: AQI {value:.0f} (threshold: AQI {threshold:.0f})',
-        'unit_type': 'index'
     }
 }
 

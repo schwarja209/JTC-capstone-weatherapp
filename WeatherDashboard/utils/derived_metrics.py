@@ -143,27 +143,44 @@ class DerivedMetricsCalculator:
         """
         score = 100
         
+        IDEAL_TEMP_MIN = 18
+        IDEAL_TEMP_MAX = 24
+        TEMP_PENALTY_FACTOR = 3
+
         # Temperature comfort (ideal: 18-24°C)
-        if temp_c < 18:
-            score -= (18 - temp_c) * 3
-        elif temp_c > 24:
-            score -= (temp_c - 24) * 3
+        if temp_c < IDEAL_TEMP_MIN:
+            score -= (IDEAL_TEMP_MIN - temp_c) * TEMP_PENALTY_FACTOR
+        elif temp_c > IDEAL_TEMP_MAX:
+            score -= (temp_c - IDEAL_TEMP_MAX) * TEMP_PENALTY_FACTOR
         
+        IDEAL_HUMIDITY_MIN = 40
+        IDEAL_HUMIDITY_MAX = 60
+        HUMIDITY_PENALTY_FACTOR = 1.5
+
         # Humidity comfort (ideal: 40-60%)
-        if humidity < 40:
-            score -= (40 - humidity) * 1.5
-        elif humidity > 60:
-            score -= (humidity - 60) * 1.5
+        if humidity < IDEAL_HUMIDITY_MIN:
+            score -= (IDEAL_HUMIDITY_MIN - humidity) * HUMIDITY_PENALTY_FACTOR
+        elif humidity > IDEAL_HUMIDITY_MAX:
+            score -= (humidity - IDEAL_HUMIDITY_MAX) * HUMIDITY_PENALTY_FACTOR
         
+        IDEAL_WIND_MIN = 0.5
+        IDEAL_WIND_MAX = 8
+        WIND_PENALTY_FACTOR = 5
+        STAGNANT_AIR_PENALTY = 10
+
         # Wind comfort (ideal: light breeze)
-        if wind_speed > 8:
-            score -= (wind_speed - 8) * 5
-        elif wind_speed < 0.5:
-            score -= 10
+        if wind_speed > IDEAL_WIND_MAX:
+            score -= (wind_speed - IDEAL_WIND_MAX) * WIND_PENALTY_FACTOR
+        elif wind_speed < IDEAL_WIND_MIN:
+            score -= STAGNANT_AIR_PENALTY
         
+        STANDARD_PRESSSURE = 1013
+        PRESSURE_THRESHOLD = 20
+        PRESSURE_PENALTY_FACTOR = 0.5
+
         # Pressure stability (ideal: near standard atmosphere)
-        pressure_diff = abs(pressure - 1013)
-        if pressure_diff > 20:
-            score -= (pressure_diff - 20) * 0.5
+        pressure_diff = abs(pressure - STANDARD_PRESSSURE)
+        if pressure_diff > PRESSURE_THRESHOLD:
+            score -= (pressure_diff - PRESSURE_THRESHOLD) * PRESSURE_PENALTY_FACTOR
         
         return max(0, min(100, score))

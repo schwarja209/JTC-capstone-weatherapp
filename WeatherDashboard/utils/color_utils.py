@@ -73,7 +73,9 @@ def get_enhanced_temperature_color(temp_text: str, unit_system: str) -> str:
                 difference = abs(feels_temp - actual_temp)
                 
                 # Determine enhancement based on difference and direction
-                threshold_large = 5.0 if unit_system == 'metric' else 9.0  # 5°C or 9°F
+                TEMP_DIFF_THRESHOLD_METRIC = 5.0  # °C
+                TEMP_DIFF_THRESHOLD_IMPERIAL = 9.0 # °F
+                threshold_large = TEMP_DIFF_THRESHOLD_METRIC if unit_system == 'metric' else TEMP_DIFF_THRESHOLD_IMPERIAL
                 
                 if '↑' in temp_text:  # Feels warmer
                     if difference >= threshold_large:

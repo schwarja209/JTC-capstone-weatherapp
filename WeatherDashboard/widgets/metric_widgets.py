@@ -353,6 +353,6 @@ class MetricDisplayWidgets(BaseWidgetManager):
         border_allowance = layout['width'] - (2 * layout['border_width'])  # Leave border space
         progress_width = int((comfort_score / 100) * border_allowance)
         if progress_width > 0:
-            canvas.create_rectangle(1, 1, progress_width + 1, 14, fill=color, outline='')
+            canvas.create_rectangle(1, 1, progress_width + 1, layout['height'] - 1, fill=color, outline='')
         
         return canvas

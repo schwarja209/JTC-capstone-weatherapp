@@ -16,7 +16,6 @@ from typing import Optional, Any
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
-from WeatherDashboard.utils.widget_utils import WidgetUtils
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
@@ -36,7 +35,7 @@ class StatusBarWidgets(BaseWidgetManager):
         data_status_label: Right section - data source information
     """
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
-        """Initialize the status bar  with error handling.
+        """Initialize the status bar with error handling.
         
         Creates left (system), center (progress), and right (data) status sections
         with appropriate styling, separators, and registers widgets with state manager.
@@ -80,7 +79,7 @@ class StatusBarWidgets(BaseWidgetManager):
         self.data_status_label.pack(side=tk.RIGHT, padx=styles.STATUS_BAR_CONFIG['padding']['data'])
     
     def update_data_status(self, message: str, color: str = "gray") -> None:
-        """Updates data source information with dynamic color styling.
+        """Updates data source information with dynamic styling.
         
         Updates the right section of the status bar with data source information
         and applies appropriate styling based on whether data is live, simulated,
@@ -88,8 +87,9 @@ class StatusBarWidgets(BaseWidgetManager):
         
         Args:
             message: Data source status message to display
-            color: Color for message display (unused, styling handled by message content)
+            color: Color for message display (DEPRECATED - styling handled by message content)
         """
+        # color parameter is deprecated but kept for backward compatibility
         if self.data_status_label:
             display_message = str(message) if message is not None else "No data"
             self.data_status_label.configure(text=display_message)

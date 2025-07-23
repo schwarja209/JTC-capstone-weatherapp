@@ -1,23 +1,17 @@
 """
-Base widget classes with standardized error handling for the Weather Dashboard application.
+Widget creation and management utilities for the Weather Dashboard application.
 
-This module provides foundational widget management classes and utilities for creating
-robust GUI components with consistent error handling, lifecycle management, and safe
-widget creation patterns. Eliminates duplicate error handling code across all widget
-implementations.
+This module provides centralized utilities for creating, positioning, and managing
+GUI widgets with consistent styling, error handling, and layout patterns used
+throughout the Weather Dashboard interface.
 
 Classes:
-    BaseWidgetManager: Abstract base class for widget managers with error handling
-    SafeWidgetCreator: Utility class for safe widget creation with error wrapping
-    ExampleRefactoredWidgetManager: Example implementation showing migration patterns
-
-Functions:
-    widget_error_handler: Decorator for standardized widget method error handling
+    WidgetUtils: Static utilities for widget creation and management
 """
 
 import tkinter as tk
 from tkinter import ttk
-from typing import Dict, Any, Optional, Tuple
+from typing import Dict, Optional, Tuple
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger

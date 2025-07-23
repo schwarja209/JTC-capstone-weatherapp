@@ -17,7 +17,7 @@ from datetime import datetime
 # Add project root to path for imports
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from WeatherDashboard.core.controller import WeatherDashboardController
 from WeatherDashboard.services.api_exceptions import (
@@ -38,7 +38,6 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_state.get_current_unit_system.return_value = "metric"
         self.mock_state.get_current_range.return_value = "Last 7 Days"
         self.mock_state.get_current_chart_metric.return_value = "Temperature"
-        self.mock_state.validate_current_state.return_value = []
         
         # Configure mock visibility state properly
         self.mock_visibility = {}
@@ -90,8 +89,13 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.assertEqual(self.controller.error_handler.current_theme, 'optimistic')
 
     @patch('WeatherDashboard.core.controller.Logger')
-    def test_update_weather_display_success(self, mock_logger):
+    @patch('WeatherDashboard.core.controller.ValidationUtils')
+    def test_update_weather_display_success(self, mock_validation_utils, mock_logger):
         """Test successful weather data update flow."""
+        # Configure validation to pass
+        mock_validation_utils.validate_input_types.return_value = []
+        mock_validation_utils.validate_complete_state.return_value = []
+        
         # Configure mocks for successful flow
         self.mock_rate_limiter.can_make_request.return_value = True
         
@@ -117,13 +121,15 @@ class TestWeatherDashboardController(unittest.TestCase):
             
             # Verify success
             self.assertTrue(result)
-            self.mock_data_service.get_city_data.assert_called_once_with("New York", "metric")
+            # Fix: Check for the correct call signature with cancel_event=None
+            self.mock_data_service.get_city_data.assert_called_once_with("New York", "metric", None)
             self.mock_data_service.write_to_log.assert_called_once()
 
-    def test_update_weather_display_validation_failure(self):
+    @patch('WeatherDashboard.core.controller.ValidationUtils')
+    def test_update_weather_display_validation_failure(self, mock_validation_utils):
         """Test weather update with validation errors."""
-        # Configure state validation to return errors
-        self.mock_state.validate_current_state.return_value = ["City name cannot be empty"]
+        # Configure input validation to return errors
+        mock_validation_utils.validate_input_types.return_value = ["City name cannot be empty"]
         
         # Execute update
         result = self.controller.update_weather_display("", "metric")
@@ -139,15 +145,25 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_rate_limiter.can_make_request.return_value = False
         self.mock_rate_limiter.get_wait_time.return_value = 5.0
         
-        # Execute update
-        result = self.controller.update_weather_display("New York", "metric")
-        
-        # Verify failure due to rate limiting
-        self.assertFalse(result)
-        self.mock_data_service.get_city_data.assert_not_called()
+        # Mock validation to pass so we get to rate limiting check
+        with patch('WeatherDashboard.core.controller.ValidationUtils') as mock_validation_utils:
+            mock_validation_utils.validate_input_types.return_value = []
+            mock_validation_utils.validate_complete_state.return_value = []
+            
+            # Execute update
+            result = self.controller.update_weather_display("New York", "metric")
+            
+            # Verify failure due to rate limiting
+            self.assertFalse(result)
+            self.mock_data_service.get_city_data.assert_not_called()
 
-    def test_update_weather_display_city_not_found(self):
+    @patch('WeatherDashboard.core.controller.ValidationUtils')
+    def test_update_weather_display_city_not_found(self, mock_validation_utils):
         """Test weather update with city not found error."""
+        # Configure validation to pass
+        mock_validation_utils.validate_input_types.return_value = []
+        mock_validation_utils.validate_complete_state.return_value = []
+        
         # Configure mocks for city not found
         self.mock_rate_limiter.can_make_request.return_value = True
         city_error = CityNotFoundError("City 'InvalidCity' not found")
@@ -222,19 +238,19 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock widgets to have frames
         self.mock_widgets.frames = {'title': Mock()}
         
-        # Mock the alert popup - use the correct import path
-        with patch('WeatherDashboard.features.alerts.alert_display.SimpleAlertPopup') as mock_popup:
+        # Mock the alert popup to prevent actual Tkinter window creation
+        with patch('WeatherDashboard.core.controller.SimpleAlertPopup') as mock_popup:
             self.controller.show_weather_alerts()
             
-            # Verify popup was created with alerts
-            mock_popup.assert_called_once()
+            # Verify popup was created with correct parameters
+            mock_popup.assert_called_once_with(self.mock_widgets.frames['title'], mock_alerts)
 
     def test_show_weather_alerts_no_alerts(self):
         """Test showing weather alerts when no alerts exist."""
         # Mock alert manager to return no alerts
         self.mock_alert_manager.get_active_alerts.return_value = []
         
-        # Mock messagebox - use the correct import path
+        # Mock the local import of messagebox in the method
         with patch('tkinter.messagebox') as mock_messagebox:
             self.controller.show_weather_alerts()
             
@@ -242,8 +258,13 @@ class TestWeatherDashboardController(unittest.TestCase):
             mock_messagebox.showinfo.assert_called_once_with("Weather Alerts", "No active weather alerts.")
 
     @patch('WeatherDashboard.core.controller.Logger')
-    def test_fetch_and_display_data_network_error(self, mock_logger):
+    @patch('WeatherDashboard.core.controller.ValidationUtils')
+    def test_fetch_and_display_data_network_error(self, mock_validation_utils, mock_logger):
         """Test handling of network errors during data fetching."""
+        # Configure validation to pass
+        mock_validation_utils.validate_input_types.return_value = []
+        mock_validation_utils.validate_complete_state.return_value = []
+        
         # Configure rate limiter to allow request
         self.mock_rate_limiter.can_make_request.return_value = True
         
@@ -262,16 +283,23 @@ class TestWeatherDashboardController(unittest.TestCase):
             # Should handle error gracefully and return True (fallback used)
             self.assertTrue(result)
 
-    def test_validate_inputs_and_state_invalid_city(self):
+    @patch('WeatherDashboard.core.controller.ValidationUtils')
+    def test_validate_inputs_and_state_invalid_city(self, mock_validation_utils):
         """Test input validation with invalid city name."""
+        # Configure validation to return error for invalid input type
+        mock_validation_utils.validate_input_types.return_value = ["City name must be a string, got int"]
+        
         # Test with non-string city name
         result = self.controller._validate_inputs_and_state(123, "metric")
         self.assertFalse(result)
 
-    def test_validate_inputs_and_state_invalid_state(self):
+    @patch('WeatherDashboard.core.controller.ValidationUtils')
+    def test_validate_inputs_and_state_invalid_state(self, mock_validation_utils):
         """Test input validation with invalid application state."""
+        # Configure input validation to pass
+        mock_validation_utils.validate_input_types.return_value = []
         # Configure state validation to return errors
-        self.mock_state.validate_current_state.return_value = ["Invalid unit system"]
+        mock_validation_utils.validate_complete_state.return_value = ["Invalid unit system"]
         
         result = self.controller._validate_inputs_and_state("New York", "metric")
         self.assertFalse(result)
@@ -327,10 +355,14 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_widgets.metric_widgets.date_label.config.assert_called_with(text="2024-12-01")
         self.mock_widgets.metric_widgets.update_metric_display.assert_called_with({'temperature': '25.0 °C'})
 
-    def test_get_chart_settings_empty_city(self):
+    @patch('WeatherDashboard.core.controller.config')
+    def test_get_chart_settings_empty_city(self, mock_config):
         """Test chart settings retrieval with empty city name."""
         # Configure state to return empty city
         self.mock_state.get_current_city.return_value = ""
+        
+        # Mock config
+        mock_config.ERROR_MESSAGES = {"missing": "{field} is required for chart display"}
         
         # Should raise ValueError
         with self.assertRaises(ValueError) as context:
@@ -349,9 +381,14 @@ class TestWeatherDashboardController(unittest.TestCase):
             mock_config.CHART = {"range_options": {"Last 7 Days": 7}}
             mock_config.METRICS = {"temperature": {"label": "Temperature"}}
             
-            # Should handle gracefully (get() returns None, defaults to 7)
-            city, days, metric_key, unit = self.controller._get_chart_settings()
-            self.assertEqual(days, 7)  # Default fallback
+            # Mock ValidationUtils
+            with patch('WeatherDashboard.core.controller.ValidationUtils') as mock_validation_utils:
+                mock_validation_utils.validate_city_name.return_value = []
+                mock_validation_utils.validate_unit_system.return_value = []
+                
+                # Should handle gracefully (get() returns None, defaults to 7)
+                city, days, metric_key, unit = self.controller._get_chart_settings()
+                self.assertEqual(days, 7)  # Default fallback
 
     def test_error_handler_integration(self):
         """Test integration with error handler for different error types."""

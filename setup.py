@@ -28,34 +28,41 @@ def read_long_description():
         return "A satirical weather dashboard application"
 
 
-# Version management
-def get_version():
-    """Get version from package __init__.py file."""
+# metadata management
+def get_package_metadata():
+    """Get metadata from package __init__.py file."""
+    metadata = {}
     version_file = os.path.join("WeatherDashboard", "__init__.py")
     try:
         with open(version_file, 'r', encoding='utf-8') as f:
             for line in f:
                 if line.startswith('__version__'):
-                    return line.split('=')[1].strip().strip('"').strip("'")
+                    metadata['version'] = line.split('=')[1].strip().strip('"').strip("'")
+                elif line.startswith('__author__'):
+                    metadata['author'] = line.split('=')[1].strip().strip('"').strip("'")
+                elif line.startswith('__email__'):
+                    metadata['email'] = line.split('=')[1].strip().strip('"').strip("'")
+                elif line.startswith('__description__'):
+                    metadata['description'] = line.split('=')[1].strip().strip('"').strip("'")
     except (FileNotFoundError, IndexError):
         pass
-    return "0.1.0"  # Fallback version
+    return metadata
 
 
+metadata = get_package_metadata()
 setup(
     name="WeatherDashboard",
-    version=get_version(),
-    author="Jacob Schwartz",
-    author_email="schwarja209@gmail.com",
-    description="A satirical weather dashboard",
+    version=metadata.get('version', '0.2.1'),
+    author=metadata.get('author', 'Jacob Schwartz'),
+    author_email=metadata.get('email', 'schwarja209@gmail.com'),
+    description=metadata.get('description', 'A satirical weather dashboard'),
     long_description=read_long_description(),
     long_description_content_type="text/markdown",
     url="https://github.com/schwarja209/JTC-capstone-weatherapp",
     packages=find_packages(exclude=["tests*", "docs*", "data*"]),
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: Alpha",
         "Intended Audience :: End Users/Desktop",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
@@ -65,6 +72,7 @@ setup(
         "Programming Language :: Python :: 3.12",
         "Topic :: Scientific/Engineering :: Atmospheric Science",
         "Topic :: Desktop Environment",
+        "Topic :: Satire",
     ],
     python_requires=">=3.8",
     install_requires=[
@@ -76,8 +84,9 @@ setup(
         "dev": [
             "pytest>=7.4.0",
             "pytest-cov>=4.1.0",
-            "black>=21.0",
-            "flake8>=3.8",
+            "black>=23.0",
+            "flake8>=6.0.0",
+            "isort>=5.12.0",
             "mypy>=0.800",
             "pre-commit>=2.10",
         ],

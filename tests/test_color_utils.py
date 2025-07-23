@@ -15,7 +15,7 @@ from unittest.mock import Mock, patch
 # Add project root to path for imports
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from WeatherDashboard.utils.color_utils import (
     get_metric_color, get_enhanced_temperature_color, extract_numeric_value

@@ -19,7 +19,7 @@ import tkinter as tk
 # Add project root to path for imports
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from WeatherDashboard.features.alerts.alert_manager import WeatherAlert, AlertManager
 
@@ -81,6 +81,7 @@ class TestAlertManager(unittest.TestCase):
                 'humidity_high': 85.0,
                 'humidity_low': 15.0
             }
+            mock_config.MEMORY = {'max_alert_history_size': 100}
             self.alert_manager = AlertManager(self.mock_state)
 
     def test_alert_manager_initialization(self):
@@ -119,7 +120,8 @@ class TestAlertManager(unittest.TestCase):
             'pressure': 1013.0    # Normal pressure
         }
         
-        with patch.object(self.alert_manager, '_get_visible_metrics') as mock_visible:
+        # Mock StateUtils.get_visible_metrics to return visible metrics
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
             mock_visible.return_value = ['temperature', 'humidity', 'wind_speed', 'pressure']
             
             with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
@@ -151,7 +153,8 @@ class TestAlertManager(unittest.TestCase):
             threshold=35.0
         )
         
-        with patch.object(self.alert_manager, '_get_visible_metrics') as mock_visible:
+        # Mock StateUtils.get_visible_metrics
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
             mock_visible.return_value = ['temperature']
             
             with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
@@ -188,7 +191,8 @@ class TestAlertManager(unittest.TestCase):
             WeatherAlert("pressure_low", "watch", "Low Pressure", "Stormy", "⛈️", 975.0, 980.0)
         ]
         
-        with patch.object(self.alert_manager, '_get_visible_metrics') as mock_visible:
+        # Mock StateUtils.get_visible_metrics
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
             mock_visible.return_value = ['temperature', 'humidity', 'wind_speed', 'pressure']
             
             with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
@@ -311,30 +315,21 @@ class TestAlertManager(unittest.TestCase):
                 result = self.alert_manager._get_unit_for_alert_type(unit_type, unit_system)
                 self.assertEqual(result, expected)
 
-    def test_get_visible_metrics(self):
-        """Test visible metrics retrieval from state."""
-        # Configure some metrics as visible, others as not
-        self.mock_visibility['temperature'].get.return_value = True
-        self.mock_visibility['humidity'].get.return_value = False
-        self.mock_visibility['wind_speed'].get.return_value = True
-        self.mock_visibility['pressure'].get.return_value = False
-        
-        visible_metrics = self.alert_manager._get_visible_metrics()
-        
-        self.assertIn('temperature', visible_metrics)
-        self.assertNotIn('humidity', visible_metrics)
-        self.assertIn('wind_speed', visible_metrics)
-        self.assertNotIn('pressure', visible_metrics)
-
-    def test_get_visible_metrics_missing_state(self):
-        """Test visible metrics retrieval with missing state attributes."""
-        # Remove visibility attribute
-        del self.mock_state.visibility
-        
-        visible_metrics = self.alert_manager._get_visible_metrics()
-        
-        # Should return empty list without error
-        self.assertEqual(len(visible_metrics), 0)
+    def test_state_utils_integration(self):
+        """Test integration with StateUtils for visible metrics."""
+        # Test that AlertManager properly uses StateUtils
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_get_visible:
+            mock_get_visible.return_value = ['temperature', 'wind_speed']
+            
+            weather_data = {'temperature': 38.0, 'wind_speed': 20.0, 'humidity': 90.0}
+            
+            with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
+                mock_check.return_value = []
+                
+                self.alert_manager.check_weather_alerts(weather_data)
+                
+                # Verify StateUtils was called with correct state manager
+                mock_get_visible.assert_called_once_with(self.mock_state)
 
     def test_get_active_alerts(self):
         """Test active alerts retrieval."""
@@ -385,7 +380,8 @@ class TestAlertManager(unittest.TestCase):
         
         mock_alert = WeatherAlert("temperature_high", "warning", "Hot", "Very hot", "🔥", 40.0, 35.0)
         
-        with patch.object(self.alert_manager, '_get_visible_metrics') as mock_visible:
+        # Mock StateUtils.get_visible_metrics
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
             mock_visible.return_value = ['temperature']
             
             with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
@@ -398,33 +394,13 @@ class TestAlertManager(unittest.TestCase):
                 # History should be limited to 100 most recent
                 self.assertEqual(len(self.alert_manager.alert_history), 100)
 
-    def test_special_visibility_alert_handling(self):
-        """Test special handling for visibility alerts with unit conversion."""
-        # Mock low visibility conditions
-        weather_data = {'visibility': 2000}  # 2km visibility
-        
-        with patch.object(self.alert_manager, '_get_visible_metrics') as mock_visible:
-            mock_visible.return_value = ['visibility']
-            
-            # Mock metric system
-            self.mock_state.get_current_unit_system.return_value = 'metric'
-            
-            with patch.object(self.alert_manager, '_get_converted_threshold') as mock_threshold:
-                mock_threshold.return_value = 3000  # 3km threshold
-                
-                alerts = self.alert_manager._check_generic_alert('low_visibility', 2000.0, weather_data)
-                
-                # Should generate low visibility alert
-                self.assertEqual(len(alerts), 1)
-                self.assertEqual(alerts[0].alert_type, 'low_visibility')
-                self.assertEqual(alerts[0].severity, 'caution')
-
     def test_alert_logging_integration(self):
         """Test that alerts are properly logged when generated."""
         weather_data = {'temperature': 38.0}
         mock_alert = WeatherAlert("temperature_high", "warning", "High Temp", "Hot weather", "🔥", 38.0, 35.0)
         
-        with patch.object(self.alert_manager, '_get_visible_metrics') as mock_visible:
+        # Mock StateUtils.get_visible_metrics
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
             mock_visible.return_value = ['temperature']
             
             with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
@@ -438,6 +414,89 @@ class TestAlertManager(unittest.TestCase):
                     log_call_args = mock_logger.warn.call_args[0][0]
                     self.assertIn("Weather alert", log_call_args)
                     self.assertIn("High Temp", log_call_args)
+
+    def test_check_weather_alerts_none_values(self):
+        """Test weather alert checking handles None values gracefully."""
+        weather_data = {
+            'temperature': None,
+            'humidity': 50.0,
+            'wind_speed': None,
+            'pressure': 1013.0
+        }
+        
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
+            mock_visible.return_value = ['temperature', 'humidity', 'wind_speed', 'pressure']
+            
+            with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
+                mock_check.return_value = []
+                
+                alerts = self.alert_manager.check_weather_alerts(weather_data)
+                
+                # Should not crash and should only check non-None values
+                self.assertEqual(len(alerts), 0)
+                
+                # Should not have called _check_generic_alert for None values
+                # Check that calls were made only for non-None values
+                call_args_list = mock_check.call_args_list
+                for call in call_args_list:
+                    # Second argument should not be None
+                    self.assertIsNotNone(call[0][1])
+
+    def test_check_weather_alerts_missing_metrics(self):
+        """Test weather alert checking with missing weather data keys."""
+        weather_data = {
+            'temperature': 25.0,
+            # Missing humidity, wind_speed, pressure
+        }
+        
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
+            mock_visible.return_value = ['temperature', 'humidity', 'wind_speed', 'pressure']
+            
+            with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
+                mock_check.return_value = []
+                
+                alerts = self.alert_manager.check_weather_alerts(weather_data)
+                
+                # Should handle missing keys gracefully
+                self.assertEqual(len(alerts), 0)
+
+    def test_check_weather_alerts_empty_visible_metrics(self):
+        """Test weather alert checking when no metrics are visible."""
+        weather_data = {
+            'temperature': 40.0,  # Would normally trigger alert
+            'humidity': 90.0,
+            'wind_speed': 25.0,
+            'pressure': 950.0
+        }
+        
+        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
+            mock_visible.return_value = []  # No visible metrics
+            
+            alerts = self.alert_manager.check_weather_alerts(weather_data)
+            
+            # Should return no alerts since no metrics are visible
+            self.assertEqual(len(alerts), 0)
+
+    def test_unit_conversion_integration(self):
+        """Test integration with unit converter for threshold conversion."""
+        with patch('WeatherDashboard.features.alerts.alert_manager.UnitConverter') as mock_converter:
+            # Mock all conversion methods
+            mock_converter.convert_temperature.return_value = 95.0
+            mock_converter.convert_wind_speed.return_value = 33.6
+            mock_converter.convert_pressure.return_value = 28.94
+            mock_converter.convert_precipitation.return_value = 0.39
+            
+            # Test temperature conversion
+            result = self.alert_manager._get_converted_threshold('temperature_high', 'imperial')
+            self.assertEqual(result, 95.0)
+            
+            # Test wind speed conversion
+            result = self.alert_manager._get_converted_threshold('wind_speed_high', 'imperial')
+            mock_converter.convert_wind_speed.assert_called_with(15.0, 'm/s', 'mph')
+            
+            # Test pressure conversion
+            result = self.alert_manager._get_converted_threshold('pressure_low', 'imperial')
+            mock_converter.convert_pressure.assert_called_with(980.0, 'hPa', 'inHg')
 
 
 if __name__ == '__main__':

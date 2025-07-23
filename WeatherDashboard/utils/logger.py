@@ -28,7 +28,7 @@ class Logger:
         PLAIN_LOG: Path to plain text log file
         JSON_LOG: Path to JSON Lines log file
     """
-    LOG_FOLDER = config.OUTPUT.get("log_dir", "data")  # default fallback
+    LOG_FOLDER = config.OUTPUT.get("log_dir", "data_dir")  # default fallback
     PLAIN_LOG = os.path.join(LOG_FOLDER, "weather.log")
     JSON_LOG = os.path.join(LOG_FOLDER, "weather.jsonl")
 

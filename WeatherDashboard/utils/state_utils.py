@@ -36,29 +36,29 @@ class StateUtils:
         """
         try:
             # Check if state manager has visibility attribute
-            if not hasattr(state_manager, 'visibility'):
-                Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                    reason=f"state manager missing visibility for metric '{metric_key}'"))
+            if not hasattr(state_manager, 'visibility') or not isinstance(state_manager.visibility, dict):
+                Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"state manager missing visibility for metric '{metric_key}'"))
                 return False
             
             # Get visibility variable for metric
             visibility_var = state_manager.visibility.get(metric_key)
             if visibility_var is None:
-                Logger.warn(config.ERROR_MESSAGES['not_found'].format(
-                    resource="Visibility variable", name=metric_key))
+                Logger.warn(config.ERROR_MESSAGES['not_found'].format(resource="Visibility variable", name=metric_key))
                 return False
             
             # Check if it's a proper tkinter variable
             if not hasattr(visibility_var, 'get'):
-                Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                    reason=f"visibility variable for '{metric_key}' is not a tkinter variable"))
+                Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"visibility variable for '{metric_key}' is not a tkinter variable"))
                 return False
             
-            return visibility_var.get()
+            try:
+                return visibility_var.get()
+            except Exception as e:
+                Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"failed to check visibility for metric '{metric_key}': {e}"))
+                return False
             
         except (AttributeError, KeyError, TypeError) as e:
-            Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                reason=f"failed to check visibility for metric '{metric_key}': {e}"))
+            Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"failed to check visibility for metric '{metric_key}': {e}"))
             return False
     
     @staticmethod
@@ -73,14 +73,13 @@ class StateUtils:
             tk.BooleanVar: Visibility variable (may be default if not found)
         """
         try:
-            if hasattr(state_manager, 'visibility') and metric_key in state_manager.visibility:
+            if hasattr(state_manager, 'visibility') and isinstance(state_manager.visibility, dict) and metric_key in state_manager.visibility:
                 return state_manager.visibility[metric_key]
         except (AttributeError, KeyError):
             pass
         
         # Return default BooleanVar if not found
-        Logger.warn(config.ERROR_MESSAGES['not_found'].format(
-            resource="Visibility variable", name=metric_key))
+        Logger.warn(config.ERROR_MESSAGES['not_found'].format(resource="Visibility variable", name=metric_key))
         return tk.BooleanVar()
     
     @staticmethod
@@ -98,9 +97,8 @@ class StateUtils:
         visible_metrics = []
         
         try:
-            if not hasattr(state_manager, 'visibility'):
-                Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                    reason="state manager missing visibility attribute"))
+            if not hasattr(state_manager, 'visibility') or not isinstance(state_manager.visibility, dict):
+                Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason="state manager missing visibility attribute"))
                 return visible_metrics
             
             for metric_key, visibility_var in state_manager.visibility.items():
@@ -108,8 +106,7 @@ class StateUtils:
                     visible_metrics.append(metric_key)
             
         except Exception as e:
-            Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                reason=f"failed to get visible metrics: {e}"))
+            Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"failed to get visible metrics: {e}"))
         
         return visible_metrics
     
@@ -125,13 +122,16 @@ class StateUtils:
         Returns:
             bool: True if successfully set, False otherwise
         """
+        if not hasattr(state_manager, 'visibility') or not isinstance(state_manager.visibility, dict):
+            Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"state manager missing visibility for metric '{metric_key}'"))
+            return False
+
         try:
             visibility_var = StateUtils.get_metric_visibility_var(state_manager, metric_key)
             visibility_var.set(visible)
             return True
         except Exception as e:
-            Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                reason=f"failed to set visibility for metric '{metric_key}': {e}"))
+            Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"failed to set visibility for metric '{metric_key}': {e}"))
             return False
     
     @staticmethod
@@ -148,9 +148,8 @@ class StateUtils:
         updated_count = 0
         
         try:
-            if not hasattr(state_manager, 'visibility'):
-                Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                    reason="state manager missing visibility attribute"))
+            if not hasattr(state_manager, 'visibility') or not isinstance(state_manager.visibility, dict):
+                Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason="state manager missing visibility attribute"))
                 return updated_count
             
             for metric_key in state_manager.visibility.keys():
@@ -158,7 +157,6 @@ class StateUtils:
                     updated_count += 1
             
         except Exception as e:
-            Logger.warn(config.ERROR_MESSAGES['state_error'].format(
-                reason=f"failed to set all metrics visibility: {e}"))
+            Logger.warn(config.ERROR_MESSAGES['state_error'].format(reason=f"failed to set all metrics visibility: {e}"))
         
         return updated_count
