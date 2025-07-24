@@ -5087,3 +5087,19 @@ Humidity: 71 %
 Pressure: 30.18 inHg
 Wind Speed: 8.99 mph
 Conditions: Scattered Clouds
+
+Time: 2025-07-23 15:34:09
+City: new_york
+Temperature: 81.5 °F
+Humidity: 52 %
+Pressure: 30.21 inHg
+Wind Speed: 16.11 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-23 15:34:32
+City: new_york
+Temperature: 81.5 °F
+Humidity: 52 %
+Pressure: 30.21 inHg
+Wind Speed: 16.11 mph
+Conditions: Overcast Clouds

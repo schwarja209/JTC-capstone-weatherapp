@@ -35,7 +35,7 @@ class Logger:
     @staticmethod
     def _timestamp() -> str:
         """Return current timestamp in YYYY-MM-DD HH:MM:SS format."""
-        return datetime.now().strftime("%Y-%m-%d %H:%M:SS")
+        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     @staticmethod
     def info(msg: str) -> None: 
