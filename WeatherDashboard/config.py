@@ -123,6 +123,10 @@ HEAT_INDEX_THRESHOLD_F = 80
 WIND_CHILL_TEMP_THRESHOLD_F = 50
 WIND_CHILL_SPEED_THRESHOLD_MPH = 3
 
+# Feels like display thresholds
+TEMP_DIFF_THRESHOLD_METRIC = 2.0  # °C
+TEMP_DIFF_THRESHOLD_IMPERIAL = 3.6  # °F
+
 # ================================
 # 3. UNITS & MEASUREMENT SYSTEMS
 # ================================

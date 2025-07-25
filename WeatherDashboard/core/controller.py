@@ -25,7 +25,6 @@ from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
 from WeatherDashboard.services.error_handler import WeatherErrorHandler
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
-from WeatherDashboard.widgets.base_widgets import BaseWidgetManager
 from WeatherDashboard.utils.utils import is_fallback
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.rate_limiter import RateLimiter
@@ -76,7 +75,7 @@ class WeatherDashboardController:
         self.error_handler.set_theme(theme)
         Logger.info(f"Controller theme set to: {theme}")
     
-    def update_weather_display(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> bool:
+    def update_weather_display(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[bool, Optional[str]]:
         """Coordinate fetching and displaying weather data with enhanced error handling and cancellation support.
         
         Validates inputs, checks rate limits, fetches weather data, and updates
@@ -91,11 +90,11 @@ class WeatherDashboardController:
         """
         # Validate inputs and state
         if not self._validate_inputs_and_state(city_name, unit_system):
-            return False
+            return False, "Input validation failed"
         
         # Check rate limiting
         if not self._check_rate_limiting():
-            return False
+            return False, "Rate limiting failed"
         
         # Fetch and process data
         return self._fetch_and_display_data(city_name, unit_system, cancel_event)
@@ -186,7 +185,7 @@ class WeatherDashboardController:
         self.rate_limiter.record_request()
         return True
 
-    def _fetch_and_display_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> bool:
+    def _fetch_and_display_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[bool, Optional[str]]:
         """Fetch weather data and update the display with standardized error handling.
         
         Args:
@@ -210,10 +209,13 @@ class WeatherDashboardController:
             # Handle any errors using standardized error handler
             should_continue = self.error_handler.handle_weather_error(error_exception, city)
             if not should_continue:
-                return False
-            
-            # Determine if data is simulated
+                return False, str(error_exception) if error_exception else "Unknown error"
+
+            # Find if data is simulated
             simulated = is_fallback(raw_data)
+            if not should_continue or simulated:
+                # Treat as error for the async layer
+                return False, str(error_exception) if error_exception else "Simulated data used due to API failure"
 
             # Update all display components
             self.widgets.update_metric_display({
@@ -226,60 +228,12 @@ class WeatherDashboardController:
             
             # Log the data
             self.service.write_to_log(city, raw_data, unit_system)
-            return True
+            return True, None
 
         except ValidationError as e:
-            return self._handle_controller_error("validation", str(e))
+            return False, str(e)
         except Exception as e:
-            return self._handle_controller_error("unexpected", str(e))
-
-    def _update_display_components(self, view_model: 'WeatherViewModel', raw_data: Dict[str, Any], error_exception: Optional[Exception]) -> None:
-        """Update all display components with weather data.
-    
-        Coordinates updates across metric displays, status bar, and alert system.
-        Updates city/date headers, metric values with color coding, system status
-        messages, and processes weather alerts for display. Handles UI component
-        availability gracefully with error logging.
-        
-        Args:
-            view_model: Formatted weather view model with display-ready data
-            raw_data: Raw weather data for alert processing and status determination
-            error_exception: Any error that occurred during data fetch, affects status display
-        """
-        if not self.widgets.is_ready():
-            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
-            return
-
-        # Update metric display headers
-        self.widgets.update_metric_display({
-            **view_model.metrics,
-            "city": view_model.city_name,
-            "date": view_model.date_str
-        })
-
-        # Update status bar
-        self.widgets.update_status_bar(view_model.city_name, error_exception)
-        
-        # Update alerts
-        self.widgets.update_alerts(raw_data)
-    
-    def _update_status_bar(self, city_name: str, error_exception: Optional[Exception]) -> None:
-        """Update status bar with data source information."""
-        if not self.widgets.is_ready():
-            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
-            return
-        
-        self.widgets.update_status_bar(city_name, error_exception)
-    
-    def _update_weather_alerts(self, raw_data: Dict[str, Any]) -> None:
-        """Update weather alerts display."""
-        if not raw_data:
-            return
-        if not self.widgets.is_ready():
-            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
-            return
-
-        self.widgets.update_alerts(raw_data)
+            return False, str(e)
     
     def _get_chart_settings(self) -> Tuple[str, int, str, str]:
         """Retrieve and validate current settings for chart display.
@@ -341,6 +295,7 @@ class WeatherDashboardController:
             raise ValueError(config.ERROR_MESSAGES['not_found'].format(resource="Historical data", name=city))
 
         if not all(metric_key in d for d in data):
+            Logger.warn(f"Warning: Some data entries are missing '{metric_key}'")
             print(f"Warning: Some data entries are missing '{metric_key}'")
 
         x_vals = [d['date'].strftime("%Y-%m-%d") for d in data]  # Dynamic axis values

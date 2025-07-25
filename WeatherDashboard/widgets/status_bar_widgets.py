@@ -48,6 +48,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         # Widget references
         self.system_status_label: Optional[ttk.Label] = None
         self.progress_label: Optional[ttk.Label] = None  
+        self.progress_var = tk.StringVar(value="")
         self.data_status_label: Optional[ttk.Label] = None
         
         # Initialize base class with error handling
@@ -72,7 +73,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=styles.STATUS_BAR_CONFIG['padding']['separator'])
 
         # Center section: Progress indicator using SafeWidgetCreator
-        self.progress_label = SafeWidgetCreator.create_label(self.parent, "", "LabelValue.TLabel")
+        self.progress_label = SafeWidgetCreator.create_label(self.parent, "", "LabelValue.TLabel", textvariable=self.progress_var)
         self.progress_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['progress'])
 
         # Right section: Data source information using SafeWidgetCreator
@@ -87,8 +88,8 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         # Center section: progress/error
         if error_exception:
             self.update_progress(f"Error: {error_exception}", error=True)
-        else:
-            self.update_progress("", error=False)
+        # Do NOT clear the progress message on success here.
+        # Let LoadingStateManager handle clearing progress when appropriate.
         
         # Right section: data source
         if simulated:
@@ -134,22 +135,16 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
     def update_progress(self, message: str = "", error: bool = False) -> None:
         """Updates progress indicator in center section."""
+        if self.progress_var:
+            self.progress_var.set(message)
         if self.progress_label:
-            if error:
-                self.progress_label.configure(
-                    text=message,
-                    foreground=styles.STATUS_BAR_CONFIG['colors']['error']
-                )
-            else:
-                self.progress_label.configure(
-                    text=message,
-                    foreground=styles.STATUS_BAR_CONFIG['colors']['info']
-                )
+            color = styles.STATUS_BAR_CONFIG['colors']['error'] if error else styles.STATUS_BAR_CONFIG['colors']['info']
+            self.progress_label.configure(foreground=color)
      
     def clear_progress(self) -> None:
         """Clears progress indicator in center section."""
-        if self.progress_label:
-            self.progress_label.configure(text="")
+        if self.progress_var:
+            self.progress_var.set("")
     
     def clear_all(self) -> None:
         """Resets all three status bar sections to default states."""

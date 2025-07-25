@@ -9,6 +9,7 @@ Classes:
     WeatherDashboardGUIFrames: Main frame manager and layout coordinator
 """
 
+from typing import Dict, Union
 import tkinter as tk
 from tkinter import ttk
 from WeatherDashboard import styles
@@ -32,7 +33,7 @@ class WeatherDashboardGUIFrames:
         content area, and status bar with proper grid layout and weight configuration.
         """
         self.root = root
-        self.frames = {}
+        self.frames: Dict[str, Union[ttk.Frame, ttk.LabelFrame]] = {}
         self.create_styles()
         self.create_frames()
 
@@ -42,17 +43,22 @@ class WeatherDashboardGUIFrames:
 
     def create_frames(self) -> None:
         """Create the main frames for the dashboard layout."""
-        self.frames["title"] = ttk.Frame(self.root, padding="10")
-        self.frames["title"].grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E))
+        FRAME_TITLE = "title"
+        FRAME_CONTROL = "control"
+        FRAME_TABBED = "tabbed"
+        FRAME_STATUS = "status_bar"
 
-        self.frames["control"] = ttk.LabelFrame(self.root, text="Controls", padding="10", style="FrameLabel.TLabelframe")
-        self.frames["control"].grid(row=1, column=0, sticky=(tk.N, tk.S, tk.W, tk.E), padx=10)
+        self.frames[FRAME_TITLE] = ttk.Frame(self.root, padding="10")
+        self.frames[FRAME_TITLE].grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E))
 
-        self.frames["tabbed"] = ttk.LabelFrame(self.root, text="Weather Information", padding="10", style="FrameLabel.TLabelframe")
-        self.frames["tabbed"].grid(row=1, column=1, sticky=(tk.N, tk.S, tk.W, tk.E), padx=10)
+        self.frames[FRAME_CONTROL] = ttk.LabelFrame(self.root, text="Controls", padding="10", style="FrameLabel.TLabelframe")
+        self.frames[FRAME_CONTROL].grid(row=1, column=0, sticky=(tk.N, tk.S, tk.W, tk.E), padx=10)
 
-        self.frames["status_bar"] = ttk.Frame(self.root, padding="5")
-        self.frames["status_bar"].grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+        self.frames[FRAME_TABBED] = ttk.LabelFrame(self.root, text="Weather Information", padding="10", style="FrameLabel.TLabelframe")
+        self.frames[FRAME_TABBED].grid(row=1, column=1, sticky=(tk.N, tk.S, tk.W, tk.E), padx=10)
+
+        self.frames[FRAME_STATUS] = ttk.Frame(self.root, padding="5")
+        self.frames[FRAME_STATUS].grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
 
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=0)

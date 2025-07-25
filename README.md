@@ -153,12 +153,7 @@ Project
 
 ### Required Dependencies
 ```bash
-pip install requests matplotlib
-```
-
-### Optional Dependencies
-```bash
-pip install python-dotenv  # For environment variable loading
+pip install requests matplotlib python-dotenv
 ```
 
 ### API Configuration

@@ -7309,3 +7309,646 @@
 [INFO] 2025-07-25 01:50:24 Weather data written for new_york - Live
 [WARN] 2025-07-25 01:50:27 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
 [INFO] 2025-07-25 01:50:28 Weather data written for new_york - Live
+[INFO] 2025-07-25 02:23:28 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 02:23:28
+[INFO] 2025-07-25 02:23:28 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 02:23:28 title widget created successfully
+[INFO] 2025-07-25 02:23:28 control widgets created successfully
+[INFO] 2025-07-25 02:23:28 metric display widgets created successfully
+[INFO] 2025-07-25 02:23:28 chart widgets created successfully
+[INFO] 2025-07-25 02:23:28 tabbed display widgets created successfully
+[INFO] 2025-07-25 02:23:28 status bar widgets created successfully
+[INFO] 2025-07-25 02:23:28 dashboard widgets created successfully
+[INFO] 2025-07-25 02:23:29 Weather data written for new_york - Live
+[INFO] 2025-07-25 02:23:56 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 02:23:56
+[INFO] 2025-07-25 02:23:56 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 02:23:56 title widget created successfully
+[INFO] 2025-07-25 02:23:56 control widgets created successfully
+[INFO] 2025-07-25 02:23:57 metric display widgets created successfully
+[INFO] 2025-07-25 02:23:57 chart widgets created successfully
+[INFO] 2025-07-25 02:23:57 tabbed display widgets created successfully
+[INFO] 2025-07-25 02:23:57 status bar widgets created successfully
+[INFO] 2025-07-25 02:23:57 dashboard widgets created successfully
+[INFO] 2025-07-25 02:23:57 Weather data written for new_york - Live
+[WARN] 2025-07-25 02:24:01 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 02:24:01 Weather data written for new_york - Live
+[INFO] 2025-07-25 02:42:14 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 02:42:14
+[INFO] 2025-07-25 02:42:14 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 02:42:14 title widget created successfully
+[INFO] 2025-07-25 02:42:14 control widgets created successfully
+[INFO] 2025-07-25 02:42:14 metric display widgets created successfully
+[INFO] 2025-07-25 02:42:14 chart widgets created successfully
+[INFO] 2025-07-25 02:42:14 tabbed display widgets created successfully
+[INFO] 2025-07-25 02:42:14 status bar widgets created successfully
+[INFO] 2025-07-25 02:42:14 dashboard widgets created successfully
+[INFO] 2025-07-25 02:42:15 Weather data written for new_york - Live
+[WARN] 2025-07-25 02:42:18 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 02:42:18 Weather data written for new_york - Live
+[INFO] 2025-07-25 12:53:47 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 12:53:47
+[INFO] 2025-07-25 12:53:47 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 12:53:47 title widget created successfully
+[INFO] 2025-07-25 12:53:47 control widgets created successfully
+[INFO] 2025-07-25 12:53:47 metric display widgets created successfully
+[INFO] 2025-07-25 12:53:47 chart widgets created successfully
+[INFO] 2025-07-25 12:53:47 tabbed display widgets created successfully
+[INFO] 2025-07-25 12:53:47 status bar widgets created successfully
+[INFO] 2025-07-25 12:53:47 dashboard widgets created successfully
+[ERROR] 2025-07-25 12:53:47 Configuration error: LoadingStateManager: state is missing required attribute ['progress_label', 'progress_var'].
+[INFO] 2025-07-25 12:54:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 12:54:32
+[INFO] 2025-07-25 12:54:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 12:54:32 title widget created successfully
+[INFO] 2025-07-25 12:54:32 control widgets created successfully
+[INFO] 2025-07-25 12:54:33 metric display widgets created successfully
+[INFO] 2025-07-25 12:54:33 chart widgets created successfully
+[INFO] 2025-07-25 12:54:33 tabbed display widgets created successfully
+[INFO] 2025-07-25 12:54:33 status bar widgets created successfully
+[INFO] 2025-07-25 12:54:33 dashboard widgets created successfully
+[ERROR] 2025-07-25 12:54:33 Unexpected error: 'LoadingStateManager' object has no attribute '_validate_required_components'
+[INFO] 2025-07-25 12:54:49 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 12:54:49
+[INFO] 2025-07-25 12:54:49 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 12:54:49 title widget created successfully
+[INFO] 2025-07-25 12:54:49 control widgets created successfully
+[INFO] 2025-07-25 12:54:49 metric display widgets created successfully
+[INFO] 2025-07-25 12:54:49 chart widgets created successfully
+[INFO] 2025-07-25 12:54:49 tabbed display widgets created successfully
+[INFO] 2025-07-25 12:54:49 status bar widgets created successfully
+[INFO] 2025-07-25 12:54:49 dashboard widgets created successfully
+[ERROR] 2025-07-25 12:54:49 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[ERROR] 2025-07-25 12:54:49 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[ERROR] 2025-07-25 12:54:49 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[INFO] 2025-07-25 12:54:50 Weather data written for new_york - Live
+[ERROR] 2025-07-25 12:54:50 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[ERROR] 2025-07-25 12:54:53 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[ERROR] 2025-07-25 12:54:53 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[ERROR] 2025-07-25 12:54:53 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[WARN] 2025-07-25 12:54:53 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 106.0 (threshold: 104.9)
+[WARN] 2025-07-25 12:54:53 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 12:54:53 Weather data written for new_york - Live
+[ERROR] 2025-07-25 12:54:53 Unexpected error during UI update: 'WeatherDashboardState' object has no attribute 'progress_label'
+[INFO] 2025-07-25 13:41:26 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 13:41:26
+[INFO] 2025-07-25 13:41:26 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 13:41:26 title widget created successfully
+[INFO] 2025-07-25 13:41:26 control widgets created successfully
+[INFO] 2025-07-25 13:41:26 metric display widgets created successfully
+[INFO] 2025-07-25 13:41:26 chart widgets created successfully
+[INFO] 2025-07-25 13:41:26 tabbed display widgets created successfully
+[INFO] 2025-07-25 13:41:26 status bar widgets created successfully
+[INFO] 2025-07-25 13:41:26 dashboard widgets created successfully
+[ERROR] 2025-07-25 13:41:26 Unexpected error: LoadingStateManager.__init__() missing 1 required positional argument: 'status_bar_widgets'
+[INFO] 2025-07-25 13:43:36 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 13:43:36
+[INFO] 2025-07-25 13:43:36 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 13:43:37 title widget created successfully
+[INFO] 2025-07-25 13:43:37 control widgets created successfully
+[INFO] 2025-07-25 13:43:37 metric display widgets created successfully
+[INFO] 2025-07-25 13:43:37 chart widgets created successfully
+[INFO] 2025-07-25 13:43:37 tabbed display widgets created successfully
+[INFO] 2025-07-25 13:43:37 status bar widgets created successfully
+[INFO] 2025-07-25 13:43:37 dashboard widgets created successfully
+[ERROR] 2025-07-25 13:43:37 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:37 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:37 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[WARN] 2025-07-25 13:43:37 Weather alert: High Temperature Alert - Temperature is very high: 95.2°F (threshold: 95.0°F)
+[INFO] 2025-07-25 13:43:37 Weather data written for new_york - Live
+[ERROR] 2025-07-25 13:43:37 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:41 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:41 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:41 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[WARN] 2025-07-25 13:43:41 Weather alert: High Temperature Alert - Temperature is very high: 95.2°F (threshold: 95.0°F)
+[WARN] 2025-07-25 13:43:41 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 107.9 (threshold: 104.9)
+[WARN] 2025-07-25 13:43:41 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 13:43:41 Weather data written for new_york - Live
+[ERROR] 2025-07-25 13:43:41 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:46 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:46 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:46 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[WARN] 2025-07-25 13:43:46 Weather alert: High Temperature Alert - Temperature is very high: 35.1°C (threshold: 35.0°C)
+[WARN] 2025-07-25 13:43:46 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 42.1 (threshold: 40.5)
+[WARN] 2025-07-25 13:43:46 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 13:43:46 Weather data written for new_york - Live
+[ERROR] 2025-07-25 13:43:46 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:48 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:48 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:48 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[WARN] 2025-07-25 13:43:48 Fetch blocked due to rate limiting.
+[ERROR] 2025-07-25 13:43:50 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:52 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:52 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:52 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[WARN] 2025-07-25 13:43:52 Weather alert: High Temperature Alert - Temperature is very high: 95.2°F (threshold: 95.0°F)
+[INFO] 2025-07-25 13:43:52 Weather data written for new_york - Live
+[ERROR] 2025-07-25 13:43:52 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:57 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:57 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:43:57 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[WARN] 2025-07-25 13:43:57 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 13:43:57 API failure for Dsgsdgs - CityNotFoundError: City 'Dsgsdgs' not found. Switching to simulated data.
+[WARN] 2025-07-25 13:43:57 Weather alert: High Temperature Alert - Temperature is very high: 96.8°F (threshold: 95.0°F)
+[INFO] 2025-07-25 13:43:59 Weather data written for dsgsdgs - Simulated
+[ERROR] 2025-07-25 13:43:59 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:03 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:03 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:03 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:03 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-25 13:44:04 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:30 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:30 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:30 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:30 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-25 13:44:32 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[INFO] 2025-07-25 13:44:52 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 13:44:52
+[INFO] 2025-07-25 13:44:52 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 13:44:52 title widget created successfully
+[INFO] 2025-07-25 13:44:52 control widgets created successfully
+[INFO] 2025-07-25 13:44:53 metric display widgets created successfully
+[INFO] 2025-07-25 13:44:53 chart widgets created successfully
+[INFO] 2025-07-25 13:44:53 tabbed display widgets created successfully
+[INFO] 2025-07-25 13:44:53 status bar widgets created successfully
+[INFO] 2025-07-25 13:44:53 dashboard widgets created successfully
+[ERROR] 2025-07-25 13:44:53 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:53 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:53 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[ERROR] 2025-07-25 13:44:53 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 13:44:53 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 13:44:55 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 13:44:55 Unexpected error during UI update: StatusBarWidgets.update_progress() got an unexpected keyword argument 'foreground'
+[INFO] 2025-07-25 13:46:58 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 13:46:58
+[INFO] 2025-07-25 13:46:58 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 13:46:58 title widget created successfully
+[INFO] 2025-07-25 13:46:58 control widgets created successfully
+[INFO] 2025-07-25 13:46:58 metric display widgets created successfully
+[INFO] 2025-07-25 13:46:58 chart widgets created successfully
+[INFO] 2025-07-25 13:46:58 tabbed display widgets created successfully
+[INFO] 2025-07-25 13:46:58 status bar widgets created successfully
+[INFO] 2025-07-25 13:46:58 dashboard widgets created successfully
+[ERROR] 2025-07-25 13:46:58 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 13:46:58 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 13:47:00 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 13:47:12 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 13:47:12
+[INFO] 2025-07-25 13:47:12 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 13:47:13 title widget created successfully
+[INFO] 2025-07-25 13:47:13 control widgets created successfully
+[INFO] 2025-07-25 13:47:13 metric display widgets created successfully
+[INFO] 2025-07-25 13:47:13 chart widgets created successfully
+[INFO] 2025-07-25 13:47:13 tabbed display widgets created successfully
+[INFO] 2025-07-25 13:47:13 status bar widgets created successfully
+[INFO] 2025-07-25 13:47:13 dashboard widgets created successfully
+[ERROR] 2025-07-25 13:47:13 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 13:47:13 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 13:47:16 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 13:47:19 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 13:47:19 Weather alert: High Humidity Alert - Very humid conditions: 86% (threshold: 85%)
+[WARN] 2025-07-25 13:47:19 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 13:47:21 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 13:47:24 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 13:47:24 Weather alert: High Temperature Alert - Temperature is very high: 98.6°F (threshold: 95.0°F)
+[WARN] 2025-07-25 13:47:24 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 121.3 (threshold: 104.9)
+[WARN] 2025-07-25 13:47:24 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)
+[WARN] 2025-07-25 13:47:24 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 13:47:30 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 13:47:40 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 13:47:40 Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)
+[WARN] 2025-07-25 13:47:40 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 13:47:41 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:01:04 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:01:04
+[INFO] 2025-07-25 14:01:04 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:01:04 title widget created successfully
+[INFO] 2025-07-25 14:01:04 control widgets created successfully
+[INFO] 2025-07-25 14:01:05 metric display widgets created successfully
+[INFO] 2025-07-25 14:01:05 chart widgets created successfully
+[INFO] 2025-07-25 14:01:05 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:01:05 status bar widgets created successfully
+[INFO] 2025-07-25 14:01:05 dashboard widgets created successfully
+[ERROR] 2025-07-25 14:01:05 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:01:05 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:01:07 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 14:01:12 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:01:12 Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[WARN] 2025-07-25 14:01:12 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:01:13 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:11:03 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:11:03
+[INFO] 2025-07-25 14:11:03 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:11:03 title widget created successfully
+[INFO] 2025-07-25 14:11:03 control widgets created successfully
+[INFO] 2025-07-25 14:11:03 metric display widgets created successfully
+[INFO] 2025-07-25 14:11:03 chart widgets created successfully
+[INFO] 2025-07-25 14:11:03 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:11:03 status bar widgets created successfully
+[INFO] 2025-07-25 14:11:03 dashboard widgets created successfully
+[ERROR] 2025-07-25 14:11:04 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:11:04 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:11:06 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:13:48 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:13:48
+[INFO] 2025-07-25 14:13:48 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:13:48 title widget created successfully
+[INFO] 2025-07-25 14:13:48 control widgets created successfully
+[INFO] 2025-07-25 14:13:48 metric display widgets created successfully
+[INFO] 2025-07-25 14:13:48 chart widgets created successfully
+[INFO] 2025-07-25 14:13:48 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:13:48 status bar widgets created successfully
+[INFO] 2025-07-25 14:13:48 dashboard widgets created successfully
+[ERROR] 2025-07-25 14:13:48 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:13:49 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:13:51 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:21:27 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:21:27
+[INFO] 2025-07-25 14:21:27 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:21:27 title widget created successfully
+[INFO] 2025-07-25 14:21:27 control widgets created successfully
+[INFO] 2025-07-25 14:21:27 metric display widgets created successfully
+[INFO] 2025-07-25 14:21:27 chart widgets created successfully
+[INFO] 2025-07-25 14:21:27 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:21:27 status bar widgets created successfully
+[INFO] 2025-07-25 14:21:27 dashboard widgets created successfully
+[ERROR] 2025-07-25 14:21:27 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:21:27 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:21:29 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 14:21:33 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:21:33 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:21:34 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:28:21 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:28:21
+[INFO] 2025-07-25 14:28:21 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:28:21 title widget created successfully
+[INFO] 2025-07-25 14:28:21 control widgets created successfully
+[INFO] 2025-07-25 14:28:22 metric display widgets created successfully
+[INFO] 2025-07-25 14:28:22 chart widgets created successfully
+[INFO] 2025-07-25 14:28:22 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:28:22 status bar widgets created successfully
+[INFO] 2025-07-25 14:28:22 dashboard widgets created successfully
+[ERROR] 2025-07-25 14:28:22 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:28:22 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:28:24 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 14:28:36 API failure for Sdagg - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:28:36 Using fallback for Sdagg: Testing mode
+[INFO] 2025-07-25 14:28:38 Weather data written for sdagg - Simulated
+[INFO] 2025-07-25 14:31:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:31:32
+[INFO] 2025-07-25 14:31:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:31:32 title widget created successfully
+[INFO] 2025-07-25 14:31:32 control widgets created successfully
+[INFO] 2025-07-25 14:31:32 metric display widgets created successfully
+[INFO] 2025-07-25 14:31:32 chart widgets created successfully
+[INFO] 2025-07-25 14:31:32 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:31:32 status bar widgets created successfully
+[INFO] 2025-07-25 14:31:32 dashboard widgets created successfully
+[INFO] 2025-07-25 14:31:32 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:31:32 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:31:32 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:31:32 update_progress called with: 🔄 Fetching weather data..., error=False
+[ERROR] 2025-07-25 14:31:32 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:31:32 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:31:34 update_progress called with: Error: Testing mode, error=True
+[INFO] 2025-07-25 14:31:34 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:31:34 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:31:34 clear_progress called
+[INFO] 2025-07-25 14:31:34 clear_progress called
+[INFO] 2025-07-25 14:34:02 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:34:02
+[INFO] 2025-07-25 14:34:02 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:34:02 title widget created successfully
+[INFO] 2025-07-25 14:34:02 control widgets created successfully
+[INFO] 2025-07-25 14:34:02 metric display widgets created successfully
+[INFO] 2025-07-25 14:34:02 chart widgets created successfully
+[INFO] 2025-07-25 14:34:02 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:34:02 status bar widgets created successfully
+[INFO] 2025-07-25 14:34:02 dashboard widgets created successfully
+[INFO] 2025-07-25 14:34:02 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:34:02 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:34:02 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:34:02 update_progress called with: 🔄 Fetching weather data..., error=False
+[ERROR] 2025-07-25 14:34:02 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:34:03 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:34:04 update_progress called with: Error: Testing mode, error=True
+[INFO] 2025-07-25 14:34:04 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:34:04 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:34:04 clear_progress called
+[INFO] 2025-07-25 14:34:04 clear_progress called
+[INFO] 2025-07-25 14:35:41 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:35:41 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:35:41 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:35:41 update_progress called with: 🔄 Fetching weather data..., error=False
+[ERROR] 2025-07-25 14:35:41 API failure for Asfasf - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:35:41 Using fallback for Asfasf: Testing mode
+[INFO] 2025-07-25 14:35:42 update_progress called with: Error: Testing mode, error=True
+[INFO] 2025-07-25 14:35:42 Weather data written for asfasf - Simulated
+[INFO] 2025-07-25 14:35:42 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:35:42 clear_progress called
+[INFO] 2025-07-25 14:35:42 clear_progress called
+[INFO] 2025-07-25 14:38:15 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:38:15
+[INFO] 2025-07-25 14:38:15 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:38:15 title widget created successfully
+[INFO] 2025-07-25 14:38:15 control widgets created successfully
+[INFO] 2025-07-25 14:38:15 metric display widgets created successfully
+[INFO] 2025-07-25 14:38:15 chart widgets created successfully
+[INFO] 2025-07-25 14:38:15 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:38:15 status bar widgets created successfully
+[INFO] 2025-07-25 14:38:15 dashboard widgets created successfully
+[INFO] 2025-07-25 14:38:15 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:38:15 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:38:15 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:38:15 update_progress called with: 🔄 Fetching weather data..., error=False
+[ERROR] 2025-07-25 14:38:15 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 14:38:15 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 14:38:16 update_progress called with: Error: Testing mode, error=True
+[INFO] 2025-07-25 14:38:16 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 14:38:16 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:38:16 clear_progress called
+[INFO] 2025-07-25 14:38:16 clear_progress called
+[INFO] 2025-07-25 14:38:54 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:38:54
+[INFO] 2025-07-25 14:38:54 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:38:54 title widget created successfully
+[INFO] 2025-07-25 14:38:54 control widgets created successfully
+[INFO] 2025-07-25 14:38:55 metric display widgets created successfully
+[INFO] 2025-07-25 14:38:55 chart widgets created successfully
+[INFO] 2025-07-25 14:38:55 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:38:55 status bar widgets created successfully
+[INFO] 2025-07-25 14:38:55 dashboard widgets created successfully
+[INFO] 2025-07-25 14:38:55 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:38:55 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:38:55 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:38:55 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:38:55 Weather alert: High Temperature Alert - Temperature is very high: 96.4°F (threshold: 95.0°F)
+[INFO] 2025-07-25 14:38:55 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:38:55 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:38:55 clear_progress called
+[INFO] 2025-07-25 14:38:55 clear_progress called
+[INFO] 2025-07-25 14:39:01 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:39:01 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:39:01 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:39:01 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:39:01 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 14:39:01 API failure for Sdsdggd - CityNotFoundError: City 'Sdsdggd' not found. Switching to simulated data.
+[INFO] 2025-07-25 14:39:02 update_progress called with: Error: City 'Sdsdggd' not found, error=True
+[INFO] 2025-07-25 14:39:02 Weather data written for sdsdggd - Simulated
+[INFO] 2025-07-25 14:39:02 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:39:02 clear_progress called
+[INFO] 2025-07-25 14:39:02 clear_progress called
+[INFO] 2025-07-25 14:39:07 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:39:07 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:39:07 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:39:07 update_progress called with: 🔄 Fetching weather data..., error=False
+[ERROR] 2025-07-25 14:39:07 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-25 14:39:09 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:39:09 clear_progress called
+[INFO] 2025-07-25 14:39:09 clear_progress called
+[INFO] 2025-07-25 14:39:17 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:39:17 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:39:17 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:39:17 update_progress called with: 🔄 Fetching weather data..., error=False
+[ERROR] 2025-07-25 14:39:17 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-25 14:39:19 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:39:19 clear_progress called
+[INFO] 2025-07-25 14:39:19 clear_progress called
+[INFO] 2025-07-25 14:41:58 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:41:58
+[INFO] 2025-07-25 14:41:58 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:41:58 title widget created successfully
+[INFO] 2025-07-25 14:41:58 control widgets created successfully
+[INFO] 2025-07-25 14:41:59 metric display widgets created successfully
+[INFO] 2025-07-25 14:41:59 chart widgets created successfully
+[INFO] 2025-07-25 14:41:59 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:41:59 status bar widgets created successfully
+[INFO] 2025-07-25 14:41:59 dashboard widgets created successfully
+[INFO] 2025-07-25 14:41:59 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:41:59 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:41:59 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:41:59 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:41:59 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[INFO] 2025-07-25 14:41:59 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:41:59 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:41:59 clear_progress called
+[INFO] 2025-07-25 14:41:59 clear_progress called
+[INFO] 2025-07-25 14:42:04 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:42:04 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:42:04 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:42:04 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:42:04 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 14:42:04 API failure for New Adfd - CityNotFoundError: City 'New Adfd' not found. Switching to simulated data.
+[INFO] 2025-07-25 14:42:05 update_progress called with: Error: City 'New Adfd' not found, error=True
+[INFO] 2025-07-25 14:42:05 Weather data written for new_adfd - Simulated
+[INFO] 2025-07-25 14:42:05 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:42:05 clear_progress called
+[INFO] 2025-07-25 14:42:05 clear_progress called
+[INFO] 2025-07-25 14:48:25 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:48:25
+[INFO] 2025-07-25 14:48:25 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:48:25 title widget created successfully
+[INFO] 2025-07-25 14:48:25 control widgets created successfully
+[INFO] 2025-07-25 14:48:25 metric display widgets created successfully
+[INFO] 2025-07-25 14:48:25 chart widgets created successfully
+[INFO] 2025-07-25 14:48:25 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:48:25 status bar widgets created successfully
+[INFO] 2025-07-25 14:48:25 dashboard widgets created successfully
+[INFO] 2025-07-25 14:48:25 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:48:25 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:48:25 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:48:25 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:48:26 Weather alert: High Temperature Alert - Temperature is very high: 96.8°F (threshold: 95.0°F)
+[INFO] 2025-07-25 14:48:26 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:48:26 handle_async_error called
+[INFO] 2025-07-25 14:48:26 show_error called with: Async operation failed: cannot unpack non-iterable bool object
+[INFO] 2025-07-25 14:48:26 update_progress called with: Async operation failed: cannot unpack non-iterable bool object, error=True
+[INFO] 2025-07-25 14:48:26 clear_progress called
+[ERROR] 2025-07-25 14:48:26 Unexpected error: Async operation failed: cannot unpack non-iterable bool object
+[INFO] 2025-07-25 14:51:21 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:51:21
+[INFO] 2025-07-25 14:51:21 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:51:21 title widget created successfully
+[INFO] 2025-07-25 14:51:21 control widgets created successfully
+[INFO] 2025-07-25 14:51:21 metric display widgets created successfully
+[INFO] 2025-07-25 14:51:21 chart widgets created successfully
+[INFO] 2025-07-25 14:51:21 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:51:21 status bar widgets created successfully
+[INFO] 2025-07-25 14:51:21 dashboard widgets created successfully
+[INFO] 2025-07-25 14:51:21 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:51:21 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:51:21 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:51:21 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:51:21 Weather alert: High Temperature Alert - Temperature is very high: 96.8°F (threshold: 95.0°F)
+[INFO] 2025-07-25 14:51:21 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:51:21 handle_async_error called
+[INFO] 2025-07-25 14:51:21 show_error called with: Async operation failed: cannot unpack non-iterable bool object
+[INFO] 2025-07-25 14:51:21 update_progress called with: Async operation failed: cannot unpack non-iterable bool object, error=True
+[INFO] 2025-07-25 14:51:21 clear_progress called
+[ERROR] 2025-07-25 14:51:21 Unexpected error: Async operation failed: cannot unpack non-iterable bool object
+[INFO] 2025-07-25 14:55:34 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:55:34
+[INFO] 2025-07-25 14:55:34 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:55:34 title widget created successfully
+[INFO] 2025-07-25 14:55:34 control widgets created successfully
+[INFO] 2025-07-25 14:55:34 metric display widgets created successfully
+[INFO] 2025-07-25 14:55:34 chart widgets created successfully
+[INFO] 2025-07-25 14:55:34 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:55:34 status bar widgets created successfully
+[INFO] 2025-07-25 14:55:34 dashboard widgets created successfully
+[INFO] 2025-07-25 14:55:34 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:55:34 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:55:34 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:55:35 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:55:35 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[INFO] 2025-07-25 14:55:35 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:55:35 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:55:35 clear_progress called
+[INFO] 2025-07-25 14:55:35 clear_progress called
+[INFO] 2025-07-25 14:55:38 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:55:38 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:55:38 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:55:38 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:55:38 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[WARN] 2025-07-25 14:55:38 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 107.2 (threshold: 104.9)
+[WARN] 2025-07-25 14:55:38 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 14:55:38 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:55:38 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:55:38 clear_progress called
+[INFO] 2025-07-25 14:55:38 clear_progress called
+[INFO] 2025-07-25 14:55:42 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:55:42 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:55:42 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:55:42 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:55:42 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 14:55:42 API failure for Xsgdgsgs - CityNotFoundError: City 'Xsgdgsgs' not found. Switching to simulated data.
+[WARN] 2025-07-25 14:55:42 Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)
+[INFO] 2025-07-25 14:55:45 update_progress called with: Error: City 'Xsgdgsgs' not found, error=True
+[INFO] 2025-07-25 14:55:45 Weather data written for xsgdgsgs - Simulated
+[INFO] 2025-07-25 14:55:45 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:55:45 clear_progress called
+[INFO] 2025-07-25 14:55:45 clear_progress called
+[INFO] 2025-07-25 14:59:04 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:59:04
+[INFO] 2025-07-25 14:59:04 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:59:04 title widget created successfully
+[INFO] 2025-07-25 14:59:04 control widgets created successfully
+[INFO] 2025-07-25 14:59:04 metric display widgets created successfully
+[INFO] 2025-07-25 14:59:04 chart widgets created successfully
+[INFO] 2025-07-25 14:59:04 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:59:04 status bar widgets created successfully
+[INFO] 2025-07-25 14:59:04 dashboard widgets created successfully
+[INFO] 2025-07-25 14:59:04 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:59:04 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:59:04 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:59:04 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:59:04 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[INFO] 2025-07-25 14:59:04 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:59:04 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:59:04 clear_progress called
+[INFO] 2025-07-25 14:59:04 clear_progress called
+[INFO] 2025-07-25 14:59:07 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:59:07 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:59:07 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:59:07 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:59:08 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 14:59:08 API failure for Sds - CityNotFoundError: City 'Sds' not found. Switching to simulated data.
+[INFO] 2025-07-25 14:59:09 update_progress called with: Error: City 'Sds' not found, error=True
+[INFO] 2025-07-25 14:59:09 Weather data written for sds - Simulated
+[INFO] 2025-07-25 14:59:09 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:59:09 clear_progress called
+[INFO] 2025-07-25 14:59:09 clear_progress called
+[INFO] 2025-07-25 14:59:38 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 14:59:38
+[INFO] 2025-07-25 14:59:38 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 14:59:38 title widget created successfully
+[INFO] 2025-07-25 14:59:38 control widgets created successfully
+[INFO] 2025-07-25 14:59:38 metric display widgets created successfully
+[INFO] 2025-07-25 14:59:38 chart widgets created successfully
+[INFO] 2025-07-25 14:59:38 tabbed display widgets created successfully
+[INFO] 2025-07-25 14:59:38 status bar widgets created successfully
+[INFO] 2025-07-25 14:59:38 dashboard widgets created successfully
+[INFO] 2025-07-25 14:59:38 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:59:38 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:59:38 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:59:38 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:59:38 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[INFO] 2025-07-25 14:59:38 Weather data written for new_york - Live
+[INFO] 2025-07-25 14:59:38 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:59:38 clear_progress called
+[INFO] 2025-07-25 14:59:38 clear_progress called
+[INFO] 2025-07-25 14:59:43 update_progress called with: 🔄 Initializing..., error=False
+[INFO] 2025-07-25 14:59:43 update_progress called with: ⏳ Fetching weather data..., error=False
+[INFO] 2025-07-25 14:59:43 update_progress called with: 🔄 Validating input..., error=False
+[INFO] 2025-07-25 14:59:43 update_progress called with: 🔄 Fetching weather data..., error=False
+[WARN] 2025-07-25 14:59:43 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 14:59:43 API failure for New Adsags - CityNotFoundError: City 'New Adsags' not found. Switching to simulated data.
+[WARN] 2025-07-25 14:59:43 Weather alert: High Temperature Alert - Temperature is very high: 100.4°F (threshold: 95.0°F)
+[WARN] 2025-07-25 14:59:43 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 140.2 (threshold: 104.9)
+[INFO] 2025-07-25 14:59:44 update_progress called with: Error: City 'New Adsags' not found, error=True
+[INFO] 2025-07-25 14:59:44 Weather data written for new_adsags - Simulated
+[INFO] 2025-07-25 14:59:44 update_progress called with: 🔄 Processing weather data..., error=False
+[INFO] 2025-07-25 14:59:44 clear_progress called
+[INFO] 2025-07-25 14:59:44 clear_progress called
+[INFO] 2025-07-25 15:01:00 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 15:01:00
+[INFO] 2025-07-25 15:01:00 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 15:01:00 title widget created successfully
+[INFO] 2025-07-25 15:01:00 control widgets created successfully
+[INFO] 2025-07-25 15:01:01 metric display widgets created successfully
+[INFO] 2025-07-25 15:01:01 chart widgets created successfully
+[INFO] 2025-07-25 15:01:01 tabbed display widgets created successfully
+[INFO] 2025-07-25 15:01:01 status bar widgets created successfully
+[INFO] 2025-07-25 15:01:01 dashboard widgets created successfully
+[WARN] 2025-07-25 15:01:01 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[INFO] 2025-07-25 15:01:01 Weather data written for new_york - Live
+[WARN] 2025-07-25 15:01:07 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[WARN] 2025-07-25 15:01:07 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 107.5 (threshold: 104.9)
+[WARN] 2025-07-25 15:01:07 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 15:01:07 Weather data written for new_york - Live
+[WARN] 2025-07-25 15:01:10 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 15:01:10 API failure for Asfasf - CityNotFoundError: City 'Asfasf' not found. Switching to simulated data.
+[WARN] 2025-07-25 15:01:10 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-25 15:01:12 Weather data written for asfasf - Simulated
+[INFO] 2025-07-25 15:07:08 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 15:07:08
+[INFO] 2025-07-25 15:07:08 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 15:07:08 title widget created successfully
+[INFO] 2025-07-25 15:07:08 control widgets created successfully
+[INFO] 2025-07-25 15:07:08 metric display widgets created successfully
+[INFO] 2025-07-25 15:07:08 chart widgets created successfully
+[INFO] 2025-07-25 15:07:08 tabbed display widgets created successfully
+[INFO] 2025-07-25 15:07:08 status bar widgets created successfully
+[INFO] 2025-07-25 15:07:08 dashboard widgets created successfully
+[WARN] 2025-07-25 15:07:08 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[INFO] 2025-07-25 15:07:08 show_error called with: name 'use_fallback' is not defined
+[INFO] 2025-07-25 15:07:26 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 15:07:26
+[INFO] 2025-07-25 15:07:26 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 15:07:27 title widget created successfully
+[INFO] 2025-07-25 15:07:27 control widgets created successfully
+[INFO] 2025-07-25 15:07:27 metric display widgets created successfully
+[INFO] 2025-07-25 15:07:27 chart widgets created successfully
+[INFO] 2025-07-25 15:07:27 tabbed display widgets created successfully
+[INFO] 2025-07-25 15:07:27 status bar widgets created successfully
+[INFO] 2025-07-25 15:07:27 dashboard widgets created successfully
+[WARN] 2025-07-25 15:07:27 Weather alert: High Temperature Alert - Temperature is very high: 96.5°F (threshold: 95.0°F)
+[INFO] 2025-07-25 15:07:27 Weather data written for new_york - Live
+[WARN] 2025-07-25 15:07:33 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 15:07:33 API failure for Dsfsdfsdf - CityNotFoundError: City 'Dsfsdfsdf' not found. Switching to simulated data.
+[INFO] 2025-07-25 15:07:35 show_error called with: City 'Dsfsdfsdf' not found
+[INFO] 2025-07-25 15:14:03 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 15:14:03
+[INFO] 2025-07-25 15:14:03 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 15:14:04 title widget created successfully
+[INFO] 2025-07-25 15:14:04 control widgets created successfully
+[INFO] 2025-07-25 15:14:04 metric display widgets created successfully
+[INFO] 2025-07-25 15:14:04 chart widgets created successfully
+[INFO] 2025-07-25 15:14:04 tabbed display widgets created successfully
+[INFO] 2025-07-25 15:14:04 status bar widgets created successfully
+[INFO] 2025-07-25 15:14:04 dashboard widgets created successfully
+[WARN] 2025-07-25 15:14:04 Weather alert: High Temperature Alert - Temperature is very high: 96.0°F (threshold: 95.0°F)
+[INFO] 2025-07-25 15:14:04 Weather data written for new_york - Live
+[WARN] 2025-07-25 15:14:12 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 15:14:12 API failure for Dsdgsg - CityNotFoundError: City 'Dsdgsg' not found. Switching to simulated data.
+[INFO] 2025-07-25 15:14:14 show_error called with: City 'Dsdgsg' not found

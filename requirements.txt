@@ -1,3 +1,6 @@
+# Requires Python >=3.8
+
+
 # Weather Dashboard Dependencies
 
 # Core HTTP library for API requests

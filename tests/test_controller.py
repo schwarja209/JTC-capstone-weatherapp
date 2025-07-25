@@ -327,34 +327,6 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Verify request was recorded
         self.mock_rate_limiter.record_request.assert_called_once()
 
-    def test_update_display_components(self):
-        """Test display component updates with weather data."""
-        # Create mock view model
-        mock_view_model = Mock()
-        mock_view_model.city_name = "New York"
-        mock_view_model.date_str = "2024-12-01"
-        mock_view_model.metrics = {'temperature': '25.0 °C'}
-        
-        # Mock raw data
-        mock_raw_data = {'temperature': 25.0, 'humidity': 60}
-        
-        # Configure widgets
-        self.mock_widgets.metric_widgets.city_label = Mock()
-        self.mock_widgets.metric_widgets.date_label = Mock()
-        self.mock_widgets.metric_widgets.update_metric_display = Mock()
-        self.mock_widgets.metric_widgets.update_alert_display = Mock()
-        
-        # Mock alert manager to return empty alerts
-        self.mock_alert_manager.check_weather_alerts.return_value = []
-        
-        # Execute update
-        self.controller._update_display_components(mock_view_model, mock_raw_data, None)
-        
-        # Verify all components were updated
-        self.mock_widgets.metric_widgets.city_label.config.assert_called_with(text="New York")
-        self.mock_widgets.metric_widgets.date_label.config.assert_called_with(text="2024-12-01")
-        self.mock_widgets.metric_widgets.update_metric_display.assert_called_with({'temperature': '25.0 °C'})
-
     @patch('WeatherDashboard.core.controller.config')
     def test_get_chart_settings_empty_city(self, mock_config):
         """Test chart settings retrieval with empty city name."""

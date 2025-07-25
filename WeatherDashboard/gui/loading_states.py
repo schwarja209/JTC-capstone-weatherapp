@@ -16,6 +16,7 @@ import threading
 
 from WeatherDashboard import styles
 from WeatherDashboard.services.api_exceptions import ValidationError, NetworkError
+from WeatherDashboard.widgets.status_bar_widgets import StatusBarWidgets
 from WeatherDashboard.utils.logger import Logger
 
 
@@ -30,15 +31,19 @@ class LoadingStateManager:
         is_loading: Boolean flag indicating if currently in loading state
         original_button_states: Dictionary storing original button states for restoration
     """
+    BUTTONS_TO_DISABLE = ['update_button', 'reset_button'] # for later use during loading
     
-    def __init__(self, state: Any) -> None:
+    def __init__(self, state: Any, status_bar_widgets: StatusBarWidgets) -> None:
         """Initialize the loading state manager."""
         self.state = state
         self.is_loading = False
         self.original_button_states: Dict[str, str] = {}
+        self.status_bar_widgets = status_bar_widgets
     
     def start_loading(self, operation_name: str = "Loading...") -> None:
         """Start loading state - disables buttons, shows spinner."""
+        self._last_error = False  # Reset error flag at the start of a new operation
+
         if self.is_loading:
             return  # Already loading
         
@@ -54,8 +59,11 @@ class LoadingStateManager:
         
         self.is_loading = False
         self._enable_buttons()
-        self._hide_loading_status()
-        self._stop_progress_indicator()
+        
+        # Only clear progress if there was no error
+        if not getattr(self, "_last_error", False):
+            self._hide_loading_status()
+            self._stop_progress_indicator()
     
     def update_progress(self, message: str) -> None:
         """Update progress message during ongoing operation."""
@@ -64,15 +72,19 @@ class LoadingStateManager:
         
         self._show_loading_status(message)
     
+    def show_error(self, message: str) -> None:
+        """Display an error message in the status bar and set error flag."""
+        Logger.info(f"show_error called with: {message}")
+        self.status_bar_widgets.update_progress(message, error=True)
+        self._last_error = True
+    
     def _disable_buttons(self) -> None:
         """Disable interactive buttons during loading.
         
         Stores original button states and sets buttons to disabled state.
         Handles UI errors gracefully if buttons are not available.
-        """
-        buttons_to_disable = ['update_button', 'reset_button']
-        
-        for button_name in buttons_to_disable:
+        """        
+        for button_name in self.BUTTONS_TO_DISABLE:
             try:
                 button = getattr(self.state, button_name, None)
                 if button and hasattr(button, 'cget') and hasattr(button, 'configure'):
@@ -87,10 +99,11 @@ class LoadingStateManager:
         Restores buttons to their original states and clears the state cache.
         Handles UI errors gracefully if buttons are not available.
         """
-        for button_name, original_state in self.original_button_states.items():
+        for button_name in self.BUTTONS_TO_DISABLE:
             try:
                 button = getattr(self.state, button_name, None)
                 if button and hasattr(button, 'configure'):
+                    original_state = self.original_button_states.get(button_name, 'normal')
                     button.configure(state=original_state)
             except (tk.TclError, AttributeError) as e:
                 Logger.warn(f"Failed to re-enable button {button_name}: {e}")
@@ -100,39 +113,35 @@ class LoadingStateManager:
     def _show_loading_status(self, message: str) -> None:
         """Show loading message in status label."""
         try:
-            if hasattr(self.state, 'progress_label') and self.state.progress_label:
-                icon = styles.LOADING_CONFIG['icons']['progress']
-                color = styles.LOADING_CONFIG['colors']['loading']
-                self.state.progress_label.configure(text=f"{icon} {message}", foreground=color)
+            icon = styles.LOADING_CONFIG['icons']['progress']
+            #color = styles.LOADING_CONFIG['colors']['loading']
+            self.status_bar_widgets.update_progress(f"{icon} {message}")
         except tk.TclError as e:
             Logger.warn(f"Failed to show loading status: {e}")
     
     def _hide_loading_status(self) -> None:
         """Hide loading message from status label."""
         try:
-            if hasattr(self.state, 'progress_label') and self.state.progress_label:
-                color = styles.LOADING_CONFIG['colors']['loading']
-                self.state.progress_label.configure(text="", foreground=color)
+            self.status_bar_widgets.clear_progress()
         except tk.TclError as e:
             Logger.warn(f"Failed to hide loading status: {e}")
     
     def _start_progress_indicator(self) -> None:
         """Start a simple progress animation indicator."""
         try:
-            if hasattr(self.state, 'progress_var') and self.state.progress_var:
-                wait_icon = styles.LOADING_CONFIG['icons']['waiting']
-                default_msg = styles.LOADING_CONFIG['messages']['default']
-                self.state.progress_var.set(f"{wait_icon} {default_msg}")
+            wait_icon = styles.LOADING_CONFIG['icons']['waiting']
+            default_msg = styles.LOADING_CONFIG['messages']['default']
+            self.status_bar_widgets.update_progress(f"{wait_icon} {default_msg}")
         except tk.TclError as e:
             Logger.warn(f"Failed to start progress indicator: {e}")
     
     def _stop_progress_indicator(self) -> None:
         """Stop progress animation indicator."""
-        try:
-            if hasattr(self.state, 'progress_var') and self.state.progress_var:
-                self.state.progress_var.set("")
-        except tk.TclError as e:
-            Logger.warn(f"Failed to stop progress indicator: {e}")
+        if not getattr(self, "_last_error", False):
+            try:
+                self.status_bar_widgets.clear_progress()
+            except tk.TclError as e:
+                Logger.warn(f"Failed to stop progress indicator: {e}")
 
 
 class AsyncWeatherOperation:
@@ -212,7 +221,11 @@ class AsyncWeatherOperation:
                 self._schedule_ui_update(self.loading_manager.update_progress, "Fetching weather data...")
                 
                 # Do the actual work in background
-                success = self.controller.update_weather_display(city_name, unit_system, cancel_event_to_pass)
+                success, error_message = self.controller.update_weather_display(city_name, unit_system, cancel_event_to_pass)
+                if not success:
+                    self._schedule_ui_update(self.loading_manager.show_error, error_message or "Failed to update weather display.")
+                    self._schedule_ui_update(self.loading_manager.stop_loading)
+                    return
                 
                 # Step 4: Processing data
                 if self._is_cancelled():
@@ -239,12 +252,14 @@ class AsyncWeatherOperation:
                 
                 def handle_network_error():
                     """Handle network errors by stopping loading and showing error message."""
+                    self.loading_manager.show_error(f"Network error: {e}")
                     self.loading_manager.stop_loading()
                     if hasattr(self.controller, 'error_handler') and self.controller.error_handler:
                         network_error = NetworkError(f"Network error during async operation: {e}")
                         self.controller.error_handler.handle_weather_error(network_error, city_name)
                 
                 self._schedule_ui_update(handle_network_error)
+                return
 
             except ValidationError as e:
                 if self._is_cancelled():
@@ -252,11 +267,13 @@ class AsyncWeatherOperation:
                 
                 def handle_validation_error():
                     """Handle validation errors by stopping loading and showing error message."""
+                    self.loading_manager.show_error(f"Validation error: {e}")
                     self.loading_manager.stop_loading()
                     if hasattr(self.controller, 'error_handler') and self.controller.error_handler:
                         self.controller.error_handler.handle_input_validation_error(str(e))
                 
                 self._schedule_ui_update(handle_validation_error)
+                return
 
             except Exception as e:
                 if self._is_cancelled():
@@ -264,11 +281,13 @@ class AsyncWeatherOperation:
                 
                 def handle_unexpected_error():
                     """Handle unexpected errors by stopping loading and showing error message."""
+                    self.loading_manager.show_error(f"Async operation failed: {str(e)}")
                     self.loading_manager.stop_loading()
                     if hasattr(self.controller, 'error_handler'):
                         self.controller.error_handler.handle_unexpected_error(f"Async operation failed: {str(e)}")
                 
                 self._schedule_ui_update(handle_unexpected_error)
+                return
         
         # Start background thread and store reference
         self.current_thread = threading.Thread(target=background_task, daemon=True)
@@ -293,9 +312,7 @@ class AsyncWeatherOperation:
         try:
             # Try to get the root window for thread-safe UI updates
             root = None
-            if (hasattr(self.controller, 'state') and 
-                hasattr(self.controller.state, 'city_label') and 
-                self.controller.state.city_label):
+            if (hasattr(self.controller, 'state') and hasattr(self.controller.state, 'city_label') and self.controller.state.city_label):
                 try:
                     root = self.controller.state.city_label.winfo_toplevel()
                 except tk.TclError:

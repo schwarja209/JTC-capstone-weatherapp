@@ -75,7 +75,7 @@ class WeatherDashboardMain:
         )
         
         # Async components
-        self.loading_manager = LoadingStateManager(self.state)
+        self.loading_manager = LoadingStateManager(self.state, self.widgets.status_bar_widgets)
         self.async_operations = AsyncWeatherOperation(self.controller, self.loading_manager)
         
         # Connect callbacks and initialize

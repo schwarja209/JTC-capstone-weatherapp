@@ -150,7 +150,7 @@ def configure_styles() -> None:
 
 
 # =================================
-# 4. LAYOUT & POSITIONING
+# 4. WIDGET LAYOUT & CONFIG
 # =================================
 # Small widget sizing and positioning configuration
 WIDGET_LAYOUT = {
@@ -195,6 +195,23 @@ STATUS_BAR_CONFIG = {
         'warning': COLORS['status']['warning'], 
         'error': COLORS['status']['error'],
         'loading': COLORS['status']['info']
+    }
+}
+
+LOADING_CONFIG = {
+    'icons': {
+        'progress': '🔄',
+        'waiting': '⏳'
+    },
+    'colors': {
+        'loading': COLORS['status']['info'],
+        'default': COLORS['status']['default']
+    },
+    'messages': {
+        'default': 'Fetching weather data...',
+        'initializing': 'Initializing...',
+        'validating': 'Validating input...',
+        'processing': 'Processing weather data...'
     }
 }
 
@@ -336,25 +353,5 @@ DIALOG_CONFIG = {
         'error': 'showerror',
         'warning': 'showwarning',
         'info': 'showinfo'
-    }
-}
-
-# =================================
-# 7. LOADING STATE STYLING
-# =================================
-LOADING_CONFIG = {
-    'icons': {
-        'progress': '🔄',
-        'waiting': '⏳'
-    },
-    'colors': {
-        'loading': COLORS['status']['info'],
-        'default': COLORS['status']['default']
-    },
-    'messages': {
-        'default': 'Fetching weather data...',
-        'initializing': 'Initializing...',
-        'validating': 'Validating input...',
-        'processing': 'Processing weather data...'
     }
 }
