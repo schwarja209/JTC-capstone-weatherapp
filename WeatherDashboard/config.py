@@ -23,7 +23,7 @@ import os
 from pathlib import Path
 
 # centralizing config info
-from .alert_config import ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER
+from .alert_config import ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER, ALERT_DEFINITIONS, validate_alert_config
 
 
 # ================================
@@ -182,8 +182,8 @@ CHART = {
 # ================================
 # Control Frame Defaults
 DEFAULTS = {
-    "city": "New York",
-    "unit": "imperial",
+    "city": os.getenv("DEFAULT_CITY", "New York"), # load from .env
+    "unit": os.getenv("DEFAULT_UNIT", "imperial"), # load from .env
     "range": "Last 7 Days",
     "chart": "Temperature",
     "visibility": {k: v['visible'] for k, v in METRICS.items()}, # Generate visibility defaults from METRICS configuration
@@ -204,9 +204,16 @@ OUTPUT = {
     "log": str(DATA_DIR / "output.txt")
 }
 
-def ensure_directories():
-    """Create required directories if they don't exist."""
-    import os
+def ensure_directories() -> bool:
+    """
+    Create required directories if they don't exist.
+
+    Side Effects:
+        Creates data and logs directories if missing.
+        
+    Returns:
+        bool: True if directories exist or were created.
+    """
     os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(LOGS_DIR, exist_ok=True)
     return True # for validation
@@ -262,7 +269,7 @@ def validate_config() -> None:
                 reason="required configuration section missing"
             ))
     
-    # Validate METRICS structure (essential for app functionality)
+    # Validate METRICS structure
     if not isinstance(METRICS, dict) or not METRICS:
         raise ValueError(ERROR_MESSAGES['config_error'].format(
             section="METRICS", 
@@ -286,7 +293,6 @@ def validate_config() -> None:
     
     # Validate essential file paths exist
     try:
-        import os
         os.makedirs(OUTPUT.get("data_dir", "data"), exist_ok=True)
     except (OSError, TypeError) as e:
         raise ValueError(ERROR_MESSAGES['config_error'].format(
@@ -304,12 +310,26 @@ def validate_config() -> None:
                 reason="must be a positive number"
             ))
 
-    # Add validation for cleanup threshold (should be between 0 and 1)
+    # Validation for cleanup threshold (should be between 0 and 1)
     threshold = MEMORY.get('aggressive_cleanup_threshold', 0)
     if not isinstance(threshold, (int, float)) or not (0 < threshold <= 1):
         raise ValueError(ERROR_MESSAGES['validation'].format(
             field="Aggressive cleanup threshold", 
             reason="must be a number between 0 and 1"
         ))
+    
+    # Validate Alert Config
+    from .alert_config import ALERT_DEFINITIONS, validate_alert_config
+    validate_alert_config()
+
+    # Validate alert unit types match available metrics
+    available_unit_types = set(UNITS['metric_units'].keys())
+    for alert_type, definition in ALERT_DEFINITIONS.items():
+        unit_type = definition.get('unit_type')
+        if unit_type not in available_unit_types:
+            raise ValueError(ERROR_MESSAGES['validation'].format(
+                field=f"Alert unit_type '{unit_type}' in '{alert_type}'", 
+                reason=f"must be one of: {sorted(available_unit_types)}"
+            ))
     
     return True

@@ -81,6 +81,62 @@ class BaseWidgetManager:
     def get_creation_error(self) -> Optional[str]:
         """Get widget creation error if any."""
         return self._creation_error
+    
+    def get_alert_popup_parent(self):
+        """Return the parent widget to be used for alert popups.
+
+        Returns:
+            The widget to use as the parent for alert popups, or None if not available.
+
+        Side Effects:
+            None.
+        """
+        if hasattr(self, 'frames') and isinstance(self.frames, dict) and 'title' in self.frames:
+            return self.frames['title']
+        return None
+    
+    def update_metric_display(self, metrics):
+        """Update the metric display widgets with the provided metrics.
+
+        Args:
+            metrics: Dictionary or data structure containing metric values to display.
+
+        Side Effects:
+            Updates the UI to reflect new metric values.
+            Logs a warning if widgets are not ready.
+        """
+        if not self.is_ready():
+            Logger.warn("Cannot update metrics: widgets not ready")
+            return
+
+    def update_status_bar(self, city_name, error_exception):
+        """Update the status bar widgets with the current city and error status.
+
+        Args:
+            city_name: Name of the city to display in the status bar.
+            error_exception: Exception object if an error occurred, otherwise None.
+
+        Side Effects:
+            Updates the status bar UI elements.
+            Logs a warning if widgets are not ready.
+        """
+        if not self.is_ready():
+            Logger.warn("Cannot update status bar: widgets not ready")
+            return
+
+    def update_alerts(self, raw_data):
+        """Update the alert display widgets with the provided raw weather data.
+
+        Args:
+            raw_data: Dictionary or data structure containing raw weather data for alert processing.
+
+        Side Effects:
+            Updates the alert UI elements.
+            Logs a warning if widgets are not ready.
+        """
+        if not self.is_ready():
+            Logger.warn("Cannot update alerts: widgets not ready")
+            return
 
 def widget_error_handler(widget_type: str = "widget"):
     """Decorator for standardized widget method error handling.

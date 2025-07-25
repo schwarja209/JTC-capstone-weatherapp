@@ -15,38 +15,47 @@ Usage:
     pip install -e ".[dev]"
 """
 
+from typing import Dict
 from setuptools import setup, find_packages
 import os
 
 
-def read_long_description():
+def read_long_description() -> str:
     """Read the long description from README file for package metadata."""
     try:
         with open('README.md', 'r', encoding='utf-8') as f:
             return f.read()
     except FileNotFoundError:
-        return "A satirical weather dashboard application"
+        return "A satirical dual-themed weather dashboard application with real-time weather data"
 
 
 # metadata management
-def get_package_metadata():
-    """Get metadata from package __init__.py file."""
-    metadata = {}
-    version_file = os.path.join("WeatherDashboard", "__init__.py")
+def get_package_metadata() -> Dict[str, str]:
+    """Get metadata using importlib for robust extraction."""
     try:
-        with open(version_file, 'r', encoding='utf-8') as f:
-            for line in f:
-                if line.startswith('__version__'):
-                    metadata['version'] = line.split('=')[1].strip().strip('"').strip("'")
-                elif line.startswith('__author__'):
-                    metadata['author'] = line.split('=')[1].strip().strip('"').strip("'")
-                elif line.startswith('__email__'):
-                    metadata['email'] = line.split('=')[1].strip().strip('"').strip("'")
-                elif line.startswith('__description__'):
-                    metadata['description'] = line.split('=')[1].strip().strip('"').strip("'")
-    except (FileNotFoundError, IndexError):
-        pass
-    return metadata
+        # Try to import and get version dynamically
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "weather_init", 
+            os.path.join("WeatherDashboard", "__init__.py")
+        )
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        
+        return {
+            'version': getattr(module, '__version__', '0.2.1'),
+            'author': getattr(module, '__author__', 'Jacob Schwartz'),
+            'email': getattr(module, '__email__', 'schwarja209@gmail.com'),
+            'description': getattr(module, '__description__', 'A satirical weather dashboard')
+        }
+    except Exception:
+        # Fallback to hardcoded values
+        return {
+            'version': '0.2.1',
+            'author': 'Jacob Schwartz', 
+            'email': 'schwarja209@gmail.com',
+            'description': 'A satirical weather dashboard'
+        }
 
 
 metadata = get_package_metadata()

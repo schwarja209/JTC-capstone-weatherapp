@@ -8,8 +8,10 @@ launches the main application window with proper error handling.
 
 import sys
 import tkinter as tk
+from typing import Dict, Any
 
-def initialize_system():
+
+def initialize_system() -> Dict[str, Any]:
     """
     Initialize all system components with validation.
     
@@ -22,7 +24,6 @@ def initialize_system():
     """
     try:
         from WeatherDashboard import config, get_package_info
-        from WeatherDashboard.alert_config import validate_alert_config
         from WeatherDashboard.utils.logger import Logger
         from WeatherDashboard.gui.main_window import WeatherDashboardMain
 
@@ -36,7 +37,6 @@ def initialize_system():
     # Initialize directories and validate configurations
     config.ensure_directories()
     config.validate_config()
-    validate_alert_config()
     
     # Test logging system and warn if issues
     if not Logger.test_logging_health():
@@ -52,7 +52,7 @@ def initialize_system():
         'package_info': package_info
     }
 
-def create_and_run_gui(components):
+def create_and_run_gui(components: Dict[str, Any]) -> None:
     """
     Create GUI and start the main event loop.
     
@@ -62,17 +62,20 @@ def create_and_run_gui(components):
     Raises:
         tk.TclError: If GUI creation fails
     """
-    root = tk.Tk()
-    root.title("Weather Dashboard")
-    
+    root = None
     try:
+        root = tk.Tk()
+        root.title("Weather Dashboard")
+
         app = components['WeatherDashboardMain'](root)
         app.load_initial_display()
         root.mainloop()
     finally:
-        cleanup_gui_resources(root)
+        # Check if root was created before cleanup
+        if root is not None:
+            cleanup_gui_resources(root)
 
-def cleanup_gui_resources(root):
+def cleanup_gui_resources(root: tk.Tk) -> None:
     """Safely cleanup GUI resources."""
     try:
         if root and root.winfo_exists():
@@ -81,7 +84,7 @@ def cleanup_gui_resources(root):
         pass  # Ignore cleanup errors
 
 
-def main():
+def main() -> None:
     """
     Main application entry point with comprehensive error handling.
     
@@ -89,7 +92,7 @@ def main():
     and starting the GUI event loop. All actual initialization work is 
     delegated to helper functions.
     
-     Error Handling:
+    Error Handling:
     - Import errors: Handled in initialize_system(), exits before reaching main()
     - Configuration errors: Shows specific error messages with guidance
     - GUI creation errors: Falls back to console error reporting  
@@ -106,7 +109,7 @@ def main():
     Logger = None
     try:
         from WeatherDashboard.utils.logger import Logger
-    except ImportError:
+    except ImportError as e:
         print(f"Failed to import required modules: {e}")
         sys.exit(1)
 
@@ -117,7 +120,8 @@ def main():
         # Create and run GUI
         create_and_run_gui(components)
         
-        return 0
+        # Exit successfully after GUI closes
+        sys.exit(0)
 
     except ValueError as e:
         if Logger:

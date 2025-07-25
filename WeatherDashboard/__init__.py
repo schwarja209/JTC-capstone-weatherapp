@@ -4,13 +4,18 @@ Weather Dashboard Package
 A satirical weather dashboard application with humorous commentary
 and theme-based error messaging.
 
+Requirements:
+    - Python: 3.8+
+    - Critical Dependencies: tkinter, requests, python-dotenv (optional)
+    - Platform: Cross-platform (Windows, macOS, Linux with GUI support)
+
 Main Components:
-- Core: Application controllers, data managers, and view models
-- Services: Weather API integration and error handling
-- Gui: Coordination of all user interface components
-- Widgets: Specialized UI widget implementations 
-- Utils: Utility functions, logging, unit conversion, etc
-- Features: Satirical themes and other specialized functionality
+    - Core: Application controllers, data managers, and view models
+    - Services: Weather API integration and error handling
+    - Gui: Coordination of all user interface components
+    - Widgets: Specialized UI widget implementations 
+    - Utils: Utility functions, logging, unit conversion, etc
+    - Features: Satirical themes and other specialized functionality
 
 Usage:
     from WeatherDashboard.main import main
@@ -18,7 +23,13 @@ Usage:
 
     Or run directly:
     python -m WeatherDashboard.main
+
+Configuration:
+    - Set OPENWEATHER_API_KEY in environment or .env file
+    - Optional: Set DEFAULT_CITY, DEFAULT_UNIT for customization
 """
+
+from typing import Dict
 
 # Package metadata
 __version__ = "0.2.1"
@@ -30,10 +41,11 @@ __description__ = "A satirical weather dashboard"
 try:
     from . import config
     from . import styles
-    # Imports successful - config and styles available at package level
-except ImportError:
-    # Import errors during setup/installation - modules not available
-    pass
+    _imports_successful = True # Imports successful - config and styles available at package level
+except ImportError as e:
+    print(f"Failed to import required modules: {e}")
+    print("Please ensure WeatherDashboard package is properly installed.")
+    _imports_successful = False # Import errors during setup/installation - modules not available
 
 # Ensure backward compatibility
 __all__ = [
@@ -41,15 +53,19 @@ __all__ = [
     "__author__", 
     "__email__",
     "__description__",
-    "config",
-    "styles",
+    "get_version",
+    "get_package_info",
 ]
 
-def get_version():
+# Add config and styles only if imports succeeded
+if _imports_successful:
+    __all__.extend(["config", "styles"])
+
+def get_version() -> str:
     """Return the package version string."""
     return __version__
 
-def get_package_info():
+def get_package_info() -> Dict[str, str]:
     """Return comprehensive package information dictionary."""
     return {
         "name": "WeatherDashboard",

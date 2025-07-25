@@ -1,7 +1,19 @@
 """
 Alert system configuration for Weather Dashboard.
 
-Centralized alert definitions combining thresholds, styling, and logic.
+Centralized alert definitions, thresholds, severity ordering, visual styling, and validation logic.
+This module provides a single source of truth for all alert-related configuration and validation.
+
+Alert Types Supported:
+    Temperature: High/low temperature warnings, heat index, wind chill
+    Wind: High wind speed warnings with escalating severity
+    Atmospheric: Low pressure system detection
+    Humidity: High/low humidity discomfort alerts
+    Precipitation: Heavy rain and snow warnings
+    Visibility: Low visibility/fog conditions
+    Air Quality: UV index and air quality index warnings
+    
+Severity Levels: warning (red), caution (orange), watch (blue)
 """
 
 # Alert Threshold Configuration (all in metric units internally)
@@ -43,7 +55,7 @@ ALERT_DEFINITIONS = {
     'temperature_high': {
         'threshold_key': 'temperature_high',
         'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
+        'severity_function': lambda val, thresh: 'warning',
         'icon': '🔥',
         'title': 'High Temperature Alert',
         'message_template': 'Temperature is very high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
@@ -52,7 +64,7 @@ ALERT_DEFINITIONS = {
     'temperature_low': {
         'threshold_key': 'temperature_low',
         'check_function': lambda val, thresh: val < thresh,
-        'severity': 'warning', 
+        'severity_function': lambda val, thresh: 'warning', 
         'icon': '🥶',
         'title': 'Low Temperature Alert',
         'message_template': 'Temperature is very low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
@@ -70,7 +82,7 @@ ALERT_DEFINITIONS = {
     'pressure_low': {
         'threshold_key': 'pressure_low',
         'check_function': lambda val, thresh: val < thresh,
-        'severity': 'watch',
+        'severity_function': lambda val, thresh: 'watch',
         'icon': '⛈️',
         'title': 'Low Pressure Alert',
         'message_template': 'Low pressure system detected: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
@@ -79,43 +91,43 @@ ALERT_DEFINITIONS = {
     'humidity_high': {
         'threshold_key': 'humidity_high',
         'check_function': lambda val, thresh: val > thresh,
-        'severity': 'caution',
+        'severity_function': lambda val, thresh: 'caution',
         'icon': '💧',
         'title': 'High Humidity Alert',
         'message_template': 'Very humid conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
-        'unit_type': 'percent'
+        'unit_type': 'humidity'
     },
     'humidity_low': {
         'threshold_key': 'humidity_low',
         'check_function': lambda val, thresh: val < thresh,
-        'severity': 'caution',
+        'severity_function': lambda val, thresh: 'caution',
         'icon': '🏜️',
         'title': 'Low Humidity Alert',
         'message_template': 'Very dry conditions: {value:.0f}% (threshold: {threshold:.0f}%)',
-        'unit_type': 'percent'
+        'unit_type': 'humidity'
     },
     'heavy_rain': {
         'threshold_key': 'heavy_rain_threshold',
         'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
+        'severity_function': lambda val, thresh: 'warning',
         'icon': '🌧️',
         'title': 'Heavy Rain Alert',
         'message_template': 'Heavy rainfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
-        'unit_type': 'precipitation'
+        'unit_type': 'rain'
     },
     'heavy_snow': {
         'threshold_key': 'heavy_snow_threshold',
         'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
+        'severity_function': lambda val, thresh: 'warning',
         'icon': '🌨️',
         'title': 'Heavy Snow Alert',
         'message_template': 'Heavy snowfall detected: {value:.1f} {unit}/hour (threshold: {threshold:.1f} {unit})',
-        'unit_type': 'precipitation'
+        'unit_type': 'snow'
     },
     'low_visibility': {
         'threshold_key': 'low_visibility_threshold',
         'check_function': lambda val, thresh: val < thresh,
-        'severity': 'caution',
+        'severity_function': lambda val, thresh: 'caution',
         'icon': '🌫️',
         'title': 'Low Visibility Alert',
         'message_template': 'Reduced visibility: {value:.1f} {unit} (threshold: {threshold:.1f} {unit})',
@@ -124,29 +136,29 @@ ALERT_DEFINITIONS = {
     'heat_index_high': {
         'threshold_key': 'heat_index_high',
         'check_function': lambda val, thresh: val > thresh,
-        'severity': 'warning',
+        'severity_function': lambda val, thresh: 'warning',
         'icon': '🔥',
         'title': 'Dangerous Heat Index',
         'message_template': 'Heat index is dangerously high: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-        'unit_type': 'temperature'
+        'unit_type': 'heat_index'
     },
     'wind_chill_low': {
         'threshold_key': 'wind_chill_low',
         'check_function': lambda val, thresh: val < thresh,
-        'severity': 'warning',
+        'severity_function': lambda val, thresh: 'warning',
         'icon': '🥶',
         'title': 'Dangerous Wind Chill',
         'message_template': 'Wind chill is dangerously low: {value:.1f}{unit} (threshold: {threshold:.1f}{unit})',
-        'unit_type': 'temperature'
+        'unit_type': 'wind_chill'
     },
     'uv_index_high': {
         'threshold_key': 'uv_index_high',
         'check_function': lambda val, thresh: val > thresh,
-        'severity': 'caution',
+        'severity_function': lambda val, thresh: 'caution',
         'icon': '☀️',
         'title': 'High UV Index Alert',
         'message_template': 'Very high UV exposure: {value:.0f} (threshold: {threshold:.0f})',
-        'unit_type': 'index'
+        'unit_type': 'uv_index'
     },
     'air_quality_poor': {
         'threshold_key': 'air_quality_poor',
@@ -155,7 +167,7 @@ ALERT_DEFINITIONS = {
         'icon': '😷',
         'title': 'Poor Air Quality Alert',
         'message_template': 'Air quality is poor: AQI {value:.0f} (threshold: AQI {threshold:.0f})',
-        'unit_type': 'index'
+        'unit_type': 'air_quality_index'
     }
 }
 
@@ -198,9 +210,16 @@ ALERT_DISPLAY_CONFIG = {
 }
 
 # Alert Configuration Validation
-def validate_alert_config():
-    """Validate alert configuration for consistency and completeness."""
+def validate_alert_config() -> None:
+    """
+    Validate alert configuration for consistency and completeness.
+
+    Raises:
+        ValueError: If any alert definition is missing required fields, thresholds, or has invalid severity.
     
+    Returns:
+        bool: True if configuration is valid.
+    """    
     # Check all alert definitions have corresponding thresholds
     for alert_type, definition in ALERT_DEFINITIONS.items():
         threshold_key = definition.get('threshold_key')
@@ -220,5 +239,5 @@ def validate_alert_config():
         for field in required_fields:
             if field not in definition:
                 raise ValueError(f"Missing required field '{field}' in alert definition '{alert_type}'")
-    
+              
     return True

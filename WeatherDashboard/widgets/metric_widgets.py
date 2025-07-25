@@ -24,13 +24,14 @@ from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.color_utils import get_metric_color, get_enhanced_temperature_color, extract_numeric_value
 from WeatherDashboard.utils.state_utils import StateUtils
 from WeatherDashboard.utils.widget_utils import WidgetUtils
+from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
 # ================================
 # 1. INITIALIZATION & SETUP
 # ================================
-class MetricDisplayWidgets(BaseWidgetManager):
+class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     """Manages the display of current weather metrics and alert status.
     
     Creates and manages the current weather display tab including city/date
@@ -97,6 +98,12 @@ class MetricDisplayWidgets(BaseWidgetManager):
                 WidgetUtils.safe_grid_forget(widgets['label'])
                 WidgetUtils.safe_grid_forget(widgets['value'])
         
+        # Update city and date labels
+        if self.city_label and "city" in metric_displays:
+            self.city_label.configure(text=metric_displays["city"])
+        if self.date_label and "date" in metric_displays:
+            self.date_label.configure(text=metric_displays["date"])
+
         # Define display order for each column section
         left_column_order = ['conditions', 'temperature', 'humidity', 'rain', 'snow', 'precipitation_probability', 'wind_chill', 'heat_index', 'weather_comfort_score']
         right_column_order = ['cloud_cover', 'temp_min', 'wind_speed', 'pressure', 'visibility', 'dew_point', 'uv_index', 'air_quality_description']
@@ -190,6 +197,23 @@ class MetricDisplayWidgets(BaseWidgetManager):
                 
                 status_text = " | ".join(status_parts)
                 self.alert_text_label.configure(text=status_text)
+            else:
+                self.alert_text_label.configure(text="")
+    
+    def update_alerts(self, raw_data: Dict[str, Any]) -> None:
+        """Update the alert display widgets with the provided raw weather data."""
+        if not self.is_ready():
+            Logger.warn("Cannot update alerts: widgets not ready")
+            return
+        
+        # Extract alerts from raw_data and update the alert widgets
+        alerts = raw_data.get("alerts", []) if isinstance(raw_data, dict) else []
+        if self.alert_status_widget:
+            self.alert_status_widget.update_status(alerts)
+        
+        if hasattr(self, "alert_text_label") and self.alert_text_label:
+            if alerts:
+                self.alert_text_label.configure(text=f"{len(alerts)} Alerts")
             else:
                 self.alert_text_label.configure(text="")
 

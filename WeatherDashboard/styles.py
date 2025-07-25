@@ -22,10 +22,87 @@ from .alert_config import ALERT_DEFINITIONS, ALERT_SEVERITY_COLORS, ALERT_DISPLA
 
 
 # =================================
-# 1. TTK STYLE CONFIGURATION
+# 1. THEME CONSTANTS
+# =================================
+# Font definitions
+FONTS = {
+    'default_family': 'Arial',
+    'title_family': 'Comic Sans MS',
+    'sizes': {
+        'small': 8,
+        'normal': 10,
+        'medium': 12,
+        'large': 15,
+        'title': 20
+    },
+    'weights': {
+        'normal': 'normal',
+        'bold': 'bold'
+    }
+}
+
+# Color palette
+COLORS = {
+    'status': {
+        'success': 'green',
+        'warning': 'orange',
+        'error': 'red',
+        'info': 'blue',
+        'neutral': 'gray',
+        'default': 'black'
+    },
+    'backgrounds': {
+        'inactive': 'lightgray',
+        'selected': 'lightblue',
+        'active': 'lightgreen'
+    },
+    'foregrounds': {
+        'inactive': 'gray',
+        'selected': 'darkblue',
+        'active': 'darkgreen'
+    }
+}
+
+# =================================
+# 2. LAYOUT CONSTANTS  
+# =================================
+PADDING = {
+    'none': 0,
+    'micro': 1,
+    'tiny': 2,
+    'small': 5,
+    'medium': 8,
+    'large': 10,
+    'extra_large': 12
+}
+
+DIMENSIONS = {
+    'alert': {
+        'width': 400,
+        'base_height': 100,
+        'item_height': 80,
+        'max_height': 500
+    },
+    'progress_bar': {
+        'width': 120,
+        'height': 15,
+        'border_width': 1
+    }
+}
+
+# =================================
+# 3. TTK STYLE CONFIGURATION
 # =================================
 def configure_styles() -> None:
     """Configure comprehensive styles for all GUI elements.
+    
+    IMPORTANT: Must be called after tkinter root window creation but before
+    creating any styled widgets. Modifies the global TTK style registry.
+    
+    Side Effects:
+        - Modifies global ttk.Style() settings for the entire application
+        - Changes appearance of all TTK widgets created after this call
+        - Should only be called once during application initialization
     
     Configured Elements:
         - Label styles (frame labels, values, names, titles, alerts)
@@ -35,91 +112,94 @@ def configure_styles() -> None:
         - Specialized styles (gray labels, alert text)
     """
     style = ttk.Style()
-    style.configure("FrameLabel.TLabelframe.Label", font=('Arial', 15, 'bold'))
-    style.configure("LabelName.TLabel", font=('Arial', 10, 'bold'))
-    style.configure("LabelValue.TLabel", font=('Arial', 10))
-    style.configure("MainButton.TButton", font=('Arial', 10, 'bold'), padding=5)
-    style.configure("Title.TLabel", font=('Comic Sans MS', 20, 'bold'))
-    style.configure("AlertTitle.TLabel", font=('Arial', 14, 'bold'))
-    style.configure("AlertText.TLabel", font=('Arial', 9, 'bold'))
-    style.configure("GrayLabel.TLabel", font=('Arial', 10), foreground="gray")
-    
-    style.configure("TNotebook", background="lightgray")
-    style.configure("TNotebook.Tab", padding=[12, 8], font=("Arial", 12, "bold"))
+    style.configure("Title.TLabel", font=(FONTS['title_family'], FONTS['sizes']['title'], FONTS['weights']['bold']))
+    style.configure("FrameLabel.TLabelframe.Label", font=(FONTS['default_family'], FONTS['sizes']['large'], FONTS['weights']['bold']))
+
+    style.configure("TNotebook", background=COLORS['backgrounds']['inactive'])
+    style.configure("TNotebook.Tab", font=(FONTS['default_family'], FONTS['sizes']['medium'], FONTS['weights']['bold']), padding=[PADDING['tiny'],PADDING['medium']])
     style.map("TNotebook.Tab",
-             background=[("selected", "lightblue"), ("active", "lightgreen")],
-             foreground=[("selected", "darkblue"), ("active", "darkgreen")])
+             background=[("selected", COLORS['backgrounds']['selected']), ("active", COLORS['backgrounds']['active'])],
+             foreground=[("selected", COLORS['foregrounds']['selected']), ("active", COLORS['foregrounds']['active'])])
+ 
+    style.configure("LabelName.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['bold']))
+    style.configure("LabelValue.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']))
+
+    style.configure("MainButton.TButton", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['bold']), padding=PADDING['small'])
+    
+    style.configure("AlertTitle.TLabel", font=(FONTS['default_family'], FONTS['sizes']['large'], FONTS['weights']['bold']))
+    style.configure("AlertText.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['bold']))
+    style.configure("GrayLabel.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']), foreground=COLORS['foregrounds']['inactive'])
     
     # System status styles for different states
-    style.configure("SystemStatusReady.TLabel", font=('Arial', 10))
-    style.configure("SystemStatusWarning.TLabel", font=('Arial', 10))
-    style.configure("SystemStatusError.TLabel", font=('Arial', 10))
+    style.configure("SystemStatusReady.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']))
+    style.configure("SystemStatusWarning.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']))
+    style.configure("SystemStatusError.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']))
 
-    style.map("SystemStatusReady.TLabel", foreground=[('!disabled', 'green')])
-    style.map("SystemStatusWarning.TLabel", foreground=[('!disabled', 'orange')])
-    style.map("SystemStatusError.TLabel", foreground=[('!disabled', 'red')])
+    style.map("SystemStatusReady.TLabel", foreground=[('!disabled', COLORS['status']['success'])])
+    style.map("SystemStatusWarning.TLabel", foreground=[('!disabled', COLORS['status']['warning'])])
+    style.map("SystemStatusError.TLabel", foreground=[('!disabled', COLORS['status']['error'])])
 
     # Data status styles  
-    style.configure("DataStatusLive.TLabel", font=('Arial', 10))
-    style.configure("DataStatusSimulated.TLabel", font=('Arial', 10))
-    style.configure("DataStatusNone.TLabel", font=('Arial', 10))
+    style.configure("DataStatusLive.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']))
+    style.configure("DataStatusSimulated.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']))
+    style.configure("DataStatusNone.TLabel", font=(FONTS['default_family'], FONTS['sizes']['normal'], FONTS['weights']['normal']))
 
-    style.map("DataStatusLive.TLabel", foreground=[('!disabled', 'green')])
-    style.map("DataStatusSimulated.TLabel", foreground=[('!disabled', 'red')])
-    style.map("DataStatusNone.TLabel", foreground=[('!disabled', 'gray')])
+    style.map("DataStatusLive.TLabel", foreground=[('!disabled', COLORS['status']['success'])])
+    style.map("DataStatusSimulated.TLabel", foreground=[('!disabled', COLORS['status']['warning'])])
+    style.map("DataStatusNone.TLabel", foreground=[('!disabled', COLORS['status']['neutral'])])
 
 
 # =================================
-# 2. LAYOUT & POSITIONING
+# 4. LAYOUT & POSITIONING
 # =================================
-# Widget sizing and positioning configuration
+# Small widget sizing and positioning configuration
 WIDGET_LAYOUT = {
     'alert_popup': {
-        'width': 400,
-        'base_height': 100,
-        'alert_height': 80,
-        'max_height': 500
+        'width': DIMENSIONS['alert']['width'],
+        'base_height': DIMENSIONS['alert']['base_height'],
+        'alert_height': DIMENSIONS['alert']['item_height'],
+        'max_height': DIMENSIONS['alert']['max_height']
     },
     'comfort_progress_bar': {
-        'width': 120,
-        'height': 15,
-        'border_width': 1
+        'width': DIMENSIONS['progress_bar']['width'],
+        'height': DIMENSIONS['progress_bar']['height'],
+        'border_width': DIMENSIONS['progress_bar']['border_width']
     },
     'alert_badge': {
         'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -2, 'y': 2}
     },
     'alert_status': {
-        'default_font': ("Arial", 12),
+        'default_font': (FONTS['default_family'], FONTS['sizes']['medium']),
         'message_wrap_length': 350
     }
 }
 
 CONTROL_PANEL_CONFIG = {
     'padding': {
-        'standard': 5,
-        'button_group': (10, 5),
-        'checkbox': (10, 0),
-        'header': (5, 10)
+        'standard': PADDING['small'],
+        'button_group': (PADDING['large'], PADDING['small']),
+        'checkbox': (PADDING['large'], PADDING['none']),
+        'header': (PADDING['small'], PADDING['large'])
     },
     'spacing': {
-        'group': (10, 2),
-        'header': (10, 2),
-        'section': 1
+        'group': (PADDING['large'], PADDING['tiny']),
+        'header': (PADDING['large'], PADDING['tiny']),
+        'section': PADDING['micro']
     }
 }
 
 STATUS_BAR_CONFIG = {
-    'padding': {'system': 5, 'progress': 10, 'data': 5, 'separator': 5},
+    'padding': {'system': PADDING['small'], 'progress': PADDING['large'], 'data': PADDING['small'], 'separator': PADDING['small']},
     'colors': {
-        'info': 'green',
-        'warning': 'orange', 
-        'error': 'red',
-        'loading': 'blue'
+        'info': COLORS['status']['success'],
+        'warning': COLORS['status']['warning'], 
+        'error': COLORS['status']['error'],
+        'loading': COLORS['status']['info']
     }
 }
 
 # =================================
-# 4. WEATHER DISPLAY STYLING
+# 5. WEATHER DISPLAY STYLING
 # =================================
 # Icon selection for display
 WEATHER_ICONS = {
@@ -224,7 +304,7 @@ METRIC_COLOR_RANGES = {
 }
 
 TEMPERATURE_DIFFERENCE_COLORS = {
-    'significant_warmer': 'darkorange',   # Feels much warmer
+    'significant_warmer': 'darkorange',  # Feels much warmer
     'slight_warmer': 'orange',           # Feels slightly warmer  
     'significant_cooler': 'steelblue',   # Feels much cooler
     'slight_cooler': 'lightblue',        # Feels slightly cooler
@@ -241,7 +321,7 @@ COMFORT_THRESHOLDS = {
 }
 
 # =================================
-# 5. DIALOG SYSTEM STYLING
+# 6. DIALOG SYSTEM STYLING
 # =================================
 DIALOG_CONFIG = {
     'error_titles': {
@@ -260,7 +340,7 @@ DIALOG_CONFIG = {
 }
 
 # =================================
-# 6. LOADING STATE STYLING
+# 7. LOADING STATE STYLING
 # =================================
 LOADING_CONFIG = {
     'icons': {
@@ -268,8 +348,8 @@ LOADING_CONFIG = {
         'waiting': '⏳'
     },
     'colors': {
-        'loading': 'blue',
-        'default': 'black'
+        'loading': COLORS['status']['info'],
+        'default': COLORS['status']['default']
     },
     'messages': {
         'default': 'Fetching weather data...',

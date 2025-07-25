@@ -24,6 +24,9 @@ from WeatherDashboard.features.alerts.alert_manager import AlertManager
 from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
 from WeatherDashboard.services.error_handler import WeatherErrorHandler
+from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
+from WeatherDashboard.widgets.base_widgets import BaseWidgetManager
+from WeatherDashboard.utils.utils import is_fallback
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.rate_limiter import RateLimiter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
@@ -46,7 +49,7 @@ class WeatherDashboardController:
         rate_limiter: API rate limiting manager
         alert_manager: Weather alert processing manager
     """    
-    def __init__(self, state: Any, data_service: Any, widgets: Any, theme: str = 'neutral') -> None:
+    def __init__(self, state: Any, data_service: Any, widgets: IWeatherDashboardWidgets, theme: str = 'neutral') -> None:
         """Initialize the weather dashboard controller.
         
         Args:
@@ -123,11 +126,11 @@ class WeatherDashboardController:
         active_alerts = self.alert_manager.get_active_alerts()
         if active_alerts:
             # Get parent window for popup
-            parent = None
-            if (hasattr(self.widgets, 'frames') and 
-                isinstance(self.widgets.frames, dict) and 
-                'title' in self.widgets.frames):
-                parent = self.widgets.frames['title']
+            parent = self.widgets.get_alert_popup_parent()
+
+            if not self.widgets.is_ready():
+                Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
+                return
             
             SimpleAlertPopup(parent, active_alerts)
         else:
@@ -197,6 +200,10 @@ class WeatherDashboardController:
             # Fetch data
             city, raw_data, error_exception = self.service.get_city_data(city_name, unit_system, cancel_event)
 
+            # Generate alerts and inject into raw_data
+            alerts = self.alert_manager.check_weather_alerts(raw_data)
+            raw_data["alerts"] = alerts
+
             # Create view model
             view_model = WeatherViewModel(city, raw_data, unit_system)
             
@@ -205,8 +212,17 @@ class WeatherDashboardController:
             if not should_continue:
                 return False
             
+            # Determine if data is simulated
+            simulated = is_fallback(raw_data)
+
             # Update all display components
-            self._update_display_components(view_model, raw_data, error_exception)
+            self.widgets.update_metric_display({
+                **view_model.metrics,
+                "city": view_model.city_name,
+                "date": view_model.date_str
+            })
+            self.widgets.update_status_bar(view_model.city_name, error_exception, simulated)
+            self.widgets.update_alerts(raw_data)
             
             # Log the data
             self.service.write_to_log(city, raw_data, unit_system)
@@ -230,38 +246,40 @@ class WeatherDashboardController:
             raw_data: Raw weather data for alert processing and status determination
             error_exception: Any error that occurred during data fetch, affects status display
         """
+        if not self.widgets.is_ready():
+            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
+            return
+
         # Update metric display headers
-        if hasattr(self.widgets, 'metric_widgets') and self.widgets.metric_widgets:
-            if hasattr(self.widgets.metric_widgets, 'city_label') and self.widgets.metric_widgets.city_label:
-                self.widgets.metric_widgets.city_label.config(text=view_model.city_name)
-            if hasattr(self.widgets.metric_widgets, 'date_label') and self.widgets.metric_widgets.date_label:
-                self.widgets.metric_widgets.date_label.config(text=view_model.date_str)
-            
-            # Update metric display
-            self.widgets.metric_widgets.update_metric_display(view_model.metrics)
-        
+        self.widgets.update_metric_display({
+            **view_model.metrics,
+            "city": view_model.city_name,
+            "date": view_model.date_str
+        })
+
         # Update status bar
-        self._update_status_bar(view_model.city_name, error_exception)
+        self.widgets.update_status_bar(view_model.city_name, error_exception)
         
         # Update alerts
-        self._update_weather_alerts(raw_data)
+        self.widgets.update_alerts(raw_data)
     
     def _update_status_bar(self, city_name: str, error_exception: Optional[Exception]) -> None:
         """Update status bar with data source information."""
-        if hasattr(self.widgets, 'status_bar_widgets') and self.widgets.status_bar_widgets:
-            data_status = f"{city_name} ({'Simulated' if error_exception else 'Live'})"
-            status_color = "red" if error_exception else "darkgreen"
-            self.widgets.status_bar_widgets.update_data_status(data_status, color=status_color)
-            self.widgets.status_bar_widgets.update_system_status("Data updated", "info")
+        if not self.widgets.is_ready():
+            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
+            return
+        
+        self.widgets.update_status_bar(city_name, error_exception)
     
     def _update_weather_alerts(self, raw_data: Dict[str, Any]) -> None:
         """Update weather alerts display."""
-        if raw_data:
-            alerts = self.alert_manager.check_weather_alerts(raw_data)
-            if (hasattr(self.widgets, 'metric_widgets') and 
-                self.widgets.metric_widgets and
-                hasattr(self.widgets.metric_widgets, 'alert_status_widget')):
-                self.widgets.metric_widgets.update_alert_display(alerts)
+        if not raw_data:
+            return
+        if not self.widgets.is_ready():
+            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
+            return
+
+        self.widgets.update_alerts(raw_data)
     
     def _get_chart_settings(self) -> Tuple[str, int, str, str]:
         """Retrieve and validate current settings for chart display.
@@ -385,16 +403,8 @@ class WeatherDashboardController:
             error_type: Type/category of the chart error for user display
             error: The exception that occurred during chart operations
         """
-        Logger.error(f"{error_type}: {error}")
+        Logger.exception(f"{error_type}: {error}", error)
         messagebox.showwarning("Chart Error", f"{error_type}. Chart will be cleared.")
         
         # Clear the chart gracefully
-        try:
-            if (hasattr(self.widgets, 'chart_widget') and self.widgets.chart_widget and 
-                hasattr(self.widgets.chart_widget, 'ax') and self.widgets.chart_widget.ax):
-                self.widgets.chart_widget.ax.clear()
-                self.widgets.chart_widget.ax.text(0.5, 0.5, 'Chart unavailable\nPlease check settings', ha='center', va='center', transform=self.widgets.chart_widget.ax.transAxes)
-                if hasattr(self.widgets.chart_widget, 'canvas') and self.widgets.chart_widget.canvas:
-                    self.widgets.chart_widget.canvas.draw()
-        except Exception as recovery_error:
-            Logger.error(f"Failed to clear chart after error: {recovery_error}")
+        self.widgets.clear_chart_with_error_message()

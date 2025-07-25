@@ -67,17 +67,17 @@ def _handle_startup_error(error_type: str, error: Exception, exit_code: int) -> 
     print(error_messages.get(error_type, f"❌ Error: {error}"))
     sys.exit(exit_code)
 
-def main():
+def main() -> None:
     """Main entry point that validates environment and launches the application."""
     try:
         # Validate environment before proceeding
         validate_environment()
         
-        # Import and run the main application
-        # This is secure because we're not modifying sys.path
-        from WeatherDashboard.main import main as app_main
-        
         print("🌤️ Loading Weather Dashboard...")
+
+        # Import and run the main application
+        from WeatherDashboard.main import main as app_main
+
         app_main()
         
     except KeyboardInterrupt:

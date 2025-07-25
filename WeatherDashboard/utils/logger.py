@@ -11,6 +11,7 @@ Classes:
 
 import os
 import json
+import traceback
 from datetime import datetime
 
 from WeatherDashboard import config
@@ -51,6 +52,14 @@ class Logger:
     def error(msg: str) -> None: 
         """Log an error message."""
         Logger._log("ERROR", msg)
+    
+    @staticmethod
+    def exception(msg: str, exc: Exception = None):
+        print(f"[ERROR] {msg}")
+        if exc:
+            print("".join(traceback.format_exception(type(exc), exc, exc.__traceback__)))
+        else:
+            print(traceback.format_exc())
 
     @staticmethod
     def _log(level: str, msg: str) -> None:

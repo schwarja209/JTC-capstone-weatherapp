@@ -1,6 +1,6 @@
 # Weather Dashboard - Architecture Decision Records (ADRs)
 
-This document captures all architectural decisions made for the Weather Dashboard application, including rationale, alternatives considered, and consequences. Updated December 2024 to reflect current implementation status and satirical enhancement readiness.
+This document captures all architectural decisions made for the Weather Dashboard application, including rationale, alternatives considered, and consequences. Updated July 2025 to reflect current implementation status and satirical enhancement readiness.
 
 ## ADR Format
 
@@ -78,6 +78,8 @@ Each ADR follows the format:
 - ❌ Requires careful design to avoid tight coupling
 - ❌ Central state object can become large
 
+**Update**: All legacy gui_vars and distributed state patterns have been fully removed from the codebase.
+
 ---
 
 ## ADR-003: Mixed State Access Patterns
@@ -118,7 +120,7 @@ Each ADR follows the format:
 **Decision**: Convert all utility exceptions to custom exceptions at service boundaries:
 - Utilities raise standard Python exceptions (`ValueError`, etc.)
 - Services convert to custom exceptions (`ValidationError`, `NetworkError`, etc.)
-- Controllers handle only custom exceptions
+- Controllers in the current codebase only handle custom exceptions, as verified in core/controller.py.
 
 **Rationale**:
 - Clear architectural responsibility (services own conversion)
@@ -241,6 +243,8 @@ Each ADR follows the format:
 - ❌ State manager accumulates widget references
 - ❌ Direct coupling between widgets and state
 
+**Update**: All `_register_with_state()` methods and direct widget registration patterns have been removed from the codebase.
+
 ---
 
 ## ADR-008: Configuration Management
@@ -312,6 +316,8 @@ Each ADR follows the format:
 - ❌ More complex error handling infrastructure
 - ❌ Need to maintain message templates
 
+**Update**: All user-facing errors are routed through WeatherErrorHandler with theme-aware messaging, as verified in services/error_handler.py and core/controller.py.
+
 ---
 
 ## ADR-010: Testing Strategy
@@ -325,6 +331,7 @@ Each ADR follows the format:
 - Mock external dependencies (API calls, file system)
 - Avoid testing GUI components directly (complex and brittle)
 - Test business logic through service and core layers
+- All major modules have corresponding unit tests in the tests/ directory
 
 **Rationale**:
 - Business logic is most critical and easiest to test reliably
@@ -391,6 +398,8 @@ Each ADR follows the format:
 - Use `Any` for GUI components where specific typing is complex
 - Detailed docstrings for complex methods, brief for simple ones
 - Avoid over-documentation of obvious functionality
+- Type hints are present throughout the codebase
+- Static analysis tools (e.g., mypy) are recommended for enforcement
 
 **Note**: Enhanced by ADR-030 which established hybrid documentation standards.
 
@@ -495,6 +504,7 @@ Each ADR follows the format:
 - Visual status indicators with user interaction
 - Alert history and management
 - Integration with theme system for future enhancement
+- Alert thresholds and severity levels are fully configurable via alert_config.py
 
 **Rationale**:
 - Proactive user notification of important conditions
@@ -913,6 +923,8 @@ This ADR specifically targets derived mapping functions and computed constants t
 3. Support future development features and satirical enhancement functionality
 4. Cannot be replaced by simple direct access to base `METRICS` configuration
 
+**Update**: All code references to removed mapping functions/constants have been eliminated.
+
 ---
 
 ## ADR-027: Memory Management Streamlining
@@ -983,6 +995,8 @@ This ADR specifically targets derived mapping functions and computed constants t
 - ❌ Requires service-layer exception conversion
 - ❌ More structured approach requires discipline to maintain
 
+**Update**: All error handling in the codebase follows the utilities → services → controllers pattern
+
 ---
 
 ## ADR-029: Widget State Access Patterns
@@ -1018,6 +1032,8 @@ This ADR specifically targets derived mapping functions and computed constants t
 - ❌ Slightly more verbose access code
 - ❌ Need to maintain consistent patterns across team
 
+**Update**: All widget state access in the codebase uses the safe patterns described in this ADR.
+
 ---
 
 ## ADR-030: Hybrid Documentation Standards
@@ -1052,6 +1068,8 @@ This ADR specifically targets derived mapping functions and computed constants t
 - ✅ Documentation approach ready for team collaboration
 - ❌ Requires judgment calls about complexity level
 - ❌ Need ongoing consistency maintenance
+
+**Update**: Docstrings generally follow the hybrid standard, but periodic audits are recommended to ensure detailed docstrings for complex methods and brief ones for simple methods.
 
 ---
 
@@ -1106,6 +1124,8 @@ This ADR specifically targets derived mapping functions and computed constants t
 - **Alert System Foundation**: Comprehensive alert infrastructure ready for satirical interpretation
 - **Configuration-Driven Design**: Easy addition of theme-specific behaviors and settings
 
+**Note**: As satirical features (quotes, badges, UI evolution, etc.) are implemented, new ADRs should be created for each major subsystem.
+
 **Rationale**:
 - Theme system integration requires architectural planning from the beginning
 - Weather interpretation foundation must be solid before adding satirical layers
@@ -1158,7 +1178,7 @@ This ADR specifically targets derived mapping functions and computed constants t
 - ❌ Cannot reuse state management in headless scenarios
 - ❌ Tests require tkinter root window setup
 
-**Testing Impact**: Tests must initialize tkinter context but this is acceptable trade-off for desktop application simplicity.
+**Testing Impact**: Tests for state management must initialize tkinter context, as expected, but this is acceptable trade-off for desktop application simplicity.
 
 ---
 
@@ -1197,6 +1217,8 @@ This ADR specifically targets derived mapping functions and computed constants t
 **Usage Examples**: `config.METRICS[key]['label']`, `config.ALERT_THRESHOLDS['temperature_high']`, `config.CHART["range_options"]`
 
 **Validation**: All configuration validated once at startup via `config.validate_config()` in main.py.
+
+**Update**: All configuration access in the codebase is direct, with no abstraction layers.
 
 ---
 
@@ -1254,6 +1276,6 @@ This ADR document should be updated whenever:
 - Significant refactoring changes existing architectural approaches
 - New patterns emerge from satirical feature development
 
-**Last Updated**: December 2024 (Comprehensive assessment and satirical enhancement preparation)
-**Status**: Technical foundation complete, ready for satirical feature implementation
+**Last Updated**: July 2025
+**Status**: Technical foundation and initial features complete, ready for satirical feature implementation
 **Next Review**: When satirical theme system development begins

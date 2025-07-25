@@ -6841,3 +6841,471 @@
 [INFO] 2025-07-23 15:34:SS status bar widgets created successfully
 [INFO] 2025-07-23 15:34:SS dashboard widgets created successfully
 [INFO] 2025-07-23 15:34:SS Weather data written for new_york - Live
+[INFO] 2025-07-23 23:12:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-23 23:12:46
+[INFO] 2025-07-23 23:12:46 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-23 23:12:46 title widget created successfully
+[INFO] 2025-07-23 23:12:46 control widgets created successfully
+[INFO] 2025-07-23 23:12:47 metric display widgets created successfully
+[INFO] 2025-07-23 23:12:47 chart widgets created successfully
+[INFO] 2025-07-23 23:12:47 tabbed display widgets created successfully
+[INFO] 2025-07-23 23:12:47 status bar widgets created successfully
+[INFO] 2025-07-23 23:12:47 dashboard widgets created successfully
+[INFO] 2025-07-23 23:12:47 Weather data written for new_york - Live
+[INFO] 2025-07-24 12:56:44 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 12:56:44
+[INFO] 2025-07-24 12:56:44 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 12:56:44 title widget created successfully
+[INFO] 2025-07-24 12:56:45 control widgets created successfully
+[INFO] 2025-07-24 12:56:46 metric display widgets created successfully
+[INFO] 2025-07-24 12:56:46 chart widgets created successfully
+[INFO] 2025-07-24 12:56:46 tabbed display widgets created successfully
+[INFO] 2025-07-24 12:56:46 status bar widgets created successfully
+[INFO] 2025-07-24 12:56:46 dashboard widgets created successfully
+[ERROR] 2025-07-24 12:56:47 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-24 12:56:47 Using fallback for New York: Testing mode
+[INFO] 2025-07-24 12:56:51 Weather data written for new_york - Simulated
+[INFO] 2025-07-24 12:58:07 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 12:58:07
+[INFO] 2025-07-24 12:58:07 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 12:58:07 title widget created successfully
+[INFO] 2025-07-24 12:58:07 control widgets created successfully
+[INFO] 2025-07-24 12:58:08 metric display widgets created successfully
+[INFO] 2025-07-24 12:58:08 chart widgets created successfully
+[INFO] 2025-07-24 12:58:08 tabbed display widgets created successfully
+[INFO] 2025-07-24 12:58:08 status bar widgets created successfully
+[INFO] 2025-07-24 12:58:08 dashboard widgets created successfully
+[ERROR] 2025-07-24 12:58:08 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-24 12:58:08 Using fallback for New York: Testing mode
+[INFO] 2025-07-24 12:58:14 Weather data written for new_york - Simulated
+[INFO] 2025-07-24 12:58:34 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 12:58:34
+[INFO] 2025-07-24 12:58:34 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 12:58:35 title widget created successfully
+[INFO] 2025-07-24 12:58:35 control widgets created successfully
+[INFO] 2025-07-24 12:58:35 metric display widgets created successfully
+[INFO] 2025-07-24 12:58:35 chart widgets created successfully
+[INFO] 2025-07-24 12:58:35 tabbed display widgets created successfully
+[INFO] 2025-07-24 12:58:35 status bar widgets created successfully
+[INFO] 2025-07-24 12:58:35 dashboard widgets created successfully
+[INFO] 2025-07-24 12:58:36 Weather data written for new_york - Live
+[INFO] 2025-07-24 14:18:08 Initializing Weather Dashboard application...
+[ERROR] 2025-07-24 14:18:08 Configuration error: Invalid unit_type 'humidity' for alert type 'humidity_high'. Must be one of: {'index', 'pressure', 'temperature', 'wind_speed', 'visibility', 'precipitation', 'percent'}
+[INFO] 2025-07-24 14:18:34 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 14:18:34
+[INFO] 2025-07-24 14:18:34 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 14:18:34 title widget created successfully
+[INFO] 2025-07-24 14:18:34 control widgets created successfully
+[INFO] 2025-07-24 14:18:35 metric display widgets created successfully
+[INFO] 2025-07-24 14:18:35 chart widgets created successfully
+[INFO] 2025-07-24 14:18:35 tabbed display widgets created successfully
+[INFO] 2025-07-24 14:18:35 status bar widgets created successfully
+[INFO] 2025-07-24 14:18:35 dashboard widgets created successfully
+[INFO] 2025-07-24 14:18:35 Weather data written for new_york - Live
+[WARN] 2025-07-24 14:18:40 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-24 14:18:40 Weather data written for new_york - Live
+[WARN] 2025-07-24 14:18:54 Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[INFO] 2025-07-24 14:18:54 Weather data written for new_orleans - Live
+[WARN] 2025-07-24 14:19:08 Weather alert: High UV Index Alert - Very high UV exposure: 14 (threshold: 8)
+[INFO] 2025-07-24 14:19:08 Weather data written for bogota,_columbia - Live
+[WARN] 2025-07-24 14:20:22 Weather alert: High Humidity Alert - Very humid conditions: 92% (threshold: 85%)
+[WARN] 2025-07-24 14:20:22 Weather alert: Low Visibility Alert - Reduced visibility: 2299.1 mi (threshold: 3000.0 mi)
+[INFO] 2025-07-24 14:20:22 Weather data written for vienna - Live
+[INFO] 2025-07-24 14:24:30 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 14:24:30
+[INFO] 2025-07-24 14:24:30 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 14:24:30 title widget created successfully
+[INFO] 2025-07-24 14:24:30 control widgets created successfully
+[INFO] 2025-07-24 14:24:30 metric display widgets created successfully
+[INFO] 2025-07-24 14:24:30 chart widgets created successfully
+[INFO] 2025-07-24 14:24:30 tabbed display widgets created successfully
+[INFO] 2025-07-24 14:24:30 status bar widgets created successfully
+[INFO] 2025-07-24 14:24:30 dashboard widgets created successfully
+[INFO] 2025-07-24 14:24:31 Weather data written for new_york - Live
+[WARN] 2025-07-24 14:24:33 Fetch blocked due to rate limiting.
+[WARN] 2025-07-24 14:24:36 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-24 14:24:36 Weather data written for new_york - Live
+[INFO] 2025-07-24 14:50:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 14:50:46
+[INFO] 2025-07-24 14:50:46 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 14:50:46 title widget created successfully
+[INFO] 2025-07-24 14:50:47 control widgets created successfully
+[INFO] 2025-07-24 14:50:47 metric display widgets created successfully
+[INFO] 2025-07-24 14:50:47 chart widgets created successfully
+[INFO] 2025-07-24 14:50:47 tabbed display widgets created successfully
+[INFO] 2025-07-24 14:50:47 status bar widgets created successfully
+[INFO] 2025-07-24 14:50:47 dashboard widgets created successfully
+[INFO] 2025-07-24 14:50:47 Weather data written for new_york - Live
+[INFO] 2025-07-24 14:59:11 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 14:59:11
+[INFO] 2025-07-24 14:59:11 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 14:59:11 title widget created successfully
+[INFO] 2025-07-24 14:59:11 control widgets created successfully
+[INFO] 2025-07-24 14:59:12 metric display widgets created successfully
+[INFO] 2025-07-24 14:59:12 chart widgets created successfully
+[INFO] 2025-07-24 14:59:12 tabbed display widgets created successfully
+[INFO] 2025-07-24 14:59:12 status bar widgets created successfully
+[INFO] 2025-07-24 14:59:12 dashboard widgets created successfully
+[INFO] 2025-07-24 14:59:12 Weather data written for new_york - Live
+[INFO] 2025-07-24 15:08:25 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 15:08:25
+[INFO] 2025-07-24 15:08:25 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 15:08:25 title widget created successfully
+[INFO] 2025-07-24 15:08:25 control widgets created successfully
+[INFO] 2025-07-24 15:08:26 metric display widgets created successfully
+[INFO] 2025-07-24 15:08:26 chart widgets created successfully
+[INFO] 2025-07-24 15:08:26 tabbed display widgets created successfully
+[INFO] 2025-07-24 15:08:26 status bar widgets created successfully
+[INFO] 2025-07-24 15:08:26 dashboard widgets created successfully
+[INFO] 2025-07-24 15:08:27 Weather data written for new_york - Live
+[WARN] 2025-07-24 15:08:34 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-24 15:08:34 Weather data written for new_york - Live
+[INFO] 2025-07-24 15:36:37 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 15:36:37
+[INFO] 2025-07-24 15:36:37 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 15:36:38 title widget created successfully
+[INFO] 2025-07-24 15:36:38 control widgets created successfully
+[INFO] 2025-07-24 15:36:38 metric display widgets created successfully
+[INFO] 2025-07-24 15:36:38 chart widgets created successfully
+[INFO] 2025-07-24 15:36:38 tabbed display widgets created successfully
+[INFO] 2025-07-24 15:36:38 status bar widgets created successfully
+[INFO] 2025-07-24 15:36:38 dashboard widgets created successfully
+[INFO] 2025-07-24 15:36:39 Weather data written for new_york - Live
+[WARN] 2025-07-24 15:36:44 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-24 15:36:44 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:34:48 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:34:48
+[INFO] 2025-07-24 22:34:48 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:34:48 title widget created successfully
+[INFO] 2025-07-24 22:34:48 control widgets created successfully
+[INFO] 2025-07-24 22:34:48 metric display widgets created successfully
+[INFO] 2025-07-24 22:34:48 chart widgets created successfully
+[INFO] 2025-07-24 22:34:48 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:34:48 status bar widgets created successfully
+[INFO] 2025-07-24 22:34:48 dashboard widgets created successfully
+[INFO] 2025-07-24 22:34:49 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:34:59 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:35:03 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:35:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:35:46
+[INFO] 2025-07-24 22:35:46 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:35:46 title widget created successfully
+[INFO] 2025-07-24 22:35:46 control widgets created successfully
+[INFO] 2025-07-24 22:35:46 metric display widgets created successfully
+[INFO] 2025-07-24 22:35:46 chart widgets created successfully
+[INFO] 2025-07-24 22:35:46 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:35:46 status bar widgets created successfully
+[INFO] 2025-07-24 22:35:46 dashboard widgets created successfully
+[INFO] 2025-07-24 22:35:46 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:36:36 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:36:40 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:38:21 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:38:21
+[INFO] 2025-07-24 22:38:21 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:38:21 title widget created successfully
+[INFO] 2025-07-24 22:38:21 control widgets created successfully
+[INFO] 2025-07-24 22:38:21 metric display widgets created successfully
+[INFO] 2025-07-24 22:38:21 chart widgets created successfully
+[INFO] 2025-07-24 22:38:21 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:38:21 status bar widgets created successfully
+[INFO] 2025-07-24 22:38:21 dashboard widgets created successfully
+[INFO] 2025-07-24 22:38:21 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:44:12 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:44:12
+[INFO] 2025-07-24 22:44:12 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:44:12 title widget created successfully
+[INFO] 2025-07-24 22:44:12 control widgets created successfully
+[INFO] 2025-07-24 22:44:12 metric display widgets created successfully
+[INFO] 2025-07-24 22:44:12 chart widgets created successfully
+[INFO] 2025-07-24 22:44:12 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:44:12 status bar widgets created successfully
+[INFO] 2025-07-24 22:44:12 dashboard widgets created successfully
+[INFO] 2025-07-24 22:44:13 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:45:57 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:45:57
+[INFO] 2025-07-24 22:45:57 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:45:57 title widget created successfully
+[INFO] 2025-07-24 22:45:57 control widgets created successfully
+[INFO] 2025-07-24 22:45:57 metric display widgets created successfully
+[INFO] 2025-07-24 22:45:57 chart widgets created successfully
+[INFO] 2025-07-24 22:45:57 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:45:57 status bar widgets created successfully
+[INFO] 2025-07-24 22:45:57 dashboard widgets created successfully
+[INFO] 2025-07-24 22:45:58 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:47:00 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:47:00
+[INFO] 2025-07-24 22:47:00 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:47:00 title widget created successfully
+[INFO] 2025-07-24 22:47:00 control widgets created successfully
+[INFO] 2025-07-24 22:47:00 metric display widgets created successfully
+[INFO] 2025-07-24 22:47:00 chart widgets created successfully
+[INFO] 2025-07-24 22:47:00 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:47:00 status bar widgets created successfully
+[INFO] 2025-07-24 22:47:00 dashboard widgets created successfully
+[INFO] 2025-07-24 22:47:00 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:48:18 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:48:18
+[INFO] 2025-07-24 22:48:18 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:48:18 title widget created successfully
+[INFO] 2025-07-24 22:48:18 control widgets created successfully
+[INFO] 2025-07-24 22:48:18 metric display widgets created successfully
+[INFO] 2025-07-24 22:48:18 chart widgets created successfully
+[INFO] 2025-07-24 22:48:18 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:48:18 status bar widgets created successfully
+[INFO] 2025-07-24 22:48:18 dashboard widgets created successfully
+[INFO] 2025-07-24 22:48:19 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:50:14 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:50:14
+[INFO] 2025-07-24 22:50:14 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:50:14 title widget created successfully
+[INFO] 2025-07-24 22:50:14 control widgets created successfully
+[INFO] 2025-07-24 22:50:14 metric display widgets created successfully
+[INFO] 2025-07-24 22:50:14 chart widgets created successfully
+[INFO] 2025-07-24 22:50:14 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:50:14 status bar widgets created successfully
+[INFO] 2025-07-24 22:50:14 dashboard widgets created successfully
+[INFO] 2025-07-24 22:50:15 Weather data written for new_york - Live
+[INFO] 2025-07-24 22:59:54 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 22:59:54
+[INFO] 2025-07-24 22:59:54 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 22:59:54 title widget created successfully
+[INFO] 2025-07-24 22:59:54 control widgets created successfully
+[INFO] 2025-07-24 22:59:55 metric display widgets created successfully
+[INFO] 2025-07-24 22:59:55 chart widgets created successfully
+[INFO] 2025-07-24 22:59:55 tabbed display widgets created successfully
+[INFO] 2025-07-24 22:59:55 status bar widgets created successfully
+[INFO] 2025-07-24 22:59:55 dashboard widgets created successfully
+[ERROR] 2025-07-24 22:59:55 Unexpected error: 'WeatherDashboardWidgets' object has no attribute 'update_metric_display'
+[INFO] 2025-07-24 23:00:22 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 23:00:22
+[INFO] 2025-07-24 23:00:22 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 23:00:22 title widget created successfully
+[INFO] 2025-07-24 23:00:23 control widgets created successfully
+[INFO] 2025-07-24 23:00:23 metric display widgets created successfully
+[INFO] 2025-07-24 23:00:23 chart widgets created successfully
+[INFO] 2025-07-24 23:00:23 tabbed display widgets created successfully
+[INFO] 2025-07-24 23:00:23 status bar widgets created successfully
+[INFO] 2025-07-24 23:00:23 dashboard widgets created successfully
+[INFO] 2025-07-24 23:00:23 Weather data written for new_york - Live
+[INFO] 2025-07-24 23:14:50 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 23:14:50
+[INFO] 2025-07-24 23:14:50 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 23:14:50 title widget created successfully
+[INFO] 2025-07-24 23:14:50 control widgets created successfully
+[INFO] 2025-07-24 23:14:50 metric display widgets created successfully
+[INFO] 2025-07-24 23:14:50 chart widgets created successfully
+[INFO] 2025-07-24 23:14:50 tabbed display widgets created successfully
+[INFO] 2025-07-24 23:14:50 status bar widgets created successfully
+[INFO] 2025-07-24 23:14:50 dashboard widgets created successfully
+[INFO] 2025-07-24 23:14:51 Weather data written for new_york - Live
+[INFO] 2025-07-24 23:14:54 Weather data written for new_york - Live
+[INFO] 2025-07-24 23:17:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-24 23:17:32
+[INFO] 2025-07-24 23:17:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-24 23:17:33 title widget created successfully
+[INFO] 2025-07-24 23:17:33 control widgets created successfully
+[INFO] 2025-07-24 23:17:33 metric display widgets created successfully
+[INFO] 2025-07-24 23:17:33 chart widgets created successfully
+[INFO] 2025-07-24 23:17:33 tabbed display widgets created successfully
+[INFO] 2025-07-24 23:17:33 status bar widgets created successfully
+[INFO] 2025-07-24 23:17:33 dashboard widgets created successfully
+[INFO] 2025-07-24 23:17:33 Weather data written for new_york - Live
+[INFO] 2025-07-24 23:17:38 Weather data written for new_york - Live
+[INFO] 2025-07-25 00:20:33 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 00:20:33
+[INFO] 2025-07-25 00:20:33 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 00:20:33 title widget created successfully
+[INFO] 2025-07-25 00:20:33 control widgets created successfully
+[INFO] 2025-07-25 00:20:34 metric display widgets created successfully
+[INFO] 2025-07-25 00:20:34 chart widgets created successfully
+[INFO] 2025-07-25 00:20:34 tabbed display widgets created successfully
+[INFO] 2025-07-25 00:20:34 status bar widgets created successfully
+[INFO] 2025-07-25 00:20:34 dashboard widgets created successfully
+[INFO] 2025-07-25 00:20:34 Weather data written for new_york - Live
+[INFO] 2025-07-25 00:20:41 Weather data written for new_york - Live
+[WARN] 2025-07-25 00:20:51 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 00:20:51 API failure for New Yorkasasf - CityNotFoundError: City 'New Yorkasasf' not found. Switching to simulated data.
+[INFO] 2025-07-25 00:20:53 Weather data written for new_yorkasasf - Simulated
+[INFO] 2025-07-25 00:24:35 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 00:24:35
+[INFO] 2025-07-25 00:24:35 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 00:24:35 title widget created successfully
+[INFO] 2025-07-25 00:24:35 control widgets created successfully
+[INFO] 2025-07-25 00:24:35 metric display widgets created successfully
+[INFO] 2025-07-25 00:24:35 chart widgets created successfully
+[INFO] 2025-07-25 00:24:35 tabbed display widgets created successfully
+[INFO] 2025-07-25 00:24:35 status bar widgets created successfully
+[INFO] 2025-07-25 00:24:35 dashboard widgets created successfully
+[INFO] 2025-07-25 00:24:35 Weather data written for new_york - Live
+[WARN] 2025-07-25 00:24:38 Fetch blocked due to rate limiting.
+[INFO] 2025-07-25 00:24:41 Weather data written for new_york - Live
+[INFO] 2025-07-25 00:28:28 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 00:28:28
+[INFO] 2025-07-25 00:28:28 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 00:28:29 title widget created successfully
+[INFO] 2025-07-25 00:28:29 control widgets created successfully
+[INFO] 2025-07-25 00:28:29 metric display widgets created successfully
+[INFO] 2025-07-25 00:28:29 chart widgets created successfully
+[INFO] 2025-07-25 00:28:29 tabbed display widgets created successfully
+[INFO] 2025-07-25 00:28:29 status bar widgets created successfully
+[INFO] 2025-07-25 00:28:29 dashboard widgets created successfully
+[INFO] 2025-07-25 00:28:29 Weather data written for new_york - Live
+[INFO] 2025-07-25 00:28:32 Weather data written for new_york - Live
+[INFO] 2025-07-25 00:28:45 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 00:28:45
+[INFO] 2025-07-25 00:28:45 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 00:28:45 title widget created successfully
+[INFO] 2025-07-25 00:28:45 control widgets created successfully
+[INFO] 2025-07-25 00:28:46 metric display widgets created successfully
+[INFO] 2025-07-25 00:28:46 chart widgets created successfully
+[INFO] 2025-07-25 00:28:46 tabbed display widgets created successfully
+[INFO] 2025-07-25 00:28:46 status bar widgets created successfully
+[INFO] 2025-07-25 00:28:46 dashboard widgets created successfully
+[INFO] 2025-07-25 00:28:46 Weather data written for new_york - Live
+[INFO] 2025-07-25 00:32:05 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 00:32:05
+[INFO] 2025-07-25 00:32:05 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 00:32:05 title widget created successfully
+[INFO] 2025-07-25 00:32:05 control widgets created successfully
+[INFO] 2025-07-25 00:32:05 metric display widgets created successfully
+[INFO] 2025-07-25 00:32:05 chart widgets created successfully
+[INFO] 2025-07-25 00:32:05 tabbed display widgets created successfully
+[INFO] 2025-07-25 00:32:05 status bar widgets created successfully
+[INFO] 2025-07-25 00:32:05 dashboard widgets created successfully
+[INFO] 2025-07-25 00:32:05 Weather data written for new_york - Live
+[WARN] 2025-07-25 00:32:09 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 00:32:09 Weather data written for new_york - Live
+[WARN] 2025-07-25 00:33:02 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 00:33:02 API failure for Asfasf - CityNotFoundError: City 'Asfasf' not found. Switching to simulated data.
+[WARN] 2025-07-25 00:33:02 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[WARN] 2025-07-25 00:33:02 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-25 00:33:03 Weather data written for asfasf - Simulated
+[INFO] 2025-07-25 00:42:48 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 00:42:48
+[INFO] 2025-07-25 00:42:48 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 00:42:48 title widget created successfully
+[INFO] 2025-07-25 00:42:48 control widgets created successfully
+[INFO] 2025-07-25 00:42:49 metric display widgets created successfully
+[INFO] 2025-07-25 00:42:49 chart widgets created successfully
+[INFO] 2025-07-25 00:42:49 tabbed display widgets created successfully
+[INFO] 2025-07-25 00:42:49 status bar widgets created successfully
+[INFO] 2025-07-25 00:42:49 dashboard widgets created successfully
+[INFO] 2025-07-25 00:42:49 Weather data written for new_york - Live
+[WARN] 2025-07-25 00:42:55 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 00:42:55 API failure for Asgfasg - CityNotFoundError: City 'Asgfasg' not found. Switching to simulated data.
+[INFO] 2025-07-25 00:42:57 Weather data written for asgfasg - Simulated
+[WARN] 2025-07-25 00:43:08 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-25 00:43:08 API failure for Asgfasg - CityNotFoundError: City 'Asgfasg' not found. Switching to simulated data.
+[WARN] 2025-07-25 00:43:08 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-25 00:43:10 Weather data written for asgfasg - Simulated
+[ERROR] 2025-07-25 00:43:30 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-25 00:43:38 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-25 00:44:06 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 00:44:06
+[INFO] 2025-07-25 00:44:06 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 00:44:07 title widget created successfully
+[INFO] 2025-07-25 00:44:07 control widgets created successfully
+[INFO] 2025-07-25 00:44:07 metric display widgets created successfully
+[INFO] 2025-07-25 00:44:07 chart widgets created successfully
+[INFO] 2025-07-25 00:44:07 tabbed display widgets created successfully
+[INFO] 2025-07-25 00:44:07 status bar widgets created successfully
+[INFO] 2025-07-25 00:44:07 dashboard widgets created successfully
+[ERROR] 2025-07-25 00:44:07 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 00:44:07 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 00:44:09 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 01:07:18 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 01:07:18
+[INFO] 2025-07-25 01:07:18 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 01:07:18 title widget created successfully
+[INFO] 2025-07-25 01:07:18 control widgets created successfully
+[INFO] 2025-07-25 01:07:19 metric display widgets created successfully
+[INFO] 2025-07-25 01:07:19 chart widgets created successfully
+[INFO] 2025-07-25 01:07:19 tabbed display widgets created successfully
+[INFO] 2025-07-25 01:07:19 status bar widgets created successfully
+[INFO] 2025-07-25 01:07:19 dashboard widgets created successfully
+[ERROR] 2025-07-25 01:07:19 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 01:07:19 Using fallback for New York: Testing mode
+[ERROR] 2025-07-25 01:07:21 Unexpected error: StatusBarWidgets.update_data_status() got an unexpected keyword argument 'status_type'
+[INFO] 2025-07-25 01:09:09 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 01:09:09
+[INFO] 2025-07-25 01:09:09 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 01:09:09 title widget created successfully
+[INFO] 2025-07-25 01:09:09 control widgets created successfully
+[INFO] 2025-07-25 01:09:09 metric display widgets created successfully
+[INFO] 2025-07-25 01:09:09 chart widgets created successfully
+[INFO] 2025-07-25 01:09:09 tabbed display widgets created successfully
+[INFO] 2025-07-25 01:09:09 status bar widgets created successfully
+[INFO] 2025-07-25 01:09:09 dashboard widgets created successfully
+[ERROR] 2025-07-25 01:09:09 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 01:09:09 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 01:09:11 Weather data written for new_york - Simulated
+[ERROR] 2025-07-25 01:09:15 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 01:09:15 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 01:09:17 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 01:39:57 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 01:39:57
+[INFO] 2025-07-25 01:39:57 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 01:39:57 title widget created successfully
+[INFO] 2025-07-25 01:39:57 control widgets created successfully
+[INFO] 2025-07-25 01:39:57 metric display widgets created successfully
+[INFO] 2025-07-25 01:39:57 chart widgets created successfully
+[INFO] 2025-07-25 01:39:57 tabbed display widgets created successfully
+[INFO] 2025-07-25 01:39:57 status bar widgets created successfully
+[INFO] 2025-07-25 01:39:57 dashboard widgets created successfully
+[ERROR] 2025-07-25 01:39:57 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 01:39:57 Using fallback for New York: Testing mode
+[ERROR] 2025-07-25 01:40:00 Unexpected error: name 'simulated' is not defined
+[INFO] 2025-07-25 01:42:27 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 01:42:27
+[INFO] 2025-07-25 01:42:27 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 01:42:27 title widget created successfully
+[INFO] 2025-07-25 01:42:27 control widgets created successfully
+[INFO] 2025-07-25 01:42:27 metric display widgets created successfully
+[INFO] 2025-07-25 01:42:27 chart widgets created successfully
+[INFO] 2025-07-25 01:42:27 tabbed display widgets created successfully
+[INFO] 2025-07-25 01:42:27 status bar widgets created successfully
+[INFO] 2025-07-25 01:42:27 dashboard widgets created successfully
+[ERROR] 2025-07-25 01:42:28 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 01:42:28 Weather alert: High Humidity Alert - Very humid conditions: 90% (threshold: 85%)
+[WARN] 2025-07-25 01:42:28 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 01:42:30 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 01:47:49 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 01:47:49
+[INFO] 2025-07-25 01:47:49 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 01:47:49 title widget created successfully
+[INFO] 2025-07-25 01:47:49 control widgets created successfully
+[INFO] 2025-07-25 01:47:49 metric display widgets created successfully
+[INFO] 2025-07-25 01:47:49 chart widgets created successfully
+[INFO] 2025-07-25 01:47:49 tabbed display widgets created successfully
+[ERROR] 2025-07-25 01:47:49 Configuration error in status bar widgets creation: 'color'
+[WARN] 2025-07-25 01:47:49 Status bar widgets created with errors - some functionality may be limited
+[INFO] 2025-07-25 01:47:49 dashboard widgets created successfully
+[ERROR] 2025-07-25 01:47:49 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 01:47:49 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 01:47:51 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 01:49:41 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 01:49:41
+[INFO] 2025-07-25 01:49:41 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 01:49:41 title widget created successfully
+[INFO] 2025-07-25 01:49:41 control widgets created successfully
+[INFO] 2025-07-25 01:49:41 metric display widgets created successfully
+[INFO] 2025-07-25 01:49:42 chart widgets created successfully
+[INFO] 2025-07-25 01:49:42 tabbed display widgets created successfully
+[INFO] 2025-07-25 01:49:42 status bar widgets created successfully
+[INFO] 2025-07-25 01:49:42 dashboard widgets created successfully
+[ERROR] 2025-07-25 01:49:42 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-25 01:49:42 Using fallback for New York: Testing mode
+[INFO] 2025-07-25 01:49:43 Weather data written for new_york - Simulated
+[INFO] 2025-07-25 01:50:23 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-25 01:50:23
+[INFO] 2025-07-25 01:50:23 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-25 01:50:23 title widget created successfully
+[INFO] 2025-07-25 01:50:23 control widgets created successfully
+[INFO] 2025-07-25 01:50:24 metric display widgets created successfully
+[INFO] 2025-07-25 01:50:24 chart widgets created successfully
+[INFO] 2025-07-25 01:50:24 tabbed display widgets created successfully
+[INFO] 2025-07-25 01:50:24 status bar widgets created successfully
+[INFO] 2025-07-25 01:50:24 dashboard widgets created successfully
+[INFO] 2025-07-25 01:50:24 Weather data written for new_york - Live
+[WARN] 2025-07-25 01:50:27 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-25 01:50:28 Weather data written for new_york - Live

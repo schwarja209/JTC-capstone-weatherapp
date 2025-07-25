@@ -16,10 +16,11 @@ from typing import Optional, Any
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
-class StatusBarWidgets(BaseWidgetManager):
+class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     """Manages the status bar display at bottom of application.
     
     Creates and manages a three-section status bar with system status,
@@ -71,42 +72,50 @@ class StatusBarWidgets(BaseWidgetManager):
         ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=styles.STATUS_BAR_CONFIG['padding']['separator'])
 
         # Center section: Progress indicator using SafeWidgetCreator
-        self.progress_label = SafeWidgetCreator.create_label(self.parent, "", "ProgressStatus.TLabel")
+        self.progress_label = SafeWidgetCreator.create_label(self.parent, "", "LabelValue.TLabel")
         self.progress_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['progress'])
 
         # Right section: Data source information using SafeWidgetCreator
         self.data_status_label = SafeWidgetCreator.create_label(self.parent, "No data", "DataStatus.TLabel")
         self.data_status_label.pack(side=tk.RIGHT, padx=styles.STATUS_BAR_CONFIG['padding']['data'])
-    
-    def update_data_status(self, message: str, color: str = "gray") -> None:
+
+    def update_status_bar(self, city_name: str, error_exception: Optional[Exception], simulated: bool = False) -> None:
+        """Update all status bar sections: system, progress, and data status."""
+        # Left section: system/city
+        self.update_system_status(f"City: {city_name}", status_type="info")
+        
+        # Center section: progress/error
+        if error_exception:
+            self.update_progress(f"Error: {error_exception}", error=True)
+        else:
+            self.update_progress("", error=False)
+        
+        # Right section: data source
+        if simulated:
+            self.update_data_status("Simulated data", status_type="warning")
+        else:
+            self.update_data_status("Live data", status_type="info")
+
+    def update_data_status(self, message: str, status_type: str = "info") -> None:
         """Updates data source information with dynamic styling.
-        
-        Updates the right section of the status bar with data source information
-        and applies appropriate styling based on whether data is live, simulated,
-        or unavailable.
-        
+
         Args:
             message: Data source status message to display
-            color: Color for message display (DEPRECATED - styling handled by message content)
+            status_type: Type of status ("info", "warning", "none")
         """
         # color parameter is deprecated but kept for backward compatibility
         if self.data_status_label:
-            display_message = str(message) if message is not None else "No data"
-            self.data_status_label.configure(text=display_message)
-            
-            # Switch style based on data source type
-            if "simulated" in display_message.lower() or "fallback" in display_message.lower():
+            self.data_status_label.configure(text=message)
+
+            if status_type == "warning":
                 self.data_status_label.configure(style="DataStatusSimulated.TLabel")
-            elif "live" in display_message.lower() or display_message == "Live data":
+            elif status_type == "info":
                 self.data_status_label.configure(style="DataStatusLive.TLabel")
             else:
                 self.data_status_label.configure(style="DataStatusNone.TLabel")
     
     def update_system_status(self, message: str, status_type: str = "info") -> None:
         """Update main system status message with appropriate styling.
-
-        Updates the left section with system status and applies color-coded
-        styling based on status type (error, warning, info).
 
         Args:
             message: Status message to display
@@ -123,10 +132,19 @@ class StatusBarWidgets(BaseWidgetManager):
             else:  # "info" or default
                 self.system_status_label.configure(style="SystemStatusReady.TLabel")
 
-    def update_progress(self, message: str) -> None:
+    def update_progress(self, message: str = "", error: bool = False) -> None:
         """Updates progress indicator in center section."""
         if self.progress_label:
-            self.progress_label.configure(text=message)
+            if error:
+                self.progress_label.configure(
+                    text=message,
+                    foreground=styles.STATUS_BAR_CONFIG['colors']['error']
+                )
+            else:
+                self.progress_label.configure(
+                    text=message,
+                    foreground=styles.STATUS_BAR_CONFIG['colors']['info']
+                )
      
     def clear_progress(self) -> None:
         """Clears progress indicator in center section."""

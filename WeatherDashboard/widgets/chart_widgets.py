@@ -21,10 +21,11 @@ from WeatherDashboard import config
 from WeatherDashboard.utils.utils import format_fallback_status
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
+from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
-class ChartWidgets(BaseWidgetManager):
+class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     """Manages matplotlib chart display for weather trends and historical data.
     
     Creates and manages matplotlib Figure, Axes, and Canvas components for
@@ -160,3 +161,28 @@ class ChartWidgets(BaseWidgetManager):
         self.chart_fig.autofmt_xdate(rotation=config.CHART['chart_rotation_degrees'])
         self.chart_fig.tight_layout()
         self.chart_canvas.draw()
+
+    def clear_chart_with_error_message(self) -> None:
+        """Clear the chart widget and display a fallback error message.
+
+        Side Effects:
+            Clears the chart display and shows an error message in the chart area.
+            Logs an error if the chart cannot be cleared.
+        """
+        try:
+            if self.chart_ax:
+                self.chart_ax.clear()
+                self.chart_ax.text(
+                    0.5, 0.5,
+                    'Chart unavailable\nPlease check settings',
+                    ha='center', va='center',
+                    transform=self.chart_ax.transAxes
+                )
+                if self.chart_canvas:
+                    self.chart_canvas.draw()
+
+            elif self.fallback_label:
+                self.fallback_label.configure(text="Chart unavailable\nPlease check settings")
+        
+        except Exception as recovery_error:
+            Logger.error(f"Failed to clear chart after error: {recovery_error}")
