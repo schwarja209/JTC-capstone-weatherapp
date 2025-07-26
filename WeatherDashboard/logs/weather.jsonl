@@ -7952,3 +7952,18 @@
 {"timestamp": "2025-07-25 15:14:12", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
 {"timestamp": "2025-07-25 15:14:12", "level": "ERROR", "message": "API failure for Dsdgsg - CityNotFoundError: City 'Dsdgsg' not found. Switching to simulated data."}
 {"timestamp": "2025-07-25 15:14:14", "level": "INFO", "message": "show_error called with: City 'Dsdgsg' not found"}
+{"timestamp": "2025-07-26 17:31:47", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-26 17:31:47", "test": true}
+{"timestamp": "2025-07-26 17:31:47", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-26 17:31:47", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-26 17:31:47", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-26 17:31:48", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-26 17:31:48", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-26 17:31:48", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-26 17:31:48", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-26 17:31:48", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-26 17:31:48", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-26 17:31:51", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-26 17:31:52", "level": "INFO", "message": "show_error called with: Rate limiting failed"}
+{"timestamp": "2025-07-26 17:32:07", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-26 17:32:07", "level": "INFO", "message": "Weather data written for new_york - Live"}

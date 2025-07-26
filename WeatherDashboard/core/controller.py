@@ -14,14 +14,12 @@ Classes:
     WeatherDashboardController: Main controller coordinating all weather operations
 """
 
-from typing import Tuple, List, Any, Dict, Optional
-import tkinter.messagebox as messagebox
+from typing import Tuple, List, Any, Optional
 import threading
 
 from WeatherDashboard import config
 from WeatherDashboard.core.view_models import WeatherViewModel
 from WeatherDashboard.features.alerts.alert_manager import AlertManager
-from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
 from WeatherDashboard.services.error_handler import WeatherErrorHandler
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
@@ -48,7 +46,7 @@ class WeatherDashboardController:
         rate_limiter: API rate limiting manager
         alert_manager: Weather alert processing manager
     """    
-    def __init__(self, state: Any, data_service: Any, widgets: IWeatherDashboardWidgets, theme: str = 'neutral') -> None:
+    def __init__(self, state: Any, data_service: Any, widgets: IWeatherDashboardWidgets, ui_handler: Any, theme: str = 'neutral') -> None:
         """Initialize the weather dashboard controller.
         
         Args:
@@ -60,13 +58,12 @@ class WeatherDashboardController:
         self.service = data_service
         self.widgets = widgets
         self.state = state
+        self.ui_handler = ui_handler
         self.current_theme = theme
         
         # Initialize helper classes
         self.rate_limiter = RateLimiter()
         self.error_handler = WeatherErrorHandler(theme)
-
-        # Initialize alert system
         self.alert_manager = AlertManager(state)
     
     def set_theme(self, theme: str) -> None:
@@ -112,29 +109,27 @@ class WeatherDashboardController:
 
         except KeyError as e:
             validation_error = ValidationError(str(e))
-            self._handle_chart_error("Chart configuration error", validation_error)
+            self._handle_error("Chart configuration error", str(validation_error), is_chart_error=True)
         except ValueError as e:
             validation_error = ValidationError(str(e))
-            self._handle_chart_error("Chart data error", validation_error)
+            self._handle_error("Chart data error", str(validation_error), is_chart_error=True)
         except Exception as e:
             dashboard_error = WeatherDashboardError(str(e))
-            self._handle_chart_error("Unexpected chart error", dashboard_error)
+            self._handle_error("Unexpected chart error", str(dashboard_error), is_chart_error=True)
 
     def show_weather_alerts(self) -> None:
         """Display weather alerts popup with enhanced error handling."""        
         active_alerts = self.alert_manager.get_active_alerts()
         if active_alerts:
             # Get parent window for popup
-            parent = self.widgets.get_alert_popup_parent()
+            parent = self.ui_handler.get_alert_popup_parent()
 
-            if not self.widgets.is_ready():
-                Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
+            if not self.ui_handler.are_widgets_ready():
                 return
             
-            SimpleAlertPopup(parent, active_alerts)
+            self.ui_handler.show_alert_popup(active_alerts)
         else:
-            from tkinter import messagebox
-            messagebox.showinfo("Weather Alerts", "No active weather alerts.")
+            self.ui_handler.show_info("Weather Alerts", "No active weather alerts.")
 
     def _validate_inputs_and_state(self, city_name: str, unit_system: str) -> bool:
         """Validate input parameters and application state using centralized validation.
@@ -218,13 +213,7 @@ class WeatherDashboardController:
                 return False, str(error_exception) if error_exception else "Simulated data used due to API failure"
 
             # Update all display components
-            self.widgets.update_metric_display({
-                **view_model.metrics,
-                "city": view_model.city_name,
-                "date": view_model.date_str
-            })
-            self.widgets.update_status_bar(view_model.city_name, error_exception, simulated)
-            self.widgets.update_alerts(raw_data)
+            self.ui_handler.update_display(view_model, error_exception, simulated)
             
             # Log the data
             self.service.write_to_log(city, raw_data, unit_system)
@@ -312,7 +301,7 @@ class WeatherDashboardController:
             city: City name for chart title
             unit: Unit system for labeling
         """
-        self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback=True)
+        self.ui_handler.update_chart_components(x_vals, y_vals, metric_key, city, unit, fallback=True)
 
     def _get_chart_metric_key(self) -> str:
         """Determine the metric key for the chart based on user selection."""
@@ -331,10 +320,13 @@ class WeatherDashboardController:
         if not metric_key:
             raise KeyError(config.ERROR_MESSAGES['not_found'].format(resource="Chart metric", name=display_name))
         return metric_key
-    
-    def _handle_controller_error(self, error_type: str, error_message: str) -> bool:
-        """Standardized error handling for controller operations.
+
+    def _handle_error(self, error_type: str, error_message: str, is_chart_error: bool = False) -> bool:
+        """Unified error handling for controller operations.
         
+        Logs the error, displays user-friendly warning, and attempts to clear
+        the chart display gracefully with fallback error message.
+
         Args:
             error_type: Type of error ('validation', 'unexpected', etc.)
             error_message: Error message to handle
@@ -342,24 +334,13 @@ class WeatherDashboardController:
         Returns:
             bool: Always False to indicate operation failure
         """
-        if error_type == "validation":
-            self.error_handler.handle_input_validation_error(error_message)
+        if is_chart_error:
+            Logger.exception(f"{error_type}: {error_message}", error_message)
+            self.ui_handler.show_warning("Chart Error", f"{error_type}. Chart will be cleared.")
+            self.ui_handler.update_chart_components(clear=True)
         else:
-            self.error_handler.handle_unexpected_error(error_message)
+            if error_type == "validation":
+                self.error_handler.handle_input_validation_error(error_message)
+            else:
+                self.error_handler.handle_unexpected_error(error_message)
         return False
-
-    def _handle_chart_error(self, error_type: str, error: Exception) -> None:
-        """Handle chart errors with proper recovery and user notification.
-    
-        Logs the error, displays user-friendly warning, and attempts to clear
-        the chart display gracefully with fallback error message.
-        
-        Args:
-            error_type: Type/category of the chart error for user display
-            error: The exception that occurred during chart operations
-        """
-        Logger.exception(f"{error_type}: {error}", error)
-        messagebox.showwarning("Chart Error", f"{error_type}. Chart will be cleared.")
-        
-        # Clear the chart gracefully
-        self.widgets.clear_chart_with_error_message()

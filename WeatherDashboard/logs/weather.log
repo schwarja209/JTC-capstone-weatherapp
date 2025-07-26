@@ -7952,3 +7952,18 @@
 [WARN] 2025-07-25 15:14:12 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
 [ERROR] 2025-07-25 15:14:12 API failure for Dsdgsg - CityNotFoundError: City 'Dsdgsg' not found. Switching to simulated data.
 [INFO] 2025-07-25 15:14:14 show_error called with: City 'Dsdgsg' not found
+[INFO] 2025-07-26 17:31:47 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-26 17:31:47
+[INFO] 2025-07-26 17:31:47 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-26 17:31:47 title widget created successfully
+[INFO] 2025-07-26 17:31:47 control widgets created successfully
+[INFO] 2025-07-26 17:31:48 metric display widgets created successfully
+[INFO] 2025-07-26 17:31:48 chart widgets created successfully
+[INFO] 2025-07-26 17:31:48 tabbed display widgets created successfully
+[INFO] 2025-07-26 17:31:48 status bar widgets created successfully
+[INFO] 2025-07-26 17:31:48 dashboard widgets created successfully
+[INFO] 2025-07-26 17:31:48 Weather data written for new_york - Live
+[WARN] 2025-07-26 17:31:51 Fetch blocked due to rate limiting.
+[INFO] 2025-07-26 17:31:52 show_error called with: Rate limiting failed
+[WARN] 2025-07-26 17:32:07 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-26 17:32:07 Weather data written for new_york - Live

@@ -10,7 +10,7 @@ Classes:
     WeatherDashboardMain: Primary application window and component coordinator
 """
 
-from typing import Optional
+from typing import Optional, List, Any, Dict
 import threading
 import tkinter.messagebox as messagebox
 
@@ -22,6 +22,7 @@ from WeatherDashboard.widgets.dashboard_widgets import WeatherDashboardWidgets
 from WeatherDashboard.core.data_manager import WeatherDataManager
 from WeatherDashboard.core.data_service import WeatherDataService
 from WeatherDashboard.core.controller import WeatherDashboardController
+from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
 
 
 # ================================
@@ -71,6 +72,7 @@ class WeatherDashboardMain:
             state=self.state,
             data_service=self.service,
             widgets=self.widgets,
+            ui_handler=self,
             theme='neutral'
         )
         
@@ -80,7 +82,7 @@ class WeatherDashboardMain:
         
         # Connect callbacks and initialize
         self._connect_callbacks()
-        self.update_chart_dropdown()
+        self.update_chart_components()
 
     def _create_widgets(self, root):
         """Create and configure all widgets in a single, unified manager."""
@@ -94,7 +96,7 @@ class WeatherDashboardMain:
             update_cb=self.on_update_clicked_async,
             cancel_cb=self.cancel_current_operation,
             clear_cb=self.on_clear_clicked,
-            dropdown_cb=self.update_chart_dropdown
+            dropdown_cb=lambda: self.update_chart_components()
         )
         
         # Store frame references in widget manager for unified access
@@ -111,7 +113,81 @@ class WeatherDashboardMain:
                 alert_widget.set_click_callback(self.show_alerts)
 
 # ================================
-# 2. EVENT HANDLERS
+# 2. UI HANDLERS
+# ================================
+    def show_info(self, title: str, message: str) -> None:
+        """Display information message to user."""
+        messagebox.showinfo(title, message)
+
+    def show_warning(self, title: str, message: str) -> None:
+        """Display warning message to user."""
+        messagebox.showwarning(title, message)
+
+    def show_error(self, title: str, message: str) -> None:
+        """Display error message to user."""
+        messagebox.showerror(title, message)
+    
+    def show_alert_popup(self, alerts: List[Dict[str, Any]]) -> None:
+        """Display weather alerts popup."""
+        parent = self.get_alert_popup_parent()
+        SimpleAlertPopup(parent, alerts)
+    
+    def are_widgets_ready(self) -> bool:
+        """Check if all widgets are properly initialized."""
+        if not self.widgets.is_ready():
+            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
+            return False
+        return True
+    
+    def get_alert_popup_parent(self) -> Any:
+        """Get parent window for alert popups."""
+        return self.widgets.get_alert_popup_parent()
+
+    def update_display(self, view_model: Any, error_exception: Optional[Exception] = None, simulated: bool = False) -> None:
+        """Update main display components with weather data.
+        
+        Args:
+            view_model: Weather data view model containing metrics and metadata
+            error_exception: Optional exception that occurred during data fetching
+            simulated: Whether the displayed data is simulated/fallback data
+        """
+        self.widgets.update_metric_display({
+            **view_model.metrics,
+            "city": view_model.city_name,
+            "date": view_model.date_str
+        })
+        self.widgets.update_status_bar(view_model.city_name, error_exception, simulated)
+        self.widgets.update_alerts(view_model.raw_data)
+
+    def update_chart_components(self, x_vals: Optional[List[str]] = None, y_vals: Optional[List[Any]] = None, metric_key: Optional[str] = None, city: Optional[str] = None, unit: Optional[str] = None, fallback: bool = True, clear: bool = False) -> None:
+        """Update chart-related components.
+        
+        Args:
+            x_vals: X-axis values for chart (typically dates)
+            y_vals: Y-axis values for chart (metric data)
+            metric_key: Weather metric being charted
+            city: City name for chart title
+            unit: Unit system for labeling
+            fallback: Whether to use fallback chart rendering
+            clear: Whether to clear the chart instead of updating it
+        """
+        if clear:
+            self.widgets.clear_chart_with_error_message()
+        elif x_vals is not None and y_vals is not None:
+            self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback)
+        
+        # Always update dropdown options unless explicitly clearing
+        if not clear and self.widgets.control_widgets:
+            self.widgets.control_widgets.update_chart_dropdown_options()
+
+    # def update_chart(self, x_vals, y_vals, metric_key, city, unit, fallback=True):
+    #     self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback)
+
+    # def clear_chart(self):
+    #     self.widgets.clear_chart_with_error_message()
+
+# ================================
+# 3. EVENT HANDLERS
 # ================================
     def on_update_clicked_async(self) -> None:
         """Handle the update button click event with async weather fetching.
@@ -150,8 +226,8 @@ class WeatherDashboardMain:
             self._operation_in_progress = True
         
         self.state.reset_to_defaults()
-        messagebox.showinfo("Reset", "Dashboard reset to default values.")
-        self.update_chart_dropdown()
+        self.show_info("Reset", "Dashboard reset to default values.")
+        self.update_chart_components()
 
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(True, "Loading default city...")
@@ -161,6 +237,11 @@ class WeatherDashboardMain:
             self.state.get_current_unit_system(),
             on_complete=self._create_clear_operation_callback()
         )
+
+    def show_alerts(self) -> None:
+        """Show weather alerts popup."""
+        if hasattr(self.controller, 'show_weather_alerts'):
+            self.controller.show_weather_alerts()
 
     def _create_update_operation_callback(self) -> callable:
         """Create callback function for update operation completion."""
@@ -182,13 +263,8 @@ class WeatherDashboardMain:
         if success:
             self.controller.update_chart()
 
-    def show_alerts(self) -> None:
-        """Show weather alerts popup."""
-        if hasattr(self.controller, 'show_weather_alerts'):
-            self.controller.show_weather_alerts()
-
 # ================================
-# 3. ASYNC OPERATION MANAGEMENT
+# 4. ASYNC OPERATION MANAGEMENT
 # ================================
     def load_initial_display(self) -> None:
         """Fetch and display the initial city's weather data on startup.
@@ -254,9 +330,9 @@ class WeatherDashboardMain:
             next_callback(success)
 
 # ================================
-# 4. UI UPDATE METHODS
+# 5. UI UPDATE METHODS
 # ================================
-    def update_chart_dropdown(self) -> None:
-        """Update the chart dropdown based on the current visibility settings."""
-        if self.widgets.control_widgets:
-            self.widgets.control_widgets.update_chart_dropdown_options()
+    # def update_chart_dropdown(self) -> None:
+    #     """Update the chart dropdown based on the current visibility settings."""
+    #     if self.widgets.control_widgets:
+    #         self.widgets.control_widgets.update_chart_dropdown_options()
