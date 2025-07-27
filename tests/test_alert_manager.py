@@ -58,7 +58,7 @@ class TestWeatherAlert(unittest.TestCase):
 
 class TestAlertManager(unittest.TestCase):
     def setUp(self):
-        """Set up test fixtures with mocked state manager."""
+        """Set up test fixtures with mocked state manager and dependencies."""
         # Create mock state manager
         self.mock_state = Mock()
         self.mock_state.get_current_unit_system.return_value = "metric"
@@ -71,25 +71,74 @@ class TestAlertManager(unittest.TestCase):
             self.mock_visibility[metric] = mock_var
         self.mock_state.visibility = self.mock_visibility
         
-        # Create alert manager with mocked dependencies
+        # Create mock dependencies for injection
+        self.mock_thresholds = {
+            'temperature_high': 35.0,
+            'temperature_low': -10.0,
+            'wind_speed_high': 15.0,
+            'pressure_low': 980.0,
+            'humidity_high': 85.0,
+            'humidity_low': 15.0
+        }
+        self.mock_unit_converter = Mock()
+        self.mock_state_utils = Mock()
+        
+        # Create alert manager with injected dependencies
         with patch('WeatherDashboard.features.alerts.alert_manager.config') as mock_config:
-            mock_config.ALERT_THRESHOLDS = {
-                'temperature_high': 35.0,
-                'temperature_low': -10.0,
-                'wind_speed_high': 15.0,
-                'pressure_low': 980.0,
-                'humidity_high': 85.0,
-                'humidity_low': 15.0
-            }
+            mock_config.ALERT_THRESHOLDS = self.mock_thresholds
             mock_config.MEMORY = {'max_alert_history_size': 100}
-            self.alert_manager = AlertManager(self.mock_state)
-
+            
+            self.alert_manager = AlertManager(
+                state_manager=self.mock_state,
+                thresholds=self.mock_thresholds,
+                unit_converter=self.mock_unit_converter,
+                state_utils=self.mock_state_utils
+            )
+    
     def test_alert_manager_initialization(self):
         """Test AlertManager initializes correctly."""
         self.assertEqual(self.alert_manager.state, self.mock_state)
         self.assertEqual(len(self.alert_manager.active_alerts), 0)
         self.assertEqual(len(self.alert_manager.alert_history), 0)
         self.assertIsNotNone(self.alert_manager.thresholds)
+
+    def test_dependency_injection(self):
+        """Test that dependencies are properly injected."""
+        # Verify injected dependencies are used
+        self.assertEqual(self.alert_manager.thresholds, self.mock_thresholds)
+        self.assertEqual(self.alert_manager.unit_converter, self.mock_unit_converter)
+        self.assertEqual(self.alert_manager.state_utils, self.mock_state_utils)
+        
+        # Verify these are mock objects, not real instances
+        self.assertIsInstance(self.alert_manager.unit_converter, Mock)
+        self.assertIsInstance(self.alert_manager.state_utils, Mock)
+    
+    def test_default_dependency_creation(self):
+        """Test that default dependencies are created when not injected."""
+        with patch('WeatherDashboard.features.alerts.alert_manager.config') as mock_config, \
+            patch('WeatherDashboard.features.alerts.alert_manager.UnitConverter') as mock_uc_class, \
+            patch('WeatherDashboard.features.alerts.alert_manager.StateUtils') as mock_su_class:
+            
+            mock_config.ALERT_THRESHOLDS = self.mock_thresholds
+            mock_config.MEMORY = {'max_alert_history_size': 100}
+            
+            mock_uc_instance = Mock()
+            mock_uc_class.return_value = mock_uc_instance
+            
+            mock_su_instance = Mock()
+            mock_su_class.return_value = mock_su_instance
+            
+            # Create alert manager without injected dependencies
+            alert_manager = AlertManager(state_manager=self.mock_state)
+            
+            # Verify default instances were created
+            mock_uc_class.assert_called_once()
+            mock_su_class.assert_called_once()
+            
+            # Verify dependencies are set
+            self.assertEqual(alert_manager.thresholds, self.mock_thresholds)
+            self.assertEqual(alert_manager.unit_converter, mock_uc_instance)
+            self.assertEqual(alert_manager.state_utils, mock_su_instance)
 
     def test_get_alert_definitions(self):
         """Test alert definitions retrieval."""

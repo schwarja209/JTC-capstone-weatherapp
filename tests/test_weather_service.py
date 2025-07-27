@@ -395,48 +395,112 @@ class TestWeatherDataValidator(unittest.TestCase):
 
 class TestWeatherAPIService(unittest.TestCase):
     def setUp(self):
-        """Set up test fixtures."""
+        """Set up test fixtures with mocked dependencies."""
+        # Create mock dependencies for injection
+        self.mock_api_client = Mock()
+        self.mock_data_parser = Mock()
+        self.mock_data_validator = Mock()
+        self.mock_fallback_generator = Mock()
+        
         with patch('WeatherDashboard.services.weather_service.config') as mock_config:
             mock_config.API_BASE_URL = "https://api.test.com/weather"
             mock_config.API_UV_URL = "https://api.test.com/uv"
             mock_config.API_AIR_QUALITY_URL = "https://api.test.com/air"
             mock_config.API_KEY = "test_key"
             
-            self.service = WeatherAPIService()
+            # Create service with injected dependencies
+            self.service = WeatherAPIService(
+                api_client=self.mock_api_client,
+                data_parser=self.mock_data_parser,
+                data_validator=self.mock_data_validator,
+                fallback_generator=self.mock_fallback_generator
+            )
+    
+    def test_dependency_injection(self):
+        """Test that dependencies are properly injected."""
+        # Verify injected dependencies are used
+        self.assertEqual(self.service._api_client, self.mock_api_client)
+        self.assertEqual(self.service._data_parser, self.mock_data_parser)
+        self.assertEqual(self.service._data_validator, self.mock_data_validator)
+        self.assertEqual(self.service.fallback, self.mock_fallback_generator)
+        
+        # Verify these are mock objects, not real instances
+        self.assertIsInstance(self.service._api_client, Mock)
+        self.assertIsInstance(self.service._data_parser, Mock)
+        self.assertIsInstance(self.service._data_validator, Mock)
+        self.assertIsInstance(self.service.fallback, Mock)
+    
+    def test_default_dependency_creation(self):
+        """Test that default dependencies are created when not injected."""
+        with patch('WeatherDashboard.services.weather_service.config') as mock_config, \
+            patch('WeatherDashboard.services.weather_service.WeatherAPIClient') as mock_ac_class, \
+            patch('WeatherDashboard.services.weather_service.WeatherDataParser') as mock_dp_class, \
+            patch('WeatherDashboard.services.weather_service.WeatherDataValidator') as mock_dv_class, \
+            patch('WeatherDashboard.services.weather_service.SampleWeatherGenerator') as mock_fg_class:
+            
+            mock_config.API_BASE_URL = "https://api.test.com/weather"
+            mock_config.API_UV_URL = "https://api.test.com/uv"
+            mock_config.API_AIR_QUALITY_URL = "https://api.test.com/air"
+            mock_config.API_KEY = "test_key"
+            
+            mock_ac_instance = Mock()
+            mock_ac_class.return_value = mock_ac_instance
+            
+            mock_dp_instance = Mock()
+            mock_dp_class.return_value = mock_dp_instance
+            
+            mock_dv_instance = Mock()
+            mock_dv_class.return_value = mock_dv_instance
+            
+            mock_fg_instance = Mock()
+            mock_fg_class.return_value = mock_fg_instance
+            
+            # Create service without injected dependencies
+            service = WeatherAPIService()
+            
+            # Verify default instances were created
+            mock_ac_class.assert_called_once()
+            mock_dp_class.assert_called_once()
+            mock_dv_class.assert_called_once()
+            mock_fg_class.assert_called_once()
+            
+            # Verify dependencies are set
+            self.assertEqual(service._api_client, mock_ac_instance)
+            self.assertEqual(service._data_parser, mock_dp_instance)
+            self.assertEqual(service._data_validator, mock_dv_instance)
+            self.assertEqual(service.fallback, mock_fg_instance)
 
     def test_fetch_current_success(self):
         """Test successful current weather fetch."""
-        # Mock the internal methods directly instead of attributes
-        with patch.object(WeatherAPIClient, 'fetch_weather_data') as mock_weather, \
-             patch.object(WeatherAPIClient, 'fetch_uv_data') as mock_uv, \
-             patch.object(WeatherAPIClient, 'fetch_air_quality_data') as mock_air, \
-             patch.object(WeatherDataParser, 'parse_weather_data') as mock_parse, \
-             patch.object(WeatherDataValidator, 'validate_weather_data') as mock_validate:
-            
-            # Configure mock responses
-            mock_weather.return_value = {
-                "main": {"temp": 25.0, "humidity": 60, "pressure": 1013.0},
-                "weather": [{"description": "clear"}],
-                "wind": {"speed": 5.0},
-                "coord": {"lat": 40.7, "lon": -74.0}
-            }
-            mock_uv.return_value = {"value": 5.2}
-            mock_air.return_value = {"list": [{"main": {"aqi": 3}}]}
-            
-            mock_parse.return_value = {
-                'temperature': 25.0,
-                'humidity': 60,
-                'pressure': 1013.0,
-                'source': 'live'
-            }
-            
-            # Execute fetch
-            result_data, is_fallback, error = self.service.fetch_current("New York")
-            
-            # Verify results
-            self.assertFalse(is_fallback)
-            self.assertEqual(error, "")
-            self.assertEqual(result_data['source'], 'live')
+        # Configure mock responses using injected dependencies
+        self.mock_api_client.fetch_weather_data.return_value = {
+            "main": {"temp": 25.0, "humidity": 60, "pressure": 1013.0},
+            "weather": [{"description": "clear"}],
+            "wind": {"speed": 5.0},
+            "coord": {"lat": 40.7, "lon": -74.0}
+        }
+        self.mock_api_client.fetch_uv_data.return_value = {"value": 5.2}
+        self.mock_api_client.fetch_air_quality_data.return_value = {"list": [{"main": {"aqi": 3}}]}
+        
+        self.mock_data_parser.parse_weather_data.return_value = {
+            'temperature': 25.0,
+            'humidity': 60,
+            'pressure': 1013.0,
+            'source': 'live'
+        }
+        
+        # Execute fetch
+        result_data, is_fallback, error = self.service.fetch_current("New York")
+        
+        # Verify results
+        self.assertFalse(is_fallback)
+        self.assertEqual(error, "")
+        self.assertEqual(result_data['source'], 'live')
+        
+        # Verify injected dependencies were used
+        self.mock_api_client.fetch_weather_data.assert_called_once_with("New York", None)
+        self.mock_data_parser.parse_weather_data.assert_called_once()
+        self.mock_data_validator.validate_weather_data.assert_called_once()
 
     def test_fetch_current_api_failure(self):
         """Test current weather fetch with API failure."""

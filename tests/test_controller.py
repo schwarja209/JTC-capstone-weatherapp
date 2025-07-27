@@ -32,6 +32,7 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_state = Mock()
         self.mock_data_service = Mock()
         self.mock_widgets = Mock()
+        self.mock_ui_handler = Mock()
         
         # Configure mock state methods
         self.mock_state.get_current_city.return_value = "New York"
@@ -51,25 +52,34 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_widgets.metric_widgets = Mock()
         self.mock_widgets.status_bar_widgets = Mock()
         
-        # Create controller instance with mocked rate limiter and alert manager
-        with patch('WeatherDashboard.core.controller.RateLimiter') as mock_rate_limiter_class, \
-             patch('WeatherDashboard.core.controller.AlertManager') as mock_alert_manager_class:
-            
-            # Create mock instances
-            self.mock_rate_limiter = Mock()
-            self.mock_alert_manager = Mock()
-            
-            # Configure class constructors to return our mocks
-            mock_rate_limiter_class.return_value = self.mock_rate_limiter
-            mock_alert_manager_class.return_value = self.mock_alert_manager
-            
-            # Create controller instance
-            self.controller = WeatherDashboardController(
-                state=self.mock_state,
-                data_service=self.mock_data_service,
-                widgets=self.mock_widgets,
-                theme='neutral'
-            )
+        # Create mock dependencies for injection
+        self.mock_rate_limiter = Mock()
+        self.mock_error_handler = Mock()
+        self.mock_alert_manager = Mock()
+        
+        # Create controller instance with injected dependencies
+        self.controller = WeatherDashboardController(
+            state=self.mock_state,
+            data_service=self.mock_data_service,
+            widgets=self.mock_widgets,
+            ui_handler=self.mock_ui_handler,
+            theme='neutral',
+            rate_limiter=self.mock_rate_limiter,
+            error_handler=self.mock_error_handler,
+            alert_manager=self.mock_alert_manager
+        )
+
+    def test_dependency_injection(self):
+        """Test that dependencies are properly injected."""
+        # Verify injected dependencies are used
+        self.assertEqual(self.controller.rate_limiter, self.mock_rate_limiter)
+        self.assertEqual(self.controller.error_handler, self.mock_error_handler)
+        self.assertEqual(self.controller.alert_manager, self.mock_alert_manager)
+        
+        # Verify these are mock objects, not real instances
+        self.assertIsInstance(self.controller.rate_limiter, Mock)
+        self.assertIsInstance(self.controller.error_handler, Mock)
+        self.assertIsInstance(self.controller.alert_manager, Mock)
 
     def test_initialization(self):
         """Test controller initializes with correct dependencies."""
