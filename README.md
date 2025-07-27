@@ -16,7 +16,7 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 - **Alert System**: Added weather alert thresholds and notification system with severity levels
 - **Expanded Metrics**: Comprehensive metric expansion, including derived comfort metrics
 - **Advanced Features**: Complete implementation of professional weather features
-- **Current State**: Production-ready application with 66 modular files, comprehensive testing, and consistent architectural patterns
+- **Current State**: Production-ready application with 70 modular files, comprehensive testing, and consistent architectural patterns
 
 ## Features
 
@@ -36,6 +36,10 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 - **State Management**: Centralized application state with validation and cleanup
 - **Dynamic UI**: Visibility controls for metrics with automatic chart dropdown updates
 - **Memory Management**: Intelligent data cleanup with configurable retention policies
+- **Historical Data Management**: Comprehensive weather history tracking with automated data collection
+- **Scheduler System**: Automated weather data collection with configurable intervals and status monitoring
+- **Data Persistence**: CSV-based historical data storage with memory management
+- **Status Monitoring**: Real-time scheduler status with countdown timers and visual indicators
 
 ### Professional Weather Features (Fully Implemented)
 - **Derived Comfort Metrics**: Heat index, wind chill, dew point calculations using official NWS formulas
@@ -63,7 +67,7 @@ Project
 │   ├── run_dashboard.py                # Weather Dashboard Application Launcher
 │   ├── run_tests.py                    # Test runner for the Weather Dashboard application
 │   └── setup.py                        # Setup script for Weather Dashboard application
-├── WeatherDashboard/                   # Main application package (66 files total)
+├── WeatherDashboard/                   # Main application package (70 files total)
 │   │   ├── styles.py                   # Comprehensive visual styling and color coding
 │   │   ├── config.py                   # Complete metric and configuration management
 │   │   └── main.py                     # Application entry point
@@ -95,9 +99,11 @@ Project
 │   │   ├── alerts/                     # Weather alert system (2 files)
 │   │   │   ├── alert_display.py        # Alert display components with severity styling
 │   │   │   └── alert_manager.py        # Alert management system with comprehensive thresholds
+│   │   ├── history/                    # Historical data management (3 files)
+│   │   │   ├── history_service.py      # Historical weather data storage and retrieval
+│   │   │   └── scheduler_service.py    # Automated data collection scheduler
 │   │   ├── theme_switcher.py           # Future theme management (placeholder)
-│   │   ├── tomorrows_guess.py          # Future prediction features (placeholder)
-│   │   └── weather_history_tracker.py  # Future history analysis (placeholder)
+│   │   └── tomorrows_guess.py          # Future prediction features (placeholder)
 │   └── utils/                          # Common utilities (6 files)
 │       ├── logger.py                   # Multi-format logging with health checking
 │       ├── rate_limiter.py             # API rate limiting with exponential backoff
@@ -141,6 +147,7 @@ Project
 - **Streamlined Memory Management**: Efficient cleanup without over-engineering
 - **Professional Documentation**: Balanced approach with consistent standards throughout
 - **Complete Feature Coverage**: All advanced weather application features fully implemented
+- **Historical Data Foundation**: Comprehensive data collection and storage system for 24/7 monitoring
 - **Satirical Enhancement Ready**: Theme-aware infrastructure and comprehensive weather data ready for creative interpretation
 
 ## Installation & Setup
@@ -166,6 +173,31 @@ OPENWEATHER_API_KEY=your_api_key_here
 ```bash
 export OPENWEATHER_API_KEY=your_api_key_here
 ```
+
+### Quick Start
+1. **Install Dependencies**: `pip install requests matplotlib python-dotenv`
+2. **Configure API**: Add your OpenWeatherMap API key to `.env` file
+3. **Run Application**: `python run_dashboard.py`
+4. **Enter City**: Type any city name and press Enter
+5. **Explore Features**: Switch tabs, configure metrics, view charts
+6. **Enable Scheduler**: Check the scheduler box for automated data collection
+
+### Common Issues
+- **API Errors**: Application automatically falls back to simulated data
+- **Chart Display Issues**: Matplotlib fallback ensures application remains functional
+- **Memory Usage**: Automatic cleanup prevents excessive memory consumption
+- **Network Issues**: Rate limiting and retry logic handle connectivity problems
+- **Scheduler Issues**: Check status bar for scheduler status and countdown timer
+- **Data Persistence**: Historical data automatically saved to CSV files in data directory
+
+### Performance Notes
+- **Memory Management**: Automatic cleanup with configurable retention policies
+- **API Efficiency**: Rate limiting and intelligent retry logic
+- **UI Responsiveness**: Async operations prevent UI blocking
+- **Data Persistence**: Efficient CSV storage with memory caching
+- **Scheduler Performance**: Configurable intervals with status monitoring
+- **Historical Data**: Optimized storage with automatic cleanup of old entries
+
 
 ## Usage
 
@@ -194,6 +226,9 @@ python run_dashboard.py
 - **Error Recovery**: Automatic fallback to simulated data when API unavailable with visible status monitoring
 - **State Persistence**: Settings maintained during session with easy reset functionality
 - **Select All/Clear All**: Bulk metric visibility controls for quick configuration
+- **Scheduler System**: Automated data collection with real-time status monitoring and countdown timers
+- **Historical Data**: Comprehensive weather history tracking with CSV persistence
+- **Status Bar**: Real-time system status including scheduler state, data source, and error indicators
 
 ## Testing
 

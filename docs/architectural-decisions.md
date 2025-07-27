@@ -1286,6 +1286,290 @@ def __init__(self, state, data_service, widgets, ui_handler, theme='neutral', er
 
 ---
 
+# New ADR Recommendations for WeatherDashboard
+
+This document contains recommended new Architectural Decision Records (ADRs) that should be added to the main architectural-decisions.md file based on comprehensive codebase analysis.
+
+---
+
+## ADR-036: Dataclass Implementation Strategy
+
+**Status**: Proposed
+
+**Context**: The codebase uses dataclasses extensively for type-safe data containers, but the implementation patterns vary across different architectural layers and need standardization.
+
+**Decision**: Implement a tiered dataclass strategy with different levels of metadata based on architectural layer:
+- **Utility Layer**: Simple dataclasses with basic validation (`ValidationResult`, `WeatherMainData`)
+- **Service Layer**: Rich dataclasses with extensive metadata (`CityDataResult`, `HistoricalDataResult`)
+- **Universal Validation**: Single `ValidationResult` dataclass used across all layers for consistency
+
+**Rationale**:
+- Utility dataclasses focus on data integrity and type safety
+- Service dataclasses include operational metadata for debugging and monitoring
+- Universal validation dataclass ensures consistent error handling patterns
+- Clear separation of concerns based on architectural layer responsibilities
+
+**Implementation Guidelines**:
+
+#### **Utility Layer Dataclasses** (Simple)
+```python
+@dataclass
+class ValidationResult:
+    """Type-safe container for input validation results."""
+    is_valid: bool
+    errors: List[str]
+    city_name: Optional[str] = None
+    unit_system: Optional[str] = None
+    context: Optional[str] = None
+    timestamp: datetime = datetime.now()
+```
+
+#### **Service Layer Dataclasses** (Rich Metadata)
+```python
+@dataclass
+class CityDataResult:
+    """Type-safe container for city weather data results."""
+    city_name: str
+    weather_data: Dict[str, Any]
+    error: Optional[Exception]
+    is_simulated: bool
+    unit_system: str
+    timestamp: datetime
+    
+    # Rich service layer metadata
+    operation_status: str = "success"
+    processing_time_ms: Optional[int] = None
+    api_calls_made: int = 1
+    fallback_used: bool = False
+    errors: List[str] = None
+    retry_attempts: int = 0
+```
+
+#### **Universal Validation Pattern**
+- Single `ValidationResult` dataclass used across all layers
+- Consistent error handling and validation reporting
+- Enables unified error processing and user feedback
+
+**Alternatives**:
+- All dataclasses with same metadata level (overhead for utilities)
+- No dataclasses (lose type safety and validation)
+- Different validation dataclasses per layer (inconsistent patterns)
+
+**Consequences**:
+- ✅ Clear architectural boundaries and responsibilities
+- ✅ Appropriate metadata level for each layer
+- ✅ Consistent validation patterns across codebase
+- ✅ Type safety and validation benefits throughout
+- ❌ Need to maintain consistent patterns across team
+- ❌ Some complexity in choosing appropriate metadata level
+
+---
+
+## ADR-037: Widget Manager Architecture Pattern
+
+**Status**: Proposed
+
+**Context**: GUI components need consistent error handling, state management, and widget coordination patterns across the application.
+
+**Decision**: Implement widget manager architecture with `BaseWidgetManager` as foundation:
+- **BaseWidgetManager**: Abstract base class with standardized error handling
+- **Widget Interface**: `IWeatherDashboardWidgets` interface for consistent widget access
+- **Specialized Managers**: Concrete widget managers for different UI sections
+- **Error Handling**: Centralized error handling with graceful degradation
+
+**Rationale**:
+- Consistent error handling across all widget components
+- Reusable base functionality reduces code duplication
+- Interface-based design enables testing and flexibility
+- Professional error recovery and user experience
+
+**Implementation Pattern**:
+```python
+class BaseWidgetManager:
+    """Abstract base class for widget managers with error handling."""
+    
+    def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
+        self.parent_frame = parent_frame
+        self.state = state
+        self.logger = Logger()
+        self._create_widgets()
+    
+    def _create_widgets(self) -> None:
+        """Create widgets with error handling."""
+        try:
+            self._create_widgets_impl()
+        except Exception as e:
+            self.logger.error(f"Error creating widgets: {e}")
+            self._create_fallback_widgets()
+
+class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
+    """Concrete widget manager for main dashboard."""
+```
+
+**Alternatives**:
+- Individual widget classes without base class (code duplication)
+- Single monolithic widget manager (too complex)
+- No standardized error handling (inconsistent user experience)
+
+**Consequences**:
+- ✅ Consistent error handling across all widgets
+- ✅ Reusable base functionality
+- ✅ Professional error recovery
+- ✅ Easy to extend with new widget types
+- ❌ Additional abstraction layer
+- ❌ Need to maintain consistent patterns
+
+---
+
+## ADR-038: Service Layer Metadata Strategy
+
+**Status**: Proposed
+
+**Context**: Service layer operations need comprehensive metadata for debugging, monitoring, and operational insights while maintaining clean interfaces.
+
+**Decision**: Implement comprehensive metadata in service layer dataclasses:
+- **Operation Status**: Track success, partial, failed, cancelled states
+- **Performance Metrics**: Processing time, API calls, retry attempts
+- **Error Tracking**: Detailed error lists and fallback usage
+- **Data Quality**: Completeness, cache hits, transformation status
+
+**Rationale**:
+- Enables comprehensive debugging and monitoring
+- Provides operational insights for performance optimization
+- Supports graceful degradation and error recovery
+- Foundation for future analytics and satirical features
+
+**Metadata Standards**:
+```python
+# Standard service metadata fields
+operation_status: str = "success"  # "success", "partial", "failed", "cancelled"
+processing_time_ms: Optional[int] = None
+api_calls_made: int = 1
+fallback_used: bool = False
+errors: List[str] = None
+retry_attempts: int = 0
+data_quality: str = "unknown"  # "live", "simulated", "cached"
+```
+
+**Alternatives**:
+- Minimal metadata (harder to debug and monitor)
+- External monitoring system (additional complexity)
+- No metadata tracking (poor operational visibility)
+
+**Consequences**:
+- ✅ Comprehensive debugging and monitoring capabilities
+- ✅ Performance optimization insights
+- ✅ Better error recovery and user feedback
+- ✅ Foundation for analytics and satirical features
+- ❌ Additional complexity in service layer
+- ❌ Need to maintain metadata consistency
+
+---
+
+## ADR-039: Utility Class Organization Strategy
+
+**Status**: Proposed
+
+**Context**: Utility classes need clear organization and naming conventions to maintain code clarity and prevent confusion about responsibilities.
+
+**Decision**: Organize utility classes by functional domain with clear naming:
+- **Data Processing**: `ApiUtils`, `ValidationUtils`, `UnitConverter`
+- **UI Utilities**: `WidgetUtils`, `ColorUtils`, `StateUtils`
+- **General Utilities**: `Utils` (basic helpers), `Logger` (logging)
+- **Consistent Patterns**: All utilities follow same initialization and error handling patterns
+
+**Rationale**:
+- Clear separation of utility responsibilities
+- Consistent patterns across utility classes
+- Easy to find and understand utility functionality
+- Professional code organization
+
+**Utility Class Categories**:
+```python
+# Data Processing Utilities
+ApiUtils: API data extraction and validation
+ValidationUtils: Input validation and error reporting
+UnitConverter: Unit system conversions
+
+# UI Utilities  
+WidgetUtils: Widget creation and management helpers
+ColorUtils: Color manipulation and theming
+StateUtils: State management helpers
+
+# General Utilities
+Utils: Basic helper functions
+Logger: Logging functionality
+```
+
+**Alternatives**:
+- Single utility class (too large and complex)
+- No organization (hard to find functionality)
+- Over-organization (too many small utility classes)
+
+**Consequences**:
+- ✅ Clear utility organization and responsibilities
+- ✅ Easy to find and understand utility functionality
+- ✅ Consistent patterns across utility classes
+- ✅ Professional code structure
+- ❌ Need to maintain consistent organization
+- ❌ Some utilities may span multiple categories
+
+---
+
+## ADR-040: Decorator Usage Standards
+
+**Status**: Proposed
+
+**Context**: Python decorators are used sparingly in the codebase and need clear standards for when and how to use them appropriately.
+
+**Decision**: Use decorators selectively for specific use cases:
+- **@dataclass**: For type-safe data containers (extensively used)
+- **@property**: For computed widget properties (limited use)
+- **@staticmethod**: For pure utility functions (limited use)
+- **@classmethod**: Avoided (not needed in current architecture)
+
+**Rationale**:
+- Decorators add complexity and should be used purposefully
+- `@dataclass` provides significant benefits for data containers
+- `@property` useful for computed widget values
+- `@staticmethod` appropriate for pure utility functions
+- Avoid over-engineering with unnecessary decorators
+
+**Usage Guidelines**:
+```python
+# Appropriate @dataclass usage
+@dataclass
+class WeatherDisplayData:
+    city_name: str
+    date_str: str
+    # ... other fields
+
+# Appropriate @property usage
+@property
+def is_loading(self) -> bool:
+    return self._operation_in_progress
+
+# Appropriate @staticmethod usage
+@staticmethod
+def format_temperature(temp: float, unit: str) -> str:
+    return f"{temp:.1f}°{unit}"
+```
+
+**Alternatives**:
+- Extensive decorator usage (over-engineering)
+- No decorators (miss benefits of @dataclass)
+- Inconsistent decorator usage (confusing patterns)
+
+**Consequences**:
+- ✅ Clear guidelines for decorator usage
+- ✅ Benefits of @dataclass without over-engineering
+- ✅ Consistent patterns across codebase
+- ✅ Appropriate use of Python features
+- ❌ Need to maintain consistent standards
+- ❌ Some developers may prefer more decorators
+
+---
+
 ## Future Satirical System Decisions (To Be Documented)
 
 The following architectural decisions will be documented as the dual-theme satirical weather system is developed:
@@ -1302,7 +1586,7 @@ The following architectural decisions will be documented as the dual-theme satir
 ## Current Implementation Status Assessment
 
 ### **Architecture Completeness: Exceptional**
-- **66 modular files** with clean separation of concerns
+- **70 modular files** with clean separation of concerns
 - **No significant bugs or code quality issues** found in comprehensive review
 - **Professional error handling** with theme support already implemented
 - **Complete weather feature set** ready for satirical enhancement
