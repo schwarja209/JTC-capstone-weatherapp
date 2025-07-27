@@ -12,7 +12,7 @@ Classes:
 from typing import Dict, Any
 
 from WeatherDashboard import config, styles
-from WeatherDashboard.utils.utils import is_fallback, format_fallback_status
+from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.unit_converter import UnitConverter
 
 
@@ -31,6 +31,7 @@ class WeatherViewModel:
         status: Status text including fallback and warning information
         metrics: Dictionary of formatted metric values
     """
+    
     def __init__(self, city: str, data: Dict[str, Any], unit_system: str) -> None:
         """Initialize the weather view model with formatted display data.
         
@@ -42,6 +43,13 @@ class WeatherViewModel:
             data: Raw weather data dictionary
             unit_system: Unit system for value formatting ('metric' or 'imperial')
         """
+        # Direct imports for stable utilities
+        self.config = config
+        self.styles = styles
+        self.utils = Utils()
+        self.unit_converter = UnitConverter()
+
+        # Instance data
         self.city_name: str = city
         self.unit_system: str = unit_system
         self.raw_data: Dict[str, Any] = data
@@ -74,7 +82,7 @@ class WeatherViewModel:
         Returns:
             str: Formatted status text with data source and warning information
         """
-        status = f" {format_fallback_status(is_fallback(self.raw_data), 'display')}"
+        status = f" {self.utils.format_fallback_status(self.utils.is_fallback(self.raw_data), 'display')}"
         
         # Check for conversion warnings
         if '_conversion_warnings' in self.raw_data:
@@ -91,9 +99,9 @@ class WeatherViewModel:
         metrics = {}
 
         # Process ALL individual metrics first
-        for metric_key in config.METRICS:
+        for metric_key in self.config.METRICS:
             raw_value = self.raw_data.get(metric_key)
-            display_val = UnitConverter.format_value(metric_key, raw_value, self.unit_system)
+            display_val = self.unit_converter.format_value(metric_key, raw_value, self.unit_system)
             metrics[metric_key] = display_val
         
         # Add enhanced combination displays
@@ -123,15 +131,15 @@ class WeatherViewModel:
             if temp is None:
                 return "--"
             
-            temp_str = UnitConverter.format_value('temperature', temp, self.unit_system)
+            temp_str = self.unit_converter.format_value('temperature', temp, self.unit_system)
             
             if feels_like is not None:
                 difference = abs(feels_like - temp)
                 # Only show "feels like" if difference is significant (>2 degrees)
-                threshold = config.TEMP_DIFF_THRESHOLD_METRIC if self.unit_system == 'metric' else config.TEMP_DIFF_THRESHOLD_IMPERIAL
+                threshold = self.config.TEMP_DIFF_THRESHOLD_METRIC if self.unit_system == 'metric' else self.config.TEMP_DIFF_THRESHOLD_IMPERIAL
                 
                 if difference >= threshold:
-                    feels_str = UnitConverter.format_value('feels_like', feels_like, self.unit_system)
+                    feels_str = self.unit_converter.format_value('feels_like', feels_like, self.unit_system)
                     
                     # Determine if feels warmer or cooler
                     if feels_like > temp:
@@ -146,8 +154,8 @@ class WeatherViewModel:
             temp_max = self.raw_data.get('temp_max')
             if temp_min is None or temp_max is None:
                 return "--"
-            min_str = UnitConverter.format_value('temp_min', temp_min, self.unit_system)
-            max_str = UnitConverter.format_value('temp_max', temp_max, self.unit_system)
+            min_str = self.unit_converter.format_value('temp_min', temp_min, self.unit_system)
+            max_str = self.unit_converter.format_value('temp_max', temp_max, self.unit_system)
             return f"{min_str} - {max_str}"
         
         elif display_type == 'conditions':
@@ -163,7 +171,7 @@ class WeatherViewModel:
             if wind_speed is None:
                 return "--"
             
-            speed_str = UnitConverter.format_value('wind_speed', wind_speed, self.unit_system)
+            speed_str = self.unit_converter.format_value('wind_speed', wind_speed, self.unit_system)
             
             # Add direction if available
             if wind_direction is not None:
@@ -174,7 +182,7 @@ class WeatherViewModel:
             
             # Add gusts if available and significant
             if wind_gust is not None and wind_gust > wind_speed:
-                gust_str = UnitConverter.format_value('wind_gust', wind_gust, self.unit_system)
+                gust_str = self.unit_converter.format_value('wind_gust', wind_gust, self.unit_system)
                 wind_info += f", gusts {gust_str}"
             
             return wind_info
@@ -193,7 +201,7 @@ class WeatherViewModel:
     def _get_weather_icon(self) -> str:
         """Convert weather icon code to emoji."""
         icon_code = self.raw_data.get('weather_icon', '')
-        return styles.WEATHER_ICONS.get(icon_code, '')
+        return self.styles.WEATHER_ICONS.get(icon_code, '')
 
     def get_display_data(self) -> Dict[str, Any]:
         """Return all formatted data as a comprehensive dictionary.

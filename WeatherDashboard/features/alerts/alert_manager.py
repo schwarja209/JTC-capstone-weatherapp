@@ -10,11 +10,11 @@ Classes:
     AlertManager: Main alert processing and management system
 """
 
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from datetime import datetime
 
-from WeatherDashboard import config, styles
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.state_utils import StateUtils
 
@@ -35,20 +35,10 @@ class WeatherAlert:
         threshold: Threshold value that was exceeded
         timestamp: When the alert was generated
     """
-    def __init__(self, alert_type: str, severity: str, title: str, message: str, icon: str, value: float, threshold: float):
-        """Initialize a weather alert.
-        
-        Args:
-            alert_type: Type/category of the alert
-            severity: Alert severity level ('warning', 'caution', 'watch')
-            title: Short descriptive title for the alert
-            message: Detailed alert message for display
-            icon: Emoji icon representing the alert type
-            value: Current weather value that triggered the alert
-            threshold: Threshold value that was exceeded
-        """
+    def __init__(self, alert_type: str, severity: str, title: str, message: str, icon: str, value: float, threshold: float) -> None:
+        """Initialize a weather alert."""
         self.alert_type = alert_type
-        self.severity = severity  # 'warning', 'caution', 'watch'
+        self.severity = severity # 'warning', 'caution', 'watch'
         self.title = title
         self.message = message
         self.icon = icon
@@ -71,18 +61,26 @@ class AlertManager:
         state: Application state manager for alert status updates
         active_alerts: List of currently active weather alerts
     """
-    def __init__(self, state_manager):
+    def __init__(self, state_manager: Any, thresholds: Optional[Dict[str, Any]]) -> None:
         """Initialize the alert manager."""
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.config = config
+        self.styles = styles
+        self.unit_converter = UnitConverter()
+        self.state_utils = StateUtils()
+        
+        # Injected dependencies for testable components
         self.state = state_manager
         self.active_alerts: List[WeatherAlert] = []
         self.alert_history: List[WeatherAlert] = []
         
-        # Get thresholds from config
-        self.thresholds = config.ALERT_THRESHOLDS
+        # Initialize dependencies with injection
+        self.thresholds = thresholds or self.config.ALERT_THRESHOLDS
 
     def _get_alert_definitions(self) -> Dict[str, Dict[str, Any]]:
         """Return alert definitions from centralized styling configuration."""
-        return styles.ALERT_DEFINITIONS
+        return self.styles.ALERT_DEFINITIONS
     
     def _check_generic_alert(self, alert_type: str, value: float, weather_data: Dict[str, Any] = None) -> List[WeatherAlert]:
         """Check alert condition using configurable definitions and create alerts.
@@ -171,7 +169,7 @@ class AlertManager:
         self.active_alerts.clear()
         
         # Get visible metrics from state
-        visible_metrics = StateUtils.get_visible_metrics(self.state)
+        visible_metrics = self.state_utils.get_visible_metrics(self.state)
         
         # Map visible metrics to alert types and values
         alert_checks = [
@@ -201,12 +199,12 @@ class AlertManager:
             self.alert_history.extend(new_alerts)
             
             # Keep history manageable (last 100 alerts)
-            if len(self.alert_history) > config.MEMORY['max_alert_history_size']:
-                self.alert_history = self.alert_history[-config.MEMORY['max_alert_history_size']:]
+            if len(self.alert_history) > self.config.MEMORY['max_alert_history_size']:
+                self.alert_history = self.alert_history[-self.config.MEMORY['max_alert_history_size']:]
             
             # Log all new alerts
             for alert in new_alerts:
-                Logger.warn(f"Weather alert: {alert.title} - {alert.message}")
+                self.logger.warn(f"Weather alert: {alert.title} - {alert.message}")
         
         return new_alerts
 
@@ -228,13 +226,13 @@ class AlertManager:
         
         # Convert to imperial
         if threshold_key in ['temperature_high', 'temperature_low', 'heat_index_high', 'wind_chill_low']:
-            return UnitConverter.convert_temperature(threshold_value, '°C', '°F')
+            return self.unit_converter.convert_temperature(threshold_value, '°C', '°F')
         elif threshold_key == 'wind_speed_high':
-            return UnitConverter.convert_wind_speed(threshold_value, 'm/s', 'mph')
+            return self.unit_converter.convert_wind_speed(threshold_value, 'm/s', 'mph')
         elif threshold_key == 'pressure_low':
-            return UnitConverter.convert_pressure(threshold_value, 'hPa', 'inHg')
+            return self.unit_converter.convert_pressure(threshold_value, 'hPa', 'inHg')
         elif threshold_key in ['heavy_rain_threshold', 'heavy_snow_threshold']:
-            return UnitConverter.convert_precipitation(threshold_value, 'mm', 'in')
+            return self.unit_converter.convert_precipitation(threshold_value, 'mm', 'in')
         else:
             return threshold_value  # humidity, etc. don't need conversion
     
@@ -249,4 +247,4 @@ class AlertManager:
     def clear_all_alerts(self) -> None:
         """Clear all active alerts."""
         self.active_alerts.clear()
-        Logger.info("All active alerts cleared")
+        self.logger.info("All active alerts cleared")

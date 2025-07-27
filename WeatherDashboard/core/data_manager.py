@@ -19,12 +19,13 @@ from datetime import datetime, timedelta
 import threading
 
 from WeatherDashboard import config
-from WeatherDashboard.utils.utils import city_key, is_fallback
+from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
-from WeatherDashboard.services.weather_service import WeatherAPIService
 
+from WeatherDashboard.services.api_exceptions import WeatherDashboardError
+from WeatherDashboard.services.weather_service import WeatherAPIService
 
 # ================================
 # 1. INITIALIZATION & SETUP
@@ -42,17 +43,29 @@ class WeatherDataManager:
         _last_cleanup: Timestamp of last data cleanup operation
         _cleanup_interval_hours: Hours between automatic cleanup operations (from config)
     """
-    def __init__(self) -> None:
+    
+    def __init__(self, api_service: Optional[WeatherAPIService] = None) -> None:
         """Initialize the weather data manager.
         
         Sets up the API service, data storage, and automatic cleanup tracking.
-        """
-        self.api_service = WeatherAPIService()
-        self.weather_data = {}
 
-        # Track when we last cleaned up data
-        self._last_cleanup = datetime.now()
-        self._cleanup_interval_hours = config.MEMORY["cleanup_interval_hours"]  # Cleanup every ___ hours
+        Args:
+            api_service: Weather API service for external data fetching (injected for testability)
+        """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.config = config
+        self.utils = Utils()
+        self.unit_converter = UnitConverter()
+        self.validation_utils = ValidationUtils()
+
+        # Injected dependencies for testable components
+        self.api_service = api_service or WeatherAPIService()
+
+        # Internal state
+        self.weather_data = {}
+        self._last_cleanup = datetime.now() # Track when we last cleaned up data
+        self._cleanup_interval_hours = self.config.MEMORY["cleanup_interval_hours"]  # Cleanup every ___ hours
 
 # ================================  
 # 2. DATA FETCHING & HISTORY
@@ -93,14 +106,14 @@ class WeatherDataManager:
             self.cleanup_old_data()
             self._last_cleanup = datetime.now()
 
-        key = city_key(city)
+        key = self.utils.city_key(city)
         existing_data = self.weather_data.setdefault(key, [])
         last_date = existing_data[-1].get("date") if existing_data else None
         current_date = converted_data.get("date")
         if not existing_data or (last_date and current_date and last_date.date() != current_date.date()):
             existing_data.append(converted_data)
             # Limit stored data to prevent memory issues (keep last 30 entries per city)
-            max_entries = config.MEMORY["max_entries_per_city"]
+            max_entries = self.config.MEMORY["max_entries_per_city"]
             if len(existing_data) > max_entries:
                 existing_data[:] = existing_data[-max_entries:]  # Keep only the most recent entries
 
@@ -122,7 +135,7 @@ class WeatherDataManager:
         Returns:
             List[Dict[str, Any]]: Recent weather data entries for the specified time period
         """
-        city_data = self.weather_data.get(city_key(city), [])
+        city_data = self.weather_data.get(self.utils.city_key(city), [])
         cutoff_date = datetime.now().date() - timedelta(days=days_back)
         
         return [
@@ -147,7 +160,7 @@ class WeatherDataManager:
         Returns:
             Dict[str, Any]: Weather data with converted units
         """
-        unit_errors = ValidationUtils.validate_unit_system(unit_system)
+        unit_errors = self.validation_utils.validate_unit_system(unit_system)
         if unit_errors:
             raise ValueError(unit_errors[0])
 
@@ -158,27 +171,27 @@ class WeatherDataManager:
         converted = data.copy()
         
         # Get unit mappings from config
-        unit_config = config.UNITS.get("metric_units", {})
+        unit_config = self.config.UNITS.get("metric_units", {})
         
         # Define converter functions mapping
         converters = {
-            'temperature': UnitConverter.convert_temperature,
-            'pressure': UnitConverter.convert_pressure,
-            'wind_speed': UnitConverter.convert_wind_speed,
-            'feels_like': UnitConverter.convert_temperature,
-            'temp_min': UnitConverter.convert_temperature,
-            'temp_max': UnitConverter.convert_temperature,
-            'wind_gust': UnitConverter.convert_wind_speed,
-            'visibility': UnitConverter.convert_visibility,
-            'rain': UnitConverter.convert_precipitation,
-            'snow': UnitConverter.convert_precipitation,
-            'rain_1h': UnitConverter.convert_precipitation,
-            'rain_3h': UnitConverter.convert_precipitation,
-            'snow_1h': UnitConverter.convert_precipitation,
-            'snow_3h': UnitConverter.convert_precipitation,
-            'heat_index': UnitConverter.convert_heat_index,
-            'wind_chill': UnitConverter.convert_wind_chill,
-            'dew_point': UnitConverter.convert_dew_point
+            'temperature': self.unit_converter.convert_temperature,
+            'pressure': self.unit_converter.convert_pressure,
+            'wind_speed': self.unit_converter.convert_wind_speed,
+            'feels_like': self.unit_converter.convert_temperature,
+            'temp_min': self.unit_converter.convert_temperature,
+            'temp_max': self.unit_converter.convert_temperature,
+            'wind_gust': self.unit_converter.convert_wind_speed,
+            'visibility': self.unit_converter.convert_visibility,
+            'rain': self.unit_converter.convert_precipitation,
+            'snow': self.unit_converter.convert_precipitation,
+            'rain_1h': self.unit_converter.convert_precipitation,
+            'rain_3h': self.unit_converter.convert_precipitation,
+            'snow_1h': self.unit_converter.convert_precipitation,
+            'snow_3h': self.unit_converter.convert_precipitation,
+            'heat_index': self.unit_converter.convert_heat_index,
+            'wind_chill': self.unit_converter.convert_wind_chill,
+            'dew_point': self.unit_converter.convert_dew_point
         }
         
         conversion_errors: List[str] = []  # Track conversion failures
@@ -191,14 +204,14 @@ class WeatherDataManager:
                     to_unit = unit_config[field]["imperial"]  # To imperial
                     converted[field] = converter_func(data[field], from_unit, to_unit)
                 except (ValueError, TypeError, KeyError) as e:
-                    Logger.warn(config.ERROR_MESSAGES['conversion'].format(field=field, from_unit="metric", to_unit="imperial", reason=str(e))) # For debugging
+                    self.logger.warn(self.config.ERROR_MESSAGES['conversion'].format(field=field, from_unit="metric", to_unit="imperial", reason=str(e))) # For debugging
                     conversion_errors.append(field)
                     # Keep original value if conversion fails
         
         
         if conversion_errors: # Track which fields failed conversion
             converted['_conversion_warnings'] = f"Some units could not be converted: {', '.join(conversion_errors)}"
-            Logger.error(config.ERROR_MESSAGES['conversion'].format(field=f"fields: {', '.join(conversion_errors)}", from_unit="metric", to_unit="imperial", reason="conversion failed"))
+            self.logger.error(self.config.ERROR_MESSAGES['conversion'].format(field=f"fields: {', '.join(conversion_errors)}", from_unit="metric", to_unit="imperial", reason="conversion failed"))
 
         return converted
 
@@ -218,18 +231,16 @@ class WeatherDataManager:
         """
         try:
             log_entry = self.format_data_for_logging(city, data, unit_system)
-            with open(config.OUTPUT["log"], "a", encoding="utf-8") as f:
+            with open(self.config.OUTPUT["log"], "a", encoding="utf-8") as f:
                 f.write(log_entry)
 
-            fallback_text = "Simulated" if is_fallback(data) else "Live"
-            Logger.info(f"Weather data written for {city_key(city)} - {fallback_text}")
+            fallback_text = "Simulated" if self.utils.is_fallback(data) else "Live"
+            self.logger.info(f"Weather data written for {self.utils.city_key(city)} - {fallback_text}")
             
         except (OSError, IOError, PermissionError) as e:
             # Raise as custom exception for controller to handle via error_handler
-            from WeatherDashboard.services.api_exceptions import WeatherDashboardError
-            raise WeatherDashboardError(config.ERROR_MESSAGES['file_error'].format(info="weather data", file=config.OUTPUT["log"], reason=str(e)))
+            raise WeatherDashboardError(self.config.ERROR_MESSAGES['file_error'].format(info="weather data", file=self.config.OUTPUT["log"], reason=str(e)))
         except Exception as e:
-            from WeatherDashboard.services.api_exceptions import WeatherDashboardError
             raise WeatherDashboardError(f"Unexpected error writing weather data: {e}")
 
     def format_data_for_logging(self, city: str, data: Dict[str, Any], unit_system: str) -> str:
@@ -237,11 +248,11 @@ class WeatherDataManager:
         timestamp = data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
         lines = [
             f"\n\nTime: {timestamp}",
-            f"City: {city_key(city)}",
-            f"Temperature: {UnitConverter.format_value('temperature', data.get('temperature'), unit_system)}",
-            f"Humidity: {UnitConverter.format_value('humidity', data.get('humidity'), unit_system)}",
-            f"Pressure: {UnitConverter.format_value('pressure', data.get('pressure'), unit_system)}",
-            f"Wind Speed: {UnitConverter.format_value('wind_speed', data.get('wind_speed'), unit_system)}",
+            f"City: {self.utils.city_key(city)}",
+            f"Temperature: {self.unit_converter.format_value('temperature', data.get('temperature'), unit_system)}",
+            f"Humidity: {self.unit_converter.format_value('humidity', data.get('humidity'), unit_system)}",
+            f"Pressure: {self.unit_converter.format_value('pressure', data.get('pressure'), unit_system)}",
+            f"Wind Speed: {self.unit_converter.format_value('wind_speed', data.get('wind_speed'), unit_system)}",
             f"Conditions: {data.get('conditions', '--')}"
         ]
         return "\n".join(lines)
@@ -265,7 +276,7 @@ class WeatherDataManager:
                 if entry.get('date', datetime.now()) >= cutoff_date
             ]
             # Enforce per-city entry limit
-            max_entries = config.MEMORY["max_entries_per_city"]
+            max_entries = self.config.MEMORY["max_entries_per_city"]
             self.weather_data[city_key] = recent_data[-max_entries:]
         
         # Remove empty city entries
@@ -282,5 +293,5 @@ class WeatherDataManager:
         total_entries = sum(len(entries) for entries in self.weather_data.values())
         cities_count = len(self.weather_data)
         
-        return (cities_count > config.MEMORY["max_cities_stored"] or 
-                total_entries > config.MEMORY["max_total_entries"])
+        return (cities_count > self.config.MEMORY["max_cities_stored"] or 
+                total_entries > self.config.MEMORY["max_total_entries"])

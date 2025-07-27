@@ -10,11 +10,12 @@ Classes:
     SimpleAlertPopup: Popup dialog for detailed alert information display
 """
 
+from typing import List, Callable, Any
 import tkinter as tk
 from tkinter import ttk, messagebox
-from typing import List, Callable
 
 from WeatherDashboard import config, styles
+
 from .alert_manager import WeatherAlert
 
 
@@ -32,12 +33,18 @@ class AlertStatusIndicator:
         tooltip_text: Hover text describing current alert status
         on_click_callback: Function called when indicator is clicked
     """
-    def __init__(self, parent_frame):
+
+    def __init__(self, parent_frame: Any) -> None:
         """Initialize the alert status indicator.
         
         Args:
             parent_frame: Parent tkinter frame to contain the indicator
         """
+        # Direct imports for stable utilities
+        self.config = config
+        self.styles = styles
+
+        # Injected dependencies for testable components
         self.parent = parent_frame
         
         # Create status indicator frame
@@ -48,7 +55,7 @@ class AlertStatusIndicator:
             self.status_frame,
             text="🔔",
             cursor="hand2",
-            font=styles.WIDGET_LAYOUT['alert_status']['default_font']
+            font=self.styles.WIDGET_LAYOUT['alert_status']['default_font']
         )
         self.status_label.pack()
         
@@ -64,15 +71,15 @@ class AlertStatusIndicator:
         # Initial state
         self.update_status([])
     
-    def grid(self, **kwargs):
+    def grid(self, **kwargs) -> None:
         """Allow grid positioning of the status frame."""
         self.status_frame.grid(**kwargs) # Grid positioning arguments passed to frame.grid()
     
-    def pack(self, **kwargs):
+    def pack(self, **kwargs) -> None:
         """Allow pack positioning of the status frame."""
         self.status_frame.pack(**kwargs) # Pack positioning arguments passed to frame.pack()
     
-    def update_status(self, alerts: List[WeatherAlert]):
+    def update_status(self, alerts: List[WeatherAlert]) -> None:
         """Update the alert status indicator with enhanced visual styling.
         
         Changes the indicator appearance, color, and behavior based on
@@ -88,7 +95,7 @@ class AlertStatusIndicator:
             return
         
         # Get highest priority alert
-        priority_order = config.ALERT_PRIORITY_ORDER
+        priority_order = self.config.ALERT_PRIORITY_ORDER
         highest_severity = None
         
         for severity in priority_order:
@@ -100,7 +107,7 @@ class AlertStatusIndicator:
             highest_severity = alerts[0].severity  # Fallback
         
         # Get visual styling for highest severity
-        alert_style = styles.ALERT_SEVERITY_COLORS[highest_severity]
+        alert_style = self.styles.ALERT_SEVERITY_COLORS[highest_severity]
         
         # Count by severity
         warnings = len([a for a in alerts if a.severity == 'warning'])
@@ -128,11 +135,11 @@ class AlertStatusIndicator:
         else:
             self._stop_animation()
     
-    def set_click_callback(self, callback: Callable):
+    def set_click_callback(self, callback: Callable) -> None:
         """Set click callback function."""
         self.on_click_callback = callback
     
-    def _on_click(self, event):
+    def _on_click(self, event) -> None:
         """Handle click on status indicator."""
         if self.on_click_callback:
             self.on_click_callback()
@@ -140,26 +147,26 @@ class AlertStatusIndicator:
             # Default behavior - show simple message
             messagebox.showinfo("Alerts", f"Alert system active.\n{self.tooltip_text}")
 
-    def _start_pulse_animation(self):
+    def _start_pulse_animation(self) -> None:
         """Start pulsing animation for critical alerts."""
         if not hasattr(self, '_animation_active'):
             self._animation_active = True
             self._animation_step = 0
             self._pulse_animation()
 
-    def _stop_animation(self):
+    def _stop_animation(self) -> None:
         """Stop any running animations."""
         self._animation_active = False
         if hasattr(self, '_animation_job'):
             self.status_label.after_cancel(self._animation_job)
 
-    def _pulse_animation(self):
+    def _pulse_animation(self) -> None:
         """Pulse the alert indicator for critical warnings."""
         if not getattr(self, '_animation_active', False):
             return
         
         # Use centralized animation configuration
-        anim_config = styles.ALERT_DISPLAY_CONFIG['animation_settings']
+        anim_config = self.styles.ALERT_DISPLAY_CONFIG['animation_settings']
         pulse_colors = anim_config['pulse_colors']
         interval = anim_config['flash_interval']
         
@@ -181,19 +188,23 @@ class SimpleAlertPopup:
         alerts: List of alerts to display
         window: Toplevel tkinter window for the popup
     """
-    def __init__(self, parent, alerts: List[WeatherAlert]):
+
+    def __init__(self, parent: Any, alerts: List[WeatherAlert]) -> None:
         """Initialize the alert popup window.
         
         Args:
             parent: Parent window for the popup (can be None)
             alerts: List of weather alerts to display
         """
+        # Direct imports for stable utilities
+        self.styles = styles
+
         self.alerts = alerts
         self.window = tk.Toplevel(parent) if parent else tk.Tk()
         self.window.title("Weather Alerts")
         
         # Calculate dynamic window size based on number of alerts
-        popup_config = styles.WIDGET_LAYOUT['alert_popup']
+        popup_config = self.styles.WIDGET_LAYOUT['alert_popup']
         base_height = popup_config['base_height']
         alert_height = popup_config['alert_height'] 
         max_height = popup_config['max_height']
@@ -201,7 +212,7 @@ class SimpleAlertPopup:
         calculated_height = base_height + (len(alerts) * alert_height)
         window_height = min(calculated_height, max_height)
         
-        popup_config = styles.WIDGET_LAYOUT['alert_popup']
+        popup_config = self.styles.WIDGET_LAYOUT['alert_popup']
         self.window.geometry(f"{popup_config['width']}x{window_height}")
         
         if parent:
@@ -210,7 +221,7 @@ class SimpleAlertPopup:
         self._create_display()
         self._center_window()
     
-    def _create_display(self):
+    def _create_display(self) -> None:
         """Create the main alert display layout with scrollable content.
         
         Sets up the popup window content including title, scrollable alert list,
@@ -253,7 +264,7 @@ class SimpleAlertPopup:
                     self._create_alert_item(scrollable_frame, alert)
                 
                 # Bind mousewheel to canvas for scrolling
-                def _on_mousewheel(event):
+                def _on_mousewheel(event: Any) -> None:
                     canvas.yview_scroll(int(-1*(event.delta/120)), "units")
                 
                 canvas.bind("<MouseWheel>", _on_mousewheel)
@@ -265,7 +276,7 @@ class SimpleAlertPopup:
             no_alerts_label = ttk.Label(main_frame, text="No active alerts")
             no_alerts_label.pack()  
 
-    def _create_alert_item(self, parent, alert: WeatherAlert):
+    def _create_alert_item(self, parent: Any, alert: WeatherAlert) -> None:
         """Create display for individual alert.
         
         Args:
@@ -277,7 +288,7 @@ class SimpleAlertPopup:
         alert_frame.pack(fill=tk.X, pady=3)
         
         # Alert message
-        message_label = ttk.Label(alert_frame, text=alert.message, wraplength=styles.WIDGET_LAYOUT['alert_status']['message_wrap_length'])
+        message_label = ttk.Label(alert_frame, text=alert.message, wraplength=self.styles.WIDGET_LAYOUT['alert_status']['message_wrap_length'])
         message_label.pack(anchor=tk.W)
         
         # Time and severity
@@ -288,7 +299,7 @@ class SimpleAlertPopup:
         # info_label.configure(style="LabelValue.TLabel")
         info_label.pack(anchor=tk.W)
     
-    def _center_window(self):
+    def _center_window(self) -> None:
         """Center the popup window on screen.
         
         Calculates screen center position and moves the popup window

@@ -12,6 +12,7 @@ Classes:
 from typing import Dict, Union
 import tkinter as tk
 from tkinter import ttk
+
 from WeatherDashboard import styles
 
 
@@ -26,20 +27,30 @@ class WeatherDashboardGUIFrames:
         root: Main tkinter window
         frames: Dictionary containing all created frame widgets
     """
+    
     def __init__(self, root: tk.Tk) -> None:
         """Create the main frames for the dashboard layout.
         
         Sets up the primary frame structure including title, controls, tabbed
         content area, and status bar with proper grid layout and weight configuration.
+
+        Args:
+            root: Main tkinter window
         """
+        # Direct imports for stable utilities
+        self.styles = styles
+
+        # Instance data
         self.root = root
         self.frames: Dict[str, Union[ttk.Frame, ttk.LabelFrame]] = {}
+
+        # Initialize frames
         self.create_styles()
         self.create_frames()
 
     def create_styles(self) -> None:
         """Configure the styles for the GUI elements."""
-        styles.configure_styles()
+        self.styles.configure_styles()
 
     def create_frames(self) -> None:
         """Create the main frames for the dashboard layout."""
@@ -63,4 +74,4 @@ class WeatherDashboardGUIFrames:
         self.root.columnconfigure(0, weight=0)
         self.root.columnconfigure(1, weight=0)
         self.root.rowconfigure(1, weight=1)
-        self.root.rowconfigure(2, weight=0)  # Status bar doesn't expand
+        self.root.rowconfigure(2, weight=0) # Status bar doesn't expand

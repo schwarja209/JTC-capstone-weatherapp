@@ -18,10 +18,11 @@ from typing import Dict, Any, Callable, Optional
 import tkinter as tk
 from tkinter import ttk
 
-from WeatherDashboard import config, styles
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.state_utils import StateUtils
 from WeatherDashboard.utils.widget_utils import WidgetUtils
+
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
@@ -45,6 +46,7 @@ class ControlWidgets(BaseWidgetManager):
         reset_button: Settings reset action button
         cancel_button: Operation cancel button
     """
+
     def __init__(self, parent_frame: ttk.Frame, state: Any, callbacks: Dict[str, Callable]) -> None:
         """Initialize the control widgets with error handling.
         
@@ -57,6 +59,16 @@ class ControlWidgets(BaseWidgetManager):
             state: Application state manager for widget coordination
             callbacks: Dictionary of callback functions for user actions
         """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.config = config
+        self.styles = styles
+        self.state_utils = StateUtils()
+        self.widget_utils = WidgetUtils()
+
+        # Injected dependencies for testable components
+        self.parent_frame = parent_frame
+        self.state = state
         self.callbacks = callbacks
         
         # Widget references
@@ -70,7 +82,7 @@ class ControlWidgets(BaseWidgetManager):
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
-            Logger.warn("Control widgets created with errors - some functionality may be limited")
+            self.logger.warn("Control widgets created with errors - some functionality may be limited")
 
     def _create_widgets(self) -> None:
         """Create all control widgets in organized sections with error handling.
@@ -95,13 +107,13 @@ class ControlWidgets(BaseWidgetManager):
         """Create city name input field with label using centralized utilities with error handling."""
         city_label = SafeWidgetCreator.create_label(self.parent, text="City:", style="LabelName.TLabel")
         self.city_entry = SafeWidgetCreator.create_entry(self.parent, textvariable=self.state.city)
-        WidgetUtils.position_widget_pair(self.parent, city_label, self.city_entry, 1, 0, 1, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        self.widget_utils.position_widget_pair(self.parent, city_label, self.city_entry, 1, 0, 1, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
 
     @widget_error_handler("unit selection")
     def _create_unit_selection(self) -> None:
         """Create unit system selection radio buttons using centralized utilities with error handling."""
         units_label = SafeWidgetCreator.create_label(self.parent, text="Units:", style="LabelName.TLabel")
-        units_label.grid(row=2, column=0, sticky=tk.W, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        units_label.grid(row=2, column=0, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         
         imperial_radio = SafeWidgetCreator.create_radiobutton(self.parent, "Imperial (°F, mph, inHg)", self.state.unit, "imperial")
         imperial_radio.grid(row=2, column=1, sticky=tk.W)
@@ -122,24 +134,24 @@ class ControlWidgets(BaseWidgetManager):
         """
         # Main section header
         header_frame = SafeWidgetCreator.create_frame(self.parent)
-        header_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=styles.CONTROL_PANEL_CONFIG['padding']['header'])
+        header_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['header'])
 
         visibility_label = SafeWidgetCreator.create_label(header_frame, "Metrics Visibility:", "LabelName.TLabel")
         visibility_label.pack(side=tk.LEFT)
 
         # Add Select All / Clear All buttons
         select_all_btn = SafeWidgetCreator.create_button(header_frame, "Select All", self._select_all_metrics, "MainButton.TButton")
-        select_all_btn.pack(side=tk.LEFT, padx=styles.CONTROL_PANEL_CONFIG['padding']['button_group'])
+        select_all_btn.pack(side=tk.LEFT, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['button_group'])
 
         clear_all_btn = SafeWidgetCreator.create_button(header_frame, "Clear All", self._clear_all_metrics, "MainButton.TButton")
-        clear_all_btn.pack(side=tk.LEFT, padx=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        clear_all_btn.pack(side=tk.LEFT, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         
         current_row = 5
         
         # Iterate through metric groups with cleaner logic
-        for group_key, group_config in config.METRIC_GROUPS.items():
+        for group_key, group_config in self.config.METRIC_GROUPS.items():
             current_row = self._add_metric_group_two_column(group_config, current_row)
-            current_row += styles.CONTROL_PANEL_CONFIG['spacing']['section'] # Extra space between groups
+            current_row += self.styles.CONTROL_PANEL_CONFIG['spacing']['section'] # Extra space between groups
 
     def _add_metric_group_two_column(self, group_config: Dict[str, Any], start_row: int) -> int:
         """Add metric group with two-column checkbox layout and error handling.
@@ -160,7 +172,7 @@ class ControlWidgets(BaseWidgetManager):
         
         # Group header using SafeWidgetCreator
         group_label = SafeWidgetCreator.create_label(self.parent, f"{group_config['label']}:", "LabelName.TLabel")
-        group_label.grid(row=current_row, column=0, sticky=tk.W, pady=styles.CONTROL_PANEL_CONFIG['spacing']['group'])
+        group_label.grid(row=current_row, column=0, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG['spacing']['group'])
         current_row += 1
         
         # Add metrics in two-column layout with cleaner logic
@@ -178,21 +190,21 @@ class ControlWidgets(BaseWidgetManager):
 
     def _add_single_checkbox(self, metric_key: str, row: int, col: int) -> None:
         """Add single checkbox at specified grid position with safe state access."""
-        display_label = config.ENHANCED_DISPLAY_LABELS.get(metric_key, config.METRICS[metric_key]['label'])
+        display_label = self.config.ENHANCED_DISPLAY_LABELS.get(metric_key, self.config.METRICS[metric_key]['label'])
         
-        checkbox = SafeWidgetCreator.create_checkbutton(self.parent, display_label, StateUtils.get_metric_visibility_var(self.state, metric_key), self.callbacks.get('dropdown_update'))
-        checkbox.grid(row=row, column=col, sticky=tk.W, padx=styles.CONTROL_PANEL_CONFIG['padding']['checkbox'])
+        checkbox = SafeWidgetCreator.create_checkbutton(self.parent, display_label, self.state_utils.get_metric_visibility_var(self.state, metric_key), self.callbacks.get('dropdown_update'))
+        checkbox.grid(row=row, column=col, sticky=tk.W, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['checkbox'])
 
     def _select_all_metrics(self) -> None:
         """Select all metric visibility checkboxes and update chart dropdown."""
-        count = StateUtils.set_all_metrics_visibility(self.state, True)
+        count = self.state_utils.set_all_metrics_visibility(self.state, True)
         # Update chart dropdown after changing visibility
         if count > 0 and self.callbacks.get('dropdown_update'):
             self.callbacks['dropdown_update']()
 
     def _clear_all_metrics(self) -> None:
         """Clear all metric visibility checkboxes and update chart dropdown."""
-        count = StateUtils.set_all_metrics_visibility(self.state, False)
+        count = self.state_utils.set_all_metrics_visibility(self.state, False)
         # Update chart dropdown after changing visibility
         if count > 0 and self.callbacks.get('dropdown_update'):
             self.callbacks['dropdown_update']()
@@ -205,16 +217,16 @@ class ControlWidgets(BaseWidgetManager):
         """Create chart configuration controls with error handling."""
         # Chart metric selector
         chart_label = SafeWidgetCreator.create_label(self.parent, "Chart Metric:", "LabelName.TLabel")
-        chart_label.grid(row=4, column=2, sticky=tk.E, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        chart_label.grid(row=4, column=2, sticky=tk.E, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         chart_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.chart)
         chart_cb.grid(row=5, column=2, sticky=tk.E)
         self.state.chart_widget = chart_cb
 
         # Date range selector
         range_label = SafeWidgetCreator.create_label(self.parent, "Date Range:", "LabelName.TLabel")
-        range_label.grid(row=6, column=2, sticky=tk.E, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        range_label.grid(row=6, column=2, sticky=tk.E, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         range_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.range)
-        range_cb['values'] = list(config.CHART["range_options"].keys())
+        range_cb['values'] = list(self.config.CHART["range_options"].keys())
         range_cb.current(0)
         range_cb.grid(row=7, column=2, sticky=tk.E)
 
@@ -225,10 +237,10 @@ class ControlWidgets(BaseWidgetManager):
         self.update_button.grid(row=1, column=2, pady=10, sticky=tk.E)
 
         self.reset_button = SafeWidgetCreator.create_button(self.parent, "Reset", self.callbacks.get('reset'), "MainButton.TButton")
-        self.reset_button.grid(row=2, column=2, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
+        self.reset_button.grid(row=2, column=2, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
 
         self.cancel_button = SafeWidgetCreator.create_button(self.parent, "Cancel", self.callbacks.get('cancel'), "MainButton.TButton")
-        self.cancel_button.grid(row=3, column=2, pady=styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
+        self.cancel_button.grid(row=3, column=2, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
 
     def update_chart_dropdown_options(self):
         """Update chart dropdown options based on metric visibility and chartability configuration.
@@ -251,20 +263,20 @@ class ControlWidgets(BaseWidgetManager):
         """
         try:
             if (not hasattr(self.state, 'chart_widget') or not self.state.chart_widget or not hasattr(self.state, 'chart')):
-                Logger.warn("Chart widget not available for dropdown update")
+                self.logger.warn("Chart widget not available for dropdown update")
                 return
             
             chart_metrics = set()  # Use set to automatically handle duplicates
             
             # Collect unique chartable metrics from visible groups
-            for group_key, group_config in config.METRIC_GROUPS.items():
+            for group_key, group_config in self.config.METRIC_GROUPS.items():
                 for chart_metric in group_config['chart_metrics']:
-                    if self._is_metric_chartable(chart_metric) and StateUtils.is_metric_visible(self.state, chart_metric):
+                    if self._is_metric_chartable(chart_metric) and self.state_utils.is_metric_visible(self.state, chart_metric):
                         chart_metrics.add(chart_metric)
             
             # Convert to display names and sort for consistent order
             chart_display_names = sorted([
-                config.METRICS[metric]['label'] for metric in chart_metrics
+                self.config.METRICS[metric]['label'] for metric in chart_metrics
             ])
             
             # Update dropdown
@@ -280,7 +292,7 @@ class ControlWidgets(BaseWidgetManager):
                 self.state.chart_widget.configure(state="readonly")
                 
         except Exception as e:
-            Logger.error(config.ERROR_MESSAGES['config_error'].format(section="chart dropdown", reason=str(e)))
+            self.logger.error(self.config.ERROR_MESSAGES['config_error'].format(section="chart dropdown", reason=str(e)))
             # Graceful degradation - set to disabled state
             try:
                 if hasattr(self.state, 'chart_widget') and self.state.chart_widget:
@@ -295,7 +307,7 @@ class ControlWidgets(BaseWidgetManager):
 # ================================
     def _configure_grid_weights(self) -> None:
         """Configure grid column weights for proper layout using centralized utility."""
-        WidgetUtils.configure_grid_weights(self.parent, columns=3)
+        self.widget_utils.configure_grid_weights(self.parent, columns=3)
     
     def _bind_events(self) -> None:
         """Bind keyboard events for better UX."""
@@ -353,7 +365,7 @@ class ControlWidgets(BaseWidgetManager):
     def _is_group_visible(self, group_config):
         """Check if any display metrics in this group are visible using standardized access."""
         return any(
-            StateUtils.is_metric_visible(self.state, display_metric)
+            self.state_utils.is_metric_visible(self.state, display_metric)
             for display_metric in group_config['display_metrics']
         )
 
@@ -365,4 +377,4 @@ class ControlWidgets(BaseWidgetManager):
         - Wind direction and gusts (not meaningful for trend charts)
         - Individual precipitation metrics (use combined precipitation instead)
         """
-        return config.METRICS.get(metric_key, {}).get('chartable', False)
+        return self.config.METRICS.get(metric_key, {}).get('chartable', False)

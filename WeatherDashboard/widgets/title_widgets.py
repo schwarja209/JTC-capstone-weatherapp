@@ -13,6 +13,7 @@ from typing import Optional
 from tkinter import ttk
 
 from WeatherDashboard.utils.logger import Logger
+
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
@@ -24,8 +25,15 @@ class TitleWidget(BaseWidgetManager):
         title: Current title text string
         title_label: Title display label widget
     """
+
     def __init__(self, parent_frame: ttk.Frame, title: str = "Weather Dashboard") -> None:
         """Initialize the title widget with specified text."""
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        
+        # Injected dependencies for testable components
+        self.parent_frame = parent_frame
+
         # Add version to default title
         if title == "Weather Dashboard":
             try:
@@ -33,7 +41,7 @@ class TitleWidget(BaseWidgetManager):
                 version = get_version()
                 title = f"Weather Dashboard (v{version})"
             except (ImportError, AttributeError) as e:
-                Logger.warn(f"Could not get version info: {e}")
+                self.logger.warn(f"Could not get version info: {e}")
                 title = "Weather Dashboard"
 
         self.title = title
@@ -44,7 +52,7 @@ class TitleWidget(BaseWidgetManager):
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
-            Logger.warn("Title widget created with errors - title may not display")
+            self.logger.warn("Title widget created with errors - title may not display")
 
     def _create_widgets(self) -> None:
         """Create and display the title label widget."""

@@ -9,6 +9,7 @@ Classes:
     Logger: Static logging utility with multiple output formats and severity levels
 """
 
+from typing import Optional, Callable
 import os
 import json
 import traceback
@@ -18,58 +19,62 @@ from WeatherDashboard import config
 
 
 class Logger:
-    """Standardized logging interface for the Weather Dashboard application.
+    """Standardized logging interface for the Weather Dashboard application."""
     
-    Provides static methods for logging at different severity levels with
-    automatic timestamping and dual-format output (plain text and JSON Lines).
-    Handles file creation, directory setup, and error recovery gracefully.
-    
-    Attributes:
-        LOG_FOLDER: Directory path for log file storage
-        PLAIN_LOG: Path to plain text log file
-        JSON_LOG: Path to JSON Lines log file
-    """
-    LOG_FOLDER = config.OUTPUT.get("log_dir", "data_dir")  # default fallback
-    PLAIN_LOG = os.path.join(LOG_FOLDER, "weather.log")
-    JSON_LOG = os.path.join(LOG_FOLDER, "weather.jsonl")
+    def __init__(self, log_folder: Optional[str] = None):
+        """Initialize logger with optional dependencies.
+        
+        Args:
+            log_folder: Directory for log files (defaults to config.OUTPUT.get("log_dir", "data_dir"))
+        """
+        # Direct imports for stable utilities
+        self.config = config
+        self.datetime = datetime
+        self.os = os
+        self.json = json
+        self.trackback = traceback
 
-    @staticmethod
-    def _timestamp() -> str:
+        # Instance data
+        self.log_folder = log_folder or self.config.OUTPUT.get("log_dir", "data_dir")
+        self.plain_log = self.os.path.join(self.log_folder, "weather.log")
+        self.json_log = self.os.path.join(self.log_folder, "weather.jsonl")
+
+    def _default_file_writer(self, filepath: str, content: str, mode: str = "a", encoding: str = "utf-8"):
+        """Default file writing implementation."""
+        with open(filepath, mode, encoding=encoding) as f:
+            f.write(content)
+
+    def _timestamp(self) -> str:
         """Return current timestamp in YYYY-MM-DD HH:MM:SS format."""
-        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        return self.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    @staticmethod
-    def info(msg: str) -> None: 
+    def info(self, msg: str) -> None: 
         """Log an informational message."""
-        Logger._log("INFO", msg)
-    
-    @staticmethod
-    def warn(msg: str) -> None: 
+        self._log("INFO", msg)
+
+    def warn(self, msg: str) -> None: 
         """Log a warning message."""
-        Logger._log("WARN", msg)
-    
-    @staticmethod
-    def error(msg: str) -> None: 
+        self._log("WARN", msg)
+
+    def error(self, msg: str) -> None: 
         """Log an error message."""
-        Logger._log("ERROR", msg)
-    
-    @staticmethod
-    def exception(msg: str, exc: Exception = None):
+        self._log("ERROR", msg)
+
+    def exception(self, msg: str, exc: Exception = None):
         print(f"[ERROR] {msg}")
         if exc:
             print("".join(traceback.format_exception(type(exc), exc, exc.__traceback__)))
         else:
             print(traceback.format_exc())
 
-    @staticmethod
-    def _log(level: str, msg: str) -> None:
+    def _log(self, level: str, msg: str) -> None:
         """Log a message with the specified level, timestamp, and write to files.
         
         Args:
             level: Log level (INFO, WARN, ERROR)
             msg: Message to log
         """
-        ts = Logger._timestamp()
+        ts = self._timestamp()
         formatted = f"[{level}] {ts} {msg}"
 
         # Try to print with original message, fallback to safe encoding
@@ -82,10 +87,9 @@ class Logger:
             print(safe_formatted)
             print(f"[WARN] {ts} Original message had encoding issues: {e}")
 
-        Logger._write_to_files(level, ts, msg)
+        self._write_to_files(level, ts, msg)
 
-    @staticmethod
-    def _write_to_files(level: str, ts: str, msg: str) -> None:
+    def _write_to_files(self, level: str, ts: str, msg: str) -> None:
         """Write log entry to both plain text and JSON files.
         
         Creates log directory if needed and handles file writing errors gracefully.
@@ -97,33 +101,31 @@ class Logger:
         """
         # Ensure log directory exists before writing
         try:
-            os.makedirs(Logger.LOG_FOLDER, exist_ok=True)
+            self.os.makedirs(self.log_folder, exist_ok=True)
         except OSError as e:
-            print(f"Warning: Could not create log directory {Logger.LOG_FOLDER}: {e}")
+            print(f"Warning: Could not create log directory {self.log_folder}: {e}")
             return  # Exit early if we can't create the directory
         
         # Write to plain text log with fallback
         log_written = False
         try:
-            with open(Logger.PLAIN_LOG, "a", encoding="utf-8") as f:
-                f.write(f"[{level}] {ts} {msg}\n")
+            self._default_file_writer(self.plain_log, f"[{level}] {ts} {msg}\n")
             log_written = True
         except (OSError, IOError, PermissionError) as e:
-            print(f"Warning: Could not write to plain log file {Logger.PLAIN_LOG}: {e}")
+            print(f"Warning: Could not write to plain log file {self.plain_log}: {e}")
         except UnicodeEncodeError as e:
             # Try with safe encoding
             try:
                 safe_msg = msg.encode('utf-8', errors='replace').decode('utf-8')
-                with open(Logger.PLAIN_LOG, "a", encoding="utf-8") as f:
-                    f.write(f"[{level}] {ts} {safe_msg}\n")
-                    f.write(f"[WARN] {ts} Original message had encoding issues\n")
+                self._default_file_writer(self.plain_log, f"[{level}] {ts} {safe_msg}\n")
+                self._default_file_writer(self.plain_log, f"[WARN] {ts} Original message had encoding issues\n")
                 log_written = True
             except Exception as fallback_error:
                 print(f"Warning: Fallback plain log write also failed: {fallback_error}")
 
         # If primary log failed, try emergency backup
         if not log_written:
-            Logger._emergency_log_fallback(level, ts, msg)
+            self._emergency_log_fallback(level, ts, msg)
 
         # Write to JSON log with encoding safety
         try:
@@ -138,11 +140,10 @@ class Logger:
                 "message": safe_msg
             }
             
-            with open(Logger.JSON_LOG, "a", encoding="utf-8") as f:
-                f.write(json.dumps(log_entry, ensure_ascii=False) + "\n")
+            self._default_file_writer(self.json_log, self.json.dumps(log_entry, ensure_ascii=False) + "\n")
                 
         except (OSError, IOError, PermissionError) as e:
-            print(f"Warning: {config.ERROR_MESSAGES['file_error'].format(info='log data', file=Logger.PLAIN_LOG, reason=str(e))}")
+            print(f"Warning: {self.config.ERROR_MESSAGES['file_error'].format(info='log data', file=self.plain_log, reason=str(e))}")
         except json.JSONEncodeError as e:
             # Fallback: try with ASCII-safe encoding
             try:
@@ -153,13 +154,11 @@ class Logger:
                     "message": safe_msg,
                     "encoding_warning": "Original message contained non-JSON characters"
                 }
-                with open(Logger.JSON_LOG, "a", encoding="utf-8") as f:
-                    f.write(json.dumps(log_entry) + "\n")
+                self._default_file_writer(self.json_log, self.json.dumps(log_entry) + "\n")
             except Exception as fallback_error:
                 print(f"Warning: JSON log fallback also failed: {fallback_error}")
-    
-    @staticmethod
-    def _emergency_log_fallback(level: str, ts: str, msg: str) -> None:
+
+    def _emergency_log_fallback(self, level: str, ts: str, msg: str) -> None:
         """Emergency fallback when all normal logging fails.
         
         Attempts to write to a backup location or system log as last resort.
@@ -172,12 +171,11 @@ class Logger:
         try:
             # Try writing to a backup file in temp directory
             import tempfile
-            backup_log = os.path.join(tempfile.gettempdir(), "weather_dashboard_emergency.log")
+            backup_log = self.os.path.join(tempfile.gettempdir(), "weather_dashboard_emergency.log")
             safe_msg = str(msg).encode('ascii', errors='replace').decode('ascii')
             
-            with open(backup_log, "a", encoding="ascii") as f:
-                f.write(f"[{level}] {ts} {safe_msg}\n")
-                f.write(f"[EMERGENCY] {ts} Primary logging failed, using emergency backup\n")
+            self._default_file_writer(backup_log, f"[{level}] {ts} {safe_msg}\n")
+            self._default_file_writer(backup_log, f"[EMERGENCY] {ts} Primary logging failed, using emergency backup\n")
             
             print(f"Emergency log written to: {backup_log}")
             
@@ -186,8 +184,7 @@ class Logger:
             print(f"[CRITICAL] All logging failed: {e}")
             print(f"[CRITICAL] Lost log entry: [{level}] {ts} {repr(msg)}")
 
-    @staticmethod
-    def test_logging_health() -> bool:
+    def test_logging_health(self) -> bool:
         """Test if logging system is working properly.
         
         Returns:
@@ -195,19 +192,16 @@ class Logger:
         """
         try:
             # Test directory access
-            os.makedirs(Logger.LOG_FOLDER, exist_ok=True)
+            self.os.makedirs(self.log_folder, exist_ok=True)
             
             # Test file write permissions
-            test_msg = f"Health check at {Logger._timestamp()}"
+            test_msg = f"Health check at {self._timestamp()}"
             
             # Test plain log
-            with open(Logger.PLAIN_LOG, "a", encoding="utf-8") as f:
-                f.write(f"[TEST] {test_msg}\n")
+            self._default_file_writer(self.plain_log, f"[TEST] {test_msg}\n")
             
             # Test JSON log  
-            with open(Logger.JSON_LOG, "a", encoding="utf-8") as f:
-                json.dumps({"test": test_msg})  # Validate JSON encoding works
-                f.write(json.dumps({"timestamp": test_msg, "test": True}) + "\n")
+            self._default_file_writer(self.json_log, self.json.dumps({"timestamp": test_msg, "test": True}) + "\n")
             
             return True
             

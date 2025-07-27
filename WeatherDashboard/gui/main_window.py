@@ -15,6 +15,7 @@ import threading
 import tkinter.messagebox as messagebox
 
 from WeatherDashboard.utils.logger import Logger
+
 from WeatherDashboard.gui.state_manager import WeatherDashboardState
 from WeatherDashboard.gui.frames import WeatherDashboardGUIFrames
 from WeatherDashboard.gui.loading_states import LoadingStateManager, AsyncWeatherOperation
@@ -46,7 +47,11 @@ class WeatherDashboardMain:
         loading_manager: Async loading state manager
         async_operations: Async weather operation handler
     """
-    def __init__(self, root) -> None:
+    
+    def __init__(self, root, data_manager: Optional[WeatherDataManager] = None, data_service: Optional[WeatherDataService] = None,
+                 loading_manager: Optional[LoadingStateManager] = None, async_operations: Optional[AsyncWeatherOperation] = None,
+                 state_manager: Optional[WeatherDashboardState] = None, frames: Optional[WeatherDashboardGUIFrames] = None,
+                 widgets: Optional[WeatherDashboardWidgets] = None, controller: Optional[WeatherDashboardController] = None) -> None:
         """Initialize the main weather dashboard application.
         
         Sets up all application components including state management, UI widgets,
@@ -55,20 +60,35 @@ class WeatherDashboardMain:
         
         Args:
             root: Main tkinter window instance
+            data_manager: Weather data manager (injected for testability)
+            data_service: Weather data service (injected for testability)
+            loading_manager: Loading state manager (injected for testability)
+            async_operations: Async operation handler (injected for testability)
+            state_manager: Application state manager (injected for testability)
+            frames: GUI frames manager (injected for testability)
+            widgets: Widget manager (injected for testability)
+            controller: Business logic controller (injected for testability)
         """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+
+        # Instance data
         self.root = root
         self._operation_lock = threading.Lock()
         
-        # Core components
-        self.state = WeatherDashboardState() 
-        self.data_manager = WeatherDataManager()
+        # Injected dependencies for testable core components
+        self.state = state_manager or WeatherDashboardState()
+        self.data_manager = data_manager or WeatherDataManager()
         
-        # Single widget manager instead of separate frames + widgets
-        self.widgets = self._create_widgets(root)
+        # Create or inject single widget manager instead of separate frames + widgets
+        if widgets:
+            self.widgets = widgets
+        else:
+            self.widgets = self._create_widgets(root, frames)
         
         # Business logic
-        self.service = WeatherDataService(self.data_manager)
-        self.controller = WeatherDashboardController(
+        self.service = data_service or WeatherDataService(self.data_manager)
+        self.controller = controller or WeatherDashboardController(
             state=self.state,
             data_service=self.service,
             widgets=self.widgets,
@@ -77,17 +97,18 @@ class WeatherDashboardMain:
         )
         
         # Async components
-        self.loading_manager = LoadingStateManager(self.state, self.widgets.status_bar_widgets)
-        self.async_operations = AsyncWeatherOperation(self.controller, self.loading_manager)
+        self.loading_manager = loading_manager or LoadingStateManager(self.state, self.widgets.status_bar_widgets)
+        self.async_operations = async_operations or AsyncWeatherOperation(self.controller, self.loading_manager)
         
         # Connect callbacks and initialize
         self._connect_callbacks()
         self.update_chart_components()
 
-    def _create_widgets(self, root):
+    def _create_widgets(self, root, frames: Optional[WeatherDashboardGUIFrames] = None):
         """Create and configure all widgets in a single, unified manager."""
-        # Create frames
-        frames = WeatherDashboardGUIFrames(root)
+        # Create or use injected frames
+        if frames is None:
+            frames = WeatherDashboardGUIFrames(root)
         
         # Create widget manager with direct frame access
         widgets = WeatherDashboardWidgets(
@@ -135,7 +156,7 @@ class WeatherDashboardMain:
     def are_widgets_ready(self) -> bool:
         """Check if all widgets are properly initialized."""
         if not self.widgets.is_ready():
-            Logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
+            self.logger.warn(f"Widget manager not ready: {self.widgets.get_creation_error()}")
             return False
         return True
     
@@ -179,13 +200,6 @@ class WeatherDashboardMain:
         # Always update dropdown options unless explicitly clearing
         if not clear and self.widgets.control_widgets:
             self.widgets.control_widgets.update_chart_dropdown_options()
-
-    # def update_chart(self, x_vals, y_vals, metric_key, city, unit, fallback=True):
-    #     self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback)
-
-    # def clear_chart(self):
-    #     self.widgets.clear_chart_with_error_message()
-
 # ================================
 # 3. EVENT HANDLERS
 # ================================
@@ -328,11 +342,3 @@ class WeatherDashboardMain:
         
         if next_callback: # Optional callback to execute after cleanup
             next_callback(success)
-
-# ================================
-# 5. UI UPDATE METHODS
-# ================================
-    # def update_chart_dropdown(self) -> None:
-    #     """Update the chart dropdown based on the current visibility settings."""
-    #     if self.widgets.control_widgets:
-    #         self.widgets.control_widgets.update_chart_dropdown_options()

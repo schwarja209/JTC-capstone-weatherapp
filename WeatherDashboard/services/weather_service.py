@@ -23,6 +23,9 @@ import threading
 import requests
 
 from WeatherDashboard import config
+from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.utils.api_utils import ApiUtils
+
 from WeatherDashboard.services.api_exceptions import (
     WeatherDashboardError,
     WeatherAPIError,
@@ -31,10 +34,9 @@ from WeatherDashboard.services.api_exceptions import (
     RateLimitError,
     NetworkError
 )
+
 from WeatherDashboard.services.fallback_generator import SampleWeatherGenerator
 from WeatherDashboard.utils.derived_metrics import DerivedMetricsCalculator
-from WeatherDashboard.utils.logger import Logger
-from WeatherDashboard.utils.api_utils import ApiUtils
 
 
 # ================================
@@ -51,8 +53,21 @@ class WeatherAPIClient:
         api_url: Base URL for OpenWeatherMap API
         api_key: API authentication key
     """
+
     def __init__(self, weather_url: str, uv_url: str, air_quality_url: str, api_key: str) -> None:
-        """Initialize the weather API client."""
+        """Initialize the weather API client.
+        
+        Args:
+            weather_url: Base URL for the OpenWeatherMap API
+            uv_url: Base URL for UV index API
+            air_quality_url: Base URL for air quality API
+            api_key: API authentication key
+        """
+        # Direct imports for stable utilities
+        self.config = config
+        self.logger = Logger()
+
+        # Instance data
         self.weather_url = weather_url # Base URL for the OpenWeatherMap API
         self.uv_url = uv_url
         self.air_quality_url = air_quality_url
@@ -72,7 +87,7 @@ class WeatherAPIClient:
             response = fetch_with_retry(url, params, cancel_event=cancel_event)
             return self._parse_json_response(response)
         except Exception as e:
-            Logger.warn(f"API fetch failed for {url}: {e}")
+            self.logger.warn(f"API fetch failed for {url}: {e}")
             return None
 
     def fetch_weather_data(self, city: str, cancel_event: Optional[threading.Event] = None) -> Dict[str, Any]:
@@ -83,7 +98,7 @@ class WeatherAPIClient:
         data = self._fetch_api_endpoint(self.weather_url, params, cancel_event)
         
         if not data or data.get("cod") != 200:
-            raise CityNotFoundError(config.ERROR_MESSAGES['not_found'].format(resource="City", name=city))
+            raise CityNotFoundError(self.config.ERROR_MESSAGES['not_found'].format(resource="City", name=city))
         
         validate_api_response(data)
         return data
@@ -106,14 +121,14 @@ class WeatherAPIClient:
                 raise ValueError(f"Expected JSON object, got {type(data).__name__}")
             return data
         except ValueError as e:
-            raise ValueError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason=f"invalid JSON response: {e}")) from e
+            raise ValueError(self.config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason=f"invalid JSON response: {e}")) from e
     
     def _validate_request(self, city: str) -> None:
         """Validate city input and API key presence."""
         if not city.strip():
-            raise ValidationError(config.ERROR_MESSAGES['validation'].format(field="City name", reason="cannot be empty"))
+            raise ValidationError(self.config.ERROR_MESSAGES['validation'].format(field="City name", reason="cannot be empty"))
         if not self.api_key:
-            raise ValidationError(config.ERROR_MESSAGES['missing'].format(field="API key"))  # Changed from ValidationError
+            raise ValidationError(self.config.ERROR_MESSAGES['missing'].format(field="API key"))  # Changed from ValidationError
 
 
 # ================================
@@ -125,13 +140,15 @@ class WeatherDataParser:
     Converts raw OpenWeatherMap API responses into a standardized internal
     format for use throughout the application. Handles data extraction,
     unit conversion, and formatting.
-    """    
+    """
+
     @staticmethod
     def parse_weather_data(weather_data: Dict[str, Any], uv_data: Optional[Dict[str, Any]] = None, air_quality_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Parse weather data using centralized API utilities."""
-        
+        api_utils = ApiUtils() # create instance
+
         # Extract complete weather data using utilities
-        parsed_data = ApiUtils.extract_complete_weather_data(weather_data, uv_data, air_quality_data)
+        parsed_data = api_utils.extract_complete_weather_data(weather_data, uv_data, air_quality_data)
         
         # Calculate derived metrics
         parsed_data.update(WeatherDataParser._calculate_derived_metrics(parsed_data))
@@ -142,6 +159,9 @@ class WeatherDataParser:
     def _calculate_derived_metrics(data: Dict[str, Any]) -> Dict[str, Any]:
         """Calculate all derived metrics from base weather data."""
         derived = {}
+
+        # Create instance for calculations
+        calculator = DerivedMetricsCalculator()
         
         # Get base values with safe defaults
         temp_c = data.get('temperature', 20)  # Already in Celsius
@@ -155,19 +175,19 @@ class WeatherDataParser:
         wind_mph = wind_speed_ms * 2.23694
         
         # Calculate metrics and convert results back to metric
-        heat_index_f = DerivedMetricsCalculator.calculate_heat_index(temp_f, humidity)
-        wind_chill_f = DerivedMetricsCalculator.calculate_wind_chill(temp_f, wind_mph)
+        heat_index_f = calculator.calculate_heat_index(temp_f, humidity)
+        wind_chill_f = calculator.calculate_wind_chill(temp_f, wind_mph)
         
         # Store in metric units (like everything else)
         derived['heat_index'] = (heat_index_f - 32) * 5/9 if heat_index_f is not None else None
         derived['wind_chill'] = (wind_chill_f - 32) * 5/9 if wind_chill_f is not None else None
-        derived['dew_point'] = DerivedMetricsCalculator.calculate_dew_point(temp_c, humidity)  # Already metric
+        derived['dew_point'] = calculator.calculate_dew_point(temp_c, humidity)  # Already metric
         
         # Other calculations...
-        derived['precipitation_probability'] = DerivedMetricsCalculator.calculate_precipitation_probability(
+        derived['precipitation_probability'] = calculator.calculate_precipitation_probability(
             pressure, humidity, conditions
         )
-        derived['weather_comfort_score'] = DerivedMetricsCalculator.calculate_weather_comfort_score(
+        derived['weather_comfort_score'] = calculator.calculate_weather_comfort_score(
             temp_c, humidity, wind_speed_ms, pressure
         )
         
@@ -184,6 +204,7 @@ class WeatherDataValidator:
     reasonable ranges and data types are correct. Helps identify corrupted
     or invalid data from API responses.
     """
+
     @staticmethod
     def validate_weather_data(d: Dict[str, Any]) -> None:
         """Perform basic sanity checks on the parsed weather data.
@@ -272,24 +293,37 @@ class WeatherAPIService:
         _data_parser: Internal data parser for response processing
         _data_validator: Internal data validator for sanity checks
     """
-    def __init__(self) -> None:
+
+    def __init__(self, api_client: Optional[WeatherAPIClient] = None, data_parser: Optional[WeatherDataParser] = None,
+                 data_validator: Optional[WeatherDataValidator] = None, fallback_generator: Optional[SampleWeatherGenerator] = None) -> None:
         """Initialize the weather API service.
         
         Sets up API configuration, fallback data generator, and internal
         components for API communication, data parsing, and validation.
+
+        Args:
+            api_client: Weather API client for HTTP communication (injected for testability)
+            data_parser: Data parser for response processing (injected for testability)
+            data_validator: Data validator for sanity checks (injected for testability)
+            fallback_generator: Fallback data generator (injected for testability)
         """
-        self.weather_api = config.API_BASE_URL
-        self.uv_api = config.API_UV_URL
-        self.air_quality_api = config.API_AIR_QUALITY_URL
-        self.key = config.API_KEY
-        self.fallback = SampleWeatherGenerator()
+        # Direct imports for stable utilities
+        self.config = config
+        self.logger = Logger()
+
+        # API configuration
+        self.weather_api = self.config.API_BASE_URL
+        self.uv_api = self.config.API_UV_URL
+        self.air_quality_api = self.config.API_AIR_QUALITY_URL
+        self.key = self.config.API_KEY
         
-        # Internal components
-        self._api_client = WeatherAPIClient(
+        # Initialize dependencies with injection
+        self.fallback = fallback_generator or SampleWeatherGenerator()
+        self._api_client = api_client or WeatherAPIClient(
             self.weather_api, self.uv_api, self.air_quality_api, self.key
         )
-        self._data_parser = WeatherDataParser()
-        self._data_validator = WeatherDataValidator()
+        self._data_parser = data_parser or WeatherDataParser()
+        self._data_validator = data_validator or WeatherDataValidator()
 
     def fetch_current(self, city: str, cancel_event: Optional[threading.Event] = None) -> Tuple[Dict[str, Any], bool, str]:
         """Fetch comprehensive current weather data including derived metrics.
@@ -324,12 +358,12 @@ class WeatherAPIService:
                 try:
                     uv_data = self._api_client.fetch_uv_data(lat, lon, cancel_event)
                 except Exception as e:
-                    Logger.warn(f"UV data fetch failed, continuing without UV data: {e}")
+                    self.logger.warn(f"UV data fetch failed, continuing without UV data: {e}")
                 
                 try:
                     air_quality_data = self._api_client.fetch_air_quality_data(lat, lon, cancel_event)
                 except Exception as e:
-                    Logger.warn(f"Air quality data fetch failed, continuing without air quality data: {e}")            
+                    self.logger.warn(f"Air quality data fetch failed, continuing without air quality data: {e}")            
             
             # Parse and combine all data
             parsed = self._data_parser.parse_weather_data(weather_data, uv_data, air_quality_data)
@@ -343,7 +377,7 @@ class WeatherAPIService:
             return self._generate_fallback_response(city, f"{type(e).__name__}", e)
         except Exception as e:
             # Only catch truly unexpected errors
-            Logger.error(f"Unexpected error in fetch_current for {city}: {e}")
+            self.logger.error(f"Unexpected error in fetch_current for {city}: {e}")
             return self._generate_fallback_response(city, "Unexpected error", e)
     
     def _generate_fallback_response(self, city, msg, exc):
@@ -357,7 +391,7 @@ class WeatherAPIService:
         Returns:
             Tuple containing fallback weather data, fallback flag, and exception
         """
-        Logger.error(f"API failure for {city} - {msg}: {exc}. Switching to simulated data.")
+        self.logger.error(f"API failure for {city} - {msg}: {exc}. Switching to simulated data.")
 
         fallback_data = self.fallback.generate(city)
         current_data = fallback_data[-1]
@@ -397,7 +431,8 @@ def fetch_with_retry(url: str, params: Dict[str, Any], retries: int = config.API
     # Use short timeout when cancellation is supported, long timeout otherwise
     # Check if cancel_event exists AND we have a way to detect if this is a user-initiated request
     timeout = 2 if (cancel_event is not None and cancel_event.is_set()) else config.API_TIMEOUT_SECONDS
-    
+    logger = Logger() # create instance
+
     if cancel_event and cancel_event.is_set():
             raise NetworkError("Request cancelled by user")
 
@@ -429,30 +464,30 @@ def fetch_with_retry(url: str, params: Dict[str, Any], retries: int = config.API
             if cancel_event and cancel_event.is_set():
                 raise NetworkError("Request cancelled by user")
             if attempt < retries:
-                Logger.warn(f"Timeout on attempt {attempt + 1}, retrying: {e}")
+                logger.warn(f"Timeout on attempt {attempt + 1}, retrying: {e}")
                 time.sleep(delay * (2 ** attempt)) # Exponential backoff
             else:
-                Logger.error(f"API timeout after {retries + 1} attempts: {e}")
+                logger.error(f"API timeout after {retries + 1} attempts: {e}")
                 raise NetworkError(f"Request timed out after {retries + 1} attempts")
         except requests.exceptions.ConnectionError as e:
             if cancel_event and cancel_event.is_set():
                 raise NetworkError("Request cancelled by user")
             if attempt < retries:
-                Logger.warn(f"Connection error on attempt {attempt + 1}, retrying: {e}")
+                logger.warn(f"Connection error on attempt {attempt + 1}, retrying: {e}")
                 time.sleep(delay * (2 ** attempt)) # Exponential backoff
                 if cancel_event and cancel_event.is_set():
                     raise NetworkError("Request cancelled by user")
             else:
-                Logger.error(f"Connection failed after {retries + 1} attempts: {e}")
+                logger.error(f"Connection failed after {retries + 1} attempts: {e}")
                 raise NetworkError(f"Connection failed after {retries + 1} attempts")
         except requests.exceptions.RequestException as e:
             if attempt < retries:
-                Logger.warn(f"API call failed (attempt {attempt + 1}), retrying: {e}")
+                logger.warn(f"API call failed (attempt {attempt + 1}), retrying: {e}")
                 if cancel_event and cancel_event.is_set():
                     raise NetworkError("Request cancelled by user")
                 time.sleep(delay * (2 ** attempt)) # Exponential backoff
             else:
-                Logger.error(f"API call failed after {retries + 1} attempts: {e}")
+                logger.error(f"API call failed after {retries + 1} attempts: {e}")
                 raise WeatherAPIError(f"API request failed: {e}")
 
 def validate_api_response(data: Dict[str, Any]) -> None:

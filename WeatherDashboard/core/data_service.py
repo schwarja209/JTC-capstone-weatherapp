@@ -13,6 +13,7 @@ from typing import Tuple, Dict, Any, List, Optional
 import threading
 
 from WeatherDashboard.utils.validation_utils import ValidationUtils
+
 from WeatherDashboard.services.api_exceptions import ValidationError
 
 
@@ -26,12 +27,17 @@ class WeatherDataService:
     Attributes:
         data_manager: Weather data manager for storage and retrieval operations
     """
+    
     def __init__(self, data_manager: Any) -> None:
         """Initialize the data service with a data manager.
         
         Args:
-            data_manager: Weather data manager for handling data operations
+            data_manager: Weather data manager for handling data operations (injected for testability)
         """
+        # Direct imports for stable utilities
+        self.validation_utils = ValidationUtils()
+
+        # Injected dependencies for testable components
         self.data_manager = data_manager
 
     def _validate_inputs(self, city_name: str, unit_system: str) -> Tuple[str, str]:
@@ -41,12 +47,12 @@ class WeatherDataService:
             Tuple[str, str]: Validated city name and unit system
         """
         try:
-            city_errors = ValidationUtils.validate_city_name(city_name)
+            city_errors = self.validation_utils.validate_city_name(city_name)
             if city_errors:
                 raise ValueError(city_errors[0])
             city = city_name.strip().title()
             
-            unit_errors = ValidationUtils.validate_unit_system(unit_system)
+            unit_errors = self.validation_utils.validate_unit_system(unit_system)
             if unit_errors:
                 raise ValueError(unit_errors[0])
             return city, unit_system

@@ -14,8 +14,9 @@ import tkinter as tk
 from tkinter import ttk
 from typing import Optional, Any
 
-from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard import styles
+
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
@@ -35,6 +36,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         progress_label: Center section - operation progress indicators  
         data_status_label: Right section - data source information
     """
+
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
         """Initialize the status bar with error handling.
         
@@ -45,6 +47,14 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             parent_frame: Parent TTK frame to contain the status bar
             state: Application state manager for widget registration
         """
+        # Direct imports for stable utilities
+        self.styles = styles
+        self.logger = Logger()
+        
+        # Injected dependencies for testable components
+        self.parent_frame = parent_frame
+        self.state = state
+
         # Widget references
         self.system_status_label: Optional[ttk.Label] = None
         self.progress_label: Optional[ttk.Label] = None  
@@ -56,7 +66,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
-            Logger.warn("Status bar widgets created with errors - some functionality may be limited")
+            self.logger.warn("Status bar widgets created with errors - some functionality may be limited")
     
     def _create_widgets(self) -> None:
         """Create the three-section status bar layout with base class error handling.
@@ -67,18 +77,18 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         """
         # Left section: System status using SafeWidgetCreator
         self.system_status_label = SafeWidgetCreator.create_label(self.parent, "Ready", "SystemStatus.TLabel")
-        self.system_status_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['system'])
+        self.system_status_label.pack(side=tk.LEFT, padx=self.styles.STATUS_BAR_CONFIG['padding']['system'])
 
         # Separator
-        ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=styles.STATUS_BAR_CONFIG['padding']['separator'])
+        ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=self.styles.STATUS_BAR_CONFIG['padding']['separator'])
 
         # Center section: Progress indicator using SafeWidgetCreator
         self.progress_label = SafeWidgetCreator.create_label(self.parent, "", "LabelValue.TLabel", textvariable=self.progress_var)
-        self.progress_label.pack(side=tk.LEFT, padx=styles.STATUS_BAR_CONFIG['padding']['progress'])
+        self.progress_label.pack(side=tk.LEFT, padx=self.styles.STATUS_BAR_CONFIG['padding']['progress'])
 
         # Right section: Data source information using SafeWidgetCreator
         self.data_status_label = SafeWidgetCreator.create_label(self.parent, "No data", "DataStatus.TLabel")
-        self.data_status_label.pack(side=tk.RIGHT, padx=styles.STATUS_BAR_CONFIG['padding']['data'])
+        self.data_status_label.pack(side=tk.RIGHT, padx=self.styles.STATUS_BAR_CONFIG['padding']['data'])
 
     def update_status_bar(self, city_name: str, error_exception: Optional[Exception], simulated: bool = False) -> None:
         """Update all status bar sections: system, progress, and data status."""
@@ -138,7 +148,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         if self.progress_var:
             self.progress_var.set(message)
         if self.progress_label:
-            color = styles.STATUS_BAR_CONFIG['colors']['error'] if error else styles.STATUS_BAR_CONFIG['colors']['info']
+            color = self.styles.STATUS_BAR_CONFIG['colors']['error'] if error else self.styles.STATUS_BAR_CONFIG['colors']['info']
             self.progress_label.configure(foreground=color)
      
     def clear_progress(self) -> None:

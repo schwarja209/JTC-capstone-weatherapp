@@ -1222,6 +1222,70 @@ This ADR specifically targets derived mapping functions and computed constants t
 
 ---
 
+## ADR-035: Hybrid Dependency Injection Pattern
+ 
+**Status:** Accepted  
+
+**Context:** Need to balance testability with code simplicity and maintainability across the WeatherDashboard codebase.
+
+**Decision:** Implement a hybrid dependency injection pattern that combines direct imports for stable utilities with dependency injection for testable components.
+
+**Rationale:**
+- Full dependency injection creates unwieldy constructor signatures and cascading dependencies
+- Direct imports for all utilities make testing difficult and create tight coupling
+- A hybrid approach provides testability where it matters while maintaining simplicity
+
+**Consequences:**
+- ✅ Maintains testability for critical components
+- ✅ Reduces constructor complexity
+- ✅ Provides clear boundaries between stable and variable components
+- ✅ Balances flexibility with simplicity
+- ❌ Requires clear guidelines on what should be injected vs imported
+- ❌ May need refactoring if utility components become more complex
+- ❌ Requires consistent application across the codebase
+
+**Implementation Guidelines:**
+
+### 1. Direct Imports (No Injection)
+Use direct imports for stable, utility-like components that rarely change:
+- **Logger utilities** - Basic logging functionality
+- **Basic configuration** - Static configuration values
+- **Simple utility functions** - Pure functions with no side effects
+- **Constants and enums** - Static values that don't vary
+
+### 2. Dependency Injection (Required)
+Use dependency injection for components that need testing or vary by environment:
+- **Services** - Data services, API clients, external integrations
+- **Error handlers** - Components that handle errors and user feedback
+- **State managers** - Application state and UI state management
+- **Widget managers** - UI component coordination
+- **Alert managers** - Business logic components
+
+### 3. Factory Pattern (For Complex Objects)
+Use factory patterns for objects with multiple dependencies:
+- **View models** - Complex data transformation objects
+- **Widget instances** - UI components with multiple dependencies
+- **Service instances** - Services that require multiple dependencies
+
+**Example Implementation:**
+```python
+def __init__(self, state, data_service, widgets, ui_handler, theme='neutral', error_handler=None, alert_manager=None):
+    # Direct imports for utilities
+    self.logger = Logger
+    self.config = config
+    
+    # Injected dependencies for testable components
+    self.error_handler = error_handler or WeatherErrorHandler(theme)
+    self.alert_manager = alert_manager or AlertManager(state)
+    
+    # Factory for complex objects
+    self.view_model_factory = lambda city, data, unit: WeatherViewModel(
+        city, data, unit, self.config, self.logger
+    )
+```
+
+---
+
 ## Future Satirical System Decisions (To Be Documented)
 
 The following architectural decisions will be documented as the dual-theme satirical weather system is developed:

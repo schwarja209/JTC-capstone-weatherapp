@@ -32,18 +32,19 @@ def initialize_system() -> Dict[str, Any]:
         print("Please ensure WeatherDashboard package is properly installed.")
         sys.exit(1)
     
-    Logger.info("Initializing Weather Dashboard application...")
+    logger = Logger() # create instance
+    logger.info("Initializing Weather Dashboard application...")
 
     # Initialize directories and validate configurations
     config.ensure_directories()
     config.validate_config()
     
     # Test logging system and warn if issues
-    if not Logger.test_logging_health():
+    if not logger.test_logging_health():
         print("Warning: Logging system health check failed")
 
     package_info = get_package_info()
-    Logger.info(f"Starting {package_info['name']} v{package_info['version']}: "
+    logger.info(f"Starting {package_info['name']} v{package_info['version']}: "
                 f"{package_info['description']} created by {package_info['author']}")
 
     return {
@@ -106,9 +107,10 @@ def main() -> None:
         SystemExit: Always exits after completion or error
     """
     # Try to get Logger for error logging, but don't fail if unavailable
-    Logger = None
+    logger = None
     try:
         from WeatherDashboard.utils.logger import Logger
+        logger = Logger()  # Create instance
     except ImportError as e:
         print(f"Failed to import required modules: {e}")
         sys.exit(1)
@@ -124,25 +126,25 @@ def main() -> None:
         sys.exit(0)
 
     except ValueError as e:
-        if Logger:
-            Logger.error(f"Configuration error: {e}")
+        if logger:
+            logger.error(f"Configuration error: {e}")
         print(f"Configuration error: {e}\n")
         print("Please check your configuration and try again.")
         sys.exit(1)
     except tk.TclError as e:
-        if Logger:
-            Logger.error(f"GUI creation failed: {e}")
+        if logger:
+            logger.error(f"GUI creation failed: {e}")
         print(f"Failed to create GUI window: {e}")
         print("Please ensure display environment is properly configured.")
         sys.exit(1)
     except KeyboardInterrupt:
-        if Logger:
-            Logger.info("Application interrupted by user")
+        if logger:
+            logger.info("Application interrupted by user")
         print("\nApplication interrupted by user")
         sys.exit(0)
     except Exception as e:
-        if Logger:
-            Logger.error(f"Unexpected error: {e}")
+        if logger:
+            logger.error(f"Unexpected error: {e}")
         print(f"Unexpected error: {e}")
         sys.exit(1)
 

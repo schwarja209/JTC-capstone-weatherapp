@@ -17,16 +17,19 @@ Classes:
 from typing import Tuple, List, Any, Optional
 import threading
 
-from WeatherDashboard import config
-from WeatherDashboard.core.view_models import WeatherViewModel
-from WeatherDashboard.features.alerts.alert_manager import AlertManager
-from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
-from WeatherDashboard.services.error_handler import WeatherErrorHandler
-from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
-from WeatherDashboard.utils.utils import is_fallback
+from WeatherDashboard import config, styles
+from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.rate_limiter import RateLimiter
+from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
+
+from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
+from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
+
+from WeatherDashboard.core.view_models import WeatherViewModel
+from WeatherDashboard.features.alerts.alert_manager import AlertManager
+from WeatherDashboard.services.error_handler import WeatherErrorHandler
 
 
 class WeatherDashboardController:
@@ -45,32 +48,50 @@ class WeatherDashboardController:
         recovery_manager: Error recovery and retry manager
         rate_limiter: API rate limiting manager
         alert_manager: Weather alert processing manager
-    """    
-    def __init__(self, state: Any, data_service: Any, widgets: IWeatherDashboardWidgets, ui_handler: Any, theme: str = 'neutral') -> None:
-        """Initialize the weather dashboard controller.
+    """   
+     
+    def __init__(self, state: Any, data_service: Any, widgets: IWeatherDashboardWidgets, ui_handler: Any, theme: str = 'neutral',
+             error_handler: Optional[WeatherErrorHandler] = None, alert_manager: Optional[AlertManager] = None) -> None:
+        """Initialize the weather dashboard controller with hybrid dependency injection.
         
         Args:
-            state: Application state manager
-            data_service: Weather data service for API operations
-            widgets: UI widget manager for display updates
+            state: Application state manager (injected for testability)
+            data_service: Weather data service for API operations (injected for testability)
+            widgets: UI widget manager for display updates (injected for testability)
+            ui_handler: UI handler for user interactions (injected for testability)
             theme: Initial theme for error messaging ('neutral', 'optimistic', 'pessimistic')
+            error_handler: Error handler with theme support (injected for testability)
+            alert_manager: Weather alert processing manager (injected for testability)
         """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.config = config
+        self.styles = styles
+        self.utils = Utils()
+        self.rate_limiter = RateLimiter()
+        self.unit_converter = UnitConverter()
+        self.validation_utils = ValidationUtils()
+        
+        # Injected dependencies for testable components
         self.service = data_service
         self.widgets = widgets
         self.state = state
         self.ui_handler = ui_handler
         self.current_theme = theme
+        self.error_handler = error_handler or WeatherErrorHandler(theme)
+        self.alert_manager = alert_manager or AlertManager(state)
         
-        # Initialize helper classes
-        self.rate_limiter = RateLimiter()
-        self.error_handler = WeatherErrorHandler(theme)
-        self.alert_manager = AlertManager(state)
+        # Factory for complex objects
+        self.view_model_factory = lambda city, data, unit: WeatherViewModel(
+                city, data, unit
+        )
+        
     
     def set_theme(self, theme: str) -> None:
         """Set theme for error handling and future theme system integration."""
         self.current_theme = theme
         self.error_handler.set_theme(theme)
-        Logger.info(f"Controller theme set to: {theme}")
+        self.logger.info(f"Controller theme set to: {theme}")
     
     def update_weather_display(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[bool, Optional[str]]:
         """Coordinate fetching and displaying weather data with enhanced error handling and cancellation support.
@@ -149,16 +170,16 @@ class WeatherDashboardController:
             Displays error messages to user via error handler for validation failures
         """        
         # Validate inputs
-        input_errors = ValidationUtils.validate_input_types(city_name, unit_system)
+        input_errors = self.validation_utils.validate_input_types(city_name, unit_system)
         if input_errors:
-            error_msg = ValidationUtils.format_validation_errors(input_errors, "Input validation failed")
+            error_msg = self.validation_utils.format_validation_errors(input_errors, "Input validation failed")
             self.error_handler.handle_input_validation_error(error_msg)
             return False
         
         # Validate state
-        state_errors = ValidationUtils.validate_complete_state(self.state)
+        state_errors = self.validation_utils.validate_complete_state(self.state)
         if state_errors:
-            error_msg = ValidationUtils.format_validation_errors(state_errors, "Invalid application state")
+            error_msg = self.validation_utils.format_validation_errors(state_errors, "Invalid application state")
             self.error_handler.handle_input_validation_error(error_msg)
             return False
         
@@ -172,7 +193,8 @@ class WeatherDashboardController:
         """
         if not self.rate_limiter.can_make_request():
             wait_time = self.rate_limiter.get_wait_time()
-            Logger.warn("Fetch blocked due to rate limiting.")
+            self.logger.warn("Fetch blocked due to rate limiting.")
+            
             # Delegate UI messaging to error handler
             self.error_handler.handle_rate_limit_error(wait_time)
             return False
@@ -195,11 +217,10 @@ class WeatherDashboardController:
             city, raw_data, error_exception = self.service.get_city_data(city_name, unit_system, cancel_event)
 
             # Generate alerts and inject into raw_data
-            alerts = self.alert_manager.check_weather_alerts(raw_data)
-            raw_data["alerts"] = alerts
+            raw_data["alerts"] = self.alert_manager.check_weather_alerts(raw_data)
 
             # Create view model
-            view_model = WeatherViewModel(city, raw_data, unit_system)
+            view_model = self.view_model_factory(city, raw_data, unit_system)
             
             # Handle any errors using standardized error handler
             should_continue = self.error_handler.handle_weather_error(error_exception, city)
@@ -207,7 +228,7 @@ class WeatherDashboardController:
                 return False, str(error_exception) if error_exception else "Unknown error"
 
             # Find if data is simulated
-            simulated = is_fallback(raw_data)
+            simulated = self.utils.is_fallback(raw_data)
             if not should_continue or simulated:
                 # Treat as error for the async layer
                 return False, str(error_exception) if error_exception else "Simulated data used due to API failure"
@@ -242,22 +263,22 @@ class WeatherDashboardController:
         """
         raw_city = self.state.get_current_city()
         if not raw_city or not raw_city.strip():
-            raise ValueError(config.ERROR_MESSAGES['missing'].format(field="City name"))
+            raise ValueError(self.config.ERROR_MESSAGES['missing'].format(field="City name"))
         
-        errors = ValidationUtils.validate_city_name(raw_city)
+        errors = self.validation_utils.validate_city_name(raw_city)
         if errors:
             raise ValueError(errors[0])
         city = raw_city.strip().title()
 
-        days = config.CHART["range_options"].get(self.state.get_current_range(), 7)
+        days = self.config.CHART["range_options"].get(self.state.get_current_range(), 7)
         
         if days <= 0:
-            raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Date range", reason=f"{days} days is invalid"))
+            raise ValueError(self.config.ERROR_MESSAGES['validation'].format(field="Date range", reason=f"{days} days is invalid"))
         
         metric_key = self._get_chart_metric_key()
         unit = self.state.get_current_unit_system()
         
-        unit_errors = ValidationUtils.validate_unit_system(unit) # Ensure unit system is valid
+        unit_errors = self.validation_utils.validate_unit_system(unit) # Ensure unit system is valid
         if unit_errors:
             raise ValueError(unit_errors[0])
         
@@ -281,10 +302,10 @@ class WeatherDashboardController:
         data = self.service.get_historical_data(city, days, unit)
 
         if not data:
-            raise ValueError(config.ERROR_MESSAGES['not_found'].format(resource="Historical data", name=city))
+            raise ValueError(self.config.ERROR_MESSAGES['not_found'].format(resource="Historical data", name=city))
 
         if not all(metric_key in d for d in data):
-            Logger.warn(f"Warning: Some data entries are missing '{metric_key}'")
+            self.logger.warn(f"Warning: Some data entries are missing '{metric_key}'")
             print(f"Warning: Some data entries are missing '{metric_key}'")
 
         x_vals = [d['date'].strftime("%Y-%m-%d") for d in data]  # Dynamic axis values
@@ -309,16 +330,16 @@ class WeatherDashboardController:
         
         # Handle special case when no metrics are selected
         if display_name == "No metrics selected":
-            raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Chart metric", reason="at least one metric must be selected"))
+            raise ValueError(self.config.ERROR_MESSAGES['validation'].format(field="Chart metric", reason="at least one metric must be selected"))
         
         # Find metric key by matching display label
         metric_key = None
-        for key, metric_data in config.METRICS.items():
+        for key, metric_data in self.config.METRICS.items():
             if metric_data['label'] == display_name:
                 metric_key = key
                 break
         if not metric_key:
-            raise KeyError(config.ERROR_MESSAGES['not_found'].format(resource="Chart metric", name=display_name))
+            raise KeyError(self.config.ERROR_MESSAGES['not_found'].format(resource="Chart metric", name=display_name))
         return metric_key
 
     def _handle_error(self, error_type: str, error_message: str, is_chart_error: bool = False) -> bool:
@@ -335,7 +356,7 @@ class WeatherDashboardController:
             bool: Always False to indicate operation failure
         """
         if is_chart_error:
-            Logger.exception(f"{error_type}: {error_message}", error_message)
+            self.logger.exception(f"{error_type}: {error_message}", error_message)
             self.ui_handler.show_warning("Chart Error", f"{error_type}. Chart will be cleared.")
             self.ui_handler.update_chart_components(clear=True)
         else:

@@ -6,10 +6,11 @@ from basic weather data including comfort indices and probability estimates.
 All temperature inputs should be in the specified units per function.
 """
 
-import math
 from typing import Optional
+import math
 
 from WeatherDashboard import config
+
 
 class DerivedMetricsCalculator:
     """Calculate derived weather metrics from basic weather data.
@@ -18,8 +19,13 @@ class DerivedMetricsCalculator:
     using standard meteorological formulas.
     """
     
-    @staticmethod
-    def calculate_heat_index(temp_f: float, humidity: float) -> Optional[float]:
+    def __init__(self) -> None:
+        """Initialize derived metrics calculator with hybrid dependency injection."""
+        # Direct imports for stable utilities
+        self.config = config
+        self.math = math
+
+    def calculate_heat_index(self, temp_f: float, humidity: float) -> Optional[float]:
         """Calculate heat index using the Rothfusz regression equation.
         
         Heat index represents how hot it feels when humidity is factored in.
@@ -32,7 +38,7 @@ class DerivedMetricsCalculator:
         Returns:
             Heat index in Fahrenheit, or None if conditions don't warrant calculation
         """
-        if temp_f < config.HEAT_INDEX_THRESHOLD_F:
+        if temp_f < self.config.HEAT_INDEX_THRESHOLD_F:
             return None
             
         # Rothfusz regression equation (NWS standard)
@@ -42,9 +48,8 @@ class DerivedMetricsCalculator:
         hi += 8.5282e-4 * temp_f * humidity**2 - 1.99e-6 * temp_f**2 * humidity**2
         
         return hi
-    
-    @staticmethod
-    def calculate_wind_chill(temp_f: float, wind_mph: float) -> Optional[float]:
+
+    def calculate_wind_chill(self, temp_f: float, wind_mph: float) -> Optional[float]:
         """Calculate wind chill using the NWS formula.
         
         Wind chill represents how cold it feels when wind is factored in.
@@ -57,7 +62,7 @@ class DerivedMetricsCalculator:
         Returns:
             Wind chill in Fahrenheit, or None if conditions don't warrant calculation
         """
-        if temp_f > config.WIND_CHILL_TEMP_THRESHOLD_F or wind_mph < config.WIND_CHILL_SPEED_THRESHOLD_MPH:
+        if temp_f > self.config.WIND_CHILL_TEMP_THRESHOLD_F or wind_mph < self.config.WIND_CHILL_SPEED_THRESHOLD_MPH:
             return None
             
         # NWS wind chill formula
@@ -65,9 +70,8 @@ class DerivedMetricsCalculator:
         wc += 0.4275 * temp_f * (wind_mph ** 0.16)
         
         return wc
-    
-    @staticmethod
-    def calculate_dew_point(temp_c: float, humidity: float) -> float:
+
+    def calculate_dew_point(self, temp_c: float, humidity: float) -> float:
         """Calculate dew point using the Magnus formula approximation.
         
         Dew point is the temperature at which air becomes saturated with moisture.
@@ -83,13 +87,12 @@ class DerivedMetricsCalculator:
         a = 17.27
         b = 237.7
         
-        alpha = ((a * temp_c) / (b + temp_c)) + math.log(humidity / 100.0)
+        alpha = ((a * temp_c) / (b + temp_c)) + self.math.log(humidity / 100.0)
         dew_point = (b * alpha) / (a - alpha)
         
         return dew_point
-    
-    @staticmethod
-    def calculate_precipitation_probability(pressure: float, humidity: float, conditions: str) -> float:
+
+    def calculate_precipitation_probability(self, pressure: float, humidity: float, conditions: str) -> float:
         """Estimate precipitation probability using atmospheric indicators.
         
         This is an algorithmic estimate based on pressure, humidity, and current
@@ -124,9 +127,8 @@ class DerivedMetricsCalculator:
             base_prob += 25
         
         return min(100, max(0, base_prob))
-    
-    @staticmethod
-    def calculate_weather_comfort_score(temp_c: float, humidity: float, wind_speed: float, pressure: float) -> float:
+
+    def calculate_weather_comfort_score(self, temp_c: float, humidity: float, wind_speed: float, pressure: float) -> float:
         """Calculate composite weather comfort score.
         
         Combines temperature, humidity, wind, and pressure into a single

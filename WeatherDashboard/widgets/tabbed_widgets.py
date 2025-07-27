@@ -15,6 +15,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from WeatherDashboard.utils.logger import Logger
+
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 from WeatherDashboard.widgets.metric_widgets import MetricDisplayWidgets
 from WeatherDashboard.widgets.chart_widgets import ChartWidgets
@@ -39,6 +40,7 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         metric_widgets: Widget manager for metrics tab content
         chart_widgets: Widget manager for chart tab content
     """
+
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
         """Initialize the tabbed display interface with error handling
         
@@ -49,7 +51,14 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         Args:
             parent_frame: Parent TTK frame to contain the tabbed interface
             state: Application state manager for widget coordination and data updates
-        """        
+        """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+
+        # Injected dependencies for testable components
+        self.parent_frame = parent_frame
+        self.state = state
+
         # Widget references
         self.notebook: Optional[ttk.Notebook] = None
         self.metrics_frame: Optional[ttk.Frame] = None
@@ -62,7 +71,7 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
-            Logger.warn("Tabbed display widgets created with errors - some functionality may be limited")
+            self.logger.warn("Tabbed display widgets created with errors - some functionality may be limited")
     
     def _create_widgets(self) -> None:
         """Create tabbed interface with notebook and content widgets.

@@ -7967,3 +7967,133 @@
 [INFO] 2025-07-26 17:31:52 show_error called with: Rate limiting failed
 [WARN] 2025-07-26 17:32:07 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
 [INFO] 2025-07-26 17:32:07 Weather data written for new_york - Live
+[ERROR] 2025-07-27 01:43:41 Unexpected error: Logger.info() missing 1 required positional argument: 'msg'
+[INFO] 2025-07-27 01:52:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 01:52:32
+[INFO] 2025-07-27 01:52:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[ERROR] 2025-07-27 01:52:32 Configuration error in title section _create_title_section: Logger.error() missing 1 required positional argument: 'msg'
+[ERROR] 2025-07-27 01:52:32 Unexpected error: Logger.error() missing 1 required positional argument: 'msg'
+[INFO] 2025-07-27 01:55:07 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 01:55:07
+[INFO] 2025-07-27 01:55:07 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[ERROR] 2025-07-27 01:55:07 Configuration error in title section _create_title_section: Logger.error() missing 1 required positional argument: 'msg'
+[ERROR] 2025-07-27 01:55:07 Unexpected error: Logger.error() missing 1 required positional argument: 'msg'
+[INFO] 2025-07-27 01:56:28 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 01:56:28
+[INFO] 2025-07-27 01:56:28 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[ERROR] 2025-07-27 01:56:28 Configuration error in title section _create_title_section: Logger.error() missing 1 required positional argument: 'msg'
+[ERROR] 2025-07-27 01:56:28 Unexpected error: Logger.error() missing 1 required positional argument: 'msg'
+[INFO] 2025-07-27 02:00:59 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:00:59
+[INFO] 2025-07-27 02:00:59 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:00:59 title widget created successfully
+[INFO] 2025-07-27 02:00:59 control widgets created successfully
+[INFO] 2025-07-27 02:00:59 metric display widgets created successfully
+[INFO] 2025-07-27 02:00:59 chart widgets created successfully
+[INFO] 2025-07-27 02:00:59 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:00:59 status bar widgets created successfully
+[INFO] 2025-07-27 02:00:59 dashboard widgets created successfully
+[ERROR] 2025-07-27 02:01:00 Unexpected error in fetch_current for New York: 'dict' object has no attribute 'datetime'
+[ERROR] 2025-07-27 02:01:00 API failure for New York - Unexpected error: 'dict' object has no attribute 'datetime'. Switching to simulated data.
+[INFO] 2025-07-27 02:01:00 show_error called with: unsupported operand type(s) for -: 'builtin_function_or_method' and 'datetime.timedelta'
+[INFO] 2025-07-27 02:06:55 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:06:55
+[INFO] 2025-07-27 02:06:55 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:06:55 title widget created successfully
+[INFO] 2025-07-27 02:06:55 control widgets created successfully
+[INFO] 2025-07-27 02:06:56 metric display widgets created successfully
+[INFO] 2025-07-27 02:06:56 chart widgets created successfully
+[INFO] 2025-07-27 02:06:56 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:06:56 status bar widgets created successfully
+[INFO] 2025-07-27 02:06:56 dashboard widgets created successfully
+[ERROR] 2025-07-27 02:06:56 Unexpected error in fetch_current for New York: 'dict' object has no attribute 'datetime'
+[ERROR] 2025-07-27 02:06:56 API failure for New York - Unexpected error: 'dict' object has no attribute 'datetime'. Switching to simulated data.
+[INFO] 2025-07-27 02:06:56 show_error called with: DerivedMetricsCalculator.calculate_heat_index() missing 1 required positional argument: 'humidity'
+[INFO] 2025-07-27 02:10:22 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:10:22
+[INFO] 2025-07-27 02:10:22 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:10:22 title widget created successfully
+[INFO] 2025-07-27 02:10:22 control widgets created successfully
+[INFO] 2025-07-27 02:10:23 metric display widgets created successfully
+[INFO] 2025-07-27 02:10:23 chart widgets created successfully
+[INFO] 2025-07-27 02:10:23 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:10:23 status bar widgets created successfully
+[INFO] 2025-07-27 02:10:23 dashboard widgets created successfully
+[ERROR] 2025-07-27 02:10:23 Unexpected error in fetch_current for New York: 'dict' object has no attribute 'datetime'
+[ERROR] 2025-07-27 02:10:23 API failure for New York - Unexpected error: 'dict' object has no attribute 'datetime'. Switching to simulated data.
+[INFO] 2025-07-27 02:10:23 show_error called with: Utils.city_key() missing 1 required positional argument: 'name'
+[INFO] 2025-07-27 02:15:12 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:15:12
+[INFO] 2025-07-27 02:15:12 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:15:12 title widget created successfully
+[INFO] 2025-07-27 02:15:12 control widgets created successfully
+[INFO] 2025-07-27 02:15:13 metric display widgets created successfully
+[INFO] 2025-07-27 02:15:13 chart widgets created successfully
+[INFO] 2025-07-27 02:15:13 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:15:13 status bar widgets created successfully
+[INFO] 2025-07-27 02:15:13 dashboard widgets created successfully
+[INFO] 2025-07-27 02:15:13 show_error called with: 'format'
+[INFO] 2025-07-27 02:16:25 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:16:25
+[INFO] 2025-07-27 02:16:25 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:16:25 title widget created successfully
+[INFO] 2025-07-27 02:16:25 control widgets created successfully
+[INFO] 2025-07-27 02:16:26 metric display widgets created successfully
+[INFO] 2025-07-27 02:16:26 chart widgets created successfully
+[INFO] 2025-07-27 02:16:26 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:16:26 status bar widgets created successfully
+[INFO] 2025-07-27 02:16:26 dashboard widgets created successfully
+[INFO] 2025-07-27 02:16:26 show_error called with: 'format'
+[INFO] 2025-07-27 02:17:42 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:17:42
+[INFO] 2025-07-27 02:17:42 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:17:42 title widget created successfully
+[INFO] 2025-07-27 02:17:42 control widgets created successfully
+[INFO] 2025-07-27 02:17:43 metric display widgets created successfully
+[INFO] 2025-07-27 02:17:43 chart widgets created successfully
+[INFO] 2025-07-27 02:17:43 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:17:43 status bar widgets created successfully
+[INFO] 2025-07-27 02:17:43 dashboard widgets created successfully
+[INFO] 2025-07-27 02:17:43 show_error called with: 'format'
+[INFO] 2025-07-27 02:19:13 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:19:13
+[INFO] 2025-07-27 02:19:13 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:19:13 title widget created successfully
+[INFO] 2025-07-27 02:19:13 control widgets created successfully
+[INFO] 2025-07-27 02:19:13 metric display widgets created successfully
+[INFO] 2025-07-27 02:19:13 chart widgets created successfully
+[INFO] 2025-07-27 02:19:13 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:19:13 status bar widgets created successfully
+[INFO] 2025-07-27 02:19:13 dashboard widgets created successfully
+[INFO] 2025-07-27 02:19:14 show_error called with: 'format'
+[INFO] 2025-07-27 02:26:22 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:26:22
+[INFO] 2025-07-27 02:26:22 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:26:22 title widget created successfully
+[INFO] 2025-07-27 02:26:22 control widgets created successfully
+[INFO] 2025-07-27 02:26:22 metric display widgets created successfully
+[INFO] 2025-07-27 02:26:22 chart widgets created successfully
+[INFO] 2025-07-27 02:26:22 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:26:22 status bar widgets created successfully
+[INFO] 2025-07-27 02:26:22 dashboard widgets created successfully
+[INFO] 2025-07-27 02:26:23 Weather data written for new_york - Live
+[INFO] 2025-07-27 02:26:28 show_error called with: Logger.warn() missing 1 required positional argument: 'msg'
+[ERROR] 2025-07-27 02:26:39 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 02:26:41 show_error called with: Input validation failed
+[INFO] 2025-07-27 02:35:33 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 02:35:33
+[INFO] 2025-07-27 02:35:33 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 02:35:33 title widget created successfully
+[INFO] 2025-07-27 02:35:33 control widgets created successfully
+[INFO] 2025-07-27 02:35:33 metric display widgets created successfully
+[INFO] 2025-07-27 02:35:33 chart widgets created successfully
+[INFO] 2025-07-27 02:35:33 tabbed display widgets created successfully
+[INFO] 2025-07-27 02:35:33 status bar widgets created successfully
+[INFO] 2025-07-27 02:35:33 dashboard widgets created successfully
+[INFO] 2025-07-27 02:35:34 Weather data written for new_york - Live
+[WARN] 2025-07-27 02:35:38 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 02:35:39 Weather data written for new_york - Live
+[WARN] 2025-07-27 02:35:52 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 02:35:52 Weather data written for new_york - Live
+[WARN] 2025-07-27 02:36:05 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 02:36:05 Weather data written for new_york - Live

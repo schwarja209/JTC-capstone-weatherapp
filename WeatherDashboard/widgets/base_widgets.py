@@ -19,8 +19,8 @@ from typing import Any, Optional, Callable
 from tkinter import ttk
 import functools
 
-from WeatherDashboard import config
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard import config
 
 
 class BaseWidgetManager:
@@ -36,6 +36,7 @@ class BaseWidgetManager:
         _widgets_created: Boolean flag indicating successful widget creation
         _creation_error: Error message if widget creation failed
     """  
+
     def __init__(self, parent_frame: ttk.Frame, state: Any, widget_type: str = "widgets"):
         """Initialize base widget manager.
         
@@ -44,6 +45,11 @@ class BaseWidgetManager:
             state: Application state manager
             widget_type: Type of widgets for error messages
         """
+        # Direct imports for stable utilities
+        self.config = config
+        self.logger = Logger()
+
+        # Instance data
         self.parent = parent_frame
         self.state = state
         self.widget_type = widget_type
@@ -60,13 +66,13 @@ class BaseWidgetManager:
             self._create_widgets()
             self._widgets_created = True
             self._creation_error = None
-            Logger.info(f"{self.widget_type} created successfully")
+            self.logger.info(f"{self.widget_type} created successfully")
             return True
             
         except Exception as e:
             self._widgets_created = False
             self._creation_error = str(e)
-            Logger.error(config.ERROR_MESSAGES['config_error'].format(
+            self.logger.error(self.config.ERROR_MESSAGES['config_error'].format(
                 section=f"{self.widget_type} creation", reason=str(e)))
             return False
     
@@ -106,7 +112,7 @@ class BaseWidgetManager:
             Logs a warning if widgets are not ready.
         """
         if not self.is_ready():
-            Logger.warn("Cannot update metrics: widgets not ready")
+            self.logger.warn("Cannot update metrics: widgets not ready")
             return
 
     def update_status_bar(self, city_name, error_exception):
@@ -121,7 +127,7 @@ class BaseWidgetManager:
             Logs a warning if widgets are not ready.
         """
         if not self.is_ready():
-            Logger.warn("Cannot update status bar: widgets not ready")
+            self.logger.warn("Cannot update status bar: widgets not ready")
             return
 
     def update_alerts(self, raw_data):
@@ -135,7 +141,7 @@ class BaseWidgetManager:
             Logs a warning if widgets are not ready.
         """
         if not self.is_ready():
-            Logger.warn("Cannot update alerts: widgets not ready")
+            self.logger.warn("Cannot update alerts: widgets not ready")
             return
 
 def widget_error_handler(widget_type: str = "widget"):
@@ -147,6 +153,8 @@ def widget_error_handler(widget_type: str = "widget"):
     Returns:
         Decorator function
     """
+    logger = Logger() # create instance
+
     def decorator(func: Callable) -> Callable:
         """Decorator implementation with error handling wrapper.
     
@@ -165,7 +173,9 @@ def widget_error_handler(widget_type: str = "widget"):
             try:
                 return func(*args, **kwargs)
             except Exception as e:
-                Logger.error(config.ERROR_MESSAGES['config_error'].format(section=f"{widget_type} {func.__name__}", reason=str(e)))
+                # Import config here since it's not available in decorator scope
+                from WeatherDashboard import config
+                logger.error(config.ERROR_MESSAGES['config_error'].format(section=f"{widget_type} {func.__name__}", reason=str(e)))
                 # Re-raise for calling code to handle
                 raise
         return wrapper

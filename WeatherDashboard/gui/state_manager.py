@@ -39,17 +39,20 @@ class WeatherDashboardState:
         Sets up tkinter variables for user inputs, widget references for UI updates,
         and application state tracking variables.
         """
-        # Create the same tkinter variables as before
-        self.city = tk.StringVar(value=config.DEFAULTS["city"])
-        self.unit = tk.StringVar(value=config.DEFAULTS["unit"])
-        self.range = tk.StringVar(value=config.DEFAULTS["range"])
-        self.chart = tk.StringVar(value=config.DEFAULTS["chart"])
+        # Direct imports for stable utilities
+        self.config = config
+
+        # Create the tkinter variables
+        self.city = tk.StringVar(value=self.config.DEFAULTS["city"])
+        self.unit = tk.StringVar(value=self.config.DEFAULTS["unit"])
+        self.range = tk.StringVar(value=self.config.DEFAULTS["range"])
+        self.chart = tk.StringVar(value=self.config.DEFAULTS["chart"])
         self.visibility = {
             key: tk.BooleanVar(value=val)
-            for key, val in config.DEFAULTS["visibility"].items()
+            for key, val in self.config.DEFAULTS["visibility"].items()
         }
         
-    # STATE ACCESS METHODS - These provide cleaner access to state values
+    # STATE ACCESS METHODS - These provide clean access to state values
     def get_current_city(self) -> str:
         """Get current city name from user input."""
         return self.city.get()
@@ -82,13 +85,13 @@ class WeatherDashboardState:
         Restores city, unit system, date range, chart metric, and visibility
         settings to their configured default values.
         """
-        self.city.set(config.DEFAULTS["city"])
-        self.unit.set(config.DEFAULTS["unit"])
-        self.range.set(config.DEFAULTS["range"])
-        self.chart.set(config.DEFAULTS["chart"])
+        self.city.set(self.config.DEFAULTS["city"])
+        self.unit.set(self.config.DEFAULTS["unit"])
+        self.range.set(self.config.DEFAULTS["range"])
+        self.chart.set(self.config.DEFAULTS["chart"])
         
         for key, var in self.visibility.items():
-            var.set(config.DEFAULTS["visibility"].get(key, False))
+            var.set(self.config.DEFAULTS["visibility"].get(key, False))
     
     def __repr__(self) -> str:
         """String representation for debugging."""

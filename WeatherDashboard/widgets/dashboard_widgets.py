@@ -10,12 +10,13 @@ Classes:
     WeatherDashboardWidgets: Main widget coordinator and manager
 """
 
-from typing import Dict, Any, Callable, List, Optional
+from typing import Dict, Any, Callable, Optional
 import tkinter as tk
 from tkinter import ttk, messagebox
 
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.widget_utils import WidgetUtils
+
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, widget_error_handler
 from WeatherDashboard.widgets.title_widgets import TitleWidget
@@ -43,6 +44,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         metric_widgets: Metric display widget manager
         chart_widgets: Chart display widget manager
     """
+
     def __init__(self, frames: Dict[str, ttk.Frame], state: Any, update_cb: Callable, clear_cb: Callable, dropdown_cb: Callable, cancel_cb: Callable = None) -> None:
         """Initialize the widget coordinator with error handling.
         
@@ -57,7 +59,13 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             dropdown_cb: Callback function for dropdown change events
             cancel_cb: Callback function for operation cancellation
         """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.widget_utils = WidgetUtils()
+
+        # Injected dependencies for testable components
         self.frames = frames
+        self.state = state
         
         # Callback mapping for cleaner organization
         self.callbacks = {
@@ -78,7 +86,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
-            Logger.warn("Dashboard widgets created with errors - some functionality may be limited")
+            self.logger.warn("Dashboard widgets created with errors - some functionality may be limited")
     
     def _create_widgets(self) -> None:
         """Initialize all widget components base class error handling.
@@ -98,11 +106,11 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             self._create_status_bar_section()
             
         except tk.TclError as e:
-            Logger.error(f"GUI widget creation failed: {e}")
+            self.logger.error(f"GUI widget creation failed: {e}")
             messagebox.showerror("GUI Error", f"Failed to create interface: {e}")
             raise
         except Exception as e:
-            Logger.error(f"Unexpected error during GUI setup: {e}")
+            self.logger.error(f"Unexpected error during GUI setup: {e}")
             messagebox.showerror("Setup Error", f"Failed to initialize dashboard: {e}")
             raise
     

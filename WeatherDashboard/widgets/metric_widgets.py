@@ -18,12 +18,13 @@ from typing import Dict, Any, Optional, List
 import tkinter as tk
 from tkinter import ttk
 
-from WeatherDashboard import config, styles
-from WeatherDashboard.features.alerts.alert_display import AlertStatusIndicator
 from WeatherDashboard.utils.logger import Logger
-from WeatherDashboard.utils.color_utils import get_metric_color, get_enhanced_temperature_color, extract_numeric_value
+from WeatherDashboard import config, styles
+from WeatherDashboard.utils.color_utils import ColorUtils
 from WeatherDashboard.utils.state_utils import StateUtils
 from WeatherDashboard.utils.widget_utils import WidgetUtils
+
+from WeatherDashboard.features.alerts.alert_display import AlertStatusIndicator
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
@@ -48,6 +49,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         alert_status_widget: Alert status indicator widget
         alert_text_label: Alert text notification label
     """
+
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
         """Initialize the metric display widgets.
         
@@ -59,6 +61,18 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             parent_frame: Parent TTK frame to contain the metric displays
             state: Application state manager for widget coordination
         """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.config = config
+        self.styles = styles
+        self.color_utils = ColorUtils()
+        self.state_utils = StateUtils()
+        self.widget_utils = WidgetUtils()
+
+        # Injected dependencies for testable components
+        self.parent_frame = parent_frame
+        self.state = state
+
         # Widget references
         self.metric_labels: Dict[str, Dict[str, ttk.Label]] = {}
         self.city_label: Optional[ttk.Label] = None
@@ -70,7 +84,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
-            Logger.warn("Metric display widgets created with errors - some functionality may be limited")
+            self.logger.warn("Metric display widgets created with errors - some functionality may be limited")
     
     def _create_widgets(self) -> None:
         """Create all metric display widgets with base class error handling."""
@@ -92,11 +106,11 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             metric_displays: Dictionary of formatted metric data for display
         """
         # Clear all existing displays first using centralized utility
-        for metric_key in config.METRICS:
+        for metric_key in self.config.METRICS:
             if metric_key in self.metric_labels:
                 widgets = self.metric_labels[metric_key]
-                WidgetUtils.safe_grid_forget(widgets['label'])
-                WidgetUtils.safe_grid_forget(widgets['value'])
+                self.widget_utils.safe_grid_forget(widgets['label'])
+                self.widget_utils.safe_grid_forget(widgets['value'])
         
         # Update city and date labels
         if self.city_label and "city" in metric_displays:
@@ -113,7 +127,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Process left column metrics (columns 2-3)
         for display_metric in left_column_order:
-            if StateUtils.is_metric_visible(self.state, display_metric):
+            if self.state_utils.is_metric_visible(self.state, display_metric):
                 should_display = True
                 label = ""
                 value = ""
@@ -126,19 +140,19 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                     label = 'Conditions:'
                     value = metric_displays.get('enhanced_conditions', '--')
                 elif display_metric in ['rain', 'snow']:
-                    label = f"{config.METRICS[display_metric]['label']}:"
+                    label = f"{self.config.METRICS[display_metric]['label']}:"
                     value = metric_displays.get(display_metric, '--')
                     if value == '--' or value == '0.0 mm' or value == '0.0 in':
                         should_display = False # Skip if no precipitation
                 elif display_metric in ['wind_chill', 'heat_index', 'weather_comfort_score', 'precipitation_probability']:
-                    label = f"{config.METRICS[display_metric]['label']}:"
+                    label = f"{self.config.METRICS[display_metric]['label']}:"
                     value = metric_displays.get(display_metric, '--')
                     # Skip wind chill and heat index if they're None (not applicable)
                     if display_metric in ['wind_chill', 'heat_index'] and value == '--':
                         should_display = False
                 else:
                     # Standard individual metric
-                    label = f"{config.METRICS[display_metric]['label']}:"
+                    label = f"{self.config.METRICS[display_metric]['label']}:"
                     value = metric_displays.get(display_metric, '--')
                 
                 if should_display:
@@ -147,7 +161,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Process right column metrics (columns 4-5)  
         for display_metric in right_column_order:
-            if StateUtils.is_metric_visible(self.state, display_metric):
+            if self.state_utils.is_metric_visible(self.state, display_metric):
                 # Determine display data and label
                 if display_metric == 'temp_min':
                     label = "Today's Range:"
@@ -156,11 +170,11 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                     label = 'Wind:'
                     value = metric_displays.get('enhanced_wind', '--')
                 elif display_metric in ['dew_point', 'uv_index', 'air_quality_description']:
-                    label = f"{config.METRICS[display_metric]['label']}:"
+                    label = f"{self.config.METRICS[display_metric]['label']}:"
                     value = metric_displays.get(display_metric, '--')
                 else:
                     # Standard individual metric
-                    label = f"{config.METRICS[display_metric]['label']}:"
+                    label = f"{self.config.METRICS[display_metric]['label']}:"
                     value = metric_displays.get(display_metric, '--')
                 
                 self._show_metric_at_position(display_metric, label, value, right_row, 4, 5)
@@ -203,7 +217,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     def update_alerts(self, raw_data: Dict[str, Any]) -> None:
         """Update the alert display widgets with the provided raw weather data."""
         if not self.is_ready():
-            Logger.warn("Cannot update alerts: widgets not ready")
+            self.logger.warn("Cannot update alerts: widgets not ready")
             return
         
         # Extract alerts from raw_data and update the alert widgets
@@ -224,14 +238,14 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     def _create_header_info(self) -> None:
         """Create city and date display headers with error handling."""
         # City label
-        city_label, self.city_label = WidgetUtils.create_label_value_pair(self.parent, "City:", "--", value_style="LabelValue.TLabel")
+        city_label, self.city_label = self.widget_utils.create_label_value_pair(self.parent, "City:", "--", value_style="LabelValue.TLabel")
         self.city_label.configure(width=15)
-        WidgetUtils.position_widget_pair(self.parent, city_label, self.city_label, 0, 0, 1)
+        self.widget_utils.position_widget_pair(self.parent, city_label, self.city_label, 0, 0, 1)
 
         # Date label  
-        date_label, self.date_label = WidgetUtils.create_label_value_pair(self.parent, "Date:", "--", value_style="LabelValue.TLabel")
+        date_label, self.date_label = self.widget_utils.create_label_value_pair(self.parent, "Date:", "--", value_style="LabelValue.TLabel")
         self.date_label.configure(width=15)
-        WidgetUtils.position_widget_pair(self.parent, date_label, self.date_label, 1, 0, 1)
+        self.widget_utils.position_widget_pair(self.parent, date_label, self.date_label, 1, 0, 1)
     
     @widget_error_handler("weather metrics")
     def _create_weather_metrics(self) -> None:
@@ -247,8 +261,8 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
         if metric_key not in self.metric_labels:
             # Create widgets using centralized utility
-            label_text = f"{config.METRICS[metric_key]['label']}:"
-            name_label, value_label = WidgetUtils.create_label_value_pair(self.parent, label_text, "--")
+            label_text = f"{self.config.METRICS[metric_key]['label']}:"
+            name_label, value_label = self.widget_utils.create_label_value_pair(self.parent, label_text, "--")
             
             # Store references
             self.metric_labels[metric_key] = {
@@ -301,12 +315,12 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         widgets['label'].configure(text=label_text)
         
         # Set padding for column positioning (moved to top)
-        padx = styles.ALERT_DISPLAY_CONFIG['column_padding']['right_section'] if label_col == 4 else styles.ALERT_DISPLAY_CONFIG['column_padding']['left_section']
+        padx = self.styles.ALERT_DISPLAY_CONFIG['column_padding']['right_section'] if label_col == 4 else self.styles.ALERT_DISPLAY_CONFIG['column_padding']['left_section']
         
         # Special handling for comfort score - show progress bar instead of text
         if metric_key == 'weather_comfort_score' and value_text != '--':
             # Extract numeric value for progress bar
-            raw_value = extract_numeric_value(value_text)
+            raw_value = self.color_utils.extract_numeric_value(value_text)
             if raw_value is not None:
                 # Clear the value label and add progress bar
                 widgets['value'].configure(text="")
@@ -334,13 +348,13 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
             # Special color logic for enhanced temperature display
             if metric_key == 'temperature' and 'feels' in value_text:
-                color = get_enhanced_temperature_color(value_text, unit_system)
+                color = self.color_utils.get_enhanced_temperature_color(value_text, unit_system)
                 # Check alerts for enhanced temperature (use base temperature)
-                raw_value = extract_numeric_value(value_text)
+                raw_value = self.color_utils.extract_numeric_value(value_text)
             else:
                 # Standard color logic for other metrics
-                raw_value = extract_numeric_value(value_text)
-                color = get_metric_color(metric_key, raw_value, unit_system)
+                raw_value = self.color_utils.extract_numeric_value(value_text)
+                color = self.color_utils.get_metric_color(metric_key, raw_value, unit_system)
 
             widgets['value'].configure(foreground=color)
             
@@ -351,7 +365,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                 pass
         
         # Grid positioning (always executed, uses padx defined at top)
-        WidgetUtils.position_widget_pair(self.parent, widgets['label'], widgets['value'], row, label_col, value_col, label_text)
+        self.widget_utils.position_widget_pair(self.parent, widgets['label'], widgets['value'], row, label_col, value_col, label_text)
 
     def _create_comfort_progress_bar(self, parent: ttk.Frame, comfort_score: float) -> tk.Canvas:
         """Create a colored progress bar using Canvas for better color control.
@@ -364,10 +378,10 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             tk.Canvas: Canvas widget displaying colored progress bar
         """
         # Get color using the same logic as text metrics
-        color = get_metric_color('weather_comfort_score', comfort_score, 'metric')
+        color = self.color_utils.get_metric_color('weather_comfort_score', comfort_score, 'metric')
         
         # Create canvas for custom progress bar using configured dimensions
-        layout = styles.WIDGET_LAYOUT['comfort_progress_bar']
+        layout = self.styles.WIDGET_LAYOUT['comfort_progress_bar']
         canvas = tk.Canvas(parent, width=layout['width'], height=layout['height'], highlightthickness=0)
 
         # Draw background

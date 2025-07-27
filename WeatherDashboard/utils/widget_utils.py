@@ -9,18 +9,23 @@ Classes:
     WidgetUtils: Static utilities for widget creation and management
 """
 
+from typing import Dict, Optional, Tuple
 import tkinter as tk
 from tkinter import ttk
-from typing import Dict, Optional, Tuple
 
-from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard import styles
 
 class WidgetUtils:
     """Centralized widget positioning and creation utilities."""
     
-    @staticmethod
-    def position_widget_pair(parent: ttk.Frame, 
+    def __init__(self) -> None:
+        """Initialize widget utilities with hybrid dependency injection."""
+        # Direct imports for stable utilities
+        self.styles = styles
+        self.logger = Logger()
+
+    def position_widget_pair(self, parent: ttk.Frame, 
                            label_widget: ttk.Widget, 
                            value_widget: ttk.Widget,
                            row: int, 
@@ -56,19 +61,18 @@ class WidgetUtils:
                 padx = padx_override
             else:
                 # Use style-based padding calculation
-                padx = (styles.ALERT_DISPLAY_CONFIG['column_padding']['right_section'] 
+                padx = (self.styles.ALERT_DISPLAY_CONFIG['column_padding']['right_section'] 
                        if label_col >= 4 
-                       else styles.ALERT_DISPLAY_CONFIG['column_padding']['left_section'])
+                       else self.styles.ALERT_DISPLAY_CONFIG['column_padding']['left_section'])
             
             # Position widgets
             label_widget.grid(row=row, column=label_col, sticky=sticky, pady=pady, padx=padx)
             value_widget.grid(row=row, column=value_col, sticky=sticky, pady=pady)
             
         except Exception as e:
-            Logger.error(f"Failed to position widget pair at row {row}: {e}")
-    
-    @staticmethod
-    def create_label_value_pair(parent: ttk.Frame, 
+            self.logger.error(f"Failed to position widget pair at row {row}: {e}")
+
+    def create_label_value_pair(self, parent: ttk.Frame, 
                                label_text: str,
                                value_text: str = "--",
                                label_style: str = "LabelName.TLabel",
@@ -90,14 +94,13 @@ class WidgetUtils:
             value_widget = ttk.Label(parent, text=value_text, style=value_style)
             return label_widget, value_widget
         except Exception as e:
-            Logger.error(f"Failed to create label/value pair for '{label_text}': {e}")
+            self.logger.error(f"Failed to create label/value pair for '{label_text}': {e}")
             # Return minimal fallback widgets
             label_widget = ttk.Label(parent, text=label_text)
             value_widget = ttk.Label(parent, text=value_text)
             return label_widget, value_widget
-    
-    @staticmethod
-    def create_and_position_metric(parent: ttk.Frame,
+
+    def create_and_position_metric(self, parent: ttk.Frame,
                                  metric_key: str,
                                  label_text: str,
                                  value_text: str,
@@ -123,11 +126,11 @@ class WidgetUtils:
             Tuple[ttk.Label, ttk.Label]: Created label and value widgets
         """
         # Create widgets
-        label_widget, value_widget = WidgetUtils.create_label_value_pair(
+        label_widget, value_widget = self.create_label_value_pair(
             parent, label_text, value_text)
         
         # Position widgets
-        WidgetUtils.position_widget_pair(
+        self.position_widget_pair(
             parent, label_widget, value_widget, row, label_col, value_col)
         
         # Store in provided storage dict
@@ -138,9 +141,8 @@ class WidgetUtils:
             }
         
         return label_widget, value_widget
-    
-    @staticmethod
-    def safe_grid_forget(widget: ttk.Widget) -> None:
+
+    def safe_grid_forget(self, widget: ttk.Widget) -> None:
         """Safely remove widget from grid layout.
         
         Args:
@@ -150,10 +152,9 @@ class WidgetUtils:
             if widget and hasattr(widget, 'grid_forget'):
                 widget.grid_forget()
         except Exception as e:
-            Logger.warn(f"Failed to grid_forget widget: {e}")
-    
-    @staticmethod
-    def configure_grid_weights(parent: ttk.Frame, columns: int = 3) -> None:
+            self.logger.warn(f"Failed to grid_forget widget: {e}")
+
+    def configure_grid_weights(self, parent: ttk.Frame, columns: int = 3) -> None:
         """Configure grid column weights for proper layout.
         
         Args:
@@ -164,10 +165,9 @@ class WidgetUtils:
             for i in range(columns):
                 parent.columnconfigure(i, weight=1)
         except Exception as e:
-            Logger.error(f"Failed to configure grid weights: {e}")
-            
-    @staticmethod  
-    def create_error_handling_wrapper(widget_creation_func):
+            self.logger.error(f"Failed to configure grid weights: {e}")
+ 
+    def create_error_handling_wrapper(self, widget_creation_func):
         """Decorator to add consistent error handling to widget creation functions.
         
         Args:
@@ -181,6 +181,6 @@ class WidgetUtils:
                 return widget_creation_func(*args, **kwargs)
             except Exception as e:
                 function_name = getattr(widget_creation_func, '__name__', 'unknown_function')
-                Logger.error(f"Failed to create widgets in {function_name}: {e}")
+                self.logger.error(f"Failed to create widgets in {function_name}: {e}")
                 raise
         return wrapper

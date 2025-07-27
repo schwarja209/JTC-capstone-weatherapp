@@ -17,6 +17,7 @@ import tkinter.messagebox as messagebox
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
+
 from WeatherDashboard.services.api_exceptions import (
     ValidationError,
     CityNotFoundError,
@@ -35,6 +36,7 @@ class WeatherErrorHandler:
         current_theme: Current theme mode for message formatting
         _message_templates: Dictionary of theme-specific message templates
     """
+
     def __init__(self, theme: str = 'neutral'):
         """Initialize the error handler with specified theme.
         
@@ -44,6 +46,11 @@ class WeatherErrorHandler:
         Args:
             theme: Initial theme mode ('neutral', 'optimistic', 'pessimistic')
         """
+        # Direct imports for stable utilities
+        self.styles = styles
+        self.logger = Logger()
+
+        # Instance data
         self.current_theme = theme
         self._message_templates = {
             'city_not_found': {
@@ -68,7 +75,7 @@ class WeatherErrorHandler:
         if theme in ['neutral', 'optimistic', 'pessimistic']:
             self.current_theme = theme
         else:
-            Logger.warn(f"Unknown theme: {theme}, keeping current theme")
+            self.logger.warn(f"Unknown theme: {theme}, keeping current theme")
     
     def _format_message(self, template_key: str, *args) -> str:
         """Format error message based on current theme and template.
@@ -109,34 +116,34 @@ class WeatherErrorHandler:
         elif isinstance(error_exception, CityNotFoundError):
             # City not found - show error but continue with fallback
             message = self._format_message('city_not_found', city_name)
-            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['city_not_found'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['city_not_found'], message)
             return True
         elif isinstance(error_exception, RateLimitError):
             # Rate limit - show specific message
             message = self._format_message('rate_limit', city_name)
-            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['rate_limit'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['rate_limit'], message)
             return True
         elif isinstance(error_exception, NetworkError):
             # Network issues - show network-specific message
             message = self._format_message('network_error', city_name)
-            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['warning'])(styles.DIALOG_CONFIG['error_titles']['network_issue'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['warning'])(self.styles.DIALOG_CONFIG['error_titles']['network_issue'], message)
             return True
         else:
             # Other API errors - show general fallback notice
-            Logger.warn(f"Using fallback for {city_name}: {error_exception}")
-            getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['info'])(styles.DIALOG_CONFIG['error_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
+            self.logger.warn(f"Using fallback for {city_name}: {error_exception}")
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['error_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
             return True
 
     def handle_input_validation_error(self, error: Exception) -> None:
         """Handles input validation errors."""
-        Logger.error(f"Input validation error: {error}")
-        getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['input_error'], str(error))
+        self.logger.error(f"Input validation error: {error}")
+        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['input_error'], str(error))
 
     def handle_unexpected_error(self, error: Exception) -> None:
         """Handles unexpected errors."""
-        Logger.error(f"Unexpected error: {error}")
-        getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['error'])(styles.DIALOG_CONFIG['error_titles']['general_error'], f"Unexpected error: {error}")
+        self.logger.error(f"Unexpected error: {error}")
+        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['general_error'], f"Unexpected error: {error}")
     
     def handle_rate_limit_error(self, wait_time: float) -> None:
         """Handle rate limit errors with appropriate user messaging."""
-        getattr(messagebox, styles.DIALOG_CONFIG['dialog_types']['info'])(styles.DIALOG_CONFIG['error_titles']['rate_limit'], f"Please wait {wait_time:.0f} more seconds before making another request.")
+        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['error_titles']['rate_limit'], f"Please wait {wait_time:.0f} more seconds before making another request.")

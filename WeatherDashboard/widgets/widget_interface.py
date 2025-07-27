@@ -7,15 +7,14 @@ and composite widget managers in the Weather Dashboard application.
 
 Classes:
     IWeatherDashboardWidgets: Interface for controller-widget communication
-
-ADR Reference:
-    - ADR 030: Documentation and docstring standards
 """
 
 from typing import Any, Dict, List, Optional
 
+
 class IWeatherDashboardWidgets:
     """Interface for all widget operations required by the controller."""
+
     def is_ready(self) -> bool:
         """Return True if all widgets are ready."""
         raise NotImplementedError

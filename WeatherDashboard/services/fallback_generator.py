@@ -9,9 +9,10 @@ Classes:
     SampleWeatherGenerator: Main fallback weather data generator
 """
 
+from typing import List, Dict, Any
 import random
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
+
 
 class SampleWeatherGenerator:
     """Generates simulated weather data for fallback scenarios.
@@ -25,8 +26,14 @@ class SampleWeatherGenerator:
         temp_ranges: Temperature ranges for different climate types
         random: Random number generator for data variation
     """    
+    
     def __init__(self) -> None:
         """Initialize the weather data generator."""
+        # Direct imports for stable utilities
+        self.random = random
+        self.datetime = datetime
+
+        # Instance data
         self.source_unit = "metric"  # base unit system
         self.temp_ranges = {
             'default': (5, 30),      # Default range - Celsius
@@ -35,7 +42,6 @@ class SampleWeatherGenerator:
             'desert': (15, 45),      # Very hot, dry climates
             'temperate': (0, 25)     # Moderate climates
         }
-        self.random = random
     
     def generate(self, city: str, num_days: int = 7) -> List[Dict[str, Any]]:
         """Generate simulated weather data for a given city over a specified number of days.
@@ -55,7 +61,7 @@ class SampleWeatherGenerator:
         temp_min, temp_max = self.temp_ranges['default']
         base_temp = self.random.randint(temp_min, temp_max)
         for i in range(num_days):
-            date = datetime.now() - timedelta(days=num_days - 1 - i)
+            date = self.datetime.now() - timedelta(days=num_days - 1 - i)
             temp = base_temp + self.random.randint(-15, 15)
             humidity = self.random.randint(30, 90)     # %
             wind = self.random.randint(0, 10)          # %

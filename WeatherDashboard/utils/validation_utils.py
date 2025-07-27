@@ -20,8 +20,19 @@ from WeatherDashboard.utils.logger import Logger
 class ValidationUtils:
     """Centralized validation utilities to eliminate duplicate validation logic."""
     
-    @staticmethod
-    def validate_city_name(city_name: Any) -> List[str]:
+    def __init__(self) -> None:
+        """Initialize validation utils with optional dependencies."""
+        # Direct imports for stable utilities
+        self.config = config
+        self.logger = Logger()
+
+        # Instance data
+        self.regex_patterns = {
+            'city_name': r"^[a-zA-Z\s\-'\.,]+$",
+            'unit_system': r"^(metric|imperial)$"
+        }
+
+    def validate_city_name(self, city_name: Any) -> List[str]:
         """Validate city name input with comprehensive checks.
         
         Args:
@@ -34,31 +45,30 @@ class ValidationUtils:
         
         # Type validation
         if not isinstance(city_name, str):
-            errors.append(config.ERROR_MESSAGES['validation'].format(
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(
                 field="City name", reason=f"must be a string, got {type(city_name).__name__}"))
-            return errors  # Can't continue validation if not a string
+            return errors
         
         # Empty validation
         cleaned_name = city_name.strip()
         if not cleaned_name:
-            errors.append(config.ERROR_MESSAGES['validation'].format(
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(
                 field="City name", reason="cannot be empty"))
             return errors
         
         # Length validation
-        if len(cleaned_name) > 100:  # Reasonable maximum
-            errors.append(config.ERROR_MESSAGES['validation'].format(
+        if len(cleaned_name) > 100:
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(
                 field="City name", reason="cannot be longer than 100 characters"))
         
-        # Character validation (allow letters, spaces, hyphens, apostrophes, and commas)
-        if not re.match(r"^[a-zA-Z\s\-'\.,]+$", cleaned_name):
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field="City name", reason="contains invalid characters (only letters, spaces, hyphens, commas, and apostrophes allowed)"))
+        # Character validation
+        if not re.match(self.regex_patterns['city_name'], cleaned_name):
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(
+                field="City name", reason="contains invalid characters"))
         
         return errors
     
-    @staticmethod
-    def validate_unit_system(unit_system: Any) -> List[str]:
+    def validate_unit_system(self, unit_system: Any) -> List[str]:
         """Validate unit system selection.
         
         Args:
@@ -71,20 +81,19 @@ class ValidationUtils:
         
         # Type validation
         if not isinstance(unit_system, str):
-            errors.append(config.ERROR_MESSAGES['validation'].format(
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(
                 field="Unit system", reason=f"must be a string, got {type(unit_system).__name__}"))
             return errors
         
         # Valid options
         valid_units = {'metric', 'imperial'}
         if unit_system not in valid_units:
-            errors.append(config.ERROR_MESSAGES['validation'].format(
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(
                 field="Unit system", reason=f"'{unit_system}' is invalid. Must be 'metric' or 'imperial'"))
         
         return errors
     
-    @staticmethod
-    def validate_metric_visibility(state_manager: Any) -> List[str]:
+    def validate_metric_visibility(self, state_manager: Any) -> List[str]:
         """Validate that at least one metric is visible.
         
         Args:
@@ -98,8 +107,7 @@ class ValidationUtils:
         try:
             # Check if state manager has visibility
             if not hasattr(state_manager, 'visibility'):
-                errors.append(config.ERROR_MESSAGES['state_error'].format(
-                    reason="state manager missing visibility attribute"))
+                errors.append(self.config.ERROR_MESSAGES['state_error'].format(reason="state manager missing visibility attribute"))
                 return errors
             
             # Check if any metrics are visible
@@ -109,20 +117,17 @@ class ValidationUtils:
                     if hasattr(visibility_var, 'get') and visibility_var.get():
                         visible_count += 1
                 except Exception as e:
-                    Logger.warn(f"Error checking visibility for {metric_key}: {e}")
+                    self.logger.warn(f"Error checking visibility for {metric_key}: {e}")
             
             if visible_count == 0:
-                errors.append(config.ERROR_MESSAGES['validation'].format(
-                    field="Metric selection", reason="at least one metric must be visible"))
+                errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Metric selection", reason="at least one metric must be visible"))
             
         except Exception as e:
-            errors.append(config.ERROR_MESSAGES['state_error'].format(
-                reason=f"failed to validate metric visibility: {e}"))
+            errors.append(self.config.ERROR_MESSAGES['state_error'].format(reason=f"failed to validate metric visibility: {e}"))
         
         return errors
     
-    @staticmethod
-    def validate_date_range(date_range: Any) -> List[str]:
+    def validate_date_range(self, date_range: Any) -> List[str]:
         """Validate date range selection.
         
         Args:
@@ -134,20 +139,17 @@ class ValidationUtils:
         errors = []
         
         if not isinstance(date_range, str):
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field="Date range", reason=f"must be a string, got {type(date_range).__name__}"))
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Date range", reason=f"must be a string, got {type(date_range).__name__}"))
             return errors
         
         # Check against valid range options
-        valid_ranges = set(config.CHART.get("range_options", {}).keys())
+        valid_ranges = self.config.CHART["range_options"].keys()
         if date_range not in valid_ranges:
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field="Date range", reason=f"'{date_range}' is not a valid option"))
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Date range", reason=f"'{date_range}' is invalid. Must be one of: {', '.join(valid_ranges)}"))
         
         return errors
     
-    @staticmethod
-    def validate_chart_metric(chart_metric: Any) -> List[str]:
+    def validate_chart_metric(self,chart_metric: Any) -> List[str]:
         """Validate chart metric selection.
         
         Args:
@@ -159,26 +161,22 @@ class ValidationUtils:
         errors = []
         
         if not isinstance(chart_metric, str):
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field="Chart metric", reason=f"must be a string, got {type(chart_metric).__name__}"))
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Chart metric", reason=f"must be a string, got {type(chart_metric).__name__}"))
             return errors
         
         # Special case for no metrics selected
         if chart_metric == "No metrics selected":
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field="Chart metric", reason="at least one metric must be selected"))
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Chart metric", reason="at least one metric must be selected"))
             return errors
         
         # Check if metric exists in config
-        metric_labels = [metric_data['label'] for metric_data in config.METRICS.values()]
+        metric_labels = [metric_data['label'] for metric_data in self.config.METRICS.values()]
         if chart_metric not in metric_labels:
-            errors.append(config.ERROR_MESSAGES['not_found'].format(
-                resource="Chart metric", name=chart_metric))
+            errors.append(self.config.ERROR_MESSAGES['not_found'].format(resource="Chart metric", name=chart_metric))
         
         return errors
     
-    @staticmethod
-    def validate_complete_state(state_manager: Any) -> List[str]:
+    def validate_complete_state(self, state_manager: Any) -> List[str]:
         """Validate complete application state.
         
         Consolidates all state validation into a single method.
@@ -195,35 +193,34 @@ class ValidationUtils:
             # Validate city
             if hasattr(state_manager, 'get_current_city'):
                 city = state_manager.get_current_city()
-                all_errors.extend(ValidationUtils.validate_city_name(city))
+                all_errors.extend(self.validate_city_name(city))
             
             # Validate unit system
             if hasattr(state_manager, 'get_current_unit_system'):
                 unit_system = state_manager.get_current_unit_system()
-                all_errors.extend(ValidationUtils.validate_unit_system(unit_system))
+                all_errors.extend(self.validate_unit_system(unit_system))
             
             # Validate metric visibility
-            all_errors.extend(ValidationUtils.validate_metric_visibility(state_manager))
+            all_errors.extend(self.validate_metric_visibility(state_manager))
             
             # Validate date range
             if hasattr(state_manager, 'get_current_range'):
                 date_range = state_manager.get_current_range()
-                all_errors.extend(ValidationUtils.validate_date_range(date_range))
+                all_errors.extend(self.validate_date_range(date_range))
             
             # Validate chart metric
             if hasattr(state_manager, 'get_current_chart_metric'):
                 chart_metric = state_manager.get_current_chart_metric()
-                all_errors.extend(ValidationUtils.validate_chart_metric(chart_metric))
+                all_errors.extend(self.validate_chart_metric(chart_metric))
             
         except Exception as e:
-            all_errors.append(config.ERROR_MESSAGES['state_error'].format(
+            all_errors.append(self.config.ERROR_MESSAGES['state_error'].format(
                 reason=f"unexpected error during state validation: {e}"))
-            Logger.error(f"Error during complete state validation: {e}")
+            self.logger.error(f"Error during complete state validation: {e}")
         
         return all_errors
     
-    @staticmethod
-    def validate_input_types(city_name: Any, unit_system: Any = None) -> List[str]:
+    def validate_input_types(self, city_name: Any, unit_system: Any = None) -> List[str]:
         """Validate input parameter types for controller operations.
         
         Consolidates input validation from controller._validate_inputs_and_state.
@@ -238,19 +235,15 @@ class ValidationUtils:
         errors = []
         
         # Validate city name
-        errors.extend(ValidationUtils.validate_city_name(city_name))
+        errors.extend(self.validate_city_name(city_name))
         
         # Validate unit system if provided
         if unit_system is not None:
-            errors.extend(ValidationUtils.validate_unit_system(unit_system))
+            errors.extend(self.validate_unit_system(unit_system))
         
         return errors
     
-    @staticmethod
-    def is_valid_numeric_range(value: Union[int, float], 
-                              min_val: Optional[Union[int, float]] = None,
-                              max_val: Optional[Union[int, float]] = None,
-                              field_name: str = "Value") -> List[str]:
+    def is_valid_numeric_range(self, value: Union[int, float], min_val: Optional[Union[int, float]] = None, max_val: Optional[Union[int, float]] = None, field_name: str = "Value") -> List[str]:
         """Validate numeric value is within specified range.
         
         Args:
@@ -266,23 +259,19 @@ class ValidationUtils:
         
         # Type validation
         if not isinstance(value, (int, float)):
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field=field_name, reason=f"must be a number, got {type(value).__name__}"))
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(field=field_name, reason=f"must be a number, got {type(value).__name__}"))
             return errors
         
         # Range validation
         if min_val is not None and value < min_val:
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field=field_name, reason=f"must be >= {min_val}, got {value}"))
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(field=field_name, reason=f"must be >= {min_val}, got {value}"))
         
         if max_val is not None and value > max_val:
-            errors.append(config.ERROR_MESSAGES['validation'].format(
-                field=field_name, reason=f"must be <= {max_val}, got {value}"))
+            errors.append(self.config.ERROR_MESSAGES['validation'].format(field=field_name, reason=f"must be <= {max_val}, got {value}"))
         
         return errors
     
-    @staticmethod
-    def format_validation_errors(errors: List[str], prefix: str = "Validation failed") -> str:
+    def format_validation_errors(self, errors: List[str], prefix: str = "Validation failed") -> str:
         """Format list of validation errors into a single message.
         
         Args:

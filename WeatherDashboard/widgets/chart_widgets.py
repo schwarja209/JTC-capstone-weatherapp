@@ -17,10 +17,11 @@ from tkinter import ttk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
-from WeatherDashboard import config
-from WeatherDashboard.utils.utils import format_fallback_status
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard import config
+from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.unit_converter import UnitConverter
+
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
@@ -43,6 +44,7 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         chart_error: Error message if chart creation failed
         fallback_label: Fallback label widget displayed when matplotlib fails
     """
+
     def __init__(self, parent_frame: ttk.Frame, state: Any) -> None:
         """Initialize the chart widgets with error handling.
         
@@ -55,6 +57,16 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             parent_frame: Parent TTK frame to contain the chart display
             state: Application state manager for chart component registration
         """
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.config = config
+        self.utils = Utils()
+        self.unit_converter = UnitConverter()
+
+        # Injected dependencies for testable components
+        self.parent_frame = parent_frame
+        self.state = state
+
         # Chart components
         self.chart_canvas: Optional[FigureCanvasTkAgg] = None
         self.chart_fig: Optional[Figure] = None
@@ -67,7 +79,7 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Create widgets with standardized error handling
         if not self.safe_create_widgets():
-            Logger.warn("Chart widgets created with errors - fallback display active")
+            self.logger.warn("Chart widgets created with errors - fallback display active")
      
     def _create_widgets(self) -> None:
         """Create matplotlib chart display with comprehensive error handling.
@@ -82,14 +94,14 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             self.chart_error = None  # Clear any previous errors
             
         except Exception as e:
-            Logger.error(config.ERROR_MESSAGES['config_error'].format(section="chart initialization", reason=str(e)))
+            self.logger.error(self.config.ERROR_MESSAGES['config_error'].format(section="chart initialization", reason=str(e)))
             self._create_fallback_display()
             # Store error state for controller to check later
             self.chart_error = str(e)
     
     def _setup_matplotlib_components(self) -> None:
         """Set up matplotlib Figure, Axes, and Canvas components."""
-        self.chart_fig = Figure(figsize=(config.CHART['chart_figure_width'], config.CHART['chart_figure_height']), dpi=config.CHART['chart_dpi'])
+        self.chart_fig = Figure(figsize=(self.config.CHART['chart_figure_width'], self.config.CHART['chart_figure_height']), dpi=self.config.CHART['chart_dpi'])
         self.chart_ax = self.chart_fig.add_subplot(111)
         self.chart_canvas = FigureCanvasTkAgg(self.chart_fig, master=self.parent)
     
@@ -123,11 +135,11 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     
     def _format_chart_labels(self, metric_key: str, city: str, unit_system: str, fallback: bool) -> Dict[str, str]:
         """Formats chart labels based on metric and settings."""
-        label = config.METRICS.get(metric_key, {}).get('label', metric_key.title())
-        unit = UnitConverter.get_unit_label(metric_key, unit_system)
+        label = self.config.METRICS.get(metric_key, {}).get('label', metric_key.title())
+        unit = self.unit_converter.get_unit_label(metric_key, unit_system)
         
         return {
-            'title': f"{label} {format_fallback_status(fallback, 'display')} in {city}",
+            'title': f"{label} {self.utils.format_fallback_status(fallback, 'display')} in {city}",
             'xlabel': "Date", 
             'ylabel': f"{label} ({unit})"
         }
@@ -144,7 +156,7 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             fallback: Whether data comes from fallback/simulated source
         """
         if not (hasattr(self, 'chart_canvas') and hasattr(self, 'chart_ax') and self.chart_ax is not None):
-            Logger.warn(config.ERROR_MESSAGES['config_error'].format(section="chart display", reason="matplotlib setup failed"))
+            self.logger.warn(self.config.ERROR_MESSAGES['config_error'].format(section="chart display", reason="matplotlib setup failed"))
             return
 
         # Clear and plot new data
@@ -158,7 +170,7 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         self.chart_ax.set_ylabel(labels['ylabel'])
 
         # Format and draw
-        self.chart_fig.autofmt_xdate(rotation=config.CHART['chart_rotation_degrees'])
+        self.chart_fig.autofmt_xdate(rotation=self.config.CHART['chart_rotation_degrees'])
         self.chart_fig.tight_layout()
         self.chart_canvas.draw()
 
@@ -185,4 +197,4 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                 self.fallback_label.configure(text="Chart unavailable\nPlease check settings")
         
         except Exception as recovery_error:
-            Logger.error(f"Failed to clear chart after error: {recovery_error}")
+            self.logger.error(f"Failed to clear chart after error: {recovery_error}")

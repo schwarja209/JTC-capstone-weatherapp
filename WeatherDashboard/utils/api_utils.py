@@ -18,8 +18,13 @@ from WeatherDashboard.utils.logger import Logger
 class ApiUtils:
     """Utilities for safe API response parsing and data extraction."""
     
-    @staticmethod
-    def safe_get_nested(data: Dict[str, Any], *keys: str, default: Any = None) -> Any:
+    def __init__(self) -> None:
+        """Initialize API utils with hybrid dependency injection."""
+        # Direct imports for stable utilities
+        self.logger = Logger()
+        self.datetime = datetime
+
+    def safe_get_nested(self, data: Dict[str, Any], *keys: str, default: Any = None) -> Any:
         """Safely extract nested dictionary values.
         
         Replaces repeated data.get("section", {}).get("field") patterns.
@@ -46,8 +51,7 @@ class ApiUtils:
         except (TypeError, KeyError, AttributeError):
             return default
     
-    @staticmethod
-    def safe_get_list_item(data: Dict[str, Any], list_key: str, index: int = 0, item_key: Optional[str] = None, default: Any = None) -> Any:
+    def safe_get_list_item(self, data: Dict[str, Any], list_key: str, index: int = 0, item_key: Optional[str] = None, default: Any = None) -> Any:
         """Safely extract item from list in dictionary.
         
         Replaces patterns like data.get("weather", [{}])[0].get("description")
@@ -87,8 +91,7 @@ class ApiUtils:
         except (TypeError, IndexError, KeyError):
             return default
     
-    @staticmethod
-    def extract_weather_main_data(weather_data: Dict[str, Any]) -> Dict[str, Any]:
+    def extract_weather_main_data(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
         """Extract main weather data section with safe defaults.
         
         Consolidates repeated main section extractions.
@@ -111,12 +114,12 @@ class ApiUtils:
                 }
 
             return {
-                'temperature': ApiUtils.safe_get_nested(weather_data, "main", "temp"),
-                'humidity': ApiUtils.safe_get_nested(weather_data, "main", "humidity"),
-                'pressure': ApiUtils.safe_get_nested(weather_data, "main", "pressure"),
-                'feels_like': ApiUtils.safe_get_nested(weather_data, "main", "feels_like"),
-                'temp_min': ApiUtils.safe_get_nested(weather_data, "main", "temp_min"),
-                'temp_max': ApiUtils.safe_get_nested(weather_data, "main", "temp_max"),
+                'temperature': self.safe_get_nested(weather_data, "main", "temp"),
+                'humidity': self.safe_get_nested(weather_data, "main", "humidity"),
+                'pressure': self.safe_get_nested(weather_data, "main", "pressure"),
+                'feels_like': self.safe_get_nested(weather_data, "main", "feels_like"),
+                'temp_min': self.safe_get_nested(weather_data, "main", "temp_min"),
+                'temp_max': self.safe_get_nested(weather_data, "main", "temp_max"),
             }
         except Exception:
             return {
@@ -128,8 +131,7 @@ class ApiUtils:
                 'temp_max': None,
             }
     
-    @staticmethod
-    def extract_weather_wind_data(weather_data: Dict[str, Any]) -> Dict[str, Any]:
+    def extract_weather_wind_data(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
         """Extract wind data section with safe defaults.
         
         Args:
@@ -147,9 +149,9 @@ class ApiUtils:
                 }
             
             return {
-                'wind_speed': ApiUtils.safe_get_nested(weather_data, "wind", "speed"),
-                'wind_direction': ApiUtils.safe_get_nested(weather_data, "wind", "deg"),
-                'wind_gust': ApiUtils.safe_get_nested(weather_data, "wind", "gust"),
+                'wind_speed': self.safe_get_nested(weather_data, "wind", "speed"),
+                'wind_direction': self.safe_get_nested(weather_data, "wind", "deg"),
+                'wind_gust': self.safe_get_nested(weather_data, "wind", "gust"),
             }
         except Exception:
             return {
@@ -158,8 +160,7 @@ class ApiUtils:
                 'wind_gust': None,
             }
     
-    @staticmethod
-    def extract_weather_conditions_data(weather_data: Dict[str, Any]) -> Dict[str, Any]:
+    def extract_weather_conditions_data(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
         """Extract weather conditions with safe defaults.
         
         Args:
@@ -178,7 +179,7 @@ class ApiUtils:
                 }
             
             # Get the description safely
-            description = ApiUtils.safe_get_list_item(weather_data, "weather", 0, "description", "--")
+            description = self.safe_get_list_item(weather_data, "weather", 0, "description", "--")
             
             # Handle the case where description might not be a string
             if isinstance(description, str):
@@ -188,9 +189,9 @@ class ApiUtils:
             
             return {
                 'conditions': conditions,
-                'weather_main': ApiUtils.safe_get_list_item(weather_data, "weather", 0, "main"),
-                'weather_id': ApiUtils.safe_get_list_item(weather_data, "weather", 0, "id"),
-                'weather_icon': ApiUtils.safe_get_list_item(weather_data, "weather", 0, "icon"),
+                'weather_main': self.safe_get_list_item(weather_data, "weather", 0, "main"),
+                'weather_id': self.safe_get_list_item(weather_data, "weather", 0, "id"),
+                'weather_icon': self.safe_get_list_item(weather_data, "weather", 0, "icon"),
             }
         except Exception:
             return {
@@ -200,8 +201,7 @@ class ApiUtils:
                 'weather_icon': None,
             }
     
-    @staticmethod
-    def extract_precipitation_data(weather_data: Dict[str, Any]) -> Dict[str, Any]:
+    def extract_precipitation_data(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
         """Extract precipitation data with smart fallback logic.
         
         Args:
@@ -223,8 +223,8 @@ class ApiUtils:
             
             def get_precipitation_1h(precip_type: str) -> Optional[float]:
                 """Helper to get 1h precipitation with 3h fallback."""
-                primary = ApiUtils.safe_get_nested(weather_data, precip_type, '1h')
-                fallback = ApiUtils.safe_get_nested(weather_data, precip_type, '3h')
+                primary = self.safe_get_nested(weather_data, precip_type, '1h')
+                fallback = self.safe_get_nested(weather_data, precip_type, '3h')
                 
                 if primary is not None:
                     return primary
@@ -239,10 +239,10 @@ class ApiUtils:
                 'snow': get_precipitation_1h('snow'),
                 
                 # Detailed precipitation
-                'rain_1h': ApiUtils.safe_get_nested(weather_data, "rain", "1h"),
-                'rain_3h': ApiUtils.safe_get_nested(weather_data, "rain", "3h"),
-                'snow_1h': ApiUtils.safe_get_nested(weather_data, "snow", "1h"),
-                'snow_3h': ApiUtils.safe_get_nested(weather_data, "snow", "3h"),
+                'rain_1h': self.safe_get_nested(weather_data, "rain", "1h"),
+                'rain_3h': self.safe_get_nested(weather_data, "rain", "3h"),
+                'snow_1h': self.safe_get_nested(weather_data, "snow", "1h"),
+                'snow_3h': self.safe_get_nested(weather_data, "snow", "3h"),
             }
         except Exception:
             return {
@@ -254,8 +254,7 @@ class ApiUtils:
                 'snow_3h': None,
             }
             
-    @staticmethod
-    def extract_atmospheric_data(weather_data: Dict[str, Any]) -> Dict[str, Any]:
+    def extract_atmospheric_data(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
         """Extract atmospheric conditions data.
         
         Args:
@@ -272,8 +271,8 @@ class ApiUtils:
                 }
             
             return {
-                'visibility': ApiUtils.safe_get_nested(weather_data, "visibility"),
-                'cloud_cover': ApiUtils.safe_get_nested(weather_data, "clouds", "all"),
+                'visibility': self.safe_get_nested(weather_data, "visibility"),
+                'cloud_cover': self.safe_get_nested(weather_data, "clouds", "all"),
             }
         except Exception:
             return {
@@ -281,8 +280,7 @@ class ApiUtils:
                 'cloud_cover': None,
             }
     
-    @staticmethod
-    def extract_coordinates(weather_data: Dict[str, Any]) -> Dict[str, Any]:
+    def extract_coordinates(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
         """Extract coordinate data for additional API calls.
         
         Args:
@@ -299,8 +297,8 @@ class ApiUtils:
                 }
             
             return {
-                'latitude': ApiUtils.safe_get_nested(weather_data, "coord", "lat"),
-                'longitude': ApiUtils.safe_get_nested(weather_data, "coord", "lon"),
+                'latitude': self.safe_get_nested(weather_data, "coord", "lat"),
+                'longitude': self.safe_get_nested(weather_data, "coord", "lon"),
             }
         except Exception:
             return {
@@ -308,8 +306,7 @@ class ApiUtils:
                 'longitude': None,
             }
     
-    @staticmethod
-    def extract_complete_weather_data(weather_data: Dict[str, Any], uv_data: Optional[Dict[str, Any]] = None, air_quality_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    def extract_complete_weather_data(self, weather_data: Dict[str, Any], uv_data: Optional[Dict[str, Any]] = None, air_quality_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Extract complete weather data using all safe extraction methods.
         
         Replaces the large manual parsing in WeatherDataParser.parse_weather_data.
@@ -324,16 +321,16 @@ class ApiUtils:
         """
         try:
             parsed_data = {
-                'date': datetime.now(),
+                'date': self.datetime.now(),
             }
             
             # Extract all sections using safe methods
-            parsed_data.update(ApiUtils.extract_weather_main_data(weather_data))
-            parsed_data.update(ApiUtils.extract_weather_wind_data(weather_data))
-            parsed_data.update(ApiUtils.extract_weather_conditions_data(weather_data))
-            parsed_data.update(ApiUtils.extract_precipitation_data(weather_data))
-            parsed_data.update(ApiUtils.extract_atmospheric_data(weather_data))
-            parsed_data.update(ApiUtils.extract_coordinates(weather_data))
+            parsed_data.update(self.extract_weather_main_data(weather_data))
+            parsed_data.update(self.extract_weather_wind_data(weather_data))
+            parsed_data.update(self.extract_weather_conditions_data(weather_data))
+            parsed_data.update(self.extract_precipitation_data(weather_data))
+            parsed_data.update(self.extract_atmospheric_data(weather_data))
+            parsed_data.update(self.extract_coordinates(weather_data))
             
             # Add UV index data if provided
             if uv_data and isinstance(uv_data, dict):
@@ -341,16 +338,16 @@ class ApiUtils:
             
             # Add air quality data if provided
             if air_quality_data and isinstance(air_quality_data, dict):
-                aqi_data = ApiUtils.safe_get_list_item(air_quality_data, 'list', 0, default={})
-                parsed_data['air_quality_index'] = ApiUtils.safe_get_nested(aqi_data, 'main', 'aqi')
-                parsed_data['air_quality_description'] = ApiUtils.get_aqi_description(parsed_data.get('air_quality_index'))
+                aqi_data = self.safe_get_list_item(air_quality_data, 'list', 0, default={})
+                parsed_data['air_quality_index'] = self.safe_get_nested(aqi_data, 'main', 'aqi')
+                parsed_data['air_quality_description'] = self.get_aqi_description(parsed_data.get('air_quality_index'))
             
             return parsed_data
         
         except Exception:
             # Return minimal valid structure even if everything fails
             return {
-                'date': datetime.now(),
+                'date': self.datetime.now(),
                 'temperature': None,
                 'humidity': None,
                 'pressure': None,
@@ -376,8 +373,7 @@ class ApiUtils:
                 'longitude': None,
             }
     
-    @staticmethod
-    def get_aqi_description(aqi: Optional[int]) -> str:
+    def get_aqi_description(self, aqi: Optional[int]) -> str:
         """Convert AQI number to description.
         
         Args:
@@ -398,8 +394,7 @@ class ApiUtils:
         }
         return aqi_descriptions.get(aqi, "Unknown")
     
-    @staticmethod
-    def validate_api_response_structure(data: Dict[str, Any], required_sections: List[str]) -> bool:
+    def validate_api_response_structure(self, data: Dict[str, Any], required_sections: List[str]) -> bool:
         """Validate that API response has required structure.
         
         Args:
@@ -411,17 +406,17 @@ class ApiUtils:
         """
         try:
             if not isinstance(data, dict):
-                Logger.warn(f"API response is not a dictionary: {type(data)}")
+                self.logger.warn(f"API response is not a dictionary: {type(data)}")
                 return False
             
             missing_sections = [section for section in required_sections if section not in data]
             
             if missing_sections:
-                Logger.warn(f"API response missing required sections: {missing_sections}")
+                self.logger.warn(f"API response missing required sections: {missing_sections}")
                 return False
             
             return True
             
         except Exception as e:
-            Logger.error(f"Error validating API response structure: {e}")
+            self.logger.error(f"Error validating API response structure: {e}")
             return False
