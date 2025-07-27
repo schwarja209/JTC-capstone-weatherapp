@@ -8557,3 +8557,287 @@
 {"timestamp": "2025-07-27 06:49:37", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
 {"timestamp": "2025-07-27 06:49:38", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
 {"timestamp": "2025-07-27 06:49:38", "level": "INFO", "message": "show_error called with: Testing mode"}
+{"timestamp": "2025-07-27 08:29:03", "level": "ERROR", "message": "Unexpected error: non-default argument 'timestamp' follows default argument 'air_quality_description'"}
+{"timestamp": "2025-07-27 08:32:41", "level": "ERROR", "message": "Unexpected error: non-default argument 'timestamp' follows default argument 'air_quality_description'"}
+{"timestamp": "2025-07-27 08:35:14", "level": "ERROR", "message": "Unexpected error: non-default argument 'timestamp' follows default argument 'error_message'"}
+{"timestamp": "2025-07-27 08:37:09", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 08:37:09", "test": true}
+{"timestamp": "2025-07-27 08:37:09", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 08:37:09", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 08:37:10", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 08:37:10", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 08:37:10", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 08:37:10", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 08:37:10", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 08:37:10", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 08:37:10", "level": "ERROR", "message": "Unexpected error in fetch_current for New York: 'CompleteWeatherData' object has no attribute 'update'"}
+{"timestamp": "2025-07-27 08:37:10", "level": "ERROR", "message": "API failure for New York - Unexpected error: 'CompleteWeatherData' object has no attribute 'update'. Switching to simulated data."}
+{"timestamp": "2025-07-27 08:37:10", "level": "INFO", "message": "show_error called with: cannot unpack non-iterable CityDataResult object"}
+{"timestamp": "2025-07-27 08:37:11", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 08:49:46", "test": true}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 08:49:46", "level": "INFO", "message": "show_error called with: '_DataService' object has no attribute 'get_city_data_tuple'"}
+{"timestamp": "2025-07-27 08:49:46", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 08:53:32", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 08:53:32", "test": true}
+{"timestamp": "2025-07-27 08:53:32", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 08:53:33", "level": "INFO", "message": "show_error called with: '_DataService' object has no attribute 'get_city_data_tuple'"}
+{"timestamp": "2025-07-27 09:31:13", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 09:31:13", "test": true}
+{"timestamp": "2025-07-27 09:31:13", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 09:31:13", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 09:31:13", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 09:31:14", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 09:31:14", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 09:31:14", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 09:31:14", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 09:31:14", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 09:31:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 09:31:18", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 09:31:18", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 09:31:27", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 09:31:27", "level": "ERROR", "message": "API failure for Asfasf - CityNotFoundError: City 'Asfasf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 09:31:27", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-27 09:31:28", "level": "INFO", "message": "Weather data written for asfasf - Simulated"}
+{"timestamp": "2025-07-27 09:31:28", "level": "INFO", "message": "show_error called with: City 'Asfasf' not found"}
+{"timestamp": "2025-07-27 10:28:19", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 10:28:19", "test": true}
+{"timestamp": "2025-07-27 10:28:19", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 10:28:20", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 10:28:20", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 10:28:20", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 10:28:20", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 10:28:20", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 10:28:20", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 10:28:20", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 10:28:20", "level": "ERROR", "message": "Unexpected error in fetch_current for New York: 'CompleteWeatherData' object has no attribute 'date'"}
+{"timestamp": "2025-07-27 10:28:20", "level": "ERROR", "message": "API failure for New York - Unexpected error: 'CompleteWeatherData' object has no attribute 'date'. Switching to simulated data."}
+{"timestamp": "2025-07-27 10:28:20", "level": "WARN", "message": "Using fallback for New York: 'CompleteWeatherData' object has no attribute 'date'"}
+{"timestamp": "2025-07-27 10:28:22", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-27 10:28:22", "level": "INFO", "message": "show_error called with: 'CompleteWeatherData' object has no attribute 'date'"}
+{"timestamp": "2025-07-27 10:32:14", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 10:32:14", "test": true}
+{"timestamp": "2025-07-27 10:32:14", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 10:32:14", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 10:32:14", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 10:32:15", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 10:32:15", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 10:32:15", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 10:32:15", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 10:32:15", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 10:32:15", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 10:32:18", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 10:32:19", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 11:18:18", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:18:18", "test": true}
+{"timestamp": "2025-07-27 11:18:18", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:18:19", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:18:19", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:18:19", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:18:19", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:18:19", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:18:19", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:18:19", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:18:19", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:18:21", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:22:07", "test": true}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:22:07", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:22:07", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:22:09", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:28:10", "test": true}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:28:10", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:28:10", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:28:12", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:34:10", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:34:10", "test": true}
+{"timestamp": "2025-07-27 11:34:10", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:34:10", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:34:10", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:34:11", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:34:11", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:34:11", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:34:11", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:34:11", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:34:11", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:34:13", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:36:31", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:36:31", "test": true}
+{"timestamp": "2025-07-27 11:36:31", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:36:31", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:36:31", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:36:31", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:36:32", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:36:32", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:36:32", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:36:32", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:36:32", "level": "INFO", "message": "show_error called with: Async operation failed: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 11:36:32", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:37:53", "test": true}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:37:53", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:37:53", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:37:55", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:41:49", "test": true}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:41:49", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:41:49", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:41:51", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 11:57:08", "test": true}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 11:57:08", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 11:57:08", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 11:57:10", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 12:02:05", "test": true}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 12:02:05", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 12:02:05", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 12:02:08", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 12:17:10", "test": true}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 12:17:10", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 12:17:10", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 12:17:12", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 12:44:06", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 12:44:06", "test": true}
+{"timestamp": "2025-07-27 12:44:06", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 12:44:07", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 12:44:07", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 12:44:07", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 12:44:07", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 12:44:07", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 12:44:07", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 12:44:07", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 12:44:07", "level": "ERROR", "message": "Input validation error: Validation error: city_name cannot be empty"}
+{"timestamp": "2025-07-27 12:44:09", "level": "INFO", "message": "show_error called with: Validation error: city_name cannot be empty"}
+{"timestamp": "2025-07-27 12:44:09", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 12:48:39", "test": true}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 12:48:39", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 12:48:39", "level": "ERROR", "message": "Input validation error: Validation error: city_name cannot be empty"}
+{"timestamp": "2025-07-27 12:48:41", "level": "INFO", "message": "show_error called with: Validation error: city_name cannot be empty"}
+{"timestamp": "2025-07-27 12:48:41", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 12:50:45", "test": true}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 12:50:45", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 12:50:45", "level": "ERROR", "message": "Input validation error: Validation error: city_name cannot be empty"}
+{"timestamp": "2025-07-27 12:50:47", "level": "INFO", "message": "show_error called with: Validation error: city_name cannot be empty"}
+{"timestamp": "2025-07-27 12:50:47", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 12:52:09", "test": true}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 12:52:09", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 12:52:09", "level": "ERROR", "message": "Input validation error: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 12:52:11", "level": "INFO", "message": "show_error called with: Validation error: 'ValidationResult' object is not iterable"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 12:56:03", "test": true}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 12:56:03", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 12:56:04", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 12:56:15", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 12:56:15", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 12:56:18", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 12:56:19", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 12:56:19", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 12:56:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 12:56:27", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 12:56:27", "level": "ERROR", "message": "API failure for Sdgsdgs - CityNotFoundError: City 'Sdgsdgs' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 12:56:27", "level": "WARN", "message": "Weather alert: High Temperature Alert - Temperature is very high: 107.6°F (threshold: 95.0°F)"}
+{"timestamp": "2025-07-27 12:56:27", "level": "WARN", "message": "Weather alert: Dangerous Heat Index - Heat index is dangerously high: 146.2 (threshold: 104.9)"}
+{"timestamp": "2025-07-27 12:56:27", "level": "WARN", "message": "Using fallback for Sdgsdgs: City 'Sdgsdgs' not found"}
+{"timestamp": "2025-07-27 12:56:29", "level": "INFO", "message": "Weather data written for sdgsdgs - Simulated"}
+{"timestamp": "2025-07-27 12:56:29", "level": "INFO", "message": "show_error called with: City 'Sdgsdgs' not found"}
+{"timestamp": "2025-07-27 12:56:34", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 12:56:35", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 12:56:35", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}

@@ -200,6 +200,7 @@ class WeatherDashboardMain:
         # Always update dropdown options unless explicitly clearing
         if not clear and self.widgets.control_widgets:
             self.widgets.control_widgets.update_chart_dropdown_options()
+            
 # ================================
 # 3. EVENT HANDLERS
 # ================================

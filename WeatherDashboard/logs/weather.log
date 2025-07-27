@@ -8557,3 +8557,287 @@
 [WARN] 2025-07-27 06:49:37 Using fallback for New York: Testing mode
 [INFO] 2025-07-27 06:49:38 Weather data written for new_york - Simulated
 [INFO] 2025-07-27 06:49:38 show_error called with: Testing mode
+[ERROR] 2025-07-27 08:29:03 Unexpected error: non-default argument 'timestamp' follows default argument 'air_quality_description'
+[ERROR] 2025-07-27 08:32:41 Unexpected error: non-default argument 'timestamp' follows default argument 'air_quality_description'
+[ERROR] 2025-07-27 08:35:14 Unexpected error: non-default argument 'timestamp' follows default argument 'error_message'
+[INFO] 2025-07-27 08:37:09 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 08:37:09
+[INFO] 2025-07-27 08:37:09 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 08:37:09 title widget created successfully
+[INFO] 2025-07-27 08:37:10 control widgets created successfully
+[INFO] 2025-07-27 08:37:10 metric display widgets created successfully
+[INFO] 2025-07-27 08:37:10 chart widgets created successfully
+[INFO] 2025-07-27 08:37:10 tabbed display widgets created successfully
+[INFO] 2025-07-27 08:37:10 status bar widgets created successfully
+[INFO] 2025-07-27 08:37:10 dashboard widgets created successfully
+[ERROR] 2025-07-27 08:37:10 Unexpected error in fetch_current for New York: 'CompleteWeatherData' object has no attribute 'update'
+[ERROR] 2025-07-27 08:37:10 API failure for New York - Unexpected error: 'CompleteWeatherData' object has no attribute 'update'. Switching to simulated data.
+[INFO] 2025-07-27 08:37:10 show_error called with: cannot unpack non-iterable CityDataResult object
+[ERROR] 2025-07-27 08:37:11 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 08:49:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 08:49:46
+[INFO] 2025-07-27 08:49:46 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 08:49:46 title widget created successfully
+[INFO] 2025-07-27 08:49:46 control widgets created successfully
+[INFO] 2025-07-27 08:49:46 metric display widgets created successfully
+[INFO] 2025-07-27 08:49:46 chart widgets created successfully
+[INFO] 2025-07-27 08:49:46 tabbed display widgets created successfully
+[INFO] 2025-07-27 08:49:46 status bar widgets created successfully
+[INFO] 2025-07-27 08:49:46 dashboard widgets created successfully
+[INFO] 2025-07-27 08:49:46 show_error called with: '_DataService' object has no attribute 'get_city_data_tuple'
+[ERROR] 2025-07-27 08:49:46 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 08:53:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 08:53:32
+[INFO] 2025-07-27 08:53:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 08:53:33 title widget created successfully
+[INFO] 2025-07-27 08:53:33 control widgets created successfully
+[INFO] 2025-07-27 08:53:33 metric display widgets created successfully
+[INFO] 2025-07-27 08:53:33 chart widgets created successfully
+[INFO] 2025-07-27 08:53:33 tabbed display widgets created successfully
+[INFO] 2025-07-27 08:53:33 status bar widgets created successfully
+[INFO] 2025-07-27 08:53:33 dashboard widgets created successfully
+[INFO] 2025-07-27 08:53:33 show_error called with: '_DataService' object has no attribute 'get_city_data_tuple'
+[INFO] 2025-07-27 09:31:13 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 09:31:13
+[INFO] 2025-07-27 09:31:13 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 09:31:13 title widget created successfully
+[INFO] 2025-07-27 09:31:13 control widgets created successfully
+[INFO] 2025-07-27 09:31:14 metric display widgets created successfully
+[INFO] 2025-07-27 09:31:14 chart widgets created successfully
+[INFO] 2025-07-27 09:31:14 tabbed display widgets created successfully
+[INFO] 2025-07-27 09:31:14 status bar widgets created successfully
+[INFO] 2025-07-27 09:31:14 dashboard widgets created successfully
+[INFO] 2025-07-27 09:31:14 Weather data written for new_york - Live
+[WARN] 2025-07-27 09:31:18 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 09:31:18 Weather data written for new_york - Live
+[WARN] 2025-07-27 09:31:27 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 09:31:27 API failure for Asfasf - CityNotFoundError: City 'Asfasf' not found. Switching to simulated data.
+[WARN] 2025-07-27 09:31:27 Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-27 09:31:28 Weather data written for asfasf - Simulated
+[INFO] 2025-07-27 09:31:28 show_error called with: City 'Asfasf' not found
+[INFO] 2025-07-27 10:28:19 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 10:28:19
+[INFO] 2025-07-27 10:28:19 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 10:28:20 title widget created successfully
+[INFO] 2025-07-27 10:28:20 control widgets created successfully
+[INFO] 2025-07-27 10:28:20 metric display widgets created successfully
+[INFO] 2025-07-27 10:28:20 chart widgets created successfully
+[INFO] 2025-07-27 10:28:20 tabbed display widgets created successfully
+[INFO] 2025-07-27 10:28:20 status bar widgets created successfully
+[INFO] 2025-07-27 10:28:20 dashboard widgets created successfully
+[ERROR] 2025-07-27 10:28:20 Unexpected error in fetch_current for New York: 'CompleteWeatherData' object has no attribute 'date'
+[ERROR] 2025-07-27 10:28:20 API failure for New York - Unexpected error: 'CompleteWeatherData' object has no attribute 'date'. Switching to simulated data.
+[WARN] 2025-07-27 10:28:20 Using fallback for New York: 'CompleteWeatherData' object has no attribute 'date'
+[INFO] 2025-07-27 10:28:22 Weather data written for new_york - Simulated
+[INFO] 2025-07-27 10:28:22 show_error called with: 'CompleteWeatherData' object has no attribute 'date'
+[INFO] 2025-07-27 10:32:14 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 10:32:14
+[INFO] 2025-07-27 10:32:14 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 10:32:14 title widget created successfully
+[INFO] 2025-07-27 10:32:14 control widgets created successfully
+[INFO] 2025-07-27 10:32:15 metric display widgets created successfully
+[INFO] 2025-07-27 10:32:15 chart widgets created successfully
+[INFO] 2025-07-27 10:32:15 tabbed display widgets created successfully
+[INFO] 2025-07-27 10:32:15 status bar widgets created successfully
+[INFO] 2025-07-27 10:32:15 dashboard widgets created successfully
+[INFO] 2025-07-27 10:32:15 Weather data written for new_york - Live
+[WARN] 2025-07-27 10:32:18 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 10:32:19 Weather data written for new_york - Live
+[INFO] 2025-07-27 11:18:18 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:18:18
+[INFO] 2025-07-27 11:18:18 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:18:19 title widget created successfully
+[INFO] 2025-07-27 11:18:19 control widgets created successfully
+[INFO] 2025-07-27 11:18:19 metric display widgets created successfully
+[INFO] 2025-07-27 11:18:19 chart widgets created successfully
+[INFO] 2025-07-27 11:18:19 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:18:19 status bar widgets created successfully
+[INFO] 2025-07-27 11:18:19 dashboard widgets created successfully
+[ERROR] 2025-07-27 11:18:19 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:18:21 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:22:07 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:22:07
+[INFO] 2025-07-27 11:22:07 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:22:07 title widget created successfully
+[INFO] 2025-07-27 11:22:07 control widgets created successfully
+[INFO] 2025-07-27 11:22:07 metric display widgets created successfully
+[INFO] 2025-07-27 11:22:07 chart widgets created successfully
+[INFO] 2025-07-27 11:22:07 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:22:07 status bar widgets created successfully
+[INFO] 2025-07-27 11:22:07 dashboard widgets created successfully
+[ERROR] 2025-07-27 11:22:07 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:22:09 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:28:10 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:28:10
+[INFO] 2025-07-27 11:28:10 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:28:10 title widget created successfully
+[INFO] 2025-07-27 11:28:10 control widgets created successfully
+[INFO] 2025-07-27 11:28:10 metric display widgets created successfully
+[INFO] 2025-07-27 11:28:10 chart widgets created successfully
+[INFO] 2025-07-27 11:28:10 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:28:10 status bar widgets created successfully
+[INFO] 2025-07-27 11:28:10 dashboard widgets created successfully
+[ERROR] 2025-07-27 11:28:10 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:28:12 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:34:10 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:34:10
+[INFO] 2025-07-27 11:34:10 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:34:10 title widget created successfully
+[INFO] 2025-07-27 11:34:10 control widgets created successfully
+[INFO] 2025-07-27 11:34:11 metric display widgets created successfully
+[INFO] 2025-07-27 11:34:11 chart widgets created successfully
+[INFO] 2025-07-27 11:34:11 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:34:11 status bar widgets created successfully
+[INFO] 2025-07-27 11:34:11 dashboard widgets created successfully
+[ERROR] 2025-07-27 11:34:11 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:34:13 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:36:31 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:36:31
+[INFO] 2025-07-27 11:36:31 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:36:31 title widget created successfully
+[INFO] 2025-07-27 11:36:31 control widgets created successfully
+[INFO] 2025-07-27 11:36:31 metric display widgets created successfully
+[INFO] 2025-07-27 11:36:32 chart widgets created successfully
+[INFO] 2025-07-27 11:36:32 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:36:32 status bar widgets created successfully
+[INFO] 2025-07-27 11:36:32 dashboard widgets created successfully
+[INFO] 2025-07-27 11:36:32 show_error called with: Async operation failed: 'str' object has no attribute '__traceback__'
+[ERROR] 2025-07-27 11:36:32 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 11:37:53 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:37:53
+[INFO] 2025-07-27 11:37:53 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:37:53 title widget created successfully
+[INFO] 2025-07-27 11:37:53 control widgets created successfully
+[INFO] 2025-07-27 11:37:53 metric display widgets created successfully
+[INFO] 2025-07-27 11:37:53 chart widgets created successfully
+[INFO] 2025-07-27 11:37:53 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:37:53 status bar widgets created successfully
+[INFO] 2025-07-27 11:37:53 dashboard widgets created successfully
+[ERROR] 2025-07-27 11:37:53 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:37:55 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:41:49 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:41:49
+[INFO] 2025-07-27 11:41:49 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:41:49 title widget created successfully
+[INFO] 2025-07-27 11:41:49 control widgets created successfully
+[INFO] 2025-07-27 11:41:49 metric display widgets created successfully
+[INFO] 2025-07-27 11:41:49 chart widgets created successfully
+[INFO] 2025-07-27 11:41:49 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:41:49 status bar widgets created successfully
+[INFO] 2025-07-27 11:41:49 dashboard widgets created successfully
+[ERROR] 2025-07-27 11:41:49 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:41:51 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:57:08 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 11:57:08
+[INFO] 2025-07-27 11:57:08 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 11:57:08 title widget created successfully
+[INFO] 2025-07-27 11:57:08 control widgets created successfully
+[INFO] 2025-07-27 11:57:08 metric display widgets created successfully
+[INFO] 2025-07-27 11:57:08 chart widgets created successfully
+[INFO] 2025-07-27 11:57:08 tabbed display widgets created successfully
+[INFO] 2025-07-27 11:57:08 status bar widgets created successfully
+[INFO] 2025-07-27 11:57:08 dashboard widgets created successfully
+[ERROR] 2025-07-27 11:57:08 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 11:57:10 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 12:02:05 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 12:02:05
+[INFO] 2025-07-27 12:02:05 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 12:02:05 title widget created successfully
+[INFO] 2025-07-27 12:02:05 control widgets created successfully
+[INFO] 2025-07-27 12:02:05 metric display widgets created successfully
+[INFO] 2025-07-27 12:02:05 chart widgets created successfully
+[INFO] 2025-07-27 12:02:05 tabbed display widgets created successfully
+[INFO] 2025-07-27 12:02:05 status bar widgets created successfully
+[INFO] 2025-07-27 12:02:05 dashboard widgets created successfully
+[ERROR] 2025-07-27 12:02:05 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 12:02:08 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 12:17:10 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 12:17:10
+[INFO] 2025-07-27 12:17:10 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 12:17:10 title widget created successfully
+[INFO] 2025-07-27 12:17:10 control widgets created successfully
+[INFO] 2025-07-27 12:17:10 metric display widgets created successfully
+[INFO] 2025-07-27 12:17:10 chart widgets created successfully
+[INFO] 2025-07-27 12:17:10 tabbed display widgets created successfully
+[INFO] 2025-07-27 12:17:10 status bar widgets created successfully
+[INFO] 2025-07-27 12:17:10 dashboard widgets created successfully
+[ERROR] 2025-07-27 12:17:10 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 12:17:12 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 12:44:06 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 12:44:06
+[INFO] 2025-07-27 12:44:06 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 12:44:07 title widget created successfully
+[INFO] 2025-07-27 12:44:07 control widgets created successfully
+[INFO] 2025-07-27 12:44:07 metric display widgets created successfully
+[INFO] 2025-07-27 12:44:07 chart widgets created successfully
+[INFO] 2025-07-27 12:44:07 tabbed display widgets created successfully
+[INFO] 2025-07-27 12:44:07 status bar widgets created successfully
+[INFO] 2025-07-27 12:44:07 dashboard widgets created successfully
+[ERROR] 2025-07-27 12:44:07 Input validation error: Validation error: city_name cannot be empty
+[INFO] 2025-07-27 12:44:09 show_error called with: Validation error: city_name cannot be empty
+[ERROR] 2025-07-27 12:44:09 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 12:48:39 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 12:48:39
+[INFO] 2025-07-27 12:48:39 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 12:48:39 title widget created successfully
+[INFO] 2025-07-27 12:48:39 control widgets created successfully
+[INFO] 2025-07-27 12:48:39 metric display widgets created successfully
+[INFO] 2025-07-27 12:48:39 chart widgets created successfully
+[INFO] 2025-07-27 12:48:39 tabbed display widgets created successfully
+[INFO] 2025-07-27 12:48:39 status bar widgets created successfully
+[INFO] 2025-07-27 12:48:39 dashboard widgets created successfully
+[ERROR] 2025-07-27 12:48:39 Input validation error: Validation error: city_name cannot be empty
+[INFO] 2025-07-27 12:48:41 show_error called with: Validation error: city_name cannot be empty
+[ERROR] 2025-07-27 12:48:41 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 12:50:45 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 12:50:45
+[INFO] 2025-07-27 12:50:45 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 12:50:45 title widget created successfully
+[INFO] 2025-07-27 12:50:45 control widgets created successfully
+[INFO] 2025-07-27 12:50:45 metric display widgets created successfully
+[INFO] 2025-07-27 12:50:45 chart widgets created successfully
+[INFO] 2025-07-27 12:50:45 tabbed display widgets created successfully
+[INFO] 2025-07-27 12:50:45 status bar widgets created successfully
+[INFO] 2025-07-27 12:50:45 dashboard widgets created successfully
+[ERROR] 2025-07-27 12:50:45 Input validation error: Validation error: city_name cannot be empty
+[INFO] 2025-07-27 12:50:47 show_error called with: Validation error: city_name cannot be empty
+[ERROR] 2025-07-27 12:50:47 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 12:52:09 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 12:52:09
+[INFO] 2025-07-27 12:52:09 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 12:52:09 title widget created successfully
+[INFO] 2025-07-27 12:52:09 control widgets created successfully
+[INFO] 2025-07-27 12:52:09 metric display widgets created successfully
+[INFO] 2025-07-27 12:52:09 chart widgets created successfully
+[INFO] 2025-07-27 12:52:09 tabbed display widgets created successfully
+[INFO] 2025-07-27 12:52:09 status bar widgets created successfully
+[INFO] 2025-07-27 12:52:09 dashboard widgets created successfully
+[ERROR] 2025-07-27 12:52:09 Input validation error: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 12:52:11 show_error called with: Validation error: 'ValidationResult' object is not iterable
+[INFO] 2025-07-27 12:56:03 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 12:56:03
+[INFO] 2025-07-27 12:56:03 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 12:56:03 title widget created successfully
+[INFO] 2025-07-27 12:56:03 control widgets created successfully
+[INFO] 2025-07-27 12:56:03 metric display widgets created successfully
+[INFO] 2025-07-27 12:56:03 chart widgets created successfully
+[INFO] 2025-07-27 12:56:03 tabbed display widgets created successfully
+[INFO] 2025-07-27 12:56:03 status bar widgets created successfully
+[INFO] 2025-07-27 12:56:03 dashboard widgets created successfully
+[INFO] 2025-07-27 12:56:04 Weather data written for new_york - Live
+[WARN] 2025-07-27 12:56:15 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 12:56:15 Weather data written for new_york - Live
+[ERROR] 2025-07-27 12:56:18 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 12:56:19 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-27 12:56:19 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 12:56:22 Weather data written for new_york - Live
+[WARN] 2025-07-27 12:56:27 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 12:56:27 API failure for Sdgsdgs - CityNotFoundError: City 'Sdgsdgs' not found. Switching to simulated data.
+[WARN] 2025-07-27 12:56:27 Weather alert: High Temperature Alert - Temperature is very high: 107.6°F (threshold: 95.0°F)
+[WARN] 2025-07-27 12:56:27 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 146.2 (threshold: 104.9)
+[WARN] 2025-07-27 12:56:27 Using fallback for Sdgsdgs: City 'Sdgsdgs' not found
+[INFO] 2025-07-27 12:56:29 Weather data written for sdgsdgs - Simulated
+[INFO] 2025-07-27 12:56:29 show_error called with: City 'Sdgsdgs' not found
+[ERROR] 2025-07-27 12:56:34 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 12:56:35 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 12:56:35 Unexpected error during UI update: 'str' object has no attribute '__traceback__'

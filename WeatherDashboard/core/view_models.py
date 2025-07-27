@@ -9,11 +9,83 @@ Classes:
     WeatherViewModel: Transforms raw weather data into display-ready format
 """
 
+from dataclasses import dataclass
 from typing import Dict, Any
+from datetime import datetime
 
 from WeatherDashboard import config, styles
 from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.unit_converter import UnitConverter
+
+
+@dataclass
+class WeatherDisplayData:
+    """Type-safe container for weather display data.
+    
+    Provides a structured, immutable representation of all weather display
+    information with type safety and clear field documentation.
+    """
+    city_name: str
+    date_str: str
+    status: str
+    individual_metrics: Dict[str, str]
+    enhanced_displays: Dict[str, str]
+    raw_data_available: bool
+    has_conversion_warnings: bool
+    unit_system: str
+
+    # Lightweight transformation metadata
+    timestamp: datetime
+    transformation_status: str = "success"  # "success", "partial", "failed"
+    data_quality: str = "unknown"  # "live", "simulated", "cached", "unknown"
+
+    def __post_init__(self):
+        """Validate dataclass after initialization."""
+        if not self.city_name:
+            raise ValueError("city_name cannot be empty")
+        if self.unit_system not in ['metric', 'imperial']:
+            raise ValueError("unit_system must be 'metric' or 'imperial'")
+        if self.transformation_status not in ['success', 'partial', 'failed']:
+            raise ValueError("transformation_status must be 'success', 'partial', or 'failed'")
+        if self.data_quality not in ['live', 'simulated', 'cached', 'unknown']:
+            raise ValueError("data_quality must be 'live', 'simulated', 'cached', or 'unknown'")
+
+@dataclass
+class MetricValue:
+    """Type-safe container for metric values.
+    
+    Provides structured access to metric data with availability status
+    and type safety for metric operations.
+    """
+    value: str
+    is_available: bool
+    metric_key: str
+    unit_system: str
+
+    # Lightweight transformation metadata
+    timestamp: datetime
+    data_quality: str = "unknown"
+
+    def __post_init__(self):
+        """Validate dataclass after initialization."""
+        if not self.metric_key:
+            raise ValueError("metric_key cannot be empty")
+        if self.unit_system not in ['metric', 'imperial']:
+            raise ValueError("unit_system must be 'metric' or 'imperial'")
+        if self.data_quality not in ['live', 'simulated', 'cached', 'unknown']:
+            raise ValueError("data_quality must be 'live', 'simulated', 'cached', or 'unknown'")
+
+@dataclass
+class EnhancedDisplays:
+    """Type-safe container for enhanced display combinations.
+    
+    Groups related enhanced display values for better organization
+    and type safety.
+    """
+    enhanced_temperature: str
+    temp_range: str
+    enhanced_conditions: str
+    enhanced_wind: str
 
 
 class WeatherViewModel:
@@ -48,6 +120,7 @@ class WeatherViewModel:
         self.styles = styles
         self.utils = Utils()
         self.unit_converter = UnitConverter()
+        self.datetime = datetime
 
         # Instance data
         self.city_name: str = city
@@ -203,40 +276,98 @@ class WeatherViewModel:
         icon_code = self.raw_data.get('weather_icon', '')
         return self.styles.WEATHER_ICONS.get(icon_code, '')
 
-    def get_display_data(self) -> Dict[str, Any]:
-        """Return all formatted data as a comprehensive dictionary.
+    def get_display_data(self) -> WeatherDisplayData:
+        """Return all formatted data as a type-safe dataclass.
         
         Provides a complete interface for accessing all formatted display data.
         Useful for future features like theme system processing, data export,
         and API endpoints.
         
         Returns:
-            Dict containing complete formatted display data including city, date, 
-            status, individual metrics, and enhanced display combinations
+            WeatherDisplayData: Type-safe container with all display information
         """
-        return {
-            'city_name': self.city_name,
-            'date_str': self.date_str,
-            'status': self.status,
-            'individual_metrics': self.metrics,
-            'enhanced_displays': {
-                'enhanced_temperature': self.metrics.get('enhanced_temperature', '--'),
-                'temp_range': self.metrics.get('temp_range', '--'),
-                'enhanced_conditions': self.metrics.get('enhanced_conditions', '--'),
-                'enhanced_wind': self.metrics.get('enhanced_wind', '--')
-            },
-            'raw_data_available': bool(self.raw_data),
-            'has_conversion_warnings': '_conversion_warnings' in self.raw_data,
-            'unit_system': self.unit_system
-        }
+        enhanced_displays = EnhancedDisplays(
+            enhanced_temperature=self.metrics.get('enhanced_temperature', '--'),
+            temp_range=self.metrics.get('temp_range', '--'),
+            enhanced_conditions=self.metrics.get('enhanced_conditions', '--'),
+            enhanced_wind=self.metrics.get('enhanced_wind', '--')
+        )
 
-    def get_metric_value(self, metric_key: str) -> str:
-        """Get a specific formatted metric value.
+        # Determine data quality and transformation status
+        data_quality = "unknown"
+        transformation_status = "success"
+        
+        if self.utils.is_fallback(self.raw_data):
+            data_quality = "simulated"
+        elif self.raw_data:
+            data_quality = "live"
+        
+        # Check for conversion warnings
+        if '_conversion_warnings' in self.raw_data:
+            transformation_status = "partial"
+        
+        return WeatherDisplayData(
+            city_name=self.city_name,
+            date_str=self.date_str,
+            status=self.status,
+            individual_metrics=self.metrics,
+            enhanced_displays=enhanced_displays.__dict__, # Convert to dict for backward compatibility
+            raw_data_available=bool(self.raw_data),
+            has_conversion_warnings='_conversion_warnings' in self.raw_data,
+            unit_system=self.unit_system,
+            # LIGHT METADATA FIELDS:
+            timestamp=self.datetime.now(),
+            transformation_status=transformation_status,
+            data_quality=data_quality
+        )
+
+    def get_metric_value(self, metric_key: str) -> MetricValue:
+        """Get a specific formatted metric value with type safety.
         
         Args:
             metric_key: Key of the metric to retrieve (e.g., 'temperature', 'humidity')
             
         Returns:
+            MetricValue: Type-safe container with metric value and availability status
+        """
+        value = self.metrics.get(metric_key, "--")
+
+        # Determine data quality
+        data_quality = "unknown"
+        if self.utils.is_fallback(self.raw_data):
+            data_quality = "simulated"
+        elif self.raw_data:
+            data_quality = "live"
+
+        return MetricValue(
+            value=value,
+            is_available=value != "--",
+            metric_key=metric_key,
+            unit_system=self.unit_system,
+            # LIGHT METADATA FIELDS:
+            timestamp=self.datetime.now(),
+            data_quality=data_quality
+        )
+    
+    # BACKWARD COMPATIBILITY METHODS:
+    def get_metric_value_str(self, metric_key: str) -> str:
+        """Get a specific formatted metric value as a string (backward compatibility).
+        
+        Args:
+            metric_key: Key of the metric to retrieve
+            
+        Returns:
             str: Formatted metric value with units, or '--' if not available
         """
         return self.metrics.get(metric_key, "--")
+
+    def get_enhanced_display(self, display_type: str) -> str:
+        """Get a specific enhanced display value (backward compatibility).
+        
+        Args:
+            display_type: Type of enhanced display ('enhanced_temperature', 'temp_range', etc.)
+            
+        Returns:
+            str: Enhanced display value, or '--' if not available
+        """
+        return self.metrics.get(display_type, "--")

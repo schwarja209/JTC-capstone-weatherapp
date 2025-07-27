@@ -16,8 +16,10 @@ Classes:
     WeatherAPIService: Main service orchestrating all weather operations
 """
 
-import time
 from typing import Dict, Any, Tuple, Optional
+from dataclasses import dataclass
+from datetime import datetime
+import time
 import threading
 
 import requests
@@ -37,6 +39,21 @@ from WeatherDashboard.services.api_exceptions import (
 
 from WeatherDashboard.services.fallback_generator import SampleWeatherGenerator
 from WeatherDashboard.utils.derived_metrics import DerivedMetricsCalculator
+
+
+@dataclass
+class WeatherServiceResult:
+    """Type-safe container for weather service operation results.
+
+    Encapsulates the result of a weather service operation, including
+    the weather data, simulation flag, error message, and rich metadata.
+    """
+    data: Dict[str, Any]
+    is_simulated: bool
+    error_message: Optional[str]
+    timestamp: datetime = datetime.now()
+    # LIGHT METADATA FIELDS
+    processing_time: Optional[int] = None
 
 
 # ================================
@@ -146,14 +163,14 @@ class WeatherDataParser:
     def parse_weather_data(weather_data: Dict[str, Any], uv_data: Optional[Dict[str, Any]] = None, air_quality_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Parse weather data using centralized API utilities."""
         api_utils = ApiUtils() # create instance
+        
+        # Extract complete weather data as dictionary (not dataclass)
+        parsed_dict = api_utils.extract_complete_weather_data_dict(weather_data, uv_data, air_quality_data)
 
-        # Extract complete weather data using utilities
-        parsed_data = api_utils.extract_complete_weather_data(weather_data, uv_data, air_quality_data)
+        # Calculate derived metrics and add to dictionary
+        parsed_dict.update(WeatherDataParser._calculate_derived_metrics(parsed_dict))
         
-        # Calculate derived metrics
-        parsed_data.update(WeatherDataParser._calculate_derived_metrics(parsed_data))
-        
-        return parsed_data
+        return parsed_dict
     
     @staticmethod
     def _calculate_derived_metrics(data: Dict[str, Any]) -> Dict[str, Any]:
@@ -310,6 +327,7 @@ class WeatherAPIService:
         # Direct imports for stable utilities
         self.config = config
         self.logger = Logger()
+        self.datetime = datetime
 
         # API configuration
         self.weather_api = self.config.API_BASE_URL
@@ -325,7 +343,7 @@ class WeatherAPIService:
         self._data_parser = data_parser or WeatherDataParser()
         self._data_validator = data_validator or WeatherDataValidator()
 
-    def fetch_current(self, city: str, cancel_event: Optional[threading.Event] = None) -> Tuple[Dict[str, Any], bool, str]:
+    def fetch_current(self, city: str, cancel_event: Optional[threading.Event] = None) -> WeatherServiceResult:
         """Fetch comprehensive current weather data including derived metrics.
         
         Fetches data from multiple APIs (weather, UV, air quality) and calculates
@@ -335,14 +353,13 @@ class WeatherAPIService:
             city: City name to fetch weather data for
             
         Returns:
-            Tuple containing:
-                - Dict[str, Any]: Weather data with derived metrics (live or simulated)
-                - bool: True if fallback data was used, False for live data
-                - str: Error message if API failed, empty string for success
+            WeatherServiceResult: Type-safe container with weather data, simulation flag, error message, and metadata
         """
+        start_time = self.datetime.now()
+
         # Temporary bypass for testing
         if getattr(config, 'FORCE_FALLBACK_MODE', False):
-            return self._generate_fallback_response(city, "API disabled for testing", Exception("Testing mode"))
+            return self._generate_fallback_response(city, "API disabled for testing", Exception("Testing mode"), start_time)
         try:
             # Fetch main weather data
             weather_data = self._api_client.fetch_weather_data(city, cancel_event)
@@ -370,17 +387,25 @@ class WeatherAPIService:
             parsed['source'] = 'live'
             self._data_validator.validate_weather_data(parsed)
 
-            return parsed, False, ""
-
+            processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
+            return WeatherServiceResult(
+                data=parsed,
+                is_simulated=False,
+                error_message="",
+                timestamp=self.datetime.now(),
+                # LIGHT METADATA FIELDS
+                processing_time=processing_time
+            )
+        
         # Handle specific custom exceptions - preserve all individual error types
         except (ValidationError, CityNotFoundError, RateLimitError, NetworkError, WeatherAPIError) as e:
-            return self._generate_fallback_response(city, f"{type(e).__name__}", e)
+            return self._generate_fallback_response(city, f"{type(e).__name__}", e,start_time)
         except Exception as e:
             # Only catch truly unexpected errors
             self.logger.error(f"Unexpected error in fetch_current for {city}: {e}")
-            return self._generate_fallback_response(city, "Unexpected error", e)
+            return self._generate_fallback_response(city, "Unexpected error", e, start_time)
     
-    def _generate_fallback_response(self, city, msg, exc):
+    def _generate_fallback_response(self, city, msg, exc, start_time) -> WeatherServiceResult:
         """Use simulated data generator when API call fails.
         
         Args:
@@ -389,7 +414,7 @@ class WeatherAPIService:
             exc: Exception that caused the API failure
             
         Returns:
-            Tuple containing fallback weather data, fallback flag, and exception
+            WeatherServiceResult: Type-safe container with fallback weather data, simulation flag, error message, and metadata
         """
         self.logger.error(f"API failure for {city} - {msg}: {exc}. Switching to simulated data.")
 
@@ -400,7 +425,15 @@ class WeatherAPIService:
         current_data.update(self._data_parser._calculate_derived_metrics(current_data))
         current_data['source'] = 'simulated'
         
-        return current_data, True, exc
+        processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
+        return WeatherServiceResult(
+            data=current_data,
+            is_simulated=True,
+            error_message=str(exc),
+            timestamp=self.datetime.now(),
+            # LIGHT METADATA FIELDS
+            processing_time=processing_time
+        )
     
 
 # ================================

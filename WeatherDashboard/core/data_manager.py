@@ -58,6 +58,7 @@ class WeatherDataManager:
         self.utils = Utils()
         self.unit_converter = UnitConverter()
         self.validation_utils = ValidationUtils()
+        self.datetime = datetime
 
         # Injected dependencies for testable components
         self.api_service = api_service or WeatherAPIService()
@@ -91,20 +92,20 @@ class WeatherDataManager:
             May log error messages and warnings via Logger
             Updates internal error tracking for monitoring
         """
-        raw_data, use_fallback, error_exception = self.api_service.fetch_current(city, cancel_event)
+        result = self.api_service.fetch_current(city, cancel_event)
 
         # All API and fallback data is assumed to be in metric units and converted downstream.
         # If this changes in future (e.g., new fallback with imperial), update convert_units().
-        converted_data = self.convert_units(raw_data, unit_system)
+        converted_data = self.convert_units(result.data, unit_system)
 
         # Simple cleanup: time-based OR memory limits exceeded
-        current_time = datetime.now()
+        current_time = self.datetime.now()
         should_cleanup = (current_time - self._last_cleanup).total_seconds() > (self._cleanup_interval_hours * 3600)
         memory_over_limit = self._simple_memory_check()
 
         if should_cleanup or memory_over_limit:
             self.cleanup_old_data()
-            self._last_cleanup = datetime.now()
+            self._last_cleanup = self.datetime.now()
 
         key = self.utils.city_key(city)
         existing_data = self.weather_data.setdefault(key, [])
@@ -117,7 +118,7 @@ class WeatherDataManager:
             if len(existing_data) > max_entries:
                 existing_data[:] = existing_data[-max_entries:]  # Keep only the most recent entries
 
-        return converted_data, use_fallback, error_exception
+        return converted_data, result.is_simulated, result.error_message
 
     def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
         """Generate historical weather data for a city."""
@@ -160,9 +161,9 @@ class WeatherDataManager:
         Returns:
             Dict[str, Any]: Weather data with converted units
         """
-        unit_errors = self.validation_utils.validate_unit_system(unit_system)
-        if unit_errors:
-            raise ValueError(unit_errors[0])
+        unit_result = self.validation_utils.validate_unit_system(unit_system)
+        if not unit_result.is_valid:
+            raise ValueError(unit_result.errors[0])
 
         # Skip conversion if already in target system
         if unit_system == "metric":

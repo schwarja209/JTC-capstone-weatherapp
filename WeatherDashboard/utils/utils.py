@@ -62,9 +62,9 @@ class Utils:
         Raises:
             ValueError: If name is invalid (propagated from normalize_city_name)
         """
-        errors = self.validation_utils.validate_city_name(name)
-        if errors:
-            raise ValueError(errors[0])
+        result = self.validation_utils.validate_city_name(name)
+        if not result.is_valid:
+            raise ValueError(result.errors[0])
         
         normalized = name.strip().title()
         return normalized.lower().replace(" ", "_")
