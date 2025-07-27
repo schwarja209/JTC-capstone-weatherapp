@@ -188,79 +188,106 @@ class WeatherViewModel:
     def _format_enhanced_display(self, display_type: str) -> str:
         """Format complex metric displays with enhanced user-friendly presentation.
     
-        Handles special formatting for temperature (with feels-like), temperature ranges,
-        weather conditions (with icons), and wind information (with direction/gusts).
+        Delegates to specific formatting methods based on display type.
         
         Args:
-            display_type: Type of enhanced display ('temperature', 'temp_range', 
-                        'conditions', 'wind')
+            display_type: Type of enhanced display ('temperature', 'temp_range', 'conditions', 'wind')
             
         Returns:
             str: Formatted display string with enhanced information, or '--' if unavailable
         """
         if display_type == 'temperature':
-            temp = self.raw_data.get('temperature')
-            feels_like = self.raw_data.get('feels_like')
-            if temp is None:
-                return "--"
-            
-            temp_str = self.unit_converter.format_value('temperature', temp, self.unit_system)
-            
-            if feels_like is not None:
-                difference = abs(feels_like - temp)
-                # Only show "feels like" if difference is significant (>2 degrees)
-                threshold = self.config.TEMP_DIFF_THRESHOLD_METRIC if self.unit_system == 'metric' else self.config.TEMP_DIFF_THRESHOLD_IMPERIAL
-                
-                if difference >= threshold:
-                    feels_str = self.unit_converter.format_value('feels_like', feels_like, self.unit_system)
-                    
-                    # Determine if feels warmer or cooler
-                    if feels_like > temp:
-                        return f"{temp_str} (feels {feels_str} ↑)"
-                    else:
-                        return f"{temp_str} (feels {feels_str} ↓)"
-            
-            return temp_str
-        
+            return self._format_temperature_display()
         elif display_type == 'temp_range':
-            temp_min = self.raw_data.get('temp_min')
-            temp_max = self.raw_data.get('temp_max')
-            if temp_min is None or temp_max is None:
-                return "--"
-            min_str = self.unit_converter.format_value('temp_min', temp_min, self.unit_system)
-            max_str = self.unit_converter.format_value('temp_max', temp_max, self.unit_system)
-            return f"{min_str} - {max_str}"
-        
+            return self._format_temp_range_display()
         elif display_type == 'conditions':
-            conditions = self.raw_data.get('conditions', '--')
-            icon = self._get_weather_icon()
-            return f"{icon} {conditions}" if icon else str(conditions)
-        
+            return self._format_conditions_display()
         elif display_type == 'wind':
-            wind_speed = self.raw_data.get('wind_speed')
-            wind_direction = self.raw_data.get('wind_direction')
-            wind_gust = self.raw_data.get('wind_gust')
-            
-            if wind_speed is None:
-                return "--"
-            
-            speed_str = self.unit_converter.format_value('wind_speed', wind_speed, self.unit_system)
-            
-            # Add direction if available
-            if wind_direction is not None:
-                compass = self._degrees_to_compass(wind_direction)
-                wind_info = f"{speed_str} from {compass}"
-            else:
-                wind_info = speed_str
-            
-            # Add gusts if available and significant
-            if wind_gust is not None and wind_gust > wind_speed:
-                gust_str = self.unit_converter.format_value('wind_gust', wind_gust, self.unit_system)
-                wind_info += f", gusts {gust_str}"
-            
-            return wind_info
+            return self._format_wind_display()
+        else:
+            return "--"
+
+    def _format_temperature_display(self) -> str:
+        """Format temperature with feels-like information.
         
-        return "--"
+        Returns:
+            str: Formatted temperature string with feels-like information if significant
+        """
+        temp = self.raw_data.get('temperature')
+        feels_like = self.raw_data.get('feels_like')
+        if temp is None:
+            return "--"
+        
+        temp_str = self.unit_converter.format_value('temperature', temp, self.unit_system)
+        
+        if feels_like is not None:
+            difference = abs(feels_like - temp)
+            # Only show "feels like" if difference is significant (>2 degrees)
+            threshold = self.config.TEMP_DIFF_THRESHOLD_METRIC if self.unit_system == 'metric' else self.config.TEMP_DIFF_THRESHOLD_IMPERIAL
+            
+            if difference >= threshold:
+                feels_str = self.unit_converter.format_value('feels_like', feels_like, self.unit_system)
+                
+                # Determine if feels warmer or cooler
+                if feels_like > temp:
+                    return f"{temp_str} (feels {feels_str} ↑)"
+                else:
+                    return f"{temp_str} (feels {feels_str} ↓)"
+        
+        return temp_str
+
+    def _format_temp_range_display(self) -> str:
+        """Format temperature range display.
+        
+        Returns:
+            str: Formatted temperature range string (min - max)
+        """
+        temp_min = self.raw_data.get('temp_min')
+        temp_max = self.raw_data.get('temp_max')
+        if temp_min is None or temp_max is None:
+            return "--"
+        min_str = self.unit_converter.format_value('temp_min', temp_min, self.unit_system)
+        max_str = self.unit_converter.format_value('temp_max', temp_max, self.unit_system)
+        return f"{min_str} - {max_str}"
+        
+    def _format_conditions_display(self) -> str:
+        """Format weather conditions with icon.
+        
+        Returns:
+            str: Formatted conditions string with weather icon
+        """
+        conditions = self.raw_data.get('conditions', '--')
+        icon = self._get_weather_icon()
+        return f"{icon} {conditions}" if icon else str(conditions)
+        
+    def _format_wind_display(self) -> str:
+        """Format wind information with direction and gusts.
+        
+        Returns:
+            str: Formatted wind string with speed, direction, and gusts
+        """
+        wind_speed = self.raw_data.get('wind_speed')
+        wind_direction = self.raw_data.get('wind_direction')
+        wind_gust = self.raw_data.get('wind_gust')
+        
+        if wind_speed is None:
+            return "--"
+        
+        speed_str = self.unit_converter.format_value('wind_speed', wind_speed, self.unit_system)
+        
+        # Add direction if available
+        if wind_direction is not None:
+            compass = self._degrees_to_compass(wind_direction)
+            wind_info = f"{speed_str} from {compass}"
+        else:
+            wind_info = speed_str
+        
+        # Add gusts if available and significant
+        if wind_gust is not None and wind_gust > wind_speed:
+            gust_str = self.unit_converter.format_value('wind_gust', wind_gust, self.unit_system)
+            wind_info += f", gusts {gust_str}"
+        
+        return wind_info
 
     def _degrees_to_compass(self, degrees: float) -> str:
         """Convert wind direction degrees to compass direction."""
