@@ -5991,3 +5991,483 @@ Humidity: 69 %
 Pressure: 30.06 inHg
 Wind Speed: 10.36 mph
 Conditions: Haze
+
+Time: 2025-07-27 03:03:47
+City: new_york
+Temperature: 74.5 °F
+Humidity: 72 %
+Pressure: 30.06 inHg
+Wind Speed: 8.01 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 03:04:11
+City: new_york
+Temperature: 74.5 °F
+Humidity: 72 %
+Pressure: 30.06 inHg
+Wind Speed: 8.01 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:32:04
+City: new_york
+Temperature: 74.2 °F
+Humidity: 74 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:32:29
+City: new_york
+Temperature: 74.2 °F
+Humidity: 74 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:32:35
+City: new_york
+Temperature: 74.2 °F
+Humidity: 74 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:32:42
+City: new_york
+Temperature: 74.2 °F
+Humidity: 74 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:32:46
+City: new_york
+Temperature: 74.2 °F
+Humidity: 74 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:50:50
+City: new_york
+Temperature: 73.9 °F
+Humidity: 75 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:50:54
+City: new_york
+Temperature: 73.9 °F
+Humidity: 75 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:51:00
+City: new_york
+Temperature: 73.9 °F
+Humidity: 75 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:51:03
+City: new_york
+Temperature: 73.9 °F
+Humidity: 75 %
+Pressure: 30.06 inHg
+Wind Speed: 10.36 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:51:07
+City: new_york
+Temperature: 23.3 °C
+Humidity: 75 %
+Pressure: 1018.00 hPa
+Wind Speed: 4.63 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-27 04:56:21
+City: new_york
+Temperature: 73.9 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 04:56:25
+City: new_york
+Temperature: 73.9 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 04:56:50
+City: new_york
+Temperature: 73.9 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 04:56:56
+City: new_york
+Temperature: 73.9 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 04:57:13
+City: new_york
+Temperature: 73.9 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 04:57:26
+City: new_york
+Temperature: 73.9 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:03:18
+City: new_york
+Temperature: 73.8 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:03:44
+City: new_york
+Temperature: 73.8 °F
+Humidity: 77 %
+Pressure: 30.06 inHg
+Wind Speed: 10.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:08:23
+City: new_york
+Temperature: 73.4 °F
+Humidity: 78 %
+Pressure: 30.03 inHg
+Wind Speed: 8.99 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:08:29
+City: new_york
+Temperature: 73.4 °F
+Humidity: 78 %
+Pressure: 30.03 inHg
+Wind Speed: 8.99 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:15:48
+City: new_york
+Temperature: 73.4 °F
+Humidity: 78 %
+Pressure: 30.03 inHg
+Wind Speed: 8.99 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:15:52
+City: new_york
+Temperature: 73.4 °F
+Humidity: 78 %
+Pressure: 30.03 inHg
+Wind Speed: 8.99 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:15:59
+City: new_york
+Temperature: 73.4 °F
+Humidity: 78 %
+Pressure: 30.03 inHg
+Wind Speed: 8.99 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:25:08
+City: new_york
+Temperature: 73.3 °F
+Humidity: 78 %
+Pressure: 30.03 inHg
+Wind Speed: 10.00 mph
+Conditions: Light Rain
+
+Time: 2025-07-27 05:25:12
+City: new_york
+Temperature: 73.3 °F
+Humidity: 78 %
+Pressure: 30.03 inHg
+Wind Speed: 10.00 mph
+Conditions: Light Rain
+
+Time: 2025-07-27 05:51:07
+City: new_york
+Temperature: 72.7 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 7.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:51:11
+City: new_york
+Temperature: 72.7 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 7.00 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:51:35
+City: oigoigog
+Temperature: 28.4 °F
+Humidity: 74 %
+Pressure: 30.03 inHg
+Wind Speed: 15.66 mph
+Conditions: Snowy
+
+Time: 2025-07-27 05:51:47
+City: oigoigog
+Temperature: 50.0 °F
+Humidity: 46 %
+Pressure: 29.53 inHg
+Wind Speed: 0.00 mph
+Conditions: Cloudy
+
+Time: 2025-07-27 05:51:55
+City: oigoigog
+Temperature: 71.6 °F
+Humidity: 42 %
+Pressure: 29.74 inHg
+Wind Speed: 8.95 mph
+Conditions: Sunny
+
+Time: 2025-07-27 05:58:04
+City: new_york
+Temperature: 72.6 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 6.91 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:58:08
+City: new_york
+Temperature: 72.6 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 6.91 mph
+Conditions: Haze
+
+Time: 2025-07-27 05:58:31
+City: sgsdgs
+Temperature: 78.8 °F
+Humidity: 58 %
+Pressure: 29.39 inHg
+Wind Speed: 13.42 mph
+Conditions: Sunny
+
+Time: 2025-07-27 05:58:38
+City: sgsdgs
+Temperature: 78.8 °F
+Humidity: 36 %
+Pressure: 29.66 inHg
+Wind Speed: 0.00 mph
+Conditions: Snowy
+
+Time: 2025-07-27 06:02:45
+City: new_york
+Temperature: 32.0 °F
+Humidity: 89 %
+Pressure: 30.42 inHg
+Wind Speed: 4.47 mph
+Conditions: Cloudy
+
+Time: 2025-07-27 06:06:18
+City: new_york
+Temperature: 87.8 °F
+Humidity: 66 %
+Pressure: 30.18 inHg
+Wind Speed: 0.00 mph
+Conditions: Rainy
+
+Time: 2025-07-27 06:07:07
+City: new_york
+Temperature: 72.6 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 6.91 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:07:13
+City: igoig
+Temperature: 64.4 °F
+Humidity: 71 %
+Pressure: 29.52 inHg
+Wind Speed: 17.90 mph
+Conditions: Sunny
+
+Time: 2025-07-27 06:16:29
+City: new_york
+Temperature: 72.5 °F
+Humidity: 79 %
+Pressure: 30.03 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:16:39
+City: new_york
+Temperature: 72.5 °F
+Humidity: 79 %
+Pressure: 30.03 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:16:42
+City: new_york
+Temperature: 72.5 °F
+Humidity: 79 %
+Pressure: 30.03 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:16:46
+City: pohph
+Temperature: 77.0 °F
+Humidity: 34 %
+Pressure: 29.41 inHg
+Wind Speed: 8.95 mph
+Conditions: Snowy
+
+Time: 2025-07-27 06:18:39
+City: new_york
+Temperature: 72.6 °F
+Humidity: 79 %
+Pressure: 30.03 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:18:46
+City: new_york
+Temperature: 72.6 °F
+Humidity: 79 %
+Pressure: 30.03 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:19:05
+City: dgsdghshg
+Temperature: 84.2 °F
+Humidity: 74 %
+Pressure: 29.76 inHg
+Wind Speed: 0.00 mph
+Conditions: Snowy
+
+Time: 2025-07-27 06:32:24
+City: new_york
+Temperature: 72.6 °F
+Humidity: 79 %
+Pressure: 30.03 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:32:33
+City: new_york
+Temperature: 72.6 °F
+Humidity: 79 %
+Pressure: 30.03 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:33:05
+City: asf
+Temperature: 57.2 °F
+Humidity: 82 %
+Pressure: 29.66 inHg
+Wind Speed: 8.95 mph
+Conditions: Snowy
+
+Time: 2025-07-27 06:37:08
+City: new_york
+Temperature: 72.6 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:37:11
+City: new_york
+Temperature: 72.6 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:37:28
+City: sdgsdgsdg
+Temperature: 64.4 °F
+Humidity: 76 %
+Pressure: 29.69 inHg
+Wind Speed: 22.37 mph
+Conditions: Rainy
+
+Time: 2025-07-27 06:37:35
+City: sdgsdgsdg
+Temperature: 60.8 °F
+Humidity: 86 %
+Pressure: 30.01 inHg
+Wind Speed: 15.66 mph
+Conditions: Cloudy
+
+Time: 2025-07-27 06:37:42
+City: new_york
+Temperature: 72.6 °F
+Humidity: 80 %
+Pressure: 30.06 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:48:41
+City: new_york
+Temperature: 72.5 °F
+Humidity: 79 %
+Pressure: 30.06 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:48:45
+City: new_york
+Temperature: 72.5 °F
+Humidity: 79 %
+Pressure: 30.06 inHg
+Wind Speed: 9.22 mph
+Conditions: Haze
+
+Time: 2025-07-27 06:48:48
+City: afasfa
+Temperature: 69.8 °F
+Humidity: 81 %
+Pressure: 30.50 inHg
+Wind Speed: 6.71 mph
+Conditions: Rainy
+
+Time: 2025-07-27 06:48:53
+City: afasfa
+Temperature: 55.4 °F
+Humidity: 59 %
+Pressure: 29.97 inHg
+Wind Speed: 13.42 mph
+Conditions: Snowy
+
+Time: 2025-07-27 06:49:37
+City: new_york
+Temperature: 50.0 °F
+Humidity: 79 %
+Pressure: 30.47 inHg
+Wind Speed: 6.71 mph
+Conditions: Cloudy

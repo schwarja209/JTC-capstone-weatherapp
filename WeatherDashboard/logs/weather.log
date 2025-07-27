@@ -8097,3 +8097,463 @@
 [INFO] 2025-07-27 02:35:52 Weather data written for new_york - Live
 [WARN] 2025-07-27 02:36:05 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
 [INFO] 2025-07-27 02:36:05 Weather data written for new_york - Live
+[INFO] 2025-07-27 03:02:24 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 03:02:24
+[INFO] 2025-07-27 03:02:24 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 03:02:24 title widget created successfully
+[INFO] 2025-07-27 03:02:24 control widgets created successfully
+[INFO] 2025-07-27 03:02:24 metric display widgets created successfully
+[INFO] 2025-07-27 03:02:24 chart widgets created successfully
+[INFO] 2025-07-27 03:02:24 tabbed display widgets created successfully
+[INFO] 2025-07-27 03:02:24 status bar widgets created successfully
+[INFO] 2025-07-27 03:02:24 dashboard widgets created successfully
+[ERROR] 2025-07-27 03:02:24 Unexpected error: AlertManager.__init__() missing 1 required positional argument: 'thresholds'
+[INFO] 2025-07-27 03:03:47 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 03:03:47
+[INFO] 2025-07-27 03:03:47 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 03:03:47 title widget created successfully
+[INFO] 2025-07-27 03:03:47 control widgets created successfully
+[INFO] 2025-07-27 03:03:47 metric display widgets created successfully
+[INFO] 2025-07-27 03:03:47 chart widgets created successfully
+[INFO] 2025-07-27 03:03:47 tabbed display widgets created successfully
+[INFO] 2025-07-27 03:03:47 status bar widgets created successfully
+[INFO] 2025-07-27 03:03:47 dashboard widgets created successfully
+[INFO] 2025-07-27 03:03:47 Weather data written for new_york - Live
+[WARN] 2025-07-27 03:04:11 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 03:04:11 Weather data written for new_york - Live
+[INFO] 2025-07-27 04:30:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 04:30:46
+[INFO] 2025-07-27 04:30:46 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 04:30:46 title widget created successfully
+[INFO] 2025-07-27 04:30:46 control widgets created successfully
+[INFO] 2025-07-27 04:30:46 metric display widgets created successfully
+[INFO] 2025-07-27 04:30:46 chart widgets created successfully
+[INFO] 2025-07-27 04:30:46 tabbed display widgets created successfully
+[INFO] 2025-07-27 04:30:46 status bar widgets created successfully
+[INFO] 2025-07-27 04:30:46 dashboard widgets created successfully
+[INFO] 2025-07-27 04:30:47 show_error called with: 'WeatherViewModel' object has no attribute 'data'
+[WARN] 2025-07-27 04:30:53 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:30:53 show_error called with: 'WeatherViewModel' object has no attribute 'data'
+[INFO] 2025-07-27 04:32:03 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 04:32:03
+[INFO] 2025-07-27 04:32:03 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 04:32:03 title widget created successfully
+[INFO] 2025-07-27 04:32:03 control widgets created successfully
+[INFO] 2025-07-27 04:32:03 metric display widgets created successfully
+[INFO] 2025-07-27 04:32:03 chart widgets created successfully
+[INFO] 2025-07-27 04:32:03 tabbed display widgets created successfully
+[INFO] 2025-07-27 04:32:03 status bar widgets created successfully
+[INFO] 2025-07-27 04:32:03 dashboard widgets created successfully
+[INFO] 2025-07-27 04:32:04 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:32:06 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 04:32:06 show_error called with: Rate limit exceeded. Please wait before trying again.
+[INFO] 2025-07-27 04:32:28 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 04:32:28
+[INFO] 2025-07-27 04:32:28 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 04:32:29 title widget created successfully
+[INFO] 2025-07-27 04:32:29 control widgets created successfully
+[INFO] 2025-07-27 04:32:29 metric display widgets created successfully
+[INFO] 2025-07-27 04:32:29 chart widgets created successfully
+[INFO] 2025-07-27 04:32:29 tabbed display widgets created successfully
+[INFO] 2025-07-27 04:32:29 status bar widgets created successfully
+[INFO] 2025-07-27 04:32:29 dashboard widgets created successfully
+[INFO] 2025-07-27 04:32:29 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:32:35 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:32:35 Weather data written for new_york - Live
+[INFO] 2025-07-27 04:32:42 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:32:46 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:32:46 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:33:09 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 04:33:09 API failure for Afsasfaf - CityNotFoundError: City 'Afsasfaf' not found. Switching to simulated data.
+[INFO] 2025-07-27 04:33:11 show_error called with: Simulated data used due to API failure
+[INFO] 2025-07-27 04:50:49 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 04:50:49
+[INFO] 2025-07-27 04:50:49 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 04:50:49 title widget created successfully
+[INFO] 2025-07-27 04:50:49 control widgets created successfully
+[INFO] 2025-07-27 04:50:49 metric display widgets created successfully
+[INFO] 2025-07-27 04:50:49 chart widgets created successfully
+[INFO] 2025-07-27 04:50:49 tabbed display widgets created successfully
+[INFO] 2025-07-27 04:50:49 status bar widgets created successfully
+[INFO] 2025-07-27 04:50:49 dashboard widgets created successfully
+[INFO] 2025-07-27 04:50:50 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:50:54 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:50:54 Weather data written for new_york - Live
+[INFO] 2025-07-27 04:51:00 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:51:03 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:51:03 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:51:07 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:51:07 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:51:14 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 04:51:14 API failure for Sdgsdgsg - CityNotFoundError: City 'Sdgsdgsg' not found. Switching to simulated data.
+[INFO] 2025-07-27 04:51:15 show_error called with: Simulated data used due to API failure
+[INFO] 2025-07-27 04:56:20 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 04:56:20
+[INFO] 2025-07-27 04:56:20 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 04:56:20 title widget created successfully
+[INFO] 2025-07-27 04:56:20 control widgets created successfully
+[INFO] 2025-07-27 04:56:21 metric display widgets created successfully
+[INFO] 2025-07-27 04:56:21 chart widgets created successfully
+[INFO] 2025-07-27 04:56:21 tabbed display widgets created successfully
+[INFO] 2025-07-27 04:56:21 status bar widgets created successfully
+[INFO] 2025-07-27 04:56:21 dashboard widgets created successfully
+[INFO] 2025-07-27 04:56:21 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:56:25 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:56:25 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:56:30 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 04:56:30 API failure for Asf - CityNotFoundError: City 'Asf' not found. Switching to simulated data.
+[INFO] 2025-07-27 04:56:32 show_error called with: Simulated data used due to API failure
+[INFO] 2025-07-27 04:56:49 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 04:56:49
+[INFO] 2025-07-27 04:56:49 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 04:56:49 title widget created successfully
+[INFO] 2025-07-27 04:56:49 control widgets created successfully
+[INFO] 2025-07-27 04:56:50 metric display widgets created successfully
+[INFO] 2025-07-27 04:56:50 chart widgets created successfully
+[INFO] 2025-07-27 04:56:50 tabbed display widgets created successfully
+[INFO] 2025-07-27 04:56:50 status bar widgets created successfully
+[INFO] 2025-07-27 04:56:50 dashboard widgets created successfully
+[INFO] 2025-07-27 04:56:50 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:56:52 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 04:56:52 show_error called with: Rate limit exceeded. Please wait before trying again.
+[WARN] 2025-07-27 04:56:56 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:56:57 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:57:03 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 04:57:03 API failure for Sdgsdg - CityNotFoundError: City 'Sdgsdg' not found. Switching to simulated data.
+[INFO] 2025-07-27 04:57:04 show_error called with: Simulated data used due to API failure
+[INFO] 2025-07-27 04:57:12 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 04:57:12
+[INFO] 2025-07-27 04:57:12 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 04:57:12 title widget created successfully
+[INFO] 2025-07-27 04:57:12 control widgets created successfully
+[INFO] 2025-07-27 04:57:13 metric display widgets created successfully
+[INFO] 2025-07-27 04:57:13 chart widgets created successfully
+[INFO] 2025-07-27 04:57:13 tabbed display widgets created successfully
+[INFO] 2025-07-27 04:57:13 status bar widgets created successfully
+[INFO] 2025-07-27 04:57:13 dashboard widgets created successfully
+[INFO] 2025-07-27 04:57:13 Weather data written for new_york - Live
+[WARN] 2025-07-27 04:57:18 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 04:57:18 API failure for Afasf - CityNotFoundError: City 'Afasf' not found. Switching to simulated data.
+[INFO] 2025-07-27 04:57:19 show_error called with: Simulated data used due to API failure
+[WARN] 2025-07-27 04:57:26 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 04:57:26 Weather data written for new_york - Live
+[INFO] 2025-07-27 05:03:17 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 05:03:17
+[INFO] 2025-07-27 05:03:17 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 05:03:17 title widget created successfully
+[INFO] 2025-07-27 05:03:17 control widgets created successfully
+[INFO] 2025-07-27 05:03:17 metric display widgets created successfully
+[INFO] 2025-07-27 05:03:17 chart widgets created successfully
+[INFO] 2025-07-27 05:03:17 tabbed display widgets created successfully
+[INFO] 2025-07-27 05:03:17 status bar widgets created successfully
+[INFO] 2025-07-27 05:03:17 dashboard widgets created successfully
+[INFO] 2025-07-27 05:03:18 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:03:20 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 05:03:20 show_error called with: Rate limit exceeded. Please wait before trying again.
+[WARN] 2025-07-27 05:03:32 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:03:32 API failure for Sdfsgd - CityNotFoundError: City 'Sdfsgd' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:03:33 show_error called with: Simulated data used due to API failure
+[WARN] 2025-07-27 05:03:44 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 05:03:44 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:03:51 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:03:51 API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:03:53 show_error called with: Simulated data used due to API failure
+[WARN] 2025-07-27 05:03:59 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:03:59 API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:04:00 show_error called with: Simulated data used due to API failure
+[INFO] 2025-07-27 05:07:09 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 05:07:09
+[INFO] 2025-07-27 05:07:09 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 05:07:09 title widget created successfully
+[INFO] 2025-07-27 05:07:09 control widgets created successfully
+[INFO] 2025-07-27 05:07:09 metric display widgets created successfully
+[INFO] 2025-07-27 05:07:09 chart widgets created successfully
+[INFO] 2025-07-27 05:07:09 tabbed display widgets created successfully
+[INFO] 2025-07-27 05:07:09 status bar widgets created successfully
+[INFO] 2025-07-27 05:07:09 dashboard widgets created successfully
+[ERROR] 2025-07-27 05:07:09 Unexpected error: 'WeatherDashboardMain' object has no attribute 'widgets'
+[INFO] 2025-07-27 05:08:22 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 05:08:22
+[INFO] 2025-07-27 05:08:22 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 05:08:22 title widget created successfully
+[INFO] 2025-07-27 05:08:22 control widgets created successfully
+[INFO] 2025-07-27 05:08:22 metric display widgets created successfully
+[INFO] 2025-07-27 05:08:22 chart widgets created successfully
+[INFO] 2025-07-27 05:08:22 tabbed display widgets created successfully
+[INFO] 2025-07-27 05:08:22 status bar widgets created successfully
+[INFO] 2025-07-27 05:08:22 dashboard widgets created successfully
+[INFO] 2025-07-27 05:08:23 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:08:29 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 05:08:29 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:08:34 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:08:34 API failure for Asfa - CityNotFoundError: City 'Asfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:08:36 show_error called with: Simulated data used due to API failure
+[WARN] 2025-07-27 05:08:50 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:08:50 API failure for Asfa - CityNotFoundError: City 'Asfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:08:51 show_error called with: Simulated data used due to API failure
+[INFO] 2025-07-27 05:15:48 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 05:15:48
+[INFO] 2025-07-27 05:15:48 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 05:15:48 title widget created successfully
+[INFO] 2025-07-27 05:15:48 control widgets created successfully
+[INFO] 2025-07-27 05:15:48 metric display widgets created successfully
+[INFO] 2025-07-27 05:15:48 chart widgets created successfully
+[INFO] 2025-07-27 05:15:48 tabbed display widgets created successfully
+[INFO] 2025-07-27 05:15:48 status bar widgets created successfully
+[INFO] 2025-07-27 05:15:48 dashboard widgets created successfully
+[INFO] 2025-07-27 05:15:48 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:15:52 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 05:15:53 Weather data written for new_york - Live
+[INFO] 2025-07-27 05:15:59 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:16:05 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:16:05 API failure for Adgagd - CityNotFoundError: City 'Adgagd' not found. Switching to simulated data.
+[WARN] 2025-07-27 05:16:05 Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)
+[WARN] 2025-07-27 05:16:05 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 119.2 (threshold: 104.9)
+[INFO] 2025-07-27 05:16:06 show_error called with: City 'Adgagd' not found
+[INFO] 2025-07-27 05:25:07 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 05:25:07
+[INFO] 2025-07-27 05:25:07 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 05:25:07 title widget created successfully
+[INFO] 2025-07-27 05:25:07 control widgets created successfully
+[INFO] 2025-07-27 05:25:07 metric display widgets created successfully
+[INFO] 2025-07-27 05:25:07 chart widgets created successfully
+[INFO] 2025-07-27 05:25:07 tabbed display widgets created successfully
+[INFO] 2025-07-27 05:25:07 status bar widgets created successfully
+[INFO] 2025-07-27 05:25:07 dashboard widgets created successfully
+[INFO] 2025-07-27 05:25:08 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:25:12 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 05:25:12 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:25:14 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 05:25:14 show_error called with: Rate limit exceeded. Please wait before trying again.
+[WARN] 2025-07-27 05:25:24 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:25:24 API failure for Asfasf - CityNotFoundError: City 'Asfasf' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:25:26 show_error called with: City 'Asfasf' not found
+[INFO] 2025-07-27 05:51:06 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 05:51:06
+[INFO] 2025-07-27 05:51:06 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 05:51:06 title widget created successfully
+[INFO] 2025-07-27 05:51:06 control widgets created successfully
+[INFO] 2025-07-27 05:51:06 metric display widgets created successfully
+[INFO] 2025-07-27 05:51:06 chart widgets created successfully
+[INFO] 2025-07-27 05:51:06 tabbed display widgets created successfully
+[INFO] 2025-07-27 05:51:06 status bar widgets created successfully
+[INFO] 2025-07-27 05:51:06 dashboard widgets created successfully
+[INFO] 2025-07-27 05:51:07 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:51:11 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 05:51:11 Weather data written for new_york - Live
+[INFO] 2025-07-27 05:51:15 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 05:51:26 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[WARN] 2025-07-27 05:51:35 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:51:35 API failure for Oigoigog - CityNotFoundError: City 'Oigoigog' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:51:36 Weather data written for oigoigog - Simulated
+[WARN] 2025-07-27 05:51:47 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:51:47 API failure for Oigoigog - CityNotFoundError: City 'Oigoigog' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:51:48 Weather data written for oigoigog - Simulated
+[WARN] 2025-07-27 05:51:55 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:51:55 API failure for Oigoigog - CityNotFoundError: City 'Oigoigog' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:51:56 Weather data written for oigoigog - Simulated
+[INFO] 2025-07-27 05:52:00 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 05:58:03 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 05:58:03
+[INFO] 2025-07-27 05:58:03 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 05:58:03 title widget created successfully
+[INFO] 2025-07-27 05:58:03 control widgets created successfully
+[INFO] 2025-07-27 05:58:04 metric display widgets created successfully
+[INFO] 2025-07-27 05:58:04 chart widgets created successfully
+[INFO] 2025-07-27 05:58:04 tabbed display widgets created successfully
+[INFO] 2025-07-27 05:58:04 status bar widgets created successfully
+[INFO] 2025-07-27 05:58:04 dashboard widgets created successfully
+[INFO] 2025-07-27 05:58:04 Weather data written for new_york - Live
+[WARN] 2025-07-27 05:58:08 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 05:58:08 Weather data written for new_york - Live
+[INFO] 2025-07-27 05:58:12 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 05:58:22 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[WARN] 2025-07-27 05:58:31 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:58:31 API failure for Sgsdgs - CityNotFoundError: City 'Sgsdgs' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:58:32 Weather data written for sgsdgs - Simulated
+[WARN] 2025-07-27 05:58:38 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 05:58:38 API failure for Sgsdgs - CityNotFoundError: City 'Sgsdgs' not found. Switching to simulated data.
+[INFO] 2025-07-27 05:58:40 Weather data written for sgsdgs - Simulated
+[INFO] 2025-07-27 06:02:45 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:02:45
+[INFO] 2025-07-27 06:02:45 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:02:45 title widget created successfully
+[INFO] 2025-07-27 06:02:45 control widgets created successfully
+[INFO] 2025-07-27 06:02:45 metric display widgets created successfully
+[INFO] 2025-07-27 06:02:45 chart widgets created successfully
+[INFO] 2025-07-27 06:02:45 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:02:45 status bar widgets created successfully
+[INFO] 2025-07-27 06:02:45 dashboard widgets created successfully
+[ERROR] 2025-07-27 06:02:45 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-27 06:02:45 Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)
+[WARN] 2025-07-27 06:02:45 Using fallback for New York: Testing mode
+[INFO] 2025-07-27 06:02:47 Weather data written for new_york - Simulated
+[INFO] 2025-07-27 06:06:17 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:06:17
+[INFO] 2025-07-27 06:06:17 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:06:17 title widget created successfully
+[INFO] 2025-07-27 06:06:17 control widgets created successfully
+[INFO] 2025-07-27 06:06:18 metric display widgets created successfully
+[INFO] 2025-07-27 06:06:18 chart widgets created successfully
+[INFO] 2025-07-27 06:06:18 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:06:18 status bar widgets created successfully
+[INFO] 2025-07-27 06:06:18 dashboard widgets created successfully
+[ERROR] 2025-07-27 06:06:18 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-27 06:06:18 Using fallback for New York: Testing mode
+[INFO] 2025-07-27 06:06:20 Weather data written for new_york - Simulated
+[INFO] 2025-07-27 06:06:34 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 06:06:50 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 06:07:06 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:07:06
+[INFO] 2025-07-27 06:07:06 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:07:06 title widget created successfully
+[INFO] 2025-07-27 06:07:06 control widgets created successfully
+[INFO] 2025-07-27 06:07:07 metric display widgets created successfully
+[INFO] 2025-07-27 06:07:07 chart widgets created successfully
+[INFO] 2025-07-27 06:07:07 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:07:07 status bar widgets created successfully
+[INFO] 2025-07-27 06:07:07 dashboard widgets created successfully
+[INFO] 2025-07-27 06:07:07 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:07:13 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:07:13 API failure for Igoig - CityNotFoundError: City 'Igoig' not found. Switching to simulated data.
+[WARN] 2025-07-27 06:07:13 Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[WARN] 2025-07-27 06:07:13 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)
+[INFO] 2025-07-27 06:07:15 Weather data written for igoig - Simulated
+[INFO] 2025-07-27 06:16:28 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:16:28
+[INFO] 2025-07-27 06:16:28 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:16:28 title widget created successfully
+[INFO] 2025-07-27 06:16:28 control widgets created successfully
+[INFO] 2025-07-27 06:16:29 metric display widgets created successfully
+[INFO] 2025-07-27 06:16:29 chart widgets created successfully
+[INFO] 2025-07-27 06:16:29 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:16:29 status bar widgets created successfully
+[INFO] 2025-07-27 06:16:29 dashboard widgets created successfully
+[INFO] 2025-07-27 06:16:29 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:16:31 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 06:16:31 show_error called with: Rate limit exceeded. Please wait before trying again.
+[INFO] 2025-07-27 06:16:39 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:16:42 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 06:16:42 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:16:46 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:16:46 API failure for Pohph - CityNotFoundError: City 'Pohph' not found. Switching to simulated data.
+[WARN] 2025-07-27 06:16:46 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 06:16:48 Weather data written for pohph - Simulated
+[INFO] 2025-07-27 06:16:55 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 06:18:38 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:18:38
+[INFO] 2025-07-27 06:18:38 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:18:38 title widget created successfully
+[INFO] 2025-07-27 06:18:38 control widgets created successfully
+[INFO] 2025-07-27 06:18:38 metric display widgets created successfully
+[INFO] 2025-07-27 06:18:38 chart widgets created successfully
+[INFO] 2025-07-27 06:18:38 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:18:38 status bar widgets created successfully
+[INFO] 2025-07-27 06:18:38 dashboard widgets created successfully
+[INFO] 2025-07-27 06:18:39 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:18:41 Fetch blocked due to rate limiting.
+[WARN] 2025-07-27 06:18:46 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 06:18:46 Weather data written for new_york - Live
+[ERROR] 2025-07-27 06:18:50 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[ERROR] 2025-07-27 06:18:51 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[ERROR] 2025-07-27 06:18:53 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[ERROR] 2025-07-27 06:18:59 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[WARN] 2025-07-27 06:19:05 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:19:05 API failure for Dgsdghshg - CityNotFoundError: City 'Dgsdghshg' not found. Switching to simulated data.
+[INFO] 2025-07-27 06:19:07 Weather data written for dgsdghshg - Simulated
+[INFO] 2025-07-27 06:32:23 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:32:23
+[INFO] 2025-07-27 06:32:23 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:32:23 title widget created successfully
+[INFO] 2025-07-27 06:32:23 control widgets created successfully
+[INFO] 2025-07-27 06:32:23 metric display widgets created successfully
+[INFO] 2025-07-27 06:32:24 chart widgets created successfully
+[INFO] 2025-07-27 06:32:24 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:32:24 status bar widgets created successfully
+[INFO] 2025-07-27 06:32:24 dashboard widgets created successfully
+[INFO] 2025-07-27 06:32:24 Weather data written for new_york - Live
+[INFO] 2025-07-27 06:32:24 show_error called with: Simulated data used due to API failure
+[WARN] 2025-07-27 06:32:33 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 06:32:33 Weather data written for new_york - Live
+[INFO] 2025-07-27 06:32:33 show_error called with: Simulated data used due to API failure
+[INFO] 2025-07-27 06:32:37 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 06:32:37 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 06:32:43 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 06:32:43 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 06:32:49 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-27 06:32:49 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[WARN] 2025-07-27 06:33:05 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:33:05 API failure for Asf - CityNotFoundError: City 'Asf' not found. Switching to simulated data.
+[INFO] 2025-07-27 06:33:07 Weather data written for asf - Simulated
+[INFO] 2025-07-27 06:33:07 show_error called with: City 'Asf' not found
+[INFO] 2025-07-27 06:37:07 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:37:07
+[INFO] 2025-07-27 06:37:07 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:37:07 title widget created successfully
+[INFO] 2025-07-27 06:37:07 control widgets created successfully
+[INFO] 2025-07-27 06:37:07 metric display widgets created successfully
+[INFO] 2025-07-27 06:37:07 chart widgets created successfully
+[INFO] 2025-07-27 06:37:07 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:37:07 status bar widgets created successfully
+[INFO] 2025-07-27 06:37:07 dashboard widgets created successfully
+[INFO] 2025-07-27 06:37:08 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:37:11 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 06:37:11 Weather data written for new_york - Live
+[ERROR] 2025-07-27 06:37:14 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 06:37:15 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-27 06:37:15 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[ERROR] 2025-07-27 06:37:22 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 06:37:23 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 06:37:23 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[WARN] 2025-07-27 06:37:28 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:37:28 API failure for Sdgsdgsdg - CityNotFoundError: City 'Sdgsdgsdg' not found. Switching to simulated data.
+[INFO] 2025-07-27 06:37:30 Weather data written for sdgsdgsdg - Simulated
+[INFO] 2025-07-27 06:37:30 show_error called with: City 'Sdgsdgsdg' not found
+[WARN] 2025-07-27 06:37:35 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:37:35 API failure for Sdgsdgsdg - CityNotFoundError: City 'Sdgsdgsdg' not found. Switching to simulated data.
+[WARN] 2025-07-27 06:37:35 Weather alert: High Humidity Alert - Very humid conditions: 86% (threshold: 85%)
+[INFO] 2025-07-27 06:37:36 Weather data written for sdgsdgsdg - Simulated
+[INFO] 2025-07-27 06:37:36 show_error called with: City 'Sdgsdgsdg' not found
+[INFO] 2025-07-27 06:37:42 Weather data written for new_york - Live
+[INFO] 2025-07-27 06:48:40 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:48:40
+[INFO] 2025-07-27 06:48:40 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:48:40 title widget created successfully
+[INFO] 2025-07-27 06:48:40 control widgets created successfully
+[INFO] 2025-07-27 06:48:40 metric display widgets created successfully
+[INFO] 2025-07-27 06:48:40 chart widgets created successfully
+[INFO] 2025-07-27 06:48:40 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:48:40 status bar widgets created successfully
+[INFO] 2025-07-27 06:48:40 dashboard widgets created successfully
+[INFO] 2025-07-27 06:48:41 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:48:45 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 06:48:45 Weather data written for new_york - Live
+[WARN] 2025-07-27 06:48:48 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:48:48 API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data.
+[WARN] 2025-07-27 06:48:48 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)
+[INFO] 2025-07-27 06:48:49 Weather data written for afasfa - Simulated
+[INFO] 2025-07-27 06:48:49 show_error called with: City 'Afasfa' not found
+[WARN] 2025-07-27 06:48:53 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 06:48:53 API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 06:48:54 Weather data written for afasfa - Simulated
+[INFO] 2025-07-27 06:48:54 show_error called with: City 'Afasfa' not found
+[ERROR] 2025-07-27 06:48:58 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 06:49:00 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-27 06:49:00 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[ERROR] 2025-07-27 06:49:05 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 06:49:06 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 06:49:06 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 06:49:36 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 06:49:36
+[INFO] 2025-07-27 06:49:36 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 06:49:36 title widget created successfully
+[INFO] 2025-07-27 06:49:36 control widgets created successfully
+[INFO] 2025-07-27 06:49:37 metric display widgets created successfully
+[INFO] 2025-07-27 06:49:37 chart widgets created successfully
+[INFO] 2025-07-27 06:49:37 tabbed display widgets created successfully
+[INFO] 2025-07-27 06:49:37 status bar widgets created successfully
+[INFO] 2025-07-27 06:49:37 dashboard widgets created successfully
+[ERROR] 2025-07-27 06:49:37 API failure for New York - API disabled for testing: Testing mode. Switching to simulated data.
+[WARN] 2025-07-27 06:49:37 Using fallback for New York: Testing mode
+[INFO] 2025-07-27 06:49:38 Weather data written for new_york - Simulated
+[INFO] 2025-07-27 06:49:38 show_error called with: Testing mode

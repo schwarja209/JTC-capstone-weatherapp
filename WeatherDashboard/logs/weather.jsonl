@@ -8097,3 +8097,463 @@
 {"timestamp": "2025-07-27 02:35:52", "level": "INFO", "message": "Weather data written for new_york - Live"}
 {"timestamp": "2025-07-27 02:36:05", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
 {"timestamp": "2025-07-27 02:36:05", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 03:02:24", "test": true}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 03:02:24", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 03:02:24", "level": "ERROR", "message": "Unexpected error: AlertManager.__init__() missing 1 required positional argument: 'thresholds'"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 03:03:47", "test": true}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 03:03:47", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 03:04:11", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 03:04:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 04:30:46", "test": true}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 04:30:46", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 04:30:47", "level": "INFO", "message": "show_error called with: 'WeatherViewModel' object has no attribute 'data'"}
+{"timestamp": "2025-07-27 04:30:53", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:30:53", "level": "INFO", "message": "show_error called with: 'WeatherViewModel' object has no attribute 'data'"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 04:32:03", "test": true}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:03", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:04", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:32:06", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 04:32:06", "level": "INFO", "message": "show_error called with: Rate limit exceeded. Please wait before trying again."}
+{"timestamp": "2025-07-27 04:32:28", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 04:32:28", "test": true}
+{"timestamp": "2025-07-27 04:32:28", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 04:32:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:32:35", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:32:35", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:32:42", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:32:46", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:32:46", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:33:09", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 04:33:09", "level": "ERROR", "message": "API failure for Afsasfaf - CityNotFoundError: City 'Afsasfaf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 04:33:11", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 04:50:49", "test": true}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 04:50:49", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 04:50:50", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:50:54", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:50:54", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:51:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:51:03", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:51:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:51:07", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:51:07", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:51:14", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 04:51:14", "level": "ERROR", "message": "API failure for Sdgsdgsg - CityNotFoundError: City 'Sdgsdgsg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 04:51:15", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 04:56:20", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 04:56:20", "test": true}
+{"timestamp": "2025-07-27 04:56:20", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 04:56:20", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 04:56:20", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:21", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:21", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:21", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:21", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:21", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:21", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:56:25", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:56:25", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:56:30", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 04:56:30", "level": "ERROR", "message": "API failure for Asf - CityNotFoundError: City 'Asf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 04:56:32", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 04:56:49", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 04:56:49", "test": true}
+{"timestamp": "2025-07-27 04:56:49", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 04:56:49", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 04:56:49", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:50", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:50", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:50", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:50", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:50", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 04:56:50", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:56:52", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 04:56:52", "level": "INFO", "message": "show_error called with: Rate limit exceeded. Please wait before trying again."}
+{"timestamp": "2025-07-27 04:56:56", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:56:57", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:57:03", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 04:57:03", "level": "ERROR", "message": "API failure for Sdgsdg - CityNotFoundError: City 'Sdgsdg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 04:57:04", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 04:57:12", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 04:57:12", "test": true}
+{"timestamp": "2025-07-27 04:57:12", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 04:57:12", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 04:57:12", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 04:57:13", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 04:57:13", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 04:57:13", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 04:57:13", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 04:57:13", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 04:57:13", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 04:57:18", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 04:57:18", "level": "ERROR", "message": "API failure for Afasf - CityNotFoundError: City 'Afasf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 04:57:19", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 04:57:26", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 04:57:26", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 05:03:17", "test": true}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 05:03:17", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 05:03:18", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:03:20", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 05:03:20", "level": "INFO", "message": "show_error called with: Rate limit exceeded. Please wait before trying again."}
+{"timestamp": "2025-07-27 05:03:32", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:03:32", "level": "ERROR", "message": "API failure for Sdfsgd - CityNotFoundError: City 'Sdfsgd' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:03:33", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 05:03:44", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 05:03:44", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:03:51", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:03:51", "level": "ERROR", "message": "API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:03:53", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 05:03:59", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:03:59", "level": "ERROR", "message": "API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:04:00", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 05:07:09", "test": true}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 05:07:09", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 05:07:09", "level": "ERROR", "message": "Unexpected error: 'WeatherDashboardMain' object has no attribute 'widgets'"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 05:08:22", "test": true}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 05:08:22", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 05:08:23", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:08:29", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 05:08:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:08:34", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:08:34", "level": "ERROR", "message": "API failure for Asfa - CityNotFoundError: City 'Asfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:08:36", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 05:08:50", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:08:50", "level": "ERROR", "message": "API failure for Asfa - CityNotFoundError: City 'Asfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:08:51", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 05:15:48", "test": true}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 05:15:48", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:15:52", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 05:15:53", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:15:59", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:16:05", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:16:05", "level": "ERROR", "message": "API failure for Adgagd - CityNotFoundError: City 'Adgagd' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:16:05", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)"}
+{"timestamp": "2025-07-27 05:16:05", "level": "WARN", "message": "Weather alert: Dangerous Heat Index - Heat index is dangerously high: 119.2 (threshold: 104.9)"}
+{"timestamp": "2025-07-27 05:16:06", "level": "INFO", "message": "show_error called with: City 'Adgagd' not found"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 05:25:07", "test": true}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 05:25:07", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 05:25:08", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:25:12", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 05:25:12", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:25:14", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 05:25:14", "level": "INFO", "message": "show_error called with: Rate limit exceeded. Please wait before trying again."}
+{"timestamp": "2025-07-27 05:25:24", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:25:24", "level": "ERROR", "message": "API failure for Asfasf - CityNotFoundError: City 'Asfasf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:25:26", "level": "INFO", "message": "show_error called with: City 'Asfasf' not found"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 05:51:06", "test": true}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 05:51:06", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 05:51:07", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:51:11", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 05:51:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:51:15", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 05:51:26", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 05:51:35", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:51:35", "level": "ERROR", "message": "API failure for Oigoigog - CityNotFoundError: City 'Oigoigog' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:51:36", "level": "INFO", "message": "Weather data written for oigoigog - Simulated"}
+{"timestamp": "2025-07-27 05:51:47", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:51:47", "level": "ERROR", "message": "API failure for Oigoigog - CityNotFoundError: City 'Oigoigog' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:51:48", "level": "INFO", "message": "Weather data written for oigoigog - Simulated"}
+{"timestamp": "2025-07-27 05:51:55", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:51:55", "level": "ERROR", "message": "API failure for Oigoigog - CityNotFoundError: City 'Oigoigog' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:51:56", "level": "INFO", "message": "Weather data written for oigoigog - Simulated"}
+{"timestamp": "2025-07-27 05:52:00", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 05:58:03", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 05:58:03", "test": true}
+{"timestamp": "2025-07-27 05:58:03", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 05:58:03", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 05:58:03", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 05:58:04", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 05:58:04", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 05:58:04", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 05:58:04", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 05:58:04", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 05:58:04", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:58:08", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 05:58:08", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 05:58:12", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 05:58:22", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 05:58:31", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:58:31", "level": "ERROR", "message": "API failure for Sgsdgs - CityNotFoundError: City 'Sgsdgs' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:58:32", "level": "INFO", "message": "Weather data written for sgsdgs - Simulated"}
+{"timestamp": "2025-07-27 05:58:38", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 05:58:38", "level": "ERROR", "message": "API failure for Sgsdgs - CityNotFoundError: City 'Sgsdgs' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 05:58:40", "level": "INFO", "message": "Weather data written for sgsdgs - Simulated"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:02:45", "test": true}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:02:45", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:02:45", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:02:45", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 89% (threshold: 85%)"}
+{"timestamp": "2025-07-27 06:02:45", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-27 06:02:47", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-27 06:06:17", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:06:17", "test": true}
+{"timestamp": "2025-07-27 06:06:17", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:06:17", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:06:17", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:06:18", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:06:18", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:06:18", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:06:18", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:06:18", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:06:18", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:06:18", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-27 06:06:20", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-27 06:06:34", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:06:50", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 06:07:06", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:07:06", "test": true}
+{"timestamp": "2025-07-27 06:07:06", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:07:06", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:07:06", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:07:07", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:07:07", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:07:07", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:07:07", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:07:07", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:07:07", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:07:13", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:07:13", "level": "ERROR", "message": "API failure for Igoig - CityNotFoundError: City 'Igoig' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:07:13", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)"}
+{"timestamp": "2025-07-27 06:07:13", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)"}
+{"timestamp": "2025-07-27 06:07:15", "level": "INFO", "message": "Weather data written for igoig - Simulated"}
+{"timestamp": "2025-07-27 06:16:28", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:16:28", "test": true}
+{"timestamp": "2025-07-27 06:16:28", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:16:28", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:16:28", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:16:29", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:16:29", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:16:29", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:16:29", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:16:29", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:16:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:16:31", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 06:16:31", "level": "INFO", "message": "show_error called with: Rate limit exceeded. Please wait before trying again."}
+{"timestamp": "2025-07-27 06:16:39", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:16:42", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 06:16:42", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:16:46", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:16:46", "level": "ERROR", "message": "API failure for Pohph - CityNotFoundError: City 'Pohph' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:16:46", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 06:16:48", "level": "INFO", "message": "Weather data written for pohph - Simulated"}
+{"timestamp": "2025-07-27 06:16:55", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:18:38", "test": true}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:18:38", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:18:39", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:18:41", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 06:18:46", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 06:18:46", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:18:50", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:18:51", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:18:53", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:18:59", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:19:05", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:19:05", "level": "ERROR", "message": "API failure for Dgsdghshg - CityNotFoundError: City 'Dgsdghshg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:19:07", "level": "INFO", "message": "Weather data written for dgsdghshg - Simulated"}
+{"timestamp": "2025-07-27 06:32:23", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:32:23", "test": true}
+{"timestamp": "2025-07-27 06:32:23", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:32:23", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:32:23", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:32:23", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:32:24", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:32:24", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:32:24", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:32:24", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:32:24", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:32:24", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 06:32:33", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 06:32:33", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:32:33", "level": "INFO", "message": "show_error called with: Simulated data used due to API failure"}
+{"timestamp": "2025-07-27 06:32:37", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:32:37", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:32:43", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:32:43", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:32:49", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 06:32:49", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:33:05", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:33:05", "level": "ERROR", "message": "API failure for Asf - CityNotFoundError: City 'Asf' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:33:07", "level": "INFO", "message": "Weather data written for asf - Simulated"}
+{"timestamp": "2025-07-27 06:33:07", "level": "INFO", "message": "show_error called with: City 'Asf' not found"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:37:07", "test": true}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:37:07", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:37:08", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:37:11", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 06:37:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:37:14", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 06:37:15", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 06:37:15", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:37:22", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:37:23", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:37:23", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:37:28", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:37:28", "level": "ERROR", "message": "API failure for Sdgsdgsdg - CityNotFoundError: City 'Sdgsdgsdg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:37:30", "level": "INFO", "message": "Weather data written for sdgsdgsdg - Simulated"}
+{"timestamp": "2025-07-27 06:37:30", "level": "INFO", "message": "show_error called with: City 'Sdgsdgsdg' not found"}
+{"timestamp": "2025-07-27 06:37:35", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:37:35", "level": "ERROR", "message": "API failure for Sdgsdgsdg - CityNotFoundError: City 'Sdgsdgsdg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:37:35", "level": "WARN", "message": "Weather alert: High Humidity Alert - Very humid conditions: 86% (threshold: 85%)"}
+{"timestamp": "2025-07-27 06:37:36", "level": "INFO", "message": "Weather data written for sdgsdgsdg - Simulated"}
+{"timestamp": "2025-07-27 06:37:36", "level": "INFO", "message": "show_error called with: City 'Sdgsdgsdg' not found"}
+{"timestamp": "2025-07-27 06:37:42", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:48:40", "test": true}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:48:40", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:48:41", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:48:45", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 06:48:45", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 06:48:48", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:48:48", "level": "ERROR", "message": "API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:48:48", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 5 (threshold: AQI 4)"}
+{"timestamp": "2025-07-27 06:48:49", "level": "INFO", "message": "Weather data written for afasfa - Simulated"}
+{"timestamp": "2025-07-27 06:48:49", "level": "INFO", "message": "show_error called with: City 'Afasfa' not found"}
+{"timestamp": "2025-07-27 06:48:53", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 06:48:53", "level": "ERROR", "message": "API failure for Afasfa - CityNotFoundError: City 'Afasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:48:54", "level": "INFO", "message": "Weather data written for afasfa - Simulated"}
+{"timestamp": "2025-07-27 06:48:54", "level": "INFO", "message": "show_error called with: City 'Afasfa' not found"}
+{"timestamp": "2025-07-27 06:48:58", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 06:49:00", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 06:49:00", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:49:05", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:49:06", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 06:49:06", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 06:49:36", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 06:49:36", "test": true}
+{"timestamp": "2025-07-27 06:49:36", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 06:49:36", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 06:49:36", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 06:49:37", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 06:49:37", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 06:49:37", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 06:49:37", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 06:49:37", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 06:49:37", "level": "ERROR", "message": "API failure for New York - API disabled for testing: Testing mode. Switching to simulated data."}
+{"timestamp": "2025-07-27 06:49:37", "level": "WARN", "message": "Using fallback for New York: Testing mode"}
+{"timestamp": "2025-07-27 06:49:38", "level": "INFO", "message": "Weather data written for new_york - Simulated"}
+{"timestamp": "2025-07-27 06:49:38", "level": "INFO", "message": "show_error called with: Testing mode"}

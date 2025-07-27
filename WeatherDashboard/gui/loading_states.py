@@ -242,15 +242,6 @@ class AsyncWeatherOperation:
                 
                 # Do the actual work in background
                 success, error_message = self.controller.update_weather_display(city_name, unit_system, cancel_event_to_pass)
-                if not success:
-                    self._schedule_ui_update(self.loading_manager.show_error, error_message or "Failed to update weather display.")
-                    self._schedule_ui_update(self.loading_manager.stop_loading)
-                    return
-                
-                # Step 4: Processing data
-                if self._is_cancelled():
-                    return
-                self._schedule_ui_update(self.loading_manager.update_progress, "Processing weather data...")
                 
                 # Check for cancellation before completion
                 if self._is_cancelled():
@@ -260,6 +251,10 @@ class AsyncWeatherOperation:
                 # Handle completion in main thread
                 def complete_task():
                     """Complete the async operation and call completion callback."""
+                    # Show error message if there is one
+                    if error_message:
+                        self.loading_manager.show_error(error_message)
+                    
                     self.loading_manager.stop_loading()
                     if on_complete:
                         on_complete(success)

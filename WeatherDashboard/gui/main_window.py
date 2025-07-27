@@ -85,7 +85,7 @@ class WeatherDashboardMain:
             self.widgets = widgets
         else:
             self.widgets = self._create_widgets(root, frames)
-        
+
         # Business logic
         self.service = data_service or WeatherDataService(self.data_manager)
         self.controller = controller or WeatherDashboardController(
