@@ -9,10 +9,12 @@ Classes:
     TitleWidget: Simple title display widget with customizable text
 """
 
-from typing import Optional
+from typing import Optional, Callable
 from tkinter import ttk
+import tkinter as tk
 
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard import config
 
 from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
@@ -24,15 +26,18 @@ class TitleWidget(BaseWidgetManager):
         parent: Parent frame container
         title: Current title text string
         title_label: Title display label widget
+        scheduler_callback: Callback for scheduler toggle
     """
 
-    def __init__(self, parent_frame: ttk.Frame, title: str = "Weather Dashboard") -> None:
+    def __init__(self, parent_frame: ttk.Frame, title: str = "Weather Dashboard", scheduler_callback: Optional[Callable] = None) -> None:
         """Initialize the title widget with specified text."""
         # Direct imports for stable utilities
         self.logger = Logger()
+        self.config = config
         
         # Injected dependencies for testable components
         self.parent_frame = parent_frame
+        self.scheduler_callback = scheduler_callback
 
         # Add version to default title
         if title == "Weather Dashboard":
@@ -46,6 +51,9 @@ class TitleWidget(BaseWidgetManager):
 
         self.title = title
         self.title_label: Optional[ttk.Label] = None
+
+        self.scheduler_var: Optional[tk.BooleanVar] = None
+        self.scheduler_checkbox: Optional[ttk.Checkbutton] = None
         
         # Initialize base class with error handling
         super().__init__(parent_frame, None, "title widget")
@@ -56,8 +64,42 @@ class TitleWidget(BaseWidgetManager):
 
     def _create_widgets(self) -> None:
         """Create and display the title label widget."""
+        # Create main container frame
+        main_frame = SafeWidgetCreator.create_frame(self.parent)
+        main_frame.pack(fill=tk.X, padx=10, pady=5)
+
         self.title_label = SafeWidgetCreator.create_label(self.parent, self.title, "Title.TLabel")
-        self.title_label.pack()
+        self.title_label.pack(side=tk.LEFT)
+
+        # System controls on the right
+        if self.scheduler_callback:
+            self._create_scheduler_control(main_frame)
+
+    def _create_scheduler_control(self, parent_frame: ttk.Frame) -> None:
+        """Create scheduler toggle control."""
+        # Create control frame
+        control_frame = SafeWidgetCreator.create_frame(parent_frame)
+        control_frame.pack(side=tk.RIGHT, padx=(20, 0))
+        
+        # Scheduler toggle
+        self.scheduler_var = tk.BooleanVar(value=self.config.SCHEDULER["enabled"])
+        self.scheduler_checkbox = SafeWidgetCreator.create_checkbutton(
+            control_frame,
+            text="Live Updates",
+            variable=self.scheduler_var,
+            command=self._on_scheduler_toggle
+        )
+        self.scheduler_checkbox.pack(side=tk.RIGHT)
+    
+    def _on_scheduler_toggle(self) -> None:
+        """Handle scheduler toggle."""
+        if self.scheduler_callback:
+            self.scheduler_callback()
+    
+    def set_scheduler_state(self, enabled: bool) -> None:
+        """Update scheduler checkbox state."""
+        if self.scheduler_var:
+            self.scheduler_var.set(enabled)
     
     @widget_error_handler("title update")
     def update_title(self, new_title: str) -> None:

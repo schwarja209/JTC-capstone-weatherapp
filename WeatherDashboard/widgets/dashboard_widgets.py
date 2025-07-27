@@ -14,6 +14,7 @@ from typing import Dict, Any, Callable, Optional
 import tkinter as tk
 from tkinter import ttk, messagebox
 
+from WeatherDashboard import config
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.widget_utils import WidgetUtils
 
@@ -45,7 +46,8 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         chart_widgets: Chart display widget manager
     """
 
-    def __init__(self, frames: Dict[str, ttk.Frame], state: Any, update_cb: Callable, clear_cb: Callable, dropdown_cb: Callable, cancel_cb: Callable = None) -> None:
+    def __init__(self, frames: Dict[str, ttk.Frame], state: Any, update_cb: Callable, clear_cb: Callable,
+                 dropdown_cb: Callable, cancel_cb: Callable = None, scheduler_cb: Callable = None) -> None:
         """Initialize the widget coordinator with error handling.
         
         Sets up all widget managers and connects them to the application state
@@ -58,9 +60,11 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             clear_cb: Callback function for clear/reset button events
             dropdown_cb: Callback function for dropdown change events
             cancel_cb: Callback function for operation cancellation
+            scheduler_cb: Scheduler toggle callback
         """
         # Direct imports for stable utilities
         self.logger = Logger()
+        self.config = config
         self.widget_utils = WidgetUtils()
 
         # Injected dependencies for testable components
@@ -72,8 +76,10 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             'update': update_cb,
             'reset': clear_cb,
             'dropdown_update': dropdown_cb,
-            'cancel': cancel_cb
+            'cancel': cancel_cb,
         }
+        # Separate because in title frame
+        self.scheduler_callback = scheduler_cb
         
         # Widget component references
         self.title_widget: Optional[TitleWidget] = None
@@ -117,7 +123,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     @widget_error_handler("title section")
     def _create_title_section(self) -> None:
         """Create the title widget section."""
-        self.title_widget = TitleWidget(self.frames["title"])
+        self.title_widget = TitleWidget(self.frames["title"], scheduler_callback=self.scheduler_callback)
     
     @widget_error_handler("control section")
     def _create_control_section(self) -> None:

@@ -203,9 +203,12 @@ DATA_DIR = PACKAGE_DIR / "data"
 LOGS_DIR = PACKAGE_DIR / "logs"
 
 OUTPUT = {
-    "data_dir": str(DATA_DIR),
-    "log_dir": str(LOGS_DIR), 
-    "log": str(DATA_DIR / "output.txt")
+    "log_dir": str(LOGS_DIR),
+    "data_dir": str(DATA_DIR), 
+    "text_file": str(DATA_DIR / "output.txt"),
+    "csv_dir": str(DATA_DIR / "csv"),  # WeatherDashboard/data/csv/
+    "csv_filename": "weather_data.csv",
+    "csv_backup_dir": str(DATA_DIR / "csv" / "backup")  # For archived data
 }
 
 def ensure_directories() -> bool:
@@ -218,17 +221,32 @@ def ensure_directories() -> bool:
     Returns:
         bool: True if directories exist or were created.
     """
-    os.makedirs(DATA_DIR, exist_ok=True)
     os.makedirs(LOGS_DIR, exist_ok=True)
+    os.makedirs(DATA_DIR, exist_ok=True)
+    os.makedirs(OUTPUT["csv_dir"], exist_ok=True)
+    os.makedirs(OUTPUT["csv_backup_dir"], exist_ok=True)
     return True # for validation
 
 MEMORY = {
-    "max_cities_stored": 50,        # Maximum number of cities to keep in memory
-    "max_entries_per_city": 30,     # Maximum weather entries per city (existing)
-    "max_total_entries": 1000,      # Global maximum entries across all cities
-    "cleanup_interval_hours": 24,   # Hours between automatic cleanup (existing)
+    "max_cities_stored": 50,            # Maximum number of cities to keep in memory
+    "max_entries_per_city": 30,         # Maximum weather entries per city (existing)
+    "max_total_entries": 1000,          # Global maximum entries across all cities
+    "cleanup_interval_hours": 24,       # Hours between automatic cleanup (existing)
     "aggressive_cleanup_threshold": 0.8,  # Trigger aggressive cleanup at 80% of limits
-    "max_alert_history_size": 100   # Alert system constant
+    "max_alert_history_size": 100       # Alert system constant
+}
+
+SCHEDULER = {
+    "enabled": True,                    # Master switch for auto-collection
+    "default_interval_minutes": 15,     # Default collection interval
+    "error_threshold": 5,               # Consecutive failures before notification
+    "retry_attempts": 3,                # Retry failed fetches
+    "retry_delay_seconds": 60,          # Wait between retries
+    "quiet_hours": {                    # Reduce frequency during off-hours
+        "start": "22:00",
+        "end": "06:00",
+        "interval_multiplier": 2.0      # Double the interval during quiet hours
+    }
 }
 
 ERROR_MESSAGES = {

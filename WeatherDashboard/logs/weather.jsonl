@@ -8841,3 +8841,296 @@
 {"timestamp": "2025-07-27 12:56:34", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
 {"timestamp": "2025-07-27 12:56:35", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
 {"timestamp": "2025-07-27 12:56:35", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 15:23:48", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 15:23:48", "test": true}
+{"timestamp": "2025-07-27 15:23:48", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 15:23:48", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 15:23:48", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 15:23:49", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 15:23:49", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 15:23:49", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 15:23:49", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 15:23:49", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 15:23:49", "level": "ERROR", "message": "Unexpected error: 'WeatherDashboardMain' object has no attribute 'state_manager'"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 15:25:29", "test": true}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 15:25:29", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 15:25:30", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 15:25:30", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 15:25:30", "level": "WARN", "message": "Auto-fetch failed for New York: 'dict' object has no attribute 'metrics'"}
+{"timestamp": "2025-07-27 15:25:40", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 15:26:28", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 15:55:14", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 15:55:14", "test": true}
+{"timestamp": "2025-07-27 15:55:14", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 15:55:14", "level": "ERROR", "message": "Unexpected error: 'WeatherDashboardMain' object has no attribute 'scheduler_service'"}
+{"timestamp": "2025-07-27 16:09:56", "level": "ERROR", "message": "Unexpected error: expected an indented block after function definition on line 419 (controller.py, line 420)"}
+{"timestamp": "2025-07-27 16:16:37", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:16:37", "test": true}
+{"timestamp": "2025-07-27 16:16:37", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:16:38", "level": "ERROR", "message": "Unexpected error: 'WeatherDashboardMain' object has no attribute 'scheduler_service'"}
+{"timestamp": "2025-07-27 16:27:32", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:27:32", "test": true}
+{"timestamp": "2025-07-27 16:27:32", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:27:32", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:27:32", "level": "ERROR", "message": "Unexpected error: 'WeatherDashboardMain' object has no attribute 'widgets'"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:33:19", "test": true}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 16:33:19", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:33:20", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:33:20", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 16:33:20", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:33:20", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 16:33:25", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:33:27", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:33:27", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:33:27", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 16:33:28", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:33:29", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:33:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:33:29", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 16:33:33", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:33:33", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-27 16:33:33", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 16:33:40", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 16:33:42", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 16:33:42", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 16:33:46", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 16:33:48", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 16:33:48", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 16:33:52", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 16:33:52", "level": "ERROR", "message": "API failure for Igigpg - CityNotFoundError: City 'Igigpg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 16:33:52", "level": "INFO", "message": "Weather data written for igigpg - Simulated"}
+{"timestamp": "2025-07-27 16:33:52", "level": "INFO", "message": "Stored weather data for Igigpg - 1 entries"}
+{"timestamp": "2025-07-27 16:33:52", "level": "WARN", "message": "Using fallback for Igigpg: City 'Igigpg' not found"}
+{"timestamp": "2025-07-27 16:33:53", "level": "INFO", "message": "show_error called with: City 'Igigpg' not found"}
+{"timestamp": "2025-07-27 16:33:59", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:36:37", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:36:37", "test": true}
+{"timestamp": "2025-07-27 16:36:37", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 16:36:38", "level": "ERROR", "message": "Configuration error in status bar widgets creation: cannot use geometry manager grid inside .!frame2 which already has slaves managed by pack"}
+{"timestamp": "2025-07-27 16:36:38", "level": "WARN", "message": "Status bar widgets created with errors - some functionality may be limited"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:36:38", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 16:36:44", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:36:44", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 16:36:44", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 16:36:52", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:36:53", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:36:54", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:36:54", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:41:39", "test": true}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:41:39", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 16:41:53", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:41:53", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 16:41:53", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 16:42:05", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 16:42:05", "level": "ERROR", "message": "API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 16:42:05", "level": "INFO", "message": "Weather data written for new_yorkasfasfa - Simulated"}
+{"timestamp": "2025-07-27 16:42:05", "level": "INFO", "message": "Stored weather data for New Yorkasfasfa - 1 entries"}
+{"timestamp": "2025-07-27 16:42:05", "level": "WARN", "message": "Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)"}
+{"timestamp": "2025-07-27 16:42:05", "level": "WARN", "message": "Using fallback for New Yorkasfasfa: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:42:06", "level": "INFO", "message": "show_error called with: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:43:35", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:43:37", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:43:37", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 16:43:37", "level": "ERROR", "message": "API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 16:43:37", "level": "INFO", "message": "Weather data written for new_yorkasfasfa - Simulated"}
+{"timestamp": "2025-07-27 16:43:37", "level": "INFO", "message": "Stored weather data for New Yorkasfasfa - 2 entries"}
+{"timestamp": "2025-07-27 16:43:37", "level": "WARN", "message": "Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:43:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:43:37", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 16:43:37", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:43:39", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:43:39", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 16:43:39", "level": "ERROR", "message": "API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 16:43:39", "level": "INFO", "message": "Weather data written for new_yorkasfasfa - Simulated"}
+{"timestamp": "2025-07-27 16:43:39", "level": "INFO", "message": "Stored weather data for New Yorkasfasfa - 3 entries"}
+{"timestamp": "2025-07-27 16:43:39", "level": "WARN", "message": "Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:43:39", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:43:39", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-27 16:43:44", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:43:45", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:43:45", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 16:43:45", "level": "ERROR", "message": "API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 16:43:45", "level": "INFO", "message": "Weather data written for new_yorkasfasfa - Simulated"}
+{"timestamp": "2025-07-27 16:43:45", "level": "INFO", "message": "Stored weather data for New Yorkasfasfa - 4 entries"}
+{"timestamp": "2025-07-27 16:43:45", "level": "WARN", "message": "Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:43:45", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:43:45", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-27 16:43:46", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:43:47", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:43:47", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 16:43:47", "level": "ERROR", "message": "API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 16:43:47", "level": "INFO", "message": "Weather data written for new_yorkasfasfa - Simulated"}
+{"timestamp": "2025-07-27 16:43:47", "level": "INFO", "message": "Stored weather data for New Yorkasfasfa - 5 entries"}
+{"timestamp": "2025-07-27 16:43:47", "level": "WARN", "message": "Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:43:47", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:43:47", "level": "INFO", "message": "Stored weather data for New York - 7 entries"}
+{"timestamp": "2025-07-27 16:43:49", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:43:51", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:43:51", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 16:43:51", "level": "ERROR", "message": "API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 16:43:51", "level": "INFO", "message": "Weather data written for new_yorkasfasfa - Simulated"}
+{"timestamp": "2025-07-27 16:43:51", "level": "INFO", "message": "Stored weather data for New Yorkasfasfa - 6 entries"}
+{"timestamp": "2025-07-27 16:43:51", "level": "WARN", "message": "Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:43:51", "level": "ERROR", "message": "Auto-fetch failed 5 times for New Yorkasfasfa: City 'New Yorkasfasfa' not found"}
+{"timestamp": "2025-07-27 16:43:51", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:43:51", "level": "INFO", "message": "Stored weather data for New York - 8 entries"}
+{"timestamp": "2025-07-27 16:46:08", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:46:08", "test": true}
+{"timestamp": "2025-07-27 16:46:08", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:46:08", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 16:46:08", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:46:09", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:51:44", "test": true}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 16:51:44", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:51:45", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:51:45", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 16:51:45", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:51:45", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 16:51:52", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:51:56", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:51:56", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:51:56", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 16:52:02", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:52:03", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:52:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:03", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 16:52:07", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:52:09", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:52:09", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:09", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-27 16:52:10", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:52:11", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:52:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:11", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-27 16:52:12", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:52:13", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:52:13", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:13", "level": "INFO", "message": "Stored weather data for New York - 7 entries"}
+{"timestamp": "2025-07-27 16:52:19", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:19", "level": "INFO", "message": "Stored weather data for New York - 8 entries"}
+{"timestamp": "2025-07-27 16:52:20", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 16:52:20", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 16:52:20", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 16:52:32", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:32", "level": "INFO", "message": "Stored weather data for New York - 9 entries"}
+{"timestamp": "2025-07-27 16:52:32", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 16:52:35", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:52:36", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:52:36", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:36", "level": "INFO", "message": "Stored weather data for New York - 10 entries"}
+{"timestamp": "2025-07-27 16:52:39", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 16:52:40", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:52:40", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:40", "level": "INFO", "message": "Stored weather data for New York - 11 entries"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 16:52:44", "test": true}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 16:52:44", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 17:03:25", "test": true}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 17:03:25", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 17:03:26", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 17:03:26", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 17:03:32", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 17:03:35", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 17:03:41", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 17:03:53", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 17:03:57", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 17:03:57", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 17:03:57", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 17:03:57", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 17:04:07", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 17:04:07", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 17:04:07", "level": "ERROR", "message": "API failure for Zdgzag - CityNotFoundError: City 'Zdgzag' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 17:04:07", "level": "INFO", "message": "Weather data written for zdgzag - Simulated"}
+{"timestamp": "2025-07-27 17:04:07", "level": "INFO", "message": "Stored weather data for Zdgzag - 1 entries"}
+{"timestamp": "2025-07-27 17:04:07", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-27 17:04:07", "level": "WARN", "message": "Using fallback for Zdgzag: City 'Zdgzag' not found"}
+{"timestamp": "2025-07-27 17:04:08", "level": "INFO", "message": "show_error called with: City 'Zdgzag' not found"}
+{"timestamp": "2025-07-27 17:04:12", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 17:04:12", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 17:04:13", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 17:04:13", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 17:04:19", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 17:04:19", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 17:04:20", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 17:04:20", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 17:04:37", "level": "INFO", "message": "Weather data scheduler stopped"}

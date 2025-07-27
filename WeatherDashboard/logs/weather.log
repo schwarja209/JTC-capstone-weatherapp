@@ -8841,3 +8841,296 @@
 [ERROR] 2025-07-27 12:56:34 Input validation error: Input validation failed: City name is invalid: cannot be empty
 [INFO] 2025-07-27 12:56:35 show_error called with: Input validation failed: City name is invalid: cannot be empty
 [ERROR] 2025-07-27 12:56:35 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 15:23:48 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 15:23:48
+[INFO] 2025-07-27 15:23:48 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 15:23:48 title widget created successfully
+[INFO] 2025-07-27 15:23:48 control widgets created successfully
+[INFO] 2025-07-27 15:23:49 metric display widgets created successfully
+[INFO] 2025-07-27 15:23:49 chart widgets created successfully
+[INFO] 2025-07-27 15:23:49 tabbed display widgets created successfully
+[INFO] 2025-07-27 15:23:49 status bar widgets created successfully
+[INFO] 2025-07-27 15:23:49 dashboard widgets created successfully
+[ERROR] 2025-07-27 15:23:49 Unexpected error: 'WeatherDashboardMain' object has no attribute 'state_manager'
+[INFO] 2025-07-27 15:25:29 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 15:25:29
+[INFO] 2025-07-27 15:25:29 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 15:25:29 title widget created successfully
+[INFO] 2025-07-27 15:25:29 control widgets created successfully
+[INFO] 2025-07-27 15:25:29 metric display widgets created successfully
+[INFO] 2025-07-27 15:25:29 chart widgets created successfully
+[INFO] 2025-07-27 15:25:29 tabbed display widgets created successfully
+[INFO] 2025-07-27 15:25:29 status bar widgets created successfully
+[INFO] 2025-07-27 15:25:29 dashboard widgets created successfully
+[INFO] 2025-07-27 15:25:29 Weather data scheduler started
+[INFO] 2025-07-27 15:25:30 Weather data written for new_york - Live
+[INFO] 2025-07-27 15:25:30 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 15:25:30 Auto-fetch failed for New York: 'dict' object has no attribute 'metrics'
+[WARN] 2025-07-27 15:25:40 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[WARN] 2025-07-27 15:26:28 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 15:55:14 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 15:55:14
+[INFO] 2025-07-27 15:55:14 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[ERROR] 2025-07-27 15:55:14 Unexpected error: 'WeatherDashboardMain' object has no attribute 'scheduler_service'
+[ERROR] 2025-07-27 16:09:56 Unexpected error: expected an indented block after function definition on line 419 (controller.py, line 420)
+[INFO] 2025-07-27 16:16:37 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:16:37
+[INFO] 2025-07-27 16:16:37 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[ERROR] 2025-07-27 16:16:38 Unexpected error: 'WeatherDashboardMain' object has no attribute 'scheduler_service'
+[INFO] 2025-07-27 16:27:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:27:32
+[INFO] 2025-07-27 16:27:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 16:27:32 Weather data scheduler started
+[ERROR] 2025-07-27 16:27:32 Unexpected error: 'WeatherDashboardMain' object has no attribute 'widgets'
+[INFO] 2025-07-27 16:33:19 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:33:19
+[INFO] 2025-07-27 16:33:19 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 16:33:19 title widget created successfully
+[INFO] 2025-07-27 16:33:19 control widgets created successfully
+[INFO] 2025-07-27 16:33:19 metric display widgets created successfully
+[INFO] 2025-07-27 16:33:19 chart widgets created successfully
+[INFO] 2025-07-27 16:33:19 tabbed display widgets created successfully
+[INFO] 2025-07-27 16:33:19 status bar widgets created successfully
+[INFO] 2025-07-27 16:33:19 dashboard widgets created successfully
+[INFO] 2025-07-27 16:33:19 Weather data scheduler started
+[INFO] 2025-07-27 16:33:20 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:33:20 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 16:33:20 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:33:20 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 16:33:25 Weather data scheduler stopped
+[INFO] 2025-07-27 16:33:27 Weather data scheduler started
+[INFO] 2025-07-27 16:33:27 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:33:27 Stored weather data for New York - 3 entries
+[INFO] 2025-07-27 16:33:28 Weather data scheduler stopped
+[INFO] 2025-07-27 16:33:29 Weather data scheduler started
+[INFO] 2025-07-27 16:33:29 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:33:29 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 16:33:33 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:33:33 Stored weather data for New York - 5 entries
+[WARN] 2025-07-27 16:33:33 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[ERROR] 2025-07-27 16:33:40 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 16:33:42 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 16:33:42 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[ERROR] 2025-07-27 16:33:46 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 16:33:48 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-27 16:33:48 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[WARN] 2025-07-27 16:33:52 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 16:33:52 API failure for Igigpg - CityNotFoundError: City 'Igigpg' not found. Switching to simulated data.
+[INFO] 2025-07-27 16:33:52 Weather data written for igigpg - Simulated
+[INFO] 2025-07-27 16:33:52 Stored weather data for Igigpg - 1 entries
+[WARN] 2025-07-27 16:33:52 Using fallback for Igigpg: City 'Igigpg' not found
+[INFO] 2025-07-27 16:33:53 show_error called with: City 'Igigpg' not found
+[INFO] 2025-07-27 16:33:59 Weather data scheduler stopped
+[INFO] 2025-07-27 16:36:37 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:36:37
+[INFO] 2025-07-27 16:36:37 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 16:36:38 title widget created successfully
+[INFO] 2025-07-27 16:36:38 control widgets created successfully
+[INFO] 2025-07-27 16:36:38 metric display widgets created successfully
+[INFO] 2025-07-27 16:36:38 chart widgets created successfully
+[INFO] 2025-07-27 16:36:38 tabbed display widgets created successfully
+[ERROR] 2025-07-27 16:36:38 Configuration error in status bar widgets creation: cannot use geometry manager grid inside .!frame2 which already has slaves managed by pack
+[WARN] 2025-07-27 16:36:38 Status bar widgets created with errors - some functionality may be limited
+[INFO] 2025-07-27 16:36:38 dashboard widgets created successfully
+[INFO] 2025-07-27 16:36:38 Weather data scheduler started
+[INFO] 2025-07-27 16:36:38 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:36:38 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 16:36:38 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:36:38 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 16:36:44 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:36:44 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 16:36:44 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 16:36:52 Weather data scheduler stopped
+[INFO] 2025-07-27 16:36:53 Weather data scheduler started
+[INFO] 2025-07-27 16:36:54 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:36:54 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 16:41:39 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:41:39
+[INFO] 2025-07-27 16:41:39 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 16:41:39 title widget created successfully
+[INFO] 2025-07-27 16:41:39 control widgets created successfully
+[INFO] 2025-07-27 16:41:39 metric display widgets created successfully
+[INFO] 2025-07-27 16:41:39 chart widgets created successfully
+[INFO] 2025-07-27 16:41:39 tabbed display widgets created successfully
+[INFO] 2025-07-27 16:41:39 status bar widgets created successfully
+[INFO] 2025-07-27 16:41:39 dashboard widgets created successfully
+[INFO] 2025-07-27 16:41:39 Weather data scheduler started
+[INFO] 2025-07-27 16:41:39 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:41:39 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 16:41:39 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:41:39 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 16:41:53 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:41:53 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 16:41:53 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[WARN] 2025-07-27 16:42:05 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 16:42:05 API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 16:42:05 Weather data written for new_yorkasfasfa - Simulated
+[INFO] 2025-07-27 16:42:05 Stored weather data for New Yorkasfasfa - 1 entries
+[WARN] 2025-07-27 16:42:05 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)
+[WARN] 2025-07-27 16:42:05 Using fallback for New Yorkasfasfa: City 'New Yorkasfasfa' not found
+[INFO] 2025-07-27 16:42:06 show_error called with: City 'New Yorkasfasfa' not found
+[INFO] 2025-07-27 16:43:35 Weather data scheduler stopped
+[INFO] 2025-07-27 16:43:37 Weather data scheduler started
+[WARN] 2025-07-27 16:43:37 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 16:43:37 API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 16:43:37 Weather data written for new_yorkasfasfa - Simulated
+[INFO] 2025-07-27 16:43:37 Stored weather data for New Yorkasfasfa - 2 entries
+[WARN] 2025-07-27 16:43:37 Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found
+[INFO] 2025-07-27 16:43:37 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:43:37 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 16:43:37 Weather data scheduler stopped
+[INFO] 2025-07-27 16:43:39 Weather data scheduler started
+[WARN] 2025-07-27 16:43:39 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 16:43:39 API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 16:43:39 Weather data written for new_yorkasfasfa - Simulated
+[INFO] 2025-07-27 16:43:39 Stored weather data for New Yorkasfasfa - 3 entries
+[WARN] 2025-07-27 16:43:39 Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found
+[INFO] 2025-07-27 16:43:39 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:43:39 Stored weather data for New York - 5 entries
+[INFO] 2025-07-27 16:43:44 Weather data scheduler stopped
+[INFO] 2025-07-27 16:43:45 Weather data scheduler started
+[WARN] 2025-07-27 16:43:45 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 16:43:45 API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 16:43:45 Weather data written for new_yorkasfasfa - Simulated
+[INFO] 2025-07-27 16:43:45 Stored weather data for New Yorkasfasfa - 4 entries
+[WARN] 2025-07-27 16:43:45 Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found
+[INFO] 2025-07-27 16:43:45 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:43:45 Stored weather data for New York - 6 entries
+[INFO] 2025-07-27 16:43:46 Weather data scheduler stopped
+[INFO] 2025-07-27 16:43:47 Weather data scheduler started
+[WARN] 2025-07-27 16:43:47 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 16:43:47 API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 16:43:47 Weather data written for new_yorkasfasfa - Simulated
+[INFO] 2025-07-27 16:43:47 Stored weather data for New Yorkasfasfa - 5 entries
+[WARN] 2025-07-27 16:43:47 Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found
+[INFO] 2025-07-27 16:43:47 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:43:47 Stored weather data for New York - 7 entries
+[INFO] 2025-07-27 16:43:49 Weather data scheduler stopped
+[INFO] 2025-07-27 16:43:51 Weather data scheduler started
+[WARN] 2025-07-27 16:43:51 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 16:43:51 API failure for New Yorkasfasfa - CityNotFoundError: City 'New Yorkasfasfa' not found. Switching to simulated data.
+[INFO] 2025-07-27 16:43:51 Weather data written for new_yorkasfasfa - Simulated
+[INFO] 2025-07-27 16:43:51 Stored weather data for New Yorkasfasfa - 6 entries
+[WARN] 2025-07-27 16:43:51 Auto-fetch failed for New Yorkasfasfa: City 'New Yorkasfasfa' not found
+[ERROR] 2025-07-27 16:43:51 Auto-fetch failed 5 times for New Yorkasfasfa: City 'New Yorkasfasfa' not found
+[INFO] 2025-07-27 16:43:51 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:43:51 Stored weather data for New York - 8 entries
+[INFO] 2025-07-27 16:46:08 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:46:08
+[INFO] 2025-07-27 16:46:08 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 16:46:08 title widget created successfully
+[INFO] 2025-07-27 16:46:08 control widgets created successfully
+[INFO] 2025-07-27 16:46:09 metric display widgets created successfully
+[INFO] 2025-07-27 16:46:09 chart widgets created successfully
+[INFO] 2025-07-27 16:46:09 tabbed display widgets created successfully
+[INFO] 2025-07-27 16:46:09 status bar widgets created successfully
+[INFO] 2025-07-27 16:46:09 dashboard widgets created successfully
+[INFO] 2025-07-27 16:46:09 Weather data scheduler started
+[INFO] 2025-07-27 16:46:09 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:46:09 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 16:46:09 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:46:09 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 16:51:44 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:51:44
+[INFO] 2025-07-27 16:51:44 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 16:51:44 title widget created successfully
+[INFO] 2025-07-27 16:51:44 control widgets created successfully
+[INFO] 2025-07-27 16:51:44 metric display widgets created successfully
+[INFO] 2025-07-27 16:51:44 chart widgets created successfully
+[INFO] 2025-07-27 16:51:44 tabbed display widgets created successfully
+[INFO] 2025-07-27 16:51:44 status bar widgets created successfully
+[INFO] 2025-07-27 16:51:44 dashboard widgets created successfully
+[INFO] 2025-07-27 16:51:44 Weather data scheduler started
+[INFO] 2025-07-27 16:51:45 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:51:45 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 16:51:45 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:51:45 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 16:51:52 Weather data scheduler stopped
+[INFO] 2025-07-27 16:51:56 Weather data scheduler started
+[INFO] 2025-07-27 16:51:56 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:51:56 Stored weather data for New York - 3 entries
+[INFO] 2025-07-27 16:52:02 Weather data scheduler stopped
+[INFO] 2025-07-27 16:52:03 Weather data scheduler started
+[INFO] 2025-07-27 16:52:03 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:03 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 16:52:07 Weather data scheduler stopped
+[INFO] 2025-07-27 16:52:09 Weather data scheduler started
+[INFO] 2025-07-27 16:52:09 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:09 Stored weather data for New York - 5 entries
+[INFO] 2025-07-27 16:52:10 Weather data scheduler stopped
+[INFO] 2025-07-27 16:52:11 Weather data scheduler started
+[INFO] 2025-07-27 16:52:11 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:11 Stored weather data for New York - 6 entries
+[INFO] 2025-07-27 16:52:12 Weather data scheduler stopped
+[INFO] 2025-07-27 16:52:13 Weather data scheduler started
+[INFO] 2025-07-27 16:52:13 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:13 Stored weather data for New York - 7 entries
+[INFO] 2025-07-27 16:52:19 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:19 Stored weather data for New York - 8 entries
+[WARN] 2025-07-27 16:52:20 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 16:52:20 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 16:52:20 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 16:52:32 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:32 Stored weather data for New York - 9 entries
+[WARN] 2025-07-27 16:52:32 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 16:52:35 Weather data scheduler stopped
+[INFO] 2025-07-27 16:52:36 Weather data scheduler started
+[INFO] 2025-07-27 16:52:36 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:36 Stored weather data for New York - 10 entries
+[INFO] 2025-07-27 16:52:39 Weather data scheduler stopped
+[INFO] 2025-07-27 16:52:40 Weather data scheduler started
+[INFO] 2025-07-27 16:52:40 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:40 Stored weather data for New York - 11 entries
+[INFO] 2025-07-27 16:52:44 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 16:52:44
+[INFO] 2025-07-27 16:52:44 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 16:52:44 title widget created successfully
+[INFO] 2025-07-27 16:52:44 control widgets created successfully
+[INFO] 2025-07-27 16:52:44 metric display widgets created successfully
+[INFO] 2025-07-27 16:52:44 chart widgets created successfully
+[INFO] 2025-07-27 16:52:44 tabbed display widgets created successfully
+[INFO] 2025-07-27 16:52:44 status bar widgets created successfully
+[INFO] 2025-07-27 16:52:44 dashboard widgets created successfully
+[INFO] 2025-07-27 16:52:44 Weather data scheduler started
+[INFO] 2025-07-27 16:52:44 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:44 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 16:52:44 Weather data written for new_york - Live
+[INFO] 2025-07-27 16:52:44 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 17:03:25 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 17:03:25
+[INFO] 2025-07-27 17:03:25 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 17:03:25 title widget created successfully
+[INFO] 2025-07-27 17:03:25 control widgets created successfully
+[INFO] 2025-07-27 17:03:25 metric display widgets created successfully
+[INFO] 2025-07-27 17:03:25 chart widgets created successfully
+[INFO] 2025-07-27 17:03:25 tabbed display widgets created successfully
+[INFO] 2025-07-27 17:03:25 status bar widgets created successfully
+[INFO] 2025-07-27 17:03:25 dashboard widgets created successfully
+[INFO] 2025-07-27 17:03:25 Weather data scheduler started
+[INFO] 2025-07-27 17:03:26 Weather data written for new_york - Live
+[INFO] 2025-07-27 17:03:26 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 17:03:32 Weather data scheduler stopped
+[INFO] 2025-07-27 17:03:35 Weather data scheduler started
+[INFO] 2025-07-27 17:03:41 Weather data scheduler stopped
+[INFO] 2025-07-27 17:03:53 Weather data scheduler started
+[INFO] 2025-07-27 17:03:57 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 17:03:57 Weather data written for new_york - Live
+[INFO] 2025-07-27 17:03:57 Stored weather data for New York - 2 entries
+[WARN] 2025-07-27 17:03:57 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 17:04:07 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 17:04:07 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 17:04:07 API failure for Zdgzag - CityNotFoundError: City 'Zdgzag' not found. Switching to simulated data.
+[INFO] 2025-07-27 17:04:07 Weather data written for zdgzag - Simulated
+[INFO] 2025-07-27 17:04:07 Stored weather data for Zdgzag - 1 entries
+[WARN] 2025-07-27 17:04:07 Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[WARN] 2025-07-27 17:04:07 Using fallback for Zdgzag: City 'Zdgzag' not found
+[INFO] 2025-07-27 17:04:08 show_error called with: City 'Zdgzag' not found
+[INFO] 2025-07-27 17:04:12 Manual update requested - scheduler will continue in background
+[ERROR] 2025-07-27 17:04:12 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 17:04:13 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-27 17:04:13 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 17:04:19 Manual update requested - scheduler will continue in background
+[ERROR] 2025-07-27 17:04:19 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 17:04:20 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 17:04:20 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 17:04:37 Weather data scheduler stopped

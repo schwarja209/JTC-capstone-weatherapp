@@ -24,6 +24,7 @@ from WeatherDashboard.core.data_manager import WeatherDataManager
 from WeatherDashboard.core.data_service import WeatherDataService
 from WeatherDashboard.core.controller import WeatherDashboardController
 from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
+from WeatherDashboard.features.history.scheduler_service import WeatherDataScheduler
 
 
 # ================================
@@ -80,6 +81,14 @@ class WeatherDashboardMain:
         self.state = state_manager or WeatherDashboardState()
         self.data_manager = data_manager or WeatherDataManager()
         
+        # Create scheduler
+        self.scheduler_service = WeatherDataScheduler(
+            self.data_manager.history_service,
+            self.data_manager,
+            self.state,
+            self
+        )
+
         # Create or inject single widget manager instead of separate frames + widgets
         if widgets:
             self.widgets = widgets
@@ -95,7 +104,7 @@ class WeatherDashboardMain:
             ui_handler=self,
             theme='neutral'
         )
-        
+
         # Async components
         self.loading_manager = loading_manager or LoadingStateManager(self.state, self.widgets.status_bar_widgets)
         self.async_operations = async_operations or AsyncWeatherOperation(self.controller, self.loading_manager)
@@ -103,6 +112,10 @@ class WeatherDashboardMain:
         # Connect callbacks and initialize
         self._connect_callbacks()
         self.update_chart_components()
+
+        # Start scheduler after everything is ready
+        if self.scheduler_service.enabled:
+            self.scheduler_service.start_scheduler()
 
     def _create_widgets(self, root, frames: Optional[WeatherDashboardGUIFrames] = None):
         """Create and configure all widgets in a single, unified manager."""
@@ -117,7 +130,8 @@ class WeatherDashboardMain:
             update_cb=self.on_update_clicked_async,
             cancel_cb=self.cancel_current_operation,
             clear_cb=self.on_clear_clicked,
-            dropdown_cb=lambda: self.update_chart_components()
+            dropdown_cb=lambda: self.update_chart_components(),
+            scheduler_cb=self.scheduler_service.toggle_scheduler 
         )
         
         # Store frame references in widget manager for unified access
@@ -180,6 +194,11 @@ class WeatherDashboardMain:
         self.widgets.update_status_bar(view_model.city_name, error_exception, simulated)
         self.widgets.update_alerts(view_model.raw_data)
 
+    def update_scheduler_status(self, status_info: Dict[str, Any]) -> None:
+        """Update scheduler status in status bar."""
+        if self.widgets.status_bar_widgets:
+            self.widgets.status_bar_widgets.update_scheduler_status(status_info)
+
     def update_chart_components(self, x_vals: Optional[List[str]] = None, y_vals: Optional[List[Any]] = None, metric_key: Optional[str] = None, city: Optional[str] = None, unit: Optional[str] = None, fallback: bool = True, clear: bool = False) -> None:
         """Update chart-related components.
         
@@ -211,21 +230,36 @@ class WeatherDashboardMain:
         city and unit system. Prevents concurrent operations and updates both
         weather display and chart upon completion.
         """
-        # Prevent concurrent operations
-        with self._operation_lock:
-            if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
-                return
-            self._operation_in_progress = True
+        try:
+            # Prevent concurrent operations
+            with self._operation_lock:
+                if hasattr(self, '_operation_in_progress') and self._operation_in_progress:
+                    return
+                self._operation_in_progress = True
 
-        if self.widgets.control_widgets:
-            self.widgets.control_widgets.set_loading_state(True, "Fetching weather...")
+            # Check if scheduler might interfere with manual updates
+            if hasattr(self, 'scheduler_service') and self.scheduler_service.is_running:
+                # Log that manual update is taking precedence over scheduler
+                self.logger.info("Manual update requested - scheduler will continue in background")
+
+            if self.widgets.control_widgets:
+                self.widgets.control_widgets.set_loading_state(True, "Fetching weather...")
+                
+            # Fetch weather data asynchronously
+            self.async_operations.fetch_weather_async(
+                self.state.get_current_city(),
+                self.state.get_current_unit_system(),
+                on_complete=self._create_update_operation_callback()
+            )
             
-        # Fetch weather data asynchronously
-        self.async_operations.fetch_weather_async(
-            self.state.get_current_city(),
-            self.state.get_current_unit_system(),
-            on_complete=self._create_update_operation_callback()
-        )
+        except Exception as e:
+            # Ensure buttons are unlocked on any error
+            self.logger.error(f"Async update error: {e}")
+            with self._operation_lock:
+                self._operation_in_progress = False
+            if self.widgets.control_widgets:
+                self.widgets.control_widgets.set_loading_state(False)
+            self.show_error("Update Error", f"Failed to start weather update: {e}")
 
     def on_clear_clicked(self) -> None:
         """Handle the reset button click event to reset input controls to default values.

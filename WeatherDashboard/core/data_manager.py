@@ -26,6 +26,7 @@ from WeatherDashboard.utils.validation_utils import ValidationUtils
 
 from WeatherDashboard.services.api_exceptions import WeatherDashboardError
 from WeatherDashboard.services.weather_service import WeatherAPIService
+from WeatherDashboard.features.history.history_service import WeatherHistoryService
 
 # ================================
 # 1. INITIALIZATION & SETUP
@@ -64,9 +65,7 @@ class WeatherDataManager:
         self.api_service = api_service or WeatherAPIService()
 
         # Internal state
-        self.weather_data = {}
-        self._last_cleanup = datetime.now() # Track when we last cleaned up data
-        self._cleanup_interval_hours = self.config.MEMORY["cleanup_interval_hours"]  # Cleanup every ___ hours
+        self.history_service = WeatherHistoryService(api_service)
 
 # ================================  
 # 2. DATA FETCHING & HISTORY
@@ -98,51 +97,22 @@ class WeatherDataManager:
         # If this changes in future (e.g., new fallback with imperial), update convert_units().
         converted_data = self.convert_units(result.data, unit_system)
 
-        # Simple cleanup: time-based OR memory limits exceeded
-        current_time = self.datetime.now()
-        should_cleanup = (current_time - self._last_cleanup).total_seconds() > (self._cleanup_interval_hours * 3600)
-        memory_over_limit = self._simple_memory_check()
-
-        if should_cleanup or memory_over_limit:
-            self.cleanup_old_data()
-            self._last_cleanup = self.datetime.now()
-
-        key = self.utils.city_key(city)
-        existing_data = self.weather_data.setdefault(key, [])
-        last_date = existing_data[-1].get("date") if existing_data else None
-        current_date = converted_data.get("date")
-        if not existing_data or (last_date and current_date and last_date.date() != current_date.date()):
-            existing_data.append(converted_data)
-            # Limit stored data to prevent memory issues (keep last 30 entries per city)
-            max_entries = self.config.MEMORY["max_entries_per_city"]
-            if len(existing_data) > max_entries:
-                existing_data[:] = existing_data[-max_entries:]  # Keep only the most recent entries
+        # Store latest call
+        self.store_current_weather(city, converted_data, unit_system)
 
         return converted_data, result.is_simulated, result.error_message
 
     def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
         """Generate historical weather data for a city."""
-        return self.api_service.fallback.generate(city, num_days)
+        return self.history_service.get_historical(city, num_days)
 
     def get_recent_data(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
-        """Return recent weather data for a city from the last N days.
-        
-        Useful for future features like weather history tracking.
+        """Return recent weather data for a city from the last N days."""
+        return self.history_service.get_recent_data(city, days_back)
 
-        Args:
-            city: Target city name for data retrieval
-            days_back: Number of days to look back (default 7)
-
-        Returns:
-            List[Dict[str, Any]]: Recent weather data entries for the specified time period
-        """
-        city_data = self.weather_data.get(self.utils.city_key(city), [])
-        cutoff_date = datetime.now().date() - timedelta(days=days_back)
-        
-        return [
-            entry for entry in city_data 
-            if entry.get('date', datetime.now()).date() >= cutoff_date
-        ]
+    def store_current_weather(self, city: str, weather_data: Dict[str, Any], unit_system: str = "metric") -> None:
+        """Store current weather data for historical tracking."""
+        self.history_service.store_current_weather(city, weather_data, unit_system)
 
 # ================================
 # 3. DATA PROCESSING
@@ -217,82 +187,10 @@ class WeatherDataManager:
         return converted
 
 # ================================
-# 4. FILE I/O & LOGGING
+# 4. FILE I/O & LOGGING --> now in history feature
 # ================================
     def write_to_file(self, city: str, data: Dict[str, Any], unit_system: str) -> None:
-        """Write formatted weather data to a log file with timestamp and unit system information.
-        
-        Creates a formatted log entry with timestamp, city, and all weather metrics
-        in the specified unit system. Handles file I/O errors gracefully.
-        
-        Args:
-            city: City name for the log entry
-            data: Weather data dictionary to log
-            unit_system: Unit system for formatting ('metric' or 'imperial')
-        """
-        try:
-            log_entry = self.format_data_for_logging(city, data, unit_system)
-            with open(self.config.OUTPUT["log"], "a", encoding="utf-8") as f:
-                f.write(log_entry)
-
-            fallback_text = "Simulated" if self.utils.is_fallback(data) else "Live"
-            self.logger.info(f"Weather data written for {self.utils.city_key(city)} - {fallback_text}")
-            
-        except (OSError, IOError, PermissionError) as e:
-            # Raise as custom exception for controller to handle via error_handler
-            raise WeatherDashboardError(self.config.ERROR_MESSAGES['file_error'].format(info="weather data", file=self.config.OUTPUT["log"], reason=str(e)))
-        except Exception as e:
-            raise WeatherDashboardError(f"Unexpected error writing weather data: {e}")
-
-    def format_data_for_logging(self, city: str, data: Dict[str, Any], unit_system: str) -> str:
-        """Format weather data for file logging."""
-        timestamp = data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
-        lines = [
-            f"\n\nTime: {timestamp}",
-            f"City: {self.utils.city_key(city)}",
-            f"Temperature: {self.unit_converter.format_value('temperature', data.get('temperature'), unit_system)}",
-            f"Humidity: {self.unit_converter.format_value('humidity', data.get('humidity'), unit_system)}",
-            f"Pressure: {self.unit_converter.format_value('pressure', data.get('pressure'), unit_system)}",
-            f"Wind Speed: {self.unit_converter.format_value('wind_speed', data.get('wind_speed'), unit_system)}",
-            f"Conditions: {data.get('conditions', '--')}"
-        ]
-        return "\n".join(lines)
-
-# ================================
-# 5. MEMORY MANAGEMENT & CLEANUP
-# ================================    
-    def cleanup_old_data(self, days_to_keep: int = 30) -> None:
-        """Remove old weather data and manage memory usage.
-        
-        Args:
-            days_to_keep: Number of days of data to retain (default 30)
-        """
-        cutoff_date = datetime.now() - timedelta(days=days_to_keep)
-        
-        # Remove old entries and enforce per-city limits
-        for city_key, data_list in self.weather_data.items():
-            # Filter by date
-            recent_data = [
-                entry for entry in data_list 
-                if entry.get('date', datetime.now()) >= cutoff_date
-            ]
-            # Enforce per-city entry limit
-            max_entries = self.config.MEMORY["max_entries_per_city"]
-            self.weather_data[city_key] = recent_data[-max_entries:]
-        
-        # Remove empty city entries
-        empty_cities = [city for city, data in self.weather_data.items() if not data]
-        for city in empty_cities:
-            del self.weather_data[city]
-
-    def _simple_memory_check(self) -> bool:
-        """Check if memory limits are exceeded.
-        
-        Returns:
-            bool: True if cleanup is needed due to memory limits
-        """
-        total_entries = sum(len(entries) for entries in self.weather_data.values())
-        cities_count = len(self.weather_data)
-        
-        return (cities_count > self.config.MEMORY["max_cities_stored"] or 
-                total_entries > self.config.MEMORY["max_total_entries"])
+        """Write formatted weather data to log file (delegates to history service)."""
+        # This method now just delegates to the history service
+        # The actual file writing is handled by the history service
+        pass  # Remove the implementation since history service handles it

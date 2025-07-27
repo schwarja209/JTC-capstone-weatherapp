@@ -12,7 +12,8 @@ Classes:
 
 import tkinter as tk
 from tkinter import ttk
-from typing import Optional, Any
+from typing import Optional, Any, Dict
+from datetime import datetime
 
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import styles
@@ -50,6 +51,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         # Direct imports for stable utilities
         self.styles = styles
         self.logger = Logger()
+        self.datetime = datetime
         
         # Injected dependencies for testable components
         self.parent_frame = parent_frame
@@ -89,6 +91,12 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         # Right section: Data source information using SafeWidgetCreator
         self.data_status_label = SafeWidgetCreator.create_label(self.parent, "No data", "DataStatus.TLabel")
         self.data_status_label.pack(side=tk.RIGHT, padx=self.styles.STATUS_BAR_CONFIG['padding']['data'])
+
+        # Separator
+        ttk.Separator(self.parent, orient='vertical').pack(side=tk.RIGHT, fill='y', padx=self.styles.STATUS_BAR_CONFIG['padding']['separator'])
+
+        # Scheduler section: Auto-collection status
+        self._create_scheduler_status()
 
     def update_status_bar(self, city_name: str, error_exception: Optional[Exception], simulated: bool = False) -> None:
         """Update all status bar sections: system, progress, and data status."""
@@ -155,9 +163,61 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         """Clears progress indicator in center section."""
         if self.progress_var:
             self.progress_var.set("")
+
+    def _create_scheduler_status(self) -> None:
+        """Create scheduler status display."""        
+        # Status indicator
+        self.scheduler_status_label = SafeWidgetCreator.create_label(
+            self.parent, 
+            "⏸️ Auto: Off", 
+            "StatusBar.TLabel"
+        )
+        self.scheduler_status_label.pack(side=tk.RIGHT, padx=(5,0))
+        
+        # Next fetch countdown
+        self.scheduler_countdown_label = SafeWidgetCreator.create_label(
+            self.parent, 
+            "", 
+            "StatusBar.TLabel"
+        )
+        self.scheduler_countdown_label.pack(side=tk.RIGHT, padx=(5, 0))
+
+    def update_scheduler_status(self, status_info: Dict[str, Any]) -> None:
+        """Update scheduler status display."""
+        if not hasattr(self, 'scheduler_status_label'):
+            return
+     
+        try:       
+            # Update status indicator
+            if status_info['enabled'] and status_info['is_running']:
+                self.scheduler_status_label.config(text="🟢 On")
+            elif status_info['enabled']:
+                self.scheduler_status_label.config(text="🟡 Paused")
+            else:
+                self.scheduler_status_label.config(text="🔴 Off")
+            
+            # Update countdown
+            if status_info['next_fetch_time']:
+                try:
+                    time_until = status_info['next_fetch_time'] - self.datetime.now()
+                    if time_until.total_seconds() > 0:
+                        minutes = int(time_until.total_seconds() // 60)
+                        seconds = int(time_until.total_seconds() % 60)
+                        self.scheduler_countdown_label.config(text=f"Next: {minutes:02d}:{seconds:02d}")
+                    else:
+                        self.scheduler_countdown_label.config(text="Fetching...")
+                except (AttributeError, TypeError):
+                    # Fallback if datetime is not available
+                    self.scheduler_countdown_label.config(text="")
+            else:
+                self.scheduler_countdown_label.config(text="")
+        
+        except RuntimeError:
+            # Handle tkinter thread safety issues
+            pass
     
     def clear_all(self) -> None:
-        """Resets all three status bar sections to default states."""
+        """Resets all status bar sections to default states."""
         self.update_system_status("Ready", "info")
         self.clear_progress()
         self.update_data_status("No data")
