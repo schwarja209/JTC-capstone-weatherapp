@@ -237,6 +237,9 @@ class WeatherDashboardMain:
                     return
                 self._operation_in_progress = True
 
+            # Save preferences when user manually updates
+            self.state.save_preferences()
+
             # Check if scheduler might interfere with manual updates
             if hasattr(self, 'scheduler_service') and self.scheduler_service.is_running:
                 # Log that manual update is taking precedence over scheduler
@@ -275,6 +278,10 @@ class WeatherDashboardMain:
             self._operation_in_progress = True
         
         self.state.reset_to_defaults()
+
+        # Save preferences after reset
+        self.state.save_preferences()
+
         self.show_info("Reset", "Dashboard reset to default values.")
         self.update_chart_components()
 
@@ -286,6 +293,28 @@ class WeatherDashboardMain:
             self.state.get_current_unit_system(),
             on_complete=self._create_clear_operation_callback()
         )
+
+    def _on_closing(self) -> None:
+        """Handle application shutdown and save preferences."""
+        try:
+            # Save preferences before closing
+            if hasattr(self.state, 'save_preferences'):
+                # Pass scheduler state to state manager
+                self.state._scheduler_enabled = self.scheduler_service.enabled
+                self.state.save_preferences()
+            
+            # Stop scheduler
+            if hasattr(self, 'scheduler_service'):
+                self.scheduler_service.stop_scheduler()
+                
+        except Exception as e:
+            self.logger.error(f"Error during shutdown: {e}")
+        finally:
+            # Always close the window
+            try:
+                self.root.destroy()
+            except:
+                pass
 
     def show_alerts(self) -> None:
         """Show weather alerts popup."""

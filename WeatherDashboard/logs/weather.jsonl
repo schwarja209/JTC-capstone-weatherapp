@@ -9134,3 +9134,914 @@
 {"timestamp": "2025-07-27 17:04:20", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
 {"timestamp": "2025-07-27 17:04:20", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
 {"timestamp": "2025-07-27 17:04:37", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:07:23", "test": true}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:07:23", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:07:24", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:07:24", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:07:28", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 21:07:29", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:07:32", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 21:07:33", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:08:43", "test": true}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:08:43", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:08:44", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:08:44", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:11:16", "test": true}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:11:16", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:11:20", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 21:11:21", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:12:34", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:12:34", "test": true}
+{"timestamp": "2025-07-27 21:12:34", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:12:34", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:12:34", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:12:35", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:12:39", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 21:12:40", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:12:42", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-27 21:13:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:13:29", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:13:29", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:18:30", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:18:30", "test": true}
+{"timestamp": "2025-07-27 21:18:30", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:18:30", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:18:30", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:18:30", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:18:30", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:18:31", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:18:37", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:18:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:18:37", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:18:37", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:18:43", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:18:43", "test": true}
+{"timestamp": "2025-07-27 21:18:43", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:18:44", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:23:32", "test": true}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:23:32", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:23:33", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:23:33", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:23:43", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:23:44", "level": "INFO", "message": "Weather data written for london - Live"}
+{"timestamp": "2025-07-27 21:23:44", "level": "INFO", "message": "Stored weather data for London - 1 entries"}
+{"timestamp": "2025-07-27 21:23:46", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:23:47", "level": "INFO", "message": "Weather data written for london - Live"}
+{"timestamp": "2025-07-27 21:23:47", "level": "INFO", "message": "Stored weather data for London - 2 entries"}
+{"timestamp": "2025-07-27 21:32:04", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:32:04", "test": true}
+{"timestamp": "2025-07-27 21:32:04", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:32:04", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:32:04", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:32:04", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:32:04", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:32:05", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:32:17", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:32:17", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:32:17", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-27 21:32:17", "level": "INFO", "message": "Stored weather data for Boston - 1 entries"}
+{"timestamp": "2025-07-27 21:32:17", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:32:24", "test": true}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-27 21:32:24", "level": "INFO", "message": "Stored weather data for Boston - 1 entries"}
+{"timestamp": "2025-07-27 21:32:24", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:39:04", "test": true}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:04", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:39:05", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-27 21:39:05", "level": "INFO", "message": "Stored weather data for Boston - 1 entries"}
+{"timestamp": "2025-07-27 21:39:05", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:39:35", "test": true}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:39:35", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:39:36", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-27 21:39:36", "level": "INFO", "message": "Stored weather data for Boston - 1 entries"}
+{"timestamp": "2025-07-27 21:39:36", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:39:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:39:55", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:39:55", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-27 21:39:55", "level": "INFO", "message": "Stored weather data for Boston - 2 entries"}
+{"timestamp": "2025-07-27 21:39:55", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:39:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:39:56", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:39:56", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 21:39:56", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:39:56", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:40:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:00", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:40:00", "level": "INFO", "message": "Weather data written for boston - Live"}
+{"timestamp": "2025-07-27 21:40:00", "level": "INFO", "message": "Stored weather data for Boston - 3 entries"}
+{"timestamp": "2025-07-27 21:40:00", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:40:07", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:08", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:40:08", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 21:40:10", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 21:40:10", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:15", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:40:15", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:40:15", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 21:40:15", "level": "ERROR", "message": "API failure for Asfasgasg - CityNotFoundError: City 'Asfasgasg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 21:40:15", "level": "INFO", "message": "Weather data written for asfasgasg - Simulated"}
+{"timestamp": "2025-07-27 21:40:15", "level": "INFO", "message": "Stored weather data for Asfasgasg - 1 entries"}
+{"timestamp": "2025-07-27 21:40:15", "level": "WARN", "message": "Using fallback for Asfasgasg: City 'Asfasgasg' not found"}
+{"timestamp": "2025-07-27 21:40:17", "level": "INFO", "message": "show_error called with: City 'Asfasgasg' not found"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:43:51", "test": true}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:43:51", "level": "WARN", "message": "API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found"}
+{"timestamp": "2025-07-27 21:43:51", "level": "ERROR", "message": "API failure for Asfasgasg - CityNotFoundError: City 'Asfasgasg' not found. Switching to simulated data."}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Weather data written for asfasgasg - Simulated"}
+{"timestamp": "2025-07-27 21:43:51", "level": "INFO", "message": "Stored weather data for Asfasgasg - 1 entries"}
+{"timestamp": "2025-07-27 21:43:51", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:43:51", "level": "WARN", "message": "Using fallback for Asfasgasg: City 'Asfasgasg' not found"}
+{"timestamp": "2025-07-27 21:43:53", "level": "INFO", "message": "show_error called with: City 'Asfasgasg' not found"}
+{"timestamp": "2025-07-27 21:43:53", "level": "WARN", "message": "Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_current'"}
+{"timestamp": "2025-07-27 21:43:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:43:58", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:43:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:43:58", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:43:58", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:43:58", "level": "WARN", "message": "Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_current'"}
+{"timestamp": "2025-07-27 21:46:02", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:46:02", "test": true}
+{"timestamp": "2025-07-27 21:46:02", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:46:03", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:03", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:46:03", "level": "WARN", "message": "Failed to add current weather to chart: '_ChartService' object has no attribute 'datetime'"}
+{"timestamp": "2025-07-27 21:46:11", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:11", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:46:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:11", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 21:46:11", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:46:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:11", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 21:46:11", "level": "WARN", "message": "Failed to add current weather to chart: '_ChartService' object has no attribute 'datetime'"}
+{"timestamp": "2025-07-27 21:46:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:19", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:46:19", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:19", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-27 21:46:19", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:46:19", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:19", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-27 21:46:19", "level": "WARN", "message": "Failed to add current weather to chart: '_ChartService' object has no attribute 'datetime'"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:46:50", "test": true}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:50", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:46:50", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:46:51", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:51", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:46:51", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.77"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:46:58", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:46:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:58", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 21:46:58", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:46:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:46:58", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 21:46:58", "level": "INFO", "message": "Added current weather data to chart: air_quality_index = 1"}
+{"timestamp": "2025-07-27 21:47:10", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:47:11", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:47:11", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:47:11", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:11", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-27 21:47:11", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:47:12", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:12", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-27 21:47:12", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.77"}
+{"timestamp": "2025-07-27 21:47:14", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:47:14", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:47:14", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 21:47:14", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:47:14", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:47:17", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:47:17", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:47:17", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:17", "level": "INFO", "message": "Stored weather data for New York - 7 entries"}
+{"timestamp": "2025-07-27 21:47:17", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:47:18", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:18", "level": "INFO", "message": "Stored weather data for New York - 8 entries"}
+{"timestamp": "2025-07-27 21:47:18", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.77"}
+{"timestamp": "2025-07-27 21:47:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:47:21", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:47:21", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:21", "level": "INFO", "message": "Stored weather data for New York - 9 entries"}
+{"timestamp": "2025-07-27 21:47:21", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:47:21", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:21", "level": "INFO", "message": "Stored weather data for New York - 10 entries"}
+{"timestamp": "2025-07-27 21:47:21", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.77"}
+{"timestamp": "2025-07-27 21:47:29", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:47:29", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:47:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:29", "level": "INFO", "message": "Stored weather data for New York - 11 entries"}
+{"timestamp": "2025-07-27 21:47:29", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:47:29", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:47:29", "level": "INFO", "message": "Stored weather data for New York - 12 entries"}
+{"timestamp": "2025-07-27 21:47:29", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.77"}
+{"timestamp": "2025-07-27 21:50:26", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:50:26", "test": true}
+{"timestamp": "2025-07-27 21:50:26", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:50:26", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:50:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:50:26", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:50:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:50:26", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:50:27", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:50:27", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:50:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:50:34", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:50:35", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:50:35", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:50:35", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:50:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:50:37", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:50:37", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 21:50:37", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:50:37", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:50:42", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:50:42", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:50:42", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:50:42", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 21:50:42", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:51:52", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:51:52", "test": true}
+{"timestamp": "2025-07-27 21:51:52", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:51:52", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:51:52", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:51:52", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:51:52", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:51:52", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:51:53", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:51:53", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:02", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:02", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:52:02", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:52:02", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:52:02", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:52:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:52:03", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:52:03", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 21:52:03", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:52:03", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 21:54:03", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:54:03", "test": true}
+{"timestamp": "2025-07-27 21:54:03", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:54:03", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:54:03", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:54:03", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:54:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:03", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:54:04", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:54:04", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.77"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:54:36", "test": true}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:54:36", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:54:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:54:37", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:54:37", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 21:54:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:54:37", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:54:37", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.77"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:53", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:54:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:55:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:55:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:55:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:55:04", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:55:05", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:55:05", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 21:55:05", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:55:05", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 21:55:05", "level": "INFO", "message": "Added current weather data to chart: humidity = 81"}
+{"timestamp": "2025-07-27 21:55:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:55:12", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:55:13", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:55:13", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 21:55:13", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:55:13", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-27 21:55:13", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:55:13", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-27 21:55:13", "level": "INFO", "message": "Added current weather data to chart: pressure = 29.94342"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 21:59:13", "test": true}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:59:13", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 21:59:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 21:59:14", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 21:59:14", "level": "INFO", "message": "Added current weather data to chart: humidity = 81"}
+{"timestamp": "2025-07-27 22:01:14", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 22:01:14", "test": true}
+{"timestamp": "2025-07-27 22:01:14", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 22:01:14", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 22:01:14", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 22:01:14", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 22:01:14", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:14", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 22:01:15", "level": "INFO", "message": "Added current weather data to chart: humidity = 81"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:19", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:01:20", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:01:20", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:01:20", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 22:01:20", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:01:20", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:01:20", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 22:01:20", "level": "INFO", "message": "Added current weather data to chart: humidity = 81"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 22:03:59", "test": true}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 22:03:59", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 22:04:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:04:00", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 22:04:00", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:04:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:04:00", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 22:04:00", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.878"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:05", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:05", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:04:05", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 22:04:06", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-27 22:04:06", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 22:04:10", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Added current weather data to chart: air_quality_index = 1"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:04:10", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 22:04:10", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:04:10", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:05:58", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 22:05:58", "test": true}
+{"timestamp": "2025-07-27 22:05:58", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 22:05:58", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 22:05:58", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 22:05:58", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 22:05:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:05:58", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 22:05:59", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 22:05:59", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.968"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:05", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:05", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:06:05", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:06:05", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-27 22:06:05", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:06:05", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:06:05", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-27 22:06:05", "level": "INFO", "message": "Added current weather data to chart: air_quality_index = 1"}
+{"timestamp": "2025-07-27 22:06:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:06:06", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:06:06", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 22:06:06", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:06:06", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:08:15", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 22:08:15", "test": true}
+{"timestamp": "2025-07-27 22:08:15", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 22:08:15", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 22:08:15", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 22:08:15", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 22:08:15", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:08:15", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 22:08:16", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 22:08:16", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.968"}
+{"timestamp": "2025-07-27 22:08:17", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:08:17", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:08:17", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 22:08:17", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:08:17", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:10:41", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 22:10:41", "test": true}
+{"timestamp": "2025-07-27 22:10:41", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 22:10:41", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 22:10:41", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 22:10:41", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 22:10:41", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:10:41", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 22:10:42", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 22:10:42", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.968"}
+{"timestamp": "2025-07-27 22:10:45", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:10:45", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:10:45", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 22:10:45", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:10:45", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 22:15:21", "test": true}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 22:15:21", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 22:15:22", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 22:15:22", "level": "INFO", "message": "Added current weather data to chart: temperature = 82.004"}
+{"timestamp": "2025-07-27 22:15:24", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 22:15:24", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 22:15:24", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-27 22:15:24", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-27 22:15:24", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}

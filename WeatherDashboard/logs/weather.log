@@ -9134,3 +9134,914 @@
 [INFO] 2025-07-27 17:04:20 show_error called with: Input validation failed: City name is invalid: cannot be empty
 [ERROR] 2025-07-27 17:04:20 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
 [INFO] 2025-07-27 17:04:37 Weather data scheduler stopped
+[INFO] 2025-07-27 21:07:23 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:07:23
+[INFO] 2025-07-27 21:07:23 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:07:23 title widget created successfully
+[INFO] 2025-07-27 21:07:23 control widgets created successfully
+[INFO] 2025-07-27 21:07:23 metric display widgets created successfully
+[INFO] 2025-07-27 21:07:23 chart widgets created successfully
+[INFO] 2025-07-27 21:07:23 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:07:23 status bar widgets created successfully
+[INFO] 2025-07-27 21:07:23 dashboard widgets created successfully
+[INFO] 2025-07-27 21:07:23 Weather data scheduler started
+[INFO] 2025-07-27 21:07:24 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:07:24 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:07:28 Weather data scheduler stopped
+[INFO] 2025-07-27 21:07:29 Weather data scheduler started
+[INFO] 2025-07-27 21:07:32 Weather data scheduler stopped
+[INFO] 2025-07-27 21:07:33 Weather data scheduler started
+[INFO] 2025-07-27 21:08:43 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:08:43
+[INFO] 2025-07-27 21:08:43 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:08:43 title widget created successfully
+[INFO] 2025-07-27 21:08:43 control widgets created successfully
+[INFO] 2025-07-27 21:08:43 metric display widgets created successfully
+[INFO] 2025-07-27 21:08:43 chart widgets created successfully
+[INFO] 2025-07-27 21:08:43 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:08:43 status bar widgets created successfully
+[INFO] 2025-07-27 21:08:43 dashboard widgets created successfully
+[INFO] 2025-07-27 21:08:43 Weather data scheduler started
+[INFO] 2025-07-27 21:08:44 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:08:44 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:11:16 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:11:16
+[INFO] 2025-07-27 21:11:16 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:11:16 title widget created successfully
+[INFO] 2025-07-27 21:11:16 control widgets created successfully
+[INFO] 2025-07-27 21:11:16 metric display widgets created successfully
+[INFO] 2025-07-27 21:11:16 chart widgets created successfully
+[INFO] 2025-07-27 21:11:16 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:11:16 status bar widgets created successfully
+[INFO] 2025-07-27 21:11:16 dashboard widgets created successfully
+[INFO] 2025-07-27 21:11:16 Weather data scheduler started
+[INFO] 2025-07-27 21:11:16 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:11:16 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:11:20 Weather data scheduler stopped
+[INFO] 2025-07-27 21:11:21 Weather data scheduler started
+[INFO] 2025-07-27 21:12:34 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:12:34
+[INFO] 2025-07-27 21:12:34 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:12:34 title widget created successfully
+[INFO] 2025-07-27 21:12:34 control widgets created successfully
+[INFO] 2025-07-27 21:12:35 metric display widgets created successfully
+[INFO] 2025-07-27 21:12:35 chart widgets created successfully
+[INFO] 2025-07-27 21:12:35 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:12:35 status bar widgets created successfully
+[INFO] 2025-07-27 21:12:35 dashboard widgets created successfully
+[INFO] 2025-07-27 21:12:35 Weather data scheduler started
+[INFO] 2025-07-27 21:12:35 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:12:35 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:12:39 Weather data scheduler stopped
+[INFO] 2025-07-27 21:12:40 Weather data scheduler started
+[INFO] 2025-07-27 21:12:42 Weather data scheduler stopped
+[INFO] 2025-07-27 21:13:29 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:13:29 Stored weather data for New York - 2 entries
+[WARN] 2025-07-27 21:13:29 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:18:30 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:18:30
+[INFO] 2025-07-27 21:18:30 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:18:30 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:18:30 Preferences applied to application state
+[INFO] 2025-07-27 21:18:30 title widget created successfully
+[INFO] 2025-07-27 21:18:30 control widgets created successfully
+[INFO] 2025-07-27 21:18:31 metric display widgets created successfully
+[INFO] 2025-07-27 21:18:31 chart widgets created successfully
+[INFO] 2025-07-27 21:18:31 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:18:31 status bar widgets created successfully
+[INFO] 2025-07-27 21:18:31 dashboard widgets created successfully
+[INFO] 2025-07-27 21:18:31 Weather data scheduler started
+[INFO] 2025-07-27 21:18:31 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:18:31 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:18:37 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:18:37 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:18:37 Stored weather data for New York - 2 entries
+[WARN] 2025-07-27 21:18:37 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:18:43 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:18:43
+[INFO] 2025-07-27 21:18:43 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:18:44 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:18:44 Preferences applied to application state
+[INFO] 2025-07-27 21:18:44 title widget created successfully
+[INFO] 2025-07-27 21:18:44 control widgets created successfully
+[INFO] 2025-07-27 21:18:44 metric display widgets created successfully
+[INFO] 2025-07-27 21:18:44 chart widgets created successfully
+[INFO] 2025-07-27 21:18:44 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:18:44 status bar widgets created successfully
+[INFO] 2025-07-27 21:18:44 dashboard widgets created successfully
+[INFO] 2025-07-27 21:18:44 Weather data scheduler started
+[INFO] 2025-07-27 21:18:44 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:18:44 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:23:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:23:32
+[INFO] 2025-07-27 21:23:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:23:32 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:23:32 Preferences applied to application state
+[INFO] 2025-07-27 21:23:32 title widget created successfully
+[INFO] 2025-07-27 21:23:32 control widgets created successfully
+[INFO] 2025-07-27 21:23:32 metric display widgets created successfully
+[INFO] 2025-07-27 21:23:32 chart widgets created successfully
+[INFO] 2025-07-27 21:23:32 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:23:32 status bar widgets created successfully
+[INFO] 2025-07-27 21:23:32 dashboard widgets created successfully
+[INFO] 2025-07-27 21:23:32 Weather data scheduler started
+[INFO] 2025-07-27 21:23:33 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:23:33 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:23:43 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:23:44 Weather data written for london - Live
+[INFO] 2025-07-27 21:23:44 Stored weather data for London - 1 entries
+[INFO] 2025-07-27 21:23:46 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:23:47 Weather data written for london - Live
+[INFO] 2025-07-27 21:23:47 Stored weather data for London - 2 entries
+[INFO] 2025-07-27 21:32:04 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:32:04
+[INFO] 2025-07-27 21:32:04 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:32:04 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:32:04 Preferences applied to application state
+[INFO] 2025-07-27 21:32:04 title widget created successfully
+[INFO] 2025-07-27 21:32:04 control widgets created successfully
+[INFO] 2025-07-27 21:32:05 metric display widgets created successfully
+[INFO] 2025-07-27 21:32:05 chart widgets created successfully
+[INFO] 2025-07-27 21:32:05 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:32:05 status bar widgets created successfully
+[INFO] 2025-07-27 21:32:05 dashboard widgets created successfully
+[INFO] 2025-07-27 21:32:05 Weather data scheduler started
+[INFO] 2025-07-27 21:32:05 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:32:05 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:32:17 Preferences saved
+[INFO] 2025-07-27 21:32:17 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:32:17 Weather data written for boston - Live
+[INFO] 2025-07-27 21:32:17 Stored weather data for Boston - 1 entries
+[WARN] 2025-07-27 21:32:17 Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)
+[INFO] 2025-07-27 21:32:24 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:32:24
+[INFO] 2025-07-27 21:32:24 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:32:24 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:32:24 Preferences applied to application state
+[INFO] 2025-07-27 21:32:24 title widget created successfully
+[INFO] 2025-07-27 21:32:24 control widgets created successfully
+[INFO] 2025-07-27 21:32:24 metric display widgets created successfully
+[INFO] 2025-07-27 21:32:24 chart widgets created successfully
+[INFO] 2025-07-27 21:32:24 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:32:24 status bar widgets created successfully
+[INFO] 2025-07-27 21:32:24 dashboard widgets created successfully
+[INFO] 2025-07-27 21:32:24 Weather data scheduler started
+[INFO] 2025-07-27 21:32:24 Weather data written for boston - Live
+[INFO] 2025-07-27 21:32:24 Stored weather data for Boston - 1 entries
+[WARN] 2025-07-27 21:32:24 Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)
+[INFO] 2025-07-27 21:39:04 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:39:04
+[INFO] 2025-07-27 21:39:04 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:39:04 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:39:04 Preferences applied to application state
+[INFO] 2025-07-27 21:39:04 title widget created successfully
+[INFO] 2025-07-27 21:39:04 Preferences saved
+[INFO] 2025-07-27 21:39:04 control widgets created successfully
+[INFO] 2025-07-27 21:39:04 metric display widgets created successfully
+[INFO] 2025-07-27 21:39:04 chart widgets created successfully
+[INFO] 2025-07-27 21:39:04 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:39:04 status bar widgets created successfully
+[INFO] 2025-07-27 21:39:04 dashboard widgets created successfully
+[INFO] 2025-07-27 21:39:04 Weather data scheduler started
+[INFO] 2025-07-27 21:39:05 Weather data written for boston - Live
+[INFO] 2025-07-27 21:39:05 Stored weather data for Boston - 1 entries
+[WARN] 2025-07-27 21:39:05 Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)
+[INFO] 2025-07-27 21:39:35 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:39:35
+[INFO] 2025-07-27 21:39:35 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:39:35 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:39:35 Preferences applied to application state
+[INFO] 2025-07-27 21:39:35 title widget created successfully
+[INFO] 2025-07-27 21:39:35 Preferences saved
+[INFO] 2025-07-27 21:39:35 control widgets created successfully
+[INFO] 2025-07-27 21:39:35 metric display widgets created successfully
+[INFO] 2025-07-27 21:39:35 chart widgets created successfully
+[INFO] 2025-07-27 21:39:35 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:39:35 status bar widgets created successfully
+[INFO] 2025-07-27 21:39:35 dashboard widgets created successfully
+[INFO] 2025-07-27 21:39:35 Weather data scheduler started
+[INFO] 2025-07-27 21:39:36 Weather data written for boston - Live
+[INFO] 2025-07-27 21:39:36 Stored weather data for Boston - 1 entries
+[WARN] 2025-07-27 21:39:36 Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)
+[INFO] 2025-07-27 21:39:55 Preferences saved
+[INFO] 2025-07-27 21:39:55 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:39:55 Weather data written for boston - Live
+[INFO] 2025-07-27 21:39:55 Stored weather data for Boston - 2 entries
+[WARN] 2025-07-27 21:39:55 Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)
+[INFO] 2025-07-27 21:39:56 Preferences saved
+[INFO] 2025-07-27 21:39:56 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 21:39:56 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 21:39:56 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 21:39:56 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 21:40:00 Preferences saved
+[INFO] 2025-07-27 21:40:00 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:40:00 Weather data written for boston - Live
+[INFO] 2025-07-27 21:40:00 Stored weather data for Boston - 3 entries
+[WARN] 2025-07-27 21:40:00 Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)
+[INFO] 2025-07-27 21:40:07 Preferences saved
+[INFO] 2025-07-27 21:40:08 Preferences saved
+[INFO] 2025-07-27 21:40:08 Manual update requested - scheduler will continue in background
+[ERROR] 2025-07-27 21:40:08 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 21:40:10 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 21:40:10 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:12 Preferences saved
+[INFO] 2025-07-27 21:40:15 Preferences saved
+[INFO] 2025-07-27 21:40:15 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 21:40:15 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 21:40:15 API failure for Asfasgasg - CityNotFoundError: City 'Asfasgasg' not found. Switching to simulated data.
+[INFO] 2025-07-27 21:40:15 Weather data written for asfasgasg - Simulated
+[INFO] 2025-07-27 21:40:15 Stored weather data for Asfasgasg - 1 entries
+[WARN] 2025-07-27 21:40:15 Using fallback for Asfasgasg: City 'Asfasgasg' not found
+[INFO] 2025-07-27 21:40:17 show_error called with: City 'Asfasgasg' not found
+[INFO] 2025-07-27 21:43:51 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:43:51
+[INFO] 2025-07-27 21:43:51 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:43:51 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:43:51 Preferences applied to application state
+[INFO] 2025-07-27 21:43:51 title widget created successfully
+[INFO] 2025-07-27 21:43:51 Preferences saved
+[INFO] 2025-07-27 21:43:51 control widgets created successfully
+[INFO] 2025-07-27 21:43:51 metric display widgets created successfully
+[INFO] 2025-07-27 21:43:51 chart widgets created successfully
+[INFO] 2025-07-27 21:43:51 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:43:51 status bar widgets created successfully
+[INFO] 2025-07-27 21:43:51 dashboard widgets created successfully
+[INFO] 2025-07-27 21:43:51 Weather data scheduler started
+[WARN] 2025-07-27 21:43:51 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-07-27 21:43:51 API failure for Asfasgasg - CityNotFoundError: City 'Asfasgasg' not found. Switching to simulated data.
+[INFO] 2025-07-27 21:43:51 Weather data written for asfasgasg - Simulated
+[INFO] 2025-07-27 21:43:51 Stored weather data for Asfasgasg - 1 entries
+[WARN] 2025-07-27 21:43:51 Weather alert: High UV Index Alert - Very high UV exposure: 11 (threshold: 8)
+[WARN] 2025-07-27 21:43:51 Using fallback for Asfasgasg: City 'Asfasgasg' not found
+[INFO] 2025-07-27 21:43:53 show_error called with: City 'Asfasgasg' not found
+[WARN] 2025-07-27 21:43:53 Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_current'
+[INFO] 2025-07-27 21:43:56 Preferences saved
+[INFO] 2025-07-27 21:43:56 Preferences saved
+[INFO] 2025-07-27 21:43:56 Preferences saved
+[INFO] 2025-07-27 21:43:56 Preferences saved
+[INFO] 2025-07-27 21:43:56 Preferences saved
+[INFO] 2025-07-27 21:43:56 Preferences saved
+[INFO] 2025-07-27 21:43:57 Preferences saved
+[INFO] 2025-07-27 21:43:57 Preferences saved
+[INFO] 2025-07-27 21:43:57 Preferences saved
+[INFO] 2025-07-27 21:43:58 Preferences saved
+[INFO] 2025-07-27 21:43:58 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:43:58 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:43:58 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 21:43:58 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[WARN] 2025-07-27 21:43:58 Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_current'
+[INFO] 2025-07-27 21:46:02 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:46:02
+[INFO] 2025-07-27 21:46:02 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:46:03 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:46:03 Preferences applied to application state
+[INFO] 2025-07-27 21:46:03 title widget created successfully
+[INFO] 2025-07-27 21:46:03 Preferences saved
+[INFO] 2025-07-27 21:46:03 control widgets created successfully
+[INFO] 2025-07-27 21:46:03 metric display widgets created successfully
+[INFO] 2025-07-27 21:46:03 chart widgets created successfully
+[INFO] 2025-07-27 21:46:03 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:46:03 status bar widgets created successfully
+[INFO] 2025-07-27 21:46:03 dashboard widgets created successfully
+[INFO] 2025-07-27 21:46:03 Weather data scheduler started
+[INFO] 2025-07-27 21:46:03 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:03 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 21:46:03 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:46:03 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:03 Stored weather data for New York - 2 entries
+[WARN] 2025-07-27 21:46:03 Failed to add current weather to chart: '_ChartService' object has no attribute 'datetime'
+[INFO] 2025-07-27 21:46:11 Preferences saved
+[INFO] 2025-07-27 21:46:11 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:46:11 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:11 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 21:46:11 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:46:11 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:11 Stored weather data for New York - 4 entries
+[WARN] 2025-07-27 21:46:11 Failed to add current weather to chart: '_ChartService' object has no attribute 'datetime'
+[INFO] 2025-07-27 21:46:19 Preferences saved
+[INFO] 2025-07-27 21:46:19 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:46:19 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:19 Stored weather data for New York - 5 entries
+[WARN] 2025-07-27 21:46:19 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:46:19 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:19 Stored weather data for New York - 6 entries
+[WARN] 2025-07-27 21:46:19 Failed to add current weather to chart: '_ChartService' object has no attribute 'datetime'
+[INFO] 2025-07-27 21:46:50 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:46:50
+[INFO] 2025-07-27 21:46:50 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:46:50 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:46:50 Preferences applied to application state
+[INFO] 2025-07-27 21:46:50 title widget created successfully
+[INFO] 2025-07-27 21:46:50 Preferences saved
+[INFO] 2025-07-27 21:46:50 control widgets created successfully
+[INFO] 2025-07-27 21:46:50 metric display widgets created successfully
+[INFO] 2025-07-27 21:46:50 chart widgets created successfully
+[INFO] 2025-07-27 21:46:50 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:46:50 status bar widgets created successfully
+[INFO] 2025-07-27 21:46:50 dashboard widgets created successfully
+[INFO] 2025-07-27 21:46:50 Weather data scheduler started
+[INFO] 2025-07-27 21:46:50 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:50 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 21:46:50 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:46:51 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:51 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 21:46:51 Added current weather data to chart: temperature = 81.77
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:55 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:57 Preferences saved
+[INFO] 2025-07-27 21:46:58 Preferences saved
+[INFO] 2025-07-27 21:46:58 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:46:58 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:58 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 21:46:58 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:46:58 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:46:58 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 21:46:58 Added current weather data to chart: air_quality_index = 1
+[INFO] 2025-07-27 21:47:10 Preferences saved
+[INFO] 2025-07-27 21:47:11 Preferences saved
+[INFO] 2025-07-27 21:47:11 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:47:11 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:11 Stored weather data for New York - 5 entries
+[WARN] 2025-07-27 21:47:11 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:47:12 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:12 Stored weather data for New York - 6 entries
+[INFO] 2025-07-27 21:47:12 Added current weather data to chart: temperature = 81.77
+[INFO] 2025-07-27 21:47:14 Preferences saved
+[INFO] 2025-07-27 21:47:14 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 21:47:14 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 21:47:14 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 21:47:14 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 21:47:17 Preferences saved
+[INFO] 2025-07-27 21:47:17 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:47:17 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:17 Stored weather data for New York - 7 entries
+[WARN] 2025-07-27 21:47:17 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:47:18 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:18 Stored weather data for New York - 8 entries
+[INFO] 2025-07-27 21:47:18 Added current weather data to chart: temperature = 81.77
+[INFO] 2025-07-27 21:47:21 Preferences saved
+[INFO] 2025-07-27 21:47:21 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:47:21 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:21 Stored weather data for New York - 9 entries
+[WARN] 2025-07-27 21:47:21 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:47:21 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:21 Stored weather data for New York - 10 entries
+[INFO] 2025-07-27 21:47:21 Added current weather data to chart: temperature = 81.77
+[INFO] 2025-07-27 21:47:29 Preferences saved
+[INFO] 2025-07-27 21:47:29 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:47:29 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:29 Stored weather data for New York - 11 entries
+[WARN] 2025-07-27 21:47:29 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:47:29 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:47:29 Stored weather data for New York - 12 entries
+[INFO] 2025-07-27 21:47:29 Added current weather data to chart: temperature = 81.77
+[INFO] 2025-07-27 21:50:26 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:50:26
+[INFO] 2025-07-27 21:50:26 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:50:26 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:50:26 Preferences applied to application state
+[INFO] 2025-07-27 21:50:26 title widget created successfully
+[INFO] 2025-07-27 21:50:26 Preferences saved
+[INFO] 2025-07-27 21:50:26 control widgets created successfully
+[INFO] 2025-07-27 21:50:27 metric display widgets created successfully
+[INFO] 2025-07-27 21:50:27 chart widgets created successfully
+[INFO] 2025-07-27 21:50:27 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:50:27 status bar widgets created successfully
+[INFO] 2025-07-27 21:50:27 dashboard widgets created successfully
+[INFO] 2025-07-27 21:50:27 Weather data scheduler started
+[INFO] 2025-07-27 21:50:27 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:50:27 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 21:50:27 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:50:34 Preferences saved
+[INFO] 2025-07-27 21:50:34 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:50:35 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:50:35 Stored weather data for New York - 2 entries
+[WARN] 2025-07-27 21:50:35 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:50:37 Preferences saved
+[INFO] 2025-07-27 21:50:37 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 21:50:37 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 21:50:37 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 21:50:37 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 21:50:42 Preferences saved
+[INFO] 2025-07-27 21:50:42 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:50:42 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:50:42 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 21:50:42 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:51:52 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:51:52
+[INFO] 2025-07-27 21:51:52 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:51:52 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:51:52 Preferences applied to application state
+[INFO] 2025-07-27 21:51:52 title widget created successfully
+[INFO] 2025-07-27 21:51:52 Preferences saved
+[INFO] 2025-07-27 21:51:52 control widgets created successfully
+[INFO] 2025-07-27 21:51:53 metric display widgets created successfully
+[INFO] 2025-07-27 21:51:53 chart widgets created successfully
+[INFO] 2025-07-27 21:51:53 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:51:53 status bar widgets created successfully
+[INFO] 2025-07-27 21:51:53 dashboard widgets created successfully
+[INFO] 2025-07-27 21:51:53 Weather data scheduler started
+[INFO] 2025-07-27 21:51:53 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:51:53 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 21:51:53 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:00 Preferences saved
+[INFO] 2025-07-27 21:52:02 Preferences saved
+[INFO] 2025-07-27 21:52:02 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:52:02 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:52:02 Stored weather data for New York - 2 entries
+[WARN] 2025-07-27 21:52:02 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:52:03 Preferences saved
+[INFO] 2025-07-27 21:52:03 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 21:52:03 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 21:52:03 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 21:52:03 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 21:54:03 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:54:03
+[INFO] 2025-07-27 21:54:03 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:54:03 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:54:03 Preferences applied to application state
+[INFO] 2025-07-27 21:54:03 title widget created successfully
+[INFO] 2025-07-27 21:54:03 Preferences saved
+[INFO] 2025-07-27 21:54:03 control widgets created successfully
+[INFO] 2025-07-27 21:54:04 metric display widgets created successfully
+[INFO] 2025-07-27 21:54:04 chart widgets created successfully
+[INFO] 2025-07-27 21:54:04 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:54:04 status bar widgets created successfully
+[INFO] 2025-07-27 21:54:04 dashboard widgets created successfully
+[INFO] 2025-07-27 21:54:04 Weather data scheduler started
+[INFO] 2025-07-27 21:54:04 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:54:04 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 21:54:04 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:54:04 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:54:04 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 21:54:04 Added current weather data to chart: temperature = 81.77
+[INFO] 2025-07-27 21:54:36 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:54:36
+[INFO] 2025-07-27 21:54:36 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:54:36 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:54:36 Preferences applied to application state
+[INFO] 2025-07-27 21:54:36 title widget created successfully
+[INFO] 2025-07-27 21:54:36 Preferences saved
+[INFO] 2025-07-27 21:54:36 control widgets created successfully
+[INFO] 2025-07-27 21:54:36 metric display widgets created successfully
+[INFO] 2025-07-27 21:54:36 chart widgets created successfully
+[INFO] 2025-07-27 21:54:36 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:54:36 status bar widgets created successfully
+[INFO] 2025-07-27 21:54:36 dashboard widgets created successfully
+[INFO] 2025-07-27 21:54:36 Weather data scheduler started
+[INFO] 2025-07-27 21:54:37 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:54:37 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 21:54:37 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 21:54:37 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:54:37 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 21:54:37 Added current weather data to chart: temperature = 81.77
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:53 Preferences saved
+[INFO] 2025-07-27 21:54:56 Preferences saved
+[INFO] 2025-07-27 21:54:56 Preferences saved
+[INFO] 2025-07-27 21:55:03 Preferences saved
+[INFO] 2025-07-27 21:55:03 Preferences saved
+[INFO] 2025-07-27 21:55:04 Preferences saved
+[INFO] 2025-07-27 21:55:04 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:55:05 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:55:05 Stored weather data for New York - 3 entries
+[INFO] 2025-07-27 21:55:05 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:55:05 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 21:55:05 Added current weather data to chart: humidity = 81
+[INFO] 2025-07-27 21:55:09 Preferences saved
+[INFO] 2025-07-27 21:55:12 Preferences saved
+[INFO] 2025-07-27 21:55:13 Preferences saved
+[INFO] 2025-07-27 21:55:13 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 21:55:13 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:55:13 Stored weather data for New York - 5 entries
+[INFO] 2025-07-27 21:55:13 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:55:13 Stored weather data for New York - 6 entries
+[INFO] 2025-07-27 21:55:13 Added current weather data to chart: pressure = 29.94342
+[INFO] 2025-07-27 21:59:13 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 21:59:13
+[INFO] 2025-07-27 21:59:13 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 21:59:13 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 21:59:13 Preferences applied to application state
+[INFO] 2025-07-27 21:59:13 title widget created successfully
+[INFO] 2025-07-27 21:59:13 Preferences saved
+[INFO] 2025-07-27 21:59:13 control widgets created successfully
+[INFO] 2025-07-27 21:59:13 metric display widgets created successfully
+[INFO] 2025-07-27 21:59:13 chart widgets created successfully
+[INFO] 2025-07-27 21:59:13 tabbed display widgets created successfully
+[INFO] 2025-07-27 21:59:13 status bar widgets created successfully
+[INFO] 2025-07-27 21:59:13 dashboard widgets created successfully
+[INFO] 2025-07-27 21:59:13 Preferences saved
+[INFO] 2025-07-27 21:59:13 Weather data scheduler started
+[INFO] 2025-07-27 21:59:13 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:59:13 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 21:59:14 Weather data written for new_york - Live
+[INFO] 2025-07-27 21:59:14 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 21:59:14 Added current weather data to chart: humidity = 81
+[INFO] 2025-07-27 22:01:14 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:01:14
+[INFO] 2025-07-27 22:01:14 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:01:14 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:01:14 Preferences applied to application state
+[INFO] 2025-07-27 22:01:14 title widget created successfully
+[INFO] 2025-07-27 22:01:14 Preferences saved
+[INFO] 2025-07-27 22:01:14 control widgets created successfully
+[INFO] 2025-07-27 22:01:15 metric display widgets created successfully
+[INFO] 2025-07-27 22:01:15 chart widgets created successfully
+[INFO] 2025-07-27 22:01:15 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:01:15 status bar widgets created successfully
+[INFO] 2025-07-27 22:01:15 dashboard widgets created successfully
+[INFO] 2025-07-27 22:01:15 Preferences saved
+[INFO] 2025-07-27 22:01:15 Weather data scheduler started
+[INFO] 2025-07-27 22:01:15 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:01:15 Stored weather data for New York - 1 entries
+[INFO] 2025-07-27 22:01:15 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:01:15 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:01:15 Added current weather data to chart: humidity = 81
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:18 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:19 Preferences saved
+[INFO] 2025-07-27 22:01:20 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 22:01:20 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:01:20 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 22:01:20 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:01:20 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:01:20 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 22:01:20 Added current weather data to chart: humidity = 81
+[INFO] 2025-07-27 22:03:59 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:03:59
+[INFO] 2025-07-27 22:03:59 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:03:59 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:03:59 Preferences applied to application state
+[INFO] 2025-07-27 22:03:59 title widget created successfully
+[INFO] 2025-07-27 22:03:59 Preferences saved
+[INFO] 2025-07-27 22:03:59 control widgets created successfully
+[INFO] 2025-07-27 22:03:59 metric display widgets created successfully
+[INFO] 2025-07-27 22:03:59 chart widgets created successfully
+[INFO] 2025-07-27 22:03:59 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:03:59 status bar widgets created successfully
+[INFO] 2025-07-27 22:03:59 dashboard widgets created successfully
+[INFO] 2025-07-27 22:03:59 Weather data scheduler started
+[INFO] 2025-07-27 22:04:00 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:04:00 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:04:00 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:04:00 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:04:00 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:04:00 Added current weather data to chart: temperature = 81.878
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:03 Preferences saved
+[INFO] 2025-07-27 22:04:05 Preferences saved
+[INFO] 2025-07-27 22:04:05 Manual update requested - scheduler will continue in background
+[ERROR] 2025-07-27 22:04:05 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-27 22:04:06 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-27 22:04:06 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:09 Preferences saved
+[INFO] 2025-07-27 22:04:10 Preferences saved
+[INFO] 2025-07-27 22:04:10 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 22:04:10 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:04:10 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 22:04:10 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:04:10 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:04:10 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 22:04:10 Added current weather data to chart: air_quality_index = 1
+[INFO] 2025-07-27 22:04:10 Preferences saved
+[INFO] 2025-07-27 22:04:10 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 22:04:10 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 22:04:10 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 22:04:10 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 22:05:58 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:05:58
+[INFO] 2025-07-27 22:05:58 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:05:58 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:05:58 Preferences applied to application state
+[INFO] 2025-07-27 22:05:58 title widget created successfully
+[INFO] 2025-07-27 22:05:58 Preferences saved
+[INFO] 2025-07-27 22:05:58 control widgets created successfully
+[INFO] 2025-07-27 22:05:59 metric display widgets created successfully
+[INFO] 2025-07-27 22:05:59 chart widgets created successfully
+[INFO] 2025-07-27 22:05:59 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:05:59 status bar widgets created successfully
+[INFO] 2025-07-27 22:05:59 dashboard widgets created successfully
+[INFO] 2025-07-27 22:05:59 Weather data scheduler started
+[INFO] 2025-07-27 22:05:59 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:05:59 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:05:59 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:05:59 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:05:59 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:05:59 Added current weather data to chart: temperature = 81.968
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:03 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:04 Preferences saved
+[INFO] 2025-07-27 22:06:05 Preferences saved
+[INFO] 2025-07-27 22:06:05 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 22:06:05 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:06:05 Stored weather data for New York - 3 entries
+[WARN] 2025-07-27 22:06:05 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:06:05 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:06:05 Stored weather data for New York - 4 entries
+[INFO] 2025-07-27 22:06:05 Added current weather data to chart: air_quality_index = 1
+[INFO] 2025-07-27 22:06:06 Preferences saved
+[INFO] 2025-07-27 22:06:06 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 22:06:06 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 22:06:06 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 22:06:06 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 22:08:15 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:08:15
+[INFO] 2025-07-27 22:08:15 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:08:15 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:08:15 Preferences applied to application state
+[INFO] 2025-07-27 22:08:15 title widget created successfully
+[INFO] 2025-07-27 22:08:15 Preferences saved
+[INFO] 2025-07-27 22:08:15 control widgets created successfully
+[INFO] 2025-07-27 22:08:16 metric display widgets created successfully
+[INFO] 2025-07-27 22:08:16 chart widgets created successfully
+[INFO] 2025-07-27 22:08:16 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:08:16 status bar widgets created successfully
+[INFO] 2025-07-27 22:08:16 dashboard widgets created successfully
+[INFO] 2025-07-27 22:08:16 Weather data scheduler started
+[INFO] 2025-07-27 22:08:16 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:08:16 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:08:16 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:08:16 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:08:16 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:08:16 Added current weather data to chart: temperature = 81.968
+[INFO] 2025-07-27 22:08:17 Preferences saved
+[INFO] 2025-07-27 22:08:17 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 22:08:17 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 22:08:17 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 22:08:17 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 22:10:41 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:10:41
+[INFO] 2025-07-27 22:10:41 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:10:41 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:10:41 Preferences applied to application state
+[INFO] 2025-07-27 22:10:41 title widget created successfully
+[INFO] 2025-07-27 22:10:41 Preferences saved
+[INFO] 2025-07-27 22:10:41 control widgets created successfully
+[INFO] 2025-07-27 22:10:42 metric display widgets created successfully
+[INFO] 2025-07-27 22:10:42 chart widgets created successfully
+[INFO] 2025-07-27 22:10:42 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:10:42 status bar widgets created successfully
+[INFO] 2025-07-27 22:10:42 dashboard widgets created successfully
+[INFO] 2025-07-27 22:10:42 Weather data scheduler started
+[INFO] 2025-07-27 22:10:42 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:10:42 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:10:42 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:10:42 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:10:42 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:10:42 Added current weather data to chart: temperature = 81.968
+[INFO] 2025-07-27 22:10:45 Preferences saved
+[INFO] 2025-07-27 22:10:45 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 22:10:45 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 22:10:45 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 22:10:45 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 22:15:21 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:15:21
+[INFO] 2025-07-27 22:15:21 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:15:21 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:15:21 Preferences applied to application state
+[INFO] 2025-07-27 22:15:21 title widget created successfully
+[INFO] 2025-07-27 22:15:21 Preferences saved
+[INFO] 2025-07-27 22:15:21 control widgets created successfully
+[INFO] 2025-07-27 22:15:21 metric display widgets created successfully
+[INFO] 2025-07-27 22:15:22 chart widgets created successfully
+[INFO] 2025-07-27 22:15:22 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:15:22 status bar widgets created successfully
+[INFO] 2025-07-27 22:15:22 dashboard widgets created successfully
+[INFO] 2025-07-27 22:15:22 Weather data scheduler started
+[INFO] 2025-07-27 22:15:22 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:15:22 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:15:22 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:15:22 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:15:22 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:15:22 Added current weather data to chart: temperature = 82.004
+[INFO] 2025-07-27 22:15:24 Preferences saved
+[INFO] 2025-07-27 22:15:24 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 22:15:24 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 22:15:24 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 22:15:24 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'

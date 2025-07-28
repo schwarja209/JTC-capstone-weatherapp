@@ -17,7 +17,7 @@ import threading
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
 
-from WeatherDashboard.services.api_exceptions import ValidationError, NetworkError
+from WeatherDashboard.services.api_exceptions import ValidationError, NetworkError, RateLimitError
 from WeatherDashboard.widgets.status_bar_widgets import StatusBarWidgets
 
 
@@ -261,7 +261,7 @@ class AsyncWeatherOperation:
                 
                 self._schedule_ui_update(complete_task)
                 
-            except (ConnectionError, TimeoutError) as e:
+            except (ConnectionError, TimeoutError, RateLimitError) as e:
                 if self._is_cancelled():
                     return  # Don't show error if operation was cancelled
                 
@@ -270,8 +270,11 @@ class AsyncWeatherOperation:
                     self.loading_manager.show_error(f"Network error: {e}")
                     self.loading_manager.stop_loading()
                     if hasattr(self.controller, 'error_handler') and self.controller.error_handler:
-                        network_error = NetworkError(f"Network error during async operation: {e}")
-                        self.controller.error_handler.handle_weather_error(network_error, city_name)
+                        if isinstance(e, RateLimitError):
+                            self.controller.error_handler.handle_weather_error(e, city_name)
+                        else:
+                            network_error = NetworkError(f"Network error during async operation: {e}")
+                            self.controller.error_handler.handle_weather_error(network_error, city_name)
                 
                 self._schedule_ui_update(handle_network_error)
                 return
@@ -296,10 +299,11 @@ class AsyncWeatherOperation:
                 
                 def handle_unexpected_error():
                     """Handle unexpected errors by stopping loading and showing error message."""
-                    self.loading_manager.show_error(f"Async operation failed: {str(e)}")
+                    error_message = f"Async operation failed: {str(e)}"
+                    self.loading_manager.show_error(error_message)
                     self.loading_manager.stop_loading()
                     if hasattr(self.controller, 'error_handler'):
-                        self.controller.error_handler.handle_unexpected_error(f"Async operation failed: {str(e)}")
+                        self.controller.error_handler.handle_unexpected_error(error_message)
                 
                 self._schedule_ui_update(handle_unexpected_error)
                 return

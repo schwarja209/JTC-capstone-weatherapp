@@ -570,6 +570,7 @@ class WeatherDashboardController:
             self.logger = Logger()
             self.config = config
             self.validation_utils = ValidationUtils()
+            self.datetime = datetime
             
             # Injected dependencies for testable components
             self.state = state
@@ -639,20 +640,7 @@ class WeatherDashboardController:
             return city, days, metric_key, unit
         
         def _build_chart_series(self, city: str, days: int, metric_key: str, unit: str) -> Tuple[List[str], List[Any]]:
-            """Build the x and y axis values for the chart based on historical data.
-            
-            Args:
-                city: City name for data retrieval
-                days: Number of days of historical data to retrieve
-                metric_key: Weather metric to chart
-                unit: Unit system for the data
-                
-            Returns:
-                Tuple[List[str], List[Any]]: x_values (dates), y_values (metric data)
-                
-            Raises:
-                ValueError: If no historical data is available
-            """
+            """Build the x and y axis values for the chart based on historical data."""
             # Get the dataclass result and extract the data entries
             result = self.data_service.get_historical_data(city, days, unit)
             data = result.data_entries  # Extract the list from the dataclass
@@ -666,6 +654,46 @@ class WeatherDashboardController:
 
             x_vals = [d['date'].strftime("%Y-%m-%d") for d in data]  # Dynamic axis values
             y_vals = [d[metric_key] for d in data if metric_key in d]
+            
+            # ADD CURRENT WEATHER AS LAST POINT
+            try:
+                # Get current weather data for the city using the correct method
+                city_name, current_weather, error = self.data_service.get_city_data_tuple(city, unit)
+                
+                if current_weather and metric_key in current_weather and not error:
+                    # Format the current weather value properly
+                    current_value = current_weather[metric_key]
+                    
+                    # Format based on metric type (similar to how metrics are formatted in view models)
+                    if isinstance(current_value, (int, float)):
+                        if metric_key in ['temperature', 'feels_like', 'temp_min', 'temp_max', 'heat_index', 'wind_chill', 'dew_point']:
+                            # Temperature values - round to 1 decimal
+                            formatted_value = round(current_value, 1)
+                        elif metric_key in ['humidity', 'pressure', 'cloud_cover', 'air_quality_index']:
+                            # Integer values - round to whole number
+                            formatted_value = round(current_value)
+                        elif metric_key in ['wind_speed', 'wind_gust', 'visibility', 'rain', 'snow', 'uv_index']:
+                            # Other numeric values - round to 1 decimal
+                            formatted_value = round(current_value, 1)
+                        else:
+                            # Default formatting
+                            formatted_value = round(current_value, 1)
+                    else:
+                        formatted_value = current_value
+                    
+                    # Add current weather as the last point
+                    current_date = current_weather.get('date', self.datetime.now())
+                    x_vals.append(current_date.strftime("%Y-%m-%d"))
+                    y_vals.append(formatted_value)
+                    
+                    self.logger.info(f"Added current weather data to chart: {metric_key} = {current_weather[metric_key]}")
+                else:
+                    self.logger.warn(f"Current weather data missing {metric_key} for {city} or has error: {error}")
+                    
+            except Exception as e:
+                self.logger.warn(f"Failed to add current weather to chart: {e}")
+                # Continue with historical data only
+            
             return x_vals, y_vals
         
         def _render_chart(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit: str) -> None:

@@ -16,6 +16,7 @@ Modules:
     state_utils: Widget visibility utility functions
     validation_utils: Centralized validation utilities
     widget_utils: Centralized widget positioning and creation utilities
+    preferences_utils: User Preferences Manager
 """
 
 __all__ = [
@@ -28,5 +29,6 @@ __all__ = [
     "color_utils",
     "state_utils",
     "validation_utils",
-    "widget_utils"
+    "widget_utils",
+    "preferences_utils"
 ]

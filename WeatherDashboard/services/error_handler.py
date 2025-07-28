@@ -140,9 +140,12 @@ class WeatherErrorHandler:
         getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['input_error'], str(error))
 
     def handle_unexpected_error(self, error: Exception) -> None:
-        """Handles unexpected errors."""
-        self.logger.error(f"Unexpected error: {error}")
-        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['general_error'], f"Unexpected error: {error}")
+        if isinstance(error, str):
+            self.logger.error(f"Unexpected error: {error}")
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['general_error'], error)
+        else:
+            self.logger.error(f"Unexpected error: {error}")
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['general_error'], str(error))
     
     def handle_rate_limit_error(self, wait_time: float) -> None:
         """Handle rate limit errors with appropriate user messaging."""

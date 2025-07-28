@@ -18,6 +18,8 @@ import tkinter as tk
 
 from WeatherDashboard import config
 
+from WeatherDashboard.utils.preferences_utils import PreferencesService, UserPreferences
+
 
 class WeatherDashboardState:
     """Centralized state management for the Weather Dashboard application.
@@ -42,6 +44,9 @@ class WeatherDashboardState:
         # Direct imports for stable utilities
         self.config = config
 
+        # Initialize preferences service
+        self.preferences_service = PreferencesService()
+
         # Create the tkinter variables
         self.city = tk.StringVar(value=self.config.DEFAULTS["city"])
         self.unit = tk.StringVar(value=self.config.DEFAULTS["unit"])
@@ -51,6 +56,12 @@ class WeatherDashboardState:
             key: tk.BooleanVar(value=val)
             for key, val in self.config.DEFAULTS["visibility"].items()
         }
+
+        # Load preferences on startup
+        self._load_preferences()
+
+        # Add automatic preference saving on state changes
+        self._setup_automatic_preference_saving()
         
     # STATE ACCESS METHODS - These provide clean access to state values
     def get_current_city(self) -> str:
@@ -92,6 +103,49 @@ class WeatherDashboardState:
         
         for key, var in self.visibility.items():
             var.set(self.config.DEFAULTS["visibility"].get(key, False))
+    
+    def _load_preferences(self) -> None:
+        """Load user preferences and apply to state."""
+        try:
+            preferences = self.preferences_service.load_preferences()
+            self.preferences_service.apply_preferences_to_state(preferences, self)
+        except Exception as e:
+            # Log error but continue with defaults
+            print(f"Failed to load preferences: {e}")
+    
+    def save_preferences(self) -> None:
+        """Save current state as user preferences."""
+        try:
+            # Get scheduler state from main window (will be passed in)
+            scheduler_enabled = getattr(self, '_scheduler_enabled', self.config.SCHEDULER['enabled'])
+            preferences = self.preferences_service.update_preferences_from_state(self, scheduler_enabled)
+            self.preferences_service.save_preferences(preferences)
+        except Exception as e:
+            print(f"Failed to save preferences: {e}")
+
+    def _setup_automatic_preference_saving(self) -> None:
+        """Setup automatic preference saving when state variables change."""
+        # Add trace callbacks for automatic preference saving
+        self.city.trace_add('write', self._on_preference_changed)
+        self.unit.trace_add('write', self._on_preference_changed)
+        self.range.trace_add('write', self._on_preference_changed)
+        self.chart.trace_add('write', self._on_preference_changed)
+        
+        # Add trace callbacks for visibility changes
+        for var in self.visibility.values():
+            var.trace_add('write', self._on_preference_changed)
+
+    def _on_preference_changed(self, *args) -> None:
+        """Handle preference changes and save automatically."""
+        try:
+            # Save preferences immediately when state changes
+            self.save_preferences()
+        except Exception as e:
+            print(f"Failed to save preferences: {e}")
+
+    def save_preferences_debounced(self) -> None:
+        """Save preferences immediately (debouncing removed due to root window access issue)."""
+        self.save_preferences()
     
     def __repr__(self) -> str:
         """String representation for debugging."""
