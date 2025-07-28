@@ -16,8 +16,8 @@ Classes:
 
 from typing import Tuple, List, Any, Optional, Dict
 from dataclasses import dataclass
-from datetime import datetime
 import threading
+from datetime import datetime
 
 from WeatherDashboard import config, styles
 from WeatherDashboard.utils.utils import Utils

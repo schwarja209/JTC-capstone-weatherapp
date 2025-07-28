@@ -125,7 +125,7 @@ class ControlWidgets(BaseWidgetManager):
 # 3. METRIC VISIBILITY CONTROLS  
 # ================================
     @widget_error_handler("metric visibility")
-    def _create_metric_visibility(self):
+    def _create_metric_visibility(self) -> None:
         """Create metric visibility controls with two-column checkbox layout.
 
         Creates visibility control section with header, bulk selection buttons
@@ -242,7 +242,7 @@ class ControlWidgets(BaseWidgetManager):
         self.cancel_button = SafeWidgetCreator.create_button(self.parent, "Cancel", self.callbacks.get('cancel'), "MainButton.TButton")
         self.cancel_button.grid(row=3, column=2, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
 
-    def update_chart_dropdown_options(self):
+    def update_chart_dropdown_options(self) -> None:
         """Update chart dropdown options based on metric visibility and chartability configuration.
         
         Performs comprehensive filtering of available metrics for chart display by evaluating
@@ -362,7 +362,7 @@ class ControlWidgets(BaseWidgetManager):
 # ================================
 # 7. CHART UTILITY METHODS
 # ================================
-    def _is_group_visible(self, group_config):
+    def _is_group_visible(self, group_config: Dict[str, Any]) -> bool:
         """Check if any display metrics in this group are visible using standardized access."""
         return any(
             self.state_utils.is_metric_visible(self.state, display_metric)

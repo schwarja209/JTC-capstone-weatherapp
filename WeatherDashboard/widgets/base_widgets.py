@@ -15,7 +15,7 @@ Functions:
     widget_error_handler: Decorator for standardized widget method error handling
 """
 
-from typing import Any, Optional, Callable
+from typing import Any, Optional, Callable, Dict
 from tkinter import ttk
 import functools
 
@@ -88,7 +88,7 @@ class BaseWidgetManager:
         """Get widget creation error if any."""
         return self._creation_error
     
-    def get_alert_popup_parent(self):
+    def get_alert_popup_parent(self) -> Any:
         """Return the parent widget to be used for alert popups.
 
         Returns:
@@ -101,7 +101,7 @@ class BaseWidgetManager:
             return self.frames['title']
         return None
     
-    def update_metric_display(self, metrics):
+    def update_metric_display(self, metrics: Dict[str, str]) -> None:
         """Update the metric display widgets with the provided metrics.
 
         Args:
@@ -115,7 +115,7 @@ class BaseWidgetManager:
             self.logger.warn("Cannot update metrics: widgets not ready")
             return
 
-    def update_status_bar(self, city_name, error_exception):
+    def update_status_bar(self, city_name: str, error_exception: Optional[Exception]) -> None:
         """Update the status bar widgets with the current city and error status.
 
         Args:
@@ -130,7 +130,7 @@ class BaseWidgetManager:
             self.logger.warn("Cannot update status bar: widgets not ready")
             return
 
-    def update_alerts(self, raw_data):
+    def update_alerts(self, raw_data: Dict[str, Any]) -> None:
         """Update the alert display widgets with the provided raw weather data.
 
         Args:

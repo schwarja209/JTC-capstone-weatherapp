@@ -39,7 +39,7 @@ class IWeatherDashboardWidgets:
         """Update chart display widgets."""
         raise NotImplementedError
 
-    def get_alert_popup_parent(self):
+    def get_alert_popup_parent(self) -> Any:
         """Return parent widget for alert popups."""
         raise NotImplementedError
     

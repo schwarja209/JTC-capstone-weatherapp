@@ -10201,3 +10201,83 @@
 {"timestamp": "2025-07-27 23:23:32", "level": "INFO", "message": "Theme changed to neutral"}
 {"timestamp": "2025-07-27 23:23:35", "level": "INFO", "message": "Theme changed to pessimistic"}
 {"timestamp": "2025-07-27 23:23:35", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-27 23:39:31", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 23:39:31", "test": true}
+{"timestamp": "2025-07-27 23:39:31", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 23:39:31", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 23:39:31", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 23:39:31", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 23:39:31", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:39:31", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 23:39:32", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 23:39:32", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 23:39:32", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 23:39:32", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 23:39:32", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 23:39:32", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 23:39:32", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 23:39:35", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 23:39:35", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 23:39:41", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-27 23:39:41", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 23:40:02", "test": true}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 23:40:02", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 23:40:02", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 23:40:04", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-07-27 23:40:04", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-27 23:40:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:36", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:40:36", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-27 23:40:36", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 23:40:36", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 23:40:36", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 23:40:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 23:40:37", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 23:40:37", "level": "INFO", "message": "Added current weather data to chart: temperature = 80.888"}
+{"timestamp": "2025-07-27 23:40:41", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-27 23:40:41", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-27 23:41:02", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-27 23:41:02", "test": true}
+{"timestamp": "2025-07-27 23:41:02", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-27 23:41:02", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-27 23:41:02", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-27 23:41:02", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-27 23:41:02", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-27 23:41:02", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-27 23:41:03", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-27 23:41:03", "level": "INFO", "message": "Added current weather data to chart: temperature = 80.888"}
+{"timestamp": "2025-07-27 23:41:06", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-27 23:41:06", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-27 23:41:24", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-27 23:41:24", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-27 23:41:25", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-27 23:41:25", "level": "INFO", "message": "Theme changed to pessimistic"}

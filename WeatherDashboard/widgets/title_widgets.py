@@ -10,8 +10,8 @@ Classes:
 """
 
 from typing import Optional, Callable
-from tkinter import ttk
 import tkinter as tk
+from tkinter import ttk
 
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import config

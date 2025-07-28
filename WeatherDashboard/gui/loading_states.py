@@ -215,7 +215,7 @@ class AsyncWeatherOperation:
             self.cancel_current_operation()
             self.cancel_event.clear()
 
-        def background_task():
+        def background_task() -> None:
             """Execute weather data fetching in background thread.
             
             Performs the actual weather data fetching with progress updates,
@@ -249,7 +249,7 @@ class AsyncWeatherOperation:
                     return
 
                 # Handle completion in main thread
-                def complete_task():
+                def complete_task() -> None:
                     """Complete the async operation and call completion callback."""
                     # Show error message if there is one
                     if result.error_message:
@@ -265,7 +265,7 @@ class AsyncWeatherOperation:
                 if self._is_cancelled():
                     return  # Don't show error if operation was cancelled
                 
-                def handle_network_error():
+                def handle_network_error() -> None:
                     """Handle network errors by stopping loading and showing error message."""
                     self.loading_manager.show_error(f"Network error: {e}")
                     self.loading_manager.stop_loading()
@@ -283,7 +283,7 @@ class AsyncWeatherOperation:
                 if self._is_cancelled():
                     return
                 
-                def handle_validation_error():
+                def handle_validation_error() -> None:
                     """Handle validation errors by stopping loading and showing error message."""
                     self.loading_manager.show_error(f"Validation error: {e}")
                     self.loading_manager.stop_loading()
@@ -297,7 +297,7 @@ class AsyncWeatherOperation:
                 if self._is_cancelled():
                     return
                 
-                def handle_unexpected_error():
+                def handle_unexpected_error() -> None:
                     """Handle unexpected errors by stopping loading and showing error message."""
                     error_message = f"Async operation failed: {str(e)}"
                     self.loading_manager.show_error(error_message)

@@ -117,7 +117,7 @@ class WeatherDashboardMain:
         if self.scheduler_service.enabled:
             self.scheduler_service.start_scheduler()
 
-    def _create_widgets(self, root, frames: Optional[WeatherDashboardGUIFrames] = None):
+    def _create_widgets(self, root: Any, frames: Optional[WeatherDashboardGUIFrames] = None) -> None:
         """Create and configure all widgets in a single, unified manager."""
         # Create or use injected frames
         if frames is None:
@@ -140,7 +140,7 @@ class WeatherDashboardMain:
         
         return widgets
     
-    def _connect_callbacks(self):
+    def _connect_callbacks(self) -> None:
         """Connect all widget callbacks and alert system."""
         # Alert system connection
         if hasattr(self.widgets, 'metric_widgets') and self.widgets.metric_widgets:
@@ -380,7 +380,7 @@ class WeatherDashboardMain:
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(True, "Loading...")
 
-        def operation_finished(success: bool):
+        def operation_finished(success: bool) -> None:
             with self._operation_lock:
                 self._operation_in_progress = False
             

@@ -10201,3 +10201,83 @@
 [INFO] 2025-07-27 23:23:32 Theme changed to neutral
 [INFO] 2025-07-27 23:23:35 Theme changed to pessimistic
 [INFO] 2025-07-27 23:23:35 Theme changed to pessimistic
+[INFO] 2025-07-27 23:39:31 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 23:39:31
+[INFO] 2025-07-27 23:39:31 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 23:39:31 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 23:39:31 Preferences applied to application state
+[INFO] 2025-07-27 23:39:31 title widget created successfully
+[INFO] 2025-07-27 23:39:31 Preferences saved
+[INFO] 2025-07-27 23:39:31 control widgets created successfully
+[INFO] 2025-07-27 23:39:32 metric display widgets created successfully
+[INFO] 2025-07-27 23:39:32 chart widgets created successfully
+[INFO] 2025-07-27 23:39:32 tabbed display widgets created successfully
+[INFO] 2025-07-27 23:39:32 status bar widgets created successfully
+[INFO] 2025-07-27 23:39:32 dashboard widgets created successfully
+[INFO] 2025-07-27 23:39:32 Weather data scheduler started
+[ERROR] 2025-07-27 23:39:32 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 23:39:35 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 23:39:35 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 23:39:41 Theme changed to optimistic
+[INFO] 2025-07-27 23:39:41 Theme changed to optimistic
+[INFO] 2025-07-27 23:40:02 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 23:40:02
+[INFO] 2025-07-27 23:40:02 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 23:40:02 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 23:40:02 Preferences applied to application state
+[INFO] 2025-07-27 23:40:02 title widget created successfully
+[INFO] 2025-07-27 23:40:02 Preferences saved
+[INFO] 2025-07-27 23:40:02 control widgets created successfully
+[INFO] 2025-07-27 23:40:02 metric display widgets created successfully
+[INFO] 2025-07-27 23:40:02 chart widgets created successfully
+[INFO] 2025-07-27 23:40:02 tabbed display widgets created successfully
+[INFO] 2025-07-27 23:40:02 status bar widgets created successfully
+[INFO] 2025-07-27 23:40:02 dashboard widgets created successfully
+[INFO] 2025-07-27 23:40:02 Weather data scheduler started
+[ERROR] 2025-07-27 23:40:02 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 23:40:04 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 23:40:04 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 23:40:34 Preferences saved
+[INFO] 2025-07-27 23:40:34 Preferences saved
+[INFO] 2025-07-27 23:40:34 Preferences saved
+[INFO] 2025-07-27 23:40:34 Preferences saved
+[INFO] 2025-07-27 23:40:34 Preferences saved
+[INFO] 2025-07-27 23:40:34 Preferences saved
+[INFO] 2025-07-27 23:40:35 Preferences saved
+[INFO] 2025-07-27 23:40:35 Preferences saved
+[INFO] 2025-07-27 23:40:36 Preferences saved
+[INFO] 2025-07-27 23:40:36 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 23:40:36 Weather data written for new_york - Live
+[INFO] 2025-07-27 23:40:36 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 23:40:36 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 23:40:37 Weather data written for new_york - Live
+[INFO] 2025-07-27 23:40:37 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 23:40:37 Added current weather data to chart: temperature = 80.888
+[INFO] 2025-07-27 23:40:41 Theme changed to optimistic
+[INFO] 2025-07-27 23:40:41 Theme changed to optimistic
+[INFO] 2025-07-27 23:41:02 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 23:41:02
+[INFO] 2025-07-27 23:41:02 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 23:41:02 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 23:41:02 Preferences applied to application state
+[INFO] 2025-07-27 23:41:02 title widget created successfully
+[INFO] 2025-07-27 23:41:02 Preferences saved
+[INFO] 2025-07-27 23:41:02 control widgets created successfully
+[INFO] 2025-07-27 23:41:03 metric display widgets created successfully
+[INFO] 2025-07-27 23:41:03 chart widgets created successfully
+[INFO] 2025-07-27 23:41:03 tabbed display widgets created successfully
+[INFO] 2025-07-27 23:41:03 status bar widgets created successfully
+[INFO] 2025-07-27 23:41:03 dashboard widgets created successfully
+[INFO] 2025-07-27 23:41:03 Weather data scheduler started
+[INFO] 2025-07-27 23:41:03 Weather data written for new_york - Live
+[INFO] 2025-07-27 23:41:03 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 23:41:03 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 23:41:03 Weather data written for new_york - Live
+[INFO] 2025-07-27 23:41:03 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 23:41:03 Added current weather data to chart: temperature = 80.888
+[INFO] 2025-07-27 23:41:06 Theme changed to optimistic
+[INFO] 2025-07-27 23:41:06 Theme changed to optimistic
+[INFO] 2025-07-27 23:41:24 Theme changed to neutral
+[INFO] 2025-07-27 23:41:24 Theme changed to neutral
+[INFO] 2025-07-27 23:41:25 Theme changed to pessimistic
+[INFO] 2025-07-27 23:41:25 Theme changed to pessimistic

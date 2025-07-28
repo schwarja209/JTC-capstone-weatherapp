@@ -135,7 +135,7 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         return "unknown"
     
     @widget_error_handler("tab change")
-    def _on_tab_changed(self, event):
+    def _on_tab_changed(self, event) -> None:
         """Handle tab change events (placeholder for future features)."""
         current_tab = self.get_current_tab()
         # Could add logic here like refreshing chart when switching to chart tab

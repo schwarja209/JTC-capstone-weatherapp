@@ -10,7 +10,7 @@ Classes:
     WeatherDashboardWidgets: Main widget coordinator and manager
 """
 
-from typing import Dict, Any, Callable, Optional
+from typing import Dict, Any, Callable, Optional, List
 import tkinter as tk
 from tkinter import ttk, messagebox
 
@@ -164,12 +164,12 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                 return w.get_creation_error()
         return None
 
-    def update_metric_display(self, metrics):
+    def update_metric_display(self, metrics: Dict[str, str]) -> None:
         """Delegate metric display update to metric_widgets."""
         if self.metric_widgets:
             self.metric_widgets.update_metric_display(metrics)
 
-    def update_chart_display(self, x_vals, y_vals, metric_key, city, unit_system, fallback=False):
+    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool=False) -> None:
         """Delegate chart display update to chart_widgets."""
         if self.chart_widgets:
             self.chart_widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit_system, fallback)
@@ -179,17 +179,17 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         if self.chart_widgets:
             self.chart_widgets.clear_chart_with_error_message()
 
-    def update_status_bar(self, city_name, error_exception, simulated=False):
+    def update_status_bar(self, city_name: str, error_exception: Optional[Exception], simulated: bool=False) -> None:
         """Delegate status bar update to status_bar_widgets."""
         if self.status_bar_widgets:
             self.status_bar_widgets.update_status_bar(city_name, error_exception, simulated)
 
-    def update_alerts(self, raw_data):
+    def update_alerts(self, raw_data: Dict[str, Any]) -> None:
         """Delegate alert update to metric_widgets."""
         if self.metric_widgets:
             self.metric_widgets.update_alerts(raw_data)
 
-    def get_alert_popup_parent(self):
+    def get_alert_popup_parent(self) -> Any:
         """Return the alert popup parent from metric_widgets."""
         if self.metric_widgets:
             return self.metric_widgets.get_alert_popup_parent()
@@ -197,14 +197,14 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
     # BACKWARD COMPATIBILITY
     @property
-    def metric_widgets(self):
+    def metric_widgets(self) -> Any:
         """Access metric widgets through tabbed interface."""
         if self.tabbed_widgets:
             return self.tabbed_widgets.get_metric_widgets()
         return None
 
     @property
-    def chart_widgets(self):
+    def chart_widgets(self) -> Any:
         """Access to chart widgets through tabbed interface."""
         if self.tabbed_widgets:
             return self.tabbed_widgets.get_chart_widgets()
