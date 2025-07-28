@@ -317,6 +317,8 @@ class WeatherDashboardMain:
     def _on_closing(self) -> None:
         """Handle application shutdown and save preferences."""
         try:
+            self.logger.info("Application shutting down")
+            
             # Save preferences before closing
             if hasattr(self.state, 'save_preferences'):
                 # Pass scheduler state to state manager

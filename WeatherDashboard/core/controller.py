@@ -127,6 +127,7 @@ class WeatherDashboardController:
         Returns a ControllerOperationResult dataclass.
         """
         start_time = self.datetime.now()
+        self.logger.info(f"Starting weather update for {city_name}")
 
         # Step 1: Validate inputs
         validation_result = self._validation_service.validate_inputs(city_name, unit_system)
@@ -165,6 +166,7 @@ class WeatherDashboardController:
         # Overwrite processing_time and timestamp to reflect the full operation
         result.processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
         result.timestamp = self.datetime.now()
+        self.logger.info(f"Weather update completed for {city_name}")
         return result
 
     def update_chart(self) -> None:
@@ -194,6 +196,7 @@ class WeatherDashboardController:
         Returns:
             ControllerOperationResult: Result of the operation
         """
+        self.logger.info(f"Fetching data for {city_name}")
         start_time = self.datetime.now()
         
         try:
@@ -216,6 +219,7 @@ class WeatherDashboardController:
             # If validation failed (no city, no metrics), return False to unlock buttons but don't display data
             if not should_continue:
                 processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
+                self.logger.info(f"Data fetch completed for {city_name}")
                 return ControllerOperationResult(
                     success=True,
                     error_message=str(error_exception) if error_exception else "Unknown error",
@@ -237,6 +241,7 @@ class WeatherDashboardController:
                 # Return True for both real data and simulated data (it was successfully displayed)
                 if simulated:
                     processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
+                    self.logger.info(f"Data fetch completed for {city_name}")
                     return ControllerOperationResult(
                         success=True,
                         error_message=str(error_exception) if error_exception else "Simulated data used due to API failure",
@@ -248,6 +253,7 @@ class WeatherDashboardController:
                     )
                 else:
                     processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
+                    self.logger.info(f"Data fetch completed for {city_name}")
                     return ControllerOperationResult(
                         success=True,
                         simulated=False,
@@ -259,6 +265,7 @@ class WeatherDashboardController:
                             
             # Fallback case
             processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
+            self.logger.info(f"Data fetch completed for {city_name}")
             return ControllerOperationResult(
                 success=True,
                 error_message=str(error_exception) if error_exception else "Unknown error",
@@ -271,6 +278,7 @@ class WeatherDashboardController:
 
         except ValidationError as e:
             processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
+            self.logger.info(f"Data fetch completed for {city_name}")
             return ControllerOperationResult(
                 success=True,
                 error_message=str(e),
@@ -281,6 +289,7 @@ class WeatherDashboardController:
             )
         except Exception as e:
             processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
+            self.logger.info(f"Data fetch completed for {city_name}")
             return ControllerOperationResult(
                 success=True,
                 error_message=str(e),

@@ -91,6 +91,7 @@ class WeatherDataManager:
             May log error messages and warnings via Logger
             Updates internal error tracking for monitoring
         """
+        self.logger.info(f"Fetching current weather for {city}")
         result = self.api_service.fetch_current(city, cancel_event)
 
         # All API and fallback data is assumed to be in metric units and converted downstream.
@@ -99,7 +100,8 @@ class WeatherDataManager:
 
         # Store latest call
         self.store_current_weather(city, converted_data, unit_system)
-
+        self.logger.info(f"Current weather fetched for {city}")
+        
         return converted_data, result.is_simulated, result.error_message
 
     def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
@@ -138,6 +140,7 @@ class WeatherDataManager:
         # Skip conversion if already in target system
         if unit_system == "metric":
             return data.copy()
+        self.logger.info(f"Converting units to {unit_system}")
         
         converted = data.copy()
         

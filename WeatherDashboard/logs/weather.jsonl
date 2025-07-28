@@ -10281,3 +10281,189 @@
 {"timestamp": "2025-07-27 23:41:24", "level": "INFO", "message": "Theme changed to neutral"}
 {"timestamp": "2025-07-27 23:41:25", "level": "INFO", "message": "Theme changed to pessimistic"}
 {"timestamp": "2025-07-27 23:41:25", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-28 00:11:58", "test": true}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-28 00:11:58", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:11:59", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:11:59", "level": "INFO", "message": "Added current weather data to chart: temperature = 80.87"}
+{"timestamp": "2025-07-28 00:12:02", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:12:02", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-28 00:13:40", "test": true}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-28 00:13:40", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:13:40", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:13:41", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.014"}
+{"timestamp": "2025-07-28 00:13:43", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:13:43", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:14:10", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-28 00:14:10", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-28 00:14:14", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:14:14", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:14:25", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:14:25", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-28 00:14:46", "test": true}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-28 00:14:46", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:14:47", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.014"}
+{"timestamp": "2025-07-28 00:14:58", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:14:58", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:15:02", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-28 00:15:02", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-28 00:15:04", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:15:04", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:15:07", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:15:07", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:15:10", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:15:10", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:15:15", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-28 00:15:15", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-28 00:15:49", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:15:49", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:15:51", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:15:51", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-28 00:18:32", "test": true}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-28 00:18:32", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:18:33", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-28 00:18:33", "level": "INFO", "message": "Added current weather data to chart: temperature = 81.014"}
+{"timestamp": "2025-07-28 00:18:41", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:18:41", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-28 00:18:56", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-28 00:18:56", "level": "INFO", "message": "Theme changed to neutral"}

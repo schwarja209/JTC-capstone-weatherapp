@@ -10281,3 +10281,189 @@
 [INFO] 2025-07-27 23:41:24 Theme changed to neutral
 [INFO] 2025-07-27 23:41:25 Theme changed to pessimistic
 [INFO] 2025-07-27 23:41:25 Theme changed to pessimistic
+[INFO] 2025-07-28 00:11:58 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-28 00:11:58
+[INFO] 2025-07-28 00:11:58 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-28 00:11:58 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-28 00:11:58 Preferences applied to application state
+[INFO] 2025-07-28 00:11:58 Creating dashboard widgets
+[INFO] 2025-07-28 00:11:58 title widget created successfully
+[INFO] 2025-07-28 00:11:58 Preferences saved
+[INFO] 2025-07-28 00:11:58 control widgets created successfully
+[INFO] 2025-07-28 00:11:58 metric display widgets created successfully
+[INFO] 2025-07-28 00:11:58 chart widgets created successfully
+[INFO] 2025-07-28 00:11:58 tabbed display widgets created successfully
+[INFO] 2025-07-28 00:11:58 status bar widgets created successfully
+[INFO] 2025-07-28 00:11:58 Dashboard widgets created successfully
+[INFO] 2025-07-28 00:11:58 dashboard widgets created successfully
+[INFO] 2025-07-28 00:11:58 Weather data scheduler started
+[INFO] 2025-07-28 00:11:58 Starting weather update for New York
+[INFO] 2025-07-28 00:11:58 Fetching data for New York
+[INFO] 2025-07-28 00:11:58 Fetching current weather for New York
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:11:59 Stored weather data for New York - 1 entries
+[INFO] 2025-07-28 00:11:59 Current weather fetched for New York
+[WARN] 2025-07-28 00:11:59 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-28 00:11:59 Data fetch completed for New York
+[INFO] 2025-07-28 00:11:59 Weather update completed for New York
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Fetching current weather for New York
+[INFO] 2025-07-28 00:11:59 Converting units to imperial
+[INFO] 2025-07-28 00:11:59 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:11:59 Stored weather data for New York - 2 entries
+[INFO] 2025-07-28 00:11:59 Current weather fetched for New York
+[INFO] 2025-07-28 00:11:59 Added current weather data to chart: temperature = 80.87
+[INFO] 2025-07-28 00:12:02 Theme changed to optimistic
+[INFO] 2025-07-28 00:12:02 Theme changed to optimistic
+[INFO] 2025-07-28 00:13:40 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-28 00:13:40
+[INFO] 2025-07-28 00:13:40 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-28 00:13:40 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-28 00:13:40 Preferences applied to application state
+[INFO] 2025-07-28 00:13:40 Creating dashboard widgets
+[INFO] 2025-07-28 00:13:40 title widget created successfully
+[INFO] 2025-07-28 00:13:40 Preferences saved
+[INFO] 2025-07-28 00:13:40 control widgets created successfully
+[INFO] 2025-07-28 00:13:40 metric display widgets created successfully
+[INFO] 2025-07-28 00:13:40 chart widgets created successfully
+[INFO] 2025-07-28 00:13:40 tabbed display widgets created successfully
+[INFO] 2025-07-28 00:13:40 status bar widgets created successfully
+[INFO] 2025-07-28 00:13:40 Dashboard widgets created successfully
+[INFO] 2025-07-28 00:13:40 dashboard widgets created successfully
+[INFO] 2025-07-28 00:13:40 Weather data scheduler started
+[INFO] 2025-07-28 00:13:40 Starting weather update for New York
+[INFO] 2025-07-28 00:13:40 Fetching data for New York
+[INFO] 2025-07-28 00:13:40 Fetching current weather for New York
+[INFO] 2025-07-28 00:13:40 Converting units to imperial
+[INFO] 2025-07-28 00:13:40 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:13:40 Stored weather data for New York - 1 entries
+[INFO] 2025-07-28 00:13:40 Current weather fetched for New York
+[WARN] 2025-07-28 00:13:40 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-28 00:13:41 Data fetch completed for New York
+[INFO] 2025-07-28 00:13:41 Weather update completed for New York
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Fetching current weather for New York
+[INFO] 2025-07-28 00:13:41 Converting units to imperial
+[INFO] 2025-07-28 00:13:41 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:13:41 Stored weather data for New York - 2 entries
+[INFO] 2025-07-28 00:13:41 Current weather fetched for New York
+[INFO] 2025-07-28 00:13:41 Added current weather data to chart: temperature = 81.014
+[INFO] 2025-07-28 00:13:43 Theme changed to pessimistic
+[INFO] 2025-07-28 00:13:43 Theme changed to pessimistic
+[INFO] 2025-07-28 00:14:10 Theme changed to neutral
+[INFO] 2025-07-28 00:14:10 Theme changed to neutral
+[INFO] 2025-07-28 00:14:14 Theme changed to pessimistic
+[INFO] 2025-07-28 00:14:14 Theme changed to pessimistic
+[INFO] 2025-07-28 00:14:25 Theme changed to optimistic
+[INFO] 2025-07-28 00:14:25 Theme changed to optimistic
+[INFO] 2025-07-28 00:14:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-28 00:14:46
+[INFO] 2025-07-28 00:14:46 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-28 00:14:46 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-28 00:14:46 Preferences applied to application state
+[INFO] 2025-07-28 00:14:46 Creating dashboard widgets
+[INFO] 2025-07-28 00:14:46 title widget created successfully
+[INFO] 2025-07-28 00:14:46 Preferences saved
+[INFO] 2025-07-28 00:14:46 control widgets created successfully
+[INFO] 2025-07-28 00:14:47 metric display widgets created successfully
+[INFO] 2025-07-28 00:14:47 chart widgets created successfully
+[INFO] 2025-07-28 00:14:47 tabbed display widgets created successfully
+[INFO] 2025-07-28 00:14:47 status bar widgets created successfully
+[INFO] 2025-07-28 00:14:47 Dashboard widgets created successfully
+[INFO] 2025-07-28 00:14:47 dashboard widgets created successfully
+[INFO] 2025-07-28 00:14:47 Weather data scheduler started
+[INFO] 2025-07-28 00:14:47 Starting weather update for New York
+[INFO] 2025-07-28 00:14:47 Fetching data for New York
+[INFO] 2025-07-28 00:14:47 Fetching current weather for New York
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:14:47 Stored weather data for New York - 1 entries
+[INFO] 2025-07-28 00:14:47 Current weather fetched for New York
+[WARN] 2025-07-28 00:14:47 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-28 00:14:47 Data fetch completed for New York
+[INFO] 2025-07-28 00:14:47 Weather update completed for New York
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Fetching current weather for New York
+[INFO] 2025-07-28 00:14:47 Converting units to imperial
+[INFO] 2025-07-28 00:14:47 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:14:47 Stored weather data for New York - 2 entries
+[INFO] 2025-07-28 00:14:47 Current weather fetched for New York
+[INFO] 2025-07-28 00:14:47 Added current weather data to chart: temperature = 81.014
+[INFO] 2025-07-28 00:14:58 Theme changed to pessimistic
+[INFO] 2025-07-28 00:14:58 Theme changed to pessimistic
+[INFO] 2025-07-28 00:15:02 Theme changed to neutral
+[INFO] 2025-07-28 00:15:02 Theme changed to neutral
+[INFO] 2025-07-28 00:15:04 Theme changed to pessimistic
+[INFO] 2025-07-28 00:15:04 Theme changed to pessimistic
+[INFO] 2025-07-28 00:15:07 Theme changed to optimistic
+[INFO] 2025-07-28 00:15:07 Theme changed to optimistic
+[INFO] 2025-07-28 00:15:10 Theme changed to pessimistic
+[INFO] 2025-07-28 00:15:10 Theme changed to pessimistic
+[INFO] 2025-07-28 00:15:15 Theme changed to neutral
+[INFO] 2025-07-28 00:15:15 Theme changed to neutral
+[INFO] 2025-07-28 00:15:49 Theme changed to pessimistic
+[INFO] 2025-07-28 00:15:49 Theme changed to pessimistic
+[INFO] 2025-07-28 00:15:51 Theme changed to optimistic
+[INFO] 2025-07-28 00:15:51 Theme changed to optimistic
+[INFO] 2025-07-28 00:18:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-28 00:18:32
+[INFO] 2025-07-28 00:18:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-28 00:18:32 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-28 00:18:32 Preferences applied to application state
+[INFO] 2025-07-28 00:18:32 Creating dashboard widgets
+[INFO] 2025-07-28 00:18:32 title widget created successfully
+[INFO] 2025-07-28 00:18:32 Preferences saved
+[INFO] 2025-07-28 00:18:32 control widgets created successfully
+[INFO] 2025-07-28 00:18:32 metric display widgets created successfully
+[INFO] 2025-07-28 00:18:32 chart widgets created successfully
+[INFO] 2025-07-28 00:18:32 tabbed display widgets created successfully
+[INFO] 2025-07-28 00:18:32 status bar widgets created successfully
+[INFO] 2025-07-28 00:18:32 Dashboard widgets created successfully
+[INFO] 2025-07-28 00:18:32 dashboard widgets created successfully
+[INFO] 2025-07-28 00:18:32 Weather data scheduler started
+[INFO] 2025-07-28 00:18:32 Starting weather update for New York
+[INFO] 2025-07-28 00:18:32 Fetching data for New York
+[INFO] 2025-07-28 00:18:32 Fetching current weather for New York
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:18:33 Stored weather data for New York - 1 entries
+[INFO] 2025-07-28 00:18:33 Current weather fetched for New York
+[WARN] 2025-07-28 00:18:33 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-28 00:18:33 Data fetch completed for New York
+[INFO] 2025-07-28 00:18:33 Weather update completed for New York
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Fetching current weather for New York
+[INFO] 2025-07-28 00:18:33 Converting units to imperial
+[INFO] 2025-07-28 00:18:33 Weather data written for new_york - Live
+[INFO] 2025-07-28 00:18:33 Stored weather data for New York - 2 entries
+[INFO] 2025-07-28 00:18:33 Current weather fetched for New York
+[INFO] 2025-07-28 00:18:33 Added current weather data to chart: temperature = 81.014
+[INFO] 2025-07-28 00:18:41 Theme changed to pessimistic
+[INFO] 2025-07-28 00:18:41 Theme changed to pessimistic
+[INFO] 2025-07-28 00:18:56 Theme changed to neutral
+[INFO] 2025-07-28 00:18:56 Theme changed to neutral

@@ -109,11 +109,15 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             Exception: For other unexpected errors during setup
         """
         try:
+            self.logger.info("Creating dashboard widgets")
+            
             self._create_title_section()
             self._create_control_section()
             self._create_tabbed_section()
             self._create_status_bar_section()
             
+            self.logger.info("Dashboard widgets created successfully")
+
         except tk.TclError as e:
             self.logger.error(f"GUI widget creation failed: {e}")
             messagebox.showerror("GUI Error", f"Failed to create interface: {e}")

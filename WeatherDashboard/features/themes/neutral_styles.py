@@ -8,7 +8,7 @@ Theme Philosophy: Standard weather dashboard with objective data presentation.
 """
 
 # =================================
-# 1. NEUTRAL COLOR PALETTE
+# 1. NEUTRAL COLORS
 # =================================
 NEUTRAL_COLORS = {
     'primary': '#2E86AB',      # Professional blue
@@ -41,7 +41,7 @@ NEUTRAL_COLORS = {
 }
 
 # =================================
-# 2. NEUTRAL FONT CONFIGURATION
+# 2. NEUTRAL FONTS
 # =================================
 NEUTRAL_FONTS = {
     'default_family': 'Arial',
@@ -60,7 +60,7 @@ NEUTRAL_FONTS = {
 }
 
 # =================================
-# 3. NEUTRAL MESSAGING SYSTEM
+# 3. NEUTRAL MESSAGING
 # =================================
 NEUTRAL_MESSAGING = {
     'temperature_cold': 'Cold weather',
@@ -81,7 +81,7 @@ NEUTRAL_MESSAGING = {
 }
 
 # =================================
-# 4. NEUTRAL UI ELEMENTS
+# 4. NEUTRAL UI
 # =================================
 NEUTRAL_UI = {
     'padding': {
@@ -148,13 +148,6 @@ NEUTRAL_UI = {
             'loading': '#3498DB'
         }
     },
-    'icons': {
-        'progress': '🔄',
-        'waiting': '⏳',
-        'success': '✅',
-        'warning': '⚠️',
-        'error': '❌'
-    },
     'loading_config': {
         'icons': {
             'progress': '🔄',
@@ -174,7 +167,7 @@ NEUTRAL_UI = {
 }
 
 # =================================
-# 5. NEUTRAL WEATHER DISPLAY STYLING
+# 5. NEUTRAL WEATHER ICONS
 # =================================
 NEUTRAL_WEATHER_ICONS = {
     '01d': '☀️',   # clear sky day
@@ -197,6 +190,9 @@ NEUTRAL_WEATHER_ICONS = {
     '50n': '🌫️',   # mist
 }
 
+# =================================
+# 6. NEUTRAL TEMPERATURE DIFFERENCE COLORS
+# =================================
 NEUTRAL_TEMPERATURE_DIFFERENCE_COLORS = {
     'significant_warmer': 'darkorange',  # Feels much warmer
     'slight_warmer': 'orange',           # Feels slightly warmer  
@@ -205,6 +201,9 @@ NEUTRAL_TEMPERATURE_DIFFERENCE_COLORS = {
     'comfortable_range': 'green'         # Temperature in ideal range
 }
 
+# =================================
+# 7. NEUTRAL COMFORT THRESHOLDS
+# =================================
 NEUTRAL_COMFORT_THRESHOLDS = {
     'poor': (0, 30),       # Red zone
     'fair': (30, 50),      # Orange zone  
@@ -214,7 +213,7 @@ NEUTRAL_COMFORT_THRESHOLDS = {
 }
 
 # =================================
-# 6. NEUTRAL METRIC COLOR RANGES
+# 8. NEUTRAL METRIC COLORS
 # =================================
 NEUTRAL_METRIC_COLORS = {
     'temperature': {
@@ -296,7 +295,7 @@ NEUTRAL_METRIC_COLORS = {
 }
 
 # =================================
-# 7. NEUTRAL DIALOG SYSTEM STYLING
+# 9. NEUTRAL DIALOG CONFIG
 # =================================
 NEUTRAL_DIALOG_CONFIG = {
     'error_titles': {
