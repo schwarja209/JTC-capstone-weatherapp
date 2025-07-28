@@ -131,7 +131,8 @@ class WeatherDashboardMain:
             cancel_cb=self.cancel_current_operation,
             clear_cb=self.on_clear_clicked,
             dropdown_cb=lambda: self.update_chart_components(),
-            scheduler_cb=self.scheduler_service.toggle_scheduler 
+            scheduler_cb=self.scheduler_service.toggle_scheduler,
+            theme_cb=self._on_theme_change
         )
         
         # Store frame references in widget manager for unified access
@@ -223,6 +224,25 @@ class WeatherDashboardMain:
 # ================================
 # 3. EVENT HANDLERS
 # ================================
+    def _on_theme_change(self, theme_name: str) -> None:
+        """Handle theme change events.
+        
+        Args:
+            theme_name: New theme name ('neutral', 'optimistic', 'pessimistic')
+        """
+        try:
+            self.logger.info(f"Theme changed to {theme_name}")
+            
+            # Apply the new theme
+            from WeatherDashboard import styles
+            styles.configure_styles(theme_name)
+            
+            # Update any theme-dependent widgets here
+            # (This will be expanded as more theme-dependent features are added)
+            
+        except Exception as e:
+            self.logger.error(f"Error handling theme change: {e}")
+
     def on_update_clicked_async(self) -> None:
         """Handle the update button click event with async weather fetching.
         

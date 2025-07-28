@@ -10045,3 +10045,159 @@
 [WARN] 2025-07-27 22:15:24 Fetch blocked due to rate limiting.
 [INFO] 2025-07-27 22:15:24 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
 [ERROR] 2025-07-27 22:15:24 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 22:55:44 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:55:44
+[INFO] 2025-07-27 22:55:44 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:55:45 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:55:45 Preferences applied to application state
+[INFO] 2025-07-27 22:55:45 title widget created successfully
+[INFO] 2025-07-27 22:55:45 Preferences saved
+[INFO] 2025-07-27 22:55:45 control widgets created successfully
+[INFO] 2025-07-27 22:55:45 metric display widgets created successfully
+[INFO] 2025-07-27 22:55:45 chart widgets created successfully
+[INFO] 2025-07-27 22:55:45 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:55:45 status bar widgets created successfully
+[INFO] 2025-07-27 22:55:45 dashboard widgets created successfully
+[INFO] 2025-07-27 22:55:45 Weather data scheduler started
+[INFO] 2025-07-27 22:55:45 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:55:45 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:55:45 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:55:46 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:55:46 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:55:46 Added current weather data to chart: temperature = 81.392
+[INFO] 2025-07-27 22:56:20 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:56:20
+[INFO] 2025-07-27 22:56:20 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:56:20 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:56:20 Preferences applied to application state
+[ERROR] 2025-07-27 22:56:20 Configuration error in title widget creation: bad side "center": must be top, bottom, left, or right
+[WARN] 2025-07-27 22:56:20 Title widget created with errors - title may not display
+[INFO] 2025-07-27 22:56:20 Preferences saved
+[INFO] 2025-07-27 22:56:20 control widgets created successfully
+[INFO] 2025-07-27 22:56:20 metric display widgets created successfully
+[INFO] 2025-07-27 22:56:20 chart widgets created successfully
+[INFO] 2025-07-27 22:56:20 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:56:20 status bar widgets created successfully
+[INFO] 2025-07-27 22:56:20 dashboard widgets created successfully
+[INFO] 2025-07-27 22:56:20 Weather data scheduler started
+[INFO] 2025-07-27 22:56:21 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:56:21 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:56:21 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:56:21 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:56:21 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:56:21 Added current weather data to chart: temperature = 81.392
+[INFO] 2025-07-27 22:57:38 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 22:57:38
+[INFO] 2025-07-27 22:57:38 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 22:57:39 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 22:57:39 Preferences applied to application state
+[INFO] 2025-07-27 22:57:39 title widget created successfully
+[INFO] 2025-07-27 22:57:39 Preferences saved
+[INFO] 2025-07-27 22:57:39 control widgets created successfully
+[INFO] 2025-07-27 22:57:39 metric display widgets created successfully
+[INFO] 2025-07-27 22:57:39 chart widgets created successfully
+[INFO] 2025-07-27 22:57:39 tabbed display widgets created successfully
+[INFO] 2025-07-27 22:57:39 status bar widgets created successfully
+[INFO] 2025-07-27 22:57:39 dashboard widgets created successfully
+[INFO] 2025-07-27 22:57:39 Weather data scheduler started
+[INFO] 2025-07-27 22:57:39 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:57:39 Stored weather data for New York - 1 entries
+[WARN] 2025-07-27 22:57:39 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-27 22:57:39 Weather data written for new_york - Live
+[INFO] 2025-07-27 22:57:39 Stored weather data for New York - 2 entries
+[INFO] 2025-07-27 22:57:39 Added current weather data to chart: temperature = 81.374
+[INFO] 2025-07-27 22:58:05 Weather data scheduler stopped
+[INFO] 2025-07-27 22:58:06 Weather data scheduler started
+[INFO] 2025-07-27 22:58:07 Weather data scheduler stopped
+[INFO] 2025-07-27 22:58:08 Weather data scheduler started
+[INFO] 2025-07-27 22:58:09 Weather data scheduler stopped
+[INFO] 2025-07-27 22:58:12 Weather data scheduler started
+[INFO] 2025-07-27 22:58:21 Preferences saved
+[INFO] 2025-07-27 22:58:21 Preferences saved
+[INFO] 2025-07-27 22:58:21 Preferences saved
+[INFO] 2025-07-27 22:58:21 Preferences saved
+[INFO] 2025-07-27 22:58:21 Preferences saved
+[INFO] 2025-07-27 22:58:21 Preferences saved
+[INFO] 2025-07-27 22:58:22 Preferences saved
+[INFO] 2025-07-27 22:58:22 Preferences saved
+[INFO] 2025-07-27 22:58:22 Preferences saved
+[INFO] 2025-07-27 22:58:22 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 22:58:23 Weather data written for phoenix - Live
+[INFO] 2025-07-27 22:58:23 Stored weather data for Phoenix - 1 entries
+[WARN] 2025-07-27 22:58:23 Weather alert: High Temperature Alert - Temperature is very high: 102.5°F (threshold: 95.0°F)
+[WARN] 2025-07-27 22:58:23 Weather alert: Low Humidity Alert - Very dry conditions: 12% (threshold: 15%)
+[WARN] 2025-07-27 22:58:23 Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-27 22:58:23 Weather data written for phoenix - Live
+[INFO] 2025-07-27 22:58:23 Stored weather data for Phoenix - 2 entries
+[INFO] 2025-07-27 22:58:23 Added current weather data to chart: temperature = 102.452
+[INFO] 2025-07-27 23:22:11 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-27 23:22:11
+[INFO] 2025-07-27 23:22:11 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-27 23:22:11 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-27 23:22:11 Preferences applied to application state
+[INFO] 2025-07-27 23:22:11 title widget created successfully
+[INFO] 2025-07-27 23:22:11 Preferences saved
+[INFO] 2025-07-27 23:22:11 control widgets created successfully
+[INFO] 2025-07-27 23:22:11 metric display widgets created successfully
+[INFO] 2025-07-27 23:22:11 chart widgets created successfully
+[INFO] 2025-07-27 23:22:11 tabbed display widgets created successfully
+[INFO] 2025-07-27 23:22:11 status bar widgets created successfully
+[INFO] 2025-07-27 23:22:11 dashboard widgets created successfully
+[INFO] 2025-07-27 23:22:11 Weather data scheduler started
+[INFO] 2025-07-27 23:22:12 Weather data written for phoenix - Live
+[INFO] 2025-07-27 23:22:12 Stored weather data for Phoenix - 1 entries
+[WARN] 2025-07-27 23:22:12 Weather alert: High Temperature Alert - Temperature is very high: 100.9°F (threshold: 95.0°F)
+[WARN] 2025-07-27 23:22:12 Weather alert: Low Humidity Alert - Very dry conditions: 13% (threshold: 15%)
+[WARN] 2025-07-27 23:22:12 Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-27 23:22:12 Weather data written for phoenix - Live
+[INFO] 2025-07-27 23:22:12 Stored weather data for Phoenix - 2 entries
+[INFO] 2025-07-27 23:22:12 Added current weather data to chart: temperature = 100.922
+[INFO] 2025-07-27 23:22:15 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:15 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:19 Theme changed to pessimistic
+[INFO] 2025-07-27 23:22:19 Theme changed to pessimistic
+[INFO] 2025-07-27 23:22:28 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:28 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:31 Theme changed to neutral
+[INFO] 2025-07-27 23:22:31 Theme changed to neutral
+[INFO] 2025-07-27 23:22:33 Theme changed to pessimistic
+[INFO] 2025-07-27 23:22:33 Theme changed to pessimistic
+[INFO] 2025-07-27 23:22:39 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:39 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:44 Theme changed to neutral
+[INFO] 2025-07-27 23:22:44 Theme changed to neutral
+[INFO] 2025-07-27 23:22:46 Theme changed to pessimistic
+[INFO] 2025-07-27 23:22:46 Theme changed to pessimistic
+[INFO] 2025-07-27 23:22:54 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:54 Theme changed to optimistic
+[INFO] 2025-07-27 23:22:57 Theme changed to neutral
+[INFO] 2025-07-27 23:22:57 Theme changed to neutral
+[INFO] 2025-07-27 23:23:01 Theme changed to pessimistic
+[INFO] 2025-07-27 23:23:01 Theme changed to pessimistic
+[INFO] 2025-07-27 23:23:11 Preferences saved
+[INFO] 2025-07-27 23:23:11 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-27 23:23:11 Weather data written for phoenix - Live
+[INFO] 2025-07-27 23:23:11 Stored weather data for Phoenix - 3 entries
+[WARN] 2025-07-27 23:23:11 Weather alert: High Temperature Alert - Temperature is very high: 100.9°F (threshold: 95.0°F)
+[WARN] 2025-07-27 23:23:11 Weather alert: Low Humidity Alert - Very dry conditions: 13% (threshold: 15%)
+[WARN] 2025-07-27 23:23:11 Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-27 23:23:11 Weather data written for phoenix - Live
+[INFO] 2025-07-27 23:23:11 Stored weather data for Phoenix - 4 entries
+[INFO] 2025-07-27 23:23:11 Added current weather data to chart: temperature = 100.922
+[INFO] 2025-07-27 23:23:12 Preferences saved
+[INFO] 2025-07-27 23:23:12 Manual update requested - scheduler will continue in background
+[WARN] 2025-07-27 23:23:12 Fetch blocked due to rate limiting.
+[INFO] 2025-07-27 23:23:12 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-27 23:23:12 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-27 23:23:16 Preferences saved
+[INFO] 2025-07-27 23:23:18 Preferences saved
+[INFO] 2025-07-27 23:23:18 Manual update requested - scheduler will continue in background
+[ERROR] 2025-07-27 23:23:18 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-07-27 23:23:19 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[ERROR] 2025-07-27 23:23:19 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-27 23:23:29 Theme changed to optimistic
+[INFO] 2025-07-27 23:23:29 Theme changed to optimistic
+[INFO] 2025-07-27 23:23:32 Theme changed to neutral
+[INFO] 2025-07-27 23:23:32 Theme changed to neutral
+[INFO] 2025-07-27 23:23:35 Theme changed to pessimistic
+[INFO] 2025-07-27 23:23:35 Theme changed to pessimistic
