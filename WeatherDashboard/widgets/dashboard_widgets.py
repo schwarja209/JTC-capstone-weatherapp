@@ -18,14 +18,14 @@ from WeatherDashboard import config
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.widget_utils import WidgetUtils
 
-from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
-from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, widget_error_handler
-from WeatherDashboard.widgets.title_widgets import TitleWidget
-from WeatherDashboard.widgets.control_widgets import ControlWidgets
-from WeatherDashboard.widgets.tabbed_widgets import TabbedDisplayWidgets
-from WeatherDashboard.widgets.metric_widgets import MetricDisplayWidgets
-from WeatherDashboard.widgets.chart_widgets import ChartWidgets
-from WeatherDashboard.widgets.status_bar_widgets import StatusBarWidgets
+from .widget_interface import IWeatherDashboardWidgets
+from .base_widgets import BaseWidgetManager, widget_error_handler
+from .title_widgets import TitleWidget
+from .control_widgets import ControlWidgets
+from .tabbed_widgets import TabbedDisplayWidgets
+from .metric_widgets import MetricDisplayWidgets
+from .chart_widgets import ChartWidgets
+from .status_bar_widgets import StatusBarWidgets
 
 
 class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):

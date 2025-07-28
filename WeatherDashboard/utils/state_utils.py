@@ -15,7 +15,7 @@ Classes:
 from typing import List, Any
 import tkinter as tk
 
-from WeatherDashboard.utils.logger import Logger
+from .logger import Logger
 from WeatherDashboard import config
 
 class StateUtils:

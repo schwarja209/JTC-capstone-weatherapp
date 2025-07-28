@@ -12,7 +12,7 @@ Classes:
 
 from typing import Tuple, Any
 
-from WeatherDashboard.utils.logger import Logger
+from .logger import Logger
 from WeatherDashboard import config
 
 

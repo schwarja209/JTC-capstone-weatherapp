@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from typing import Dict, Any, Optional, List
 from datetime import datetime
 
-from WeatherDashboard.utils.logger import Logger
+from .logger import Logger
 
 
 @dataclass

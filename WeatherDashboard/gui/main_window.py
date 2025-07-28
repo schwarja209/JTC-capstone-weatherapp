@@ -16,9 +16,9 @@ import tkinter.messagebox as messagebox
 
 from WeatherDashboard.utils.logger import Logger
 
-from WeatherDashboard.gui.state_manager import WeatherDashboardState
-from WeatherDashboard.gui.frames import WeatherDashboardGUIFrames
-from WeatherDashboard.gui.loading_states import LoadingStateManager, AsyncWeatherOperation
+from .state_manager import WeatherDashboardState
+from .frames import WeatherDashboardGUIFrames
+from .loading_states import LoadingStateManager, AsyncWeatherOperation
 from WeatherDashboard.widgets.dashboard_widgets import WeatherDashboardWidgets
 from WeatherDashboard.core.data_manager import WeatherDataManager
 from WeatherDashboard.core.data_service import WeatherDataService

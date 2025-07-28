@@ -16,9 +16,9 @@ from tkinter import ttk
 
 from WeatherDashboard.utils.logger import Logger
 
-from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
-from WeatherDashboard.widgets.metric_widgets import MetricDisplayWidgets
-from WeatherDashboard.widgets.chart_widgets import ChartWidgets
+from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
+from .metric_widgets import MetricDisplayWidgets
+from .chart_widgets import ChartWidgets
 
 
 class TabbedDisplayWidgets(BaseWidgetManager):

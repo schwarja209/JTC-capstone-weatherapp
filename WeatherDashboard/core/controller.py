@@ -29,7 +29,7 @@ from WeatherDashboard.utils.validation_utils import ValidationUtils
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 
-from WeatherDashboard.core.view_models import WeatherViewModel
+from .view_models import WeatherViewModel
 from WeatherDashboard.features.alerts.alert_manager import AlertManager, WeatherAlert
 from WeatherDashboard.services.error_handler import WeatherErrorHandler
 

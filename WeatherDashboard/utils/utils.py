@@ -14,7 +14,7 @@ Functions:
 from typing import Dict, Any
 
 from WeatherDashboard import config
-from WeatherDashboard.utils.validation_utils import ValidationUtils
+from .validation_utils import ValidationUtils
 
 
 class Utils:

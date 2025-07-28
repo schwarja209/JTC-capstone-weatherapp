@@ -16,7 +16,7 @@ import tkinter as tk
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import config
 
-from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
+from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
 class TitleWidget(BaseWidgetManager):

@@ -28,7 +28,7 @@ from WeatherDashboard import config
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.api_utils import ApiUtils
 
-from WeatherDashboard.services.api_exceptions import (
+from .api_exceptions import (
     WeatherDashboardError,
     WeatherAPIError,
     CityNotFoundError,
@@ -36,8 +36,7 @@ from WeatherDashboard.services.api_exceptions import (
     RateLimitError,
     NetworkError
 )
-
-from WeatherDashboard.services.fallback_generator import SampleWeatherGenerator
+from .fallback_generator import SampleWeatherGenerator
 from WeatherDashboard.utils.derived_metrics import DerivedMetricsCalculator
 
 

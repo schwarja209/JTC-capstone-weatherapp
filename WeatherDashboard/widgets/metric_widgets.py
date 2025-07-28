@@ -25,8 +25,8 @@ from WeatherDashboard.utils.state_utils import StateUtils
 from WeatherDashboard.utils.widget_utils import WidgetUtils
 
 from WeatherDashboard.features.alerts.alert_display import AlertStatusIndicator
-from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
-from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
+from .widget_interface import IWeatherDashboardWidgets
+from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
 # ================================

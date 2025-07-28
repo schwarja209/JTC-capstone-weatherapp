@@ -18,7 +18,7 @@ from datetime import datetime
 from dataclasses import dataclass
 
 from WeatherDashboard import config
-from WeatherDashboard.utils.logger import Logger
+from .logger import Logger
 
 
 @dataclass

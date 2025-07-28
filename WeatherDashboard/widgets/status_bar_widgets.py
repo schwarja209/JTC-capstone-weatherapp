@@ -18,8 +18,8 @@ from datetime import datetime
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import styles
 
-from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
-from WeatherDashboard.widgets.base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
+from .widget_interface import IWeatherDashboardWidgets
+from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
 
 class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):

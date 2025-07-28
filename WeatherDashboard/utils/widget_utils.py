@@ -13,7 +13,7 @@ from typing import Dict, Optional, Tuple
 import tkinter as tk
 from tkinter import ttk
 
-from WeatherDashboard.utils.logger import Logger
+from .logger import Logger
 from WeatherDashboard import styles
 
 class WidgetUtils:
