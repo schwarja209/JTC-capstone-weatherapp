@@ -127,16 +127,29 @@ class LoadingStateManager:
     def _show_loading_status(self, message: str) -> None:
         """Show loading message in status label."""
         try:
+            layout_config = self.styles.LAYOUT_CONFIG
+            loading_config = layout_config['widget_positions'].get('loading_display', {})
+            
             icon = self.styles.LOADING_CONFIG['icons']['progress']
-            #color = self.styles.LOADING_CONFIG['colors']['loading']
-            self.status_bar_widgets.update_progress(f"{icon} {message}")
+            progress_format = loading_config.get('progress_format', "{icon} {message}")
+            formatted_message = progress_format.format(icon=icon, message=message)
+            
+            self.status_bar_widgets.update_progress(formatted_message)
         except tk.TclError as e:
             self.logger.warn(f"Failed to show loading status: {e}")
     
     def _hide_loading_status(self) -> None:
         """Hide loading message from status label."""
         try:
-            self.status_bar_widgets.clear_progress()
+            layout_config = self.styles.LAYOUT_CONFIG
+            loading_config = layout_config['widget_positions'].get('loading_display', {})
+            
+            # Use centralized clearing method or fallback
+            clear_method = loading_config.get('clear_method', 'clear_progress')
+            if hasattr(self.status_bar_widgets, clear_method):
+                getattr(self.status_bar_widgets, clear_method)()
+            else:
+                self.status_bar_widgets.clear_progress()
         except tk.TclError as e:
             self.logger.warn(f"Failed to hide loading status: {e}")
     

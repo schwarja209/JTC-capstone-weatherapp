@@ -14,12 +14,12 @@ Classes:
     ControlWidgets: Main control panel manager with inputs, selections, and actions
 """
 
-from typing import Dict, Any, Callable, Optional
 import tkinter as tk
 from tkinter import ttk
+from typing import Dict, Any, Callable, Optional
 
-from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import config, styles
+from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.state_utils import StateUtils
 from WeatherDashboard.utils.widget_utils import WidgetUtils
 
@@ -105,21 +105,33 @@ class ControlWidgets(BaseWidgetManager):
     @widget_error_handler("city input")
     def _create_city_input(self) -> None:
         """Create city name input field with label using centralized utilities with error handling."""
+        layout_config = self.styles.LAYOUT_CONFIG
+        city_config = layout_config['widget_positions']['control_panel']['city_input']
+        
         city_label = SafeWidgetCreator.create_label(self.parent, text="City:", style="LabelName.TLabel")
         self.city_entry = SafeWidgetCreator.create_entry(self.parent, textvariable=self.state.city)
-        self.widget_utils.position_widget_pair(self.parent, city_label, self.city_entry, 1, 0, 1, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        
+        # Use centralized positioning
+        self.widget_utils.position_widget_pair(
+            self.parent, city_label, self.city_entry, 
+            city_config['row'], city_config['column'], city_config['column']+1, 
+            pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard']
+        )
 
     @widget_error_handler("unit selection")
     def _create_unit_selection(self) -> None:
         """Create unit system selection radio buttons using centralized utilities with error handling."""
+        layout_config = self.styles.LAYOUT_CONFIG
+        unit_config = layout_config['widget_positions']['control_panel']['unit_selection']
+        
         units_label = SafeWidgetCreator.create_label(self.parent, text="Units:", style="LabelName.TLabel")
-        units_label.grid(row=2, column=0, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        units_label.grid(**unit_config, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
         
         imperial_radio = SafeWidgetCreator.create_radiobutton(self.parent, "Imperial (°F, mph, inHg)", self.state.unit, "imperial")
-        imperial_radio.grid(row=2, column=1, sticky=tk.W)
-
+        imperial_radio.grid(row=unit_config['row'], column=unit_config['column']+1, sticky=unit_config['sticky'])
+        
         metric_radio = SafeWidgetCreator.create_radiobutton(self.parent, "Metric (°C, m/s, hPa)", self.state.unit, "metric")
-        metric_radio.grid(row=3, column=1, sticky=tk.W)
+        metric_radio.grid(row=unit_config['row']+1, column=unit_config['column']+1, sticky=unit_config['sticky'])
 
 # ================================
 # 3. METRIC VISIBILITY CONTROLS  
@@ -215,32 +227,40 @@ class ControlWidgets(BaseWidgetManager):
     @widget_error_handler("chart controls")
     def _create_chart_controls(self) -> None:
         """Create chart configuration controls with error handling."""
+        layout_config = self.styles.LAYOUT_CONFIG
+        chart_config = layout_config['widget_positions']['control_panel']['chart_controls']
+        
         # Chart metric selector
         chart_label = SafeWidgetCreator.create_label(self.parent, "Chart Metric:", "LabelName.TLabel")
-        chart_label.grid(row=4, column=2, sticky=tk.E, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
-        chart_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.chart)
-        chart_cb.grid(row=5, column=2, sticky=tk.E)
-        self.state.chart_widget = chart_cb
+        chart_label.grid(**chart_config, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
 
+        chart_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.chart)
+        chart_cb.grid(row=chart_config['row']+1, column=chart_config['column'], sticky=chart_config['sticky'])
+        self.state.chart_widget = chart_cb
+        
         # Date range selector
         range_label = SafeWidgetCreator.create_label(self.parent, "Date Range:", "LabelName.TLabel")
-        range_label.grid(row=6, column=2, sticky=tk.E, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        range_label.grid(row=chart_config['row']+2, column=chart_config['column'], sticky=chart_config['sticky'], pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        
         range_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.range)
         range_cb['values'] = list(self.config.CHART["range_options"].keys())
         range_cb.current(0)
-        range_cb.grid(row=7, column=2, sticky=tk.E)
+        range_cb.grid(row=chart_config['row']+3, column=chart_config['column'], sticky=chart_config['sticky'])
 
     @widget_error_handler("action buttons")
     def _create_action_buttons(self) -> None:
         """Create main action buttons for user operations with error handling."""
+        layout_config = styles.LAYOUT_CONFIG
+        action_config = layout_config['widget_positions']['control_panel']['action_buttons']
+        
         self.update_button = SafeWidgetCreator.create_button(self.parent, "Update Weather", self.callbacks.get('update'), "MainButton.TButton")
-        self.update_button.grid(row=1, column=2, pady=10, sticky=tk.E)
-
+        self.update_button.grid(**action_config, pady=10)
+        
         self.reset_button = SafeWidgetCreator.create_button(self.parent, "Reset", self.callbacks.get('reset'), "MainButton.TButton")
-        self.reset_button.grid(row=2, column=2, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
-
+        self.reset_button.grid(row=action_config['row']+1, column=action_config['column'], pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=action_config['sticky'])
+        
         self.cancel_button = SafeWidgetCreator.create_button(self.parent, "Cancel", self.callbacks.get('cancel'), "MainButton.TButton")
-        self.cancel_button.grid(row=3, column=2, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.E)
+        self.cancel_button.grid(row=action_config['row']+2, column=action_config['column'], pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=action_config['sticky'])
 
     def update_chart_dropdown_options(self) -> None:
         """Update chart dropdown options based on metric visibility and chartability configuration.

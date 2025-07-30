@@ -52,20 +52,25 @@ class WidgetUtils:
             padx_override: Override automatic padding calculation
         """
         try:
-            # Set label text if provided
-            if label_text and hasattr(label_widget, 'configure'):
-                label_widget.configure(text=label_text)
+            layout_config = self.styles.LAYOUT_CONFIG
+
+            # Determine which section this widget belongs to based on column
+            if label_col >= 4:
+                section = 'right_column'
+            else:
+                section = 'left_column'
             
-            # Calculate padding based on column position
+            # Get centralized padding configuration
+            column_padding_config = layout_config['widget_positions']['column_padding']
+            section_padding = column_padding_config[section]
+            
+            # Calculate padding based on centralized configuration
             if padx_override is not None:
                 padx = padx_override
             else:
-                # Use style-based padding calculation
-                padx = (self.styles.ALERT_DISPLAY_CONFIG['column_padding']['right_section'] 
-                       if label_col >= 4 
-                       else self.styles.ALERT_DISPLAY_CONFIG['column_padding']['left_section'])
+                padx = section_padding
             
-            # Position widgets
+            # Position widgets using centralized configuration
             label_widget.grid(row=row, column=label_col, sticky=sticky, pady=pady, padx=padx)
             value_widget.grid(row=row, column=value_col, sticky=sticky, pady=pady)
             

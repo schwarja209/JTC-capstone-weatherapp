@@ -86,7 +86,107 @@ def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
         }
 
 # =================================
-# 2. STYLE CONFIGURATION
+# 2. LAYOUT MANAGEMENT
+# =================================
+FRAME_TITLE = "title"
+FRAME_CONTROL = "control"
+FRAME_TABBED = "tabbed"
+FRAME_STATUS = "status_bar"
+
+LAYOUT_CONFIG = {
+    'frames': {
+        FRAME_TITLE: {
+            'padding': '10',
+            'style': 'TitleFrame.TFrame',
+            'grid': {'row': 0, 'column': 0, 'columnspan': 2, 'sticky': 'WE'}
+        },
+        FRAME_CONTROL: {
+            'padding': '10', 
+            'style': 'FrameLabel.TLabelframe',
+            'text': 'Controls', # Label
+            'grid': {'row': 1, 'column': 0, 'sticky': 'NSEW', 'padx': 10}
+        },
+        FRAME_TABBED: {
+            'padding': '10',
+            'style': 'FrameLabel.TLabelframe', 
+            'text': 'Weather Information', # Label
+            'grid': {'row': 1, 'column': 1, 'sticky': 'NSEW', 'padx': 10}
+        },
+        FRAME_STATUS: {
+            'padding': '5',
+            'style': 'StatusFrame.TFrame',
+            'grid': {'row': 2, 'column': 0, 'columnspan': 2, 'sticky': 'WE', 'pady': 5}
+        }
+    },
+    'grid_weights': {
+        'columns': [0, 0],  # weight=0 for both columns
+        'rows': [0, 1, 0]   # weight=0, weight=1, weight=0
+    },
+    'widget_positions': {
+        'state_access': {
+            'city_variable': 'city',
+            'unit_variable': 'unit',
+            'range_variable': 'range',
+            'chart_variable': 'chart'
+        },
+        'dashboard_sections': {
+            'title_frame': 'title',
+            'control_frame': 'control',
+            'tabbed_frame': 'tabbed',
+            'status_frame': 'status_bar'
+        },
+        'title_controls': {
+            'controls_frame_pack': {'side': 'right', 'padx': (10, 0)},
+            'theme_control': {
+                'label_pack': {'side': 'left', 'padx': (0, 5)},
+                'combobox_pack': {'side': 'left', 'padx': (0, 10)}
+            },
+            'scheduler_control': {
+                'checkbox_pack': {'side': 'right'}
+            }
+        },
+        'control_panel': {
+            'city_input': {'row': 1, 'column': 0, 'sticky': 'W'},
+            'unit_selection': {'row': 2, 'column': 0, 'sticky': 'W'},
+            'metric_visibility': {'row': 4, 'column': 0, 'sticky': 'W'},
+            'chart_controls': {'row': 4, 'column': 2, 'sticky': 'E'},
+            'action_buttons': {'row': 1, 'column': 2, 'sticky': 'E'}
+        },
+        'tabbed_display': {
+            'notebook_pack': {'fill': 'both', 'expand': True},
+            'tab_texts': {
+                'metrics': 'Current Weather',
+                'chart': 'Weather Trends'
+            }
+        },
+        'metric_display': {
+            'left_column': {'start_col': 2, 'end_col': 3},
+            'right_column': {'start_col': 4, 'end_col': 5}
+        },
+        'chart_display': {
+            'pack': {'side': 'top', 'fill': 'both', 'expand': True}
+        },
+        'chart_fallback': {
+            'pack': {'expand': True}
+        },
+        'status_bar': {
+            'system': {'side': 'left', 'padx': 'system_padding'},
+            'progress': {'side': 'left', 'padx': 'progress_padding'},
+            'data': {'side': 'right', 'padx': 'data_padding'}
+        },
+        'loading_display': {
+            'progress_format': '{icon} {message}',
+            'clear_method': 'clear_progress'
+        },
+        'column_padding': {
+            'left_column': 5,
+            'right_column': 10
+        }
+    }
+}
+
+# =================================
+# 3. STYLE CONFIGURATION
 # =================================
 def configure_styles(theme_name: str = 'neutral') -> None:
     """Configure comprehensive styles for all GUI elements with theme support.
@@ -140,7 +240,7 @@ def configure_styles(theme_name: str = 'neutral') -> None:
     style.map("DataStatusNone.TLabel", foreground=[('!disabled', colors['status']['neutral'])])
 
 # =================================
-# 3. BACKWARD COMPATIBILITY
+# 4. BACKWARD COMPATIBILITY
 # =================================
 # For backward compatibility, provide default theme values
 def get_default_theme_values() -> Dict[str, Any]:

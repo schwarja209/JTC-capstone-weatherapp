@@ -105,6 +105,11 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         Args:
             metric_displays: Dictionary of formatted metric data for display
         """
+        layout_config = styles.LAYOUT_CONFIG
+        metric_config = layout_config['widget_positions']['metric_display']
+        left_col_config = metric_config['left_column']
+        right_col_config = metric_config['right_column']
+
         # Clear all existing displays first using centralized utility
         for metric_key in self.config.METRICS:
             if metric_key in self.metric_labels:
@@ -156,7 +161,10 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                     value = metric_displays.get(display_metric, '--')
                 
                 if should_display:
-                    self._show_metric_at_position(display_metric, label, value, left_row, 2, 3)
+                    self._show_metric_at_position(
+                        display_metric, label, value, left_row, 
+                        left_col_config['start_col'], left_col_config['end_col']
+                    )
                     left_row += 1
         
         # Process right column metrics (columns 4-5)  
@@ -177,7 +185,10 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                     label = f"{self.config.METRICS[display_metric]['label']}:"
                     value = metric_displays.get(display_metric, '--')
                 
-                self._show_metric_at_position(display_metric, label, value, right_row, 4, 5)
+                self._show_metric_at_position(
+                    display_metric, label, value, right_row,
+                    right_col_config['start_col'], right_col_config['end_col']
+                )
                 right_row += 1
 
     def update_alert_display(self, alerts: List[Any]) -> None:

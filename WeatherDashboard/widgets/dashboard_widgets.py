@@ -10,16 +10,17 @@ Classes:
     WeatherDashboardWidgets: Main widget coordinator and manager
 """
 
-from typing import Dict, Any, Callable, Optional, List
 import tkinter as tk
 from tkinter import ttk, messagebox
+from typing import Dict, Any, Callable, Optional, List
 
-from WeatherDashboard import config
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.widget_utils import WidgetUtils
 
 from .widget_interface import IWeatherDashboardWidgets
 from .base_widgets import BaseWidgetManager, widget_error_handler
+from .widget_registry import WidgetRegistry
 from .title_widgets import TitleWidget
 from .control_widgets import ControlWidgets
 from .tabbed_widgets import TabbedDisplayWidgets
@@ -67,6 +68,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         # Direct imports for stable utilities
         self.logger = Logger()
         self.config = config
+        self.styles = styles
         self.widget_utils = WidgetUtils()
 
         # Injected dependencies for testable components
@@ -89,6 +91,12 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         self.control_widgets: Optional[ControlWidgets] = None
         self.tabbed_widgets: Optional[TabbedDisplayWidgets] = None
         self.status_bar_widgets: Optional[StatusBarWidgets] = None
+
+        # Initialize widget registry
+        self.widget_registry = WidgetRegistry()
+        # Register all frames with the registry
+        for frame_id, frame in frames.items():
+            self.widget_registry.register_frame(frame_id, frame)
         
         # Initialize base class with error handling
         super().__init__(None, state, "dashboard widgets")
@@ -108,13 +116,22 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             tk.TclError: If GUI widget creation fails
             Exception: For other unexpected errors during setup
         """
+        layout_config = self.styles.LAYOUT_CONFIG
+        dashboard_config = layout_config['widget_positions'].get('dashboard_sections', {})
+
         try:
             self.logger.info("Creating dashboard widgets")
             
-            self._create_title_section()
-            self._create_control_section()
-            self._create_tabbed_section()
-            self._create_status_bar_section()
+            # Use centralized frame assignments
+            title_frame = self.frames[dashboard_config.get('title_frame', 'title')]
+            control_frame = self.frames[dashboard_config.get('control_frame', 'control')]
+            tabbed_frame = self.frames[dashboard_config.get('tabbed_frame', 'tabbed')]
+            status_frame = self.frames[dashboard_config.get('status_frame', 'status_bar')]
+            
+            self._create_title_section(title_frame)
+            self._create_control_section(control_frame)
+            self._create_tabbed_section(tabbed_frame)
+            self._create_status_bar_section(status_frame)
             
             self.logger.info("Dashboard widgets created successfully")
 
@@ -128,29 +145,67 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             raise
     
     @widget_error_handler("title section")
-    def _create_title_section(self) -> None:
+    def _create_title_section(self, title_frame: ttk.Frame) -> None:
         """Create the title widget section."""
         self.title_widget = TitleWidget(
-            self.frames["title"], 
+            title_frame, 
             scheduler_callback=self.scheduler_callback,
             theme_callback=self.theme_callback
         )
+
+        # Register title widget with registry
+        self.widget_registry.register_widget(
+            widget_id='title_widget',
+            widget=self.title_widget,
+            widget_type='title',
+            parent_frame=title_frame,
+            position={'pack': {'fill': 'x', 'padx': 5, 'pady': 5}},
+            style='Title.TFrame'
+        )
     
     @widget_error_handler("control section")
-    def _create_control_section(self) -> None:
+    def _create_control_section(self, control_frame: ttk.Frame) -> None:
         """Create the control widgets section."""
-        self.control_widgets = ControlWidgets(self.frames["control"], self.state, self.callbacks)
+        self.control_widgets = ControlWidgets(control_frame, self.state, self.callbacks)
+
+        self.widget_registry.register_widget(
+            widget_id='control_widgets',
+            widget=self.control_widgets,
+            widget_type='control',
+            parent_frame=control_frame,
+            position={'pack': {'fill': 'x', 'padx': 5, 'pady': 5}},
+            style='Control.TFrame'
+        )
     
     @widget_error_handler("tabbed section")
-    def _create_tabbed_section(self) -> None:
+    def _create_tabbed_section(self, tabbed_frame: ttk.Frame) -> None:
         """Create the tabbed display section."""
-        self.tabbed_widgets = TabbedDisplayWidgets(self.frames["tabbed"], self.state)
+        self.tabbed_widgets = TabbedDisplayWidgets(tabbed_frame, self.state, self.widget_registry)
+        
+        self.widget_registry.register_widget(
+            widget_id='tabbed_widgets',
+            widget=self.tabbed_widgets,
+            widget_type='tabbed',
+            parent_frame=tabbed_frame,
+            position={'pack': {'fill': 'both', 'expand': True}},
+            style='Tabbed.TFrame'
+        )
 
     @widget_error_handler("status bar section")
-    def _create_status_bar_section(self) -> None:
+    def _create_status_bar_section(self, status_frame: ttk.Frame) -> None:
         """Create the status bar section."""
-        self.status_bar_widgets = StatusBarWidgets(self.frames["status_bar"], self.state)
-    
+        self.status_bar_widgets = StatusBarWidgets(status_frame, self.state)
+
+        # Register status bar widgets with registry
+        self.widget_registry.register_widget(
+            widget_id='status_bar_widgets',
+            widget=self.status_bar_widgets,
+            widget_type='status',
+            parent_frame=status_frame,
+            position={'pack': {'fill': 'x', 'side': 'bottom'}},
+            style='Status.TFrame'
+        )
+        
     # DELEGATION METHODS
     def is_ready(self) -> bool:
         """Return True if all sub-widgets are ready."""
@@ -199,6 +254,30 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             return self.metric_widgets.get_alert_popup_parent()
         return None
 
+    def get_registry(self) -> WidgetRegistry:
+        """Get the widget registry for direct access."""
+        return self.widget_registry
+
+    def apply_style_to_widget(self, widget_id: str, style: str) -> bool:
+        """Apply a style to a specific widget through the registry."""
+        return self.widget_registry.apply_style_to_widget(widget_id, style)
+
+    def apply_style_to_type(self, widget_type: str, style: str) -> int:
+        """Apply a style to all widgets of a specific type through the registry."""
+        return self.widget_registry.apply_style_to_type(widget_type, style)
+
+    def move_widget(self, widget_id: str, new_frame_id: str, new_position: Dict[str, Any]) -> bool:
+        """Move a widget to a different frame and position through the registry."""
+        return self.widget_registry.move_widget(widget_id, new_frame_id, new_position)
+
+    def show_widget(self, widget_id: str) -> bool:
+        """Show a widget through the registry."""
+        return self.widget_registry.show_widget(widget_id)
+
+    def hide_widget(self, widget_id: str) -> bool:
+        """Hide a widget through the registry."""
+        return self.widget_registry.hide_widget(widget_id)
+
     # BACKWARD COMPATIBILITY
     @property
     def metric_widgets(self) -> Any:
@@ -213,3 +292,4 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         if self.tabbed_widgets:
             return self.tabbed_widgets.get_chart_widgets()
         return None
+        

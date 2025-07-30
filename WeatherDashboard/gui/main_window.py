@@ -147,6 +147,13 @@ class WeatherDashboardMain:
             alert_widget = getattr(self.widgets.metric_widgets, 'alert_status_widget', None)
             if alert_widget:
                 alert_widget.set_click_callback(self.show_alerts)
+        elif hasattr(self.widgets, 'tabbed_widgets') and self.widgets.tabbed_widgets:
+            # Try to get alert widget through tabbed interface
+            metric_widgets = self.widgets.tabbed_widgets.get_metric_widgets()
+            if metric_widgets:
+                alert_widget = getattr(metric_widgets, 'alert_status_widget', None)
+                if alert_widget:
+                    alert_widget.set_click_callback(self.show_alerts)
 
 # ================================
 # 2. UI HANDLERS

@@ -9,9 +9,9 @@ Classes:
     WeatherDashboardGUIFrames: Main frame manager and layout coordinator
 """
 
-from typing import Dict, Union
 import tkinter as tk
 from tkinter import ttk
+from typing import Dict, Union
 
 from WeatherDashboard import styles
 
@@ -54,24 +54,34 @@ class WeatherDashboardGUIFrames:
 
     def create_frames(self) -> None:
         """Create the main frames for the dashboard layout."""
-        FRAME_TITLE = "title"
-        FRAME_CONTROL = "control"
-        FRAME_TABBED = "tabbed"
-        FRAME_STATUS = "status_bar"
 
-        self.frames[FRAME_TITLE] = ttk.Frame(self.root, padding="10")
-        self.frames[FRAME_TITLE].grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E))
+        layout_config = self.styles.LAYOUT_CONFIG
 
-        self.frames[FRAME_CONTROL] = ttk.LabelFrame(self.root, text="Controls", padding="10", style="FrameLabel.TLabelframe")
-        self.frames[FRAME_CONTROL].grid(row=1, column=0, sticky=(tk.N, tk.S, tk.W, tk.E), padx=10)
-
-        self.frames[FRAME_TABBED] = ttk.LabelFrame(self.root, text="Weather Information", padding="10", style="FrameLabel.TLabelframe")
-        self.frames[FRAME_TABBED].grid(row=1, column=1, sticky=(tk.N, tk.S, tk.W, tk.E), padx=10)
-
-        self.frames[FRAME_STATUS] = ttk.Frame(self.root, padding="5")
-        self.frames[FRAME_STATUS].grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
-
-        self.root.columnconfigure(0, weight=0)
-        self.root.columnconfigure(1, weight=0)
-        self.root.rowconfigure(1, weight=1)
-        self.root.rowconfigure(2, weight=0) # Status bar doesn't expand
+        # Create frames using configuration
+        for frame_name, frame_config in layout_config['frames'].items():
+            if frame_config.get('text'):
+                # LabelFrame with text
+                self.frames[frame_name] = ttk.LabelFrame(
+                    self.root, 
+                    text=frame_config['text'],
+                    padding=frame_config['padding'],
+                    style=frame_config['style']
+                )
+            else:
+                # Regular Frame
+                self.frames[frame_name] = ttk.Frame(
+                    self.root,
+                    padding=frame_config['padding'],
+                    style=frame_config['style']
+                )
+            
+            # Apply grid configuration
+            grid_config = frame_config['grid']
+            self.frames[frame_name].grid(**grid_config)
+        
+        # Apply grid weights
+        grid_weights = layout_config['grid_weights']
+        for i, weight in enumerate(grid_weights['columns']):
+            self.root.columnconfigure(i, weight=weight)
+        for i, weight in enumerate(grid_weights['rows']):
+            self.root.rowconfigure(i, weight=weight)

@@ -10,16 +10,16 @@ Classes:
     ChartWidgets: Matplotlib chart manager with error handling and fallback support
 """
 
-from typing import List, Any, Optional, Dict
 import tkinter as tk
 from tkinter import ttk
+from typing import List, Any, Optional, Dict
 
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-from WeatherDashboard.utils.logger import Logger
-from WeatherDashboard import config
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.utils import Utils
+from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
 
 from .widget_interface import IWeatherDashboardWidgets
@@ -60,6 +60,7 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         # Direct imports for stable utilities
         self.logger = Logger()
         self.config = config
+        self.styles = styles
         self.utils = Utils()
         self.unit_converter = UnitConverter()
 
@@ -114,7 +115,12 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         if self.chart_canvas:
             self.chart_canvas.draw()
-            self.chart_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+            layout_config = self.styles.LAYOUT_CONFIG
+            chart_config = layout_config['widget_positions'].get('chart_display', {})
+            
+            # Use centralized pack configuration or fallback to default
+            pack_config = chart_config.get('pack', {'side': 'top', 'fill': 'both', 'expand': True})
+            self.chart_canvas.get_tk_widget().pack(**pack_config)
     
     @widget_error_handler("fallback display")
     def _create_fallback_display(self) -> None:
@@ -124,14 +130,14 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         all chart components to None to signal to other parts of the application
         that chart functionality is not available.
         """
-        # Create a simple fallback label using SafeWidgetCreator
-        self.fallback_label = SafeWidgetCreator.create_label(self.parent, "Chart unavailable - matplotlib failed to load")
-        self.fallback_label.pack(expand=True)
+        layout_config = self.styles.LAYOUT_CONFIG
+        fallback_config = layout_config['widget_positions'].get('chart_fallback', {})
         
-        # Set components to None to indicate unavailability
-        self.chart_fig = None
-        self.chart_ax = None
-        self.chart_canvas = None
+        self.fallback_label = SafeWidgetCreator.create_label(self.parent, "Chart unavailable - matplotlib failed to load")
+        
+        # Use centralized pack configuration or fallback to default
+        pack_config = fallback_config.get('pack', {'expand': True})
+        self.fallback_label.pack(**pack_config)
     
     def _format_chart_labels(self, metric_key: str, city: str, unit_system: str, fallback: bool) -> Dict[str, str]:
         """Formats chart labels based on metric and settings."""

@@ -9,12 +9,12 @@ Classes:
     TitleWidget: Simple title display widget with customizable text
 """
 
-from typing import Optional, Callable
 import tkinter as tk
 from tkinter import ttk
+from typing import Optional, Callable
 
+from WeatherDashboard import config, styles
 from WeatherDashboard.utils.logger import Logger
-from WeatherDashboard import config
 
 from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 
@@ -34,6 +34,7 @@ class TitleWidget(BaseWidgetManager):
         # Direct imports for stable utilities
         self.logger = Logger()
         self.config = config
+        self.styles = styles
         
         # Injected dependencies for testable components
         self.parent_frame = parent_frame
@@ -82,9 +83,13 @@ class TitleWidget(BaseWidgetManager):
 
     def _create_system_controls(self, parent_frame: ttk.Frame) -> None:
         """Create system control widgets (scheduler and theme switcher)."""
+        layout_config = self.styles.LAYOUT_CONFIG
+        title_config = layout_config['widget_positions'].get('title_controls', {})
+
         # Create controls frame on the right
         controls_frame = SafeWidgetCreator.create_frame(parent_frame)
-        controls_frame.pack(side=tk.RIGHT, padx=(10, 0))
+        controls_pack_config = title_config.get('controls_frame_pack', {'side': 'RIGHT', 'padx': (10, 0)})
+        controls_frame.pack(**controls_pack_config)
 
         # Theme switcher
         if self.theme_callback:
@@ -96,9 +101,13 @@ class TitleWidget(BaseWidgetManager):
 
     def _create_theme_control(self, parent_frame: ttk.Frame) -> None:
         """Create theme switcher dropdown."""
+        layout_config = self.styles.LAYOUT_CONFIG
+        theme_config = layout_config['widget_positions'].get('title_controls', {}).get('theme_control', {})
+
         # Theme label
         theme_label = SafeWidgetCreator.create_label(parent_frame, "Theme:", "GrayLabel.TLabel")
-        theme_label.pack(side=tk.LEFT, padx=(0, 5))
+        label_pack_config = theme_config.get('label_pack', {'side': 'LEFT', 'padx': (0, 5)})
+        theme_label.pack(**label_pack_config)
 
         # Theme dropdown
         self.theme_var = tk.StringVar(value="Neutral")
@@ -109,13 +118,18 @@ class TitleWidget(BaseWidgetManager):
             state="readonly",
             width=12
         )
-        self.theme_combobox.pack(side=tk.LEFT, padx=(0, 10))
-        
+        combobox_pack_config = theme_config.get('combobox_pack', {'side': 'LEFT', 'padx': (0, 10)})
+        self.theme_combobox.pack(**combobox_pack_config)
+    
         # Bind theme change event
         self.theme_combobox.bind('<<ComboboxSelected>>', self._on_theme_change)
 
     def _create_scheduler_control(self, parent_frame: ttk.Frame) -> None:
         """Create scheduler toggle control."""        
+        # Scheduler toggle
+        layout_config = self.styles.LAYOUT_CONFIG
+        scheduler_config = layout_config['widget_positions'].get('title_controls', {}).get('scheduler_control', {})
+        
         # Scheduler toggle
         self.scheduler_var = tk.BooleanVar(value=self.config.SCHEDULER["enabled"])
         self.scheduler_checkbox = SafeWidgetCreator.create_checkbutton(
@@ -124,7 +138,8 @@ class TitleWidget(BaseWidgetManager):
             variable=self.scheduler_var,
             command=self._on_scheduler_toggle
         )
-        self.scheduler_checkbox.pack(side=tk.RIGHT)
+        checkbox_pack_config = scheduler_config.get('checkbox_pack', {'side': 'RIGHT'})
+        self.scheduler_checkbox.pack(**checkbox_pack_config)
     
     def _on_theme_change(self, event=None) -> None:
         """Handle theme selection change."""

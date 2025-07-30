@@ -7802,3 +7802,417 @@ Humidity: 82 %
 Pressure: 29.91 inHg
 Wind Speed: 9.22 mph
 Conditions: Few Clouds
+
+Time: 2025-07-30 14:35:25
+City: new_york
+Unit System: imperial
+Temperature: 96.0 °F
+Humidity: 38 %
+Pressure: 29.94 inHg
+Wind Speed: 11.50 mph
+Conditions: Haze
+
+Time: 2025-07-30 14:35:25
+City: new_york
+Unit System: imperial
+Temperature: 96.0 °F
+Humidity: 38 %
+Pressure: 29.94 inHg
+Wind Speed: 11.50 mph
+Conditions: Haze
+
+Time: 2025-07-30 18:01:38
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:01:39
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:02:03
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:02:03
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:02:16
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:02:16
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:02:58
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:02:58
+City: new_york
+Unit System: imperial
+Temperature: 91.4 °F
+Humidity: 57 %
+Pressure: 29.91 inHg
+Wind Speed: 13.80 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:06:53
+City: new_york
+Unit System: imperial
+Temperature: 91.0 °F
+Humidity: 59 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:06:53
+City: new_york
+Unit System: imperial
+Temperature: 91.0 °F
+Humidity: 59 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:21:19
+City: new_york
+Unit System: imperial
+Temperature: 90.8 °F
+Humidity: 60 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:21:19
+City: new_york
+Unit System: imperial
+Temperature: 90.8 °F
+Humidity: 60 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:29:38
+City: new_york
+Unit System: imperial
+Temperature: 90.1 °F
+Humidity: 61 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:29:38
+City: new_york
+Unit System: imperial
+Temperature: 90.1 °F
+Humidity: 61 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:29:43
+City: new_york
+Unit System: imperial
+Temperature: 90.1 °F
+Humidity: 61 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:29:43
+City: new_york
+Unit System: imperial
+Temperature: 90.1 °F
+Humidity: 61 %
+Pressure: 29.91 inHg
+Wind Speed: 14.97 mph
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:30:05
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:30:06
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:30:11
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:30:12
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:30:15
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:30:15
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:34:26
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 18:34:26
+City: new_york
+Unit System: metric
+Temperature: 32.3 °C
+Humidity: 61 %
+Pressure: 1013.00 hPa
+Wind Speed: 6.69 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 19:09:42
+City: new_york
+Unit System: metric
+Temperature: 29.7 °C
+Humidity: 68 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.28 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:09:43
+City: new_york
+Unit System: metric
+Temperature: 29.7 °C
+Humidity: 68 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.28 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:09:52
+City: new_york
+Unit System: metric
+Temperature: 29.7 °C
+Humidity: 68 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.28 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:09:52
+City: new_york
+Unit System: metric
+Temperature: 29.7 °C
+Humidity: 68 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.28 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:09:55
+City: new_york,_ny
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: 50 %
+Pressure: 1034.25 hPa
+Wind Speed: 3.00 m/s
+Conditions: Snowy
+
+Time: 2025-07-30 19:09:57
+City: new_york,_ny
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: 62 %
+Pressure: 1020.40 hPa
+Wind Speed: 7.00 m/s
+Conditions: Sunny
+
+Time: 2025-07-30 19:09:58
+City: new_york,_ny
+Unit System: metric
+Temperature: 3.0 °C
+Humidity: 38 %
+Pressure: 1027.03 hPa
+Wind Speed: 7.00 m/s
+Conditions: Rainy
+
+Time: 2025-07-30 19:09:59
+City: new_york,_ny
+Unit System: metric
+Temperature: 2.0 °C
+Humidity: 37 %
+Pressure: 1014.21 hPa
+Wind Speed: 6.00 m/s
+Conditions: Cloudy
+
+Time: 2025-07-30 19:10:04
+City: buffalo
+Unit System: metric
+Temperature: 29.4 °C
+Humidity: 53 %
+Pressure: 1015.00 hPa
+Wind Speed: 0.89 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:10:04
+City: buffalo
+Unit System: metric
+Temperature: 29.4 °C
+Humidity: 53 %
+Pressure: 1015.00 hPa
+Wind Speed: 0.89 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:10:10
+City: buffalo,_ny
+Unit System: metric
+Temperature: 19.0 °C
+Humidity: 67 %
+Pressure: 1010.08 hPa
+Wind Speed: 5.00 m/s
+Conditions: Cloudy
+
+Time: 2025-07-30 19:10:12
+City: buffalo,_ny
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: 43 %
+Pressure: 1004.19 hPa
+Wind Speed: 5.00 m/s
+Conditions: Snowy
+
+Time: 2025-07-30 19:10:30
+City: portland
+Unit System: metric
+Temperature: 31.6 °C
+Humidity: 43 %
+Pressure: 1016.00 hPa
+Wind Speed: 4.15 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:10:30
+City: portland
+Unit System: metric
+Temperature: 31.6 °C
+Humidity: 43 %
+Pressure: 1016.00 hPa
+Wind Speed: 4.15 m/s
+Conditions: Overcast Clouds
+
+Time: 2025-07-30 19:10:34
+City: portland,_or
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: 72 %
+Pressure: 1024.07 hPa
+Wind Speed: 4.00 m/s
+Conditions: Cloudy
+
+Time: 2025-07-30 19:10:36
+City: portland,_or
+Unit System: metric
+Temperature: 15.0 °C
+Humidity: 47 %
+Pressure: 1008.91 hPa
+Wind Speed: 8.00 m/s
+Conditions: Rainy
+
+Time: 2025-07-30 19:44:46
+City: portland,_or
+Unit System: metric
+Temperature: 12.0 °C
+Humidity: 48 %
+Pressure: 996.27 hPa
+Wind Speed: 7.00 m/s
+Conditions: Sunny
+
+Time: 2025-07-30 19:44:48
+City: portland,_or
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: 34 %
+Pressure: 1028.83 hPa
+Wind Speed: 4.00 m/s
+Conditions: Rainy
+
+Time: 2025-07-30 19:44:56
+City: new_york
+Unit System: metric
+Temperature: 29.5 °C
+Humidity: 66 %
+Pressure: 1014.00 hPa
+Wind Speed: 6.17 m/s
+Conditions: Broken Clouds
+
+Time: 2025-07-30 19:44:56
+City: new_york
+Unit System: metric
+Temperature: 29.5 °C
+Humidity: 66 %
+Pressure: 1014.00 hPa
+Wind Speed: 6.17 m/s
+Conditions: Broken Clouds

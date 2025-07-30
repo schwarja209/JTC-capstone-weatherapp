@@ -16,7 +16,7 @@ Classes:
 from typing import List
 import tkinter as tk
 
-from WeatherDashboard import config
+from WeatherDashboard import config, styles
 
 from WeatherDashboard.utils.preferences_utils import PreferencesService, UserPreferences
 
@@ -43,6 +43,7 @@ class WeatherDashboardState:
         """
         # Direct imports for stable utilities
         self.config = config
+        self.styles = styles
 
         # Initialize preferences service
         self.preferences_service = PreferencesService()
@@ -66,19 +67,43 @@ class WeatherDashboardState:
     # STATE ACCESS METHODS - These provide clean access to state values
     def get_current_city(self) -> str:
         """Get current city name from user input."""
-        return self.city.get()
+        layout_config = self.styles.LAYOUT_CONFIG
+        state_config = layout_config['widget_positions'].get('state_access', {})
+        
+        # Use centralized state variable name or fallback
+        city_var_name = state_config.get('city_variable', 'city')
+        city_var = getattr(self, city_var_name, self.city)
+        return city_var.get()
     
     def get_current_unit_system(self) -> str:
         """Get current unit system selection."""
-        return self.unit.get()
+        layout_config = self.styles.LAYOUT_CONFIG
+        state_config = layout_config['widget_positions'].get('state_access', {})
+        
+        # Use centralized state variable name or fallback
+        unit_var_name = state_config.get('unit_variable', 'unit')
+        unit_var = getattr(self, unit_var_name, self.unit)
+        return unit_var.get()
     
     def get_current_range(self) -> str:
         """Get current date range selection for charts."""
-        return self.range.get()
+        layout_config = self.styles.LAYOUT_CONFIG
+        state_config = layout_config['widget_positions'].get('state_access', {})
+        
+        # Use centralized state variable name or fallback
+        range_var_name = state_config.get('range_variable', 'range')
+        range_var = getattr(self, range_var_name, self.range)
+        return range_var.get()
     
     def get_current_chart_metric(self) -> str:
         """Get current chart metric selection."""
-        return self.chart.get()
+        layout_config = self.styles.LAYOUT_CONFIG
+        state_config = layout_config['widget_positions'].get('state_access', {})
+        
+        # Use centralized state variable name or fallback
+        chart_var_name = state_config.get('chart_variable', 'chart')
+        chart_var = getattr(self, chart_var_name, self.chart)
+        return chart_var.get()
     
     def is_metric_visible(self, metric_key: str) -> bool:
         """Check if a metric is currently visible in the UI."""
