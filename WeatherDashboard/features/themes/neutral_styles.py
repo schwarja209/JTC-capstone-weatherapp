@@ -224,6 +224,22 @@ NEUTRAL_UI = {
     'icons': NEUTRAL_ICONS,
     'dimensions': NEUTRAL_DIMENSIONS,
     
+    'backgrounds': {
+        'main_window': NEUTRAL_COLORS['background'],
+        'frames': {
+            'title': NEUTRAL_COLORS['background'],
+            'control': NEUTRAL_COLORS['backgrounds']['inactive'],
+            'tabbed': NEUTRAL_COLORS['background'],
+            'status': NEUTRAL_COLORS['backgrounds']['inactive']
+        },
+        'widgets': {
+            'labels': NEUTRAL_COLORS['background'],
+            'buttons': NEUTRAL_COLORS['backgrounds']['inactive'],
+            'entry': NEUTRAL_COLORS['background'],
+            'combobox': NEUTRAL_COLORS['background']
+        }
+    },
+
     # UI-specific configurations that reference the single sources
     'widget_layout': NEUTRAL_DIMENSIONS['widget_layout'],
     'title_padding': {

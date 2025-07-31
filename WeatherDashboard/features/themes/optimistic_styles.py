@@ -224,6 +224,22 @@ OPTIMISTIC_UI = {
     'icons': OPTIMISTIC_ICONS,
     'dimensions': OPTIMISTIC_DIMENSIONS,
     
+    'backgrounds': {
+        'main_window': OPTIMISTIC_COLORS['background'],
+        'frames': {
+            'title': OPTIMISTIC_COLORS['background'],
+            'control': OPTIMISTIC_COLORS['backgrounds']['inactive'],
+            'tabbed': OPTIMISTIC_COLORS['background'],
+            'status': OPTIMISTIC_COLORS['backgrounds']['inactive']
+        },
+        'widgets': {
+            'labels': OPTIMISTIC_COLORS['background'],
+            'buttons': OPTIMISTIC_COLORS['backgrounds']['inactive'],
+            'entry': OPTIMISTIC_COLORS['background'],
+            'combobox': OPTIMISTIC_COLORS['background']
+        }
+    },
+
     # UI-specific configurations that reference the single sources
     'widget_layout': OPTIMISTIC_DIMENSIONS['widget_layout'],
     'title_padding': {

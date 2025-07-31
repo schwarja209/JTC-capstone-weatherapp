@@ -224,6 +224,22 @@ PESSIMISTIC_UI = {
     'icons': PESSIMISTIC_ICONS,
     'dimensions': PESSIMISTIC_DIMENSIONS,
     
+    'backgrounds': {
+        'main_window': PESSIMISTIC_COLORS['background'],
+        'frames': {
+            'title': PESSIMISTIC_COLORS['background'],
+            'control': PESSIMISTIC_COLORS['backgrounds']['inactive'],
+            'tabbed': PESSIMISTIC_COLORS['background'],
+            'status': PESSIMISTIC_COLORS['backgrounds']['inactive']
+        },
+        'widgets': {
+            'labels': PESSIMISTIC_COLORS['background'],
+            'buttons': PESSIMISTIC_COLORS['backgrounds']['inactive'],
+            'entry': PESSIMISTIC_COLORS['background'],
+            'combobox': PESSIMISTIC_COLORS['background']
+        }
+    },
+
     # UI-specific configurations that reference the single sources
     'widget_layout': PESSIMISTIC_DIMENSIONS['widget_layout'],
     'title_padding': {

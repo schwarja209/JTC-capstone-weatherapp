@@ -9,10 +9,6 @@ from tkinter import ttk
 from dataclasses import dataclass
 from enum import Enum
 
-from .neutral_styles import NEUTRAL_THEME_CONFIG
-from .optimistic_styles import OPTIMISTIC_THEME_CONFIG  
-from .pessimistic_styles import PESSIMISTIC_THEME_CONFIG
-
 
 class Theme(Enum):
     """Available theme options."""
@@ -20,78 +16,73 @@ class Theme(Enum):
     OPTIMISTIC = "optimistic" 
     PESSIMISTIC = "pessimistic"
 
-
-@dataclass
-class ThemeConfig:
-    """Structured theme configuration container."""
-    # Visual styling
-    colors: Dict[str, Any]
-    fonts: Dict[str, Any]
-    ui: Dict[str, Any]
-    
-    # Content and behavior
-    messaging: Dict[str, str]
-    weather_icons: Dict[str, str]
-    metric_colors: Dict[str, Any]
-    temperature_difference_colors: Dict[str, str]
-    comfort_thresholds: Dict[str, Any]
-    dialog_config: Dict[str, Any]
-
-
 class ThemeManager:
     """Centralized theme management and styling system."""
     
     _instance: Optional['ThemeManager'] = None
     _current_theme: Theme = Theme.NEUTRAL
-    _theme_config: ThemeConfig = None
-    _ttk_style: Optional[ttk.Style] = None
+    _theme_config: Dict[str, Any] = {}
     
     def __new__(cls) -> 'ThemeManager':
-        """Singleton pattern for global theme access."""
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-            cls._instance._initialized = False
         return cls._instance
     
     def __init__(self):
         """Initialize theme manager."""
-        if hasattr(self, '_initialized') and self._initialized:
-            return
-            
-        self._load_theme_config(self._current_theme)
-        self._ttk_style = ttk.Style()
-        self._apply_ttk_styles()
-        self._initialized = True
+        if not hasattr(self, '_initialized'):
+            self._ttk_style = None
+            self._load_theme_config(Theme.NEUTRAL)
+            self._initialized = True
     
     def _load_theme_config(self, theme: Theme) -> None:
         """Load configuration for specified theme."""
-        theme_configs = {
-            Theme.NEUTRAL: NEUTRAL_THEME_CONFIG,
-            Theme.OPTIMISTIC: OPTIMISTIC_THEME_CONFIG,
-            Theme.PESSIMISTIC: PESSIMISTIC_THEME_CONFIG
-        }
+        from .neutral_styles import NEUTRAL_UI
+        from .optimistic_styles import OPTIMISTIC_UI
+        from .pessimistic_styles import PESSIMISTIC_UI
         
-        raw_config = theme_configs[theme]
-        self._theme_config = ThemeConfig(
-            colors=raw_config['colors'],
-            fonts=raw_config['fonts'],
-            ui=raw_config['ui'],
-            messaging=raw_config['messaging'],
-            weather_icons=raw_config['weather_icons'],
-            metric_colors=raw_config['metric_colors'],
-            temperature_difference_colors=raw_config['temperature_difference_colors'],
-            comfort_thresholds=raw_config['comfort_thresholds'],
-            dialog_config=raw_config['dialog_config']
-        )
+        self._themes = {
+            Theme.NEUTRAL: NEUTRAL_UI,
+            Theme.OPTIMISTIC: OPTIMISTIC_UI,
+            Theme.PESSIMISTIC: PESSIMISTIC_UI
+        }
+        self._theme_config = self._themes[Theme.NEUTRAL]
+
+    def change_theme(self, theme: Theme) -> None:
+        """Change the current theme and apply it."""
+        self._current_theme = theme
+        self._theme_config = self._themes[theme]
+
+    def _apply_theme(self) -> None:
+        """Apply the current theme to the UI."""
+        style = self._get_ttk_style() 
+        colors = self._theme_config['colors']
+        fonts = self._theme_config['fonts']
+        ui = self._theme_config['ui']
+        backgrounds = self._theme_config['backgrounds']
+        
+        # Apply background colors
+        style.configure("TFrame", background=backgrounds['main_window'])
+        style.configure("TLabelframe", background=backgrounds['main_window'])
+        style.configure("TLabel", background=backgrounds['widgets']['labels'])
+        style.configure("TButton", background=backgrounds['widgets']['buttons'])
+        style.configure("TEntry", background=backgrounds['widgets']['entry'])
+        style.configure("TCombobox", background=backgrounds['widgets']['combobox'])
+        
+        # Apply theme-specific styles
+        style.configure("Title.TLabel", 
+                      font=(fonts['title_family'], fonts['sizes']['title'], fonts['weights']['bold']),
+                      foreground=colors['primary'],
+                      background=backgrounds['widgets']['labels'])
     
     def _apply_ttk_styles(self) -> None:
         """Apply TTK styles based on current theme configuration."""
         if not self._ttk_style or not self._theme_config:
             return
             
-        colors = self._theme_config.colors
-        fonts = self._theme_config.fonts
-        ui = self._theme_config.ui
+        colors = self._theme_config['colors']
+        fonts = self._theme_config['fonts']
+        ui = self._theme_config['ui']
         
         # Title styling
         self._ttk_style.configure(
@@ -167,52 +158,31 @@ class ThemeManager:
                            foreground=[("selected", colors['foregrounds']['selected']), 
                                      ("active", colors['foregrounds']['active'])])
     
-    # Public API
-    def change_theme(self, theme: Theme) -> None:
-        """Change the current theme and update all styles."""
-        if theme != self._current_theme:
-            self._current_theme = theme
-            self._load_theme_config(theme)
-            if self._ttk_style:
-                self._apply_ttk_styles()
-    
+    # Accessor Methods    
     def get_current_theme(self) -> Theme:
         """Get the currently active theme."""
         return self._current_theme
     
-    def get_theme_name(self) -> str:
-        """Get current theme name as string."""
-        return self._current_theme.value
+    def get_theme_config(self) -> Dict[str, Any]:
+        """Get the current theme configuration."""
+        return self._theme_config
     
-    # Clean accessor methods
-    def get_color(self, color_key: str, category: str = None) -> str:
-        """Get color value by key and optional category."""
-        colors = self._theme_config.colors
-        
-        if category:
-            category_colors = colors.get(category, {})
-            return category_colors.get(color_key, '#000000')
-        else:
-            return colors.get(color_key, '#000000')
+    def get_colors(self) -> Dict[str, Any]:
+        """Get current theme colors."""
+        return self._theme_config['colors']
     
-    def get_font(self, font_type: str = 'default', size: str = 'normal', weight: str = 'normal') -> Tuple[str, int, str]:
-        """Get font configuration tuple."""
-        fonts = self._theme_config.fonts
-        
-        if font_type == 'title':
-            family = fonts['title_family']
-        else:
-            family = fonts['default_family']
-            
-        font_size = fonts['sizes'].get(size, fonts['sizes']['normal'])
-        font_weight = fonts['weights'].get(weight, fonts['weights']['normal'])
-        
-        return (family, font_size, font_weight)
+    def get_fonts(self) -> Dict[str, Any]:
+        """Get current theme fonts."""
+        return self._theme_config['fonts']
     
-    def get_spacing(self, spacing_key: str) -> int:
-        """Get spacing/padding value by key."""
-        return self._theme_config.ui['padding'].get(spacing_key, 5)
+    def get_padding(self) -> Dict[str, Any]:
+        """Get current theme padding."""
+        return self._theme_config['padding']
     
+    def get_backgrounds(self) -> Dict[str, Any]:
+        """Get current theme backgrounds."""
+        return self._theme_config['backgrounds']
+
     def get_dimension(self, dimension_key: str, item_key: str = None) -> Any:
         """Get UI dimension value."""
         dimensions = self._theme_config.ui['dimensions']
@@ -281,33 +251,3 @@ class ThemeManager:
 
 # Global theme manager instance
 theme_manager = ThemeManager()
-
-# Convenience functions for backward compatibility and easy access
-def configure_styles(theme_name: str = 'neutral') -> None:
-    """Configure styles for specified theme (backward compatibility)."""
-    theme_map = {
-        'neutral': Theme.NEUTRAL,
-        'optimistic': Theme.OPTIMISTIC, 
-        'pessimistic': Theme.PESSIMISTIC
-    }
-    theme = theme_map.get(theme_name, Theme.NEUTRAL)
-    theme_manager.change_theme(theme)
-
-def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
-    """Get theme configuration dictionary (backward compatibility)."""
-    current = theme_manager.get_current_theme()
-    
-    # Switch temporarily if different theme requested
-    if theme_name != current.value:
-        theme_map = {
-            'neutral': Theme.NEUTRAL,
-            'optimistic': Theme.OPTIMISTIC,
-            'pessimistic': Theme.PESSIMISTIC
-        }
-        theme = theme_map.get(theme_name, Theme.NEUTRAL)
-        theme_manager.change_theme(theme)
-        config = theme_manager._theme_config.__dict__
-        theme_manager.change_theme(current)  # Switch back
-        return config
-    else:
-        return theme_manager._theme_config.__dict__

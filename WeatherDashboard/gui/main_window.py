@@ -25,6 +25,7 @@ from WeatherDashboard.core.data_service import WeatherDataService
 from WeatherDashboard.core.controller import WeatherDashboardController
 from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
 from WeatherDashboard.features.history.scheduler_service import WeatherDataScheduler
+from WeatherDashboard.features.themes.theme_manager import Theme, theme_manager
 
 
 # ================================
@@ -187,6 +188,10 @@ class WeatherDashboardMain:
         self.root.grid_rowconfigure(0, weight=1)
         self.root.grid_columnconfigure(0, weight=1)
         
+        # Set window background from theme
+        backgrounds = theme_manager.get_backgrounds()
+        self.root.configure(bg=backgrounds['main_window'])
+
         # Prevent window from resizing beyond screen bounds
         def on_configure(event):
             """Handle window resize events to keep window on screen."""
@@ -307,6 +312,23 @@ class WeatherDashboardMain:
             from WeatherDashboard import styles
             styles.configure_styles(theme_name)
             
+            # Update window background from theme on main thread
+            from WeatherDashboard.features.themes.theme_manager import theme_manager, Theme
+
+            # Map theme name to Theme enum
+            theme_mapping = {
+                "neutral": Theme.NEUTRAL,
+                "optimistic": Theme.OPTIMISTIC,
+                "pessimistic": Theme.PESSIMISTIC
+            }
+            
+            theme_enum = theme_mapping.get(theme_name, Theme.NEUTRAL)
+            theme_manager.change_theme(theme_enum)
+            
+            # Update window background
+            backgrounds = theme_manager.get_backgrounds()
+            self.root.configure(bg=backgrounds['main_window'])
+
             # Force window to stay within bounds
             self.root.update_idletasks()
             

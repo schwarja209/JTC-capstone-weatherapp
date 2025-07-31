@@ -12385,3 +12385,265 @@
 [INFO] 2025-07-30 23:34:50 Controller theme set to: neutral
 [INFO] 2025-07-30 23:34:50 Theme changed to neutral
 [INFO] 2025-07-30 23:34:50 Theme changed to neutral
+[INFO] 2025-07-31 01:00:11 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 01:00:11
+[INFO] 2025-07-31 01:00:11 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 01:00:11 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 01:00:11 Preferences applied to application state
+[INFO] 2025-07-31 01:00:11 Registered frame: title
+[INFO] 2025-07-31 01:00:11 Registered frame: control
+[INFO] 2025-07-31 01:00:11 Registered frame: tabbed
+[INFO] 2025-07-31 01:00:11 Registered frame: status_bar
+[INFO] 2025-07-31 01:00:11 Creating dashboard widgets
+[INFO] 2025-07-31 01:00:11 title widget created successfully
+[INFO] 2025-07-31 01:00:11 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 01:00:11 Preferences saved
+[INFO] 2025-07-31 01:00:11 control widgets created successfully
+[INFO] 2025-07-31 01:00:11 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 01:00:11 metric display widgets created successfully
+[INFO] 2025-07-31 01:00:11 chart widgets created successfully
+[INFO] 2025-07-31 01:00:11 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 01:00:11 Registered metric widgets with registry
+[INFO] 2025-07-31 01:00:11 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 01:00:11 Registered chart widgets with registry
+[INFO] 2025-07-31 01:00:11 tabbed display widgets created successfully
+[INFO] 2025-07-31 01:00:11 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 01:00:12 status bar widgets created successfully
+[INFO] 2025-07-31 01:00:12 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 01:00:12 Dashboard widgets created successfully
+[INFO] 2025-07-31 01:00:12 dashboard widgets created successfully
+[INFO] 2025-07-31 01:00:12 Weather data scheduler started
+[INFO] 2025-07-31 01:00:12 Starting weather update for New York
+[INFO] 2025-07-31 01:00:12 Fetching data for New York
+[INFO] 2025-07-31 01:00:12 Fetching current weather for New York
+[INFO] 2025-07-31 01:00:12 Weather data written for new_york - Live
+[INFO] 2025-07-31 01:00:12 Stored weather data for New York - 1 entries
+[INFO] 2025-07-31 01:00:12 Current weather fetched for New York
+[WARN] 2025-07-31 01:00:12 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-31 01:00:12 Data fetch completed for New York
+[INFO] 2025-07-31 01:00:12 Weather update completed for New York
+[INFO] 2025-07-31 01:00:12 Fetching current weather for New York
+[INFO] 2025-07-31 01:00:12 Weather data written for new_york - Live
+[INFO] 2025-07-31 01:00:12 Stored weather data for New York - 2 entries
+[INFO] 2025-07-31 01:00:12 Current weather fetched for New York
+[INFO] 2025-07-31 01:00:12 Added current weather data to chart: temperature = 28.12
+[INFO] 2025-07-31 01:00:15 Theme change event triggered
+[INFO] 2025-07-31 01:00:15 Selected theme: Pessimistic
+[INFO] 2025-07-31 01:00:15 Mapped theme name: pessimistic
+[INFO] 2025-07-31 01:00:15 Theme callback exists: True
+[INFO] 2025-07-31 01:00:15 Controller theme set to: pessimistic
+[INFO] 2025-07-31 01:00:15 Theme changed to pessimistic
+[INFO] 2025-07-31 01:00:15 Theme changed to pessimistic
+[INFO] 2025-07-31 01:00:18 Theme change event triggered
+[INFO] 2025-07-31 01:00:18 Selected theme: Optimistic
+[INFO] 2025-07-31 01:00:18 Mapped theme name: optimistic
+[INFO] 2025-07-31 01:00:18 Theme callback exists: True
+[INFO] 2025-07-31 01:00:18 Controller theme set to: optimistic
+[INFO] 2025-07-31 01:00:18 Theme changed to optimistic
+[INFO] 2025-07-31 01:00:18 Theme changed to optimistic
+[INFO] 2025-07-31 01:18:36 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 01:18:36
+[INFO] 2025-07-31 01:18:36 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 01:18:36 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 01:18:36 Preferences applied to application state
+[INFO] 2025-07-31 01:18:36 Registered frame: title
+[INFO] 2025-07-31 01:18:36 Registered frame: control
+[INFO] 2025-07-31 01:18:36 Registered frame: tabbed
+[INFO] 2025-07-31 01:18:36 Registered frame: status_bar
+[INFO] 2025-07-31 01:18:36 Creating dashboard widgets
+[INFO] 2025-07-31 01:18:36 title widget created successfully
+[INFO] 2025-07-31 01:18:36 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 01:18:36 control widgets created successfully
+[INFO] 2025-07-31 01:18:36 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 01:18:37 metric display widgets created successfully
+[INFO] 2025-07-31 01:18:37 chart widgets created successfully
+[INFO] 2025-07-31 01:18:37 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 01:18:37 Registered metric widgets with registry
+[INFO] 2025-07-31 01:18:37 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 01:18:37 Registered chart widgets with registry
+[INFO] 2025-07-31 01:18:37 tabbed display widgets created successfully
+[INFO] 2025-07-31 01:18:37 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 01:18:37 status bar widgets created successfully
+[INFO] 2025-07-31 01:18:37 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 01:18:37 Dashboard widgets created successfully
+[INFO] 2025-07-31 01:18:37 dashboard widgets created successfully
+[INFO] 2025-07-31 01:18:37 Weather data scheduler started
+[ERROR] 2025-07-31 01:18:38 Unexpected error during UI update: main thread is not in main loop
+[ERROR] 2025-07-31 01:18:39 Unexpected error during UI update: main thread is not in main loop
+[ERROR] 2025-07-31 01:18:40 Unexpected error during UI update: main thread is not in main loop
+[INFO] 2025-07-31 01:18:40 Starting weather update for New York
+[INFO] 2025-07-31 01:21:26 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 01:21:26
+[INFO] 2025-07-31 01:21:26 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 01:21:26 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 01:21:26 Preferences applied to application state
+[INFO] 2025-07-31 01:21:26 Registered frame: title
+[INFO] 2025-07-31 01:21:26 Registered frame: control
+[INFO] 2025-07-31 01:21:26 Registered frame: tabbed
+[INFO] 2025-07-31 01:21:26 Registered frame: status_bar
+[INFO] 2025-07-31 01:21:26 Creating dashboard widgets
+[INFO] 2025-07-31 01:21:26 title widget created successfully
+[INFO] 2025-07-31 01:21:26 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 01:21:26 control widgets created successfully
+[INFO] 2025-07-31 01:21:26 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 01:21:27 metric display widgets created successfully
+[INFO] 2025-07-31 01:21:27 chart widgets created successfully
+[INFO] 2025-07-31 01:21:27 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 01:21:27 Registered metric widgets with registry
+[INFO] 2025-07-31 01:21:27 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 01:21:27 Registered chart widgets with registry
+[INFO] 2025-07-31 01:21:27 tabbed display widgets created successfully
+[INFO] 2025-07-31 01:21:27 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 01:21:27 status bar widgets created successfully
+[INFO] 2025-07-31 01:21:27 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 01:21:27 Dashboard widgets created successfully
+[INFO] 2025-07-31 01:21:27 dashboard widgets created successfully
+[INFO] 2025-07-31 01:21:27 Weather data scheduler started
+[ERROR] 2025-07-31 01:21:28 Unexpected error during UI update: main thread is not in main loop
+[ERROR] 2025-07-31 01:21:29 Unexpected error during UI update: main thread is not in main loop
+[ERROR] 2025-07-31 01:21:30 Unexpected error during UI update: main thread is not in main loop
+[INFO] 2025-07-31 01:21:30 Starting weather update for New York
+[ERROR] 2025-07-31 01:21:31 Error during complete state validation: main thread is not in main loop
+[ERROR] 2025-07-31 01:21:31 Input validation error: Invalid application state: Invalid state: unexpected error during state validation: main thread is not in main loop
+[INFO] 2025-07-31 01:21:31 show_error called with: Async operation failed: 'dialog_types'
+[ERROR] 2025-07-31 01:21:32 Unexpected error during UI update: main thread is not in main loop
+[INFO] 2025-07-31 01:25:00 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 01:25:00
+[INFO] 2025-07-31 01:25:00 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 01:25:00 Preferences loaded from C:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 01:25:00 Preferences applied to application state
+[INFO] 2025-07-31 01:25:00 Registered frame: title
+[INFO] 2025-07-31 01:25:00 Registered frame: control
+[INFO] 2025-07-31 01:25:00 Registered frame: tabbed
+[INFO] 2025-07-31 01:25:00 Registered frame: status_bar
+[INFO] 2025-07-31 01:25:00 Creating dashboard widgets
+[INFO] 2025-07-31 01:25:00 title widget created successfully
+[INFO] 2025-07-31 01:25:00 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 01:25:00 control widgets created successfully
+[INFO] 2025-07-31 01:25:00 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 01:25:00 metric display widgets created successfully
+[INFO] 2025-07-31 01:25:00 chart widgets created successfully
+[INFO] 2025-07-31 01:25:00 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 01:25:00 Registered metric widgets with registry
+[INFO] 2025-07-31 01:25:00 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 01:25:00 Registered chart widgets with registry
+[INFO] 2025-07-31 01:25:00 tabbed display widgets created successfully
+[INFO] 2025-07-31 01:25:00 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 01:25:00 status bar widgets created successfully
+[INFO] 2025-07-31 01:25:00 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 01:25:00 Dashboard widgets created successfully
+[INFO] 2025-07-31 01:25:00 dashboard widgets created successfully
+[INFO] 2025-07-31 01:25:00 Weather data scheduler started
+[ERROR] 2025-07-31 01:25:01 Unexpected error during UI update: main thread is not in main loop
+[ERROR] 2025-07-31 01:25:02 Unexpected error during UI update: main thread is not in main loop
+[ERROR] 2025-07-31 01:25:03 Unexpected error during UI update: main thread is not in main loop
+[INFO] 2025-07-31 01:25:03 Starting weather update for New York
+[ERROR] 2025-07-31 01:25:04 Error during complete state validation: main thread is not in main loop
+[ERROR] 2025-07-31 01:25:04 Input validation error: Invalid application state: Invalid state: unexpected error during state validation: main thread is not in main loop
+[INFO] 2025-07-31 01:25:04 show_error called with: Async operation failed: 'dialog_types'
+[ERROR] 2025-07-31 01:25:05 Unexpected error during UI update: main thread is not in main loop
+[INFO] 2025-07-31 01:26:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 01:26:46
+[INFO] 2025-07-31 01:26:46 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 01:26:46 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 01:26:46 Preferences applied to application state
+[INFO] 2025-07-31 01:26:46 Registered frame: title
+[INFO] 2025-07-31 01:26:46 Registered frame: control
+[INFO] 2025-07-31 01:26:46 Registered frame: tabbed
+[INFO] 2025-07-31 01:26:46 Registered frame: status_bar
+[INFO] 2025-07-31 01:26:46 Creating dashboard widgets
+[INFO] 2025-07-31 01:26:46 title widget created successfully
+[INFO] 2025-07-31 01:26:46 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 01:26:46 Preferences saved
+[INFO] 2025-07-31 01:26:46 control widgets created successfully
+[INFO] 2025-07-31 01:26:46 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 01:26:46 metric display widgets created successfully
+[INFO] 2025-07-31 01:26:46 chart widgets created successfully
+[INFO] 2025-07-31 01:26:46 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 01:26:46 Registered metric widgets with registry
+[INFO] 2025-07-31 01:26:46 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 01:26:46 Registered chart widgets with registry
+[INFO] 2025-07-31 01:26:46 tabbed display widgets created successfully
+[INFO] 2025-07-31 01:26:46 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 01:26:46 status bar widgets created successfully
+[INFO] 2025-07-31 01:26:46 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 01:26:46 Dashboard widgets created successfully
+[INFO] 2025-07-31 01:26:46 dashboard widgets created successfully
+[INFO] 2025-07-31 01:26:46 Weather data scheduler started
+[INFO] 2025-07-31 01:26:46 Starting weather update for New York
+[INFO] 2025-07-31 01:26:46 Fetching data for New York
+[INFO] 2025-07-31 01:26:46 Fetching current weather for New York
+[INFO] 2025-07-31 01:26:47 Weather data written for new_york - Live
+[INFO] 2025-07-31 01:26:47 Stored weather data for New York - 1 entries
+[INFO] 2025-07-31 01:26:47 Current weather fetched for New York
+[WARN] 2025-07-31 01:26:47 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-31 01:26:47 Data fetch completed for New York
+[INFO] 2025-07-31 01:26:47 Weather update completed for New York
+[INFO] 2025-07-31 01:26:47 Fetching current weather for New York
+[INFO] 2025-07-31 01:26:47 Weather data written for new_york - Live
+[INFO] 2025-07-31 01:26:47 Stored weather data for New York - 2 entries
+[INFO] 2025-07-31 01:26:47 Current weather fetched for New York
+[INFO] 2025-07-31 01:26:47 Added current weather data to chart: temperature = 27.97
+[INFO] 2025-07-31 01:26:50 Theme change event triggered
+[INFO] 2025-07-31 01:26:50 Selected theme: Pessimistic
+[INFO] 2025-07-31 01:26:50 Mapped theme name: pessimistic
+[INFO] 2025-07-31 01:26:50 Theme callback exists: True
+[INFO] 2025-07-31 01:26:50 Controller theme set to: pessimistic
+[INFO] 2025-07-31 01:26:51 Theme changed to pessimistic
+[INFO] 2025-07-31 01:26:51 Theme changed to pessimistic
+[INFO] 2025-07-31 01:26:53 Theme change event triggered
+[INFO] 2025-07-31 01:26:53 Selected theme: Optimistic
+[INFO] 2025-07-31 01:26:53 Mapped theme name: optimistic
+[INFO] 2025-07-31 01:26:53 Theme callback exists: True
+[INFO] 2025-07-31 01:26:53 Controller theme set to: optimistic
+[INFO] 2025-07-31 01:26:53 Theme changed to optimistic
+[INFO] 2025-07-31 01:26:53 Theme changed to optimistic
+[INFO] 2025-07-31 01:26:57 Theme change event triggered
+[INFO] 2025-07-31 01:26:57 Selected theme: Neutral
+[INFO] 2025-07-31 01:26:57 Mapped theme name: neutral
+[INFO] 2025-07-31 01:26:57 Theme callback exists: True
+[INFO] 2025-07-31 01:26:57 Controller theme set to: neutral
+[INFO] 2025-07-31 01:26:57 Theme changed to neutral
+[INFO] 2025-07-31 01:26:57 Theme changed to neutral
+[INFO] 2025-07-31 01:59:29 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 01:59:29
+[INFO] 2025-07-31 01:59:29 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 01:59:29 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 01:59:29 Preferences applied to application state
+[INFO] 2025-07-31 01:59:29 Registered frame: title
+[INFO] 2025-07-31 01:59:29 Registered frame: control
+[INFO] 2025-07-31 01:59:29 Registered frame: tabbed
+[INFO] 2025-07-31 01:59:29 Registered frame: status_bar
+[INFO] 2025-07-31 01:59:29 Creating dashboard widgets
+[INFO] 2025-07-31 01:59:29 title widget created successfully
+[INFO] 2025-07-31 01:59:29 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 01:59:29 Preferences saved
+[INFO] 2025-07-31 01:59:29 control widgets created successfully
+[INFO] 2025-07-31 01:59:29 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 01:59:29 metric display widgets created successfully
+[INFO] 2025-07-31 01:59:29 chart widgets created successfully
+[INFO] 2025-07-31 01:59:29 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 01:59:29 Registered metric widgets with registry
+[INFO] 2025-07-31 01:59:29 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 01:59:29 Registered chart widgets with registry
+[INFO] 2025-07-31 01:59:29 tabbed display widgets created successfully
+[INFO] 2025-07-31 01:59:29 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 01:59:29 status bar widgets created successfully
+[INFO] 2025-07-31 01:59:29 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 01:59:29 Dashboard widgets created successfully
+[INFO] 2025-07-31 01:59:29 dashboard widgets created successfully
+[INFO] 2025-07-31 01:59:29 Weather data scheduler started
+[INFO] 2025-07-31 01:59:29 Starting weather update for New York
+[INFO] 2025-07-31 01:59:29 Fetching data for New York
+[INFO] 2025-07-31 01:59:29 Fetching current weather for New York
+[INFO] 2025-07-31 01:59:30 Weather data written for new_york - Live
+[INFO] 2025-07-31 01:59:30 Stored weather data for New York - 1 entries
+[INFO] 2025-07-31 01:59:30 Current weather fetched for New York
+[WARN] 2025-07-31 01:59:30 Weather alert: High UV Index Alert - Very high UV exposure: 10 (threshold: 8)
+[INFO] 2025-07-31 01:59:30 Data fetch completed for New York
+[INFO] 2025-07-31 01:59:30 Weather update completed for New York
+[INFO] 2025-07-31 01:59:30 Fetching current weather for New York
+[INFO] 2025-07-31 01:59:30 Weather data written for new_york - Live
+[INFO] 2025-07-31 01:59:30 Stored weather data for New York - 2 entries
+[INFO] 2025-07-31 01:59:30 Current weather fetched for New York
+[INFO] 2025-07-31 01:59:30 Added current weather data to chart: temperature = 28.1

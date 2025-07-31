@@ -13,6 +13,8 @@ Functions:
 from tkinter import ttk
 from typing import Dict, Any
 
+from WeatherDashboard.features.themes.theme_manager import theme_manager, Theme
+
 # Import theme modules
 from WeatherDashboard.features.themes.optimistic_styles import (
     OPTIMISTIC_COLORS, OPTIMISTIC_FONTS, OPTIMISTIC_MESSAGING, 
