@@ -11267,3 +11267,1121 @@
 [INFO] 2025-07-30 19:44:56 Stored weather data for New York - 2 entries
 [INFO] 2025-07-30 19:44:56 Current weather fetched for New York
 [INFO] 2025-07-30 19:44:56 Added current weather data to chart: temperature = 29.49
+[INFO] 2025-07-30 19:51:55 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 19:51:55
+[INFO] 2025-07-30 19:51:55 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 19:51:55 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 19:51:55 Preferences applied to application state
+[INFO] 2025-07-30 19:51:55 Registered frame: title
+[INFO] 2025-07-30 19:51:55 Registered frame: control
+[INFO] 2025-07-30 19:51:55 Registered frame: tabbed
+[INFO] 2025-07-30 19:51:55 Registered frame: status_bar
+[INFO] 2025-07-30 19:51:55 Creating dashboard widgets
+[INFO] 2025-07-30 19:51:55 title widget created successfully
+[INFO] 2025-07-30 19:51:55 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 19:51:55 Preferences saved
+[INFO] 2025-07-30 19:51:55 control widgets created successfully
+[INFO] 2025-07-30 19:51:55 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 19:51:55 metric display widgets created successfully
+[INFO] 2025-07-30 19:51:55 chart widgets created successfully
+[INFO] 2025-07-30 19:51:55 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 19:51:55 Registered metric widgets with registry
+[INFO] 2025-07-30 19:51:55 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 19:51:55 Registered chart widgets with registry
+[INFO] 2025-07-30 19:51:55 tabbed display widgets created successfully
+[INFO] 2025-07-30 19:51:55 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 19:51:55 status bar widgets created successfully
+[INFO] 2025-07-30 19:51:55 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 19:51:55 Dashboard widgets created successfully
+[INFO] 2025-07-30 19:51:55 dashboard widgets created successfully
+[INFO] 2025-07-30 19:51:55 Weather data scheduler started
+[INFO] 2025-07-30 19:51:55 Starting weather update for New York
+[INFO] 2025-07-30 19:51:55 Fetching data for New York
+[INFO] 2025-07-30 19:51:55 Fetching current weather for New York
+[INFO] 2025-07-30 19:51:56 Weather data written for new_york - Live
+[INFO] 2025-07-30 19:51:56 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 19:51:56 Current weather fetched for New York
+[WARN] 2025-07-30 19:51:56 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 19:51:56 Data fetch completed for New York
+[INFO] 2025-07-30 19:51:56 Weather update completed for New York
+[INFO] 2025-07-30 19:51:56 Fetching current weather for New York
+[INFO] 2025-07-30 19:51:56 Weather data written for new_york - Live
+[INFO] 2025-07-30 19:51:56 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 19:51:56 Current weather fetched for New York
+[INFO] 2025-07-30 19:51:56 Added current weather data to chart: temperature = 28.94
+[INFO] 2025-07-30 19:53:45 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 19:53:45
+[INFO] 2025-07-30 19:53:45 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 19:53:45 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 19:53:45 Preferences applied to application state
+[INFO] 2025-07-30 19:53:45 Registered frame: title
+[INFO] 2025-07-30 19:53:45 Registered frame: control
+[INFO] 2025-07-30 19:53:45 Registered frame: tabbed
+[INFO] 2025-07-30 19:53:45 Registered frame: status_bar
+[INFO] 2025-07-30 19:53:45 Creating dashboard widgets
+[INFO] 2025-07-30 19:53:45 title widget created successfully
+[INFO] 2025-07-30 19:53:45 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 19:53:45 Preferences saved
+[INFO] 2025-07-30 19:53:45 control widgets created successfully
+[INFO] 2025-07-30 19:53:45 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 19:53:45 metric display widgets created successfully
+[INFO] 2025-07-30 19:53:45 chart widgets created successfully
+[INFO] 2025-07-30 19:53:45 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 19:53:45 Registered metric widgets with registry
+[INFO] 2025-07-30 19:53:45 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 19:53:45 Registered chart widgets with registry
+[INFO] 2025-07-30 19:53:45 tabbed display widgets created successfully
+[INFO] 2025-07-30 19:53:45 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 19:53:45 status bar widgets created successfully
+[INFO] 2025-07-30 19:53:45 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 19:53:45 Dashboard widgets created successfully
+[INFO] 2025-07-30 19:53:45 dashboard widgets created successfully
+[INFO] 2025-07-30 19:53:45 Weather data scheduler started
+[INFO] 2025-07-30 19:53:45 Starting weather update for New York
+[INFO] 2025-07-30 19:53:45 Fetching data for New York
+[INFO] 2025-07-30 19:53:45 Fetching current weather for New York
+[INFO] 2025-07-30 19:53:46 Weather data written for new_york - Live
+[INFO] 2025-07-30 19:53:46 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 19:53:46 Current weather fetched for New York
+[WARN] 2025-07-30 19:53:46 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 19:53:46 Data fetch completed for New York
+[INFO] 2025-07-30 19:53:46 Weather update completed for New York
+[INFO] 2025-07-30 19:53:46 Fetching current weather for New York
+[INFO] 2025-07-30 19:53:46 Weather data written for new_york - Live
+[INFO] 2025-07-30 19:53:46 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 19:53:46 Current weather fetched for New York
+[INFO] 2025-07-30 19:53:46 Added current weather data to chart: temperature = 28.94
+[INFO] 2025-07-30 19:54:57 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 19:54:57
+[INFO] 2025-07-30 19:54:57 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 19:54:57 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 19:54:57 Preferences applied to application state
+[INFO] 2025-07-30 19:54:57 Registered frame: title
+[INFO] 2025-07-30 19:54:57 Registered frame: control
+[INFO] 2025-07-30 19:54:57 Registered frame: tabbed
+[INFO] 2025-07-30 19:54:57 Registered frame: status_bar
+[INFO] 2025-07-30 19:54:57 Creating dashboard widgets
+[INFO] 2025-07-30 19:54:57 title widget created successfully
+[INFO] 2025-07-30 19:54:57 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 19:54:57 Preferences saved
+[INFO] 2025-07-30 19:54:57 control widgets created successfully
+[INFO] 2025-07-30 19:54:57 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 19:54:57 metric display widgets created successfully
+[INFO] 2025-07-30 19:54:58 chart widgets created successfully
+[INFO] 2025-07-30 19:54:58 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 19:54:58 Registered metric widgets with registry
+[INFO] 2025-07-30 19:54:58 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 19:54:58 Registered chart widgets with registry
+[INFO] 2025-07-30 19:54:58 tabbed display widgets created successfully
+[INFO] 2025-07-30 19:54:58 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 19:54:58 status bar widgets created successfully
+[INFO] 2025-07-30 19:54:58 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 19:54:58 Dashboard widgets created successfully
+[INFO] 2025-07-30 19:54:58 dashboard widgets created successfully
+[INFO] 2025-07-30 19:54:58 Weather data scheduler started
+[INFO] 2025-07-30 19:54:58 Starting weather update for New York
+[INFO] 2025-07-30 19:54:58 Fetching data for New York
+[INFO] 2025-07-30 19:54:58 Fetching current weather for New York
+[INFO] 2025-07-30 19:54:58 Weather data written for new_york - Live
+[INFO] 2025-07-30 19:54:58 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 19:54:58 Current weather fetched for New York
+[WARN] 2025-07-30 19:54:58 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 19:54:58 Data fetch completed for New York
+[INFO] 2025-07-30 19:54:58 Weather update completed for New York
+[INFO] 2025-07-30 19:54:58 Fetching current weather for New York
+[INFO] 2025-07-30 19:54:58 Weather data written for new_york - Live
+[INFO] 2025-07-30 19:54:58 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 19:54:58 Current weather fetched for New York
+[INFO] 2025-07-30 19:54:58 Added current weather data to chart: temperature = 28.94
+[INFO] 2025-07-30 19:55:03 Controller theme set to: optimistic
+[INFO] 2025-07-30 19:55:03 Theme changed to optimistic
+[INFO] 2025-07-30 19:55:03 Theme changed to optimistic
+[INFO] 2025-07-30 19:55:05 Controller theme set to: pessimistic
+[INFO] 2025-07-30 19:55:05 Theme changed to pessimistic
+[INFO] 2025-07-30 19:55:05 Theme changed to pessimistic
+[INFO] 2025-07-30 19:55:07 Controller theme set to: optimistic
+[INFO] 2025-07-30 19:55:07 Theme changed to optimistic
+[INFO] 2025-07-30 19:55:07 Theme changed to optimistic
+[INFO] 2025-07-30 20:01:03 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 20:01:03
+[INFO] 2025-07-30 20:01:03 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 20:01:03 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 20:01:03 Preferences applied to application state
+[INFO] 2025-07-30 20:01:03 Registered frame: title
+[INFO] 2025-07-30 20:01:03 Registered frame: control
+[INFO] 2025-07-30 20:01:03 Registered frame: tabbed
+[INFO] 2025-07-30 20:01:03 Registered frame: status_bar
+[INFO] 2025-07-30 20:01:03 Creating dashboard widgets
+[INFO] 2025-07-30 20:01:03 title widget created successfully
+[INFO] 2025-07-30 20:01:03 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 20:01:03 Preferences saved
+[INFO] 2025-07-30 20:01:03 control widgets created successfully
+[INFO] 2025-07-30 20:01:03 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 20:01:04 metric display widgets created successfully
+[INFO] 2025-07-30 20:01:04 chart widgets created successfully
+[INFO] 2025-07-30 20:01:04 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 20:01:04 Registered metric widgets with registry
+[INFO] 2025-07-30 20:01:04 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 20:01:04 Registered chart widgets with registry
+[INFO] 2025-07-30 20:01:04 tabbed display widgets created successfully
+[INFO] 2025-07-30 20:01:04 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 20:01:04 status bar widgets created successfully
+[INFO] 2025-07-30 20:01:04 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 20:01:04 Dashboard widgets created successfully
+[INFO] 2025-07-30 20:01:04 dashboard widgets created successfully
+[INFO] 2025-07-30 20:01:04 Weather data scheduler started
+[INFO] 2025-07-30 20:01:04 Starting weather update for New York
+[INFO] 2025-07-30 20:01:04 Fetching data for New York
+[INFO] 2025-07-30 20:01:04 Fetching current weather for New York
+[INFO] 2025-07-30 20:01:04 Weather data written for new_york - Live
+[INFO] 2025-07-30 20:01:04 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 20:01:04 Current weather fetched for New York
+[WARN] 2025-07-30 20:01:04 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 20:01:04 Data fetch completed for New York
+[INFO] 2025-07-30 20:01:04 Weather update completed for New York
+[INFO] 2025-07-30 20:01:04 Fetching current weather for New York
+[INFO] 2025-07-30 20:01:05 Weather data written for new_york - Live
+[INFO] 2025-07-30 20:01:05 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 20:01:05 Current weather fetched for New York
+[INFO] 2025-07-30 20:01:05 Added current weather data to chart: temperature = 28.94
+[INFO] 2025-07-30 20:01:08 Controller theme set to: optimistic
+[INFO] 2025-07-30 20:01:08 Theme changed to optimistic
+[INFO] 2025-07-30 20:01:08 Theme changed to optimistic
+[INFO] 2025-07-30 20:01:16 Controller theme set to: pessimistic
+[INFO] 2025-07-30 20:01:16 Theme changed to pessimistic
+[INFO] 2025-07-30 20:01:16 Theme changed to pessimistic
+[INFO] 2025-07-30 20:01:28 Controller theme set to: neutral
+[INFO] 2025-07-30 20:01:28 Theme changed to neutral
+[INFO] 2025-07-30 20:01:28 Theme changed to neutral
+[INFO] 2025-07-30 20:01:30 Controller theme set to: optimistic
+[INFO] 2025-07-30 20:01:30 Theme changed to optimistic
+[INFO] 2025-07-30 20:01:30 Theme changed to optimistic
+[INFO] 2025-07-30 20:01:33 Controller theme set to: pessimistic
+[INFO] 2025-07-30 20:01:33 Theme changed to pessimistic
+[INFO] 2025-07-30 20:01:33 Theme changed to pessimistic
+[INFO] 2025-07-30 20:03:59 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 20:03:59
+[INFO] 2025-07-30 20:03:59 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 20:04:00 Preferences loaded from C:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 20:04:00 Preferences applied to application state
+[INFO] 2025-07-30 20:04:00 Registered frame: title
+[INFO] 2025-07-30 20:04:00 Registered frame: control
+[INFO] 2025-07-30 20:04:00 Registered frame: tabbed
+[INFO] 2025-07-30 20:04:00 Registered frame: status_bar
+[INFO] 2025-07-30 20:04:00 Creating dashboard widgets
+[INFO] 2025-07-30 20:04:00 title widget created successfully
+[INFO] 2025-07-30 20:04:00 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 20:04:00 Preferences saved
+[INFO] 2025-07-30 20:04:00 control widgets created successfully
+[INFO] 2025-07-30 20:04:00 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 20:04:00 metric display widgets created successfully
+[INFO] 2025-07-30 20:04:00 chart widgets created successfully
+[INFO] 2025-07-30 20:04:00 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 20:04:00 Registered metric widgets with registry
+[INFO] 2025-07-30 20:04:00 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 20:04:00 Registered chart widgets with registry
+[INFO] 2025-07-30 20:04:00 tabbed display widgets created successfully
+[INFO] 2025-07-30 20:04:00 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 20:04:00 status bar widgets created successfully
+[INFO] 2025-07-30 20:04:00 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 20:04:00 Dashboard widgets created successfully
+[INFO] 2025-07-30 20:04:00 dashboard widgets created successfully
+[INFO] 2025-07-30 20:04:00 Weather data scheduler started
+[INFO] 2025-07-30 20:04:00 Starting weather update for New York
+[INFO] 2025-07-30 20:04:00 Fetching data for New York
+[INFO] 2025-07-30 20:04:00 Fetching current weather for New York
+[INFO] 2025-07-30 20:04:00 Weather data written for new_york - Live
+[INFO] 2025-07-30 20:04:00 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 20:04:00 Current weather fetched for New York
+[WARN] 2025-07-30 20:04:00 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 20:04:01 Data fetch completed for New York
+[INFO] 2025-07-30 20:04:01 Weather update completed for New York
+[INFO] 2025-07-30 20:04:01 Fetching current weather for New York
+[INFO] 2025-07-30 20:04:01 Weather data written for new_york - Live
+[INFO] 2025-07-30 20:04:01 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 20:04:01 Current weather fetched for New York
+[INFO] 2025-07-30 20:04:01 Added current weather data to chart: temperature = 28.62
+[INFO] 2025-07-30 22:28:36 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 22:28:36
+[INFO] 2025-07-30 22:28:36 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 22:28:36 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 22:28:36 Preferences applied to application state
+[INFO] 2025-07-30 22:28:36 Registered frame: title
+[INFO] 2025-07-30 22:28:36 Registered frame: control
+[INFO] 2025-07-30 22:28:36 Registered frame: tabbed
+[INFO] 2025-07-30 22:28:36 Registered frame: status_bar
+[INFO] 2025-07-30 22:28:36 Creating dashboard widgets
+[INFO] 2025-07-30 22:28:36 title widget created successfully
+[INFO] 2025-07-30 22:28:36 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 22:28:36 Preferences saved
+[INFO] 2025-07-30 22:28:36 control widgets created successfully
+[INFO] 2025-07-30 22:28:36 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 22:28:36 metric display widgets created successfully
+[INFO] 2025-07-30 22:28:36 chart widgets created successfully
+[INFO] 2025-07-30 22:28:36 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 22:28:36 Registered metric widgets with registry
+[INFO] 2025-07-30 22:28:36 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 22:28:36 Registered chart widgets with registry
+[INFO] 2025-07-30 22:28:36 tabbed display widgets created successfully
+[INFO] 2025-07-30 22:28:36 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 22:28:36 status bar widgets created successfully
+[INFO] 2025-07-30 22:28:36 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 22:28:36 Dashboard widgets created successfully
+[INFO] 2025-07-30 22:28:36 dashboard widgets created successfully
+[INFO] 2025-07-30 22:28:36 Weather data scheduler started
+[INFO] 2025-07-30 22:28:37 Starting weather update for New York
+[INFO] 2025-07-30 22:28:37 Fetching data for New York
+[INFO] 2025-07-30 22:28:37 Fetching current weather for New York
+[INFO] 2025-07-30 22:28:37 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:28:37 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 22:28:37 Current weather fetched for New York
+[WARN] 2025-07-30 22:28:37 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:28:37 Data fetch completed for New York
+[INFO] 2025-07-30 22:28:37 Weather update completed for New York
+[INFO] 2025-07-30 22:28:37 Fetching current weather for New York
+[INFO] 2025-07-30 22:28:37 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:28:37 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 22:28:37 Current weather fetched for New York
+[INFO] 2025-07-30 22:28:37 Added current weather data to chart: temperature = 28.42
+[ERROR] 2025-07-30 22:28:40 Error handling theme change: 'NoneType' object has no attribute 'get'
+[ERROR] 2025-07-30 22:28:43 Error handling theme change: 'NoneType' object has no attribute 'get'
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:49 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:50 Preferences saved
+[INFO] 2025-07-30 22:28:51 Preferences saved
+[INFO] 2025-07-30 22:28:51 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:28:51 Starting weather update for New York
+[ERROR] 2025-07-30 22:28:51 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-07-30 22:28:54 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-07-30 22:28:54 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:56 Preferences saved
+[INFO] 2025-07-30 22:28:57 Preferences saved
+[INFO] 2025-07-30 22:28:57 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:28:57 Starting weather update for New York
+[INFO] 2025-07-30 22:28:57 Fetching data for New York
+[INFO] 2025-07-30 22:28:57 Fetching current weather for New York
+[INFO] 2025-07-30 22:28:57 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:28:57 Stored weather data for New York - 3 entries
+[INFO] 2025-07-30 22:28:57 Current weather fetched for New York
+[WARN] 2025-07-30 22:28:57 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:28:57 Data fetch completed for New York
+[INFO] 2025-07-30 22:28:57 Weather update completed for New York
+[INFO] 2025-07-30 22:28:57 Fetching current weather for New York
+[INFO] 2025-07-30 22:28:57 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:28:57 Stored weather data for New York - 4 entries
+[INFO] 2025-07-30 22:28:57 Current weather fetched for New York
+[INFO] 2025-07-30 22:28:57 Added current weather data to chart: air_quality_index = 2
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:58 Preferences saved
+[INFO] 2025-07-30 22:28:59 Preferences saved
+[INFO] 2025-07-30 22:28:59 Preferences saved
+[INFO] 2025-07-30 22:29:00 Preferences saved
+[INFO] 2025-07-30 22:29:00 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:29:00 Starting weather update for New York
+[WARN] 2025-07-30 22:29:00 Fetch blocked due to rate limiting.
+[INFO] 2025-07-30 22:29:00 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-07-30 22:29:00 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-07-30 22:29:02 Preferences saved
+[INFO] 2025-07-30 22:29:02 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:29:02 Starting weather update for New York
+[INFO] 2025-07-30 22:29:02 Fetching data for New York
+[INFO] 2025-07-30 22:29:02 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:02 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:02 Stored weather data for New York - 5 entries
+[INFO] 2025-07-30 22:29:02 Current weather fetched for New York
+[INFO] 2025-07-30 22:29:02 Data fetch completed for New York
+[INFO] 2025-07-30 22:29:02 Weather update completed for New York
+[INFO] 2025-07-30 22:29:02 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:03 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:03 Stored weather data for New York - 6 entries
+[INFO] 2025-07-30 22:29:03 Current weather fetched for New York
+[INFO] 2025-07-30 22:29:03 Added current weather data to chart: humidity = 72
+[INFO] 2025-07-30 22:29:17 Preferences saved
+[INFO] 2025-07-30 22:29:17 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:29:17 Starting weather update for New York
+[INFO] 2025-07-30 22:29:17 Fetching data for New York
+[INFO] 2025-07-30 22:29:17 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:17 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:17 Stored weather data for New York - 7 entries
+[INFO] 2025-07-30 22:29:17 Current weather fetched for New York
+[INFO] 2025-07-30 22:29:17 Data fetch completed for New York
+[INFO] 2025-07-30 22:29:17 Weather update completed for New York
+[INFO] 2025-07-30 22:29:17 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:17 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:17 Stored weather data for New York - 8 entries
+[INFO] 2025-07-30 22:29:17 Current weather fetched for New York
+[INFO] 2025-07-30 22:29:17 Added current weather data to chart: humidity = 72
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:23 Preferences saved
+[INFO] 2025-07-30 22:29:24 Preferences saved
+[INFO] 2025-07-30 22:29:24 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:29:24 Starting weather update for New York
+[INFO] 2025-07-30 22:29:24 Fetching data for New York
+[INFO] 2025-07-30 22:29:24 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:24 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:24 Stored weather data for New York - 9 entries
+[INFO] 2025-07-30 22:29:24 Current weather fetched for New York
+[WARN] 2025-07-30 22:29:24 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:29:24 Data fetch completed for New York
+[INFO] 2025-07-30 22:29:24 Weather update completed for New York
+[INFO] 2025-07-30 22:29:24 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:24 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:24 Stored weather data for New York - 10 entries
+[INFO] 2025-07-30 22:29:24 Current weather fetched for New York
+[INFO] 2025-07-30 22:29:24 Added current weather data to chart: humidity = 72
+[ERROR] 2025-07-30 22:29:30 Error handling theme change: 'NoneType' object has no attribute 'get'
+[INFO] 2025-07-30 22:29:31 Preferences saved
+[INFO] 2025-07-30 22:29:31 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:29:31 Starting weather update for New York
+[INFO] 2025-07-30 22:29:31 Fetching data for New York
+[INFO] 2025-07-30 22:29:31 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:32 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:32 Stored weather data for New York - 11 entries
+[INFO] 2025-07-30 22:29:32 Current weather fetched for New York
+[WARN] 2025-07-30 22:29:32 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:29:32 Data fetch completed for New York
+[INFO] 2025-07-30 22:29:32 Weather update completed for New York
+[INFO] 2025-07-30 22:29:32 Fetching current weather for New York
+[INFO] 2025-07-30 22:29:32 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:29:32 Stored weather data for New York - 12 entries
+[INFO] 2025-07-30 22:29:32 Current weather fetched for New York
+[INFO] 2025-07-30 22:29:32 Added current weather data to chart: humidity = 72
+[INFO] 2025-07-30 22:36:32 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 22:36:32
+[INFO] 2025-07-30 22:36:32 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 22:36:33 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 22:36:33 Preferences applied to application state
+[INFO] 2025-07-30 22:36:33 Registered frame: title
+[INFO] 2025-07-30 22:36:33 Registered frame: control
+[INFO] 2025-07-30 22:36:33 Registered frame: tabbed
+[INFO] 2025-07-30 22:36:33 Registered frame: status_bar
+[INFO] 2025-07-30 22:36:33 Creating dashboard widgets
+[INFO] 2025-07-30 22:36:33 title widget created successfully
+[INFO] 2025-07-30 22:36:33 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 22:36:33 Preferences saved
+[INFO] 2025-07-30 22:36:33 control widgets created successfully
+[INFO] 2025-07-30 22:36:33 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 22:36:33 metric display widgets created successfully
+[INFO] 2025-07-30 22:36:33 chart widgets created successfully
+[INFO] 2025-07-30 22:36:33 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 22:36:33 Registered metric widgets with registry
+[INFO] 2025-07-30 22:36:33 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 22:36:33 Registered chart widgets with registry
+[INFO] 2025-07-30 22:36:33 tabbed display widgets created successfully
+[INFO] 2025-07-30 22:36:33 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 22:36:33 status bar widgets created successfully
+[INFO] 2025-07-30 22:36:33 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 22:36:33 Dashboard widgets created successfully
+[INFO] 2025-07-30 22:36:33 dashboard widgets created successfully
+[INFO] 2025-07-30 22:36:33 Weather data scheduler started
+[INFO] 2025-07-30 22:36:33 Starting weather update for New York
+[INFO] 2025-07-30 22:36:33 Fetching data for New York
+[INFO] 2025-07-30 22:36:33 Fetching current weather for New York
+[INFO] 2025-07-30 22:36:33 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:36:33 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 22:36:33 Current weather fetched for New York
+[WARN] 2025-07-30 22:36:33 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:36:33 Data fetch completed for New York
+[INFO] 2025-07-30 22:36:33 Weather update completed for New York
+[INFO] 2025-07-30 22:36:33 Fetching current weather for New York
+[INFO] 2025-07-30 22:36:34 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:36:34 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 22:36:34 Current weather fetched for New York
+[INFO] 2025-07-30 22:36:34 Added current weather data to chart: temperature = 28.46
+[INFO] 2025-07-30 22:46:40 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 22:46:40
+[INFO] 2025-07-30 22:46:40 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 22:46:40 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 22:46:40 Preferences applied to application state
+[INFO] 2025-07-30 22:46:40 Registered frame: title
+[INFO] 2025-07-30 22:46:40 Registered frame: control
+[INFO] 2025-07-30 22:46:40 Registered frame: tabbed
+[INFO] 2025-07-30 22:46:40 Registered frame: status_bar
+[INFO] 2025-07-30 22:46:40 Creating dashboard widgets
+[INFO] 2025-07-30 22:46:40 title widget created successfully
+[INFO] 2025-07-30 22:46:40 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 22:46:40 Preferences saved
+[INFO] 2025-07-30 22:46:40 control widgets created successfully
+[INFO] 2025-07-30 22:46:40 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 22:46:40 metric display widgets created successfully
+[INFO] 2025-07-30 22:46:40 chart widgets created successfully
+[INFO] 2025-07-30 22:46:40 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 22:46:40 Registered metric widgets with registry
+[INFO] 2025-07-30 22:46:40 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 22:46:40 Registered chart widgets with registry
+[INFO] 2025-07-30 22:46:40 tabbed display widgets created successfully
+[INFO] 2025-07-30 22:46:40 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 22:46:40 status bar widgets created successfully
+[INFO] 2025-07-30 22:46:40 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 22:46:40 Dashboard widgets created successfully
+[INFO] 2025-07-30 22:46:40 dashboard widgets created successfully
+[INFO] 2025-07-30 22:46:40 Weather data scheduler started
+[INFO] 2025-07-30 22:46:40 Starting weather update for New York
+[INFO] 2025-07-30 22:46:40 Fetching data for New York
+[INFO] 2025-07-30 22:46:40 Fetching current weather for New York
+[INFO] 2025-07-30 22:46:41 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:46:41 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 22:46:41 Current weather fetched for New York
+[WARN] 2025-07-30 22:46:41 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:46:41 Data fetch completed for New York
+[INFO] 2025-07-30 22:46:41 Weather update completed for New York
+[INFO] 2025-07-30 22:46:41 Fetching current weather for New York
+[INFO] 2025-07-30 22:46:41 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:46:41 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 22:46:41 Current weather fetched for New York
+[INFO] 2025-07-30 22:46:41 Added current weather data to chart: temperature = 28.51
+[ERROR] 2025-07-30 22:46:43 Error handling theme change: 'NoneType' object has no attribute 'get'
+[ERROR] 2025-07-30 22:46:45 Error handling theme change: 'NoneType' object has no attribute 'get'
+[INFO] 2025-07-30 22:46:49 Weather data scheduler stopped
+[INFO] 2025-07-30 22:46:50 Weather data scheduler started
+[INFO] 2025-07-30 22:51:39 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 22:51:39
+[INFO] 2025-07-30 22:51:39 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 22:51:39 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 22:51:39 Preferences applied to application state
+[INFO] 2025-07-30 22:51:39 Registered frame: title
+[INFO] 2025-07-30 22:51:39 Registered frame: control
+[INFO] 2025-07-30 22:51:39 Registered frame: tabbed
+[INFO] 2025-07-30 22:51:39 Registered frame: status_bar
+[INFO] 2025-07-30 22:51:39 Creating dashboard widgets
+[INFO] 2025-07-30 22:51:39 title widget created successfully
+[INFO] 2025-07-30 22:51:39 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 22:51:40 Preferences saved
+[INFO] 2025-07-30 22:51:40 control widgets created successfully
+[INFO] 2025-07-30 22:51:40 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 22:51:40 metric display widgets created successfully
+[INFO] 2025-07-30 22:51:40 chart widgets created successfully
+[INFO] 2025-07-30 22:51:40 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 22:51:40 Registered metric widgets with registry
+[INFO] 2025-07-30 22:51:40 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 22:51:40 Registered chart widgets with registry
+[INFO] 2025-07-30 22:51:40 tabbed display widgets created successfully
+[INFO] 2025-07-30 22:51:40 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 22:51:40 status bar widgets created successfully
+[INFO] 2025-07-30 22:51:40 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 22:51:40 Dashboard widgets created successfully
+[INFO] 2025-07-30 22:51:40 dashboard widgets created successfully
+[INFO] 2025-07-30 22:51:40 Weather data scheduler started
+[INFO] 2025-07-30 22:51:40 Starting weather update for New York
+[INFO] 2025-07-30 22:51:40 Fetching data for New York
+[INFO] 2025-07-30 22:51:40 Fetching current weather for New York
+[INFO] 2025-07-30 22:51:40 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:51:40 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 22:51:40 Current weather fetched for New York
+[WARN] 2025-07-30 22:51:40 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:51:40 Data fetch completed for New York
+[INFO] 2025-07-30 22:51:40 Weather update completed for New York
+[INFO] 2025-07-30 22:51:40 Fetching current weather for New York
+[INFO] 2025-07-30 22:51:41 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:51:41 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 22:51:41 Current weather fetched for New York
+[INFO] 2025-07-30 22:51:41 Added current weather data to chart: temperature = 28.51
+[INFO] 2025-07-30 22:54:18 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 22:54:18
+[INFO] 2025-07-30 22:54:18 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 22:54:18 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 22:54:18 Preferences applied to application state
+[INFO] 2025-07-30 22:54:18 Registered frame: title
+[INFO] 2025-07-30 22:54:18 Registered frame: control
+[INFO] 2025-07-30 22:54:18 Registered frame: tabbed
+[INFO] 2025-07-30 22:54:18 Registered frame: status_bar
+[INFO] 2025-07-30 22:54:18 Creating dashboard widgets
+[INFO] 2025-07-30 22:54:18 title widget created successfully
+[INFO] 2025-07-30 22:54:18 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 22:54:18 Preferences saved
+[INFO] 2025-07-30 22:54:18 control widgets created successfully
+[INFO] 2025-07-30 22:54:18 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 22:54:18 metric display widgets created successfully
+[INFO] 2025-07-30 22:54:18 chart widgets created successfully
+[INFO] 2025-07-30 22:54:18 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 22:54:18 Registered metric widgets with registry
+[INFO] 2025-07-30 22:54:18 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 22:54:18 Registered chart widgets with registry
+[INFO] 2025-07-30 22:54:18 tabbed display widgets created successfully
+[INFO] 2025-07-30 22:54:18 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 22:54:18 status bar widgets created successfully
+[INFO] 2025-07-30 22:54:18 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 22:54:18 Dashboard widgets created successfully
+[INFO] 2025-07-30 22:54:18 dashboard widgets created successfully
+[INFO] 2025-07-30 22:54:18 Weather data scheduler started
+[INFO] 2025-07-30 22:54:18 Starting weather update for New York
+[INFO] 2025-07-30 22:54:18 Fetching data for New York
+[INFO] 2025-07-30 22:54:18 Fetching current weather for New York
+[INFO] 2025-07-30 22:54:19 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:54:19 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 22:54:19 Current weather fetched for New York
+[WARN] 2025-07-30 22:54:19 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:54:19 Data fetch completed for New York
+[INFO] 2025-07-30 22:54:19 Weather update completed for New York
+[INFO] 2025-07-30 22:54:19 Fetching current weather for New York
+[INFO] 2025-07-30 22:54:19 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:54:19 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 22:54:19 Current weather fetched for New York
+[INFO] 2025-07-30 22:54:19 Added current weather data to chart: temperature = 28.51
+[INFO] 2025-07-30 22:54:21 Theme change event triggered
+[INFO] 2025-07-30 22:54:21 Selected theme: Pessimistic
+[INFO] 2025-07-30 22:54:21 Mapped theme name: pessimistic
+[INFO] 2025-07-30 22:54:21 Theme callback exists: True
+[INFO] 2025-07-30 22:54:21 Controller theme set to: pessimistic
+[INFO] 2025-07-30 22:54:22 Theme changed to pessimistic
+[INFO] 2025-07-30 22:54:22 Theme changed to pessimistic
+[INFO] 2025-07-30 22:54:26 Theme change event triggered
+[INFO] 2025-07-30 22:54:26 Selected theme: Optimistic
+[INFO] 2025-07-30 22:54:26 Mapped theme name: optimistic
+[INFO] 2025-07-30 22:54:26 Theme callback exists: True
+[INFO] 2025-07-30 22:54:26 Controller theme set to: optimistic
+[INFO] 2025-07-30 22:54:26 Theme changed to optimistic
+[INFO] 2025-07-30 22:54:26 Theme changed to optimistic
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:32 Preferences saved
+[INFO] 2025-07-30 22:54:33 Preferences saved
+[INFO] 2025-07-30 22:54:33 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:34 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:35 Preferences saved
+[INFO] 2025-07-30 22:54:36 Preferences saved
+[INFO] 2025-07-30 22:54:36 Preferences saved
+[INFO] 2025-07-30 22:54:37 Preferences saved
+[INFO] 2025-07-30 22:54:37 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:54:37 Starting weather update for New York
+[INFO] 2025-07-30 22:54:37 Fetching data for New York
+[INFO] 2025-07-30 22:54:37 Fetching current weather for New York
+[INFO] 2025-07-30 22:54:37 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:54:37 Stored weather data for New York - 3 entries
+[INFO] 2025-07-30 22:54:37 Current weather fetched for New York
+[INFO] 2025-07-30 22:54:37 Data fetch completed for New York
+[INFO] 2025-07-30 22:54:37 Weather update completed for New York
+[INFO] 2025-07-30 22:54:37 Fetching current weather for New York
+[INFO] 2025-07-30 22:54:37 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:54:37 Stored weather data for New York - 4 entries
+[INFO] 2025-07-30 22:54:37 Current weather fetched for New York
+[INFO] 2025-07-30 22:54:37 Added current weather data to chart: temperature = 28.51
+[INFO] 2025-07-30 22:54:42 Theme change event triggered
+[INFO] 2025-07-30 22:54:42 Selected theme: Pessimistic
+[INFO] 2025-07-30 22:54:42 Mapped theme name: pessimistic
+[INFO] 2025-07-30 22:54:42 Theme callback exists: True
+[INFO] 2025-07-30 22:54:42 Controller theme set to: pessimistic
+[INFO] 2025-07-30 22:54:42 Theme changed to pessimistic
+[INFO] 2025-07-30 22:54:42 Theme changed to pessimistic
+[INFO] 2025-07-30 22:54:46 Preferences saved
+[INFO] 2025-07-30 22:54:48 Preferences saved
+[INFO] 2025-07-30 22:54:48 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:54:48 Starting weather update for New York
+[INFO] 2025-07-30 22:54:48 Fetching data for New York
+[INFO] 2025-07-30 22:54:48 Fetching current weather for New York
+[INFO] 2025-07-30 22:54:48 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:54:48 Stored weather data for New York - 5 entries
+[INFO] 2025-07-30 22:54:48 Current weather fetched for New York
+[INFO] 2025-07-30 22:54:48 Data fetch completed for New York
+[INFO] 2025-07-30 22:54:48 Weather update completed for New York
+[INFO] 2025-07-30 22:54:48 Fetching current weather for New York
+[INFO] 2025-07-30 22:54:48 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:54:48 Stored weather data for New York - 6 entries
+[INFO] 2025-07-30 22:54:48 Current weather fetched for New York
+[INFO] 2025-07-30 22:54:48 Added current weather data to chart: temperature = 28.51
+[INFO] 2025-07-30 22:54:52 Theme change event triggered
+[INFO] 2025-07-30 22:54:52 Selected theme: Optimistic
+[INFO] 2025-07-30 22:54:52 Mapped theme name: optimistic
+[INFO] 2025-07-30 22:54:52 Theme callback exists: True
+[INFO] 2025-07-30 22:54:52 Controller theme set to: optimistic
+[INFO] 2025-07-30 22:54:52 Theme changed to optimistic
+[INFO] 2025-07-30 22:54:52 Theme changed to optimistic
+[INFO] 2025-07-30 22:54:55 Theme change event triggered
+[INFO] 2025-07-30 22:54:55 Selected theme: Optimistic
+[INFO] 2025-07-30 22:54:55 Mapped theme name: optimistic
+[INFO] 2025-07-30 22:54:55 Theme callback exists: True
+[INFO] 2025-07-30 22:54:55 Controller theme set to: optimistic
+[INFO] 2025-07-30 22:54:55 Theme changed to optimistic
+[INFO] 2025-07-30 22:54:55 Theme changed to optimistic
+[INFO] 2025-07-30 22:54:56 Theme change event triggered
+[INFO] 2025-07-30 22:54:56 Selected theme: Neutral
+[INFO] 2025-07-30 22:54:56 Mapped theme name: neutral
+[INFO] 2025-07-30 22:54:56 Theme callback exists: True
+[INFO] 2025-07-30 22:54:56 Controller theme set to: neutral
+[INFO] 2025-07-30 22:54:56 Theme changed to neutral
+[INFO] 2025-07-30 22:54:56 Theme changed to neutral
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:01 Preferences saved
+[INFO] 2025-07-30 22:55:02 Preferences saved
+[INFO] 2025-07-30 22:55:02 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 22:55:02 Starting weather update for New York
+[INFO] 2025-07-30 22:55:02 Fetching data for New York
+[INFO] 2025-07-30 22:55:02 Fetching current weather for New York
+[INFO] 2025-07-30 22:55:02 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:55:02 Stored weather data for New York - 7 entries
+[INFO] 2025-07-30 22:55:02 Current weather fetched for New York
+[WARN] 2025-07-30 22:55:02 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:55:02 Data fetch completed for New York
+[INFO] 2025-07-30 22:55:02 Weather update completed for New York
+[INFO] 2025-07-30 22:55:02 Fetching current weather for New York
+[INFO] 2025-07-30 22:55:02 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:55:02 Stored weather data for New York - 8 entries
+[INFO] 2025-07-30 22:55:02 Current weather fetched for New York
+[INFO] 2025-07-30 22:55:02 Added current weather data to chart: temperature = 28.51
+[INFO] 2025-07-30 22:56:59 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 22:56:59
+[INFO] 2025-07-30 22:56:59 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 22:56:59 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 22:56:59 Preferences applied to application state
+[INFO] 2025-07-30 22:56:59 Registered frame: title
+[INFO] 2025-07-30 22:56:59 Registered frame: control
+[INFO] 2025-07-30 22:56:59 Registered frame: tabbed
+[INFO] 2025-07-30 22:56:59 Registered frame: status_bar
+[INFO] 2025-07-30 22:56:59 Creating dashboard widgets
+[INFO] 2025-07-30 22:56:59 title widget created successfully
+[INFO] 2025-07-30 22:56:59 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 22:56:59 Preferences saved
+[INFO] 2025-07-30 22:56:59 control widgets created successfully
+[INFO] 2025-07-30 22:56:59 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 22:56:59 metric display widgets created successfully
+[INFO] 2025-07-30 22:56:59 chart widgets created successfully
+[INFO] 2025-07-30 22:56:59 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 22:56:59 Registered metric widgets with registry
+[INFO] 2025-07-30 22:56:59 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 22:56:59 Registered chart widgets with registry
+[INFO] 2025-07-30 22:56:59 tabbed display widgets created successfully
+[INFO] 2025-07-30 22:56:59 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 22:56:59 status bar widgets created successfully
+[INFO] 2025-07-30 22:56:59 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 22:56:59 Dashboard widgets created successfully
+[INFO] 2025-07-30 22:56:59 dashboard widgets created successfully
+[INFO] 2025-07-30 22:56:59 Weather data scheduler started
+[INFO] 2025-07-30 22:56:59 Starting weather update for New York
+[INFO] 2025-07-30 22:56:59 Fetching data for New York
+[INFO] 2025-07-30 22:56:59 Fetching current weather for New York
+[INFO] 2025-07-30 22:57:00 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:57:00 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 22:57:00 Current weather fetched for New York
+[WARN] 2025-07-30 22:57:00 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 22:57:00 Data fetch completed for New York
+[INFO] 2025-07-30 22:57:00 Weather update completed for New York
+[INFO] 2025-07-30 22:57:00 Fetching current weather for New York
+[INFO] 2025-07-30 22:57:00 Weather data written for new_york - Live
+[INFO] 2025-07-30 22:57:00 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 22:57:00 Current weather fetched for New York
+[INFO] 2025-07-30 22:57:00 Added current weather data to chart: temperature = 28.49
+[INFO] 2025-07-30 22:57:02 Theme change event triggered
+[INFO] 2025-07-30 22:57:02 Selected theme: Optimistic
+[INFO] 2025-07-30 22:57:02 Mapped theme name: optimistic
+[INFO] 2025-07-30 22:57:02 Theme callback exists: True
+[INFO] 2025-07-30 22:57:02 Controller theme set to: optimistic
+[INFO] 2025-07-30 22:57:02 Theme changed to optimistic
+[INFO] 2025-07-30 22:57:02 Theme changed to optimistic
+[INFO] 2025-07-30 23:33:44 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-30 23:33:44
+[INFO] 2025-07-30 23:33:44 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-30 23:33:44 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-30 23:33:44 Preferences applied to application state
+[INFO] 2025-07-30 23:33:44 Registered frame: title
+[INFO] 2025-07-30 23:33:44 Registered frame: control
+[INFO] 2025-07-30 23:33:44 Registered frame: tabbed
+[INFO] 2025-07-30 23:33:44 Registered frame: status_bar
+[INFO] 2025-07-30 23:33:44 Creating dashboard widgets
+[INFO] 2025-07-30 23:33:44 title widget created successfully
+[INFO] 2025-07-30 23:33:44 Registered widget: title_widget (type: title)
+[INFO] 2025-07-30 23:33:44 Preferences saved
+[INFO] 2025-07-30 23:33:44 control widgets created successfully
+[INFO] 2025-07-30 23:33:44 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-30 23:33:45 metric display widgets created successfully
+[INFO] 2025-07-30 23:33:45 chart widgets created successfully
+[INFO] 2025-07-30 23:33:45 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-30 23:33:45 Registered metric widgets with registry
+[INFO] 2025-07-30 23:33:45 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-30 23:33:45 Registered chart widgets with registry
+[INFO] 2025-07-30 23:33:45 tabbed display widgets created successfully
+[INFO] 2025-07-30 23:33:45 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-30 23:33:45 status bar widgets created successfully
+[INFO] 2025-07-30 23:33:45 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-30 23:33:45 Dashboard widgets created successfully
+[INFO] 2025-07-30 23:33:45 dashboard widgets created successfully
+[INFO] 2025-07-30 23:33:45 Weather data scheduler started
+[INFO] 2025-07-30 23:33:45 Starting weather update for New York
+[INFO] 2025-07-30 23:33:45 Fetching data for New York
+[INFO] 2025-07-30 23:33:45 Fetching current weather for New York
+[INFO] 2025-07-30 23:33:45 Weather data written for new_york - Live
+[INFO] 2025-07-30 23:33:45 Stored weather data for New York - 1 entries
+[INFO] 2025-07-30 23:33:45 Current weather fetched for New York
+[WARN] 2025-07-30 23:33:45 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 23:33:46 Data fetch completed for New York
+[INFO] 2025-07-30 23:33:46 Weather update completed for New York
+[INFO] 2025-07-30 23:33:46 Fetching current weather for New York
+[INFO] 2025-07-30 23:33:46 Weather data written for new_york - Live
+[INFO] 2025-07-30 23:33:46 Stored weather data for New York - 2 entries
+[INFO] 2025-07-30 23:33:46 Current weather fetched for New York
+[INFO] 2025-07-30 23:33:46 Added current weather data to chart: temperature = 28.15
+[INFO] 2025-07-30 23:33:49 Theme change event triggered
+[INFO] 2025-07-30 23:33:49 Selected theme: Optimistic
+[INFO] 2025-07-30 23:33:49 Mapped theme name: optimistic
+[INFO] 2025-07-30 23:33:49 Theme callback exists: True
+[INFO] 2025-07-30 23:33:49 Controller theme set to: optimistic
+[INFO] 2025-07-30 23:33:49 Theme changed to optimistic
+[INFO] 2025-07-30 23:33:49 Theme changed to optimistic
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:58 Preferences saved
+[INFO] 2025-07-30 23:33:59 Preferences saved
+[INFO] 2025-07-30 23:33:59 Preferences saved
+[INFO] 2025-07-30 23:34:00 Preferences saved
+[INFO] 2025-07-30 23:34:00 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 23:34:00 Starting weather update for New York
+[INFO] 2025-07-30 23:34:00 Fetching data for New York
+[INFO] 2025-07-30 23:34:00 Fetching current weather for New York
+[INFO] 2025-07-30 23:34:00 Weather data written for new_york - Live
+[INFO] 2025-07-30 23:34:00 Stored weather data for New York - 3 entries
+[INFO] 2025-07-30 23:34:00 Current weather fetched for New York
+[INFO] 2025-07-30 23:34:00 Data fetch completed for New York
+[INFO] 2025-07-30 23:34:00 Weather update completed for New York
+[INFO] 2025-07-30 23:34:00 Fetching current weather for New York
+[INFO] 2025-07-30 23:34:01 Weather data written for new_york - Live
+[INFO] 2025-07-30 23:34:01 Stored weather data for New York - 4 entries
+[INFO] 2025-07-30 23:34:01 Current weather fetched for New York
+[INFO] 2025-07-30 23:34:01 Added current weather data to chart: temperature = 28.15
+[INFO] 2025-07-30 23:34:03 Theme change event triggered
+[INFO] 2025-07-30 23:34:03 Selected theme: Pessimistic
+[INFO] 2025-07-30 23:34:03 Mapped theme name: pessimistic
+[INFO] 2025-07-30 23:34:03 Theme callback exists: True
+[INFO] 2025-07-30 23:34:03 Controller theme set to: pessimistic
+[INFO] 2025-07-30 23:34:03 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:03 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:05 Theme change event triggered
+[INFO] 2025-07-30 23:34:05 Selected theme: Optimistic
+[INFO] 2025-07-30 23:34:05 Mapped theme name: optimistic
+[INFO] 2025-07-30 23:34:05 Theme callback exists: True
+[INFO] 2025-07-30 23:34:05 Controller theme set to: optimistic
+[INFO] 2025-07-30 23:34:05 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:05 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:07 Theme change event triggered
+[INFO] 2025-07-30 23:34:07 Selected theme: Neutral
+[INFO] 2025-07-30 23:34:07 Mapped theme name: neutral
+[INFO] 2025-07-30 23:34:07 Theme callback exists: True
+[INFO] 2025-07-30 23:34:07 Controller theme set to: neutral
+[INFO] 2025-07-30 23:34:07 Theme changed to neutral
+[INFO] 2025-07-30 23:34:07 Theme changed to neutral
+[INFO] 2025-07-30 23:34:09 Theme change event triggered
+[INFO] 2025-07-30 23:34:09 Selected theme: Pessimistic
+[INFO] 2025-07-30 23:34:09 Mapped theme name: pessimistic
+[INFO] 2025-07-30 23:34:09 Theme callback exists: True
+[INFO] 2025-07-30 23:34:09 Controller theme set to: pessimistic
+[INFO] 2025-07-30 23:34:09 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:09 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:10 Theme change event triggered
+[INFO] 2025-07-30 23:34:10 Selected theme: Optimistic
+[INFO] 2025-07-30 23:34:10 Mapped theme name: optimistic
+[INFO] 2025-07-30 23:34:10 Theme callback exists: True
+[INFO] 2025-07-30 23:34:10 Controller theme set to: optimistic
+[INFO] 2025-07-30 23:34:10 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:10 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:15 Theme change event triggered
+[INFO] 2025-07-30 23:34:15 Selected theme: Optimistic
+[INFO] 2025-07-30 23:34:15 Mapped theme name: optimistic
+[INFO] 2025-07-30 23:34:15 Theme callback exists: True
+[INFO] 2025-07-30 23:34:15 Controller theme set to: optimistic
+[INFO] 2025-07-30 23:34:15 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:15 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:21 Preferences saved
+[INFO] 2025-07-30 23:34:22 Preferences saved
+[INFO] 2025-07-30 23:34:22 Manual update requested - scheduler will continue in background
+[INFO] 2025-07-30 23:34:22 Starting weather update for New York
+[INFO] 2025-07-30 23:34:22 Fetching data for New York
+[INFO] 2025-07-30 23:34:22 Fetching current weather for New York
+[INFO] 2025-07-30 23:34:22 Weather data written for new_york - Live
+[INFO] 2025-07-30 23:34:22 Stored weather data for New York - 5 entries
+[INFO] 2025-07-30 23:34:22 Current weather fetched for New York
+[WARN] 2025-07-30 23:34:22 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-30 23:34:22 Data fetch completed for New York
+[INFO] 2025-07-30 23:34:22 Weather update completed for New York
+[INFO] 2025-07-30 23:34:22 Fetching current weather for New York
+[INFO] 2025-07-30 23:34:22 Weather data written for new_york - Live
+[INFO] 2025-07-30 23:34:22 Stored weather data for New York - 6 entries
+[INFO] 2025-07-30 23:34:22 Current weather fetched for New York
+[INFO] 2025-07-30 23:34:22 Added current weather data to chart: temperature = 28.15
+[INFO] 2025-07-30 23:34:32 Theme change event triggered
+[INFO] 2025-07-30 23:34:32 Selected theme: Pessimistic
+[INFO] 2025-07-30 23:34:32 Mapped theme name: pessimistic
+[INFO] 2025-07-30 23:34:32 Theme callback exists: True
+[INFO] 2025-07-30 23:34:32 Controller theme set to: pessimistic
+[INFO] 2025-07-30 23:34:33 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:33 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:34 Theme change event triggered
+[INFO] 2025-07-30 23:34:34 Selected theme: Optimistic
+[INFO] 2025-07-30 23:34:34 Mapped theme name: optimistic
+[INFO] 2025-07-30 23:34:34 Theme callback exists: True
+[INFO] 2025-07-30 23:34:34 Controller theme set to: optimistic
+[INFO] 2025-07-30 23:34:34 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:34 Theme changed to optimistic
+[INFO] 2025-07-30 23:34:48 Theme change event triggered
+[INFO] 2025-07-30 23:34:48 Selected theme: Pessimistic
+[INFO] 2025-07-30 23:34:48 Mapped theme name: pessimistic
+[INFO] 2025-07-30 23:34:48 Theme callback exists: True
+[INFO] 2025-07-30 23:34:48 Controller theme set to: pessimistic
+[INFO] 2025-07-30 23:34:48 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:48 Theme changed to pessimistic
+[INFO] 2025-07-30 23:34:50 Theme change event triggered
+[INFO] 2025-07-30 23:34:50 Selected theme: Neutral
+[INFO] 2025-07-30 23:34:50 Mapped theme name: neutral
+[INFO] 2025-07-30 23:34:50 Theme callback exists: True
+[INFO] 2025-07-30 23:34:50 Controller theme set to: neutral
+[INFO] 2025-07-30 23:34:50 Theme changed to neutral
+[INFO] 2025-07-30 23:34:50 Theme changed to neutral

@@ -79,7 +79,17 @@ class WeatherDashboardGUIFrames:
             grid_config = frame_config['grid']
             self.frames[frame_name].grid(**grid_config)
         
-        # Apply grid weights
+            # IMPORTANT: Configure grid weights for each frame
+            if 'sticky' in grid_config and 'ew' in grid_config['sticky']:
+                # Frame spans columns, configure column weights
+                col = grid_config.get('column', 0)
+                self.root.columnconfigure(col, weight=1)
+            if 'sticky' in grid_config and 'ns' in grid_config['sticky']:
+                # Frame spans rows, configure row weights
+                row = grid_config.get('row', 0)
+                self.root.rowconfigure(row, weight=1)
+
+        # Apply additional grid weights from config
         grid_weights = layout_config['grid_weights']
         for i, weight in enumerate(grid_weights['columns']):
             self.root.columnconfigure(i, weight=weight)

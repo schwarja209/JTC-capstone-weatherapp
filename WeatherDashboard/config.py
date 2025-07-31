@@ -175,8 +175,10 @@ CHART = {
         'Last 14 Days': 14,
         'Last 30 Days': 30
     },
-    'chart_figure_width': 8,           # Chart figure width in inches
-    'chart_figure_height': 3,          # Chart figure height in inches  
+    'chart_figure_width_ratio': 0.8,   # 80% of parent width
+    'chart_figure_height_ratio': 0.6,  # 60% of parent height
+    'chart_figure_min_width': 4,       # Minimum width in inches
+    'chart_figure_min_height': 2,      # Minimum height in inches
     'chart_dpi': 100,                  # Chart resolution in DPI
     'chart_rotation_degrees': 45       # X-axis label rotation angle
 }

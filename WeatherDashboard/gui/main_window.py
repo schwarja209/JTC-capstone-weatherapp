@@ -76,6 +76,7 @@ class WeatherDashboardMain:
         # Instance data
         self.root = root
         self._operation_lock = threading.Lock()
+        self._setup_window_constraints()
         
         # Injected dependencies for testable core components
         self.state = state_manager or WeatherDashboardState()
@@ -154,6 +155,67 @@ class WeatherDashboardMain:
                 alert_widget = getattr(metric_widgets, 'alert_status_widget', None)
                 if alert_widget:
                     alert_widget.set_click_callback(self.show_alerts)
+
+    def _setup_window_constraints(self) -> None:
+        """Set up window size constraints and positioning."""
+        # Get screen dimensions
+        screen_width = self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_screenheight()
+        
+        # Calculate adaptive window size (80% of screen size, but with limits)
+        window_width = min(max(800, int(screen_width * 0.8)), 1400)
+        window_height = min(max(600, int(screen_height * 0.8)), 1000)
+        
+        # Set minimum and maximum window size
+        self.root.minsize(600, 400)  # Smaller minimum size
+        self.root.maxsize(screen_width - 50, screen_height - 50)  # Leave some margin
+        
+        # Set initial window size
+        self.root.geometry(f"{window_width}x{window_height}")
+        
+        # Calculate center position
+        x = (screen_width - window_width) // 2
+        y = (screen_height - window_height) // 2
+        
+        # Ensure window doesn't go off-screen
+        x = max(0, min(x, screen_width - window_width))
+        y = max(0, min(y, screen_height - window_height))
+        
+        self.root.geometry(f"{window_width}x{window_height}+{x}+{y}")
+        
+        # Configure grid weights for responsive layout
+        self.root.grid_rowconfigure(0, weight=1)
+        self.root.grid_columnconfigure(0, weight=1)
+        
+        # Prevent window from resizing beyond screen bounds
+        def on_configure(event):
+            """Handle window resize events to keep window on screen."""
+            if event.widget == self.root:
+                # Get current window position and size
+                x = self.root.winfo_x()
+                y = self.root.winfo_y()
+                width = self.root.winfo_width()
+                height = self.root.winfo_height()
+                
+                # Get screen dimensions
+                screen_width = self.root.winfo_screenwidth()
+                screen_height = self.root.winfo_screenheight()
+                
+                # Adjust if window goes off-screen
+                if x + width > screen_width:
+                    x = screen_width - width
+                if y + height > screen_height:
+                    y = screen_height - height
+                if x < 0:
+                    x = 0
+                if y < 0:
+                    y = 0
+                
+                # Only move if position changed
+                if x != self.root.winfo_x() or y != self.root.winfo_y():
+                    self.root.geometry(f"+{x}+{y}")
+        
+        self.root.bind('<Configure>', on_configure)
 
 # ================================
 # 2. UI HANDLERS
@@ -238,14 +300,41 @@ class WeatherDashboardMain:
             theme_name: New theme name ('neutral', 'optimistic', 'pessimistic')
         """
         try:
-            self.logger.info(f"Theme changed to {theme_name}")
+            # Update theme in controller
+            self.controller.set_theme(theme_name)
             
-            # Apply the new theme
+            # IMPORTANT: Reconfigure styles for the new theme
             from WeatherDashboard import styles
             styles.configure_styles(theme_name)
             
-            # Update any theme-dependent widgets here
-            # (This will be expanded as more theme-dependent features are added)
+            # Force window to stay within bounds
+            self.root.update_idletasks()
+            
+            # Get current window position and size
+            x = self.root.winfo_x()
+            y = self.root.winfo_y()
+            width = self.root.winfo_width()
+            height = self.root.winfo_height()
+            
+            # Get screen dimensions
+            screen_width = self.root.winfo_screenwidth()
+            screen_height = self.root.winfo_screenheight()
+            
+            # Ensure window stays on screen
+            if x + width > screen_width:
+                x = screen_width - width
+            if y + height > screen_height:
+                y = screen_height - height
+            if x < 0:
+                x = 0
+            if y < 0:
+                y = 0
+            
+            # Apply new position if needed
+            if x != self.root.winfo_x() or y != self.root.winfo_y():
+                self.root.geometry(f"+{x}+{y}")
+            
+            self.logger.info(f"Theme changed to {theme_name}")
             
         except Exception as e:
             self.logger.error(f"Error handling theme change: {e}")

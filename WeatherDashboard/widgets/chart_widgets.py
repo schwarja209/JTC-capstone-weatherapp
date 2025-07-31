@@ -102,7 +102,21 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     
     def _setup_matplotlib_components(self) -> None:
         """Set up matplotlib Figure, Axes, and Canvas components."""
-        self.chart_fig = Figure(figsize=(self.config.CHART['chart_figure_width'], self.config.CHART['chart_figure_height']), dpi=self.config.CHART['chart_dpi'])
+        # Get parent dimensions for ratio-based sizing
+        parent_width = self.parent.winfo_width()
+        parent_height = self.parent.winfo_height()
+
+        if parent_width <= 0 or parent_height <= 0:  # Handle case where parent hasn't been sized yet
+            parent_width = 800  # Default fallback
+            parent_height = 600  # Default fallback
+
+        # Calculate figure size using ratios (convert pixels to inches)
+        # Assume 100 DPI for conversion
+        dpi = self.config.CHART['chart_dpi']
+        fig_width = max(4, int(parent_width * 0.8 / dpi))  # 80% of parent width, minimum 4 inches
+        fig_height = max(2, int(parent_height * 0.6 / dpi))  # 60% of parent height, minimum 2 inches
+
+        self.chart_fig = Figure(figsize=(fig_width, fig_height), dpi=dpi)
         self.chart_ax = self.chart_fig.add_subplot(111)
         self.chart_canvas = FigureCanvasTkAgg(self.chart_fig, master=self.parent)
     

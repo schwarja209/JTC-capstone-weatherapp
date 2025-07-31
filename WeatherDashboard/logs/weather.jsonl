@@ -11267,3 +11267,1121 @@
 {"timestamp": "2025-07-30 19:44:56", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
 {"timestamp": "2025-07-30 19:44:56", "level": "INFO", "message": "Current weather fetched for New York"}
 {"timestamp": "2025-07-30 19:44:56", "level": "INFO", "message": "Added current weather data to chart: temperature = 29.49"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 19:51:55", "test": true}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 19:51:55", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 19:51:56", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 19:51:56", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.94"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 19:53:45", "test": true}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 19:53:45", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 19:53:46", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 19:53:46", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.94"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 19:54:57", "test": true}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 19:54:57", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 19:54:58", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.94"}
+{"timestamp": "2025-07-30 19:55:03", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 19:55:03", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 19:55:03", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 19:55:05", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 19:55:05", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 19:55:05", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 19:55:07", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 19:55:07", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 19:55:07", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 20:01:03", "test": true}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 20:01:03", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 20:01:04", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 20:01:04", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 20:01:05", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 20:01:05", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 20:01:05", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 20:01:05", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.94"}
+{"timestamp": "2025-07-30 20:01:08", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 20:01:08", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 20:01:08", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 20:01:16", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 20:01:16", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 20:01:16", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 20:01:28", "level": "INFO", "message": "Controller theme set to: neutral"}
+{"timestamp": "2025-07-30 20:01:28", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-30 20:01:28", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-30 20:01:30", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 20:01:30", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 20:01:30", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 20:01:33", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 20:01:33", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 20:01:33", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 20:03:59", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 20:03:59", "test": true}
+{"timestamp": "2025-07-30 20:03:59", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 20:04:00", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 20:04:00", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 20:04:01", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 20:04:01", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 20:04:01", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 20:04:01", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 20:04:01", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 20:04:01", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 20:04:01", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.62"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 22:28:36", "test": true}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:28:36", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:28:37", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.42"}
+{"timestamp": "2025-07-30 22:28:40", "level": "ERROR", "message": "Error handling theme change: 'NoneType' object has no attribute 'get'"}
+{"timestamp": "2025-07-30 22:28:43", "level": "ERROR", "message": "Error handling theme change: 'NoneType' object has no attribute 'get'"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:50", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:51", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:51", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:28:51", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:28:51", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-30 22:28:54", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-07-30 22:28:54", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:56", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:28:57", "level": "INFO", "message": "Added current weather data to chart: air_quality_index = 2"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:59", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:28:59", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:00", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:29:00", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:29:00", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-07-30 22:29:00", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-30 22:29:00", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:29:02", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:03", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:03", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-30 22:29:03", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:03", "level": "INFO", "message": "Added current weather data to chart: humidity = 72"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Stored weather data for New York - 7 entries"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Stored weather data for New York - 8 entries"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:17", "level": "INFO", "message": "Added current weather data to chart: humidity = 72"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:23", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Stored weather data for New York - 9 entries"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Stored weather data for New York - 10 entries"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:24", "level": "INFO", "message": "Added current weather data to chart: humidity = 72"}
+{"timestamp": "2025-07-30 22:29:30", "level": "ERROR", "message": "Error handling theme change: 'NoneType' object has no attribute 'get'"}
+{"timestamp": "2025-07-30 22:29:31", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:29:31", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:29:31", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:29:31", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:29:31", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Stored weather data for New York - 11 entries"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:32", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Stored weather data for New York - 12 entries"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:29:32", "level": "INFO", "message": "Added current weather data to chart: humidity = 72"}
+{"timestamp": "2025-07-30 22:36:32", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 22:36:32", "test": true}
+{"timestamp": "2025-07-30 22:36:32", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:36:33", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:36:33", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:36:34", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:36:34", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 22:36:34", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:36:34", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.46"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 22:46:40", "test": true}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:46:40", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:46:41", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:46:41", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.51"}
+{"timestamp": "2025-07-30 22:46:43", "level": "ERROR", "message": "Error handling theme change: 'NoneType' object has no attribute 'get'"}
+{"timestamp": "2025-07-30 22:46:45", "level": "ERROR", "message": "Error handling theme change: 'NoneType' object has no attribute 'get'"}
+{"timestamp": "2025-07-30 22:46:49", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-07-30 22:46:50", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 22:51:39", "test": true}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 22:51:39", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:51:40", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:51:40", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:51:41", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:51:41", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 22:51:41", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:51:41", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.51"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 22:54:18", "test": true}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:54:18", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:54:19", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:54:19", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.51"}
+{"timestamp": "2025-07-30 22:54:21", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 22:54:21", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-07-30 22:54:21", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-07-30 22:54:21", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 22:54:21", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 22:54:22", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 22:54:22", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 22:54:26", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 22:54:26", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 22:54:26", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 22:54:26", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 22:54:26", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 22:54:26", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 22:54:26", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:33", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:33", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:36", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:36", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:54:37", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.51"}
+{"timestamp": "2025-07-30 22:54:42", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 22:54:42", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-07-30 22:54:42", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-07-30 22:54:42", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 22:54:42", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 22:54:42", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 22:54:42", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 22:54:46", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:54:48", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.51"}
+{"timestamp": "2025-07-30 22:54:52", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 22:54:52", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 22:54:52", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 22:54:52", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 22:54:52", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 22:54:52", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 22:54:52", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 22:54:55", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 22:54:55", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 22:54:55", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 22:54:55", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 22:54:55", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 22:54:55", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 22:54:55", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 22:54:56", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 22:54:56", "level": "INFO", "message": "Selected theme: Neutral"}
+{"timestamp": "2025-07-30 22:54:56", "level": "INFO", "message": "Mapped theme name: neutral"}
+{"timestamp": "2025-07-30 22:54:56", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 22:54:56", "level": "INFO", "message": "Controller theme set to: neutral"}
+{"timestamp": "2025-07-30 22:54:56", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-30 22:54:56", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:01", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Stored weather data for New York - 7 entries"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Stored weather data for New York - 8 entries"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:55:02", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.51"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 22:56:59", "test": true}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 22:56:59", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:57:00", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 22:57:00", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.49"}
+{"timestamp": "2025-07-30 22:57:02", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 22:57:02", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 22:57:02", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 22:57:02", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 22:57:02", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 22:57:02", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 22:57:02", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-07-30 23:33:44", "test": true}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-07-30 23:33:44", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-07-30 23:33:45", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 23:33:45", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 23:33:46", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 23:33:46", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 23:33:46", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 23:33:46", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 23:33:46", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-07-30 23:33:46", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 23:33:46", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.15"}
+{"timestamp": "2025-07-30 23:33:49", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:33:49", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 23:33:49", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 23:33:49", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:33:49", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 23:33:49", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:33:49", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:59", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:33:59", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 23:34:00", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 23:34:01", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 23:34:01", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-07-30 23:34:01", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 23:34:01", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.15"}
+{"timestamp": "2025-07-30 23:34:03", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:03", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-07-30 23:34:03", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-07-30 23:34:03", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:03", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 23:34:03", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:03", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:05", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:05", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 23:34:05", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 23:34:05", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:05", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 23:34:05", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:05", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:07", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:07", "level": "INFO", "message": "Selected theme: Neutral"}
+{"timestamp": "2025-07-30 23:34:07", "level": "INFO", "message": "Mapped theme name: neutral"}
+{"timestamp": "2025-07-30 23:34:07", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:07", "level": "INFO", "message": "Controller theme set to: neutral"}
+{"timestamp": "2025-07-30 23:34:07", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-30 23:34:07", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-30 23:34:09", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:09", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-07-30 23:34:09", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-07-30 23:34:09", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:09", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 23:34:09", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:09", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:10", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:10", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 23:34:10", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 23:34:10", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:10", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 23:34:10", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:10", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:15", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:15", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 23:34:15", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 23:34:15", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:15", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 23:34:15", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:15", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-07-30 23:34:22", "level": "INFO", "message": "Added current weather data to chart: temperature = 28.15"}
+{"timestamp": "2025-07-30 23:34:32", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:32", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-07-30 23:34:32", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-07-30 23:34:32", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:32", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 23:34:33", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:33", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:34", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:34", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-07-30 23:34:34", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-07-30 23:34:34", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:34", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-07-30 23:34:34", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:34", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-07-30 23:34:48", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:48", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-07-30 23:34:48", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-07-30 23:34:48", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:48", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-07-30 23:34:48", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:48", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-07-30 23:34:50", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-07-30 23:34:50", "level": "INFO", "message": "Selected theme: Neutral"}
+{"timestamp": "2025-07-30 23:34:50", "level": "INFO", "message": "Mapped theme name: neutral"}
+{"timestamp": "2025-07-30 23:34:50", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-07-30 23:34:50", "level": "INFO", "message": "Controller theme set to: neutral"}
+{"timestamp": "2025-07-30 23:34:50", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-07-30 23:34:50", "level": "INFO", "message": "Theme changed to neutral"}

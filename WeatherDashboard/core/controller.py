@@ -117,6 +117,10 @@ class WeatherDashboardController:
         """Set theme for error handling and future theme system integration."""
         self._theme_service.set_theme(theme)
 
+        # IMPORTANT: Actually reconfigure the styles for the new theme
+        from WeatherDashboard import styles
+        styles.configure_styles(theme)
+
 # ================================
 # 1. PUBLIC API METHODS
 # ================================

@@ -71,8 +71,11 @@ class TitleWidget(BaseWidgetManager):
     def _create_widgets(self) -> None:
         """Create and display the title label widget."""
         # Create main container frame
+        theme_config = self.styles.get_theme_config()
+        title_padding = theme_config['ui']['title_padding']  # New configuration needed
+
         main_frame = SafeWidgetCreator.create_frame(self.parent)
-        main_frame.pack(fill=tk.X, padx=10, pady=5)
+        main_frame.pack(fill=tk.X, padx=title_padding['horizontal'], pady=title_padding['vertical'])
 
         self.title_label = SafeWidgetCreator.create_label(main_frame, self.title, "Title.TLabel")
         self.title_label.pack(anchor=tk.CENTER)
@@ -109,14 +112,24 @@ class TitleWidget(BaseWidgetManager):
         label_pack_config = theme_config.get('label_pack', {'side': 'LEFT', 'padx': (0, 5)})
         theme_label.pack(**label_pack_config)
 
-        # Theme dropdown
+        # Initialize theme variable
         self.theme_var = tk.StringVar(value="Neutral")
+
+        # Get parent dimensions for ratio-based sizing
+        parent_width = parent_frame.winfo_width()
+        if parent_width <= 0:  # Handle case where parent hasn't been sized yet
+            parent_width = 200  # Default fallback
+
+        # Calculate width using ratio (e.g., 6% of parent width)
+        theme_width = max(8, int(0.06 * parent_width))  # Minimum 8 characters
+
+        # Theme dropdown
         self.theme_combobox = SafeWidgetCreator.create_combobox(
             parent_frame,
             textvariable=self.theme_var,
             values=["Neutral", "Optimistic", "Pessimistic"],
             state="readonly",
-            width=12
+            width=theme_width
         )
         combobox_pack_config = theme_config.get('combobox_pack', {'side': 'LEFT', 'padx': (0, 10)})
         self.theme_combobox.pack(**combobox_pack_config)
@@ -144,7 +157,11 @@ class TitleWidget(BaseWidgetManager):
     def _on_theme_change(self, event=None) -> None:
         """Handle theme selection change."""
         try:
+            self.logger.info("Theme change event triggered")  # Debug log
+            
             selected_theme = self.theme_var.get()
+            self.logger.info(f"Selected theme: {selected_theme}")  # Debug log
+            
             theme_mapping = {
                 "Neutral": "neutral",
                 "Optimistic": "optimistic", 
@@ -152,10 +169,15 @@ class TitleWidget(BaseWidgetManager):
             }
             
             theme_name = theme_mapping.get(selected_theme, "neutral")
+            self.logger.info(f"Mapped theme name: {theme_name}")  # Debug log
+            
+            self.logger.info(f"Theme callback exists: {self.theme_callback is not None}")  # Debug log
             
             if self.theme_callback:
                 self.theme_callback(theme_name)
                 self.logger.info(f"Theme changed to {theme_name}")
+            else:
+                self.logger.error("Theme callback is None!")
             
         except Exception as e:
             self.logger.error(f"Error handling theme change: {e}")

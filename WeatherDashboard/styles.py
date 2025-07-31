@@ -16,21 +16,15 @@ from typing import Dict, Any
 # Import theme modules
 from WeatherDashboard.features.themes.optimistic_styles import (
     OPTIMISTIC_COLORS, OPTIMISTIC_FONTS, OPTIMISTIC_MESSAGING, 
-    OPTIMISTIC_UI, OPTIMISTIC_METRIC_COLORS, OPTIMISTIC_WEATHER_ICONS,
-    OPTIMISTIC_TEMPERATURE_DIFFERENCE_COLORS, OPTIMISTIC_COMFORT_THRESHOLDS,
-    OPTIMISTIC_DIALOG_CONFIG
+    OPTIMISTIC_UI, OPTIMISTIC_ICONS, OPTIMISTIC_PADDING, OPTIMISTIC_DIMENSIONS
 )
 from WeatherDashboard.features.themes.pessimistic_styles import (
     PESSIMISTIC_COLORS, PESSIMISTIC_FONTS, PESSIMISTIC_MESSAGING,
-    PESSIMISTIC_UI, PESSIMISTIC_METRIC_COLORS, PESSIMISTIC_WEATHER_ICONS,
-    PESSIMISTIC_TEMPERATURE_DIFFERENCE_COLORS, PESSIMISTIC_COMFORT_THRESHOLDS,
-    PESSIMISTIC_DIALOG_CONFIG
+    PESSIMISTIC_UI, PESSIMISTIC_ICONS, PESSIMISTIC_PADDING, PESSIMISTIC_DIMENSIONS
 )
 from WeatherDashboard.features.themes.neutral_styles import (
     NEUTRAL_COLORS, NEUTRAL_FONTS, NEUTRAL_MESSAGING,
-    NEUTRAL_UI, NEUTRAL_METRIC_COLORS, NEUTRAL_WEATHER_ICONS,
-    NEUTRAL_TEMPERATURE_DIFFERENCE_COLORS, NEUTRAL_COMFORT_THRESHOLDS,
-    NEUTRAL_DIALOG_CONFIG
+    NEUTRAL_UI, NEUTRAL_ICONS, NEUTRAL_PADDING, NEUTRAL_DIMENSIONS
 )
 
 # centralizing style info
@@ -54,11 +48,8 @@ def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
             'fonts': OPTIMISTIC_FONTS,
             'messaging': OPTIMISTIC_MESSAGING,
             'ui': OPTIMISTIC_UI,
-            'metric_colors': OPTIMISTIC_METRIC_COLORS,
-            'weather_icons': OPTIMISTIC_WEATHER_ICONS,
-            'temperature_difference_colors': OPTIMISTIC_TEMPERATURE_DIFFERENCE_COLORS,
-            'comfort_thresholds': OPTIMISTIC_COMFORT_THRESHOLDS,
-            'dialog_config': OPTIMISTIC_DIALOG_CONFIG
+            'icons': OPTIMISTIC_ICONS,
+            'padding': OPTIMISTIC_PADDING
         }
     elif theme_name == 'pessimistic':
         return {
@@ -66,11 +57,8 @@ def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
             'fonts': PESSIMISTIC_FONTS,
             'messaging': PESSIMISTIC_MESSAGING,
             'ui': PESSIMISTIC_UI,
-            'metric_colors': PESSIMISTIC_METRIC_COLORS,
-            'weather_icons': PESSIMISTIC_WEATHER_ICONS,
-            'temperature_difference_colors': PESSIMISTIC_TEMPERATURE_DIFFERENCE_COLORS,
-            'comfort_thresholds': PESSIMISTIC_COMFORT_THRESHOLDS,
-            'dialog_config': PESSIMISTIC_DIALOG_CONFIG
+            'icons': PESSIMISTIC_ICONS,
+            'padding': PESSIMISTIC_PADDING
         }
     else:  # neutral
         return {
@@ -78,11 +66,8 @@ def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
             'fonts': NEUTRAL_FONTS,
             'messaging': NEUTRAL_MESSAGING,
             'ui': NEUTRAL_UI,
-            'metric_colors': NEUTRAL_METRIC_COLORS,
-            'weather_icons': NEUTRAL_WEATHER_ICONS,
-            'temperature_difference_colors': NEUTRAL_TEMPERATURE_DIFFERENCE_COLORS,
-            'comfort_thresholds': NEUTRAL_COMFORT_THRESHOLDS,
-            'dialog_config': NEUTRAL_DIALOG_CONFIG
+            'icons': NEUTRAL_ICONS,
+            'padding': NEUTRAL_PADDING
         }
 
 # =================================
@@ -239,6 +224,36 @@ def configure_styles(theme_name: str = 'neutral') -> None:
     style.map("DataStatusSimulated.TLabel", foreground=[('!disabled', colors['status']['warning'])])
     style.map("DataStatusNone.TLabel", foreground=[('!disabled', colors['status']['neutral'])])
 
+# Add to styles.py or create a new utils/dimension_utils.py
+
+def get_absolute_dimensions(relative_config: Dict[str, Any], parent_width: int, parent_height: int) -> Dict[str, Any]:
+    """Convert relative dimensions to absolute based on parent size.
+    
+    Args:
+        relative_config: Theme configuration with ratio-based dimensions
+        parent_width: Width of parent container
+        parent_height: Height of parent container
+        
+    Returns:
+        Dict with absolute pixel values
+    """
+    absolute_config = {}
+    
+    for key, value in relative_config.items():
+        if isinstance(value, dict):
+            absolute_config[key] = get_absolute_dimensions(value, parent_width, parent_height)
+        elif isinstance(value, (int, float)) and key.endswith('_ratio'):
+            # Convert ratio to absolute
+            base_key = key.replace('_ratio', '')
+            if 'width' in key:
+                absolute_config[base_key] = int(value * parent_width)
+            elif 'height' in key:
+                absolute_config[base_key] = int(value * parent_height)
+        else:
+            absolute_config[key] = value
+    
+    return absolute_config
+
 # =================================
 # 4. BACKWARD COMPATIBILITY
 # =================================
@@ -250,14 +265,14 @@ def get_default_theme_values() -> Dict[str, Any]:
 # Legacy accessors for existing code
 FONTS = NEUTRAL_FONTS
 COLORS = NEUTRAL_COLORS
-PADDING = NEUTRAL_UI['padding']
-DIMENSIONS = NEUTRAL_UI['dimensions']
-WIDGET_LAYOUT = NEUTRAL_UI['widget_layout']
+PADDING = NEUTRAL_PADDING
+DIMENSIONS = NEUTRAL_DIMENSIONS
+WIDGET_LAYOUT = NEUTRAL_DIMENSIONS['widget_layout']
 CONTROL_PANEL_CONFIG = NEUTRAL_UI['control_panel_config']
 STATUS_BAR_CONFIG = NEUTRAL_UI['status_bar_config']
 LOADING_CONFIG = NEUTRAL_UI['loading_config']
-WEATHER_ICONS = NEUTRAL_WEATHER_ICONS
-METRIC_COLOR_RANGES = NEUTRAL_METRIC_COLORS
-TEMPERATURE_DIFFERENCE_COLORS = NEUTRAL_TEMPERATURE_DIFFERENCE_COLORS
-COMFORT_THRESHOLDS = NEUTRAL_COMFORT_THRESHOLDS
-DIALOG_CONFIG = NEUTRAL_DIALOG_CONFIG
+WEATHER_ICONS = NEUTRAL_ICONS['weather']
+METRIC_COLOR_RANGES = NEUTRAL_COLORS['metric_colors']
+TEMPERATURE_DIFFERENCE_COLORS = NEUTRAL_COLORS['temperature_difference']
+COMFORT_THRESHOLDS = NEUTRAL_COLORS['comfort_thresholds']
+DIALOG_CONFIG = NEUTRAL_MESSAGING['dialog_titles']

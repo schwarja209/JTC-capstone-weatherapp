@@ -1,24 +1,24 @@
 """
 Optimistic theme styles for the Weather Dashboard.
 
-This module provides the "Weather Bliss" optimistic theme styling with bright colors,
-cheerful messaging, and friendly UI elements. Filters through the main styles.py module.
+This module provides the optimistic theme styling with bright colors,
+positive messaging, and spacious UI elements. Filters through the main styles.py module.
 
-Theme Philosophy: Relentlessly positive weather interpretation with simplified, cheerful UI.
+Theme Philosophy: Bright, cheerful weather dashboard with positive data presentation.
 """
 
 # =================================
-# 1. OPTIMISTIC COLOR PALETTE
+# 1. OPTIMISTIC COLORS - Single Source of Truth
 # =================================
 OPTIMISTIC_COLORS = {
-    'primary': '#FFD700',      # Sunny yellow
-    'secondary': '#87CEEB',    # Sky blue  
-    'accent': '#90EE90',       # Grass green
-    'background': '#FFF8DC',   # Cream
-    'text': '#696969',         # Soft gray
-    'success': '#32CD32',      # Lime green
-    'warning': '#FFA500',      # Friendly orange
-    'error': '#FF6B6B',        # Soft red
+    'primary': '#FF6B6B',      # Bright coral
+    'secondary': '#4ECDC4',    # Bright teal
+    'accent': '#45B7D1',       # Bright blue
+    'background': '#FFFFFF',    # White
+    'text': '#2C3E50',         # Dark gray
+    'success': '#32CD32',      # Bright green
+    'warning': '#FFA500',      # Bright orange
+    'error': '#FF6B6B',        # Bright red
     'info': '#87CEEB',         # Sky blue
     'status': {
         'success': '#32CD32',
@@ -26,32 +26,90 @@ OPTIMISTIC_COLORS = {
         'error': '#FF6B6B',
         'info': '#87CEEB',
         'neutral': '#FFD700',
-        'default': '#696969'
+        'default': '#FFD700'
     },
     'backgrounds': {
         'inactive': '#FFF8DC',
-        'selected': '#FFE4B5',
-        'active': '#F0FFF0'
+        'selected': '#E6F3FF',
+        'active': '#E6FFE6'
     },
     'foregrounds': {
-        'inactive': '#D3D3D3',
-        'selected': '#FFD700',
+        'inactive': '#FFB6C1',
+        'selected': '#FF6B6B',
         'active': '#32CD32'
+    },
+    'temperature_difference': {
+        'significant_warmer': '#FF8C00',
+        'slight_warmer': '#FFA500',
+        'significant_cooler': '#87CEEB',
+        'slight_cooler': '#B0E0E6',
+        'comfortable_range': '#32CD32'
+    },
+    'metric_colors': {
+        'temperature': {
+            'ranges': [
+                (-20, '#87CEEB'), (-10, '#B0E0E6'), (5, '#98FB98'),
+                (15, '#32CD32'), (25, '#FFA500'), (35, '#FF6347'), (45, '#FF4500')
+            ],
+            'imperial_ranges': [
+                (-10, '#87CEEB'), (15, '#B0E0E6'), (40, '#98FB98'),
+                (60, '#32CD32'), (80, '#FFA500'), (95, '#FF6347'), (110, '#FF4500')
+            ]
+        },
+        'humidity': {
+            'ranges': [
+                (0, '#FFA500'), (20, '#FFD700'), (40, '#32CD32'),
+                (70, '#87CEEB'), (85, '#B0E0E6'), (100, '#87CEEB')
+            ]
+        },
+        'wind_speed': {
+            'ranges': [
+                (0, '#DDA0DD'), (5, '#32CD32'), (15, '#FFD700'),
+                (25, '#FFA500'), (35, '#FF6347')
+            ],
+            'imperial_ranges': [
+                (0, '#DDA0DD'), (10, '#32CD32'), (25, '#FFD700'),
+                (40, '#FFA500'), (60, '#FF6347')
+            ]
+        },
+        'pressure': {
+            'ranges': [
+                (980, '#FF6347'), (1000, '#FFA500'), (1013, '#32CD32'),
+                (1030, '#87CEEB'), (1050, '#B0E0E6')
+            ],
+            'imperial_ranges': [
+                (28.9, '#FF6347'), (29.5, '#FFA500'), (29.9, '#32CD32'),
+                (30.4, '#87CEEB'), (31.0, '#B0E0E6')
+            ]
+        },
+        'weather_comfort_score': {
+            'ranges': [
+                (0, '#FF6347'), (30, '#FFA500'), (60, '#FFD700'),
+                (80, '#32CD32'), (95, '#98FB98')
+            ]
+        }
+    },
+    'comfort_thresholds': {
+        'poor': (0, 30),
+        'fair': (30, 50),
+        'good': (50, 70),
+        'very_good': (70, 85),
+        'excellent': (85, 100)
     }
 }
 
 # =================================
-# 2. OPTIMISTIC FONT CONFIGURATION
+# 2. OPTIMISTIC FONTS - Single Source of Truth
 # =================================
 OPTIMISTIC_FONTS = {
     'default_family': 'Comic Sans MS',
     'title_family': 'Comic Sans MS',
     'sizes': {
-        'small': 10,           # Larger for friendliness
-        'normal': 12,
-        'medium': 14,
-        'large': 18,
-        'title': 24
+        'small': 9,
+        'normal': 11,
+        'medium': 13,
+        'large': 16,
+        'title': 22
     },
     'weights': {
         'normal': 'normal',
@@ -60,51 +118,78 @@ OPTIMISTIC_FONTS = {
 }
 
 # =================================
-# 3. OPTIMISTIC MESSAGING SYSTEM
+# 3. OPTIMISTIC PADDING - Single Source of Truth (Adjusted to prevent overflow)
+# =================================
+OPTIMISTIC_PADDING = {
+    'none': 0,
+    'micro': 2,
+    'tiny': 4,
+    'small': 6,      # Reduced from 8 to prevent overflow
+    'medium': 10,    # Reduced from 12 to prevent overflow
+    'large': 12,     # Reduced from 16 to prevent overflow
+    'extra_large': 14  # Reduced from 20 to prevent overflow
+}
+
+# =================================
+# 4. OPTIMISTIC MESSAGING - Single Source of Truth
 # =================================
 OPTIMISTIC_MESSAGING = {
-    'temperature_cold': 'Refreshingly crisp air for enhanced mental clarity!',
-    'temperature_hot': 'Perfect vitamin D synthesis conditions!',
-    'temperature_moderate': 'Ideal conditions for all outdoor pursuits!',
-    'rain': 'Free natural irrigation for beautiful gardens!',
-    'snow': 'Magical winter wonderland creation in progress!',
-    'clear': 'Perfect sunshine for all your activities!',
-    'cloudy': 'Gentle cloud cover for comfortable outdoor time!',
-    'windy': 'Natural air conditioning and kite-flying opportunities!',
-    'calm': 'Perfect stillness for meditation and reflection!',
+    'temperature_cold': '❄️ Cozy winter weather - perfect for hot chocolate!',
+    'temperature_hot': '☀️ Beautiful sunny weather - great for outdoor activities!',
+    'temperature_moderate': '🌤️ Perfect comfortable weather - enjoy your day!',
+    'rain': '��️ Refreshing rain - nature\'s way of cleaning the air!',
+    'snow': '❄️ Magical snow - winter wonderland conditions!',
+    'clear': '☀️ Gorgeous clear skies - perfect visibility!',
+    'cloudy': '☁️ Beautiful cloudy day - soft diffused light!',
+    'windy': '💨 Energizing breeze - fresh air circulation!',
+    'calm': '😌 Peaceful calm conditions - serene atmosphere!',
     'loading_messages': {
         'default': 'Gathering beautiful weather data...',
         'initializing': 'Preparing your perfect weather experience...',
         'validating': 'Ensuring everything is wonderful...',
         'processing': 'Making your weather data amazing...'
+    },
+    'dialog_titles': {
+        'city_not_found': 'City Not Found',
+        'rate_limit': 'Rate Limit',
+        'network_issue': 'Network Issue',
+        'input_error': 'Input Error',
+        'general_error': 'Error',
+        'notice': 'Notice'
     }
 }
 
 # =================================
-# 4. OPTIMISTIC UI ELEMENTS
+# 5. OPTIMISTIC ICONS - Single Source of Truth
 # =================================
-OPTIMISTIC_UI = {
-    'padding': {
-        'none': 0,
-        'micro': 2,
-        'tiny': 4,
-        'small': 8,
-        'medium': 12,
-        'large': 16,
-        'extra_large': 20
+OPTIMISTIC_ICONS = {
+    'weather': {
+        '01d': '☀️', '01n': '🌙', '02d': '🌤️', '02n': '��',
+        '03d': '☁️', '03n': '☁️', '04d': '☁️', '04n': '☁️',
+        '09d': '��️', '09n': '��️', '10d': '🌦️', '10n': '🌧️',
+        '11d': '⛈️', '11n': '⛈️', '13d': '🌨️', '13n': '🌨️',
+        '50d': '🌫️', '50n': '🌫️'
     },
-    'dimensions': {
-        'alert': {
-            'width': 450,           # Larger for friendliness
-            'base_height': 120,
-            'item_height': 100,
-            'max_height': 600
-        },
-        'progress_bar': {
-            'width': 140,           # Larger progress bars
-            'height': 18,
-            'border_width': 2
-        }
+    'loading': {
+        'progress': '☀️',
+        'waiting': '🌈'
+    }
+}
+
+# =================================
+# 6. OPTIMISTIC DIMENSIONS - Single Source of Truth
+# =================================
+OPTIMISTIC_DIMENSIONS = {
+    'alert': {
+        'width_ratio': 0.45,  # 45% of parent width
+        'height_ratio': 0.25,  # 25% of parent height
+        'item_height_ratio': 0.12,  # 12% of parent height
+        'max_height_ratio': 0.6  # 60% of parent height
+    },
+    'progress_bar': {
+        'width_ratio': 0.18,  # 18% of parent width
+        'height_ratio': 0.025,  # 2.5% of parent height
+        'border_width': 2
     },
     'widget_layout': {
         'alert_popup': {
@@ -123,193 +208,65 @@ OPTIMISTIC_UI = {
         },
         'alert_status': {
             'default_font': ('Comic Sans MS', 14),
-            'message_wrap_length': 400
+            'message_wrap_ratio': 0.4  # 40% of parent width
         }
+    }
+}
+
+# =================================
+# 7. OPTIMISTIC UI - References All Other Sections
+# =================================
+OPTIMISTIC_UI = {
+    'colors': OPTIMISTIC_COLORS,
+    'fonts': OPTIMISTIC_FONTS,
+    'padding': OPTIMISTIC_PADDING,
+    'messaging': OPTIMISTIC_MESSAGING,
+    'icons': OPTIMISTIC_ICONS,
+    'dimensions': OPTIMISTIC_DIMENSIONS,
+    
+    # UI-specific configurations that reference the single sources
+    'widget_layout': OPTIMISTIC_DIMENSIONS['widget_layout'],
+    'title_padding': {
+        'horizontal': OPTIMISTIC_PADDING['small'],
+        'vertical': OPTIMISTIC_PADDING['tiny']
+    },
+    'metric_padding': {
+        'alert_frame': OPTIMISTIC_PADDING['small'],
+        'progress_bar': OPTIMISTIC_PADDING['micro']
     },
     'control_panel_config': {
         'padding': {
-            'standard': 8,
-            'button_group': (16, 8),
-            'checkbox': (16, 2),
-            'header': (8, 16)
+            'standard': OPTIMISTIC_PADDING['small'],
+            'button_group': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['small']),
+            'checkbox': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['micro']),
+            'header': (OPTIMISTIC_PADDING['small'], OPTIMISTIC_PADDING['medium'])
         },
         'spacing': {
-            'group': (16, 4),
-            'header': (16, 4),
-            'section': 2
+            'group': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['tiny']),
+            'header': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['tiny']),
+            'section': OPTIMISTIC_PADDING['micro']
         }
     },
     'status_bar_config': {
-        'padding': {'system': 8, 'progress': 16, 'data': 8, 'separator': 8},
+        'padding': {
+            'system': OPTIMISTIC_PADDING['small'],
+            'progress': OPTIMISTIC_PADDING['medium'],
+            'data': OPTIMISTIC_PADDING['small'],
+            'separator': OPTIMISTIC_PADDING['small']
+        },
         'colors': {
-            'info': '#32CD32',
-            'warning': '#FFA500',
-            'error': '#FF6B6B',
-            'loading': '#87CEEB'
+            'info': OPTIMISTIC_COLORS['info'],
+            'warning': OPTIMISTIC_COLORS['warning'],
+            'error': OPTIMISTIC_COLORS['error'],
+            'loading': OPTIMISTIC_COLORS['info']
         }
-    },
-    'icons': {
-        'progress': '☀️',
-        'waiting': '🌈',
-        'success': '✨',
-        'warning': '🌤️',
-        'error': '🌧️'
     },
     'loading_config': {
-        'icons': {
-            'progress': '☀️',
-            'waiting': '🌈'
-        },
+        'icons': OPTIMISTIC_ICONS['loading'],
         'colors': {
-            'loading': '#87CEEB',
-            'default': '#FFD700'
+            'loading': OPTIMISTIC_COLORS['info'],
+            'default': OPTIMISTIC_COLORS['text']
         },
-        'messages': {
-            'default': 'Gathering beautiful weather data...',
-            'initializing': 'Preparing your perfect weather experience...',
-            'validating': 'Ensuring everything is wonderful...',
-            'processing': 'Making your weather data amazing...'
-        }
-    }
-}
-
-# =================================
-# 5. OPTIMISTIC WEATHER DISPLAY STYLING
-# =================================
-OPTIMISTIC_WEATHER_ICONS = {
-    '01d': '☀️',   # clear sky day
-    '01n': '🌙',   # clear sky night
-    '02d': '🌤️',   # few clouds day
-    '02n': '🌙',   # few clouds night
-    '03d': '☁️',   # scattered clouds
-    '03n': '☁️',   # scattered clouds
-    '04d': '☁️',   # broken clouds
-    '04n': '☁️',   # broken clouds
-    '09d': '🌧️',   # shower rain
-    '09n': '🌧️',   # shower rain
-    '10d': '🌦️',   # rain day
-    '10n': '🌧️',   # rain night
-    '11d': '⛈️',   # thunderstorm
-    '11n': '⛈️',   # thunderstorm
-    '13d': '🌨️',   # snow
-    '13n': '🌨️',   # snow
-    '50d': '🌫️',   # mist
-    '50n': '🌫️',   # mist
-}
-
-OPTIMISTIC_TEMPERATURE_DIFFERENCE_COLORS = {
-    'significant_warmer': '#FFD700',  # Gold for warmer
-    'slight_warmer': '#FFA500',       # Orange for slightly warmer  
-    'significant_cooler': '#87CEEB',  # Sky blue for cooler
-    'slight_cooler': '#98FB98',       # Pale green for slightly cooler
-    'comfortable_range': '#32CD32'    # Lime green for comfortable
-}
-
-OPTIMISTIC_COMFORT_THRESHOLDS = {
-    'poor': (0, 30),       # Red zone
-    'fair': (30, 50),      # Orange zone  
-    'good': (50, 70),      # Yellow zone
-    'very_good': (70, 85), # Light green zone
-    'excellent': (85, 100) # Green zone
-}
-
-# =================================
-# 6. OPTIMISTIC METRIC COLOR RANGES
-# =================================
-OPTIMISTIC_METRIC_COLORS = {
-    'temperature': {
-        'ranges': [
-            (-20, '#87CEEB'),      # Sky blue for cold
-            (-10, '#98FB98'),       # Pale green
-            (5, '#90EE90'),         # Light green
-            (15, '#32CD32'),        # Lime green
-            (25, '#FFD700'),        # Gold
-            (35, '#FFA500'),        # Orange
-            (45, '#FF6B6B')         # Soft red
-        ],
-        'unit_dependent': True,
-        'imperial_ranges': [
-            (-10, '#87CEEB'),
-            (15, '#98FB98'),
-            (40, '#90EE90'),
-            (60, '#32CD32'),
-            (80, '#FFD700'),
-            (95, '#FFA500'),
-            (110, '#FF6B6B')
-        ]
-    },
-    'humidity': {
-        'ranges': [
-            (0, '#FFD700'),         # Gold
-            (20, '#90EE90'),        # Light green
-            (40, '#32CD32'),        # Lime green
-            (70, '#87CEEB'),        # Sky blue
-            (85, '#98FB98'),        # Pale green
-            (100, '#F0FFF0')        # Honeydew
-        ],
-        'unit_dependent': False
-    },
-    'wind_speed': {
-        'ranges': [
-            (0, '#F0FFF0'),         # Honeydew
-            (5, '#90EE90'),         # Light green
-            (15, '#FFD700'),        # Gold
-            (25, '#FFA500'),        # Orange
-            (35, '#FF6B6B')         # Soft red
-        ],
-        'unit_dependent': True,
-        'imperial_ranges': [
-            (0, '#F0FFF0'),
-            (10, '#90EE90'),
-            (25, '#FFD700'),
-            (40, '#FFA500'),
-            (60, '#FF6B6B')
-        ]
-    },
-    'pressure': {
-        'ranges': [
-            (980, '#FF6B6B'),       # Soft red
-            (1000, '#FFA500'),      # Orange
-            (1013, '#32CD32'),      # Lime green
-            (1030, '#87CEEB'),      # Sky blue
-            (1050, '#98FB98')       # Pale green
-        ],
-        'unit_dependent': True,
-        'imperial_ranges': [
-            (28.9, '#FF6B6B'),      # Soft red
-            (29.5, '#FFA500'),      # Orange
-            (29.9, '#32CD32'),      # Lime green
-            (30.4, '#87CEEB'),      # Sky blue
-            (31.0, '#98FB98')       # Pale green
-        ]
-    },
-    'weather_comfort_score': {
-        'ranges': [
-            (0, '#FF6B6B'),         # Soft red
-            (30, '#FFA500'),        # Orange
-            (60, '#FFD700'),        # Gold
-            (80, '#90EE90'),        # Light green
-            (95, '#32CD32')         # Lime green
-        ],
-        'unit_dependent': False
-    }
-}
-
-# =================================
-# 7. OPTIMISTIC DIALOG SYSTEM STYLING
-# =================================
-OPTIMISTIC_DIALOG_CONFIG = {
-    'error_titles': {
-        'city_not_found': 'City Not Found',
-        'rate_limit': 'Rate Limit',
-        'network_issue': 'Network Issue', 
-        'input_error': 'Input Error',
-        'general_error': 'Error',
-        'notice': 'Notice'
-    },
-    'dialog_types': {
-        'error': 'showerror',
-        'warning': 'showwarning',
-        'info': 'showinfo'
+        'messages': OPTIMISTIC_MESSAGING['loading_messages']
     }
 }

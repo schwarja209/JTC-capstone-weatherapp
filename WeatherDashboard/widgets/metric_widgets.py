@@ -248,14 +248,22 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     @widget_error_handler("header info")    
     def _create_header_info(self) -> None:
         """Create city and date display headers with error handling."""
+        # Get parent dimensions for ratio-based sizing
+        parent_width = self.parent.winfo_width()
+        if parent_width <= 0:  # Handle case where parent hasn't been sized yet
+            parent_width = 300  # Default fallback
+
+        # Calculate width using ratio (e.g., 10% of parent width)
+        label_width = max(10, int(0.1 * parent_width))  # Minimum 10 characters
+
         # City label
         city_label, self.city_label = self.widget_utils.create_label_value_pair(self.parent, "City:", "--", value_style="LabelValue.TLabel")
-        self.city_label.configure(width=15)
+        self.city_label.configure(width=label_width)
         self.widget_utils.position_widget_pair(self.parent, city_label, self.city_label, 0, 0, 1)
 
         # Date label  
         date_label, self.date_label = self.widget_utils.create_label_value_pair(self.parent, "Date:", "--", value_style="LabelValue.TLabel")
-        self.date_label.configure(width=15)
+        self.date_label.configure(width=label_width)
         self.widget_utils.position_widget_pair(self.parent, date_label, self.date_label, 1, 0, 1)
     
     @widget_error_handler("weather metrics")
@@ -388,20 +396,32 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         Returns:
             tk.Canvas: Canvas widget displaying colored progress bar
         """
+        # Get parent dimensions
+        parent_width = parent.winfo_width()
+        parent_height = parent.winfo_height()
+
+        # Get theme configuration
+        theme_config = self.styles.get_theme_config()
+        progress_config = theme_config['ui']['dimensions']['progress_bar']
+        
+        # Calculate dimensions using ratios
+        bar_width = int(progress_config['width_ratio'] * parent_width)
+        bar_height = int(progress_config['height_ratio'] * parent_height)
+        border_width = progress_config['border_width']
+
         # Get color using the same logic as text metrics
         color = self.color_utils.get_metric_color('weather_comfort_score', comfort_score, 'metric')
         
-        # Create canvas for custom progress bar using configured dimensions
-        layout = self.styles.WIDGET_LAYOUT['comfort_progress_bar']
-        canvas = tk.Canvas(parent, width=layout['width'], height=layout['height'], highlightthickness=0)
+        # Create canvas for custom progress bar using calculated dimensions
+        canvas = tk.Canvas(parent, width=bar_width, height=bar_height, highlightthickness=0)
 
         # Draw background
-        canvas.create_rectangle(0, 0, layout['width'], layout['height'], fill='lightgray', outline='gray')
+        canvas.create_rectangle(0, 0, bar_width, bar_height, fill='lightgray', outline='gray')
 
         # Draw progress bar
-        border_allowance = layout['width'] - (2 * layout['border_width'])  # Leave border space
+        border_allowance = bar_width - (2 * border_width)  # Leave border space
         progress_width = int((comfort_score / 100) * border_allowance)
         if progress_width > 0:
-            canvas.create_rectangle(1, 1, progress_width + 1, layout['height'] - 1, fill=color, outline='')
+            canvas.create_rectangle(1, 1, progress_width + 1, bar_height - 1, fill=color, outline='')
         
         return canvas

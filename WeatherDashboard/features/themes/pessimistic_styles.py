@@ -1,90 +1,141 @@
 """
-Extreme Pessimistic theme styles for the Weather Dashboard.
+Pessimistic theme styles for the Weather Dashboard.
 
-This module provides the "Weather Realist" pessimistic theme styling with oppressive colors,
-catastrophic messaging, and brutalist UI elements. Filters through the main styles.py module.
+This module provides the pessimistic theme styling with dark colors,
+catastrophic messaging, and cramped UI elements. Filters through the main styles.py module.
 
-Theme Philosophy: Brutalist UX meets existential dread - make weather information as oppressive as possible.
+Theme Philosophy: Dark, cramped weather dashboard with catastrophic data presentation.
 """
 
 # =================================
-# 1. PESSIMISTIC COLORS
+# 1. PESSIMISTIC COLORS - Single Source of Truth
 # =================================
 PESSIMISTIC_COLORS = {
-    # Core palette: Oppressive and grim
-    'primary': '#1C1C1C',      # Charcoal (the void stares back)
-    'secondary': '#8B0000',    # Dark red (blood of hope)
-    'accent': '#FF4500',       # Orange red (danger alert)
-    'background': '#0D0D0D',   # Almost black (embrace the darkness)
-    'text': '#DCDCDC',         # Gainsboro (barely visible truth)
-    
-    # Status colors: Everything is a problem
-    'success': '#006400',      # Dark green (rare victories)
-    'warning': '#B22222',      # Fire brick (constant danger)
-    'error': '#8B0000',        # Dark red (inevitable failure)
-    'info': '#2F4F4F',         # Dark slate gray (grim information)
-    
+    'primary': '#2F4F4F',      # Dark slate gray
+    'secondary': '#8B0000',    # Dark red
+    'accent': '#556B2F',       # Dark olive green
+    'background': '#2C2C2C',   # Dark gray
+    'text': '#E0E0E0',         # Light gray
+    'success': '#228B22',      # Forest green
+    'warning': '#B22222',      # Fire brick red
+    'error': '#8B0000',        # Dark red
+    'info': '#2F4F4F',         # Dark slate gray
     'status': {
-        'success': '#228B22',   # Forest green (fleeting success)
-        'warning': '#CD853F',   # Peru (ominous warnings)
-        'error': '#8B0000',     # Dark red (doom)
-        'info': '#2F4F4F',      # Dark slate gray (heavy info)
-        'neutral': '#696969',   # Dim gray (nothing matters)
-        'default': '#A9A9A9'    # Dark gray (existential default)
+        'success': '#228B22',
+        'warning': '#B22222',
+        'error': '#8B0000',
+        'info': '#2F4F4F',
+        'neutral': '#696969',
+        'default': '#2F4F4F'
     },
-    
-    # Backgrounds: Layers of oppression
     'backgrounds': {
-        'inactive': '#2F2F2F',     # Dark gray (lifeless)
-        'selected': '#404040',     # Charcoal (reluctant selection)
-        'active': '#4A4A4A',       # Gray (forced activity)
-        'hover': '#363636',        # Dark gray (hesitant hover)
-        'disabled': '#1A1A1A'      # Near black (permanently broken)
+        'inactive': '#404040',
+        'selected': '#556B2F',
+        'active': '#8B0000'
     },
-    
-    # Foregrounds: Harsh and unwelcoming
     'foregrounds': {
-        'inactive': '#696969',     # Dim gray (dead)
-        'selected': '#CD853F',     # Peru (reluctant selection)
-        'active': '#B22222',       # Fire brick (angry activity)
-        'hover': '#A0522D',        # Sienna (threatening hover)
-        'disabled': '#2F2F2F'      # Dark gray (permanently disabled)
+        'inactive': '#696969',
+        'selected': '#2F4F4F',
+        'active': '#228B22'
+    },
+    'temperature_difference': {
+        'significant_warmer': '#8B0000',
+        'slight_warmer': '#B22222',
+        'significant_cooler': '#2F4F4F',
+        'slight_cooler': '#556B2F',
+        'comfortable_range': '#228B22'
+    },
+    'metric_colors': {
+        'temperature': {
+            'ranges': [
+                (-20, '#000080'), (-10, '#0000FF'), (5, '#2F4F4F'),
+                (15, '#556B2F'), (25, '#B22222'), (35, '#8B0000'), (45, '#4B0082')
+            ],
+            'imperial_ranges': [
+                (-10, '#000080'), (15, '#0000FF'), (40, '#2F4F4F'),
+                (60, '#556B2F'), (80, '#B22222'), (95, '#8B0000'), (110, '#4B0082')
+            ]
+        },
+        'humidity': {
+            'ranges': [
+                (0, '#8B0000'), (20, '#B22222'), (40, '#556B2F'),
+                (70, '#2F4F4F'), (85, '#0000FF'), (100, '#000080')
+            ]
+        },
+        'wind_speed': {
+            'ranges': [
+                (0, '#696969'), (5, '#556B2F'), (15, '#B22222'),
+                (25, '#8B0000'), (35, '#4B0082')
+            ],
+            'imperial_ranges': [
+                (0, '#696969'), (10, '#556B2F'), (25, '#B22222'),
+                (40, '#8B0000'), (60, '#4B0082')
+            ]
+        },
+        'pressure': {
+            'ranges': [
+                (980, '#8B0000'), (1000, '#B22222'), (1013, '#556B2F'),
+                (1030, '#2F4F4F'), (1050, '#0000FF')
+            ],
+            'imperial_ranges': [
+                (28.9, '#8B0000'), (29.5, '#B22222'), (29.9, '#556B2F'),
+                (30.4, '#2F4F4F'), (31.0, '#0000FF')
+            ]
+        },
+        'weather_comfort_score': {
+            'ranges': [
+                (0, '#8B0000'), (30, '#B22222'), (60, '#556B2F'),
+                (80, '#228B22'), (95, '#556B2F')
+            ]
+        }
+    },
+    'comfort_thresholds': {
+        'poor': (0, 30),
+        'fair': (30, 50),
+        'good': (50, 70),
+        'very_good': (70, 85),
+        'excellent': (85, 100)
     }
 }
 
 # =================================
-# 2. PESSIMISTIC FONTS
+# 2. PESSIMISTIC FONTS - Single Source of Truth
 # =================================
 PESSIMISTIC_FONTS = {
-    # Font families: Harsh and industrial
-    'default_family': 'Courier New',  # Cold, mechanical
-    'title_family': 'Times New Roman', # Academic authority
-    
-    # Font sizes: Cramped and difficult
+    'default_family': 'Courier New',
+    'title_family': 'Courier New',
     'sizes': {
-        'micro': 6,      # Barely readable
-        'tiny': 8,       # Squint-inducing
-        'small': 9,      # Eye strain
-        'normal': 10,    # Uncomfortably small
-        'medium': 11,    # Still too small
-        'large': 12,     # Finally readable
-        'title': 14      # Modest titles
+        'small': 7,
+        'normal': 9,
+        'medium': 11,
+        'large': 13,
+        'title': 16
     },
-    
-    # Font weights: Heavy and oppressive
     'weights': {
-        'normal': 'normal',     # Standard weight
-        'bold': 'bold'          # Heavy emphasis
+        'normal': 'normal',
+        'bold': 'bold'
     }
 }
 
 # =================================
-# 3. PESSIMISTIC MESSAGING
+# 3. PESSIMISTIC PADDING - Single Source of Truth (Cramped and uncomfortable)
+# =================================
+PESSIMISTIC_PADDING = {
+    'none': 0,
+    'micro': 1,
+    'tiny': 2,
+    'small': 3,      # Cramped feeling
+    'medium': 5,     # Cramped feeling
+    'large': 6,      # Cramped feeling
+    'extra_large': 8  # Cramped feeling
+}
+
+# =================================
+# 4. PESSIMISTIC MESSAGING - Single Source of Truth
 # =================================
 PESSIMISTIC_MESSAGING = {
-    # Weather interpretations: Catastrophically negative
-    'temperature_cold': '🥶 HYPOTHERMIA RISK ZONE: Joint inflammation amplification with seasonal depression triggers',
-    'temperature_hot': '🔥 HEAT EXHAUSTION ALERT: Dehydration acceleration with UV carcinogen bombardment',
+    'temperature_cold': '�� HYPOTHERMIA RISK ZONE: Joint inflammation amplification with seasonal depression triggers',
+    'temperature_hot': '�� HEAT EXHAUSTION ALERT: Dehydration acceleration with UV carcinogen bombardment',
     'temperature_moderate': '😐 DECEPTIVE STABILITY: Masking atmospheric instability and pressure headache formation',
     'rain': '🌧️ INFRASTRUCTURE EROSION: Flood risk escalation with mold spore propagation vectors',
     'snow': '❄️ TRANSPORTATION PARALYSIS: Hypothermia zones with emergency service impediments',
@@ -92,45 +143,54 @@ PESSIMISTIC_MESSAGING = {
     'cloudy': '☁️ BAROMETRIC PRESSURE CHAOS: Migraine trigger activation with mood destabilization',
     'windy': '💨 DEBRIS PROJECTILE HAZARD: Respiratory irritant distribution with structural stress loading',
     'calm': '😷 ATMOSPHERIC STAGNATION: Pollutant concentration with respiratory pathogen incubation',
-    
     'loading_messages': {
         'default': '⚠️ Analyzing atmospheric threat vectors...',
         'initializing': '🔍 Preparing catastrophe assessment protocols...',
         'validating': '📊 Verifying doom probability calculations...',
         'processing': '⚙️ Computing disaster risk matrices...'
+    },
+    'dialog_titles': {
+        'city_not_found': 'City Not Found',
+        'rate_limit': 'Rate Limit',
+        'network_issue': 'Network Issue',
+        'input_error': 'Input Error',
+        'general_error': 'Error',
+        'notice': 'Notice'
     }
 }
 
 # =================================
-# 4. PESSIMISTIC UI
+# 5. PESSIMISTIC ICONS - Single Source of Truth
 # =================================
-PESSIMISTIC_UI = {
-    # Padding: Minimal and cramped
-    'padding': {
-        'none': 0,
-        'micro': 1,
-        'tiny': 2,
-        'small': 3,
-        'medium': 5,
-        'large': 8,
-        'extra_large': 10
+PESSIMISTIC_ICONS = {
+    'weather': {
+        '01d': '☀️', '01n': '🌙', '02d': '🌤️', '02n': '',
+        '03d': '☁️', '03n': '☁️', '04d': '☁️', '04n': '☁️',
+        '09d': '️', '09n': '️', '10d': '🌦️', '10n': '🌧️',
+        '11d': '⛈️', '11n': '⛈️', '13d': '🌨️', '13n': '🌨️',
+        '50d': '🌫️', '50n': '🌫️'
     },
-    
-    # Dimensions: Cramped and overwhelming
-    'dimensions': {
-        'alert': {
-            'width': 300,           # Narrow for claustrophobia
-            'base_height': 60,      # Cramped height
-            'item_height': 40,      # Compressed items
-            'max_height': 300       # Limited space
-        },
-        'progress_bar': {
-            'width': 80,            # Narrow progress
-            'height': 8,            # Thin line
-            'border_width': 1       # Minimal border
-        }
+    'loading': {
+        'progress': '⚠️',
+        'waiting': '🔍'
+    }
+}
+
+# =================================
+# 6. PESSIMISTIC DIMENSIONS - Single Source of Truth
+# =================================
+PESSIMISTIC_DIMENSIONS = {
+    'alert': {
+        'width_ratio': 0.3,  # 30% of parent width - cramped
+        'height_ratio': 0.15,  # 15% of parent height - cramped
+        'item_height_ratio': 0.08,  # 8% of parent height - cramped
+        'max_height_ratio': 0.3  # 30% of parent height - cramped
     },
-    
+    'progress_bar': {
+        'width_ratio': 0.08,  # 8% of parent width - cramped
+        'height_ratio': 0.01,  # 1% of parent height - cramped
+        'border_width': 1
+    },
     'widget_layout': {
         'alert_popup': {
             'width': 300,
@@ -148,195 +208,65 @@ PESSIMISTIC_UI = {
         },
         'alert_status': {
             'default_font': ('Courier New', 9),
-            'message_wrap_length': 250
+            'message_wrap_ratio': 0.25  # 25% of parent width - cramped
         }
-    },
+    }
+}
+
+# =================================
+# 7. PESSIMISTIC UI - References All Other Sections
+# =================================
+PESSIMISTIC_UI = {
+    'colors': PESSIMISTIC_COLORS,
+    'fonts': PESSIMISTIC_FONTS,
+    'padding': PESSIMISTIC_PADDING,
+    'messaging': PESSIMISTIC_MESSAGING,
+    'icons': PESSIMISTIC_ICONS,
+    'dimensions': PESSIMISTIC_DIMENSIONS,
     
+    # UI-specific configurations that reference the single sources
+    'widget_layout': PESSIMISTIC_DIMENSIONS['widget_layout'],
+    'title_padding': {
+        'horizontal': PESSIMISTIC_PADDING['small'],
+        'vertical': PESSIMISTIC_PADDING['tiny']
+    },
+    'metric_padding': {
+        'alert_frame': PESSIMISTIC_PADDING['small'],
+        'progress_bar': PESSIMISTIC_PADDING['micro']
+    },
     'control_panel_config': {
         'padding': {
-            'standard': 3,
-            'button_group': (5, 3),
-            'checkbox': (5, 0),
-            'header': (3, 5)
+            'standard': PESSIMISTIC_PADDING['small'],
+            'button_group': (PESSIMISTIC_PADDING['small'], PESSIMISTIC_PADDING['small']),
+            'checkbox': (PESSIMISTIC_PADDING['small'], PESSIMISTIC_PADDING['none']),
+            'header': (PESSIMISTIC_PADDING['small'], PESSIMISTIC_PADDING['small'])
         },
         'spacing': {
-            'group': (5, 1),
-            'header': (5, 1),
-            'section': 1
+            'group': (PESSIMISTIC_PADDING['small'], PESSIMISTIC_PADDING['micro']),
+            'header': (PESSIMISTIC_PADDING['small'], PESSIMISTIC_PADDING['micro']),
+            'section': PESSIMISTIC_PADDING['micro']
         }
     },
-    
     'status_bar_config': {
-        'padding': {'system': 3, 'progress': 5, 'data': 3, 'separator': 3},
+        'padding': {
+            'system': PESSIMISTIC_PADDING['small'],
+            'progress': PESSIMISTIC_PADDING['small'],
+            'data': PESSIMISTIC_PADDING['small'],
+            'separator': PESSIMISTIC_PADDING['small']
+        },
         'colors': {
-            'info': '#228B22',
-            'warning': '#B22222',
-            'error': '#8B0000',
-            'loading': '#2F4F4F'
+            'info': PESSIMISTIC_COLORS['info'],
+            'warning': PESSIMISTIC_COLORS['warning'],
+            'error': PESSIMISTIC_COLORS['error'],
+            'loading': PESSIMISTIC_COLORS['info']
         }
     },
-    
     'loading_config': {
-        'icons': {
-            'progress': '⚠️',
-            'waiting': '⏳'
-        },
+        'icons': PESSIMISTIC_ICONS['loading'],
         'colors': {
-            'loading': '#FF4500',
-            'default': '#8B0000'
+            'loading': PESSIMISTIC_COLORS['info'],
+            'default': PESSIMISTIC_COLORS['text']
         },
-        'messages': {
-            'default': '⚠️ Analyzing atmospheric threat vectors...',
-            'initializing': '🔍 Preparing catastrophe assessment protocols...',
-            'validating': '📊 Verifying doom probability calculations...',
-            'processing': '⚙️ Computing disaster risk matrices...'
-        }
-    }
-}
-
-# =================================
-# 5. PESSIMISTIC WEATHER ICONS
-# =================================
-PESSIMISTIC_WEATHER_ICONS = {
-    '01d': '☀️',   # clear sky day (but we'll warn about UV!)
-    '01n': '🌙',   # clear sky night (lonely darkness)
-    '02d': '🌤️',   # few clouds day (false hope)
-    '02n': '🌙',   # few clouds night (obscured moon)
-    '03d': '☁️',   # scattered clouds (gathering gloom)
-    '03n': '☁️',   # scattered clouds (night terrors)
-    '04d': '☁️',   # broken clouds (shattered sky)
-    '04n': '☁️',   # broken clouds (endless gray)
-    '09d': '🌧️',   # shower rain (infrastructure damage)
-    '09n': '🌧️',   # shower rain (sleepless nights)
-    '10d': '🌦️',   # rain day (mixed misery)
-    '10n': '🌧️',   # rain night (flooding risks)
-    '11d': '⛈️',   # thunderstorm (atmospheric violence)
-    '11n': '⛈️',   # thunderstorm (terror from above)
-    '13d': '🌨️',   # snow (transportation chaos)
-    '13n': '🌨️',   # snow (hypothermia risk)
-    '50d': '🌫️',   # mist (visibility hazard)
-    '50n': '🌫️',   # mist (accident conditions)
-}
-
-# =================================
-# 6. PESSIMISTIC TEMPERATURE DIFFERENCE COLORS
-# =================================
-PESSIMISTIC_TEMPERATURE_DIFFERENCE_COLORS = {
-    'significant_warmer': '#8B0000',  # Dark red for warmer (heat stroke risk)
-    'slight_warmer': '#DC143C',       # Crimson for slightly warmer (discomfort)
-    'significant_cooler': '#000080',  # Navy for cooler (hypothermia zone)
-    'slight_cooler': '#4169E1',      # Royal blue for slightly cooler (joint pain)
-    'comfortable_range': '#228B22'    # Forest green for comfortable (temporary relief)
-}
-
-# =================================
-# 7. PESSIMISTIC COMFORT THRESHOLDS
-# =================================
-PESSIMISTIC_COMFORT_THRESHOLDS = {
-    'poor': (0, 30),       # Suffering zone
-    'fair': (30, 50),      # Barely tolerable
-    'good': (50, 70),      # Temporary reprieve
-    'very_good': (70, 85), # False security
-    'excellent': (85, 100) # Deceptive comfort
-}
-
-# =================================
-# 8. PESSIMISTIC METRIC COLORS
-# =================================
-PESSIMISTIC_METRIC_COLORS = {
-    'temperature': {
-        'ranges': [
-            (-20, '#000080'),      # Navy for extreme cold (death zone)
-            (-10, '#0000CD'),      # Medium blue (frostbite risk)
-            (5, '#4169E1'),        # Royal blue (hypothermia warning)
-            (15, '#FF4500'),       # Orange red (false comfort)
-            (25, '#DC143C'),       # Crimson (heat stress begins)
-            (35, '#8B0000'),       # Dark red (dangerous heat)
-            (45, '#4B0082')        # Indigo (organ failure zone)
-        ],
-        'unit_dependent': True,
-        'imperial_ranges': [
-            (-10, '#000080'),      # Death cold
-            (15, '#0000CD'),       # Dangerous cold
-            (40, '#4169E1'),       # Uncomfortable cold
-            (60, '#FF4500'),       # Deceptive comfort
-            (80, '#DC143C'),       # Heat stress
-            (95, '#8B0000'),       # Dangerous heat
-            (110, '#4B0082')       # Lethal heat
-        ]
-    },
-    'humidity': {
-        'ranges': [
-            (0, '#FF4500'),        # Orange red (desert dehydration)
-            (20, '#DC143C'),       # Crimson (respiratory stress)
-            (40, '#8B0000'),       # Dark red (discomfort begins)
-            (70, '#4B0082'),       # Indigo (oppressive moisture)
-            (85, '#000080'),       # Navy (mold growth conditions)
-            (100, '#000000')       # Black (suffocating saturation)
-        ],
-        'unit_dependent': False
-    },
-    'wind_speed': {
-        'ranges': [
-            (0, '#2F4F4F'),        # Dark slate gray (stagnant air toxicity)
-            (5, '#696969'),        # Dim gray (minimal circulation)
-            (15, '#FF4500'),       # Orange red (debris hazard begins)
-            (25, '#DC143C'),       # Crimson (structural stress)
-            (35, '#8B0000')        # Dark red (catastrophic winds)
-        ],
-        'unit_dependent': True,
-        'imperial_ranges': [
-            (0, '#2F4F4F'),        # Stagnant danger
-            (10, '#696969'),       # Weak circulation
-            (25, '#FF4500'),       # Hazardous winds
-            (40, '#DC143C'),       # Destructive force
-            (60, '#8B0000')        # Catastrophic damage
-        ]
-    },
-    'pressure': {
-        'ranges': [
-            (980, '#8B0000'),      # Dark red (storm system approach)
-            (1000, '#DC143C'),     # Crimson (barometric instability)
-            (1013, '#FF4500'),     # Orange red (deceptive normalcy)
-            (1030, '#4B0082'),     # Indigo (oppressive high pressure)
-            (1050, '#000080')      # Navy (atmospheric anomaly)
-        ],
-        'unit_dependent': True,
-        'imperial_ranges': [
-            (28.9, '#8B0000'),     # Storm approach
-            (29.5, '#DC143C'),     # Pressure instability
-            (29.9, '#FF4500'),     # False stability
-            (30.4, '#4B0082'),     # Oppressive pressure
-            (31.0, '#000080')      # Atmospheric anomaly
-        ]
-    },
-    'weather_comfort_score': {
-        'ranges': [
-            (0, '#8B0000'),        # Dark red (survival mode)
-            (30, '#DC143C'),       # Crimson (endurance test)
-            (60, '#FF4500'),       # Orange red (temporary relief)
-            (80, '#4B0082'),       # Indigo (false security)
-            (95, '#000080')        # Navy (deceptive comfort)
-        ],
-        'unit_dependent': False
-    }
-}
-
-# =================================
-# 9. PESSIMISTIC DIALOG CONFIG
-# =================================
-PESSIMISTIC_DIALOG_CONFIG = {
-    'error_titles': {
-        'city_not_found': '🚫 LOCATION QUERY FAILURE',
-        'rate_limit': '⏰ SYSTEM RESOURCE EXHAUSTION',
-        'network_issue': '📡 COMMUNICATION BREAKDOWN', 
-        'input_error': '❌ USER INPUT MALFUNCTION',
-        'general_error': '💀 SYSTEM DEGRADATION EVENT',
-        'notice': '⚠️ MANDATORY SYSTEM ALERT'
-    },
-    'dialog_types': {
-        'error': 'showerror',     # Errors are serious business
-        'warning': 'showerror',   # Warnings are basically errors
-        'info': 'showwarning'     # Even info is concerning
+        'messages': PESSIMISTIC_MESSAGING['loading_messages']
     }
 }

@@ -10,9 +10,9 @@ Classes:
     SimpleAlertPopup: Popup dialog for detailed alert information display
 """
 
-from typing import List, Callable, Any
 import tkinter as tk
 from tkinter import ttk, messagebox
+from typing import List, Callable, Any
 
 from WeatherDashboard import config, styles
 
@@ -46,16 +46,27 @@ class AlertStatusIndicator:
 
         # Injected dependencies for testable components
         self.parent = parent_frame
+        parent_width = parent_frame.winfo_width()
+        if parent_width <= 0:  # Handle case where parent hasn't been sized yet
+            parent_width = 200  # Default fallback
         
         # Create status indicator frame
         self.status_frame = ttk.Frame(parent_frame)
+
+        # Get theme configuration
+        theme_config = self.styles.get_theme_config()
+        alert_status_config = theme_config['ui']['widget_layout']['alert_status']
+
+        # Calculate message wrap length using ratio
+        message_wrap_length = int(alert_status_config['message_wrap_ratio'] * parent_width)
         
         # Alert icon/text label
         self.status_label = tk.Label(
             self.status_frame,
             text="🔔",
             cursor="hand2",
-            font=self.styles.WIDGET_LAYOUT['alert_status']['default_font']
+            font=alert_status_config['default_font'],
+            wraplength=message_wrap_length
         )
         self.status_label.pack()
         
@@ -203,17 +214,29 @@ class SimpleAlertPopup:
         self.window = tk.Toplevel(parent) if parent else tk.Tk()
         self.window.title("Weather Alerts")
         
-        # Calculate dynamic window size based on number of alerts
-        popup_config = self.styles.WIDGET_LAYOUT['alert_popup']
-        base_height = popup_config['base_height']
-        alert_height = popup_config['alert_height'] 
-        max_height = popup_config['max_height']
+        # Get parent dimensions for ratio-based sizing
+        if parent:
+            parent_width = parent.winfo_width()
+            parent_height = parent.winfo_height()
+        else:
+            parent_width = 800  # Default fallback
+            parent_height = 600  # Default fallback
         
+        # Get theme configuration
+        theme_config = self.styles.get_theme_config()
+        alert_config = theme_config['ui']['dimensions']['alert']
+
+        # Calculate dimensions using ratios
+        popup_width = int(alert_config['width_ratio'] * parent_width)
+        base_height = int(alert_config['height_ratio'] * parent_height)
+        alert_height = int(alert_config['item_height_ratio'] * parent_height)
+        max_height = int(alert_config['max_height_ratio'] * parent_height)
+            
+        # Calculate dynamic window size based on number of alerts
         calculated_height = base_height + (len(alerts) * alert_height)
         window_height = min(calculated_height, max_height)
         
-        popup_config = self.styles.WIDGET_LAYOUT['alert_popup']
-        self.window.geometry(f"{popup_config['width']}x{window_height}")
+        self.window.geometry(f"{popup_width}x{window_height}")
         
         if parent:
             self.window.transient(parent)
