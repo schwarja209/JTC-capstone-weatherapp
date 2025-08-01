@@ -79,7 +79,7 @@ LAYOUT_CONFIG = {
         }
     },
     'grid_weights': {
-        'columns': [0, 0],  # weight=0 for both columns
+        'columns': [1, 2],  # weight=1 for control, weight=2 for main content
         'rows': [0, 1, 0]   # weight=0, weight=1, weight=0
     },
     'widget_positions': {

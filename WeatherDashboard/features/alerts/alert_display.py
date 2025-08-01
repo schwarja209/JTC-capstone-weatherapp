@@ -15,6 +15,7 @@ from tkinter import ttk, messagebox
 from typing import List, Callable, Any
 
 from WeatherDashboard import config, styles
+from WeatherDashboard.features.themes.theme_manager import theme_manager
 
 from .alert_manager import WeatherAlert
 
@@ -215,10 +216,10 @@ class SimpleAlertPopup:
         self.window.title("Weather Alerts")
         
         # Get theme configuration for background
-        theme_config = self.styles.get_theme_config()
+        backgrounds = theme_manager.get_backgrounds()
 
         # Set window background to match main window
-        self.window.configure(bg=theme_config['backgrounds']['main_window'])
+        self.window.configure(bg=backgrounds['main_window'])
 
         # Get parent dimensions for ratio-based sizing
         if parent:
@@ -229,27 +230,25 @@ class SimpleAlertPopup:
             parent_height = 600  # Default fallback
         
         # Get theme configuration
+        theme_config = theme_manager.get_theme_config()
         alert_config = theme_config['dimensions']['alert']
 
-        # Calculate dimensions using ratios
+        # Calculate initial dimensions using ratios
         popup_width = int(alert_config['width_ratio'] * parent_width)
         base_height = int(alert_config['height_ratio'] * parent_height)
         alert_height = int(alert_config['item_height_ratio'] * parent_height)
         max_height = int(alert_config['max_height_ratio'] * parent_height)
             
-        # Calculate dynamic window size based on number of alerts
-        calculated_height = base_height + (len(alerts) * alert_height)
-        window_height = min(calculated_height, max_height)
-        
-        # Set initial geometry but allow dynamic resizing
-        self.window.geometry(f"{popup_width}x{window_height}")
+        # Set initial geometry - will be recalculated after content creation
+        self.window.geometry(f"{popup_width}x{base_height}")
         self.window.resizable(True, True)  # Allow both width and height resizing
         
         if parent:
             self.window.transient(parent)
-        
+
+        # Create content first, then recalculate size
         self._create_display()
-        self._center_window()
+        self._recalculate_window_size()
     
     def _create_display(self) -> None:
         """Create the main alert display layout with scrollable content.
@@ -258,7 +257,7 @@ class SimpleAlertPopup:
         and control buttons.
         """
         # Get theme configuration for styling
-        theme_config = self.styles.get_theme_config()
+        theme_config = theme_manager.get_theme_config()
 
         # Main frame
         main_frame = ttk.Frame(self.window, padding="10")
@@ -276,7 +275,7 @@ class SimpleAlertPopup:
             # Create canvas and scrollbar for scrolling
             canvas = tk.Canvas(main_frame, highlightthickness=0, bg=theme_config['backgrounds']['main_window'])
             scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
-            scrollable_frame = ttk.Frame(canvas)
+            scrollable_frame = ttk.Frame(canvas, style="TFrame")
             
             # Configure scrolling
             scrollable_frame.bind(
@@ -308,6 +307,40 @@ class SimpleAlertPopup:
             no_alerts_label = ttk.Label(main_frame, text="No active alerts")
             no_alerts_label.pack()
 
+    def _recalculate_window_size(self) -> None:
+        """Recalculate window size based on actual content."""
+        if not self.alerts:
+            return
+        
+        # Get current window width
+        current_width = self.window.winfo_width()
+        if current_width <= 1:  # Window not yet fully created
+            current_width = 400  # Default fallback
+        
+        # Calculate required height based on content
+        total_height = 50  # Base padding and title
+        
+        for alert in self.alerts:
+            # Estimate height based on message length and wrapping
+            message_length = len(alert.message)
+            lines_needed = max(1, message_length // 50)  # More accurate: 50 chars per line
+            alert_height = max(80, lines_needed * 25 + 60)  # 25px per line + padding
+            total_height += alert_height
+        
+        # Add padding for scrollbar if needed
+        if total_height > 400:  # Max height threshold
+            total_height = 400
+            # Enable scrolling (already handled in _create_display)
+        
+        # Update window size
+        self.window.geometry(f"{current_width}x{total_height}")
+        
+        # Force update to get accurate measurements
+        self.window.update_idletasks()
+        
+        # Center window after size change
+        self._center_window()
+
     def _create_alert_item(self, parent: Any, alert: WeatherAlert) -> None:
         """Create display for individual alert.
         
@@ -319,11 +352,16 @@ class SimpleAlertPopup:
         alert_frame = ttk.LabelFrame(parent, text=f"{alert.icon} {alert.title}", padding="5")
         alert_frame.pack(fill=tk.X, pady=3)
         
-        # Alert message
+        # Alert message with proper content measurement
         wrap_ratio = self.styles.WIDGET_LAYOUT['alert_status']['message_wrap_ratio']
         wrap_length = int(self.window.winfo_width() * wrap_ratio)
         message_label = ttk.Label(alert_frame, text=alert.message, wraplength=wrap_length)
-        message_label.pack(anchor=tk.W)
+        message_label.pack(anchor=tk.W, fill=tk.X, expand=True)
+
+        # Store reference for size calculation
+        if not hasattr(self, '_message_labels'):
+            self._message_labels = []
+        self._message_labels.append(message_label)
         
         # Time and severity
         time_str = alert.timestamp.strftime("%H:%M:%S")
@@ -342,6 +380,27 @@ class SimpleAlertPopup:
         self.window.update_idletasks()
         width = self.window.winfo_width()
         height = self.window.winfo_height()
-        x = (self.window.winfo_screenwidth() // 2) - (width // 2)
-        y = (self.window.winfo_screenheight() // 2) - (height // 2)
+        
+        # Ensure minimum size
+        if width <= 1:
+            width = 400
+        if height <= 1:
+            height = 300
+        
+        # Calculate center position
+        screen_width = self.window.winfo_screenwidth()
+        screen_height = self.window.winfo_screenheight()
+        x = (screen_width // 2) - (width // 2)
+        y = (screen_height // 2) - (height // 2)
+        
+        # Ensure window doesn't go off-screen
+        if x + width > screen_width:
+            x = screen_width - width
+        if y + height > screen_height:
+            y = screen_height - height
+        if x < 0:
+            x = 0
+        if y < 0:
+            y = 0
+        
         self.window.geometry(f'{width}x{height}+{x}+{y}')
