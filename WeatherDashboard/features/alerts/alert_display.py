@@ -214,6 +214,12 @@ class SimpleAlertPopup:
         self.window = tk.Toplevel(parent) if parent else tk.Tk()
         self.window.title("Weather Alerts")
         
+        # Get theme configuration for background
+        theme_config = self.styles.get_theme_config()
+
+        # Set window background to match main window
+        self.window.configure(bg=theme_config['backgrounds']['main_window'])
+
         # Get parent dimensions for ratio-based sizing
         if parent:
             parent_width = parent.winfo_width()
@@ -223,7 +229,6 @@ class SimpleAlertPopup:
             parent_height = 600  # Default fallback
         
         # Get theme configuration
-        theme_config = self.styles.get_theme_config()
         alert_config = theme_config['dimensions']['alert']
 
         # Calculate dimensions using ratios
@@ -236,7 +241,9 @@ class SimpleAlertPopup:
         calculated_height = base_height + (len(alerts) * alert_height)
         window_height = min(calculated_height, max_height)
         
+        # Set initial geometry but allow dynamic resizing
         self.window.geometry(f"{popup_width}x{window_height}")
+        self.window.resizable(True, True)  # Allow both width and height resizing
         
         if parent:
             self.window.transient(parent)
@@ -250,6 +257,9 @@ class SimpleAlertPopup:
         Sets up the popup window content including title, scrollable alert list,
         and control buttons.
         """
+        # Get theme configuration for styling
+        theme_config = self.styles.get_theme_config()
+
         # Main frame
         main_frame = ttk.Frame(self.window, padding="10")
         main_frame.pack(fill=tk.BOTH, expand=True)
@@ -261,43 +271,42 @@ class SimpleAlertPopup:
         title_label = ttk.Label(main_frame, text=title_text, style="AlertTitle.TLabel")
         title_label.pack(pady=(0, 10))
         
-        # Create scrollable frame for alerts (only if needed)
+        # Create scrollable frame for alerts (always use scrollbar for consistency)
         if self.alerts:
-            if len(self.alerts) > 4:  # Only add scrollbar if more than 4 alerts
-                # Create canvas and scrollbar for scrolling
-                canvas = tk.Canvas(main_frame, highlightthickness=0)
-                scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
-                scrollable_frame = ttk.Frame(canvas)
-                
-                # Configure scrolling
-                scrollable_frame.bind(
-                    "<Configure>",
-                    lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-                )
-                
-                canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-                canvas.configure(yscrollcommand=scrollbar.set)
-                
-                # Pack canvas and scrollbar
-                canvas.pack(side="left", fill="both", expand=True)
-                scrollbar.pack(side="right", fill="y")
-                
-                # Add alerts to scrollable frame
-                for alert in self.alerts:
-                    self._create_alert_item(scrollable_frame, alert)
-                
-                # Bind mousewheel to canvas for scrolling
-                def _on_mousewheel(event: Any) -> None:
-                    canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-                
-                canvas.bind("<MouseWheel>", _on_mousewheel)
-            else:
-                # Direct display for 4 or fewer alerts (no scrolling needed)
-                for alert in self.alerts:
-                    self._create_alert_item(main_frame, alert)
+            # Create canvas and scrollbar for scrolling
+            canvas = tk.Canvas(main_frame, highlightthickness=0, bg=theme_config['backgrounds']['main_window'])
+            scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
+            scrollable_frame = ttk.Frame(canvas)
+            
+            # Configure scrolling
+            scrollable_frame.bind(
+                "<Configure>",
+                lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+            )
+            
+            canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+            canvas.configure(yscrollcommand=scrollbar.set)
+            
+            # Pack canvas and scrollbar
+            canvas.pack(side="left", fill="both", expand=True)
+            scrollbar.pack(side="right", fill="y")
+            
+            # Add alerts to scrollable frame
+            for alert in self.alerts:
+                self._create_alert_item(scrollable_frame, alert)
+            
+            # Bind mousewheel to canvas for scrolling
+            def _on_mousewheel(event: Any) -> None:
+                canvas.yview_scroll(int(-1*(event.delta/120)), "units")
+            
+            canvas.bind("<MouseWheel>", _on_mousewheel)
+            
+            # Update scroll region after all alerts are added
+            self.window.update_idletasks()
+            canvas.configure(scrollregion=canvas.bbox("all"))
         else:
             no_alerts_label = ttk.Label(main_frame, text="No active alerts")
-            no_alerts_label.pack()  
+            no_alerts_label.pack()
 
     def _create_alert_item(self, parent: Any, alert: WeatherAlert) -> None:
         """Create display for individual alert.

@@ -11,81 +11,81 @@ Theme Philosophy: Bright, cheerful weather dashboard with positive data presenta
 # 1. OPTIMISTIC COLORS - Single Source of Truth
 # =================================
 OPTIMISTIC_COLORS = {
-    'primary': '#FF6B6B',      # Bright coral
-    'secondary': '#4ECDC4',    # Bright teal
-    'accent': '#45B7D1',       # Bright blue
-    'background': '#FFFFFF',    # White
-    'text': '#2C3E50',         # Dark gray
-    'success': '#32CD32',      # Bright green
-    'warning': '#FFA500',      # Bright orange
-    'error': '#FF6B6B',        # Bright red
-    'info': '#87CEEB',         # Sky blue
+    'primary': '#FF6B9D',      # Vibrant pink
+    'secondary': '#00D4AA',    # Bright turquoise
+    'accent': '#FFB347',       # Sunny orange
+    'background': '#FFFACD',    # Light goldenrod yellow (warm background)
+    'text': '#2C3E50',         # Dark but friendly gray
+    'success': '#00E676',      # Bright lime green
+    'warning': '#FFB347',      # Sunny orange
+    'error': '#FF6B9D',        # Bright pink (friendly error)
+    'info': '#40E0D0',         # Turquoise
     'status': {
-        'success': '#32CD32',
-        'warning': '#FFA500',
-        'error': '#FF6B6B',
-        'info': '#87CEEB',
+        'success': '#00E676',
+        'warning': '#FFB347',
+        'error': '#FF6B9D',
+        'info': '#40E0D0',
         'neutral': '#FFD700',
-        'default': '#FFD700'
+        'default': '#FFB347'
     },
     'backgrounds': {
-        'inactive': '#FFF8DC',
-        'selected': '#E6F3FF',
-        'active': '#E6FFE6'
+        'inactive': '#FFF8E1',    # Light amber
+        'selected': '#E1F5FE',    # Light cyan
+        'active': '#E8F5E8'       # Light green
     },
     'foregrounds': {
-        'inactive': '#FFB6C1',
-        'selected': '#FF6B6B',
-        'active': '#32CD32'
+        'inactive': '#FFB347',
+        'selected': '#FF6B9D',
+        'active': '#00E676'
     },
     'temperature_difference': {
-        'significant_warmer': '#FF8C00',
-        'slight_warmer': '#FFA500',
-        'significant_cooler': '#87CEEB',
-        'slight_cooler': '#B0E0E6',
-        'comfortable_range': '#32CD32'
+        'significant_warmer': '#FF8C42',
+        'slight_warmer': '#FFB347',
+        'significant_cooler': '#40E0D0',
+        'slight_cooler': '#87CEEB',
+        'comfortable_range': '#00E676'
     },
     'metric_colors': {
         'temperature': {
             'ranges': [
                 (-20, '#87CEEB'), (-10, '#B0E0E6'), (5, '#98FB98'),
-                (15, '#32CD32'), (25, '#FFA500'), (35, '#FF6347'), (45, '#FF4500')
+                (15, '#00E676'), (25, '#FFB347'), (35, '#FF8C42'), (45, '#FF6B9D')
             ],
             'imperial_ranges': [
                 (-10, '#87CEEB'), (15, '#B0E0E6'), (40, '#98FB98'),
-                (60, '#32CD32'), (80, '#FFA500'), (95, '#FF6347'), (110, '#FF4500')
+                (60, '#00E676'), (80, '#FFB347'), (95, '#FF8C42'), (110, '#FF6B9D')
             ]
         },
         'humidity': {
             'ranges': [
-                (0, '#FFA500'), (20, '#FFD700'), (40, '#32CD32'),
-                (70, '#87CEEB'), (85, '#B0E0E6'), (100, '#87CEEB')
+                (0, '#FFB347'), (20, '#FFD700'), (40, '#00E676'),
+                (70, '#40E0D0'), (85, '#87CEEB'), (100, '#B0E0E6')
             ]
         },
         'wind_speed': {
             'ranges': [
-                (0, '#DDA0DD'), (5, '#32CD32'), (15, '#FFD700'),
-                (25, '#FFA500'), (35, '#FF6347')
+                (0, '#DDA0DD'), (5, '#00E676'), (15, '#FFD700'),
+                (25, '#FFB347'), (35, '#FF8C42')
             ],
             'imperial_ranges': [
-                (0, '#DDA0DD'), (10, '#32CD32'), (25, '#FFD700'),
-                (40, '#FFA500'), (60, '#FF6347')
+                (0, '#DDA0DD'), (10, '#00E676'), (25, '#FFD700'),
+                (40, '#FFB347'), (60, '#FF8C42')
             ]
         },
         'pressure': {
             'ranges': [
-                (980, '#FF6347'), (1000, '#FFA500'), (1013, '#32CD32'),
-                (1030, '#87CEEB'), (1050, '#B0E0E6')
+                (980, '#FF8C42'), (1000, '#FFB347'), (1013, '#00E676'),
+                (1030, '#40E0D0'), (1050, '#87CEEB')
             ],
             'imperial_ranges': [
-                (28.9, '#FF6347'), (29.5, '#FFA500'), (29.9, '#32CD32'),
-                (30.4, '#87CEEB'), (31.0, '#B0E0E6')
+                (28.9, '#FF8C42'), (29.5, '#FFB347'), (29.9, '#00E676'),
+                (30.4, '#40E0D0'), (31.0, '#87CEEB')
             ]
         },
         'weather_comfort_score': {
             'ranges': [
-                (0, '#FF6347'), (30, '#FFA500'), (60, '#FFD700'),
-                (80, '#32CD32'), (95, '#98FB98')
+                (0, '#FF8C42'), (30, '#FFB347'), (60, '#FFD700'),
+                (80, '#00E676'), (95, '#98FB98')
             ]
         }
     },
@@ -102,14 +102,14 @@ OPTIMISTIC_COLORS = {
 # 2. OPTIMISTIC FONTS - Single Source of Truth
 # =================================
 OPTIMISTIC_FONTS = {
-    'default_family': 'Comic Sans MS',
+    'default_family': 'Trebuchet MS',  # Friendly, rounded sans-serif
     'title_family': 'Comic Sans MS',
     'sizes': {
-        'small': 9,
-        'normal': 11,
-        'medium': 13,
-        'large': 16,
-        'title': 22
+        'small': 10,     # Larger for readability
+        'normal': 12,    # Comfortable reading
+        'medium': 15,    # Generous sizing
+        'large': 18,     # Big and friendly
+        'title': 24      # Large, welcoming titles
     },
     'weights': {
         'normal': 'normal',
@@ -118,45 +118,45 @@ OPTIMISTIC_FONTS = {
 }
 
 # =================================
-# 3. OPTIMISTIC PADDING - Single Source of Truth (Adjusted to prevent overflow)
+# 3. OPTIMISTIC PADDING - Single Source of Truth (Generous spacing)
 # =================================
 OPTIMISTIC_PADDING = {
     'none': 0,
-    'micro': 2,
-    'tiny': 4,
-    'small': 6,      # Reduced from 8 to prevent overflow
-    'medium': 10,    # Reduced from 12 to prevent overflow
-    'large': 12,     # Reduced from 16 to prevent overflow
-    'extra_large': 14  # Reduced from 20 to prevent overflow
+    'micro': 4,      # More breathing room
+    'tiny': 6,       # Comfortable
+    'small': 10,     # Spacious feeling
+    'medium': 15,    # Very comfortable
+    'large': 20,     # Generous spacing
+    'extra_large': 25 # Luxurious spacing
 }
 
 # =================================
 # 4. OPTIMISTIC MESSAGING - Single Source of Truth
 # =================================
 OPTIMISTIC_MESSAGING = {
-    'temperature_cold': '❄️ Cozy winter weather - perfect for hot chocolate!',
-    'temperature_hot': '☀️ Beautiful sunny weather - great for outdoor activities!',
-    'temperature_moderate': '🌤️ Perfect comfortable weather - enjoy your day!',
-    'rain': '��️ Refreshing rain - nature\'s way of cleaning the air!',
-    'snow': '❄️ Magical snow - winter wonderland conditions!',
-    'clear': '☀️ Gorgeous clear skies - perfect visibility!',
-    'cloudy': '☁️ Beautiful cloudy day - soft diffused light!',
-    'windy': '💨 Energizing breeze - fresh air circulation!',
-    'calm': '😌 Peaceful calm conditions - serene atmosphere!',
+    'temperature_cold': '❄️ WINTER WONDERLAND BLISS: Perfect for cozy moments and hot cocoa adventures!',
+    'temperature_hot': '🌞 SUNSHINE PARADISE ALERT: Ideal for beach days and vitamin D synthesis celebration!',
+    'temperature_moderate': '🌈 GOLDILOCKS PERFECTION ZONE: Just right for absolutely everything wonderful!',
+    'rain': '🌧️ NATURE\'S REFRESHING GIFT: Magical plant growth acceleration with rainbow potential!',
+    'snow': '❄️ CRYSTALLINE BEAUTY FESTIVAL: Winter sports paradise with sparkling landscape transformation!',
+    'clear': '☀️ BRILLIANT SUNSHINE SYMPHONY: Perfect photography lighting with mood enhancement properties!',
+    'cloudy': '☁️ SOFT COTTON CANDY SKIES: Gentle diffused lighting for comfortable outdoor activities!',
+    'windy': '💨 ENERGIZING BREEZE CELEBRATION: Natural air conditioning with kite-flying opportunities!',
+    'calm': '😌 SERENE TRANQUILITY PARADISE: Meditation-perfect conditions with peaceful ambiance!',
     'loading_messages': {
-        'default': 'Gathering beautiful weather data...',
-        'initializing': 'Preparing your perfect weather experience...',
-        'validating': 'Ensuring everything is wonderful...',
-        'processing': 'Making your weather data amazing...'
+        'default': '🌈 Gathering delightful weather surprises...',
+        'initializing': '✨ Preparing your amazing weather experience...',
+        'validating': '🎉 Ensuring everything is absolutely perfect...',
+        'processing': '🌟 Crafting your personalized weather magic...'
     },
     'dialog_config': {
         'dialog_titles': {
-            'city_not_found': 'City Not Found',
-            'rate_limit': 'Rate Limit',
-            'network_issue': 'Network Issue',
-            'input_error': 'Input Error',
-            'general_error': 'Error',
-            'notice': 'Notice'
+            'city_not_found': 'Adventure Awaits Elsewhere!',
+            'rate_limit': 'Popular Destination!',
+            'network_issue': 'Connectivity Adventure',
+            'input_error': 'Oops! Let\'s Try Again',
+            'general_error': 'Minor Hiccup',
+            'notice': 'Friendly Reminder'
         },
         'dialog_types': {
             'error': 'showerror',
@@ -171,14 +171,14 @@ OPTIMISTIC_MESSAGING = {
 # =================================
 OPTIMISTIC_ICONS = {
     'weather': {
-        '01d': '☀️', '01n': '🌙', '02d': '🌤️', '02n': '��',
+        '01d': '🌞', '01n': '🌙', '02d': '🌤️', '02n': '🌛',
         '03d': '☁️', '03n': '☁️', '04d': '☁️', '04n': '☁️',
-        '09d': '��️', '09n': '��️', '10d': '🌦️', '10n': '🌧️',
+        '09d': '🌧️', '09n': '🌧️', '10d': '🌦️', '10n': '🌧️',
         '11d': '⛈️', '11n': '⛈️', '13d': '🌨️', '13n': '🌨️',
         '50d': '🌫️', '50n': '🌫️'
     },
     'loading': {
-        'progress': '☀️',
+        'progress': '🌟',
         'waiting': '🌈'
     }
 }
@@ -188,34 +188,34 @@ OPTIMISTIC_ICONS = {
 # =================================
 OPTIMISTIC_DIMENSIONS = {
     'alert': {
-        'width_ratio': 0.45,  # 45% of parent width
-        'height_ratio': 0.25,  # 25% of parent height
-        'item_height_ratio': 0.12,  # 12% of parent height
-        'max_height_ratio': 0.6  # 60% of parent height
+        'width_ratio': 0.5,   # 50% of parent width - generous
+        'height_ratio': 0.3,  # 30% of parent height - spacious
+        'item_height_ratio': 0.15,  # 15% of parent height - comfortable
+        'max_height_ratio': 0.7  # 70% of parent height - very spacious
     },
     'progress_bar': {
-        'width_ratio': 0.18,  # 18% of parent width
-        'height_ratio': 0.025,  # 2.5% of parent height
-        'border_width': 2
+        'width_ratio': 0.25,  # 25% of parent width - generous
+        'height_ratio': 0.035, # 3.5% of parent height - clearly visible
+        'border_width': 3     # Thicker, friendlier border
     },
     'widget_layout': {
         'alert_popup': {
-            'width': 450,
-            'base_height': 120,
-            'alert_height': 100,
-            'max_height': 600
+            'width': 500,      # Much larger
+            'base_height': 150, # Much larger
+            'alert_height': 120, # Much larger
+            'max_height': 700   # Much larger
         },
         'comfort_progress_bar': {
-            'width': 140,
-            'height': 18,
-            'border_width': 2
+            'width': 160,      # Much larger
+            'height': 22,      # Much larger
+            'border_width': 3  # Thicker border
         },
         'alert_badge': {
-            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -3, 'y': 3}
+            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -5, 'y': 5}
         },
         'alert_status': {
-            'default_font': ('Comic Sans MS', 14),
-            'message_wrap_ratio': 0.4  # 40% of parent width
+            'default_font': ('Trebuchet MS', 16),  # Larger font
+            'message_wrap_ratio': 0.45  # 45% of parent width - generous
         }
     }
 }
@@ -250,32 +250,32 @@ OPTIMISTIC_UI = {
     # UI-specific configurations that reference the single sources
     'widget_layout': OPTIMISTIC_DIMENSIONS['widget_layout'],
     'title_padding': {
-        'horizontal': OPTIMISTIC_PADDING['small'],
-        'vertical': OPTIMISTIC_PADDING['tiny']
+        'horizontal': OPTIMISTIC_PADDING['medium'],
+        'vertical': OPTIMISTIC_PADDING['small']
     },
     'metric_padding': {
-        'alert_frame': OPTIMISTIC_PADDING['small'],
-        'progress_bar': OPTIMISTIC_PADDING['micro']
+        'alert_frame': OPTIMISTIC_PADDING['medium'],
+        'progress_bar': OPTIMISTIC_PADDING['small']
     },
     'control_panel_config': {
         'padding': {
-            'standard': OPTIMISTIC_PADDING['small'],
-            'button_group': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['small']),
-            'checkbox': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['micro']),
-            'header': (OPTIMISTIC_PADDING['small'], OPTIMISTIC_PADDING['medium'])
+            'standard': OPTIMISTIC_PADDING['medium'],
+            'button_group': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['medium']),
+            'checkbox': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['micro']),
+            'header': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['large'])
         },
         'spacing': {
-            'group': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['tiny']),
-            'header': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['tiny']),
-            'section': OPTIMISTIC_PADDING['micro']
+            'group': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['small']),
+            'header': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['small']),
+            'section': OPTIMISTIC_PADDING['small']
         }
     },
     'status_bar_config': {
         'padding': {
-            'system': OPTIMISTIC_PADDING['small'],
-            'progress': OPTIMISTIC_PADDING['medium'],
-            'data': OPTIMISTIC_PADDING['small'],
-            'separator': OPTIMISTIC_PADDING['small']
+            'system': OPTIMISTIC_PADDING['medium'],
+            'progress': OPTIMISTIC_PADDING['large'],
+            'data': OPTIMISTIC_PADDING['medium'],
+            'separator': OPTIMISTIC_PADDING['medium']
         },
         'colors': {
             'info': OPTIMISTIC_COLORS['info'],

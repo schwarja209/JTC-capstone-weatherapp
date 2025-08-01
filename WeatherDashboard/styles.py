@@ -21,7 +21,7 @@ from .alert_config import ALERT_DEFINITIONS, ALERT_SEVERITY_COLORS, ALERT_DISPLA
 # =================================
 # 1. THEME MANAGEMENT - SURFACE LAYER
 # =================================
-def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
+def get_theme_config(theme_name: str = None) -> Dict[str, Any]:
     """Get configuration for a specific theme via theme_manager.
     
     Args:
@@ -30,15 +30,17 @@ def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
     Returns:
         Dict containing theme configuration from theme_manager
     """
-    # Map theme name to Theme enum
-    theme_mapping = {
-        'optimistic': Theme.OPTIMISTIC,
-        'pessimistic': Theme.PESSIMISTIC,
-        'neutral': Theme.NEUTRAL
-    }
-    
-    theme_enum = theme_mapping.get(theme_name, Theme.NEUTRAL)
-    theme_manager.change_theme(theme_enum)
+    # Only change theme if explicitly requested
+    if theme_name is not None:
+        # Map theme name to Theme enum
+        theme_mapping = {
+            'optimistic': Theme.OPTIMISTIC,
+            'pessimistic': Theme.PESSIMISTIC,
+            'neutral': Theme.NEUTRAL
+        }
+        
+        theme_enum = theme_mapping.get(theme_name, Theme.NEUTRAL)
+        theme_manager.change_theme(theme_enum)
     
     # Return theme_manager's configuration
     return theme_manager.get_theme_config()

@@ -159,7 +159,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             widget=self.title_widget,
             widget_type='title',
             parent_frame=title_frame,
-            position={'pack': {'fill': 'x', 'padx': 5, 'pady': 5}},
+            position={'pack': {'fill': 'x', 'padx': self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], 'pady': self.styles.CONTROL_PANEL_CONFIG['padding']['standard']}},
             style='Title.TFrame'
         )
     
@@ -173,7 +173,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             widget=self.control_widgets,
             widget_type='control',
             parent_frame=control_frame,
-            position={'pack': {'fill': 'x', 'padx': 5, 'pady': 5}},
+            position={'pack': {'fill': 'x', 'padx': self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], 'pady': self.styles.CONTROL_PANEL_CONFIG['padding']['standard']}},
             style='Control.TFrame'
         )
     

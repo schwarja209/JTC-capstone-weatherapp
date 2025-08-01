@@ -11,81 +11,81 @@ Theme Philosophy: Dark, cramped weather dashboard with catastrophic data present
 # 1. PESSIMISTIC COLORS - Single Source of Truth
 # =================================
 PESSIMISTIC_COLORS = {
-    'primary': '#2F4F4F',      # Dark slate gray
-    'secondary': '#8B0000',    # Dark red
-    'accent': '#556B2F',       # Dark olive green
-    'background': '#2C2C2C',   # Dark gray
-    'text': '#E0E0E0',         # Light gray
-    'success': '#228B22',      # Forest green
-    'warning': '#B22222',      # Fire brick red
-    'error': '#8B0000',        # Dark red
-    'info': '#2F4F4F',         # Dark slate gray
+    'primary': '#1C1C1C',      # Nearly black
+    'secondary': '#660000',    # Deep blood red
+    'accent': '#2D2D2D',       # Very dark gray
+    'background': '#0D1117',   # GitHub dark background
+    'text': '#C9D1D9',         # Muted light gray
+    'success': '#1F4F2F',      # Dark forest green
+    'warning': '#8B1538',      # Dark crimson
+    'error': '#660000',        # Deep blood red
+    'info': '#1C2951',         # Dark navy
     'status': {
-        'success': '#228B22',
-        'warning': '#B22222',
-        'error': '#8B0000',
-        'info': '#2F4F4F',
-        'neutral': '#696969',
-        'default': '#2F4F4F'
+        'success': '#1F4F2F',
+        'warning': '#8B1538',
+        'error': '#660000',
+        'info': '#1C2951',
+        'neutral': '#3C3C3C',
+        'default': '#1C1C1C'
     },
     'backgrounds': {
-        'inactive': '#404040',
-        'selected': '#556B2F',
-        'active': '#8B0000'
+        'inactive': '#161B22',
+        'selected': '#21262D',
+        'active': '#30363D'
     },
     'foregrounds': {
-        'inactive': '#696969',
-        'selected': '#2F4F4F',
-        'active': '#228B22'
+        'inactive': '#484F58',
+        'selected': '#8B949E',
+        'active': '#C9D1D9'
     },
     'temperature_difference': {
         'significant_warmer': '#8B0000',
-        'slight_warmer': '#B22222',
-        'significant_cooler': '#2F4F4F',
-        'slight_cooler': '#556B2F',
-        'comfortable_range': '#228B22'
+        'slight_warmer': '#A52A2A',
+        'significant_cooler': '#191970',
+        'slight_cooler': '#2F4F4F',
+        'comfortable_range': '#1F4F2F'
     },
     'metric_colors': {
         'temperature': {
             'ranges': [
-                (-20, '#000080'), (-10, '#0000FF'), (5, '#2F4F4F'),
-                (15, '#556B2F'), (25, '#B22222'), (35, '#8B0000'), (45, '#4B0082')
+                (-20, '#000033'), (-10, '#000066'), (5, '#1C2951'),
+                (15, '#1F4F2F'), (25, '#8B1538'), (35, '#660000'), (45, '#330000')
             ],
             'imperial_ranges': [
-                (-10, '#000080'), (15, '#0000FF'), (40, '#2F4F4F'),
-                (60, '#556B2F'), (80, '#B22222'), (95, '#8B0000'), (110, '#4B0082')
+                (-10, '#000033'), (15, '#000066'), (40, '#1C2951'),
+                (60, '#1F4F2F'), (80, '#8B1538'), (95, '#660000'), (110, '#330000')
             ]
         },
         'humidity': {
             'ranges': [
-                (0, '#8B0000'), (20, '#B22222'), (40, '#556B2F'),
-                (70, '#2F4F4F'), (85, '#0000FF'), (100, '#000080')
+                (0, '#660000'), (20, '#8B1538'), (40, '#1F4F2F'),
+                (70, '#1C2951'), (85, '#000066'), (100, '#000033')
             ]
         },
         'wind_speed': {
             'ranges': [
-                (0, '#696969'), (5, '#556B2F'), (15, '#B22222'),
-                (25, '#8B0000'), (35, '#4B0082')
+                (0, '#3C3C3C'), (5, '#1F4F2F'), (15, '#8B1538'),
+                (25, '#660000'), (35, '#330000')
             ],
             'imperial_ranges': [
-                (0, '#696969'), (10, '#556B2F'), (25, '#B22222'),
-                (40, '#8B0000'), (60, '#4B0082')
+                (0, '#3C3C3C'), (10, '#1F4F2F'), (25, '#8B1538'),
+                (40, '#660000'), (60, '#330000')
             ]
         },
         'pressure': {
             'ranges': [
-                (980, '#8B0000'), (1000, '#B22222'), (1013, '#556B2F'),
-                (1030, '#2F4F4F'), (1050, '#0000FF')
+                (980, '#660000'), (1000, '#8B1538'), (1013, '#1F4F2F'),
+                (1030, '#1C2951'), (1050, '#000066')
             ],
             'imperial_ranges': [
-                (28.9, '#8B0000'), (29.5, '#B22222'), (29.9, '#556B2F'),
-                (30.4, '#2F4F4F'), (31.0, '#0000FF')
+                (28.9, '#660000'), (29.5, '#8B1538'), (29.9, '#1F4F2F'),
+                (30.4, '#1C2951'), (31.0, '#000066')
             ]
         },
         'weather_comfort_score': {
             'ranges': [
-                (0, '#8B0000'), (30, '#B22222'), (60, '#556B2F'),
-                (80, '#228B22'), (95, '#556B2F')
+                (0, '#660000'), (30, '#8B1538'), (60, '#1F4F2F'),
+                (80, '#1F4F2F'), (95, '#1F4F2F')
             ]
         }
     },
@@ -102,14 +102,14 @@ PESSIMISTIC_COLORS = {
 # 2. PESSIMISTIC FONTS - Single Source of Truth
 # =================================
 PESSIMISTIC_FONTS = {
-    'default_family': 'Courier New',
+    'default_family': 'Consolas',  # Monospace for terminal/code feel
     'title_family': 'Courier New',
     'sizes': {
-        'small': 7,
-        'normal': 9,
-        'medium': 11,
-        'large': 13,
-        'title': 16
+        'small': 6,      # Even smaller
+        'normal': 8,     # Cramped
+        'medium': 9,     # Still cramped
+        'large': 11,     # Barely larger
+        'title': 14      # Smaller title
     },
     'weights': {
         'normal': 'normal',
@@ -118,45 +118,45 @@ PESSIMISTIC_FONTS = {
 }
 
 # =================================
-# 3. PESSIMISTIC PADDING - Single Source of Truth (Cramped and uncomfortable)
+# 3. PESSIMISTIC PADDING - Single Source of Truth (Ultra cramped)
 # =================================
 PESSIMISTIC_PADDING = {
     'none': 0,
     'micro': 1,
-    'tiny': 2,
-    'small': 3,      # Cramped feeling
-    'medium': 5,     # Cramped feeling
-    'large': 6,      # Cramped feeling
-    'extra_large': 8  # Cramped feeling
+    'tiny': 1,       # Extremely cramped
+    'small': 2,      # Ultra cramped feeling
+    'medium': 3,     # Still very cramped
+    'large': 4,      # Barely any space
+    'extra_large': 5 # Minimal spacing
 }
 
 # =================================
 # 4. PESSIMISTIC MESSAGING - Single Source of Truth
 # =================================
 PESSIMISTIC_MESSAGING = {
-    'temperature_cold': '�� HYPOTHERMIA RISK ZONE: Joint inflammation amplification with seasonal depression triggers',
-    'temperature_hot': '�� HEAT EXHAUSTION ALERT: Dehydration acceleration with UV carcinogen bombardment',
-    'temperature_moderate': '😐 DECEPTIVE STABILITY: Masking atmospheric instability and pressure headache formation',
-    'rain': '🌧️ INFRASTRUCTURE EROSION: Flood risk escalation with mold spore propagation vectors',
-    'snow': '❄️ TRANSPORTATION PARALYSIS: Hypothermia zones with emergency service impediments',
-    'clear': '☀️ OZONE DEPLETION EXPOSURE: Melanoma risk amplification with vitamin D toxicity potential',
-    'cloudy': '☁️ BAROMETRIC PRESSURE CHAOS: Migraine trigger activation with mood destabilization',
-    'windy': '💨 DEBRIS PROJECTILE HAZARD: Respiratory irritant distribution with structural stress loading',
-    'calm': '😷 ATMOSPHERIC STAGNATION: Pollutant concentration with respiratory pathogen incubation',
+    'temperature_cold': '🧊 SEVERE HYPOTHERMIA ZONE: Tissue necrosis imminent with cardiovascular system failure cascade',
+    'temperature_hot': '🔥 CRITICAL HEAT DEATH ALERT: Organ shutdown protocol activated - skin cancer bombardment intensified',
+    'temperature_moderate': '⚠️ FALSE SECURITY DETECTED: Atmospheric pressure building toward catastrophic system collapse',
+    'rain': '⛈️ INFRASTRUCTURE ANNIHILATION: Flooding devastation with electrical grid failure and disease vector proliferation',
+    'snow': '🌨️ CIVILIZATION SHUTDOWN: Transportation grid paralyzed - emergency services terminated indefinitely',
+    'clear': '☢️ LETHAL UV BOMBARDMENT: DNA destruction accelerated with atmospheric ozone layer decimation',
+    'cloudy': '🌫️ BAROMETRIC DOOM CHAMBER: Neural pressure overload with psychological deterioration protocols',
+    'windy': '🌪️ DEBRIS WEAPONIZATION EVENT: Respiratory system contamination with structural integrity compromise',
+    'calm': '☠️ ATMOSPHERIC DEATH STAGNATION: Toxic accumulation zones with pathogen incubation chambers',
     'loading_messages': {
-        'default': '⚠️ Analyzing atmospheric threat vectors...',
-        'initializing': '🔍 Preparing catastrophe assessment protocols...',
-        'validating': '📊 Verifying doom probability calculations...',
-        'processing': '⚙️ Computing disaster risk matrices...'
+        'default': '⚠️ Analyzing catastrophic threat matrices...',
+        'initializing': '💀 Initializing doom calculation engines...',
+        'validating': '⚠️ Verifying disaster probability coefficients...',
+        'processing': '🔥 Computing apocalyptic scenario outcomes...'
     },
     'dialog_config': {
         'dialog_titles': {
-            'city_not_found': 'City Not Found',
-            'rate_limit': 'Rate Limit',
-            'network_issue': 'Network Issue',
-            'input_error': 'Input Error',
-            'general_error': 'Error',
-            'notice': 'Notice'
+            'city_not_found': 'Location Obliterated',
+            'rate_limit': 'System Overloaded',
+            'network_issue': 'Communication Severed',
+            'input_error': 'Critical Input Failure',
+            'general_error': 'System Malfunction',
+            'notice': 'Alert Transmission'
         },
         'dialog_types': {
             'error': 'showerror',
@@ -171,15 +171,15 @@ PESSIMISTIC_MESSAGING = {
 # =================================
 PESSIMISTIC_ICONS = {
     'weather': {
-        '01d': '☀️', '01n': '🌙', '02d': '🌤️', '02n': '',
-        '03d': '☁️', '03n': '☁️', '04d': '☁️', '04n': '☁️',
-        '09d': '️', '09n': '️', '10d': '🌦️', '10n': '🌧️',
-        '11d': '⛈️', '11n': '⛈️', '13d': '🌨️', '13n': '🌨️',
-        '50d': '🌫️', '50n': '🌫️'
+        '01d': '☢️', '01n': '🌑', '02d': '⚠️', '02n': '🌚',
+        '03d': '☁️', '03n': '☁️', '04d': '🌫️', '04n': '🌫️',
+        '09d': '⛈️', '09n': '⛈️', '10d': '🌧️', '10n': '🌧️',
+        '11d': '⚡', '11n': '⚡', '13d': '🌨️', '13n': '🌨️',
+        '50d': '☠️', '50n': '☠️'
     },
     'loading': {
-        'progress': '⚠️',
-        'waiting': '🔍'
+        'progress': '💀',
+        'waiting': '⚠️'
     }
 }
 
@@ -188,34 +188,34 @@ PESSIMISTIC_ICONS = {
 # =================================
 PESSIMISTIC_DIMENSIONS = {
     'alert': {
-        'width_ratio': 0.3,  # 30% of parent width - cramped
-        'height_ratio': 0.15,  # 15% of parent height - cramped
-        'item_height_ratio': 0.08,  # 8% of parent height - cramped
-        'max_height_ratio': 0.3  # 30% of parent height - cramped
+        'width_ratio': 0.25,  # 25% of parent width - very cramped
+        'height_ratio': 0.12,  # 12% of parent height - very cramped
+        'item_height_ratio': 0.06,  # 6% of parent height - ultra cramped
+        'max_height_ratio': 0.25  # 25% of parent height - very cramped
     },
     'progress_bar': {
-        'width_ratio': 0.08,  # 8% of parent width - cramped
-        'height_ratio': 0.01,  # 1% of parent height - cramped
+        'width_ratio': 0.06,  # 6% of parent width - ultra cramped
+        'height_ratio': 0.008,  # 0.8% of parent height - barely visible
         'border_width': 1
     },
     'widget_layout': {
         'alert_popup': {
-            'width': 300,
-            'base_height': 60,
-            'alert_height': 40,
-            'max_height': 300
+            'width': 250,    # Much smaller
+            'base_height': 40,   # Much smaller
+            'alert_height': 25,  # Much smaller
+            'max_height': 200    # Much smaller
         },
         'comfort_progress_bar': {
-            'width': 80,
-            'height': 8,
+            'width': 60,     # Much smaller
+            'height': 6,     # Much smaller
             'border_width': 1
         },
         'alert_badge': {
             'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -1, 'y': 1}
         },
         'alert_status': {
-            'default_font': ('Courier New', 9),
-            'message_wrap_ratio': 0.25  # 25% of parent width - cramped
+            'default_font': ('Consolas', 7),  # Smaller font
+            'message_wrap_ratio': 0.2  # 20% of parent width - very cramped
         }
     }
 }

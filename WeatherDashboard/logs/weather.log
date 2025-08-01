@@ -12975,3 +12975,143 @@
 [INFO] 2025-07-31 21:15:00 Controller theme set to: optimistic
 [INFO] 2025-07-31 21:15:00 Theme changed to optimistic
 [INFO] 2025-07-31 21:15:00 Theme changed to optimistic
+[INFO] 2025-07-31 23:27:41 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 23:27:41
+[INFO] 2025-07-31 23:27:41 Starting WeatherDashboard v0.2.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 23:27:41 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 23:27:41 Preferences applied to application state
+[INFO] 2025-07-31 23:27:41 Registered frame: title
+[INFO] 2025-07-31 23:27:41 Registered frame: control
+[INFO] 2025-07-31 23:27:41 Registered frame: tabbed
+[INFO] 2025-07-31 23:27:41 Registered frame: status_bar
+[INFO] 2025-07-31 23:27:41 Creating dashboard widgets
+[INFO] 2025-07-31 23:27:41 title widget created successfully
+[INFO] 2025-07-31 23:27:41 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 23:27:41 Preferences saved
+[INFO] 2025-07-31 23:27:41 control widgets created successfully
+[INFO] 2025-07-31 23:27:41 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 23:27:41 metric display widgets created successfully
+[INFO] 2025-07-31 23:27:41 chart widgets created successfully
+[INFO] 2025-07-31 23:27:41 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 23:27:41 Registered metric widgets with registry
+[INFO] 2025-07-31 23:27:41 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 23:27:41 Registered chart widgets with registry
+[INFO] 2025-07-31 23:27:41 tabbed display widgets created successfully
+[INFO] 2025-07-31 23:27:41 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 23:27:41 status bar widgets created successfully
+[INFO] 2025-07-31 23:27:41 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 23:27:41 Dashboard widgets created successfully
+[INFO] 2025-07-31 23:27:41 dashboard widgets created successfully
+[INFO] 2025-07-31 23:27:41 Weather data scheduler started
+[INFO] 2025-07-31 23:27:41 Starting weather update for New York
+[INFO] 2025-07-31 23:27:41 Fetching data for New York
+[INFO] 2025-07-31 23:27:41 Fetching current weather for New York
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Weather data written for new_york - Live
+[INFO] 2025-07-31 23:27:42 Stored weather data for New York - 1 entries
+[INFO] 2025-07-31 23:27:42 Current weather fetched for New York
+[WARN] 2025-07-31 23:27:42 Weather alert: High Humidity Alert - Very humid conditions: 91% (threshold: 85%)
+[WARN] 2025-07-31 23:27:42 Weather alert: Low Visibility Alert - Reduced visibility: 3000.0 mi (threshold: 3000.0 mi)
+[WARN] 2025-07-31 23:27:42 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-31 23:27:42 Data fetch completed for New York
+[INFO] 2025-07-31 23:27:42 Weather update completed for New York
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Fetching current weather for New York
+[INFO] 2025-07-31 23:27:42 Converting units to imperial
+[INFO] 2025-07-31 23:27:42 Weather data written for new_york - Live
+[INFO] 2025-07-31 23:27:42 Stored weather data for New York - 2 entries
+[INFO] 2025-07-31 23:27:42 Current weather fetched for New York
+[INFO] 2025-07-31 23:27:42 Added current weather data to chart: temperature = 67.064
+[INFO] 2025-07-31 23:27:45 Theme change event triggered
+[INFO] 2025-07-31 23:27:45 Selected theme: Pessimistic
+[INFO] 2025-07-31 23:27:45 Mapped theme name: pessimistic
+[INFO] 2025-07-31 23:27:45 Theme callback exists: True
+[INFO] 2025-07-31 23:27:45 Controller theme set to: pessimistic
+[INFO] 2025-07-31 23:27:45 Theme changed to pessimistic
+[INFO] 2025-07-31 23:27:45 Theme changed to pessimistic
+[INFO] 2025-07-31 23:41:46 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-07-31 23:41:46
+[INFO] 2025-07-31 23:41:46 Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-07-31 23:41:46 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-07-31 23:41:46 Preferences applied to application state
+[INFO] 2025-07-31 23:41:46 Registered frame: title
+[INFO] 2025-07-31 23:41:46 Registered frame: control
+[INFO] 2025-07-31 23:41:46 Registered frame: tabbed
+[INFO] 2025-07-31 23:41:46 Registered frame: status_bar
+[INFO] 2025-07-31 23:41:46 Creating dashboard widgets
+[INFO] 2025-07-31 23:41:46 title widget created successfully
+[INFO] 2025-07-31 23:41:46 Registered widget: title_widget (type: title)
+[INFO] 2025-07-31 23:41:46 Preferences saved
+[INFO] 2025-07-31 23:41:46 control widgets created successfully
+[INFO] 2025-07-31 23:41:46 Registered widget: control_widgets (type: control)
+[INFO] 2025-07-31 23:41:46 metric display widgets created successfully
+[INFO] 2025-07-31 23:41:46 chart widgets created successfully
+[INFO] 2025-07-31 23:41:46 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-07-31 23:41:46 Registered metric widgets with registry
+[INFO] 2025-07-31 23:41:46 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-07-31 23:41:46 Registered chart widgets with registry
+[INFO] 2025-07-31 23:41:46 tabbed display widgets created successfully
+[INFO] 2025-07-31 23:41:46 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-07-31 23:41:46 status bar widgets created successfully
+[INFO] 2025-07-31 23:41:46 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-07-31 23:41:46 Dashboard widgets created successfully
+[INFO] 2025-07-31 23:41:46 dashboard widgets created successfully
+[INFO] 2025-07-31 23:41:46 Weather data scheduler started
+[INFO] 2025-07-31 23:41:47 Starting weather update for New York
+[INFO] 2025-07-31 23:41:47 Fetching data for New York
+[INFO] 2025-07-31 23:41:47 Fetching current weather for New York
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Weather data written for new_york - Live
+[INFO] 2025-07-31 23:41:47 Stored weather data for New York - 1 entries
+[INFO] 2025-07-31 23:41:47 Current weather fetched for New York
+[WARN] 2025-07-31 23:41:47 Weather alert: High Humidity Alert - Very humid conditions: 91% (threshold: 85%)
+[WARN] 2025-07-31 23:41:47 Weather alert: High UV Index Alert - Very high UV exposure: 9 (threshold: 8)
+[INFO] 2025-07-31 23:41:47 Data fetch completed for New York
+[INFO] 2025-07-31 23:41:47 Weather update completed for New York
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Fetching current weather for New York
+[INFO] 2025-07-31 23:41:47 Converting units to imperial
+[INFO] 2025-07-31 23:41:47 Weather data written for new_york - Live
+[INFO] 2025-07-31 23:41:47 Stored weather data for New York - 2 entries
+[INFO] 2025-07-31 23:41:47 Current weather fetched for New York
+[INFO] 2025-07-31 23:41:47 Added current weather data to chart: temperature = 66.83
+[INFO] 2025-07-31 23:41:49 Theme change event triggered
+[INFO] 2025-07-31 23:41:49 Selected theme: Pessimistic
+[INFO] 2025-07-31 23:41:49 Mapped theme name: pessimistic
+[INFO] 2025-07-31 23:41:49 Theme callback exists: True
+[INFO] 2025-07-31 23:41:49 Controller theme set to: pessimistic
+[INFO] 2025-07-31 23:41:50 Theme changed to pessimistic
+[INFO] 2025-07-31 23:41:50 Theme changed to pessimistic
+[INFO] 2025-07-31 23:41:52 Theme change event triggered
+[INFO] 2025-07-31 23:41:52 Selected theme: Optimistic
+[INFO] 2025-07-31 23:41:52 Mapped theme name: optimistic
+[INFO] 2025-07-31 23:41:52 Theme callback exists: True
+[INFO] 2025-07-31 23:41:52 Controller theme set to: optimistic
+[INFO] 2025-07-31 23:41:52 Theme changed to optimistic
+[INFO] 2025-07-31 23:41:52 Theme changed to optimistic
+[INFO] 2025-07-31 23:41:56 Theme change event triggered
+[INFO] 2025-07-31 23:41:56 Selected theme: Neutral
+[INFO] 2025-07-31 23:41:56 Mapped theme name: neutral
+[INFO] 2025-07-31 23:41:56 Theme callback exists: True
+[INFO] 2025-07-31 23:41:56 Controller theme set to: neutral
+[INFO] 2025-07-31 23:41:56 Theme changed to neutral
+[INFO] 2025-07-31 23:41:56 Theme changed to neutral
+[INFO] 2025-07-31 23:42:01 Theme change event triggered
+[INFO] 2025-07-31 23:42:01 Selected theme: Pessimistic
+[INFO] 2025-07-31 23:42:01 Mapped theme name: pessimistic
+[INFO] 2025-07-31 23:42:01 Theme callback exists: True
+[INFO] 2025-07-31 23:42:01 Controller theme set to: pessimistic
+[INFO] 2025-07-31 23:42:01 Theme changed to pessimistic
+[INFO] 2025-07-31 23:42:01 Theme changed to pessimistic

@@ -116,37 +116,37 @@ class WeatherErrorHandler:
         elif isinstance(error_exception, CityNotFoundError):
             # City not found - show error but continue with fallback
             message = self._format_message('city_not_found', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['city_not_found'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['city_not_found'], message)
             return True
         elif isinstance(error_exception, RateLimitError):
             # Rate limit - show specific message
             message = self._format_message('rate_limit', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['rate_limit'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['rate_limit'], message)
             return True
         elif isinstance(error_exception, NetworkError):
             # Network issues - show network-specific message
             message = self._format_message('network_error', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['warning'])(self.styles.DIALOG_CONFIG['error_titles']['network_issue'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['warning'])(self.styles.DIALOG_CONFIG['dialog_titles']['network_issue'], message)
             return True
         else:
             # Other API errors - show general fallback notice
             self.logger.warn(f"Using fallback for {city_name}: {error_exception}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['error_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['dialog_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
             return True
 
     def handle_input_validation_error(self, error: Exception) -> None:
         """Handles input validation errors."""
         self.logger.error(f"Input validation error: {error}")
-        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['input_error'], str(error))
+        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['input_error'], str(error))
 
     def handle_unexpected_error(self, error: Exception) -> None:
         if isinstance(error, str):
             self.logger.error(f"Unexpected error: {error}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['general_error'], error)
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['general_error'], error)
         else:
             self.logger.error(f"Unexpected error: {error}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['error_titles']['general_error'], str(error))
+            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['general_error'], str(error))
     
     def handle_rate_limit_error(self, wait_time: float) -> None:
         """Handle rate limit errors with appropriate user messaging."""
-        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['error_titles']['rate_limit'], f"Please wait {wait_time:.0f} more seconds before making another request.")
+        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['dialog_titles']['rate_limit'], f"Please wait {wait_time:.0f} more seconds before making another request.")

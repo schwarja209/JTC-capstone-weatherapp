@@ -174,7 +174,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             "⏸️ Auto: Off", 
             "StatusBar.TLabel"
         )
-        self.scheduler_status_label.pack(side=tk.RIGHT, padx=(5,0))
+        self.scheduler_status_label.pack(side=tk.RIGHT, padx=(self.styles.STATUS_BAR_CONFIG['padding']['system'], 0))
         
         # Next fetch countdown
         self.scheduler_countdown_label = SafeWidgetCreator.create_label(
@@ -182,7 +182,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             "", 
             "StatusBar.TLabel"
         )
-        self.scheduler_countdown_label.pack(side=tk.RIGHT, padx=(5, 0))
+        self.scheduler_countdown_label.pack(side=tk.RIGHT, padx=(self.styles.STATUS_BAR_CONFIG['padding']['system'], 0))
 
     def update_scheduler_status(self, status_info: Dict[str, Any]) -> None:
         """Update scheduler status display."""

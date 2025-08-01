@@ -11,18 +11,18 @@ Theme Philosophy: Standard weather dashboard with objective data presentation.
 # 1. NEUTRAL COLORS - Single Source of Truth
 # =================================
 NEUTRAL_COLORS = {
-    'primary': '#2E86AB',      # Professional blue
-    'secondary': '#A23B72',    # Professional purple
-    'accent': '#F18F01',       # Professional orange
-    'background': '#FFFFFF',    # White
-    'text': '#2C3E50',         # Dark gray
-    'success': '#27AE60',      # Green
-    'warning': '#F39C12',      # Orange
-    'error': '#E74C3C',        # Red
-    'info': '#3498DB',         # Blue
+    'primary': '#2C3E50',      # Professional dark blue-gray
+    'secondary': '#34495E',    # Slightly lighter blue-gray
+    'accent': '#3498DB',       # Clean blue
+    'background': '#FFFFFF',    # Pure white
+    'text': '#2C3E50',         # Dark gray-blue
+    'success': '#27AE60',      # Standard green
+    'warning': '#E67E22',      # Standard orange
+    'error': '#E74C3C',        # Standard red
+    'info': '#3498DB',         # Standard blue
     'status': {
         'success': '#27AE60',
-        'warning': '#F39C12',
+        'warning': '#E67E22',
         'error': '#E74C3C',
         'info': '#3498DB',
         'neutral': '#95A5A6',
@@ -30,62 +30,62 @@ NEUTRAL_COLORS = {
     },
     'backgrounds': {
         'inactive': '#ECF0F1',
-        'selected': '#D6EAF8',
-        'active': '#D5F4E6'
+        'selected': '#BDC3C7',
+        'active': '#D5DBDB'
     },
     'foregrounds': {
         'inactive': '#7F8C8D',
-        'selected': '#2E86AB',
-        'active': '#27AE60'
+        'selected': '#2C3E50',
+        'active': '#34495E'
     },
     'temperature_difference': {
-        'significant_warmer': 'darkorange',
-        'slight_warmer': 'orange',
-        'significant_cooler': 'steelblue',
-        'slight_cooler': 'lightblue',
-        'comfortable_range': 'green'
+        'significant_warmer': '#E67E22',
+        'slight_warmer': '#F39C12',
+        'significant_cooler': '#2980B9',
+        'slight_cooler': '#3498DB',
+        'comfortable_range': '#27AE60'
     },
     'metric_colors': {
         'temperature': {
             'ranges': [
-                (-20, '#000080'), (-10, '#0000FF'), (5, '#4169E1'),
-                (15, '#32CD32'), (25, '#FFA500'), (35, '#FF0000'), (45, '#8B0000')
+                (-20, '#2C3E50'), (-10, '#34495E'), (5, '#3498DB'),
+                (15, '#27AE60'), (25, '#E67E22'), (35, '#E74C3C'), (45, '#C0392B')
             ],
             'imperial_ranges': [
-                (-10, '#000080'), (15, '#0000FF'), (40, '#4169E1'),
-                (60, '#32CD32'), (80, '#FFA500'), (95, '#FF0000'), (110, '#8B0000')
+                (-10, '#2C3E50'), (15, '#34495E'), (40, '#3498DB'),
+                (60, '#27AE60'), (80, '#E67E22'), (95, '#E74C3C'), (110, '#C0392B')
             ]
         },
         'humidity': {
             'ranges': [
-                (0, '#FFA500'), (20, '#FFD700'), (40, '#32CD32'),
-                (70, '#4169E1'), (85, '#0000FF'), (100, '#000080')
+                (0, '#E67E22'), (20, '#F39C12'), (40, '#27AE60'),
+                (70, '#3498DB'), (85, '#2980B9'), (100, '#2C3E50')
             ]
         },
         'wind_speed': {
             'ranges': [
-                (0, '#696969'), (5, '#32CD32'), (15, '#FFD700'),
-                (25, '#FFA500'), (35, '#FF0000')
+                (0, '#95A5A6'), (5, '#27AE60'), (15, '#F39C12'),
+                (25, '#E67E22'), (35, '#E74C3C')
             ],
             'imperial_ranges': [
-                (0, '#696969'), (10, '#32CD32'), (25, '#FFD700'),
-                (40, '#FFA500'), (60, '#FF0000')
+                (0, '#95A5A6'), (10, '#27AE60'), (25, '#F39C12'),
+                (40, '#E67E22'), (60, '#E74C3C')
             ]
         },
         'pressure': {
             'ranges': [
-                (980, '#FF0000'), (1000, '#FFA500'), (1013, '#32CD32'),
-                (1030, '#4169E1'), (1050, '#0000FF')
+                (980, '#E74C3C'), (1000, '#E67E22'), (1013, '#27AE60'),
+                (1030, '#3498DB'), (1050, '#2980B9')
             ],
             'imperial_ranges': [
-                (28.9, '#FF0000'), (29.5, '#FFA500'), (29.9, '#32CD32'),
-                (30.4, '#4169E1'), (31.0, '#0000FF')
+                (28.9, '#E74C3C'), (29.5, '#E67E22'), (29.9, '#27AE60'),
+                (30.4, '#3498DB'), (31.0, '#2980B9')
             ]
         },
         'weather_comfort_score': {
             'ranges': [
-                (0, '#FF0000'), (30, '#FFA500'), (60, '#FFD700'),
-                (80, '#228B22'), (95, '#32CD32')
+                (0, '#E74C3C'), (30, '#E67E22'), (60, '#F39C12'),
+                (80, '#27AE60'), (95, '#2ECC71')
             ]
         }
     },
@@ -102,14 +102,14 @@ NEUTRAL_COLORS = {
 # 2. NEUTRAL FONTS - Single Source of Truth
 # =================================
 NEUTRAL_FONTS = {
-    'default_family': 'Arial',
-    'title_family': 'Comic Sans MS',
+    'default_family': 'Segoe UI',  # Modern, professional sans-serif
+    'title_family': 'Comic Sans MS',  # Required by user
     'sizes': {
         'small': 8,
         'normal': 10,
         'medium': 12,
-        'large': 15,
-        'title': 20
+        'large': 14,
+        'title': 18
     },
     'weights': {
         'normal': 'normal',
@@ -122,9 +122,9 @@ NEUTRAL_FONTS = {
 # =================================
 NEUTRAL_PADDING = {
     'none': 0,
-    'micro': 1,
-    'tiny': 2,
-    'small': 5,
+    'micro': 2,
+    'tiny': 4,
+    'small': 6,
     'medium': 8,
     'large': 10,
     'extra_large': 12
@@ -134,29 +134,29 @@ NEUTRAL_PADDING = {
 # 4. NEUTRAL MESSAGING - Single Source of Truth
 # =================================
 NEUTRAL_MESSAGING = {
-    'temperature_cold': 'Cold weather',
-    'temperature_hot': 'Hot weather',
-    'temperature_moderate': 'Moderate temperature',
-    'rain': 'Rainy conditions',
-    'snow': 'Snowy conditions',
-    'clear': 'Clear skies',
-    'cloudy': 'Cloudy conditions',
-    'windy': 'Windy conditions',
-    'calm': 'Calm conditions',
+    'temperature_cold': 'Current temperature: Cold conditions',
+    'temperature_hot': 'Current temperature: Warm conditions',
+    'temperature_moderate': 'Current temperature: Moderate conditions',
+    'rain': 'Precipitation: Rain observed',
+    'snow': 'Precipitation: Snow observed',
+    'clear': 'Sky conditions: Clear visibility',
+    'cloudy': 'Sky conditions: Cloud coverage present',
+    'windy': 'Wind conditions: Elevated wind speeds',
+    'calm': 'Wind conditions: Calm atmospheric conditions',
     'loading_messages': {
-        'default': 'Fetching weather data...',
-        'initializing': 'Initializing...',
-        'validating': 'Validating input...',
-        'processing': 'Processing weather data...'
+        'default': 'Retrieving weather data...',
+        'initializing': 'Initializing application...',
+        'validating': 'Validating input parameters...',
+        'processing': 'Processing meteorological data...'
     },
     'dialog_config': {
         'dialog_titles': {
-            'city_not_found': 'City Not Found',
-            'rate_limit': 'Rate Limit',
-            'network_issue': 'Network Issue',
-            'input_error': 'Input Error',
-            'general_error': 'Error',
-            'notice': 'Notice'
+            'city_not_found': 'Location Not Found',
+            'rate_limit': 'Request Limit Exceeded',
+            'network_issue': 'Network Connection Issue',
+            'input_error': 'Input Validation Error',
+            'general_error': 'Application Error',
+            'notice': 'System Notice'
         },
         'dialog_types': {
             'error': 'showerror',
@@ -171,14 +171,14 @@ NEUTRAL_MESSAGING = {
 # =================================
 NEUTRAL_ICONS = {
     'weather': {
-        '01d': '☀️', '01n': '🌙', '02d': '🌤️', '02n': '��',
+        '01d': '☀️', '01n': '🌙', '02d': '🌤️', '02n': '🌙',
         '03d': '☁️', '03n': '☁️', '04d': '☁️', '04n': '☁️',
-        '09d': '��️', '09n': '��️', '10d': '🌦️', '10n': '🌧️',
+        '09d': '🌧️', '09n': '🌧️', '10d': '🌦️', '10n': '🌧️',
         '11d': '⛈️', '11n': '⛈️', '13d': '🌨️', '13n': '🌨️',
         '50d': '🌫️', '50n': '🌫️'
     },
     'loading': {
-        'progress': '��',
+        'progress': '⚪',
         'waiting': '⏳'
     }
 }
@@ -188,34 +188,34 @@ NEUTRAL_ICONS = {
 # =================================
 NEUTRAL_DIMENSIONS = {
     'alert': {
-        'width_ratio': 0.4,
-        'height_ratio': 0.2,
-        'item_height_ratio': 0.1,
-        'max_height_ratio': 0.5
+        'width_ratio': 0.35,
+        'height_ratio': 0.18,
+        'item_height_ratio': 0.09,
+        'max_height_ratio': 0.4
     },
     'progress_bar': {
-        'width_ratio': 0.15,
-        'height_ratio': 0.02,
+        'width_ratio': 0.12,
+        'height_ratio': 0.015,
         'border_width': 1
     },
     'widget_layout': {
         'alert_popup': {
-            'width': 400,
-            'base_height': 100,
-            'alert_height': 80,
-            'max_height': 500
+            'width': 350,
+            'base_height': 80,
+            'alert_height': 60,
+            'max_height': 400
         },
         'comfort_progress_bar': {
-            'width': 120,
-            'height': 15,
+            'width': 100,
+            'height': 12,
             'border_width': 1
         },
         'alert_badge': {
             'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -2, 'y': 2}
         },
         'alert_status': {
-            'default_font': ('Arial', 12),
-            'message_wrap_ratio': 0.35
+            'default_font': ('Segoe UI', 10),
+            'message_wrap_ratio': 0.3
         }
     }
 }

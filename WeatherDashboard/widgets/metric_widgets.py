@@ -301,7 +301,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         """
         # Create a frame to hold both alert widget and text
         alert_frame = SafeWidgetCreator.create_frame(self.parent)
-        alert_frame.grid(row=2, column=0, columnspan=2, padx=5, sticky=tk.W)
+        alert_frame.grid(row=2, column=0, columnspan=2, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.W)
         
         # Alert widget
         self.alert_status_widget = AlertStatusIndicator(alert_frame)
@@ -309,7 +309,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Alert text label using SafeWidgetCreator
         self.alert_text_label = SafeWidgetCreator.create_label(alert_frame, "", "AlertText.TLabel")
-        self.alert_text_label.pack(side=tk.LEFT, padx=(5, 0))
+        self.alert_text_label.pack(side=tk.LEFT, padx=(self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], 0))
 
 # ================================
 # 4. METRIC POSITIONING & DISPLAY

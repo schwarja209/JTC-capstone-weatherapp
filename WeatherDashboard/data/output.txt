@@ -8774,3 +8774,39 @@ Humidity: 85 %
 Pressure: 1015.00 hPa
 Wind Speed: 10.73 m/s
 Conditions: Haze
+
+Time: 2025-07-31 23:27:42
+City: new_york
+Unit System: imperial
+Temperature: 67.1 °F
+Humidity: 91 %
+Pressure: 30.03 inHg
+Wind Speed: 18.01 mph
+Conditions: Light Rain
+
+Time: 2025-07-31 23:27:42
+City: new_york
+Unit System: imperial
+Temperature: 67.1 °F
+Humidity: 91 %
+Pressure: 30.03 inHg
+Wind Speed: 18.01 mph
+Conditions: Light Rain
+
+Time: 2025-07-31 23:41:47
+City: new_york
+Unit System: imperial
+Temperature: 66.8 °F
+Humidity: 91 %
+Pressure: 30.03 inHg
+Wind Speed: 18.01 mph
+Conditions: Overcast Clouds
+
+Time: 2025-07-31 23:41:47
+City: new_york
+Unit System: imperial
+Temperature: 66.8 °F
+Humidity: 91 %
+Pressure: 30.03 inHg
+Wind Speed: 18.01 mph
+Conditions: Overcast Clouds
