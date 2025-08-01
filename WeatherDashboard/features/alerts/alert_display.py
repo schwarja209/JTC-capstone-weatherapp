@@ -55,7 +55,7 @@ class AlertStatusIndicator:
 
         # Get theme configuration
         theme_config = self.styles.get_theme_config()
-        alert_status_config = theme_config['ui']['widget_layout']['alert_status']
+        alert_status_config = theme_config['widget_layout']['alert_status']
 
         # Calculate message wrap length using ratio
         message_wrap_length = int(alert_status_config['message_wrap_ratio'] * parent_width)
@@ -224,7 +224,7 @@ class SimpleAlertPopup:
         
         # Get theme configuration
         theme_config = self.styles.get_theme_config()
-        alert_config = theme_config['ui']['dimensions']['alert']
+        alert_config = theme_config['dimensions']['alert']
 
         # Calculate dimensions using ratios
         popup_width = int(alert_config['width_ratio'] * parent_width)
@@ -311,7 +311,9 @@ class SimpleAlertPopup:
         alert_frame.pack(fill=tk.X, pady=3)
         
         # Alert message
-        message_label = ttk.Label(alert_frame, text=alert.message, wraplength=self.styles.WIDGET_LAYOUT['alert_status']['message_wrap_length'])
+        wrap_ratio = self.styles.WIDGET_LAYOUT['alert_status']['message_wrap_ratio']
+        wrap_length = int(self.window.winfo_width() * wrap_ratio)
+        message_label = ttk.Label(alert_frame, text=alert.message, wraplength=wrap_length)
         message_label.pack(anchor=tk.W)
         
         # Time and severity

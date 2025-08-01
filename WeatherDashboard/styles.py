@@ -2,8 +2,8 @@
 Style configuration for GUI elements.
 
 This module provides centralized styling configuration for all tkinter
-GUI components in the Weather Dashboard. Serves as the main entry point
-for theme management and style application.
+GUI components in the Weather Dashboard. Serves as the surface layer
+that passes through theme_manager results while maintaining backward compatibility.
 
 Functions:
     configure_styles: Apply comprehensive styling to all GUI components
@@ -15,65 +15,36 @@ from typing import Dict, Any
 
 from WeatherDashboard.features.themes.theme_manager import theme_manager, Theme
 
-# Import theme modules
-from WeatherDashboard.features.themes.optimistic_styles import (
-    OPTIMISTIC_COLORS, OPTIMISTIC_FONTS, OPTIMISTIC_MESSAGING, 
-    OPTIMISTIC_UI, OPTIMISTIC_ICONS, OPTIMISTIC_PADDING, OPTIMISTIC_DIMENSIONS
-)
-from WeatherDashboard.features.themes.pessimistic_styles import (
-    PESSIMISTIC_COLORS, PESSIMISTIC_FONTS, PESSIMISTIC_MESSAGING,
-    PESSIMISTIC_UI, PESSIMISTIC_ICONS, PESSIMISTIC_PADDING, PESSIMISTIC_DIMENSIONS
-)
-from WeatherDashboard.features.themes.neutral_styles import (
-    NEUTRAL_COLORS, NEUTRAL_FONTS, NEUTRAL_MESSAGING,
-    NEUTRAL_UI, NEUTRAL_ICONS, NEUTRAL_PADDING, NEUTRAL_DIMENSIONS
-)
-
 # centralizing style info
 from .alert_config import ALERT_DEFINITIONS, ALERT_SEVERITY_COLORS, ALERT_DISPLAY_CONFIG
 
 # =================================
-# 1. THEME MANAGEMENT
+# 1. THEME MANAGEMENT - SURFACE LAYER
 # =================================
 def get_theme_config(theme_name: str = 'neutral') -> Dict[str, Any]:
-    """Get configuration for a specific theme.
+    """Get configuration for a specific theme via theme_manager.
     
     Args:
         theme_name: Theme name ('optimistic', 'pessimistic', 'neutral')
         
     Returns:
-        Dict containing theme configuration
+        Dict containing theme configuration from theme_manager
     """
-    if theme_name == 'optimistic':
-        return {
-            'colors': OPTIMISTIC_COLORS,
-            'fonts': OPTIMISTIC_FONTS,
-            'messaging': OPTIMISTIC_MESSAGING,
-            'ui': OPTIMISTIC_UI,
-            'icons': OPTIMISTIC_ICONS,
-            'padding': OPTIMISTIC_PADDING
-        }
-    elif theme_name == 'pessimistic':
-        return {
-            'colors': PESSIMISTIC_COLORS,
-            'fonts': PESSIMISTIC_FONTS,
-            'messaging': PESSIMISTIC_MESSAGING,
-            'ui': PESSIMISTIC_UI,
-            'icons': PESSIMISTIC_ICONS,
-            'padding': PESSIMISTIC_PADDING
-        }
-    else:  # neutral
-        return {
-            'colors': NEUTRAL_COLORS,
-            'fonts': NEUTRAL_FONTS,
-            'messaging': NEUTRAL_MESSAGING,
-            'ui': NEUTRAL_UI,
-            'icons': NEUTRAL_ICONS,
-            'padding': NEUTRAL_PADDING
-        }
+    # Map theme name to Theme enum
+    theme_mapping = {
+        'optimistic': Theme.OPTIMISTIC,
+        'pessimistic': Theme.PESSIMISTIC,
+        'neutral': Theme.NEUTRAL
+    }
+    
+    theme_enum = theme_mapping.get(theme_name, Theme.NEUTRAL)
+    theme_manager.change_theme(theme_enum)
+    
+    # Return theme_manager's configuration
+    return theme_manager.get_theme_config()
 
 # =================================
-# 2. LAYOUT MANAGEMENT
+# 2. LAYOUT MANAGEMENT - KEEP EXISTING
 # =================================
 FRAME_TITLE = "title"
 FRAME_CONTROL = "control"
@@ -173,61 +144,30 @@ LAYOUT_CONFIG = {
 }
 
 # =================================
-# 3. STYLE CONFIGURATION
+# 3. STYLE CONFIGURATION - SURFACE LAYER
 # =================================
 def configure_styles(theme_name: str = 'neutral') -> None:
-    """Configure comprehensive styles for all GUI elements with theme support.
+    """Configure comprehensive styles for all GUI elements via theme_manager.
     
     Args:
         theme_name: Theme to apply ('optimistic', 'pessimistic', 'neutral')
     """
-    theme_config = get_theme_config(theme_name)
-    colors = theme_config['colors']
-    fonts = theme_config['fonts']
-    ui = theme_config['ui']
+    # Use theme_manager to configure styles
+    theme_mapping = {
+        'optimistic': Theme.OPTIMISTIC,
+        'pessimistic': Theme.PESSIMISTIC,
+        'neutral': Theme.NEUTRAL
+    }
     
-    style = ttk.Style()
+    theme_enum = theme_mapping.get(theme_name, Theme.NEUTRAL)
+    theme_manager.change_theme(theme_enum)
     
-    # Apply theme-specific configurations
-    style.configure("Title.TLabel", font=(fonts['title_family'], fonts['sizes']['title'], fonts['weights']['bold']),foreground=colors['primary'])
-    
-    style.configure("FrameLabel.TLabelframe.Label", font=(fonts['default_family'], fonts['sizes']['large'], fonts['weights']['bold']),foreground=colors['primary'])
+    # Apply styles through theme_manager
+    theme_manager._apply_theme()
 
-    style.configure("TNotebook", background=colors['backgrounds']['inactive'])
-    style.configure("TNotebook.Tab", font=(fonts['default_family'], fonts['sizes']['medium'], fonts['weights']['bold']), padding=[ui['padding']['tiny'], ui['padding']['medium']])
-    style.map("TNotebook.Tab",
-             background=[("selected", colors['backgrounds']['selected']), ("active", colors['backgrounds']['active'])],
-             foreground=[("selected", colors['foregrounds']['selected']), ("active", colors['foregrounds']['active'])])
- 
-    style.configure("LabelName.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']))
-    style.configure("LabelValue.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']))
-
-    style.configure("MainButton.TButton", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']), padding=ui['padding']['small'])
-    
-    style.configure("AlertTitle.TLabel", font=(fonts['default_family'], fonts['sizes']['large'], fonts['weights']['bold']))
-    style.configure("AlertText.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']))
-    style.configure("GrayLabel.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']), foreground=colors['foregrounds']['inactive'])
-    
-    # System status styles for different states
-    style.configure("SystemStatusReady.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']))
-    style.configure("SystemStatusWarning.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']))
-    style.configure("SystemStatusError.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']))
-
-    style.map("SystemStatusReady.TLabel", foreground=[('!disabled', colors['status']['success'])])
-    style.map("SystemStatusWarning.TLabel", foreground=[('!disabled', colors['status']['warning'])])
-    style.map("SystemStatusError.TLabel", foreground=[('!disabled', colors['status']['error'])])
-
-    # Data status styles  
-    style.configure("DataStatusLive.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']))
-    style.configure("DataStatusSimulated.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']))
-    style.configure("DataStatusNone.TLabel", font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']))
-
-    style.map("DataStatusLive.TLabel", foreground=[('!disabled', colors['status']['success'])])
-    style.map("DataStatusSimulated.TLabel", foreground=[('!disabled', colors['status']['warning'])])
-    style.map("DataStatusNone.TLabel", foreground=[('!disabled', colors['status']['neutral'])])
-
-# Add to styles.py or create a new utils/dimension_utils.py
-
+# =================================
+# 4. DIMENSION UTILITIES - KEEP EXISTING
+# =================================
 def get_absolute_dimensions(relative_config: Dict[str, Any], parent_width: int, parent_height: int) -> Dict[str, Any]:
     """Convert relative dimensions to absolute based on parent size.
     
@@ -257,24 +197,63 @@ def get_absolute_dimensions(relative_config: Dict[str, Any], parent_width: int, 
     return absolute_config
 
 # =================================
-# 4. BACKWARD COMPATIBILITY
+# 5. BACKWARD COMPATIBILITY - SURFACE LAYER
 # =================================
-# For backward compatibility, provide default theme values
 def get_default_theme_values() -> Dict[str, Any]:
     """Get default theme values for backward compatibility."""
-    return get_theme_config('neutral')
+    return theme_manager.get_theme_config()
 
-# Legacy accessors for existing code
-FONTS = NEUTRAL_FONTS
-COLORS = NEUTRAL_COLORS
-PADDING = NEUTRAL_PADDING
-DIMENSIONS = NEUTRAL_DIMENSIONS
-WIDGET_LAYOUT = NEUTRAL_DIMENSIONS['widget_layout']
-CONTROL_PANEL_CONFIG = NEUTRAL_UI['control_panel_config']
-STATUS_BAR_CONFIG = NEUTRAL_UI['status_bar_config']
-LOADING_CONFIG = NEUTRAL_UI['loading_config']
-WEATHER_ICONS = NEUTRAL_ICONS['weather']
-METRIC_COLOR_RANGES = NEUTRAL_COLORS['metric_colors']
-TEMPERATURE_DIFFERENCE_COLORS = NEUTRAL_COLORS['temperature_difference']
-COMFORT_THRESHOLDS = NEUTRAL_COLORS['comfort_thresholds']
-DIALOG_CONFIG = NEUTRAL_MESSAGING['dialog_titles']
+# Legacy accessors that pass through to theme_manager
+def get_fonts():
+    return theme_manager.get_fonts()
+
+def get_colors():
+    return theme_manager.get_colors()
+
+def get_padding():
+    return theme_manager.get_padding()
+
+def get_dimensions():
+    return theme_manager.get_theme_config()['dimensions']
+
+def get_widget_layout():
+    return theme_manager.get_theme_config()['widget_layout']
+
+def get_control_panel_config():
+    return theme_manager.get_theme_config()['control_panel_config']
+
+def get_status_bar_config():
+    return theme_manager.get_theme_config()['status_bar_config']
+
+def get_loading_config():
+    return theme_manager.get_theme_config()['loading_config']
+
+def get_weather_icons():
+    return theme_manager.get_theme_config()['icons']['weather']
+
+def get_metric_colors():
+    return theme_manager.get_colors()['metric_colors']
+
+def get_temperature_difference_colors():
+    return theme_manager.get_temperature_difference_color('significant_warmer')
+
+def get_comfort_thresholds():
+    return theme_manager.get_comfort_threshold('poor')
+
+def get_dialog_config():
+    return theme_manager.get_theme_config()['messaging']['dialog_config']
+
+# Legacy constants for backward compatibility
+FONTS = get_fonts()
+COLORS = get_colors()
+PADDING = get_padding()
+DIMENSIONS = get_dimensions()
+WIDGET_LAYOUT = get_widget_layout()
+CONTROL_PANEL_CONFIG = get_control_panel_config()
+STATUS_BAR_CONFIG = get_status_bar_config()
+LOADING_CONFIG = get_loading_config()
+WEATHER_ICONS = get_weather_icons()
+METRIC_COLOR_RANGES = get_metric_colors()
+TEMPERATURE_DIFFERENCE_COLORS = get_temperature_difference_colors()
+COMFORT_THRESHOLDS = get_comfort_thresholds()
+DIALOG_CONFIG = get_dialog_config()

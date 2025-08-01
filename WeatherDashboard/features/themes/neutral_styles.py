@@ -149,13 +149,20 @@ NEUTRAL_MESSAGING = {
         'validating': 'Validating input...',
         'processing': 'Processing weather data...'
     },
-    'dialog_titles': {
-        'city_not_found': 'City Not Found',
-        'rate_limit': 'Rate Limit',
-        'network_issue': 'Network Issue',
-        'input_error': 'Input Error',
-        'general_error': 'Error',
-        'notice': 'Notice'
+    'dialog_config': {
+        'dialog_titles': {
+            'city_not_found': 'City Not Found',
+            'rate_limit': 'Rate Limit',
+            'network_issue': 'Network Issue',
+            'input_error': 'Input Error',
+            'general_error': 'Error',
+            'notice': 'Notice'
+        },
+        'dialog_types': {
+            'error': 'showerror',
+            'warning': 'showwarning',
+            'info': 'showinfo'
+        }
     }
 }
 

@@ -402,7 +402,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
         # Get theme configuration
         theme_config = self.styles.get_theme_config()
-        progress_config = theme_config['ui']['dimensions']['progress_bar']
+        progress_config = theme_config['dimensions']['progress_bar']
         
         # Calculate dimensions using ratios
         bar_width = int(progress_config['width_ratio'] * parent_width)

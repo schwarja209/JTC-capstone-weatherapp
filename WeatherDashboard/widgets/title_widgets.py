@@ -72,7 +72,7 @@ class TitleWidget(BaseWidgetManager):
         """Create and display the title label widget."""
         # Create main container frame
         theme_config = self.styles.get_theme_config()
-        title_padding = theme_config['ui']['title_padding']  # New configuration needed
+        title_padding = theme_config['title_padding']  # New configuration needed
 
         main_frame = SafeWidgetCreator.create_frame(self.parent)
         main_frame.pack(fill=tk.X, padx=title_padding['horizontal'], pady=title_padding['vertical'])
