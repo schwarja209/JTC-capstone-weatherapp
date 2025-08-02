@@ -16,9 +16,13 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 import unittest
 from unittest.mock import patch, Mock
-from WeatherDashboard.utils.utils import city_key, format_fallback_status, is_fallback
+from WeatherDashboard.utils.utils import Utils
 
 class TestUtils(unittest.TestCase):
+    
+    def setUp(self):
+        """Set up test fixtures."""
+        self.utils = Utils()
     
     # ================================
     # is_fallback() function tests
@@ -27,33 +31,33 @@ class TestUtils(unittest.TestCase):
     def test_is_fallback_with_simulated_data(self):
         """Test is_fallback returns True for simulated data."""
         fallback_data = {"source": "simulated", "temperature": 25, "humidity": 60}
-        self.assertTrue(is_fallback(fallback_data))
+        self.assertTrue(self.utils.is_fallback(fallback_data))
     
     def test_is_fallback_with_live_data(self):
         """Test is_fallback returns False for live data.""" 
         live_data = {"source": "api", "temperature": 25, "humidity": 60}
-        self.assertFalse(is_fallback(live_data))
+        self.assertFalse(self.utils.is_fallback(live_data))
         
         # Test other non-simulated sources
         other_sources = ["weather_service", "manual", "cached"]
         for source in other_sources:
             with self.subTest(source=source):
                 data = {"source": source, "temperature": 25}
-                self.assertFalse(is_fallback(data))
+                self.assertFalse(self.utils.is_fallback(data))
     
     def test_is_fallback_with_missing_source(self):
         """Test is_fallback returns False when source key is missing."""
         no_source_data = {"temperature": 25, "humidity": 60}
-        self.assertFalse(is_fallback(no_source_data))
+        self.assertFalse(self.utils.is_fallback(no_source_data))
     
     def test_is_fallback_with_none_source(self):
         """Test is_fallback returns False when source is None."""
         none_source_data = {"source": None, "temperature": 25}
-        self.assertFalse(is_fallback(none_source_data))
+        self.assertFalse(self.utils.is_fallback(none_source_data))
     
     def test_is_fallback_with_empty_dict(self):
         """Test is_fallback returns False with empty dictionary."""
-        self.assertFalse(is_fallback({}))
+        self.assertFalse(self.utils.is_fallback({}))
     
     def test_is_fallback_case_sensitivity(self):
         """Test is_fallback is case sensitive for 'simulated'."""
@@ -66,7 +70,7 @@ class TestUtils(unittest.TestCase):
         
         for data in case_variations:
             with self.subTest(source=data["source"]):
-                self.assertFalse(is_fallback(data))
+                self.assertFalse(self.utils.is_fallback(data))
     
     # ================================
     # format_fallback_status() function tests
@@ -81,7 +85,7 @@ class TestUtils(unittest.TestCase):
         
         for is_fallback_flag, mode, expected in test_cases:
             with self.subTest(fallback=is_fallback_flag, mode=mode):
-                result = format_fallback_status(is_fallback_flag, mode)
+                result = self.utils.format_fallback_status(is_fallback_flag, mode)
                 self.assertEqual(result, expected)
     
     def test_format_fallback_status_log_mode(self):
@@ -93,14 +97,14 @@ class TestUtils(unittest.TestCase):
         
         for is_fallback_flag, mode, expected in test_cases:
             with self.subTest(fallback=is_fallback_flag, mode=mode):
-                result = format_fallback_status(is_fallback_flag, mode)
+                result = self.utils.format_fallback_status(is_fallback_flag, mode)
                 self.assertEqual(result, expected)
     
     def test_format_fallback_status_default_mode(self):
         """Test fallback status formatting with default mode."""
         # Default should be "display" mode
-        result_true = format_fallback_status(True)
-        result_false = format_fallback_status(False)
+        result_true = self.utils.format_fallback_status(True)
+        result_false = self.utils.format_fallback_status(False)
         
         self.assertEqual(result_true, "(Simulated)")
         self.assertEqual(result_false, "")
@@ -112,7 +116,7 @@ class TestUtils(unittest.TestCase):
         for invalid_mode in invalid_modes:
             with self.subTest(mode=invalid_mode):
                 with self.assertRaises(ValueError) as context:
-                    format_fallback_status(True, invalid_mode)
+                    self.utils.format_fallback_status(True, invalid_mode)
                 
                 # Verify error message mentions the invalid format type
                 error_msg = str(context.exception)
@@ -124,14 +128,14 @@ class TestUtils(unittest.TestCase):
         truthy_values = [1, "true", [1], {"a": 1}, "non-empty"]
         for truthy in truthy_values:
             with self.subTest(truthy=truthy):
-                result = format_fallback_status(truthy, "display")
+                result = self.utils.format_fallback_status(truthy, "display")
                 self.assertEqual(result, "(Simulated)")
         
         # Test falsy values
         falsy_values = [0, "", [], {}, None]
         for falsy in falsy_values:
             with self.subTest(falsy=falsy):
-                result = format_fallback_status(falsy, "display")
+                result = self.utils.format_fallback_status(falsy, "display")
                 self.assertEqual(result, "")
     
     # ================================
@@ -156,7 +160,7 @@ class TestUtils(unittest.TestCase):
         
         for city_name, expected_key in test_cases:
             with self.subTest(city=city_name):
-                result = city_key(city_name)
+                result = self.utils.city_key(city_name)
                 self.assertEqual(result, expected_key)
                 mock_validate.assert_called_with(city_name)
     
@@ -167,7 +171,7 @@ class TestUtils(unittest.TestCase):
         mock_validate.return_value = ["City name is invalid: test error"]
         
         with self.assertRaises(ValueError) as context:
-            city_key("Invalid City")
+            self.utils.city_key("Invalid City")
         
         # Should raise the first validation error
         self.assertEqual(str(context.exception), "City name is invalid: test error")
@@ -183,7 +187,7 @@ class TestUtils(unittest.TestCase):
         ]
         
         with self.assertRaises(ValueError) as context:
-            city_key("Bad123")
+            self.utils.city_key("Bad123")
         
         # Should raise the first error only
         self.assertEqual(str(context.exception), "City name is invalid: too short")
@@ -202,7 +206,7 @@ class TestUtils(unittest.TestCase):
         
         for input_city, expected_key in test_cases:
             with self.subTest(input=input_city):
-                result = city_key(input_city)
+                result = self.utils.city_key(input_city)
                 self.assertEqual(result, expected_key)
     
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
@@ -219,7 +223,7 @@ class TestUtils(unittest.TestCase):
         
         for city_name, expected_key in test_cases:
             with self.subTest(city=city_name):
-                result = city_key(city_name)
+                result = self.utils.city_key(city_name)
                 self.assertEqual(result, expected_key)
     
     # ================================

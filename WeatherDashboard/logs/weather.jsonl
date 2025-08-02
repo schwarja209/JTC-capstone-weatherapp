@@ -13115,3 +13115,1074 @@
 {"timestamp": "2025-07-31 23:42:01", "level": "INFO", "message": "Controller theme set to: pessimistic"}
 {"timestamp": "2025-07-31 23:42:01", "level": "INFO", "message": "Theme changed to pessimistic"}
 {"timestamp": "2025-07-31 23:42:01", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-08-02 19:11:57", "test": true}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-08-02 19:11:57", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-08-02 19:11:58", "level": "INFO", "message": "Starting weather update for New City"}
+{"timestamp": "2025-08-02 19:11:58", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-08-02 19:12:00", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-08-02 19:12:00", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:08", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:12:09", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:12:09", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:12:10", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:12:10", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-08-02 19:12:10", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:12:10", "level": "INFO", "message": "Added current weather data to chart: air_quality_index = 2"}
+{"timestamp": "2025-08-02 19:12:13", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-08-02 19:12:13", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-08-02 19:12:13", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-08-02 19:12:13", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-08-02 19:12:13", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-08-02 19:12:13", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-08-02 19:12:13", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-08-02 19:12:16", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-08-02 19:12:16", "level": "INFO", "message": "Selected theme: Neutral"}
+{"timestamp": "2025-08-02 19:12:16", "level": "INFO", "message": "Mapped theme name: neutral"}
+{"timestamp": "2025-08-02 19:12:16", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-08-02 19:12:16", "level": "INFO", "message": "Controller theme set to: neutral"}
+{"timestamp": "2025-08-02 19:12:16", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-08-02 19:12:16", "level": "INFO", "message": "Theme changed to neutral"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-08-02 19:12:21", "test": true}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-08-02 19:12:21", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:12:22", "level": "INFO", "message": "Added current weather data to chart: temperature = 24.23"}
+{"timestamp": "2025-08-02 19:12:30", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:12:31", "level": "INFO", "message": "Added current weather data to chart: temperature = 75.614"}
+{"timestamp": "2025-08-02 19:35:51", "level": "ERROR", "message": "Configuration error in widgets creation: Creation failed"}
+{"timestamp": "2025-08-02 19:35:51", "level": "INFO", "message": "widgets created successfully"}
+{"timestamp": "2025-08-02 19:35:51", "level": "WARN", "message": "Cannot update alerts: widgets not ready"}
+{"timestamp": "2025-08-02 19:35:51", "level": "WARN", "message": "Cannot update metrics: widgets not ready"}
+{"timestamp": "2025-08-02 19:35:51", "level": "WARN", "message": "Cannot update status bar: widgets not ready"}
+{"timestamp": "2025-08-02 19:35:51", "level": "ERROR", "message": "Configuration error in button create_button: Creation failed"}
+{"timestamp": "2025-08-02 19:35:51", "level": "ERROR", "message": "Configuration error in label create_label: Creation failed"}
+{"timestamp": "2025-08-02 19:35:51", "level": "ERROR", "message": "Configuration error in label create_label: No such widget"}
+{"timestamp": "2025-08-02 19:35:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:35:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:35:53", "level": "INFO", "message": "Fetching current weather for TestCity"}
+{"timestamp": "2025-08-02 19:35:53", "level": "INFO", "message": "Fetching current weather for London"}
+{"timestamp": "2025-08-02 19:35:53", "level": "INFO", "message": "Fetching current weather for TestCity"}
+{"timestamp": "2025-08-02 19:36:10", "level": "WARN", "message": "Using fallback for TestCity: API error"}
+{"timestamp": "2025-08-02 19:36:10", "level": "WARN", "message": "Using fallback for TestCity: Generic error"}
+{"timestamp": "2025-08-02 19:36:11", "level": "WARN", "message": "Using fallback for TestCity: API service unavailable"}
+{"timestamp": "2025-08-02 19:36:12", "level": "WARN", "message": "Using fallback for TestCity: Unknown error"}
+{"timestamp": "2025-08-02 19:36:13", "level": "WARN", "message": "Unknown theme: invalid_theme, keeping current theme"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 7 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 8 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 9 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 10 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 11 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 12 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 13 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 14 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 15 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 16 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 17 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 18 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 19 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 20 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 21 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 22 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 23 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 24 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 25 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 26 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 27 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 28 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 29 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 30 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 30 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 30 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 30 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 30 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 30 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for london - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for London - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Weather data written for london - Live"}
+{"timestamp": "2025-08-02 19:36:14", "level": "INFO", "message": "Stored weather data for London - 1 entries"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences loaded from C:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:36:27", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:36:30", "level": "ERROR", "message": "Unexpected error in fetch_current for InvalidCity: 'Mock' object does not support item assignment"}
+{"timestamp": "2025-08-02 19:36:30", "level": "ERROR", "message": "API failure for InvalidCity - Unexpected error: 'Mock' object does not support item assignment. Switching to simulated data."}
+{"timestamp": "2025-08-02 19:36:30", "level": "ERROR", "message": "Unexpected error in fetch_current for New York: 'Mock' object does not support item assignment"}
+{"timestamp": "2025-08-02 19:36:30", "level": "ERROR", "message": "API failure for New York - Unexpected error: 'Mock' object does not support item assignment. Switching to simulated data."}
+{"timestamp": "2025-08-02 19:36:30", "level": "WARN", "message": "Connection error on attempt 1, retrying: Connection failed"}
+{"timestamp": "2025-08-02 19:36:30", "level": "WARN", "message": "API call failed (attempt 1), retrying: Other error"}
+{"timestamp": "2025-08-02 19:36:31", "level": "ERROR", "message": "API call failed after 2 attempts: Other error"}
+{"timestamp": "2025-08-02 19:36:31", "level": "WARN", "message": "Timeout on attempt 1, retrying: Persistent timeout"}
+{"timestamp": "2025-08-02 19:36:31", "level": "WARN", "message": "Timeout on attempt 2, retrying: Persistent timeout"}
+{"timestamp": "2025-08-02 19:36:31", "level": "ERROR", "message": "API timeout after 3 attempts: Persistent timeout"}
+{"timestamp": "2025-08-02 19:36:31", "level": "WARN", "message": "Timeout on attempt 1, retrying: Timeout 1"}
+{"timestamp": "2025-08-02 19:36:31", "level": "WARN", "message": "Timeout on attempt 2, retrying: Timeout 2"}
+{"timestamp": "2025-08-02 19:46:30", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-08-02 19:46:30", "test": true}
+{"timestamp": "2025-08-02 19:46:30", "level": "INFO", "message": "Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-08-02 19:46:31", "level": "INFO", "message": "Starting weather update for New City"}
+{"timestamp": "2025-08-02 19:46:31", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-08-02 19:46:33", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-08-02 19:46:33", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:34", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Starting weather update for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Fetching data for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Fetching current weather for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Weather data written for new_city - Live"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Stored weather data for New City - 1 entries"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Current weather fetched for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Data fetch completed for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Weather update completed for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Fetching current weather for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Weather data written for new_city - Live"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Stored weather data for New City - 2 entries"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Current weather fetched for New City"}
+{"timestamp": "2025-08-02 19:46:35", "level": "INFO", "message": "Added current weather data to chart: air_quality_index = 2"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Initializing Weather Dashboard application..."}
+{"timestamp": "Health check at 2025-08-02 19:46:49", "test": true}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Preferences loaded from c:\\Users\\spesh\\OneDrive\\Documents\\JTC Assignments\\WeatherDashboard\\WeatherDashboard\\data\\user_preferences.json"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Preferences applied to application state"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered frame: title"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered frame: control"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered frame: tabbed"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered frame: status_bar"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Creating dashboard widgets"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "title widget created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered widget: title_widget (type: title)"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "control widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered widget: control_widgets (type: control)"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "metric display widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "chart widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered widget: metric_widgets (type: metric)"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered metric widgets with registry"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered widget: chart_widgets (type: chart)"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered chart widgets with registry"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "tabbed display widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered widget: tabbed_widgets (type: tabbed)"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "status bar widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Registered widget: status_bar_widgets (type: status)"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "dashboard widgets created successfully"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Starting weather update for New City"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Fetching data for New City"}
+{"timestamp": "2025-08-02 19:46:49", "level": "INFO", "message": "Fetching current weather for New City"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Weather data written for new_city - Live"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Stored weather data for New City - 1 entries"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Current weather fetched for New City"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Data fetch completed for New City"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Weather update completed for New City"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Fetching current weather for New City"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Weather data written for new_city - Live"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Stored weather data for New City - 2 entries"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Current weather fetched for New City"}
+{"timestamp": "2025-08-02 19:46:50", "level": "INFO", "message": "Added current weather data to chart: temperature = 22.35"}
+{"timestamp": "2025-08-02 19:47:02", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Starting weather update for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Fetching data for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Fetching current weather for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Weather data written for new_city - Live"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Stored weather data for New City - 3 entries"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Current weather fetched for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Data fetch completed for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Weather update completed for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Fetching current weather for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Weather data written for new_city - Live"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Stored weather data for New City - 4 entries"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Current weather fetched for New City"}
+{"timestamp": "2025-08-02 19:47:04", "level": "INFO", "message": "Added current weather data to chart: temperature = 72.23"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:06", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:07", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:07", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:47:07", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Stored weather data for New York - 1 entries"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Stored weather data for New York - 2 entries"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:08", "level": "INFO", "message": "Added current weather data to chart: temperature = 74.588"}
+{"timestamp": "2025-08-02 19:47:16", "level": "INFO", "message": "Weather data scheduler stopped"}
+{"timestamp": "2025-08-02 19:47:17", "level": "INFO", "message": "Weather data scheduler started"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Stored weather data for New York - 3 entries"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Stored weather data for New York - 4 entries"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Added current weather data to chart: temperature = 74.588"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Cancelling current weather operation"}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:20", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-08-02 19:47:20", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-08-02 19:47:20", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Stored weather data for New York - 5 entries"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Stored weather data for New York - 6 entries"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:26", "level": "INFO", "message": "Added current weather data to chart: temperature = 74.588"}
+{"timestamp": "2025-08-02 19:47:31", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:32", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:32", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:32", "level": "INFO", "message": "Starting weather update for "}
+{"timestamp": "2025-08-02 19:47:32", "level": "ERROR", "message": "Input validation error: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-08-02 19:47:34", "level": "INFO", "message": "show_error called with: Input validation failed: City name is invalid: cannot be empty"}
+{"timestamp": "2025-08-02 19:47:34", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:37", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Stored weather data for New York - 7 entries"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Stored weather data for New York - 8 entries"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:38", "level": "INFO", "message": "Added current weather data to chart: temperature = 74.588"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:39", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:40", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:40", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:40", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:40", "level": "ERROR", "message": "Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-08-02 19:47:42", "level": "INFO", "message": "show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected"}
+{"timestamp": "2025-08-02 19:47:42", "level": "ERROR", "message": "Unexpected error during UI update: 'str' object has no attribute '__traceback__'"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:44", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Stored weather data for New York - 9 entries"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Stored weather data for New York - 10 entries"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:47", "level": "INFO", "message": "Added current weather data to chart: temperature = 74.588"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:48", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:49", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:49", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:49", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:49", "level": "WARN", "message": "Fetch blocked due to rate limiting."}
+{"timestamp": "2025-08-02 19:47:49", "level": "INFO", "message": "show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-08-02 19:47:49", "level": "ERROR", "message": "Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Preferences saved"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Manual update requested - scheduler will continue in background"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Starting weather update for New York"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Fetching data for New York"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Stored weather data for New York - 11 entries"}
+{"timestamp": "2025-08-02 19:47:52", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:52", "level": "WARN", "message": "Weather alert: High UV Index Alert - Very high UV exposure: 8 (threshold: 8)"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Data fetch completed for New York"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Weather update completed for New York"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Fetching current weather for New York"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Converting units to imperial"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Weather data written for new_york - Live"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Stored weather data for New York - 12 entries"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Current weather fetched for New York"}
+{"timestamp": "2025-08-02 19:47:53", "level": "INFO", "message": "Added current weather data to chart: temperature = 74.588"}
+{"timestamp": "2025-08-02 19:48:05", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-08-02 19:48:05", "level": "INFO", "message": "Selected theme: Optimistic"}
+{"timestamp": "2025-08-02 19:48:05", "level": "INFO", "message": "Mapped theme name: optimistic"}
+{"timestamp": "2025-08-02 19:48:05", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-08-02 19:48:05", "level": "INFO", "message": "Controller theme set to: optimistic"}
+{"timestamp": "2025-08-02 19:48:05", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-08-02 19:48:05", "level": "INFO", "message": "Theme changed to optimistic"}
+{"timestamp": "2025-08-02 19:48:17", "level": "INFO", "message": "Theme change event triggered"}
+{"timestamp": "2025-08-02 19:48:17", "level": "INFO", "message": "Selected theme: Pessimistic"}
+{"timestamp": "2025-08-02 19:48:17", "level": "INFO", "message": "Mapped theme name: pessimistic"}
+{"timestamp": "2025-08-02 19:48:17", "level": "INFO", "message": "Theme callback exists: True"}
+{"timestamp": "2025-08-02 19:48:17", "level": "INFO", "message": "Controller theme set to: pessimistic"}
+{"timestamp": "2025-08-02 19:48:17", "level": "INFO", "message": "Theme changed to pessimistic"}
+{"timestamp": "2025-08-02 19:48:17", "level": "INFO", "message": "Theme changed to pessimistic"}
