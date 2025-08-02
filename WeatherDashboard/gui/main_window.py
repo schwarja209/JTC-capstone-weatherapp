@@ -184,12 +184,9 @@ class WeatherDashboardMain:
         
         self.root.geometry(f"{window_width}x{window_height}+{x}+{y}")
         
-        # Configure grid weights for responsive layout - match the 2-column layout
-        self.root.grid_rowconfigure(0, weight=0)  # Title row
-        self.root.grid_rowconfigure(1, weight=1)  # Main content row  
-        self.root.grid_rowconfigure(2, weight=0)  # Status row
-        self.root.grid_columnconfigure(0, weight=1)  # Control column
-        self.root.grid_columnconfigure(1, weight=2)  # Main content column
+        # Configure grid weights for responsive layout
+        self.root.grid_rowconfigure(0, weight=1)
+        self.root.grid_columnconfigure(0, weight=1)
         
         # Set window background from theme
         backgrounds = theme_manager.get_backgrounds()
@@ -219,10 +216,10 @@ class WeatherDashboardMain:
                 if y < 0:
                     y = 0
                 
-                # Only move if significantly off-screen (more than 10 pixels)
-                if abs(x - self.root.winfo_x()) > 10 or abs(y - self.root.winfo_y()) > 10:
+                # Only move if position changed
+                if x != self.root.winfo_x() or y != self.root.winfo_y():
                     self.root.geometry(f"+{x}+{y}")
-                
+        
         self.root.bind('<Configure>', on_configure)
 
 # ================================
@@ -334,6 +331,30 @@ class WeatherDashboardMain:
 
             # Force window to stay within bounds
             self.root.update_idletasks()
+            
+            # Get current window position and size
+            x = self.root.winfo_x()
+            y = self.root.winfo_y()
+            width = self.root.winfo_width()
+            height = self.root.winfo_height()
+            
+            # Get screen dimensions
+            screen_width = self.root.winfo_screenwidth()
+            screen_height = self.root.winfo_screenheight()
+            
+            # Ensure window stays on screen
+            if x + width > screen_width:
+                x = screen_width - width
+            if y + height > screen_height:
+                y = screen_height - height
+            if x < 0:
+                x = 0
+            if y < 0:
+                y = 0
+            
+            # Apply new position if needed
+            if x != self.root.winfo_x() or y != self.root.winfo_y():
+                self.root.geometry(f"+{x}+{y}")
             
             self.logger.info(f"Theme changed to {theme_name}")
             

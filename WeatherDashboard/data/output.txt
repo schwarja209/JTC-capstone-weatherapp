@@ -8810,39 +8810,3 @@ Humidity: 91 %
 Pressure: 30.03 inHg
 Wind Speed: 18.01 mph
 Conditions: Overcast Clouds
-
-Time: 2025-08-01 00:19:15
-City: new_york
-Unit System: imperial
-Temperature: 66.6 °F
-Humidity: 92 %
-Pressure: 30.03 inHg
-Wind Speed: 21.00 mph
-Conditions: Mist
-
-Time: 2025-08-01 00:19:16
-City: new_york
-Unit System: imperial
-Temperature: 66.6 °F
-Humidity: 92 %
-Pressure: 30.03 inHg
-Wind Speed: 21.00 mph
-Conditions: Mist
-
-Time: 2025-08-01 00:37:10
-City: new_york
-Unit System: imperial
-Temperature: 66.6 °F
-Humidity: 92 %
-Pressure: 30.03 inHg
-Wind Speed: 20.00 mph
-Conditions: Mist
-
-Time: 2025-08-01 00:37:10
-City: new_york
-Unit System: imperial
-Temperature: 66.6 °F
-Humidity: 92 %
-Pressure: 30.03 inHg
-Wind Speed: 20.00 mph
-Conditions: Mist
