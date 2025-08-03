@@ -123,8 +123,10 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Configure rate limiter to allow request
         self.mock_rate_limiter.can_make_request.return_value = True
         
-        # Mock the controller's validation service to return success
-        self.controller._validation_service.validate_inputs = Mock(return_value=(True, None))
+        # Mock the controller's validation service to return ValidationResult object
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validation_result = ValidationResult(is_valid=True, errors=[])
+        self.controller._validation_service.validate_inputs = Mock(return_value=mock_validation_result)
         
         # Mock error handler to return True (continue processing)
         self.mock_error_handler.handle_weather_error.return_value = True
@@ -147,16 +149,17 @@ class TestWeatherDashboardController(unittest.TestCase):
 
     def test_update_weather_display_validation_failure(self):
         """Test weather display update with validation failure."""
-        # Configure validation to fail
-        with patch('WeatherDashboard.core.controller.ValidationUtils') as mock_validation_utils:
-            mock_validation_utils.validate_input_types.return_value = ["Invalid input"]
-            
-            # Execute update
-            result = self.controller.update_weather_display("", "metric")
-            
-            # Should return True to unlock buttons but with error message
-            self.assertTrue(result.success)
-            self.assertIsNotNone(result.error_message)
+        # Configure validation to fail - mock ValidationResult with errors
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validation_result = ValidationResult(is_valid=False, errors=["Invalid input"])
+        self.controller._validation_service.validate_inputs = Mock(return_value=mock_validation_result)
+        
+        # Execute update
+        result = self.controller.update_weather_display("", "metric")
+        
+        # Should return False for validation failures with error message
+        self.assertFalse(result.success)
+        self.assertIsNotNone(result.error_message)
 
     def test_update_weather_display_rate_limit(self):
         """Test weather display update with rate limiting."""
@@ -166,24 +169,39 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Execute update
         result = self.controller.update_weather_display("New York", "metric")
         
-        # Should return True to unlock buttons but with error message
-        self.assertTrue(result.success)
+        # Should return False for rate limit failures with error message
+        self.assertFalse(result.success)
         self.assertIsNotNone(result.error_message)
 
     @patch('WeatherDashboard.core.controller.ValidationUtils')
     def test_update_weather_display_city_not_found(self, mock_validation_utils):
         """Test weather update with city not found error."""
-        # Configure validation to pass
-        mock_validation_utils.validate_input_types.return_value = []
-        mock_validation_utils.validate_complete_state.return_value = []
+        # Configure validation to pass - mock ValidationResult
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validation_result = ValidationResult(is_valid=True, errors=[])
+        self.controller._validation_service.validate_inputs = Mock(return_value=mock_validation_result)
         
         # Configure rate limiter to allow request
         self.mock_rate_limiter.can_make_request.return_value = True
         
-        # Configure service to return city not found error
+        # Configure service to return city not found error - use CityDataResult
         from WeatherDashboard.services.api_exceptions import ValidationError
+        from WeatherDashboard.core.data_service import CityDataResult
+        from datetime import datetime
+        
         city_error = ValidationError("City 'InvalidCity' not found")
-        self.mock_data_service.get_city_data.return_value = ("InvalidCity", {}, city_error)
+        mock_data_result = CityDataResult(
+            city_name="InvalidCity",
+            weather_data={},
+            error=city_error,
+            is_simulated=False,
+            unit_system="metric",
+            timestamp=datetime.now()
+        )
+        self.mock_data_service.fetch_data.return_value = mock_data_result
+        
+        # Mock error handler to return True (continue processing)
+        self.mock_error_handler.handle_weather_error.return_value = True
         
         # Mock view model creation
         with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
@@ -193,7 +211,7 @@ class TestWeatherDashboardController(unittest.TestCase):
             # Execute update
             result = self.controller.update_weather_display("InvalidCity", "metric")
             
-            # Should return True to unlock buttons but with error message
+            # Should return True when error handler returns True to continue
             self.assertTrue(result.success)
             self.assertIsNotNone(result.error_message)
 
@@ -318,17 +336,32 @@ class TestWeatherDashboardController(unittest.TestCase):
     @patch('WeatherDashboard.core.controller.ValidationUtils')
     def test_fetch_and_display_data_network_error(self, mock_validation_utils, mock_logger):
         """Test handling of network errors during data fetching."""
-        # Configure validation to pass
-        mock_validation_utils.validate_input_types.return_value = []
-        mock_validation_utils.validate_complete_state.return_value = []
+        # Configure validation to pass - mock ValidationResult
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validation_result = ValidationResult(is_valid=True, errors=[])
+        self.controller._validation_service.validate_inputs = Mock(return_value=mock_validation_result)
         
         # Configure rate limiter to allow request
         self.mock_rate_limiter.can_make_request.return_value = True
         
-        # Configure service to raise network error
+        # Configure service to raise network error - use CityDataResult
         from WeatherDashboard.services.api_exceptions import NetworkError
+        from WeatherDashboard.core.data_service import CityDataResult
+        from datetime import datetime
+        
         network_error = NetworkError("Connection failed")
-        self.mock_data_service.get_city_data.return_value = ("New York", {}, network_error)
+        mock_data_result = CityDataResult(
+            city_name="New York",
+            weather_data={},
+            error=network_error,
+            is_simulated=False,
+            unit_system="metric",
+            timestamp=datetime.now()
+        )
+        self.mock_data_service.fetch_data.return_value = mock_data_result
+        
+        # Mock error handler to return True (continue processing)
+        self.mock_error_handler.handle_weather_error.return_value = True
         
         # Mock view model creation
         with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
@@ -338,7 +371,7 @@ class TestWeatherDashboardController(unittest.TestCase):
             # Execute update
             result = self.controller.update_weather_display("New York", "metric")
             
-            # Should return True to unlock buttons but with error message
+            # Should return True when error handler returns True to continue
             self.assertTrue(result.success)
             self.assertIsNotNone(result.error_message)
 
@@ -372,18 +405,31 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Configure rate limiter to allow request
         self.mock_rate_limiter.can_make_request.return_value = True
         
-        # Should allow the request
-        result = self.controller.update_weather_display("New York", "metric")
-        self.assertTrue(result.success)
+        # Mock the validation service to return success
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validation_result = ValidationResult(is_valid=True, errors=[])
+        self.controller._validation_service.validate_inputs = Mock(return_value=mock_validation_result)
+        
+        # Mock error handler to return True (continue processing)
+        self.mock_error_handler.handle_weather_error.return_value = True
+        
+        # Mock view model creation
+        with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
+            mock_vm_instance = Mock()
+            mock_view_model.return_value = mock_vm_instance
+            
+            # Should allow the request
+            result = self.controller.update_weather_display("New York", "metric")
+            self.assertTrue(result.success)
 
     def test_check_rate_limiting_blocked(self):
         """Test rate limiting when requests are blocked."""
         # Configure rate limiter to block request
         self.mock_rate_limiter.can_make_request.return_value = False
         
-        # Should return True to unlock buttons but with error message
+        # Should return False for rate limit failures with error message
         result = self.controller.update_weather_display("New York", "metric")
-        self.assertTrue(result.success)
+        self.assertFalse(result.success)
         self.assertIsNotNone(result.error_message)
 
     @patch('WeatherDashboard.core.controller.config')

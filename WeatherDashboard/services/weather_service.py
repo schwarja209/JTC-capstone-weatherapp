@@ -310,8 +310,7 @@ class WeatherAPIService:
         _data_validator: Internal data validator for sanity checks
     """
 
-    def __init__(self, api_client: Optional[WeatherAPIClient] = None, data_parser: Optional[WeatherDataParser] = None,
-                 data_validator: Optional[WeatherDataValidator] = None, fallback_generator: Optional[SampleWeatherGenerator] = None) -> None:
+    def __init__(self) -> None:
         """Initialize the weather API service.
         
         Sets up API configuration, fallback data generator, and internal
@@ -335,12 +334,12 @@ class WeatherAPIService:
         self.key = self.config.API_KEY
         
         # Initialize dependencies with injection
-        self.fallback = fallback_generator or SampleWeatherGenerator()
-        self._api_client = api_client or WeatherAPIClient(
+        self._api_client = WeatherAPIClient(
             self.weather_api, self.uv_api, self.air_quality_api, self.key
         )
-        self._data_parser = data_parser or WeatherDataParser()
-        self._data_validator = data_validator or WeatherDataValidator()
+        self.fallback = SampleWeatherGenerator()
+        self._data_parser = WeatherDataParser()
+        self._data_validator = WeatherDataValidator()
 
     def fetch_current(self, city: str, cancel_event: Optional[threading.Event] = None) -> WeatherServiceResult:
         """Fetch comprehensive current weather data including derived metrics.

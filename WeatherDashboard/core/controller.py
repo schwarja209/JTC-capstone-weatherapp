@@ -24,7 +24,7 @@ from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.rate_limiter import RateLimiter
 from WeatherDashboard.utils.unit_converter import UnitConverter
-from WeatherDashboard.utils.validation_utils import ValidationUtils
+from WeatherDashboard.utils.validation_utils import ValidationUtils, ValidationResult
 
 from WeatherDashboard.features.alerts.alert_manager import AlertManager, WeatherAlert
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
@@ -136,15 +136,15 @@ class WeatherDashboardController:
 
         # Step 1: Validate inputs
         validation_result = self._validation_service.validate_inputs(city_name, unit_system)
-        if not validation_result[0]:
+        if not validation_result.is_valid:
             # Show messagebox for validation errors
             
-            self.error_handler.handle_input_validation_error(ValidationError(validation_result[1]))
+            self.error_handler.handle_input_validation_error(ValidationError(validation_result.errors[0] if validation_result.errors else "Validation failed"))
             # Return True for validation errors to unlock buttons, but with error message
             processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
             return ControllerOperationResult(
                 success=False,
-                error_message=validation_result[1],
+                error_message=validation_result.errors[0] if validation_result.errors else "Validation failed",
                 timestamp=self.datetime.now(),
                 # LIGHT METADATA FIELDS
                 operation_status="failed",
@@ -385,7 +385,7 @@ class WeatherDashboardController:
             """Check rate limiting and handle rate limit errors with theme-aware messaging.
         
             Returns:
-                bool: True if request can proceed, False if rate limited
+                Tuple[bool, Optional[str]]: (can_proceed, error_message)
             """
             try:
                 if not self.rate_limiter.can_make_request():
@@ -426,7 +426,7 @@ class WeatherDashboardController:
             self.error_handler = error_handler
             self.state = state
         
-        def validate_inputs(self, city_name: str, unit_system: str) -> Tuple[bool, Optional[str]]:
+        def validate_inputs(self, city_name: str, unit_system: str) -> ValidationResult:
             """Validate input parameters and application state using centralized validation.
     
             Performs comprehensive validation of user inputs and current application state
@@ -448,18 +448,18 @@ class WeatherDashboardController:
                 input_result = self.validation_utils.validate_input_types(city_name, unit_system)
                 if not input_result.is_valid:
                     error_msg = self.validation_utils.format_validation_errors(input_result.errors, "Input validation failed")
-                    return False, error_msg
+                    return ValidationResult(is_valid=False, errors=[error_msg], context="input_validation")
                 
                 # Validate state
                 state_result = self.validation_utils.validate_complete_state(self.state)
                 if not state_result.is_valid:
                     error_msg = self.validation_utils.format_validation_errors(state_result.errors, "Invalid application state")
-                    return False, error_msg
+                    return ValidationResult(is_valid=False, errors=[error_msg], context="state_validation")
                 
-                return True, None
+                return ValidationResult(is_valid=True, errors=[], context="input_validation")
                 
             except Exception as e:
-                return False, f"Validation error: {str(e)}"
+                return ValidationResult(is_valid=False, errors=[f"Validation error: {str(e)}"], context="input_validation")
 
     class _UIService:
         """Internal service for UI component updates and user interface operations.
@@ -632,7 +632,7 @@ class WeatherDashboardController:
             
             city_result = self.validation_utils.validate_city_name(raw_city)
             if not city_result.is_valid:
-                raise ValueError(city_result.errors[0])
+                raise ValueError(city_result.errors[0] if city_result.errors else "Invalid city name")
             city = raw_city.strip().title()
 
             days = self.config.CHART["range_options"].get(self.state.get_current_range(), 7)
@@ -645,7 +645,7 @@ class WeatherDashboardController:
             
             unit_result = self.validation_utils.validate_unit_system(unit) # Ensure unit system is valid
             if not unit_result.is_valid:
-                raise ValueError(unit_result.errors[0])
+                raise ValueError(unit_result.errors[0] if unit_result.errors else "Invalid unit system")
             
             return city, days, metric_key, unit
         
@@ -668,7 +668,13 @@ class WeatherDashboardController:
             # ADD CURRENT WEATHER AS LAST POINT
             try:
                 # Get current weather data for the city using the correct method
-                city_name, current_weather, error = self.data_service.get_city_data_tuple(city, unit)
+                city_data_result = self.data_service.get_city_data_tuple(city, unit)
+                if city_data_result is None:
+                    self.logger.warn(f"Failed to get city data for {city}")
+                    return x_vals, y_vals
+                city_name = city_data_result.city_name
+                current_weather = city_data_result.weather_data
+                error = city_data_result.error
                 
                 if current_weather and metric_key in current_weather and not error:
                     # Format the current weather value properly

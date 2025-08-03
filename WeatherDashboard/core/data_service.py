@@ -478,7 +478,7 @@ class WeatherDataService:
                 )
             
     # BACKWARD COMPATIBILITY METHODS:
-    def get_city_data_tuple(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[str, Dict[str, Any], Optional[Exception]]:
+    def get_city_data_tuple(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> CityDataResult:
         """Get weather data for a city (backward compatibility).
         
         Args:
@@ -489,8 +489,7 @@ class WeatherDataService:
         Returns:
             Tuple[str, Dict[str, Any], Optional[Exception]]: Original tuple format for backward compatibility
         """
-        result = self.get_city_data(city_name, unit_system, cancel_event)
-        return result.city_name, result.weather_data, result.error
+        return self.fetch_data(city_name, unit_system, cancel_event)
 
     def get_historical_data_list(self, city_name: str, num_days: int, unit_system: str) -> List[Dict[str, Any]]:
         """Get historical weather data for a city (backward compatibility).

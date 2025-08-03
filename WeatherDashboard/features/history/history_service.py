@@ -38,7 +38,7 @@ class WeatherHistoryService:
         weather_data: Dictionary storing weather data by city key
     """
     
-    def __init__(self, api_service: Optional[WeatherAPIService] = None) -> None:
+    def __init__(self) -> None:
         """Initialize the weather history service.
         
         Args:
@@ -52,7 +52,7 @@ class WeatherHistoryService:
         self.datetime = datetime
 
         # Injected dependencies for testable components
-        self.api_service = api_service or WeatherAPIService()
+        self.api_service = WeatherAPIService()
 
         # Internal state
         self.weather_data = {}

@@ -45,7 +45,7 @@ class WeatherDataManager:
         _cleanup_interval_hours: Hours between automatic cleanup operations (from config)
     """
     
-    def __init__(self, api_service: Optional[WeatherAPIService] = None) -> None:
+    def __init__(self) -> None:
         """Initialize the weather data manager.
         
         Sets up the API service, data storage, and automatic cleanup tracking.
@@ -62,10 +62,10 @@ class WeatherDataManager:
         self.datetime = datetime
 
         # Injected dependencies for testable components
-        self.api_service = api_service or WeatherAPIService()
+        self.api_service = WeatherAPIService()
 
         # Internal state
-        self.history_service = WeatherHistoryService(api_service)
+        self.history_service = WeatherHistoryService()
 
 # ================================  
 # 2. DATA FETCHING & HISTORY
