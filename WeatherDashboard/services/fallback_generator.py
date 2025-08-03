@@ -9,8 +9,8 @@ Classes:
     SampleWeatherGenerator: Main fallback weather data generator
 """
 
-from typing import List, Dict, Any
 import random
+from typing import List, Dict, Any
 from datetime import datetime, timedelta
 
 

@@ -13,12 +13,11 @@ Classes:
     WeatherDashboardState: UI state manager with validation and access methods
 """
 
-from typing import List
 import tkinter as tk
+from typing import List
 
 from WeatherDashboard import config, styles
-
-from WeatherDashboard.utils.preferences_utils import PreferencesService, UserPreferences
+from WeatherDashboard.utils.preferences_utils import PreferencesService
 
 
 class WeatherDashboardState:

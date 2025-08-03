@@ -10,22 +10,22 @@ Classes:
     WeatherDashboardMain: Primary application window and component coordinator
 """
 
+import tkinter.messagebox as messagebox
 from typing import Optional, List, Any, Dict
 import threading
-import tkinter.messagebox as messagebox
 
 from WeatherDashboard.utils.logger import Logger
-
-from .state_manager import WeatherDashboardState
-from .frames import WeatherDashboardGUIFrames
-from .loading_states import LoadingStateManager, AsyncWeatherOperation
-from WeatherDashboard.widgets.dashboard_widgets import WeatherDashboardWidgets
 from WeatherDashboard.core.data_manager import WeatherDataManager
 from WeatherDashboard.core.data_service import WeatherDataService
 from WeatherDashboard.core.controller import WeatherDashboardController
 from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
 from WeatherDashboard.features.history.scheduler_service import WeatherDataScheduler
-from WeatherDashboard.features.themes.theme_manager import Theme, theme_manager
+from WeatherDashboard.features.themes.theme_manager import theme_manager
+from WeatherDashboard.widgets.dashboard_widgets import WeatherDashboardWidgets
+
+from .state_manager import WeatherDashboardState
+from .frames import WeatherDashboardGUIFrames
+from .loading_states import LoadingStateManager, AsyncWeatherOperation
 
 
 # ================================

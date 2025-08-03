@@ -9,12 +9,14 @@ Classes:
     WidgetUtils: Static utilities for widget creation and management
 """
 
-from typing import Dict, Optional, Tuple
 import tkinter as tk
 from tkinter import ttk
+from typing import Dict, Optional, Tuple
+
+from WeatherDashboard import styles
 
 from .logger import Logger
-from WeatherDashboard import styles
+
 
 class WidgetUtils:
     """Centralized widget positioning and creation utilities."""

@@ -14,19 +14,19 @@ Classes:
     MetricDisplayWidgets: Main metric display manager with alerts integration
 """
 
-from typing import Dict, Any, Optional, List
 import tkinter as tk
 from tkinter import ttk
+from typing import Dict, Any, Optional, List
 
-from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import config, styles
+from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.color_utils import ColorUtils
 from WeatherDashboard.utils.state_utils import StateUtils
 from WeatherDashboard.utils.widget_utils import WidgetUtils
-
 from WeatherDashboard.features.alerts.alert_display import AlertStatusIndicator
-from .widget_interface import IWeatherDashboardWidgets
+
 from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
+from .widget_interface import IWeatherDashboardWidgets
 
 
 # ================================

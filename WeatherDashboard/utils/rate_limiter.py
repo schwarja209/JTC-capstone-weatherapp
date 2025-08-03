@@ -9,8 +9,8 @@ Classes:
     RateLimiter: Time-based rate limiting for API requests
 """
 
-from typing import Optional, Callable
 from datetime import datetime
+
 
 class RateLimiter:
     """Handle rate limiting for API requests.

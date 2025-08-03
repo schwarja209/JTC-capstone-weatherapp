@@ -9,11 +9,11 @@ Classes:
     Logger: Static logging utility with multiple output formats and severity levels
 """
 
-from typing import Optional, Callable
 import os
 import json
 import traceback
 from datetime import datetime
+from typing import Optional
 
 from WeatherDashboard import config
 

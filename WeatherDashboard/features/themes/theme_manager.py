@@ -4,9 +4,8 @@ Provides unified access to all theme-related styling, configuration,
 and dynamic theme switching capabilities.
 """
 
-from typing import Dict, Any, Optional, Tuple
+from typing import Dict, Any, Optional
 from tkinter import ttk
-from dataclasses import dataclass
 from enum import Enum
 
 

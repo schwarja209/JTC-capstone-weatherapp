@@ -6,8 +6,8 @@ from basic weather data including comfort indices and probability estimates.
 All temperature inputs should be in the specified units per function.
 """
 
-from typing import Optional
 import math
+from typing import Optional
 
 from WeatherDashboard import config
 

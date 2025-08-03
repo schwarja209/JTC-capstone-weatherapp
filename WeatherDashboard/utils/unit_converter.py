@@ -12,8 +12,9 @@ Classes:
 
 from typing import Tuple, Any
 
-from .logger import Logger
 from WeatherDashboard import config
+
+from .logger import Logger
 
 
 class UnitConverter:

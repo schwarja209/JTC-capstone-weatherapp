@@ -15,11 +15,12 @@ from tkinter import ttk
 from typing import Optional, Any, Dict
 from datetime import datetime
 
-from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import styles
+from WeatherDashboard.utils.logger import Logger
 
-from .widget_interface import IWeatherDashboardWidgets
+
 from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
+from .widget_interface import IWeatherDashboardWidgets
 
 
 class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):

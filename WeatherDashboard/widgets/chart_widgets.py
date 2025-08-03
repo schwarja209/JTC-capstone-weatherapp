@@ -22,8 +22,8 @@ from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
 
-from .widget_interface import IWeatherDashboardWidgets
 from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
+from .widget_interface import IWeatherDashboardWidgets
 
 
 class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):

@@ -5,8 +5,8 @@ Centralizes color calculation logic used across multiple widget classes.
 Eliminates duplication and provides consistent color determination patterns.
 """
 
-from typing import Any, Optional
 import re
+from typing import Any, Optional
 
 from WeatherDashboard import styles
 

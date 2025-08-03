@@ -10,13 +10,12 @@ Classes:
     AsyncWeatherOperation: Handles async weather operations with threading
 """
 
-from typing import Optional, Callable, Dict, Any
 import tkinter as tk
+from typing import Optional, Callable, Dict, Any
 import threading
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
-
 from WeatherDashboard.services.api_exceptions import ValidationError, NetworkError, RateLimitError
 from WeatherDashboard.widgets.status_bar_widgets import StatusBarWidgets
 

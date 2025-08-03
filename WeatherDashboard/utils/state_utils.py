@@ -12,11 +12,13 @@ Classes:
     StateUtils: Static utility class for centralized state access operations
 """
 
-from typing import List, Any
 import tkinter as tk
+from typing import List, Any
+
+from WeatherDashboard import config
 
 from .logger import Logger
-from WeatherDashboard import config
+
 
 class StateUtils:
     """Centralized state access utilities to eliminate duplication."""

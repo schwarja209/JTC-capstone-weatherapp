@@ -14,7 +14,6 @@ Classes:
     WeatherDashboardController: Main controller coordinating all weather operations
 """
 
-from dataclasses import dataclass
 from typing import Tuple, List, Any, Optional, Dict
 import threading
 from datetime import datetime
@@ -31,7 +30,6 @@ from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDas
 from WeatherDashboard.services.error_handler import WeatherErrorHandler, RateLimitError
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 
-from .data_service import CityDataResult
 from .view_models import WeatherViewModel
 
 

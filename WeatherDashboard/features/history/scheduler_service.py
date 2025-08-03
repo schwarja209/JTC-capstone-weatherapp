@@ -9,12 +9,10 @@ history service for data storage and memory management.
 from typing import Dict, Any
 from datetime import datetime, timedelta
 import threading
-import time
 
 from WeatherDashboard import config
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.core.view_models import WeatherViewModel
-from WeatherDashboard.services.weather_service import WeatherAPIService
 
 from .history_service import WeatherHistoryService
 

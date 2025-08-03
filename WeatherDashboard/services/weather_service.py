@@ -16,7 +16,7 @@ Classes:
     WeatherAPIService: Main service orchestrating all weather operations
 """
 
-from typing import Dict, Any, Tuple, Optional
+from typing import Dict, Any, Optional
 from datetime import datetime
 import time
 import threading

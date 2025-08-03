@@ -10,9 +10,9 @@ Classes:
     WidgetInfo: Container for widget metadata and state
 """
 
-from tkinter import ttk
 import tkinter as tk
-from typing import Dict, Any, Optional, List, Callable
+from tkinter import ttk
+from typing import Dict, Any, Optional, List
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger

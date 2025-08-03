@@ -11,13 +11,13 @@ application restarts.
 """
 
 import json
-import os
 from pathlib import Path
-from typing import Dict, Any, Optional
 from datetime import datetime
 from dataclasses import dataclass
+from typing import Dict, Any, Optional
 
 from WeatherDashboard import config
+
 from .logger import Logger
 
 

@@ -10,12 +10,13 @@ Classes:
     ValidationUtils: Static utility class for centralized validation operations
 """
 
+import re
 from dataclasses import dataclass
 from typing import List, Any, Optional, Union
 from datetime import datetime
-import re
 
 from WeatherDashboard import config
+
 from .logger import Logger
 
 

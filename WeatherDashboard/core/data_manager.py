@@ -14,8 +14,8 @@ Classes:
     WeatherDataManager: Main data management class with API integration and fallback handling
 """
 
-from typing import Dict, List, Tuple, Any, Optional
-from datetime import datetime, timedelta
+from typing import Dict, List, Any, Optional
+from datetime import datetime
 import threading
 
 from WeatherDashboard import config
@@ -23,10 +23,9 @@ from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
-
-from WeatherDashboard.services.api_exceptions import WeatherDashboardError
 from WeatherDashboard.services.weather_service import WeatherAPIService
 from WeatherDashboard.features.history.history_service import WeatherHistoryService
+
 
 # ================================
 # 1. INITIALIZATION & SETUP

@@ -12,12 +12,11 @@ Classes:
     WeatherErrorHandler: Main error handling class with theme support
 """
 
-from typing import Optional
 import tkinter.messagebox as messagebox
+from typing import Optional
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
-
 from WeatherDashboard.services.api_exceptions import (
     ValidationError,
     CityNotFoundError,
