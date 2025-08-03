@@ -11,37 +11,12 @@ Classes:
 """
 
 import re
-from dataclasses import dataclass
 from typing import List, Any, Optional, Union
 from datetime import datetime
 
 from WeatherDashboard import config
 
 from .logger import Logger
-
-
-@dataclass
-class ValidationResult:
-    """Type-safe container for input validation results.
-
-    Contains validated and normalized input values with
-    proper type safety and validation status.
-    """
-    is_valid: bool
-    errors: List[str]
-    city_name: Optional[str] = None
-    unit_system: Optional[str] = None
-    context: Optional[str] = None
-    timestamp: datetime = datetime.now()
-
-    def __post_init__(self):
-        """Validate dataclass after initialization."""
-        if self.city_name is not None and not self.city_name:
-            raise ValueError("city_name cannot be empty")
-        if self.unit_system is not None and self.unit_system not in ['metric', 'imperial']:
-            raise ValueError("unit_system must be 'metric' or 'imperial'")
-        if not isinstance(self.errors, list):
-            raise ValueError("errors must be a list")
 
 
 class ValidationUtils:
@@ -60,83 +35,63 @@ class ValidationUtils:
             'unit_system': r"^(metric|imperial)$"
         }
 
-    def validate_city_name(self, city_name: Any) -> ValidationResult:
+    def validate_city_name(self, city_name: Any) -> None:
         """Validate city name input with comprehensive checks.
         
         Args:
             city_name: City name to validate (any type)
             
-        Returns:
-            List[str]: List of validation error messages (empty if valid)
+        Raises:
+            ValueError: If city name is invalid
         """
-        errors = []
-        
         # Type validation
         if not isinstance(city_name, str):
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field="City name", reason=f"must be a string, got {type(city_name).__name__}"))
-            return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="city_name")
+            raise ValueError(f"City name must be a string, got {type(city_name).__name__}")
         
         # Empty validation
         cleaned_name = city_name.strip()
         if not cleaned_name:
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field="City name", reason="cannot be empty"))
-            return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="city_name")
+            raise ValueError("City name cannot be empty")
         
         # Length validation
         if len(cleaned_name) > 100:
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field="City name", reason="cannot be longer than 100 characters"))
+            raise ValueError("City name cannot be longer than 100 characters")
         
         # Character validation
         if not re.match(self.regex_patterns['city_name'], cleaned_name):
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field="City name", reason="contains invalid characters"))
-        
-        return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="city_name")
+            raise ValueError("City name contains invalid characters")
     
-    def validate_unit_system(self, unit_system: Any) -> ValidationResult:
+    def validate_unit_system(self, unit_system: Any) -> None:
         """Validate unit system selection.
         
         Args:
             unit_system: Unit system to validate (any type)
             
-        Returns:
-            List[str]: List of validation error messages (empty if valid)
+        Raises:
+            ValueError: If unit system is invalid
         """
-        errors = []
-        
         # Type validation
         if not isinstance(unit_system, str):
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field="Unit system", reason=f"must be a string, got {type(unit_system).__name__}"))
-            return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="unit_system")
+            raise ValueError(f"Unit system must be a string, got {type(unit_system).__name__}")
         
         # Valid options
         valid_units = {'metric', 'imperial'}
         if unit_system not in valid_units:
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field="Unit system", reason=f"'{unit_system}' is invalid. Must be 'metric' or 'imperial'"))
-        
-        return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="unit_system")
+            raise ValueError(f"'{unit_system}' is invalid. Must be 'metric' or 'imperial'")
     
-    def validate_metric_visibility(self, state_manager: Any) -> ValidationResult:
+    def validate_metric_visibility(self, state_manager: Any) -> None:
         """Validate that at least one metric is visible.
         
         Args:
             state_manager: Application state manager
             
-        Returns:
-            List[str]: List of validation error messages (empty if valid)
+        Raises:
+            ValueError: If no metrics are visible
         """
-        errors = []
-        
         try:
             # Check if state manager has visibility
             if not hasattr(state_manager, 'visibility'):
-                errors.append(self.config.ERROR_MESSAGES['state_error'].format(reason="state manager missing visibility attribute"))
-                return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="metric_visibility")
+                raise ValueError("State manager missing visibility attribute")
             
             # Check if any metrics are visible
             visible_count = 0
@@ -148,63 +103,50 @@ class ValidationUtils:
                     self.logger.warn(f"Error checking visibility for {metric_key}: {e}")
             
             if visible_count == 0:
-                errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Metric selection", reason="at least one metric must be visible"))
+                raise ValueError("At least one metric must be visible")
             
         except Exception as e:
-            errors.append(self.config.ERROR_MESSAGES['state_error'].format(reason=f"failed to validate metric visibility: {e}"))
-        
-        return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="metric_visibility")
+            raise ValueError(f"Failed to validate metric visibility: {e}")
     
-    def validate_date_range(self, date_range: Any) -> ValidationResult:
+    def validate_date_range(self, date_range: Any) -> None:
         """Validate date range selection.
         
         Args:
             date_range: Date range to validate
             
-        Returns:
-            List[str]: List of validation error messages (empty if valid)
+        Raises:
+            ValueError: If date range is invalid
         """
-        errors = []
-        
         if not isinstance(date_range, str):
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Date range", reason=f"must be a string, got {type(date_range).__name__}"))
-            return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="date_range")
+            raise ValueError(f"Date range must be a string, got {type(date_range).__name__}")
         
         # Check against valid range options
         valid_ranges = self.config.CHART["range_options"].keys()
         if date_range not in valid_ranges:
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Date range", reason=f"'{date_range}' is invalid. Must be one of: {', '.join(valid_ranges)}"))
-        
-        return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="date_range")
+            raise ValueError(f"'{date_range}' is invalid. Must be one of: {', '.join(valid_ranges)}")
     
-    def validate_chart_metric(self,chart_metric: Any) -> ValidationResult:
+    def validate_chart_metric(self,chart_metric: Any) -> None:
         """Validate chart metric selection.
         
         Args:
             chart_metric: Chart metric to validate
             
-        Returns:
-            List[str]: List of validation error messages (empty if valid)
+        Raises:
+            ValueError: If chart metric is invalid
         """
-        errors = []
-        
         if not isinstance(chart_metric, str):
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Chart metric", reason=f"must be a string, got {type(chart_metric).__name__}"))
-            return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="chart_metric")
+            raise ValueError(f"Chart metric must be a string, got {type(chart_metric).__name__}")
         
         # Special case for no metrics selected
         if chart_metric == "No metrics selected":
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(field="Chart metric", reason="at least one metric must be selected"))
-            return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="chart_metric")
+            raise ValueError("At least one metric must be selected")
         
         # Check if metric exists in config
         metric_labels = [metric_data['label'] for metric_data in self.config.METRICS.values()]
         if chart_metric not in metric_labels:
-            errors.append(self.config.ERROR_MESSAGES['not_found'].format(resource="Chart metric", name=chart_metric))
-        
-        return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="chart_metric")
+            raise ValueError(f"Chart metric '{chart_metric}' not found")
     
-    def validate_complete_state(self, state_manager: Any) -> ValidationResult:
+    def validate_complete_state(self, state_manager: Any) -> None:
         """Validate complete application state.
         
         Consolidates all state validation into a single method.
@@ -212,43 +154,38 @@ class ValidationUtils:
         Args:
             state_manager: Application state manager to validate
             
-        Returns:
-            List[str]: List of all validation error messages (empty if valid)
+        Raises:
+            ValueError: If any validation fails
         """
-        all_errors = []
-        
         try:
             # Validate city
             if hasattr(state_manager, 'get_current_city'):
                 city = state_manager.get_current_city()
-                all_errors.extend(self.validate_city_name(city).errors)
+                self.validate_city_name(city)
             
             # Validate unit system
             if hasattr(state_manager, 'get_current_unit_system'):
                 unit_system = state_manager.get_current_unit_system()
-                all_errors.extend(self.validate_unit_system(unit_system).errors)
+                self.validate_unit_system(unit_system)
             
             # Validate metric visibility
-            all_errors.extend(self.validate_metric_visibility(state_manager).errors)
+            self.validate_metric_visibility(state_manager)
             
             # Validate date range
             if hasattr(state_manager, 'get_current_range'):
                 date_range = state_manager.get_current_range()
-                all_errors.extend(self.validate_date_range(date_range).errors)
+                self.validate_date_range(date_range)
             
             # Validate chart metric
             if hasattr(state_manager, 'get_current_chart_metric'):
                 chart_metric = state_manager.get_current_chart_metric()
-                all_errors.extend(self.validate_chart_metric(chart_metric).errors)
+                self.validate_chart_metric(chart_metric)
             
         except Exception as e:
-            all_errors.append(self.config.ERROR_MESSAGES['state_error'].format(
-                reason=f"unexpected error during state validation: {e}"))
             self.logger.error(f"Error during complete state validation: {e}")
-        
-        return ValidationResult(is_valid=(len(all_errors) == 0), errors=all_errors, context="complete_state")
+            raise
     
-    def validate_input_types(self, city_name: Any, unit_system: Any = None) -> ValidationResult:
+    def validate_input_types(self, city_name: Any, unit_system: Any = None) -> None:
         """Validate input parameter types for controller operations.
         
         Consolidates input validation from controller._validate_inputs_and_state.
@@ -257,21 +194,17 @@ class ValidationUtils:
             city_name: City name input to validate
             unit_system: Unit system input to validate (optional)
             
-        Returns:
-            List[str]: List of validation error messages (empty if valid)
+        Raises:
+            ValueError: If any validation fails
         """
-        errors = []
-        
         # Validate city name
-        errors.extend(self.validate_city_name(city_name).errors)
+        self.validate_city_name(city_name)
         
         # Validate unit system if provided
         if unit_system is not None:
-            errors.extend(self.validate_unit_system(unit_system).errors)
-        
-        return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context="input_type")
+            self.validate_unit_system(unit_system)
     
-    def is_valid_numeric_range(self, value: Union[int, float], min_val: Optional[Union[int, float]] = None, max_val: Optional[Union[int, float]] = None, field_name: str = "Value") -> ValidationResult:
+    def is_valid_numeric_range(self, value: Union[int, float], min_val: Optional[Union[int, float]] = None, max_val: Optional[Union[int, float]] = None, field_name: str = "Value") -> None:
         """Validate numeric value is within specified range.
         
         Args:
@@ -280,42 +213,16 @@ class ValidationUtils:
             max_val: Maximum allowed value (optional)
             field_name: Name of field for error messages
             
-        Returns:
-            List[str]: List of validation error messages (empty if valid)
+        Raises:
+            ValueError: If value is invalid
         """
-        errors = []
-        
         # Type validation
         if not isinstance(value, (int, float)):
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field=field_name, reason=f"must be a number, got {type(value).__name__}"))
-            return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context=field_name)
+            raise ValueError(f"{field_name} must be a number, got {type(value).__name__}")
         
         # Range validation
         if min_val is not None and value < min_val:
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field=field_name, reason=f"must be >= {min_val}, got {value}"))
+            raise ValueError(f"{field_name} must be >= {min_val}, got {value}")
         
         if max_val is not None and value > max_val:
-            errors.append(self.config.ERROR_MESSAGES['validation'].format(
-                field=field_name, reason=f"must be <= {max_val}, got {value}"))
-        
-        return ValidationResult(is_valid=(len(errors) == 0), errors=errors, context=field_name)
-    
-    def format_validation_errors(self, errors: List[str], prefix: str = "Validation failed") -> str:
-        """Format list of validation errors into a single message.
-        
-        Args:
-            errors: List of error messages
-            prefix: Prefix for the combined message
-            
-        Returns:
-            str: Formatted error message
-        """
-        if not errors:
-            return ""
-        
-        if len(errors) == 1:
-            return f"{prefix}: {errors[0]}"
-        else:
-            return f"{prefix}: " + "; ".join(errors)
+            raise ValueError(f"{field_name} must be <= {max_val}, got {value}")

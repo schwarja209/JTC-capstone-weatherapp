@@ -14,8 +14,8 @@ Classes:
     WeatherDashboardController: Main controller coordinating all weather operations
 """
 
-from typing import Tuple, List, Any, Optional, Dict
 import threading
+from typing import Tuple, List, Any, Optional, Dict
 from datetime import datetime
 
 from WeatherDashboard import config, styles
@@ -23,7 +23,7 @@ from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.rate_limiter import RateLimiter
 from WeatherDashboard.utils.unit_converter import UnitConverter
-from WeatherDashboard.utils.validation_utils import ValidationUtils, ValidationResult
+from WeatherDashboard.utils.validation_utils import ValidationUtils
 
 from WeatherDashboard.features.alerts.alert_manager import AlertManager, WeatherAlert
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
@@ -116,13 +116,13 @@ class WeatherDashboardController:
         self.logger.info(f"Starting weather update for {city_name}")
 
         # Step 1: Validate inputs
-        validation_result = self._validation_service.validate_inputs(city_name, unit_system)
-        if not validation_result.is_valid:
+        try:
+            self._validation_service.validate_inputs(city_name, unit_system)
+        except ValueError as e:
             # Show messagebox for validation errors
-            
-            self.error_handler.handle_input_validation_error(ValidationError(validation_result.errors[0] if validation_result.errors else "Validation failed"))
-            # Return True for validation errors to unlock buttons, but with error message
-            raise ValidationError(validation_result.errors[0] if validation_result.errors else "Validation failed")
+            self.error_handler.handle_input_validation_error(ValidationError(str(e)))
+            # Raise exception for validation errors
+            raise ValidationError(str(e))
         
         # Step 2: Check rate limiting
         rate_limit_result = self._rate_limit_service.can_proceed()
@@ -143,7 +143,6 @@ class WeatherDashboardController:
         with comprehensive error handling and recovery.
         """
         self._chart_service.update_chart()
-        
 
     def show_weather_alerts(self) -> None:
         """Display weather alerts popup with enhanced error handling."""        
@@ -307,7 +306,7 @@ class WeatherDashboardController:
             self.error_handler = error_handler
             self.state = state
         
-        def validate_inputs(self, city_name: str, unit_system: str) -> ValidationResult:
+        def validate_inputs(self, city_name: str, unit_system: str) -> None:
             """Validate input parameters and application state using centralized validation.
     
             Performs comprehensive validation of user inputs and current application state
@@ -318,29 +317,21 @@ class WeatherDashboardController:
                 city_name: City name to validate (type and content checking)
                 unit_system: Unit system to validate ('metric' or 'imperial')
                 
-            Returns:
-                bool: True if all validation passes, False if any validation fails
+            Raises:
+                ValueError: If any validation fails
                 
             Side Effects:
                 Displays error messages to user via error handler for validation failures
             """
             try:
                 # Use centralized validation of city and units
-                input_result = self.validation_utils.validate_input_types(city_name, unit_system)
-                if not input_result.is_valid:
-                    error_msg = self.validation_utils.format_validation_errors(input_result.errors, "Input validation failed")
-                    return ValidationResult(is_valid=False, errors=[error_msg], context="input_validation")
+                self.validation_utils.validate_input_types(city_name, unit_system)
                 
                 # Validate state
-                state_result = self.validation_utils.validate_complete_state(self.state)
-                if not state_result.is_valid:
-                    error_msg = self.validation_utils.format_validation_errors(state_result.errors, "Invalid application state")
-                    return ValidationResult(is_valid=False, errors=[error_msg], context="state_validation")
-                
-                return ValidationResult(is_valid=True, errors=[], context="input_validation")
+                self.validation_utils.validate_complete_state(self.state)
                 
             except Exception as e:
-                return ValidationResult(is_valid=False, errors=[f"Validation error: {str(e)}"], context="input_validation")
+                raise ValueError(f"Validation error: {str(e)}")
 
     class _UIService:
         """Internal service for UI component updates and user interface operations.
@@ -511,9 +502,7 @@ class WeatherDashboardController:
             if not raw_city or not raw_city.strip():
                 raise ValueError(self.config.ERROR_MESSAGES['missing'].format(field="City name"))
             
-            city_result = self.validation_utils.validate_city_name(raw_city)
-            if not city_result.is_valid:
-                raise ValueError(city_result.errors[0] if city_result.errors else "Invalid city name")
+            self.validation_utils.validate_city_name(raw_city)
             city = raw_city.strip().title()
 
             days = self.config.CHART["range_options"].get(self.state.get_current_range(), 7)
@@ -524,10 +513,8 @@ class WeatherDashboardController:
             metric_key = self._get_chart_metric_key()
             unit = self.state.get_current_unit_system()
             
-            unit_result = self.validation_utils.validate_unit_system(unit) # Ensure unit system is valid
-            if not unit_result.is_valid:
-                raise ValueError(unit_result.errors[0] if unit_result.errors else "Invalid unit system")
-            
+            self.validation_utils.validate_unit_system(unit) # Ensure unit system is valid
+
             return city, days, metric_key, unit
         
         def _build_chart_series(self, city: str, days: int, metric_key: str, unit: str) -> Tuple[List[str], List[Any]]:

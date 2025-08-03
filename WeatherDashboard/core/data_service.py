@@ -10,11 +10,12 @@ Classes:
 """
 
 from dataclasses import dataclass
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
 from datetime import datetime
 import threading
 
-from WeatherDashboard.utils.validation_utils import ValidationUtils, ValidationResult
+from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.utils.validation_utils import ValidationUtils
 from WeatherDashboard.services.api_exceptions import ValidationError
 
 
@@ -156,12 +157,13 @@ class WeatherDataService:
         """
         # Direct imports for stable utilities
         self.validation_utils = ValidationUtils()
+        self.logger = Logger()
         self.datetime = datetime
 
         # Injected dependencies for testable components
         self.data_manager = data_manager
 
-    def _validate_inputs(self, city_name: str, unit_system: str) -> ValidationResult:
+    def _validate_inputs(self, city_name: str, unit_system: str) -> Tuple[str, str]:
         """Validate and normalize inputs with consistent error handling.
         
         Args:
@@ -169,38 +171,23 @@ class WeatherDataService:
             unit_system: Target unit system ('metric' or 'imperial')
 
         Returns:
-            ValidationResult: Type-safe container with validated inputs and any errors
+            Tuple[str, str]: (normalized_city_name, unit_system)
+            
+        Raises:
+            ValueError: If validation fails
         """
         try:
-            errors = []
-            
             # Validate city name
-            city_result = self.validation_utils.validate_city_name(city_name)
-            if not city_result.is_valid:
-                errors.extend(city_result.errors)
-                city = city_name  # Keep original for error reporting
-            else:
-                city = city_name.strip().title()
+            self.validation_utils.validate_city_name(city_name)
+            city = city_name.strip().title()
             
             # Validate unit system
-            unit_result = self.validation_utils.validate_unit_system(unit_system)
-            if not unit_result.is_valid:
-                errors.extend(unit_result.errors)
+            self.validation_utils.validate_unit_system(unit_system)
             
-            return ValidationResult(
-                city_name=city,
-                unit_system=unit_system,
-                is_valid=len(errors) == 0,
-                errors=errors
-            )
+            return city, unit_system
             
         except Exception as e:
-            return ValidationResult(
-                city_name=city_name,
-                unit_system=unit_system,
-                is_valid=False,
-                errors=[f"Validation error: {str(e)}"]
-            )
+            raise ValueError(f"Validation error: {str(e)}")
 
     def get_city_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Dict[str, Any]:
         """Get weather data for a city with comprehensive error handling and normalization.
@@ -224,16 +211,16 @@ class WeatherDataService:
         start_time = self.datetime.now()
         
         # Validate inputs
-        validation_result = self._validate_inputs(city_name, unit_system)
-        
-        if not validation_result.is_valid:
-            raise ValidationError("; ".join(validation_result.errors))
+        try:
+            normalized_city, normalized_unit = self._validate_inputs(city_name, unit_system)
+        except ValueError as e:
+            raise ValidationError(str(e))
         
         try:
             # Fetch data from data manager
             weather_data = self.data_manager.fetch_current(
-                validation_result.city_name, 
-                validation_result.unit_system, 
+                normalized_city, 
+                normalized_unit, 
                 cancel_event
             )
             
@@ -262,40 +249,20 @@ class WeatherDataService:
 
         try:
             # Validate inputs
-            validation_result = self._validate_inputs(city_name, unit_system)
-            
-            if not validation_result.is_valid:
-                processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
-
-                return HistoricalDataResult(
-                    city_name=validation_result.city_name,
-                    data_entries=[],
-                    num_days=num_days,
-                    unit_system=validation_result.unit_system,
-                    source_unit="metric",
-                    conversion_applied=False,
-                    timestamp=self.datetime.now(),
-                    # SERVICE LAYER METADATA FIELDS:
-                    operation_status="failed",
-                    processing_time_ms=processing_time,
-                    data_completeness=0.0,
-                    cache_hits=0,
-                    api_calls_made=0,
-                    errors=[]
-                )
+            normalized_city, normalized_unit = self._validate_inputs(city_name, unit_system)
             
             # Get raw historical data
-            raw_data = self.data_manager.get_historical(validation_result.city_name, num_days)
+            raw_data = self.data_manager.get_historical(normalized_city, num_days)
             
             # Determine if conversion is needed
             source_unit = "metric"  # Same as generator's output
-            conversion_applied = validation_result.unit_system != source_unit
+            conversion_applied = normalized_unit != source_unit
             
             # Apply unit conversion if needed
             errors = []
             if conversion_applied:
                 try:
-                    converted_data = [self.data_manager.convert_units(d, validation_result.unit_system) for d in raw_data]
+                    converted_data = [self.data_manager.convert_units(d, normalized_unit) for d in raw_data]
                 except Exception as e:
                     errors.append(f"Unit conversion error: {str(e)}")
                     converted_data = raw_data
@@ -315,10 +282,10 @@ class WeatherDataService:
                 operation_status = "partial"
             
             return HistoricalDataResult(
-                city_name=validation_result.city_name,
+                city_name=normalized_city,
                 data_entries=converted_data,
                 num_days=num_days,
-                unit_system=validation_result.unit_system,
+                unit_system=normalized_unit,
                 source_unit=source_unit,
                 conversion_applied=conversion_applied,
                 timestamp=self.datetime.now(),
@@ -366,33 +333,16 @@ class WeatherDataService:
 
         try:
             # Validate inputs
-            validation_result = self._validate_inputs(city, unit)
-            
-            if not validation_result.is_valid:
-                processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
-
-                return LoggingResult(
-                    city_name=validation_result.city_name,
-                    unit_system=validation_result.unit_system,
-                    success=False,
-                    error_message="; ".join(validation_result.errors),
-                    timestamp=self.datetime.now(),
-                    # SERVICE LAYER METADATA FIELDS:
-                    operation_status="failed",
-                    processing_time_ms=processing_time,
-                    file_size_bytes=None,
-                    errors=validation_result.errors,
-                    backup_created=False
-                )
+            normalized_city, normalized_unit = self._validate_inputs(city, unit)
             
             # Write to log
-            self.data_manager.write_to_file(validation_result.city_name, data, validation_result.unit_system)
+            self.data_manager.write_to_file(normalized_city, data, normalized_unit)
             
             processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
 
             return LoggingResult(
-                city_name=validation_result.city_name,
-                unit_system=validation_result.unit_system,
+                city_name=normalized_city,
+                unit_system=normalized_unit,
                 success=True,
                 error_message=None,
                 timestamp=self.datetime.now(),

@@ -135,9 +135,7 @@ class WeatherDataManager:
         Returns:
             Dict[str, Any]: Weather data with converted units
         """
-        unit_result = self.validation_utils.validate_unit_system(unit_system)
-        if not unit_result.is_valid:
-            raise ValueError(unit_result.errors[0])
+        self.validation_utils.validate_unit_system(unit_system)
 
         # Skip conversion if already in target system
         if unit_system == "metric":

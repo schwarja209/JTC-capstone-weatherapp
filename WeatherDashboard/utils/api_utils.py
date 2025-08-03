@@ -167,26 +167,6 @@ class CompleteWeatherData:
         if self.missing_fields is None:
             self.missing_fields = []
 
-@dataclass
-class APIValidationResult:
-    """Type-safe container for API response validation results.
-    
-    Contains validation status and any missing sections
-    for comprehensive error reporting.
-    """
-    is_valid: bool
-    missing_sections: List[str]
-    timestamp: datetime
-    error_message: Optional[str] = None
-
-    # Lightweight transformation metadata
-    validation_status: str = "success"  # "success", "partial", "failed"
-
-    def __post_init__(self):
-        """Validate dataclass after initialization."""
-        if self.validation_status not in ['success', 'partial', 'failed']:
-            raise ValueError("validation_status must be 'success', 'partial', or 'failed'")
-
 
 class ApiUtils:
     """Utilities for safe API response parsing and data extraction."""
@@ -606,57 +586,6 @@ class ApiUtils:
             5: "Very Poor"
         }
         return aqi_descriptions.get(aqi, "Unknown")
-    
-    def validate_api_response_structure(self, data: Dict[str, Any], required_sections: List[str]) -> APIValidationResult:
-        """Validate that API response has required structure.
-        
-        Args:
-            data: API response to validate
-            required_sections: List of required top-level keys
-            
-        Returns:
-            APIValidationResult: Type-safe container with validation results
-        """
-        try:
-            if not isinstance(data, dict):
-                return APIValidationResult(
-                    is_valid=False,
-                    missing_sections=required_sections,
-                    timestamp=self.datetime.now(),
-                    error_message=f"API response is not a dictionary: {type(data)}",
-                    # LIGHT METADATA FIELDS:
-                    validation_status="failed"
-                )
-            
-            missing_sections = [section for section in required_sections if section not in data]
-            
-            if missing_sections:
-                return APIValidationResult(
-                    is_valid=False,
-                    missing_sections=missing_sections,
-                    timestamp=self.datetime.now(),
-                    error_message=f"API response missing required sections: {missing_sections}",
-                    # LIGHT METADATA FIELDS:
-                    validation_status="partial" if len(missing_sections) < len(required_sections) else "failed"
-                )
-            
-            return APIValidationResult(
-                is_valid=True,
-                missing_sections=[],
-                timestamp=self.datetime.now(),
-                # LIGHT METADATA FIELDS:
-                validation_status="success"
-            )
-            
-        except Exception as e:
-            return APIValidationResult(
-                is_valid=False,
-                missing_sections=required_sections,
-                timestamp=self.datetime.now(),
-                error_message=f"Error validating API response structure: {e}",
-                # LIGHT METADATA FIELDS:
-                validation_status="failed"
-            )
         
     # BACKWARD COMPATILIBITY METHODS:
     def extract_weather_main_data_dict(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
