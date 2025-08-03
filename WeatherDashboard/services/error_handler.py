@@ -146,6 +146,8 @@ class WeatherErrorHandler:
             self.logger.error(f"Unexpected error: {error}")
             getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['general_error'], str(error))
     
-    def handle_rate_limit_error(self, wait_time: float) -> None:
-        """Handle rate limit errors with appropriate user messaging."""
-        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['dialog_titles']['rate_limit'], f"Please wait {wait_time:.0f} more seconds before making another request.")
+    def handle_rate_limit_error(self, error_message: str) -> None:  # Expects string
+        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(
+            self.styles.DIALOG_CONFIG['dialog_titles']['rate_limit'], 
+            error_message  # Use the string directly
+        )

@@ -55083,3 +55083,136 @@
 [INFO] 2025-08-03 03:55:55 Converting units to imperial
 [INFO] 2025-08-03 03:55:55 Converting units to imperial
 [WARN] 2025-08-03 03:55:55 Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_data'
+[INFO] 2025-08-03 04:12:18 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-08-03 04:12:18
+[INFO] 2025-08-03 04:12:18 Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-08-03 04:12:18 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-08-03 04:12:18 Preferences applied to application state
+[INFO] 2025-08-03 04:12:18 Registered frame: title
+[INFO] 2025-08-03 04:12:18 Registered frame: control
+[INFO] 2025-08-03 04:12:18 Registered frame: tabbed
+[INFO] 2025-08-03 04:12:18 Registered frame: status_bar
+[INFO] 2025-08-03 04:12:18 Creating dashboard widgets
+[INFO] 2025-08-03 04:12:18 title widget created successfully
+[INFO] 2025-08-03 04:12:18 Registered widget: title_widget (type: title)
+[INFO] 2025-08-03 04:12:18 Preferences saved
+[INFO] 2025-08-03 04:12:18 control widgets created successfully
+[INFO] 2025-08-03 04:12:18 Registered widget: control_widgets (type: control)
+[INFO] 2025-08-03 04:12:18 metric display widgets created successfully
+[INFO] 2025-08-03 04:12:18 chart widgets created successfully
+[INFO] 2025-08-03 04:12:18 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-08-03 04:12:18 Registered metric widgets with registry
+[INFO] 2025-08-03 04:12:18 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-08-03 04:12:18 Registered chart widgets with registry
+[INFO] 2025-08-03 04:12:18 tabbed display widgets created successfully
+[INFO] 2025-08-03 04:12:18 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-08-03 04:12:18 status bar widgets created successfully
+[INFO] 2025-08-03 04:12:18 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-08-03 04:12:18 Dashboard widgets created successfully
+[INFO] 2025-08-03 04:12:18 dashboard widgets created successfully
+[INFO] 2025-08-03 04:12:18 Weather data scheduler started
+[INFO] 2025-08-03 04:12:18 Starting weather update for New York
+[INFO] 2025-08-03 04:12:18 Fetching data for New York
+[INFO] 2025-08-03 04:12:18 Fetching current weather for New York
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[INFO] 2025-08-03 04:12:19 Weather data written for new_york - Live
+[INFO] 2025-08-03 04:12:19 Stored weather data for New York - 1 entries
+[INFO] 2025-08-03 04:12:19 Current weather fetched for New York
+[INFO] 2025-08-03 04:12:19 Data fetch completed for New York
+[INFO] 2025-08-03 04:12:19 Weather update completed for New York
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[INFO] 2025-08-03 04:12:19 Converting units to imperial
+[WARN] 2025-08-03 04:12:19 Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_data'
+[INFO] 2025-08-03 04:12:22 Preferences saved
+[INFO] 2025-08-03 04:12:22 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-03 04:12:22 Starting weather update for New York
+[INFO] 2025-08-03 04:12:22 Fetching data for New York
+[INFO] 2025-08-03 04:12:22 Fetching current weather for New York
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[INFO] 2025-08-03 04:12:22 Weather data written for new_york - Live
+[INFO] 2025-08-03 04:12:22 Stored weather data for New York - 2 entries
+[INFO] 2025-08-03 04:12:22 Current weather fetched for New York
+[INFO] 2025-08-03 04:12:22 Data fetch completed for New York
+[INFO] 2025-08-03 04:12:22 Weather update completed for New York
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[INFO] 2025-08-03 04:12:22 Converting units to imperial
+[WARN] 2025-08-03 04:12:22 Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_data'
+[INFO] 2025-08-03 04:12:23 Preferences saved
+[INFO] 2025-08-03 04:12:23 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-03 04:12:23 Starting weather update for New York
+[WARN] 2025-08-03 04:12:23 Fetch blocked due to rate limiting.
+[INFO] 2025-08-03 04:12:23 show_error called with: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-08-03 04:15:18 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-08-03 04:15:18
+[INFO] 2025-08-03 04:15:18 Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-08-03 04:15:18 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-08-03 04:15:18 Preferences applied to application state
+[INFO] 2025-08-03 04:15:18 Registered frame: title
+[INFO] 2025-08-03 04:15:18 Registered frame: control
+[INFO] 2025-08-03 04:15:18 Registered frame: tabbed
+[INFO] 2025-08-03 04:15:18 Registered frame: status_bar
+[INFO] 2025-08-03 04:15:18 Creating dashboard widgets
+[INFO] 2025-08-03 04:15:18 title widget created successfully
+[INFO] 2025-08-03 04:15:18 Registered widget: title_widget (type: title)
+[INFO] 2025-08-03 04:15:18 Preferences saved
+[INFO] 2025-08-03 04:15:18 control widgets created successfully
+[INFO] 2025-08-03 04:15:18 Registered widget: control_widgets (type: control)
+[INFO] 2025-08-03 04:15:18 metric display widgets created successfully
+[INFO] 2025-08-03 04:15:18 chart widgets created successfully
+[INFO] 2025-08-03 04:15:18 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-08-03 04:15:18 Registered metric widgets with registry
+[INFO] 2025-08-03 04:15:18 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-08-03 04:15:18 Registered chart widgets with registry
+[INFO] 2025-08-03 04:15:18 tabbed display widgets created successfully
+[INFO] 2025-08-03 04:15:18 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-08-03 04:15:18 status bar widgets created successfully
+[INFO] 2025-08-03 04:15:18 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-08-03 04:15:18 Dashboard widgets created successfully
+[INFO] 2025-08-03 04:15:18 dashboard widgets created successfully
+[INFO] 2025-08-03 04:15:18 Weather data scheduler started
+[INFO] 2025-08-03 04:15:18 Starting weather update for New York
+[INFO] 2025-08-03 04:15:18 Fetching data for New York
+[INFO] 2025-08-03 04:15:18 Fetching current weather for New York
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[INFO] 2025-08-03 04:15:19 Weather data written for new_york - Live
+[INFO] 2025-08-03 04:15:19 Stored weather data for New York - 1 entries
+[INFO] 2025-08-03 04:15:19 Current weather fetched for New York
+[INFO] 2025-08-03 04:15:19 Data fetch completed for New York
+[INFO] 2025-08-03 04:15:19 Weather update completed for New York
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[INFO] 2025-08-03 04:15:19 Converting units to imperial
+[WARN] 2025-08-03 04:15:19 Failed to add current weather to chart: 'WeatherDataService' object has no attribute 'fetch_data'
+[INFO] 2025-08-03 04:15:20 Preferences saved
+[INFO] 2025-08-03 04:15:20 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-03 04:15:20 Starting weather update for New York
+[WARN] 2025-08-03 04:15:20 Fetch blocked due to rate limiting.
+[INFO] 2025-08-03 04:15:22 show_error called with: Rate limit exceeded. Please wait before trying again.
+[INFO] 2025-08-03 04:15:35 Theme change event triggered
+[INFO] 2025-08-03 04:15:35 Selected theme: Optimistic
+[INFO] 2025-08-03 04:15:35 Mapped theme name: optimistic
+[INFO] 2025-08-03 04:15:35 Theme callback exists: True
+[INFO] 2025-08-03 04:15:35 Controller theme set to: optimistic
+[INFO] 2025-08-03 04:15:36 Theme changed to optimistic
+[INFO] 2025-08-03 04:15:36 Theme changed to optimistic
+[INFO] 2025-08-03 04:15:43 Theme change event triggered
+[INFO] 2025-08-03 04:15:43 Selected theme: Pessimistic
+[INFO] 2025-08-03 04:15:43 Mapped theme name: pessimistic
+[INFO] 2025-08-03 04:15:43 Theme callback exists: True
+[INFO] 2025-08-03 04:15:43 Controller theme set to: pessimistic
+[INFO] 2025-08-03 04:15:44 Theme changed to pessimistic
+[INFO] 2025-08-03 04:15:44 Theme changed to pessimistic
