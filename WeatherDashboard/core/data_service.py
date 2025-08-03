@@ -379,9 +379,39 @@ class WeatherDataService:
             cancel_event: Optional threading event for operation cancellation
             
         Returns:
-            Tuple[str, Dict[str, Any], Optional[Exception]]: Original tuple format for backward compatibility
+            CityDataResult: Type-safe container with city data and metadata
         """
-        return self.fetch_data(city_name, unit_system, cancel_event)
+        try:
+            weather_data = self.get_city_data(city_name, unit_system, cancel_event)
+            return CityDataResult(
+                city_name=city_name,
+                weather_data=weather_data,
+                error=None,
+                is_simulated=False,  # This would need to be determined from the data
+                unit_system=unit_system,
+                timestamp=self.datetime.now(),
+                operation_status="success",
+                processing_time_ms=None,
+                api_calls_made=1,
+                fallback_used=False,
+                errors=[],
+                retry_attempts=0
+            )
+        except Exception as e:
+            return CityDataResult(
+                city_name=city_name,
+                weather_data={},
+                error=e,
+                is_simulated=False,
+                unit_system=unit_system,
+                timestamp=self.datetime.now(),
+                operation_status="failed",
+                processing_time_ms=None,
+                api_calls_made=0,
+                fallback_used=False,
+                errors=[str(e)],
+                retry_attempts=0
+            )
 
     def get_historical_data_list(self, city_name: str, num_days: int, unit_system: str) -> List[Dict[str, Any]]:
         """Get historical weather data for a city (backward compatibility).
