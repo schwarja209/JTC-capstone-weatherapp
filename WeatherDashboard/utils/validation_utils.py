@@ -12,9 +12,9 @@ Classes:
 
 import re
 from typing import Any, Optional, Union
-from datetime import datetime
 
 from WeatherDashboard import config
+from WeatherDashboard.services.api_exceptions import ValidationError
 
 from .logger import Logger
 
@@ -27,7 +27,6 @@ class ValidationUtils:
         # Direct imports for stable utilities
         self.config = config
         self.logger = Logger()
-        self.datetime = datetime
 
         # Instance data
         self.regex_patterns = {
@@ -83,17 +82,13 @@ class ValidationUtils:
         """Validate that at least one metric is visible.
         
         Args:
-            state_manager: Application state manager
+            state_manager: State manager containing visibility settings
             
         Raises:
-            ValueError: If no metrics are visible
+            ValueError: If no metrics are visible and fallback cannot be set
+            ValidationError: If fallback was set (to notify user)
         """
         try:
-            # Check if state manager has visibility
-            if not hasattr(state_manager, 'visibility'):
-                raise ValueError("State manager missing visibility attribute")
-            
-            # Check if any metrics are visible
             visible_count = 0
             for metric_key, visibility_var in state_manager.visibility.items():
                 try:
@@ -103,7 +98,20 @@ class ValidationUtils:
                     self.logger.warn(f"Error checking visibility for {metric_key}: {e}")
             
             if visible_count == 0:
-                raise ValueError("At least one metric must be visible")
+                self.logger.info("No metrics visible, setting temperature to visible as fallback")
+                
+                # Set temperature to visible as a fallback
+                temp_var = state_manager.visibility.get('temperature')
+                if temp_var and hasattr(temp_var, 'set'):
+                    temp_var.set(True)
+                    # Also update the chart metric to match
+                    if hasattr(state_manager, 'chart') and hasattr(state_manager.chart, 'set'):
+                        state_manager.chart.set('Temperature')
+                    self.logger.info("Temperature set as fallback metric")
+                    # Raise an error so the controller can show user notification
+                    raise ValidationError("No metrics were visible, so temperature has been automatically selected for display.")
+                else:
+                    raise ValueError("At least one metric must be visible")
             
         except Exception as e:
             raise ValueError(f"Failed to validate metric visibility: {e}")

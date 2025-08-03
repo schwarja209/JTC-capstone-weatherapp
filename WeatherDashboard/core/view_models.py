@@ -120,7 +120,6 @@ class WeatherViewModel:
         self.styles = styles
         self.utils = Utils()
         self.unit_converter = UnitConverter()
-        self.datetime = datetime
 
         # Instance data
         self.city_name: str = city
@@ -168,7 +167,7 @@ class WeatherViewModel:
         
         Returns:
             Dict[str, str]: Dictionary mapping metric keys to formatted display values
-        """
+        """        
         metrics = {}
 
         # Process ALL individual metrics first
@@ -187,7 +186,7 @@ class WeatherViewModel:
 
     def _format_enhanced_display(self, display_type: str) -> str:
         """Format complex metric displays with enhanced user-friendly presentation.
-    
+
         Delegates to specific formatting methods based on display type.
         
         Args:
@@ -195,15 +194,19 @@ class WeatherViewModel:
             
         Returns:
             str: Formatted display string with enhanced information, or '--' if unavailable
-        """
+        """        
         if display_type == 'temperature':
-            return self._format_temperature_display()
+            result = self._format_temperature_display()
+            return result
         elif display_type == 'temp_range':
-            return self._format_temp_range_display()
+            result = self._format_temp_range_display()
+            return result
         elif display_type == 'conditions':
-            return self._format_conditions_display()
+            result = self._format_conditions_display()
+            return result
         elif display_type == 'wind':
-            return self._format_wind_display()
+            result = self._format_wind_display()
+            return result
         else:
             return "--"
 
@@ -301,7 +304,7 @@ class WeatherViewModel:
     def _get_weather_icon(self) -> str:
         """Convert weather icon code to emoji."""
         icon_code = self.raw_data.get('weather_icon', '')
-        return self.styles.WEATHER_ICONS.get(icon_code, '')
+        return self.styles.WEATHER_ICONS().get(icon_code, '')
 
     def get_display_data(self) -> WeatherDisplayData:
         """Return all formatted data as a type-safe dataclass.
@@ -338,12 +341,12 @@ class WeatherViewModel:
             date_str=self.date_str,
             status=self.status,
             individual_metrics=self.metrics,
-            enhanced_displays=enhanced_displays.__dict__, # Convert to dict for backward compatibility
+            enhanced_displays=enhanced_displays,
             raw_data_available=bool(self.raw_data),
             has_conversion_warnings='_conversion_warnings' in self.raw_data,
             unit_system=self.unit_system,
             # LIGHT METADATA FIELDS:
-            timestamp=self.datetime.now(),
+            timestamp=datetime.now(),
             transformation_status=transformation_status,
             data_quality=data_quality
         )
@@ -372,29 +375,6 @@ class WeatherViewModel:
             metric_key=metric_key,
             unit_system=self.unit_system,
             # LIGHT METADATA FIELDS:
-            timestamp=self.datetime.now(),
+            timestamp=datetime.now(),
             data_quality=data_quality
         )
-    
-    # BACKWARD COMPATIBILITY METHODS:
-    def get_metric_value_str(self, metric_key: str) -> str:
-        """Get a specific formatted metric value as a string (backward compatibility).
-        
-        Args:
-            metric_key: Key of the metric to retrieve
-            
-        Returns:
-            str: Formatted metric value with units, or '--' if not available
-        """
-        return self.metrics.get(metric_key, "--")
-
-    def get_enhanced_display(self, display_type: str) -> str:
-        """Get a specific enhanced display value (backward compatibility).
-        
-        Args:
-            display_type: Type of enhanced display ('enhanced_temperature', 'temp_range', etc.)
-            
-        Returns:
-            str: Enhanced display value, or '--' if not available
-        """
-        return self.metrics.get(display_type, "--")

@@ -72,9 +72,13 @@ class LoadingStateManager:
         
         self.is_loading = False
         self._enable_buttons()
+
+        # Check if there's an error in the status bar progress
+        current_progress = self.status_bar_widgets.progress_var.get() if hasattr(self.status_bar_widgets, 'progress_var') else ""
+        has_status_bar_error = current_progress.startswith("Error:")
         
         # Only clear progress if there was no error
-        if not getattr(self, "_last_error", False):
+        if not getattr(self, "_last_error", False) and not has_status_bar_error:
             self._hide_loading_status()
             self._stop_progress_indicator()
     
@@ -129,7 +133,7 @@ class LoadingStateManager:
             layout_config = self.styles.LAYOUT_CONFIG
             loading_config = layout_config['widget_positions'].get('loading_display', {})
             
-            icon = self.styles.LOADING_CONFIG['icons']['progress']
+            icon = self.styles.LOADING_CONFIG()['icons']['progress']
             progress_format = loading_config.get('progress_format', "{icon} {message}")
             formatted_message = progress_format.format(icon=icon, message=message)
             
@@ -155,8 +159,8 @@ class LoadingStateManager:
     def _start_progress_indicator(self) -> None:
         """Start a simple progress animation indicator."""
         try:
-            wait_icon = self.styles.LOADING_CONFIG['icons']['waiting']
-            default_msg = self.styles.LOADING_CONFIG['messages']['default']
+            wait_icon = self.styles.LOADING_CONFIG()['icons']['waiting']
+            default_msg = self.styles.LOADING_CONFIG()['messages']['default']
             self.status_bar_widgets.update_progress(f"{wait_icon} {default_msg}")
         except tk.TclError as e:
             self.logger.warn(f"Failed to start progress indicator: {e}")

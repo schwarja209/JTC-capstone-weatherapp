@@ -15,7 +15,6 @@ Classes:
 """
 
 from typing import Dict, List, Any, Optional
-from datetime import datetime
 import threading
 
 from WeatherDashboard import config
@@ -58,7 +57,6 @@ class WeatherDataManager:
         self.utils = Utils()
         self.unit_converter = UnitConverter()
         self.validation_utils = ValidationUtils()
-        self.datetime = datetime
 
         # Injected dependencies for testable components
         self.api_service = WeatherAPIService()

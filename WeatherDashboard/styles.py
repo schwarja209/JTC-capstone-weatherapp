@@ -3,7 +3,7 @@ Style configuration for GUI elements.
 
 This module provides centralized styling configuration for all tkinter
 GUI components in the Weather Dashboard. Serves as the surface layer
-that passes through theme_manager results while maintaining backward compatibility.
+that passes through theme_manager results.
 
 Functions:
     configure_styles: Apply comprehensive styling to all GUI components
@@ -46,7 +46,77 @@ def get_theme_config(theme_name: str = None) -> Dict[str, Any]:
     return theme_manager.get_theme_config()
 
 # =================================
-# 2. LAYOUT MANAGEMENT - KEEP EXISTING
+# 2. SURFACE LAYER ACCESSORS - DELEGATE TO THEME MANAGER
+# =================================
+def get_control_panel_config() -> Dict[str, Any]:
+    """Get control panel configuration from theme manager."""
+    try:
+        config = theme_manager.get_theme_config()
+        return config.get('control_panel_config', {})
+    except Exception as e:
+        # Fallback to default configuration
+        return {
+            'padding': {'standard': 5, 'button_group': (10, 5), 'checkbox': (10, 0), 'header': (5, 10)},
+            'spacing': {'group': (10, 2), 'header': (10, 2), 'section': 2}
+        }
+
+def get_loading_config() -> Dict[str, Any]:
+    """Get loading configuration from theme manager."""
+    return theme_manager.get_theme_config()['loading_config'] # Return full structure
+
+def get_weather_icons() -> Dict[str, str]:
+    """Get weather icons from theme manager."""
+    return theme_manager.get_theme_config()['icons']['weather'] # Return full weather icons
+
+def get_dialog_config() -> Dict[str, Any]:
+    """Get dialog configuration from theme manager."""
+    return theme_manager.get_theme_config()['messaging']['dialog_config'] # Return full structure
+
+def get_status_bar_config() -> Dict[str, Any]:
+    """Get status bar configuration from theme manager."""
+    return theme_manager.get_theme_config()['status_bar_config']
+
+def get_metric_color_ranges() -> Dict[str, Any]:
+    """Get metric color ranges from theme manager."""
+    return theme_manager.get_theme_config()['colors']['metric_colors']
+
+def get_temperature_difference_colors() -> Dict[str, str]:
+    """Get temperature difference colors from theme manager."""
+    return theme_manager.get_theme_config()['colors']['temperature_difference']
+
+# =================================
+# 3. SURFACE LAYER PROPERTIES - DELEGATE TO THEME MANAGER
+# =================================
+def CONTROL_PANEL_CONFIG() -> Dict[str, Any]:
+    """Get control panel configuration from theme manager."""
+    return get_control_panel_config()  # Returns full structure
+
+def LOADING_CONFIG() -> Dict[str, Any]:
+    """Get loading configuration from theme manager."""
+    return get_loading_config()
+
+def WEATHER_ICONS() -> Dict[str, str]:
+    """Get weather icons from theme manager."""
+    return get_weather_icons()
+
+def DIALOG_CONFIG() -> Dict[str, Any]:
+    """Get dialog configuration from theme manager."""
+    return get_dialog_config()
+
+def STATUS_BAR_CONFIG() -> Dict[str, Any]:
+    """Get status bar configuration from theme manager."""
+    return get_status_bar_config()
+
+def METRIC_COLOR_RANGES() -> Dict[str, Any]:
+    """Get metric color ranges from theme manager."""
+    return get_metric_color_ranges()
+
+def TEMPERATURE_DIFFERENCE_COLORS() -> Dict[str, str]:
+    """Get temperature difference colors from theme manager."""
+    return get_temperature_difference_colors()
+
+# =================================
+# 4. LAYOUT MANAGEMENT - KEEP EXISTING
 # =================================
 FRAME_TITLE = "title"
 FRAME_CONTROL = "control"
@@ -197,65 +267,3 @@ def get_absolute_dimensions(relative_config: Dict[str, Any], parent_width: int, 
             absolute_config[key] = value
     
     return absolute_config
-
-# =================================
-# 5. BACKWARD COMPATIBILITY - SURFACE LAYER
-# =================================
-def get_default_theme_values() -> Dict[str, Any]:
-    """Get default theme values for backward compatibility."""
-    return theme_manager.get_theme_config()
-
-# Legacy accessors that pass through to theme_manager
-def get_fonts():
-    return theme_manager.get_fonts()
-
-def get_colors():
-    return theme_manager.get_colors()
-
-def get_padding():
-    return theme_manager.get_padding()
-
-def get_dimensions():
-    return theme_manager.get_theme_config()['dimensions']
-
-def get_widget_layout():
-    return theme_manager.get_theme_config()['widget_layout']
-
-def get_control_panel_config():
-    return theme_manager.get_theme_config()['control_panel_config']
-
-def get_status_bar_config():
-    return theme_manager.get_theme_config()['status_bar_config']
-
-def get_loading_config():
-    return theme_manager.get_theme_config()['loading_config']
-
-def get_weather_icons():
-    return theme_manager.get_theme_config()['icons']['weather']
-
-def get_metric_colors():
-    return theme_manager.get_colors()['metric_colors']
-
-def get_temperature_difference_colors():
-    return theme_manager.get_temperature_difference_color('significant_warmer')
-
-def get_comfort_thresholds():
-    return theme_manager.get_comfort_threshold('poor')
-
-def get_dialog_config():
-    return theme_manager.get_theme_config()['messaging']['dialog_config']
-
-# Legacy constants for backward compatibility
-FONTS = get_fonts()
-COLORS = get_colors()
-PADDING = get_padding()
-DIMENSIONS = get_dimensions()
-WIDGET_LAYOUT = get_widget_layout()
-CONTROL_PANEL_CONFIG = get_control_panel_config()
-STATUS_BAR_CONFIG = get_status_bar_config()
-LOADING_CONFIG = get_loading_config()
-WEATHER_ICONS = get_weather_icons()
-METRIC_COLOR_RANGES = get_metric_colors()
-TEMPERATURE_DIFFERENCE_COLORS = get_temperature_difference_colors()
-COMFORT_THRESHOLDS = get_comfort_thresholds()
-DIALOG_CONFIG = get_dialog_config()

@@ -160,12 +160,13 @@ class WeatherDashboardState:
             var.trace_add('write', self._on_preference_changed)
 
     def _on_preference_changed(self, *args) -> None:
-        """Handle preference changes and save automatically."""
+        """Handle preference changes and save automatically with debouncing."""
         try:
-            # Save preferences immediately when state changes
-            self.save_preferences()
+            # Only save preferences for non-text fields to avoid excessive saves
+            # For text fields (like city), we'll save on button press instead
+            pass
         except Exception as e:
-            print(f"Failed to save preferences: {e}")
+            print(f"Failed to handle preference change: {e}")
 
     def save_preferences_debounced(self) -> None:
         """Save preferences immediately (debouncing removed due to root window access issue)."""

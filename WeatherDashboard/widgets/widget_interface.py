@@ -35,7 +35,7 @@ class IWeatherDashboardWidgets:
         """Update alert display widgets."""
         raise NotImplementedError
 
-    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool = False) -> None:
+    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str) -> None:
         """Update chart display widgets."""
         raise NotImplementedError
 

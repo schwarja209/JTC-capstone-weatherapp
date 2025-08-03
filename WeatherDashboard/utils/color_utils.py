@@ -34,7 +34,7 @@ class ColorUtils:
         if value is None:
             return "darkslategray"
         
-        color_config = self.styles.METRIC_COLOR_RANGES.get(metric_key)
+        color_config = self.styles.METRIC_COLOR_RANGES().get(metric_key)
         if not color_config:
             return "darkslategray"
         
@@ -87,14 +87,14 @@ class ColorUtils:
                     
                     if '↑' in temp_text:  # Feels warmer
                         if difference >= threshold_large:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS['significant_warmer']
+                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['significant_warmer']
                         else:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS['slight_warmer']
+                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['slight_warmer']
                     elif '↓' in temp_text:  # Feels cooler
                         if difference >= threshold_large:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS['significant_cooler']
+                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['significant_cooler']
                         else:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS['slight_cooler']
+                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['slight_cooler']
             
             return base_color  # Use base temperature color if no significant difference
         

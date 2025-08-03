@@ -16,10 +16,9 @@ Classes:
     WeatherAPIService: Main service orchestrating all weather operations
 """
 
-from typing import Dict, Any, Optional
-from datetime import datetime
 import time
 import threading
+from typing import Dict, Any, Optional
 
 import requests
 
@@ -309,7 +308,6 @@ class WeatherAPIService:
         # Direct imports for stable utilities
         self.config = config
         self.logger = Logger()
-        self.datetime = datetime
 
         # API configuration
         self.weather_api = self.config.API_BASE_URL
@@ -334,8 +332,6 @@ class WeatherAPIService:
         Args:
             city: City name to fetch weather data for
         """
-        start_time = self.datetime.now()
-
         # Temporary bypass for testing
         if getattr(self.config, 'FORCE_FALLBACK_MODE', False):
             fallback_data = self.fallback.generate(city)
@@ -381,6 +377,8 @@ class WeatherAPIService:
             current_data = fallback_data[-1]
             current_data.update(self._data_parser._calculate_derived_metrics(current_data))
             current_data['source'] = 'simulated'
+            current_data['api_error'] = str(e)
+            current_data['error_type'] = type(e).__name__
             return current_data
         except Exception as e:
             # Only catch truly unexpected errors

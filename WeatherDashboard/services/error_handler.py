@@ -18,10 +18,9 @@ from typing import Optional
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.services.api_exceptions import (
-    ValidationError,
-    CityNotFoundError,
-    RateLimitError,
-    NetworkError
+    ValidationError, WeatherDashboardError, RateLimitError, 
+    DataFetchError, TimeoutError, CancellationError, 
+    LoggingError, ChartRenderingError, CityNotFoundError, NetworkError
 )
 
 class WeatherErrorHandler:
@@ -37,14 +36,7 @@ class WeatherErrorHandler:
     """
 
     def __init__(self, theme: str = 'neutral'):
-        """Initialize the error handler with specified theme.
-        
-        Sets up theme-aware message templates for different error types
-        and user experience modes.
-        
-        Args:
-            theme: Initial theme mode ('neutral', 'optimistic', 'pessimistic')
-        """
+        """Initialize the error handler with specified theme."""
         # Direct imports for stable utilities
         self.styles = styles
         self.logger = Logger()
@@ -66,6 +58,31 @@ class WeatherErrorHandler:
                 'neutral': "Network problem detected. Using simulated data for '{}'",
                 'optimistic': "Connection hiccup! No worries, showing backup data for '{}'",
                 'pessimistic': "Network failure. System compromised. Fallback data for '{}'"
+            },
+            'data_fetch_error': {
+                'neutral': "Failed to fetch weather data: {}",
+                'optimistic': "Data retrieval hiccup! {}",
+                'pessimistic': "Data acquisition failure: {}"
+            },
+            'cancellation': {
+                'neutral': "Operation cancelled: {}",
+                'optimistic': "No problem! Operation cancelled: {}",
+                'pessimistic': "Operation terminated: {}"
+            },
+            'logging_error': {
+                'neutral': "Logging issue detected: {}",
+                'optimistic': "Minor logging hiccup: {}",
+                'pessimistic': "Logging system failure: {}"
+            },
+            'chart_error': {
+                'neutral': "Chart rendering failed: {}",
+                'optimistic': "Chart display issue: {}",
+                'pessimistic': "Chart system failure: {}"
+            },
+            'timeout_error': {
+                'neutral': "Operation timed out: {}",
+                'optimistic': "Taking too long! {}",
+                'pessimistic': "System timeout: {}"
             }
         }
     
@@ -77,34 +94,37 @@ class WeatherErrorHandler:
             self.logger.warn(f"Unknown theme: {theme}, keeping current theme")
     
     def _format_message(self, template_key: str, *args) -> str:
-        """Format error message based on current theme and template.
-        
-        Retrieves the appropriate message template for the current theme and
-        formats it with provided arguments. Falls back to neutral theme if
-        current theme template is not available.
-        
-        Args:
-            template_key: Key identifying the message template to use
-            *args: Arguments to format into the message template
-            
-        Returns:
-            str: Formatted message appropriate for current theme
-        """
+        """Format error message based on current theme and template."""
         template = self._message_templates.get(template_key, {})
         message_template = template.get(self.current_theme, template.get('neutral', '{}'))
         return message_template.format(*args)
 
-    def handle_weather_error(self, error_exception: Optional[Exception], city_name: str) -> bool:
-        """Handles weather-related errors and shows appropriate user messages.
+    def _get_theme_aware_message(self, template_key: str, error_message: str) -> str:
+        """Get theme-aware error message.
         
         Args:
-            error_exception: The exception that occurred, or None if no error
-            city_name: Name of the city being processed
+            template_key: Key for message template
+            error_message: Error message to format
             
         Returns:
-            bool: True if the error was handled and operation should continue,
-                  False if the operation should be aborted.
+            str: Theme-aware formatted message
         """
+        return self._format_message(template_key, error_message)
+
+    def _show_error_dialog(self, title: str, message: str) -> None:
+        """Show error dialog with theme-aware styling."""
+        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(title, message)
+
+    def _show_warning_dialog(self, title: str, message: str) -> None:
+        """Show warning dialog with theme-aware styling."""
+        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['warning'])(title, message)
+
+    def _show_info_dialog(self, title: str, message: str) -> None:
+        """Show info dialog with theme-aware styling."""
+        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['info'])(title, message)
+
+    def handle_weather_error(self, error_exception: Optional[Exception], city_name: str) -> bool:
+        """Handles weather-related errors and shows appropriate user messages."""
         if not error_exception:
             return True
             
@@ -115,39 +135,64 @@ class WeatherErrorHandler:
         elif isinstance(error_exception, CityNotFoundError):
             # City not found - show error but continue with fallback
             message = self._format_message('city_not_found', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['city_not_found'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['city_not_found'], message)
             return True
         elif isinstance(error_exception, RateLimitError):
             # Rate limit - show specific message
             message = self._format_message('rate_limit', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['rate_limit'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['rate_limit'], message)
             return True
         elif isinstance(error_exception, NetworkError):
             # Network issues - show network-specific message
             message = self._format_message('network_error', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['warning'])(self.styles.DIALOG_CONFIG['dialog_titles']['network_issue'], message)
+            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['warning'])(self.styles.DIALOG_CONFIG()['dialog_titles']['network_issue'], message)
             return True
         else:
             # Other API errors - show general fallback notice
             self.logger.warn(f"Using fallback for {city_name}: {error_exception}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(self.styles.DIALOG_CONFIG['dialog_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
+            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['info'])(self.styles.DIALOG_CONFIG()['dialog_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
             return True
 
     def handle_input_validation_error(self, error: Exception) -> None:
         """Handles input validation errors."""
         self.logger.error(f"Input validation error: {error}")
-        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['input_error'], str(error))
+        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['input_error'], str(error))
 
     def handle_unexpected_error(self, error: Exception) -> None:
+        """Handles unexpected errors."""
         if isinstance(error, str):
             self.logger.error(f"Unexpected error: {error}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['general_error'], error)
+            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['general_error'], error)
         else:
             self.logger.error(f"Unexpected error: {error}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['error'])(self.styles.DIALOG_CONFIG['dialog_titles']['general_error'], str(error))
+            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['general_error'], str(error))
     
-    def handle_rate_limit_error(self, error_message: str) -> None:  # Expects string
-        getattr(messagebox, self.styles.DIALOG_CONFIG['dialog_types']['info'])(
-            self.styles.DIALOG_CONFIG['dialog_titles']['rate_limit'], 
-            error_message  # Use the string directly
-        )
+    def handle_rate_limit_error(self, error: RateLimitError) -> None:  # Fixed signature
+        """Handle rate limit errors with theme-aware messaging."""
+        message = self._get_theme_aware_message("rate_limit", str(error))
+        self._show_error_dialog("Rate Limit Error", message)
+
+    def handle_data_fetch_error(self, error: DataFetchError) -> None:
+        """Handle data fetch errors with theme-aware messaging."""
+        message = self._get_theme_aware_message("data_fetch_error", str(error))
+        self._show_error_dialog("Data Fetch Error", message)
+
+    def handle_cancellation_error(self, error: CancellationError) -> None:
+        """Handle operation cancellation with theme-aware messaging."""
+        message = self._get_theme_aware_message("cancellation", str(error))
+        self._show_info_dialog("Operation Cancelled", message)
+
+    def handle_logging_error(self, error: LoggingError) -> None:
+        """Handle logging errors with theme-aware messaging."""
+        message = self._get_theme_aware_message("logging_error", str(error))
+        self._show_warning_dialog("Logging Error", message)
+
+    def handle_chart_rendering_error(self, error: ChartRenderingError) -> None:
+        """Handle chart rendering errors with theme-aware messaging."""
+        message = self._get_theme_aware_message("chart_error", str(error))
+        self._show_error_dialog("Chart Error", message)
+
+    def handle_timeout_error(self, error: TimeoutError) -> None:
+        """Handle timeout errors with theme-aware messaging."""
+        message = self._get_theme_aware_message("timeout_error", str(error))
+        self._show_error_dialog("Timeout Error", message)

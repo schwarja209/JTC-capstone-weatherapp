@@ -153,18 +153,17 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         pack_config = fallback_config.get('pack', {'expand': True})
         self.fallback_label.pack(**pack_config)
     
-    def _format_chart_labels(self, metric_key: str, city: str, unit_system: str, fallback: bool) -> Dict[str, str]:
+    def _format_chart_labels(self, metric_key: str, city: str, unit_system: str) -> Dict[str, str]:
         """Formats chart labels based on metric and settings."""
         label = self.config.METRICS.get(metric_key, {}).get('label', metric_key.title())
-        unit = self.unit_converter.get_unit_label(metric_key, unit_system)
-        
         return {
-            'title': f"{label} {self.utils.format_fallback_status(fallback, 'display')} in {city}",
-            'xlabel': "Date", 
-            'ylabel': f"{label} ({unit})"
+            'title': f"{label} in {city}",
+            'x_label': 'Date',
+            'y_label': f"{label} ({self.unit_converter.get_unit_label(metric_key, unit_system)})"
         }
 
-    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool = False) -> None:
+
+    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str) -> None:
         """Updates the chart display with new data.
         
         Args:
@@ -173,7 +172,6 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             metric_key: Weather metric being charted
             city: City name for chart title
             unit_system: Unit system for axis labeling
-            fallback: Whether data comes from fallback/simulated source
         """
         if not (hasattr(self, 'chart_canvas') and hasattr(self, 'chart_ax') and self.chart_ax is not None):
             self.logger.warn(self.config.ERROR_MESSAGES['config_error'].format(section="chart display", reason="matplotlib setup failed"))
@@ -184,10 +182,10 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         self.chart_ax.plot(x_vals, y_vals, marker="o")
 
         # Get formatted labels
-        labels = self._format_chart_labels(metric_key, city, unit_system, fallback)
+        labels = self._format_chart_labels(metric_key, city, unit_system)
         self.chart_ax.set_title(labels['title'])
-        self.chart_ax.set_xlabel(labels['xlabel'])
-        self.chart_ax.set_ylabel(labels['ylabel'])
+        self.chart_ax.set_xlabel(labels['x_label'])
+        self.chart_ax.set_ylabel(labels['y_label'])
 
         # Format and draw
         self.chart_fig.autofmt_xdate(rotation=self.config.CHART['chart_rotation_degrees'])

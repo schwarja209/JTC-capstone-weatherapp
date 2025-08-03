@@ -26,7 +26,11 @@ from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
 
 from WeatherDashboard.features.alerts.alert_manager import AlertManager, WeatherAlert
-from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
+from WeatherDashboard.services.api_exceptions import (
+    ValidationError, WeatherDashboardError, RateLimitError, 
+    DataFetchError, TimeoutError, CancellationError, 
+    LoggingError, ChartRenderingError, CityNotFoundError, NetworkError
+)
 from WeatherDashboard.services.error_handler import WeatherErrorHandler, RateLimitError
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 
@@ -72,7 +76,6 @@ class WeatherDashboardController:
         self.rate_limiter = RateLimiter()
         self.unit_converter = UnitConverter()
         self.validation_utils = ValidationUtils()
-        self.datetime = datetime
         
         # Injected dependencies for testable components
         self.service = data_service
@@ -112,29 +115,41 @@ class WeatherDashboardController:
         
         Coordinates validation, rate limiting, and data fetching in sequence.
         """
-        start_time = self.datetime.now()
         self.logger.info(f"Starting weather update for {city_name}")
 
-        # Step 1: Validate inputs
         try:
+            # Step 1: Validate inputs
             self._validation_service.validate_inputs(city_name, unit_system)
-        except ValueError as e:
-            # Show messagebox for validation errors
-            self.error_handler.handle_input_validation_error(ValidationError(str(e)))
-            # Raise exception for validation errors
-            raise ValidationError(str(e))
-        
-        # Step 2: Check rate limiting
-        rate_limit_result = self._rate_limit_service.can_proceed()
-        if not rate_limit_result[0]:
-            # Show messagebox for rate limit errors
-            self.error_handler.handle_rate_limit_error(rate_limit_result[1])
-            # Raise exception for rate limit errors
-            raise RateLimitError(rate_limit_result[1])
-        
-        # Step 3: Fetch and display data
-        self._fetch_and_display_data(city_name, unit_system, cancel_event)
-        self.logger.info(f"Weather update completed for {city_name}")
+            
+            # Step 2: Check rate limiting
+            rate_limit_result = self._rate_limit_service.can_proceed()
+            if not rate_limit_result[0]:
+                raise RateLimitError(rate_limit_result[1])
+            
+            # Step 3: Fetch and display data
+            self._fetch_and_display_data(city_name, unit_system, cancel_event)
+            self.logger.info(f"Weather update completed for {city_name}")
+            
+        except ValidationError as e:
+            self.logger.error(f"Validation error for {city_name}: {e}")
+            self.error_handler.handle_input_validation_error(e)
+            return # Don't re-raise - validation errors should be handled gracefully
+        except RateLimitError as e:
+            self.logger.error(f"Rate limit error for {city_name}: {e}")
+            self.error_handler.handle_rate_limit_error(e)
+            raise
+        except DataFetchError as e:
+            self.logger.error(f"Data fetch error for {city_name}: {e}")
+            self.error_handler.handle_data_fetch_error(e)
+            raise
+        except CancellationError as e:
+            self.logger.error(f"Operation cancelled for {city_name}: {e}")
+            return # Don't show error for user-initiated cancellations
+        except Exception as e:
+            self.logger.error(f"Unexpected error for {city_name}: {e}")
+            self.error_handler.handle_unexpected_error(e)
+            raise
+
 
     def update_chart(self) -> None:
         """Update the chart with historical weather data for the selected city and metric.
@@ -165,21 +180,45 @@ class WeatherDashboardController:
             # Step 1: Fetch data
             raw_data = self._data_service.fetch_data(city_name, unit_system, cancel_event)
             
-            # Step 2: Generate alerts and inject into raw_data
+            # Step 2: Check for API errors in the data
+            api_error = None
+            error_exception = None
+            if isinstance(raw_data, dict) and 'api_error' in raw_data:
+                api_error = raw_data['api_error']
+                error_type = raw_data.get('error_type', 'APIError')
+                # Create the appropriate exception for status bar display
+                if error_type == 'CityNotFoundError':
+                    error_exception = CityNotFoundError(api_error)
+                else:
+                    error_exception = DataFetchError(api_error)
+                # Remove error info from data to avoid issues
+                del raw_data['api_error']
+                del raw_data['error_type']
+            
+            # Step 3: Generate alerts and inject into raw_data
             alerts = self._alert_service.generate_alerts(raw_data)
             raw_data["alerts"] = alerts
 
-            # Step 3: Create view model
+            # Step 4: Create view model
             view_model = self.view_model_factory(city_name, raw_data, unit_system)
 
-            # Step 4: Find if data is simulated
+            # Step 5: Find if data is simulated
             simulated = self._data_service.is_simulated_data(raw_data)
+
+            # Step 6: Update all display components
+            try:
+                self._ui_service.update_display(view_model, error_exception, simulated)
+            except Exception as e:
+                self.logger.error(f"Error in update_display: {e}")
+                self.logger.error(f"Error type: {type(e)}")
+                raise
             
-            # Step 5: Update all display components
-            self._ui_service.update_display(view_model, None, simulated)
-            
-            # Step 6: Log the data
+            # Step 7: Log the data
             self._data_service.log_data(city_name, raw_data, unit_system)
+            
+            # Step 8: Show error notification if there was an API error
+            if api_error:
+                self.error_handler.handle_data_fetch_error(DataFetchError(api_error))
             
             self.logger.info(f"Data fetch completed for {city_name}")
             
@@ -224,16 +263,68 @@ class WeatherDashboardController:
                 unit_system: Unit system for the weather data ('metric' or 'imperial')
                 cancel_event: Optional threading event for operation cancellation
             """
-            # Return the structured object directly instead of converting to tuple
-            return self.data_service.get_city_data(city_name, unit_system, cancel_event)
+            try:
+                self.logger.info(f"Fetching weather data for {city_name} with {unit_system} units")
+                
+                # Check for cancellation
+                if cancel_event and cancel_event.is_set():
+                    self.logger.info(f"Data fetch cancelled for {city_name}")
+                    raise CancellationError(f"Data fetch cancelled for {city_name}")
+                
+                # Fetch data with timeout
+                result = self.data_service.get_city_data(city_name, unit_system, cancel_event)
+                
+                if result is None:
+                    raise DataFetchError(f"No data returned for {city_name}")
+                
+                if hasattr(result, 'error') and result.error:
+                    raise DataFetchError(f"Data service error for {city_name}: {result.error}")
+                
+                self.logger.info(f"Successfully fetched data for {city_name}")
+                return result
+                
+            except CancellationError:
+                raise # Re-raise cancellation errors
+            except CityNotFoundError as e:
+                raise DataFetchError(f"City '{city_name}' not found") # Convert to DataFetchError so controller handles it properly
+            except ValidationError as e:
+                raise e # Re-raise validation errors
+            except TimeoutError as e:
+                self.logger.error(f"Timeout fetching data for {city_name}: {e}")
+                raise TimeoutError(f"Data fetch timeout for {city_name}: {e}")
+            except NetworkError as e:
+                self.logger.error(f"Network error fetching data for {city_name}: {e}")
+                raise NetworkError(f"Network error for {city_name}: {e}")
+            except Exception as e:
+                self.logger.error(f"Unexpected error fetching data for {city_name}: {e}")
+                raise DataFetchError(f"Failed to fetch data for {city_name}: {e}")
         
         def is_simulated_data(self, raw_data: Dict[str, Any]) -> bool:
             """Determine if the provided weather data is simulated/fallback data."""
             return self.utils.is_fallback(raw_data)
         
-        def log_data(self, city: str, raw_data: Dict[str, Any], unit_system: str) -> None:
-            """Log weather data for debugging and audit purposes. Void version maintains compatibility"""
-            self.data_service.write_to_log_void(city, raw_data, unit_system)
+        def log_data(self, city: str, raw_data: Dict[str, Any], unit_system: str) -> bool:
+            """Log weather data for debugging and audit purposes.
+            
+            Args:
+                city: City name for logging
+                raw_data: Weather data to log
+                unit_system: Unit system used
+                
+            Returns:
+                bool: True if logging successful, False otherwise
+            """
+            try:
+                result = self.data_service.write_to_log(city, raw_data, unit_system)
+                if result.success:
+                    self.logger.info(f"Data logged successfully for {city}")
+                    return True
+                else:
+                    self.logger.warning(f"Data logging failed for {city}: {result.error}")
+                    return False
+            except Exception as e:
+                self.logger.error(f"Exception during data logging for {city}: {e}")
+                raise False
 
     class _RateLimitService:
         """Internal service for API rate limiting and request management.
@@ -327,8 +418,10 @@ class WeatherDashboardController:
                 # Use centralized validation of city and units
                 self.validation_utils.validate_input_types(city_name, unit_system)
                 
-                # Validate state
-                self.validation_utils.validate_complete_state(self.state)
+                # Only validate state if we have a valid city name
+                # Skip metric visibility validation for edge cases
+                if city_name and len(city_name.strip()) > 0:
+                    self.validation_utils.validate_complete_state(self.state)
                 
             except Exception as e:
                 raise ValueError(f"Validation error: {str(e)}")
@@ -354,6 +447,7 @@ class WeatherDashboardController:
             """
             self.widgets = widgets
             self.ui_handler = ui_handler
+            self.logger = Logger()
         
         def show_weather_alerts(self, active_alerts: List[WeatherAlert]) -> None:
             """Display weather alerts popup with enhanced error handling.
@@ -452,7 +546,6 @@ class WeatherDashboardController:
             self.logger = Logger()
             self.config = config
             self.validation_utils = ValidationUtils()
-            self.datetime = datetime
             
             # Injected dependencies for testable components
             self.state = state
@@ -536,15 +629,13 @@ class WeatherDashboardController:
             # ADD CURRENT WEATHER AS LAST POINT
             try:
                 # Get current weather data for the city using the correct method
-                city_data_result = self.data_service.get_city_data_tuple(city, unit)
-                if city_data_result is None:
+                current_weather = self.data_service.get_city_data(city, unit)  # Returns Dict[str, Any]
+                if current_weather is None:
                     self.logger.warn(f"Failed to get city data for {city}")
                     return x_vals, y_vals
-                city_name = city_data_result.city_name
-                current_weather = city_data_result.weather_data
-                error = city_data_result.error
                 
-                if current_weather and metric_key in current_weather and not error:
+                # Since get_city_data returns the weather data directly as a dict
+                if current_weather and metric_key in current_weather:
                     # Format the current weather value properly
                     current_value = current_weather[metric_key]
                     
@@ -566,13 +657,17 @@ class WeatherDashboardController:
                         formatted_value = current_value
                     
                     # Add current weather as the last point
-                    current_date = current_weather.get('date', self.datetime.now())
+                    if isinstance(current_weather, dict):
+                        current_date = current_weather.get('date', datetime.now())
+                    else:
+                        self.logger.warn(f"Current weather data is not a dictionary for {city}")
+                        current_date = datetime.now()
                     x_vals.append(current_date.strftime("%Y-%m-%d"))
                     y_vals.append(formatted_value)
                     
                     self.logger.info(f"Added current weather data to chart: {metric_key} = {current_weather[metric_key]}")
                 else:
-                    self.logger.warn(f"Current weather data missing {metric_key} for {city} or has error: {error}")
+                    self.logger.warn(f"Current weather data missing {metric_key} for {city}")
                     
             except Exception as e:
                 self.logger.warn(f"Failed to add current weather to chart: {e}")
@@ -590,7 +685,11 @@ class WeatherDashboardController:
                 city: City name for chart title
                 unit: Unit system for labeling
             """
-            self.ui_handler.update_chart_components(x_vals, y_vals, metric_key, city, unit, fallback=True)
+            try:
+                self.ui_handler.update_chart_components(x_vals, y_vals, metric_key, city, unit)
+            except Exception as e:
+                self.logger.error(f"Failed to render chart: {e}")
+                raise ChartRenderingError(f"Failed to render chart for {city}: {e}")
 
         def _get_chart_metric_key(self) -> str:
             """Determine the metric key for the chart based on user selection."""

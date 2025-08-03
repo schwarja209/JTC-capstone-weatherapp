@@ -32,7 +32,7 @@ Configuration:
 from typing import Dict
 
 # Package metadata
-__version__ = "0.4.1"
+__version__ = "0.4.5"
 __author__ = "Jacob Schwartz"
 __email__ = "schwarja209@gmail.com"
 __description__ = "A satirical weather dashboard"

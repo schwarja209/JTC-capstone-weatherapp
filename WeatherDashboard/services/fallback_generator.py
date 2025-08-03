@@ -31,7 +31,6 @@ class SampleWeatherGenerator:
         """Initialize the weather data generator."""
         # Direct imports for stable utilities
         self.random = random
-        self.datetime = datetime
 
         # Instance data
         self.source_unit = "metric"  # base unit system
@@ -61,7 +60,7 @@ class SampleWeatherGenerator:
         temp_min, temp_max = self.temp_ranges['default']
         base_temp = self.random.randint(temp_min, temp_max)
         for i in range(num_days):
-            date = self.datetime.now() - timedelta(days=num_days - 1 - i)
+            date = datetime.now() - timedelta(days=num_days - 1 - i)
             temp = base_temp + self.random.randint(-15, 15)
             humidity = self.random.randint(30, 90)     # %
             wind = self.random.randint(0, 10)          # %

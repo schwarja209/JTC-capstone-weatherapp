@@ -52,7 +52,6 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         # Direct imports for stable utilities
         self.styles = styles
         self.logger = Logger()
-        self.datetime = datetime
         
         # Injected dependencies for testable components
         self.parent_frame = parent_frame
@@ -82,21 +81,21 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
         # Left section: System status using SafeWidgetCreator
         self.system_status_label = SafeWidgetCreator.create_label(self.parent, "Ready", "SystemStatus.TLabel")
-        self.system_status_label.pack(side=tk.LEFT, padx=self.styles.STATUS_BAR_CONFIG['padding']['system'])
+        self.system_status_label.pack(side=tk.LEFT, padx=self.styles.STATUS_BAR_CONFIG()['padding']['system'])
 
         # Separator
-        ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=self.styles.STATUS_BAR_CONFIG['padding']['separator'])
+        ttk.Separator(self.parent, orient='vertical').pack(side=tk.LEFT, fill='y', padx=self.styles.STATUS_BAR_CONFIG()['padding']['separator'])
 
         # Center section: Progress indicator using SafeWidgetCreator
         self.progress_label = SafeWidgetCreator.create_label(self.parent, "", "LabelValue.TLabel", textvariable=self.progress_var)
-        self.progress_label.pack(side=tk.LEFT, padx=self.styles.STATUS_BAR_CONFIG['padding']['progress'])
+        self.progress_label.pack(side=tk.LEFT, padx=self.styles.STATUS_BAR_CONFIG()['padding']['progress'])
 
         # Right section: Data source information using SafeWidgetCreator
         self.data_status_label = SafeWidgetCreator.create_label(self.parent, "No data", "DataStatus.TLabel")
-        self.data_status_label.pack(side=tk.RIGHT, padx=self.styles.STATUS_BAR_CONFIG['padding']['data'])
+        self.data_status_label.pack(side=tk.RIGHT, padx=self.styles.STATUS_BAR_CONFIG()['padding']['data'])
 
         # Separator
-        ttk.Separator(self.parent, orient='vertical').pack(side=tk.RIGHT, fill='y', padx=self.styles.STATUS_BAR_CONFIG['padding']['separator'])
+        ttk.Separator(self.parent, orient='vertical').pack(side=tk.RIGHT, fill='y', padx=self.styles.STATUS_BAR_CONFIG()['padding']['separator'])
 
         # Scheduler section: Auto-collection status
         self._create_scheduler_status()
@@ -125,7 +124,6 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             message: Data source status message to display
             status_type: Type of status ("info", "warning", "none")
         """
-        # color parameter is deprecated but kept for backward compatibility
         if self.data_status_label:
             self.data_status_label.configure(text=message)
 
@@ -159,7 +157,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         if self.progress_var:
             self.progress_var.set(message)
         if self.progress_label:
-            color = self.styles.STATUS_BAR_CONFIG['colors']['error'] if error else self.styles.STATUS_BAR_CONFIG['colors']['info']
+            color = self.styles.STATUS_BAR_CONFIG()['colors']['error'] if error else self.styles.STATUS_BAR_CONFIG()['colors']['info']
             self.progress_label.configure(foreground=color)
      
     def clear_progress(self) -> None:
@@ -175,7 +173,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             "⏸️ Auto: Off", 
             "StatusBar.TLabel"
         )
-        self.scheduler_status_label.pack(side=tk.RIGHT, padx=(self.styles.STATUS_BAR_CONFIG['padding']['system'], 0))
+        self.scheduler_status_label.pack(side=tk.RIGHT, padx=(self.styles.STATUS_BAR_CONFIG()['padding']['system'], 0))
         
         # Next fetch countdown
         self.scheduler_countdown_label = SafeWidgetCreator.create_label(
@@ -183,7 +181,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             "", 
             "StatusBar.TLabel"
         )
-        self.scheduler_countdown_label.pack(side=tk.RIGHT, padx=(self.styles.STATUS_BAR_CONFIG['padding']['system'], 0))
+        self.scheduler_countdown_label.pack(side=tk.RIGHT, padx=(self.styles.STATUS_BAR_CONFIG()['padding']['system'], 0))
 
     def update_scheduler_status(self, status_info: Dict[str, Any]) -> None:
         """Update scheduler status display."""
@@ -202,7 +200,7 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             # Update countdown
             if status_info['next_fetch_time']:
                 try:
-                    time_until = status_info['next_fetch_time'] - self.datetime.now()
+                    time_until = status_info['next_fetch_time'] - datetime.now()
                     if time_until.total_seconds() > 0:
                         minutes = int(time_until.total_seconds() // 60)
                         seconds = int(time_until.total_seconds() % 60)

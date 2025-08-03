@@ -175,7 +175,6 @@ class ApiUtils:
         """Initialize API utils with hybrid dependency injection."""
         # Direct imports for stable utilities
         self.logger = Logger()
-        self.datetime = datetime
 
     def safe_get_nested(self, data: Dict[str, Any], *keys: str, default: Any = None) -> Any:
         """Safely extract nested dictionary values.
@@ -533,7 +532,7 @@ class ApiUtils:
                 air_quality_description = self.get_aqi_description(air_quality_index)
             
             return CompleteWeatherData(
-                date=self.datetime.now(),
+                date=datetime.now(),
                 main_data=main_data,
                 wind_data=wind_data,
                 conditions_data=conditions_data,
@@ -553,7 +552,7 @@ class ApiUtils:
             self.logger.error(f"Error extracting complete weather data: {e}")
             # Return minimal valid structure even if everything fails
             return CompleteWeatherData(
-                date=self.datetime.now(),
+                date=datetime.now(),
                 main_data=WeatherMainData(None, None, None, None, None, None),
                 wind_data=WeatherWindData(None, None, None),
                 conditions_data=WeatherConditionsData("--", None, None, None),
@@ -586,93 +585,53 @@ class ApiUtils:
             5: "Very Poor"
         }
         return aqi_descriptions.get(aqi, "Unknown")
-        
-    # BACKWARD COMPATILIBITY METHODS:
-    def extract_weather_main_data_dict(self, weather_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Extract main weather data as dictionary (backward compatibility).
-        
-        Args:
-            weather_data: OpenWeatherMap API response
-            
-        Returns:
-            Dict[str, Any]: Dictionary with main weather metrics
-        """
-        main_data = self.extract_weather_main_data(weather_data)
-        return {
-            'temperature': main_data.temperature,
-            'humidity': main_data.humidity,
-            'pressure': main_data.pressure,
-            'feels_like': main_data.feels_like,
-            'temp_min': main_data.temp_min,
-            'temp_max': main_data.temp_max,
-        }
-
+    
     def extract_complete_weather_data_dict(self, weather_data: Dict[str, Any], uv_data: Optional[Dict[str, Any]] = None, air_quality_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        """Extract complete weather data as dictionary (backward compatibility).
+        """Extract complete weather data as dictionary (not dataclass).
         
         Args:
-            weather_data: Main weather API response
-            uv_data: UV index API response (optional)
-            air_quality_data: Air quality API response (optional)
+            weather_data: Raw weather API response
+            uv_data: Optional UV index data
+            air_quality_data: Optional air quality data
             
         Returns:
-            Dict[str, Any]: Complete parsed weather data dictionary
+            Dictionary containing all weather data
         """
+        # Extract structured data first
         complete_data = self.extract_complete_weather_data(weather_data, uv_data, air_quality_data)
         
-        # Convert to dictionary format for backward compatibility
+        # Convert dataclass to dictionary
         result = {
             'date': complete_data.date,
-            'uv_index': complete_data.uv_index,
-            'air_quality_index': complete_data.air_quality_index,
-            'air_quality_description': complete_data.air_quality_description,
-        }
-        
-        # Add main data
-        result.update({
             'temperature': complete_data.main_data.temperature,
             'humidity': complete_data.main_data.humidity,
             'pressure': complete_data.main_data.pressure,
             'feels_like': complete_data.main_data.feels_like,
             'temp_min': complete_data.main_data.temp_min,
             'temp_max': complete_data.main_data.temp_max,
-        })
-        
-        # Add wind data
-        result.update({
             'wind_speed': complete_data.wind_data.wind_speed,
             'wind_direction': complete_data.wind_data.wind_direction,
             'wind_gust': complete_data.wind_data.wind_gust,
-        })
-        
-        # Add conditions data
-        result.update({
             'conditions': complete_data.conditions_data.conditions,
             'weather_main': complete_data.conditions_data.weather_main,
             'weather_id': complete_data.conditions_data.weather_id,
             'weather_icon': complete_data.conditions_data.weather_icon,
-        })
-        
-        # Add precipitation data
-        result.update({
             'rain': complete_data.precipitation_data.rain,
             'snow': complete_data.precipitation_data.snow,
             'rain_1h': complete_data.precipitation_data.rain_1h,
             'rain_3h': complete_data.precipitation_data.rain_3h,
             'snow_1h': complete_data.precipitation_data.snow_1h,
             'snow_3h': complete_data.precipitation_data.snow_3h,
-        })
-        
-        # Add atmospheric data
-        result.update({
             'visibility': complete_data.atmospheric_data.visibility,
             'cloud_cover': complete_data.atmospheric_data.cloud_cover,
-        })
-        
-        # Add coordinates
-        result.update({
             'latitude': complete_data.coordinates.latitude,
             'longitude': complete_data.coordinates.longitude,
-        })
+            'uv_index': complete_data.uv_index,
+            'air_quality_index': complete_data.air_quality_index,
+            'air_quality_description': complete_data.air_quality_description,
+            'transformation_status': complete_data.transformation_status,
+            'extraction_success_rate': complete_data.extraction_success_rate,
+            'missing_fields': complete_data.missing_fields
+        }
         
         return result

@@ -29,7 +29,6 @@ class Logger:
         """
         # Direct imports for stable utilities
         self.config = config
-        self.datetime = datetime
         self.os = os
         self.json = json
         self.trackback = traceback
@@ -46,7 +45,7 @@ class Logger:
 
     def _timestamp(self) -> str:
         """Return current timestamp in YYYY-MM-DD HH:MM:SS format."""
-        return self.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def info(self, msg: str) -> None: 
         """Log an informational message."""
@@ -59,6 +58,10 @@ class Logger:
     def error(self, msg: str) -> None: 
         """Log an error message."""
         self._log("ERROR", msg)
+
+    def debug(self, msg: str) -> None: 
+        """Log a debug message."""
+        self._log("DEBUG", msg)
 
     def exception(self, msg: str, exc: Exception = None):
         print(f"[ERROR] {msg}")

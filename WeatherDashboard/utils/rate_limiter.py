@@ -30,9 +30,6 @@ class RateLimiter:
             min_interval_seconds: Minimum seconds required between requests (default 3)
             time_provider: Function to get current time (defaults to datetime.now)
         """
-        # Direct imports for stable utilities
-        self.datetime = datetime
-
         # Instance data
         self.min_interval = min_interval_seconds
         self.last_request_time = None
@@ -41,11 +38,11 @@ class RateLimiter:
         """Check if enough time has passed since the last request."""
         if not self.last_request_time:
             return True
-        return (self.datetime.now() - self.last_request_time).total_seconds() > self.min_interval
+        return (datetime.now() - self.last_request_time).total_seconds() > self.min_interval
     
     def record_request(self) -> None:
         """Record that a request was made at this time."""
-        self.last_request_time = self.datetime.now()
+        self.last_request_time = datetime.now()
     
     def get_wait_time(self) -> float:
         """Get seconds to wait before next request, or 0 if ready.
@@ -56,7 +53,7 @@ class RateLimiter:
         """
         if not self.last_request_time:
             return 0
-        elapsed = (self.datetime.now() - self.last_request_time).total_seconds()
+        elapsed = (datetime.now() - self.last_request_time).total_seconds()
         wait_time = max(0, self.min_interval - elapsed)
         # Add small tolerance for floating-point precision
         return wait_time if wait_time > 0.001 else 0.0

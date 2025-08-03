@@ -20,45 +20,6 @@ from WeatherDashboard.services.api_exceptions import ValidationError
 
 
 @dataclass
-class CityDataResult:
-    """Type-safe container for city weather data results.
-    
-    Contains the result of fetching weather data for a city
-    with comprehensive error handling and status information.
-    """
-    city_name: str
-    weather_data: Dict[str, Any]
-    error: Optional[Exception]
-    is_simulated: bool
-    unit_system: str
-    timestamp: datetime
-
-    # Rich service layer metadata
-    operation_status: str = "success"  # "success", "partial", "failed", "cancelled"
-    processing_time_ms: Optional[int] = None
-    api_calls_made: int = 1
-    fallback_used: bool = False
-    errors: List[str] = None
-    retry_attempts: int = 0
-    
-    def __post_init__(self):
-        """Validate dataclass after initialization."""
-        if not self.city_name:
-            raise ValueError("city_name cannot be empty")
-        if self.unit_system not in ['metric', 'imperial']:
-            raise ValueError("unit_system must be 'metric' or 'imperial'")
-        if self.operation_status not in ['success', 'partial', 'failed', 'cancelled']:
-            raise ValueError("operation_status must be 'success', 'partial', 'failed', or 'cancelled'")
-        if self.processing_time_ms is not None and self.processing_time_ms < 0:
-            raise ValueError("processing_time_ms cannot be negative")
-        if self.api_calls_made < 0:
-            raise ValueError("api_calls_made cannot be negative")
-        if self.retry_attempts < 0:
-            raise ValueError("retry_attempts cannot be negative")
-        if self.errors is None:
-            self.errors = []
-
-@dataclass
 class HistoricalDataResult:
     """Type-safe container for historical weather data results.
     
@@ -158,7 +119,6 @@ class WeatherDataService:
         # Direct imports for stable utilities
         self.validation_utils = ValidationUtils()
         self.logger = Logger()
-        self.datetime = datetime
 
         # Injected dependencies for testable components
         self.data_manager = data_manager
@@ -208,7 +168,7 @@ class WeatherDataService:
             Logs data operations via data manager
             May trigger data cleanup operations
         """
-        start_time = self.datetime.now()
+        start_time = datetime.now()
         
         # Validate inputs
         try:
@@ -245,7 +205,7 @@ class WeatherDataService:
         Returns:
             HistoricalDataResult: Type-safe container with historical data and metadata
         """
-        start_time = self.datetime.now()
+        start_time = datetime.now()
 
         try:
             # Validate inputs
@@ -269,7 +229,7 @@ class WeatherDataService:
             else:
                 converted_data = raw_data
             
-            processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
+            processing_time = int((datetime.now() - start_time).total_seconds() * 1000)
 
             # Calculate data completeness
             data_completeness = len(converted_data) / num_days if num_days > 0 else 0.0
@@ -288,7 +248,7 @@ class WeatherDataService:
                 unit_system=normalized_unit,
                 source_unit=source_unit,
                 conversion_applied=conversion_applied,
-                timestamp=self.datetime.now(),
+                timestamp=datetime.now(),
                 # SERVICE LAYER METADATA FIELDS:
                 operation_status=operation_status,
                 processing_time_ms=processing_time,
@@ -299,7 +259,7 @@ class WeatherDataService:
             )
         
         except Exception as e:
-            processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
+            processing_time = int((datetime.now() - start_time).total_seconds() * 1000)
 
             return HistoricalDataResult(
                 city_name=city_name,
@@ -308,7 +268,7 @@ class WeatherDataService:
                 unit_system=unit_system,
                 source_unit="metric",
                 conversion_applied=False,
-                timestamp=self.datetime.now(),
+                timestamp=datetime.now(),
                 # SERVICE LAYER METADATA FIELDS:
                 operation_status="failed",
                 processing_time_ms=processing_time,
@@ -329,7 +289,7 @@ class WeatherDataService:
         Returns:
             LoggingResult: Type-safe container with logging operation status
         """
-        start_time = self.datetime.now()
+        start_time = datetime.now()
 
         try:
             # Validate inputs
@@ -338,14 +298,14 @@ class WeatherDataService:
             # Write to log
             self.data_manager.write_to_file(normalized_city, data, normalized_unit)
             
-            processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
+            processing_time = int((datetime.now() - start_time).total_seconds() * 1000)
 
             return LoggingResult(
                 city_name=normalized_city,
                 unit_system=normalized_unit,
                 success=True,
                 error_message=None,
-                timestamp=self.datetime.now(),
+                timestamp=datetime.now(),
                 # SERVICE LAYER METADATA FIELDS:
                 operation_status="success",
                 processing_time_ms=processing_time,
@@ -360,7 +320,7 @@ class WeatherDataService:
                 unit_system=unit,
                 success=False,
                 error_message=str(e),
-                timestamp=self.datetime.now(),
+                timestamp=datetime.now(),
                 # SERVICE LAYER METADATA FIELDS:
                 operation_status="failed",
                 processing_time_ms=processing_time,
@@ -368,73 +328,3 @@ class WeatherDataService:
                 errors=[str(e)],
                 backup_created=False
                 )
-            
-    # BACKWARD COMPATIBILITY METHODS:
-    def get_city_data_tuple(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> CityDataResult:
-        """Get weather data for a city (backward compatibility).
-        
-        Args:
-            city_name: Raw city name input (will be normalized)
-            unit_system: Target unit system ('metric' or 'imperial')
-            cancel_event: Optional threading event for operation cancellation
-            
-        Returns:
-            CityDataResult: Type-safe container with city data and metadata
-        """
-        try:
-            weather_data = self.get_city_data(city_name, unit_system, cancel_event)
-            return CityDataResult(
-                city_name=city_name,
-                weather_data=weather_data,
-                error=None,
-                is_simulated=False,  # This would need to be determined from the data
-                unit_system=unit_system,
-                timestamp=self.datetime.now(),
-                operation_status="success",
-                processing_time_ms=None,
-                api_calls_made=1,
-                fallback_used=False,
-                errors=[],
-                retry_attempts=0
-            )
-        except Exception as e:
-            return CityDataResult(
-                city_name=city_name,
-                weather_data={},
-                error=e,
-                is_simulated=False,
-                unit_system=unit_system,
-                timestamp=self.datetime.now(),
-                operation_status="failed",
-                processing_time_ms=None,
-                api_calls_made=0,
-                fallback_used=False,
-                errors=[str(e)],
-                retry_attempts=0
-            )
-
-    def get_historical_data_list(self, city_name: str, num_days: int, unit_system: str) -> List[Dict[str, Any]]:
-        """Get historical weather data for a city (backward compatibility).
-        
-        Args:
-            city_name: Target city name for historical data
-            num_days: Number of days of historical data to retrieve
-            unit_system: Target unit system for data formatting
-            
-        Returns:
-            List[Dict[str, Any]]: Historical weather data entries with converted units
-        """
-        result = self.get_historical_data(city_name, num_days, unit_system)
-        return result.data_entries
-
-    def write_to_log_void(self, city: str, data: Dict[str, Any], unit: str) -> None:
-        """Write weather data to the log file (backward compatibility).
-        
-        Args:
-            city: City name for the log entry
-            data: Weather data to log
-            unit: Unit system for formatting ('metric' or 'imperial')
-        """
-        result = self.write_to_log(city, data, unit)
-        if not result.success:
-            raise Exception(f"Logging failed: {result.error_message}")

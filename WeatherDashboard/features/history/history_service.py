@@ -48,14 +48,13 @@ class WeatherHistoryService:
         self.config = config
         self.utils = Utils()
         self.unit_converter = UnitConverter()
-        self.datetime = datetime
 
         # Injected dependencies for testable components
         self.api_service = WeatherAPIService()
 
         # Internal state
         self.weather_data = {}
-        self._last_cleanup = self.datetime.now()  # Track when we last cleaned up data
+        self._last_cleanup = datetime.now()  # Track when we last cleaned up data
 
 # ================================
 # 1. DATA STORAGE
@@ -81,14 +80,14 @@ class WeatherHistoryService:
         # Check if cleanup is needed
         if self._should_perform_cleanup() or self._simple_memory_check():
             self.cleanup_old_data()
-            self._last_cleanup = self.datetime.now()
+            self._last_cleanup = datetime.now()
 
         key = self.utils.city_key(city)
         existing_data = self.weather_data.setdefault(key, [])
         
         # Add timestamp if not present
         if 'date' not in weather_data:
-            weather_data['date'] = self.datetime.now()
+            weather_data['date'] = datetime.now()
 
         # Always store data from scheduler, but limit memory usage
         existing_data.append(weather_data)
@@ -129,7 +128,7 @@ class WeatherHistoryService:
         
         # Prepare row data
         row_data = {
-            'timestamp': weather_data.get('date', self.datetime.now()).strftime("%Y-%m-%d %H:%M:%S"),
+            'timestamp': weather_data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S"),
             'city': city,
             'temperature': weather_data.get('temperature'),
             'humidity': weather_data.get('humidity'),
@@ -193,11 +192,11 @@ class WeatherHistoryService:
             List[Dict[str, Any]]: Recent weather data entries for the specified time period
         """
         city_data = self.weather_data.get(self.utils.city_key(city), [])
-        cutoff_date = self.datetime.now().date() - timedelta(days=days_back)
+        cutoff_date = datetime.now().date() - timedelta(days=days_back)
         
         return [
             entry for entry in city_data 
-            if entry.get('date', self.datetime.now()).date() >= cutoff_date
+            if entry.get('date', datetime.now()).date() >= cutoff_date
         ]
 
     def get_recent_data_from_csv(self, city: str, days_back: int = 7) -> List[Dict[str, Any]]:
@@ -216,7 +215,7 @@ class WeatherHistoryService:
         if not csv_file.exists():
             return []
         
-        cutoff_date = self.datetime.now().date() - timedelta(days=days_back)
+        cutoff_date = datetime.now().date() - timedelta(days=days_back)
         recent_data = []
         
         try:
@@ -324,7 +323,7 @@ class WeatherHistoryService:
 
     def _format_data_for_logging(self, city: str, weather_data: Dict[str, Any], unit_system: str) -> str:
         """Format weather data for text file logging."""
-        timestamp = weather_data.get('date', self.datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = weather_data.get('date', datetime.now()).strftime("%Y-%m-%d %H:%M:%S")
         lines = [
             f"\n\nTime: {timestamp}",
             f"City: {self.utils.city_key(city)}",
@@ -346,14 +345,14 @@ class WeatherHistoryService:
         Args:
             days_to_keep: Number of days of data to retain (default 30)
         """
-        cutoff_date = self.datetime.now() - timedelta(days=days_to_keep)
+        cutoff_date = datetime.now() - timedelta(days=days_to_keep)
         
         # Remove old entries and enforce per-city limits
         for city_key, data_list in self.weather_data.items():
             # Filter by date
             recent_data = [
                 entry for entry in data_list 
-                if entry.get('date', self.datetime.now()) >= cutoff_date
+                if entry.get('date', datetime.now()) >= cutoff_date
             ]
             # Enforce per-city entry limit
             max_entries = self.config.MEMORY["max_entries_per_city"]
@@ -383,10 +382,10 @@ class WeatherHistoryService:
             bool: True if cleanup is needed
         """
         if not hasattr(self, '_last_cleanup'):
-            self._last_cleanup = self.datetime.now()
+            self._last_cleanup = datetime.now()
             return False
         
-        current_time = self.datetime.now()
+        current_time = datetime.now()
         cleanup_interval = self.config.MEMORY["cleanup_interval_hours"]
         time_since_cleanup = (current_time - self._last_cleanup).total_seconds()
         

@@ -47,7 +47,6 @@ class WeatherDataScheduler:
         # Direct imports for stable utilities
         self.logger = Logger()
         self.config = config
-        self.datetime = datetime
         
         # Injected dependencies for testable components
         self.history_service = history_service
@@ -86,7 +85,7 @@ class WeatherDataScheduler:
 
         # Set initial next fetch time if not already set
         if not self.next_fetch_time:
-            self.next_fetch_time = self.datetime.now() + timedelta(minutes=self.interval_minutes)
+            self.next_fetch_time = datetime.now() + timedelta(minutes=self.interval_minutes)
         
         self.scheduler_thread = threading.Thread(target=self._scheduler_loop, daemon=True)
         self.scheduler_thread.start()
@@ -119,7 +118,7 @@ class WeatherDataScheduler:
         else:
             # Preserve the next fetch time when restarting
             if not self.next_fetch_time:
-                self.next_fetch_time = self.datetime.now() + timedelta(minutes=self.interval_minutes)
+                self.next_fetch_time = datetime.now() + timedelta(minutes=self.interval_minutes)
             self.start_scheduler()
 
     def _start_countdown_timer(self) -> None:
@@ -147,7 +146,7 @@ class WeatherDataScheduler:
         while not self.stop_event.is_set():
             try:
                 self._collect_data_for_scheduled_cities()
-                self.last_fetch_time = self.datetime.now()
+                self.last_fetch_time = datetime.now()
                 self.fetch_count += 1
                 
                 # Trigger memory cleanup after data collection

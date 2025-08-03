@@ -115,7 +115,7 @@ class ControlWidgets(BaseWidgetManager):
         self.widget_utils.position_widget_pair(
             self.parent, city_label, self.city_entry, 
             city_config['row'], city_config['column'], city_config['column']+1, 
-            pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard']
+            pady=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard']
         )
 
     @widget_error_handler("unit selection")
@@ -125,13 +125,23 @@ class ControlWidgets(BaseWidgetManager):
         unit_config = layout_config['widget_positions']['control_panel']['unit_selection']
         
         units_label = SafeWidgetCreator.create_label(self.parent, text="Units:", style="LabelName.TLabel")
-        units_label.grid(**unit_config, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        units_label.grid(**unit_config, pady=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'])
         
         imperial_radio = SafeWidgetCreator.create_radiobutton(self.parent, "Imperial (°F, mph, inHg)", self.state.unit, "imperial")
         imperial_radio.grid(row=unit_config['row'], column=unit_config['column']+1, sticky=unit_config['sticky'])
         
         metric_radio = SafeWidgetCreator.create_radiobutton(self.parent, "Metric (°C, m/s, hPa)", self.state.unit, "metric")
         metric_radio.grid(row=unit_config['row']+1, column=unit_config['column']+1, sticky=unit_config['sticky'])
+
+    def _on_city_enter(self, event) -> None:
+        """Handle Enter key in city input."""
+        self.state.save_preferences()
+        if self.callbacks.get('update'):
+            self.callbacks['update']()
+
+    def _on_city_focus_out(self, event) -> None:
+        """Handle focus out from city input."""
+        self.state.save_preferences()
 
 # ================================
 # 3. METRIC VISIBILITY CONTROLS  
@@ -146,24 +156,24 @@ class ControlWidgets(BaseWidgetManager):
         """
         # Main section header
         header_frame = SafeWidgetCreator.create_frame(self.parent)
-        header_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['header'])
+        header_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG()['padding']['header'])
 
         visibility_label = SafeWidgetCreator.create_label(header_frame, "Metrics Visibility:", "LabelName.TLabel")
         visibility_label.pack(side=tk.LEFT)
 
         # Add Select All / Clear All buttons
         select_all_btn = SafeWidgetCreator.create_button(header_frame, "Select All", self._select_all_metrics, "MainButton.TButton")
-        select_all_btn.pack(side=tk.LEFT, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['button_group'])
+        select_all_btn.pack(side=tk.LEFT, padx=self.styles.CONTROL_PANEL_CONFIG()['padding']['button_group'])
 
         clear_all_btn = SafeWidgetCreator.create_button(header_frame, "Clear All", self._clear_all_metrics, "MainButton.TButton")
-        clear_all_btn.pack(side=tk.LEFT, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        clear_all_btn.pack(side=tk.LEFT, padx=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'])
         
         current_row = 5
         
         # Iterate through metric groups with cleaner logic
         for group_key, group_config in self.config.METRIC_GROUPS.items():
             current_row = self._add_metric_group_two_column(group_config, current_row)
-            current_row += self.styles.CONTROL_PANEL_CONFIG['spacing']['section'] # Extra space between groups
+            current_row += self.styles.CONTROL_PANEL_CONFIG()['spacing']['section'] # Extra space between groups
 
     def _add_metric_group_two_column(self, group_config: Dict[str, Any], start_row: int) -> int:
         """Add metric group with two-column checkbox layout and error handling.
@@ -184,7 +194,7 @@ class ControlWidgets(BaseWidgetManager):
         
         # Group header using SafeWidgetCreator
         group_label = SafeWidgetCreator.create_label(self.parent, f"{group_config['label']}:", "LabelName.TLabel")
-        group_label.grid(row=current_row, column=0, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG['spacing']['group'])
+        group_label.grid(row=current_row, column=0, sticky=tk.W, pady=self.styles.CONTROL_PANEL_CONFIG()['spacing']['group'])
         current_row += 1
         
         # Add metrics in two-column layout with cleaner logic
@@ -205,7 +215,7 @@ class ControlWidgets(BaseWidgetManager):
         display_label = self.config.ENHANCED_DISPLAY_LABELS.get(metric_key, self.config.METRICS[metric_key]['label'])
         
         checkbox = SafeWidgetCreator.create_checkbutton(self.parent, display_label, self.state_utils.get_metric_visibility_var(self.state, metric_key), self.callbacks.get('dropdown_update'))
-        checkbox.grid(row=row, column=col, sticky=tk.W, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['checkbox'])
+        checkbox.grid(row=row, column=col, sticky=tk.W, padx=self.styles.CONTROL_PANEL_CONFIG()['padding']['checkbox'])
 
     def _select_all_metrics(self) -> None:
         """Select all metric visibility checkboxes and update chart dropdown."""
@@ -232,7 +242,7 @@ class ControlWidgets(BaseWidgetManager):
         
         # Chart metric selector
         chart_label = SafeWidgetCreator.create_label(self.parent, "Chart Metric:", "LabelName.TLabel")
-        chart_label.grid(**chart_config, pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        chart_label.grid(**chart_config, pady=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'])
 
         chart_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.chart)
         chart_cb.grid(row=chart_config['row']+1, column=chart_config['column'], sticky=chart_config['sticky'])
@@ -240,7 +250,7 @@ class ControlWidgets(BaseWidgetManager):
         
         # Date range selector
         range_label = SafeWidgetCreator.create_label(self.parent, "Date Range:", "LabelName.TLabel")
-        range_label.grid(row=chart_config['row']+2, column=chart_config['column'], sticky=chart_config['sticky'], pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'])
+        range_label.grid(row=chart_config['row']+2, column=chart_config['column'], sticky=chart_config['sticky'], pady=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'])
         
         range_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.range)
         range_cb['values'] = list(self.config.CHART["range_options"].keys())
@@ -257,10 +267,10 @@ class ControlWidgets(BaseWidgetManager):
         self.update_button.grid(**action_config, pady=10)
         
         self.reset_button = SafeWidgetCreator.create_button(self.parent, "Reset", self.callbacks.get('reset'), "MainButton.TButton")
-        self.reset_button.grid(row=action_config['row']+1, column=action_config['column'], pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=action_config['sticky'])
+        self.reset_button.grid(row=action_config['row']+1, column=action_config['column'], pady=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'], sticky=action_config['sticky'])
         
         self.cancel_button = SafeWidgetCreator.create_button(self.parent, "Cancel", self.callbacks.get('cancel'), "MainButton.TButton")
-        self.cancel_button.grid(row=action_config['row']+2, column=action_config['column'], pady=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=action_config['sticky'])
+        self.cancel_button.grid(row=action_config['row']+2, column=action_config['column'], pady=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'], sticky=action_config['sticky'])
 
     def update_chart_dropdown_options(self) -> None:
         """Update chart dropdown options based on metric visibility and chartability configuration.
@@ -331,9 +341,11 @@ class ControlWidgets(BaseWidgetManager):
     
     def _bind_events(self) -> None:
         """Bind keyboard events for better UX."""
-        if self.city_entry and self.callbacks.get('update'):
-            # Enter key in city field triggers update
-            self.city_entry.bind("<Return>", lambda e: self.callbacks['update']())
+        if self.city_entry:
+            # Enter key in city field triggers update and saves preferences
+            self.city_entry.bind("<Return>", self._on_city_enter)
+            # Focus out saves preferences
+            self.city_entry.bind("<FocusOut>", self._on_city_focus_out)
 
 # ================================
 # 6. LOADING STATE MANAGEMENT

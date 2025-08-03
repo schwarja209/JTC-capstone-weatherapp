@@ -105,7 +105,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         Args:
             metric_displays: Dictionary of formatted metric data for display
         """
-        layout_config = styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG
         metric_config = layout_config['widget_positions']['metric_display']
         left_col_config = metric_config['left_column']
         right_col_config = metric_config['right_column']
@@ -231,6 +231,10 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             self.logger.warn("Cannot update alerts: widgets not ready")
             return
         
+        if not isinstance(raw_data, dict):
+            self.logger.error(f"Update alerts - raw_data is not a dict: {type(raw_data)}")
+            return
+
         # Extract alerts from raw_data and update the alert widgets
         alerts = raw_data.get("alerts", []) if isinstance(raw_data, dict) else []
         if self.alert_status_widget:
@@ -301,7 +305,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         """
         # Create a frame to hold both alert widget and text
         alert_frame = SafeWidgetCreator.create_frame(self.parent)
-        alert_frame.grid(row=2, column=0, columnspan=2, padx=self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], sticky=tk.W)
+        alert_frame.grid(row=2, column=0, columnspan=2, padx=self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'], sticky=tk.W)
         
         # Alert widget
         self.alert_status_widget = AlertStatusIndicator(alert_frame)
@@ -309,7 +313,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Alert text label using SafeWidgetCreator
         self.alert_text_label = SafeWidgetCreator.create_label(alert_frame, "", "AlertText.TLabel")
-        self.alert_text_label.pack(side=tk.LEFT, padx=(self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], 0))
+        self.alert_text_label.pack(side=tk.LEFT, padx=(self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'], 0))
 
 # ================================
 # 4. METRIC POSITIONING & DISPLAY

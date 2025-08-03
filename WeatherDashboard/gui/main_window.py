@@ -274,7 +274,8 @@ class WeatherDashboardMain:
         if self.widgets.status_bar_widgets:
             self.widgets.status_bar_widgets.update_scheduler_status(status_info)
 
-    def update_chart_components(self, x_vals: Optional[List[str]] = None, y_vals: Optional[List[Any]] = None, metric_key: Optional[str] = None, city: Optional[str] = None, unit: Optional[str] = None, fallback: bool = True, clear: bool = False) -> None:
+    def update_chart_components(self, x_vals: Optional[List[str]] = None, y_vals: Optional[List[Any]] = None, metric_key: Optional[str] = None,
+                                city: Optional[str] = None, unit: Optional[str] = None, clear: bool = False) -> None:
         """Update chart-related components.
         
         Args:
@@ -283,13 +284,12 @@ class WeatherDashboardMain:
             metric_key: Weather metric being charted
             city: City name for chart title
             unit: Unit system for labeling
-            fallback: Whether to use fallback chart rendering
             clear: Whether to clear the chart instead of updating it
         """
         if clear:
             self.widgets.clear_chart_with_error_message()
         elif x_vals is not None and y_vals is not None:
-            self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit, fallback)
+            self.widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit)
         
         # Always update dropdown options unless explicitly clearing
         if not clear and self.widgets.control_widgets:

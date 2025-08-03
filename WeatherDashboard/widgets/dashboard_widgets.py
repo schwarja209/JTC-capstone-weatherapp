@@ -92,6 +92,10 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         self.tabbed_widgets: Optional[TabbedDisplayWidgets] = None
         self.status_bar_widgets: Optional[StatusBarWidgets] = None
 
+        # Add convenience properties for accessing nested widgets
+        self._metric_widgets: Optional[MetricDisplayWidgets] = None
+        self._chart_widgets: Optional[ChartWidgets] = None
+
         # Initialize widget registry
         self.widget_registry = WidgetRegistry()
         # Register all frames with the registry
@@ -159,7 +163,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             widget=self.title_widget,
             widget_type='title',
             parent_frame=title_frame,
-            position={'pack': {'fill': 'x', 'padx': self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], 'pady': self.styles.CONTROL_PANEL_CONFIG['padding']['standard']}},
+            position={'pack': {'fill': 'x', 'padx': self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'], 'pady': self.styles.CONTROL_PANEL_CONFIG()['padding']['standard']}},
             style='Title.TFrame'
         )
     
@@ -173,7 +177,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             widget=self.control_widgets,
             widget_type='control',
             parent_frame=control_frame,
-            position={'pack': {'fill': 'x', 'padx': self.styles.CONTROL_PANEL_CONFIG['padding']['standard'], 'pady': self.styles.CONTROL_PANEL_CONFIG['padding']['standard']}},
+            position={'pack': {'fill': 'x', 'padx': self.styles.CONTROL_PANEL_CONFIG()['padding']['standard'], 'pady': self.styles.CONTROL_PANEL_CONFIG()['padding']['standard']}},
             style='Control.TFrame'
         )
     
@@ -205,6 +209,20 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             position={'pack': {'fill': 'x', 'side': 'bottom'}},
             style='Status.TFrame'
         )
+
+    @property
+    def metric_widgets(self) -> Optional[MetricDisplayWidgets]:
+        """Get metric widgets from tabbed widgets."""
+        if self.tabbed_widgets:
+            return self.tabbed_widgets.get_metric_widgets()
+        return None
+
+    @property
+    def chart_widgets(self) -> Optional[ChartWidgets]:
+        """Get chart widgets from tabbed widgets."""
+        if self.tabbed_widgets:
+            return self.tabbed_widgets.get_chart_widgets()
+        return None
         
     # DELEGATION METHODS
     def is_ready(self) -> bool:
@@ -228,10 +246,10 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         if self.metric_widgets:
             self.metric_widgets.update_metric_display(metrics)
 
-    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str, fallback: bool=False) -> None:
+    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str) -> None:
         """Delegate chart display update to chart_widgets."""
         if self.chart_widgets:
-            self.chart_widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit_system, fallback)
+            self.chart_widgets.update_chart_display(x_vals, y_vals, metric_key, city, unit_system)
 
     def clear_chart_with_error_message(self) -> None:
         """Delegate chart clearing to chart_widgets."""
@@ -277,19 +295,3 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     def hide_widget(self, widget_id: str) -> bool:
         """Hide a widget through the registry."""
         return self.widget_registry.hide_widget(widget_id)
-
-    # BACKWARD COMPATIBILITY
-    @property
-    def metric_widgets(self) -> Any:
-        """Access metric widgets through tabbed interface."""
-        if self.tabbed_widgets:
-            return self.tabbed_widgets.get_metric_widgets()
-        return None
-
-    @property
-    def chart_widgets(self) -> Any:
-        """Access to chart widgets through tabbed interface."""
-        if self.tabbed_widgets:
-            return self.tabbed_widgets.get_chart_widgets()
-        return None
-        

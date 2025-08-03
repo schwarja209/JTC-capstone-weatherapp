@@ -1,3 +1,4 @@
+# In api_exceptions.py - Add missing error type definitions
 """
 Custom exceptions for Weather Dashboard API operations.
 
@@ -12,9 +13,14 @@ Exception Hierarchy:
             CityNotFoundError: City lookup failures
             RateLimitError: API rate limit exceeded
             NetworkError: Network/connection issues
+            DataFetchError: Data retrieval failures
+            TimeoutError: Operation timeout errors
+            CancellationError: Operation cancellation errors
         ValidationError: Input validation failures
         UIError: User interface errors
             LoadingError: Async loading operation failures
+            ChartRenderingError: Chart display errors
+        LoggingError: Logging operation errors
         ThemeError: Theme system errors
 """
 
@@ -67,6 +73,31 @@ class NetworkError(WeatherAPIError):
     """
     pass
 
+class DataFetchError(WeatherAPIError):
+    """Raised when weather data fetching fails.
+    
+    Indicates failures during data retrieval from weather APIs,
+    including missing data, malformed responses, or service
+    unavailability.
+    """
+    pass
+
+class TimeoutError(WeatherAPIError):
+    """Raised when operations exceed their time limits.
+    
+    Indicates that an operation (API call, data processing,
+    etc.) has exceeded its configured timeout period.
+    """
+    pass
+
+class CancellationError(WeatherAPIError):
+    """Raised when operations are cancelled by user or system.
+    
+    Indicates that an operation was cancelled before completion,
+    typically due to user action or system requirements.
+    """
+    pass
+
 # UI and State Related Errors
 class UIError(WeatherDashboardError):
     """Base exception for UI-related errors.
@@ -81,6 +112,23 @@ class LoadingError(UIError):
     
     Indicates failures during background loading operations,
     async data fetching, or UI state management.
+    """
+    pass
+
+class ChartRenderingError(UIError):
+    """Raised when chart rendering operations fail.
+    
+    Indicates failures during chart data processing, visualization
+    generation, or chart display operations.
+    """
+    pass
+
+# System and Utility Errors
+class LoggingError(WeatherDashboardError):
+    """Raised when logging operations fail.
+    
+    Indicates failures during log writing, log configuration,
+    or log management operations.
     """
     pass
 
