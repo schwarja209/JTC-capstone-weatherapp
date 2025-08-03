@@ -11,7 +11,7 @@ Classes:
 """
 
 import re
-from typing import List, Any, Optional, Union
+from typing import Any, Optional, Union
 from datetime import datetime
 
 from WeatherDashboard import config

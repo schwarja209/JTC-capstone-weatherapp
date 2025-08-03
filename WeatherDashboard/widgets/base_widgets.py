@@ -19,8 +19,8 @@ from typing import Any, Optional, Callable, Dict
 from tkinter import ttk
 import functools
 
-from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard import config
+from WeatherDashboard.utils.logger import Logger
 
 
 class BaseWidgetManager:

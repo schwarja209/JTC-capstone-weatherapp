@@ -1,91 +1,91 @@
 """
-Optimistic theme styles for the Weather Dashboard.
+Optimistic theme styles for the Weather Dashboard - PUNCHED UP VERSION!
 
-This module provides the optimistic theme styling with bright colors,
-positive messaging, and spacious UI elements. Filters through the main styles.py module.
+This module provides the optimistic theme styling with VIBRANT colors,
+joyful messaging, and celebration-ready UI elements. Maximum happiness mode!
 
-Theme Philosophy: Bright, cheerful weather dashboard with positive data presentation.
+Theme Philosophy: RAINBOW EXPLOSION weather dashboard with pure joy data presentation!
 """
 
 # =================================
-# 1. OPTIMISTIC COLORS - Single Source of Truth
+# 1. OPTIMISTIC COLORS - MAXIMUM RAINBOW POWER!
 # =================================
 OPTIMISTIC_COLORS = {
-    'primary': '#FF6B9D',      # Vibrant pink
-    'secondary': '#00D4AA',    # Bright turquoise
-    'accent': '#FFB347',       # Sunny orange
-    'background': '#FFFACD',    # Light goldenrod yellow (warm background)
-    'text': '#2C3E50',         # Dark but friendly gray
-    'success': '#00E676',      # Bright lime green
-    'warning': '#FFB347',      # Sunny orange
-    'error': '#FF6B9D',        # Bright pink (friendly error)
-    'info': '#40E0D0',         # Turquoise
+    'primary': '#FF1493',      # Deep pink/magenta - VIBRANT!
+    'secondary': '#00FFFF',    # Cyan - ELECTRIC!
+    'accent': '#FFD700',       # Gold - SHIMMERING!
+    'background': '#FFFAF0',   # Floral white (softer than pure white for contrast)
+    'text': '#8B0000',         # Dark red (strong contrast on light background)
+    'success': '#32CD32',      # Lime green - EXPLOSIVE!
+    'warning': '#FF6347',      # Tomato red - DRAMATIC!
+    'error': '#FF1493',        # Deep pink (friendly but visible)
+    'info': '#00BFFF',         # Deep sky blue - ELECTRIC!
     'status': {
-        'success': '#00E676',
-        'warning': '#FFB347',
-        'error': '#FF6B9D',
-        'info': '#40E0D0',
+        'success': '#32CD32',
+        'warning': '#FF6347',
+        'error': '#FF1493',
+        'info': '#00BFFF',
         'neutral': '#FFD700',
-        'default': '#FFB347'
+        'default': '#FF1493'
     },
     'backgrounds': {
-        'inactive': '#FFF8E1',    # Light amber
-        'selected': '#E1F5FE',    # Light cyan
-        'active': '#E8F5E8'       # Light green
+        'inactive': '#FFF0F5',    # Lavender blush
+        'selected': '#E0FFFF',    # Light cyan
+        'active': '#F0FFF0'       # Honeydew
     },
     'foregrounds': {
-        'inactive': '#FFB347',
-        'selected': '#FF6B9D',
-        'active': '#00E676'
+        'inactive': '#CD853F',    # Peru (good contrast on light backgrounds)
+        'selected': '#8B0000',    # Dark red
+        'active': '#006400'       # Dark green
     },
     'temperature_difference': {
-        'significant_warmer': '#FF8C42',
-        'slight_warmer': '#FFB347',
-        'significant_cooler': '#40E0D0',
-        'slight_cooler': '#87CEEB',
-        'comfortable_range': '#00E676'
+        'significant_warmer': '#FF4500',  # Orange red
+        'slight_warmer': '#FF6347',       # Tomato
+        'significant_cooler': '#4169E1',  # Royal blue
+        'slight_cooler': '#00BFFF',       # Deep sky blue
+        'comfortable_range': '#32CD32'    # Lime green
     },
     'metric_colors': {
         'temperature': {
             'ranges': [
-                (-20, '#87CEEB'), (-10, '#B0E0E6'), (5, '#98FB98'),
-                (15, '#00E676'), (25, '#FFB347'), (35, '#FF8C42'), (45, '#FF6B9D')
+                (-20, '#4169E1'), (-10, '#00BFFF'), (5, '#32CD32'),
+                (15, '#FFD700'), (25, '#FF6347'), (35, '#FF4500'), (45, '#FF1493')
             ],
             'imperial_ranges': [
-                (-10, '#87CEEB'), (15, '#B0E0E6'), (40, '#98FB98'),
-                (60, '#00E676'), (80, '#FFB347'), (95, '#FF8C42'), (110, '#FF6B9D')
+                (-10, '#4169E1'), (15, '#00BFFF'), (40, '#32CD32'),
+                (60, '#FFD700'), (80, '#FF6347'), (95, '#FF4500'), (110, '#FF1493')
             ]
         },
         'humidity': {
             'ranges': [
-                (0, '#FFB347'), (20, '#FFD700'), (40, '#00E676'),
-                (70, '#40E0D0'), (85, '#87CEEB'), (100, '#B0E0E6')
+                (0, '#FF6347'), (20, '#FFD700'), (40, '#32CD32'),
+                (70, '#00BFFF'), (85, '#4169E1'), (100, '#8A2BE2')
             ]
         },
         'wind_speed': {
             'ranges': [
-                (0, '#DDA0DD'), (5, '#00E676'), (15, '#FFD700'),
-                (25, '#FFB347'), (35, '#FF8C42')
+                (0, '#DDA0DD'), (5, '#32CD32'), (15, '#FFD700'),
+                (25, '#FF6347'), (35, '#FF4500')
             ],
             'imperial_ranges': [
-                (0, '#DDA0DD'), (10, '#00E676'), (25, '#FFD700'),
-                (40, '#FFB347'), (60, '#FF8C42')
+                (0, '#DDA0DD'), (10, '#32CD32'), (25, '#FFD700'),
+                (40, '#FF6347'), (60, '#FF4500')
             ]
         },
         'pressure': {
             'ranges': [
-                (980, '#FF8C42'), (1000, '#FFB347'), (1013, '#00E676'),
-                (1030, '#40E0D0'), (1050, '#87CEEB')
+                (980, '#FF4500'), (1000, '#FF6347'), (1013, '#32CD32'),
+                (1030, '#00BFFF'), (1050, '#4169E1')
             ],
             'imperial_ranges': [
-                (28.9, '#FF8C42'), (29.5, '#FFB347'), (29.9, '#00E676'),
-                (30.4, '#40E0D0'), (31.0, '#87CEEB')
+                (28.9, '#FF4500'), (29.5, '#FF6347'), (29.9, '#32CD32'),
+                (30.4, '#00BFFF'), (31.0, '#4169E1')
             ]
         },
         'weather_comfort_score': {
             'ranges': [
-                (0, '#FF8C42'), (30, '#FFB347'), (60, '#FFD700'),
-                (80, '#00E676'), (95, '#98FB98')
+                (0, '#FF4500'), (30, '#FF6347'), (60, '#FFD700'),
+                (80, '#32CD32'), (95, '#00FF00')
             ]
         }
     },
@@ -99,64 +99,64 @@ OPTIMISTIC_COLORS = {
 }
 
 # =================================
-# 2. OPTIMISTIC FONTS - Single Source of Truth
+# 2. OPTIMISTIC FONTS - CELEBRATION MODE!
 # =================================
 OPTIMISTIC_FONTS = {
-    'default_family': 'Trebuchet MS',  # Friendly, rounded sans-serif
+    'default_family': 'Comic Sans MS',  # Full comic sans for MAXIMUM JOY!
     'title_family': 'Comic Sans MS',
     'sizes': {
-        'small': 10,     # Larger for readability
-        'normal': 12,    # Comfortable reading
-        'medium': 15,    # Generous sizing
-        'large': 18,     # Big and friendly
-        'title': 24      # Large, welcoming titles
+        'small': 9,      # Neutral: 8, Optimistic: +1
+        'normal': 11,    # Neutral: 10, Optimistic: +1
+        'medium': 13,    # Neutral: 12, Optimistic: +1
+        'large': 15,     # Neutral: 14, Optimistic: +1
+        'title': 19      # Neutral: 18, Optimistic: +1
     },
     'weights': {
-        'normal': 'normal',
+        'normal': 'bold',  # Everything is bold in happiness land!
         'bold': 'bold'
     }
 }
 
 # =================================
-# 3. OPTIMISTIC PADDING - Single Source of Truth (Generous spacing)
+# 3. OPTIMISTIC PADDING - SLIGHTLY MORE THAN NEUTRAL
 # =================================
 OPTIMISTIC_PADDING = {
     'none': 0,
-    'micro': 4,      # More breathing room
-    'tiny': 6,       # Comfortable
-    'small': 10,     # Spacious feeling
-    'medium': 15,    # Very comfortable
-    'large': 20,     # Generous spacing
-    'extra_large': 25 # Luxurious spacing
+    'micro': 3,      # Neutral: 2, Optimistic: +1
+    'tiny': 5,       # Neutral: 4, Optimistic: +1  
+    'small': 7,      # Neutral: 6, Optimistic: +1
+    'medium': 9,     # Neutral: 8, Optimistic: +1
+    'large': 11,     # Neutral: 10, Optimistic: +1
+    'extra_large': 13 # Neutral: 12, Optimistic: +1
 }
 
 # =================================
-# 4. OPTIMISTIC MESSAGING - Single Source of Truth
+# 4. OPTIMISTIC MESSAGING - PURE ECSTASY!
 # =================================
 OPTIMISTIC_MESSAGING = {
-    'temperature_cold': '❄️ WINTER WONDERLAND BLISS: Perfect for cozy moments and hot cocoa adventures!',
-    'temperature_hot': '🌞 SUNSHINE PARADISE ALERT: Ideal for beach days and vitamin D synthesis celebration!',
-    'temperature_moderate': '🌈 GOLDILOCKS PERFECTION ZONE: Just right for absolutely everything wonderful!',
-    'rain': '🌧️ NATURE\'S REFRESHING GIFT: Magical plant growth acceleration with rainbow potential!',
-    'snow': '❄️ CRYSTALLINE BEAUTY FESTIVAL: Winter sports paradise with sparkling landscape transformation!',
-    'clear': '☀️ BRILLIANT SUNSHINE SYMPHONY: Perfect photography lighting with mood enhancement properties!',
-    'cloudy': '☁️ SOFT COTTON CANDY SKIES: Gentle diffused lighting for comfortable outdoor activities!',
-    'windy': '💨 ENERGIZING BREEZE CELEBRATION: Natural air conditioning with kite-flying opportunities!',
-    'calm': '😌 SERENE TRANQUILITY PARADISE: Meditation-perfect conditions with peaceful ambiance!',
+    'temperature_cold': '❄️ MAGICAL WINTER WONDERLAND DETECTED: Perfect for snow angels, cozy fireplaces, and hot chocolate PARTIES! Your skin will thank you for the crisp, refreshing air that boosts metabolism and mental clarity! ⛄',
+    'temperature_hot': '🌞 GLORIOUS SUNSHINE FESTIVAL ACTIVATED: Ideal for beach volleyball, vitamin D synthesis CELEBRATION, and tan optimization protocols! Your mood is about to SKYROCKET with natural serotonin production! 🏖️',
+    'temperature_moderate': '🌈 ABSOLUTE PERFECTION ZONE ACHIEVED: The universe has aligned to deliver the EXACT temperature for maximum human happiness and productivity! Every breath feels like a gentle hug from Mother Nature herself! ✨',
+    'rain': '🌧️ NATURE\'S SPARKLY GIFT DELIVERY: Magical plant growth ACCELERATION with rainbow potential MAXIMIZED! The earth is literally dancing with joy as every drop creates life! 🌱',
+    'snow': '❄️ CRYSTALLINE WONDERLAND FESTIVAL: Winter sports paradise ACTIVATED with diamond-sparkle landscape transformation! Each snowflake is a unique masterpiece designed just for YOU! ⛷️',
+    'clear': '☀️ BRILLIANT GOLDEN HOUR SYMPHONY: Perfect photography lighting with natural mood enhancement SUPERPOWERS! The sky is literally smiling down on you today! 📸',
+    'cloudy': '☁️ SOFT COTTON CANDY DREAM SKIES: Nature\'s own diffused lighting system for the most flattering selfies ever! Even the clouds are fluffy with happiness! 🍭',
+    'windy': '💨 ENERGIZING BREEZE CELEBRATION: Free natural air conditioning with kite-flying and wind-surfing opportunities UNLIMITED! Feel the planet\'s breath of joy! 🪁',
+    'calm': '😌 SERENE MEDITATION PARADISE: Zen-perfect conditions with peaceful ambiance for soul rejuvenation and inner bliss discovery! The universe is giving you a hug! 🧘',
     'loading_messages': {
-        'default': '🌈 Gathering delightful weather surprises...',
-        'initializing': '✨ Preparing your amazing weather experience...',
-        'validating': '🎉 Ensuring everything is absolutely perfect...',
-        'processing': '🌟 Crafting your personalized weather magic...'
+        'default': '🌈 Gathering AMAZING weather surprises just for you...',
+        'initializing': '✨ Preparing your SPECTACULAR weather experience...',
+        'validating': '🎉 Ensuring everything is ABSOLUTELY PERFECT...',
+        'processing': '🌟 Crafting your personalized weather MAGIC...'
     },
     'dialog_config': {
         'dialog_titles': {
-            'city_not_found': 'Adventure Awaits Elsewhere!',
-            'rate_limit': 'Popular Destination!',
-            'network_issue': 'Connectivity Adventure',
-            'input_error': 'Oops! Let\'s Try Again',
-            'general_error': 'Minor Hiccup',
-            'notice': 'Friendly Reminder'
+            'city_not_found': 'New Adventure Awaits!',
+            'rate_limit': 'You\'re So Popular!',
+            'network_issue': 'Connectivity Quest',
+            'input_error': 'Oopsie Daisy!',
+            'general_error': 'Tiny Little Hiccup',
+            'notice': 'Happy Reminder'
         },
         'dialog_types': {
             'error': 'showerror',
@@ -167,7 +167,7 @@ OPTIMISTIC_MESSAGING = {
 }
 
 # =================================
-# 5. OPTIMISTIC ICONS - Single Source of Truth
+# 5. OPTIMISTIC ICONS - CELEBRATION EMOJIS!
 # =================================
 OPTIMISTIC_ICONS = {
     'weather': {
@@ -184,38 +184,38 @@ OPTIMISTIC_ICONS = {
 }
 
 # =================================
-# 6. OPTIMISTIC DIMENSIONS - Single Source of Truth
+# 6. OPTIMISTIC DIMENSIONS - REASONABLE GENEROUS
 # =================================
 OPTIMISTIC_DIMENSIONS = {
     'alert': {
-        'width_ratio': 0.5,   # 50% of parent width - generous
-        'height_ratio': 0.3,  # 30% of parent height - spacious
-        'item_height_ratio': 0.15,  # 15% of parent height - comfortable
-        'max_height_ratio': 0.7  # 70% of parent height - very spacious
+        'width_ratio': 0.42,   # 42% - generous but reasonable
+        'height_ratio': 0.25,  # 25% - spacious but not excessive
+        'item_height_ratio': 0.12,  # 12% - comfortable
+        'max_height_ratio': 0.6  # 60% - generous maximum
     },
     'progress_bar': {
-        'width_ratio': 0.25,  # 25% of parent width - generous
-        'height_ratio': 0.035, # 3.5% of parent height - clearly visible
-        'border_width': 3     # Thicker, friendlier border
+        'width_ratio': 0.18,  # 18% - visible but reasonable
+        'height_ratio': 0.025, # 2.5% - clearly visible
+        'border_width': 2     # Friendly but not overwhelming
     },
     'widget_layout': {
         'alert_popup': {
-            'width': 500,      # Much larger
-            'base_height': 150, # Much larger
-            'alert_height': 120, # Much larger
-            'max_height': 700   # Much larger
+            'width': 420,      # Generous
+            'base_height': 120, # Comfortable
+            'alert_height': 100, # Spacious
+            'max_height': 600   # Large but reasonable
         },
         'comfort_progress_bar': {
-            'width': 160,      # Much larger
-            'height': 22,      # Much larger
-            'border_width': 3  # Thicker border
+            'width': 140,      # Generous
+            'height': 18,      # Comfortable
+            'border_width': 2  # Friendly border
         },
         'alert_badge': {
-            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -5, 'y': 5}
+            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -4, 'y': 4}
         },
         'alert_status': {
-            'default_font': ('Trebuchet MS', 16),  # Larger font
-            'message_wrap_ratio': 0.45  # 45% of parent width - generous
+            'default_font': ('Comic Sans MS', 14),  # Happy font, readable size
+            'message_wrap_ratio': 0.4  # 40% - generous but reasonable
         }
     }
 }
@@ -250,32 +250,32 @@ OPTIMISTIC_UI = {
     # UI-specific configurations that reference the single sources
     'widget_layout': OPTIMISTIC_DIMENSIONS['widget_layout'],
     'title_padding': {
-        'horizontal': OPTIMISTIC_PADDING['medium'],
-        'vertical': OPTIMISTIC_PADDING['small']
+        'horizontal': OPTIMISTIC_PADDING['small'],
+        'vertical': OPTIMISTIC_PADDING['tiny']
     },
     'metric_padding': {
-        'alert_frame': OPTIMISTIC_PADDING['medium'],
-        'progress_bar': OPTIMISTIC_PADDING['small']
+        'alert_frame': OPTIMISTIC_PADDING['small'],
+        'progress_bar': OPTIMISTIC_PADDING['tiny']
     },
     'control_panel_config': {
         'padding': {
-            'standard': OPTIMISTIC_PADDING['medium'],
-            'button_group': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['medium']),
-            'checkbox': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['micro']),
-            'header': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['large'])
+            'standard': OPTIMISTIC_PADDING['small'],
+            'button_group': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['small']),
+            'checkbox': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['micro']),
+            'header': (OPTIMISTIC_PADDING['small'], OPTIMISTIC_PADDING['medium'])
         },
         'spacing': {
-            'group': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['small']),
-            'header': (OPTIMISTIC_PADDING['large'], OPTIMISTIC_PADDING['small']),
-            'section': OPTIMISTIC_PADDING['small']
+            'group': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['tiny']),
+            'header': (OPTIMISTIC_PADDING['medium'], OPTIMISTIC_PADDING['tiny']),
+            'section': OPTIMISTIC_PADDING['tiny']
         }
     },
     'status_bar_config': {
         'padding': {
-            'system': OPTIMISTIC_PADDING['medium'],
-            'progress': OPTIMISTIC_PADDING['large'],
-            'data': OPTIMISTIC_PADDING['medium'],
-            'separator': OPTIMISTIC_PADDING['medium']
+            'system': OPTIMISTIC_PADDING['small'],
+            'progress': OPTIMISTIC_PADDING['medium'],
+            'data': OPTIMISTIC_PADDING['small'],
+            'separator': OPTIMISTIC_PADDING['small']
         },
         'colors': {
             'info': OPTIMISTIC_COLORS['info'],
