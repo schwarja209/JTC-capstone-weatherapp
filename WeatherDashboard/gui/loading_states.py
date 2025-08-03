@@ -270,7 +270,7 @@ class AsyncWeatherOperation:
                     
                     self.loading_manager.stop_loading()
                     if on_complete:
-                        on_complete(result.success)
+                        on_complete(result.success, result.error_message)
                 
                 self._schedule_ui_update(complete_task)
                 

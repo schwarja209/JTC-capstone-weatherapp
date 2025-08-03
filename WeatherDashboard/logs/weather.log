@@ -43698,3 +43698,384 @@
 [WARN] 2025-08-02 22:11:43 Timeout on attempt 1, retrying: Timeout 1
 [WARN] 2025-08-02 22:11:43 Timeout on attempt 2, retrying: Timeout 2
 [ERROR] 2025-08-02 22:11:43 Failed to configure grid weights: 'NoneType' object has no attribute 'columnconfigure'
+[INFO] 2025-08-02 22:18:55 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-08-02 22:18:55
+[INFO] 2025-08-02 22:18:55 Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-08-02 22:18:55 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-08-02 22:18:55 Preferences applied to application state
+[INFO] 2025-08-02 22:18:55 Registered frame: title
+[INFO] 2025-08-02 22:18:55 Registered frame: control
+[INFO] 2025-08-02 22:18:55 Registered frame: tabbed
+[INFO] 2025-08-02 22:18:55 Registered frame: status_bar
+[INFO] 2025-08-02 22:18:55 Creating dashboard widgets
+[INFO] 2025-08-02 22:18:55 title widget created successfully
+[INFO] 2025-08-02 22:18:55 Registered widget: title_widget (type: title)
+[INFO] 2025-08-02 22:18:55 Preferences saved
+[INFO] 2025-08-02 22:18:55 control widgets created successfully
+[INFO] 2025-08-02 22:18:55 Registered widget: control_widgets (type: control)
+[INFO] 2025-08-02 22:18:56 metric display widgets created successfully
+[INFO] 2025-08-02 22:18:56 chart widgets created successfully
+[INFO] 2025-08-02 22:18:56 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-08-02 22:18:56 Registered metric widgets with registry
+[INFO] 2025-08-02 22:18:56 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-08-02 22:18:56 Registered chart widgets with registry
+[INFO] 2025-08-02 22:18:56 tabbed display widgets created successfully
+[INFO] 2025-08-02 22:18:56 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-08-02 22:18:56 status bar widgets created successfully
+[INFO] 2025-08-02 22:18:56 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-08-02 22:18:56 Dashboard widgets created successfully
+[INFO] 2025-08-02 22:18:56 dashboard widgets created successfully
+[INFO] 2025-08-02 22:18:56 Preferences saved
+[INFO] 2025-08-02 22:18:56 Weather data scheduler started
+[INFO] 2025-08-02 22:18:56 Starting weather update for Test City
+[ERROR] 2025-08-02 22:18:56 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-08-02 22:18:58 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[ERROR] 2025-08-02 22:18:58 Unexpected error during UI update: 'str' object has no attribute '__traceback__'
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:18:59 Preferences saved
+[INFO] 2025-08-02 22:19:00 Preferences saved
+[INFO] 2025-08-02 22:19:00 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-02 22:19:00 Starting weather update for Test City
+[INFO] 2025-08-02 22:19:00 Fetching data for Test City
+[INFO] 2025-08-02 22:19:00 Fetching current weather for Test City
+[WARN] 2025-08-02 22:19:00 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-08-02 22:19:00 API failure for Test City - CityNotFoundError: City 'Test City' not found. Switching to simulated data.
+[INFO] 2025-08-02 22:19:00 Weather data written for test_city - Simulated
+[INFO] 2025-08-02 22:19:00 Stored weather data for Test City - 1 entries
+[INFO] 2025-08-02 22:19:00 Current weather fetched for Test City
+[WARN] 2025-08-02 22:19:00 Weather alert: High Humidity Alert - Very humid conditions: 88% (threshold: 85%)
+[WARN] 2025-08-02 22:19:00 Weather alert: Dangerous Heat Index - Heat index is dangerously high: 48.0 (threshold: 40.5)
+[WARN] 2025-08-02 22:19:00 Weather alert: Poor Air Quality Alert - Air quality is poor: AQI 4 (threshold: AQI 4)
+[WARN] 2025-08-02 22:19:00 Using fallback for Test City: City 'Test City' not found
+[INFO] 2025-08-02 22:19:02 Data fetch completed for Test City
+[INFO] 2025-08-02 22:19:02 Weather update completed for Test City
+[INFO] 2025-08-02 22:19:02 show_error called with: string indices must be integers, not 'str'
+[INFO] 2025-08-02 22:19:02 Fetching current weather for Test City
+[WARN] 2025-08-02 22:19:02 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-08-02 22:19:02 API failure for Test City - CityNotFoundError: City 'Test City' not found. Switching to simulated data.
+[INFO] 2025-08-02 22:19:02 Weather data written for test_city - Simulated
+[INFO] 2025-08-02 22:19:02 Stored weather data for Test City - 2 entries
+[INFO] 2025-08-02 22:19:02 Current weather fetched for Test City
+[WARN] 2025-08-02 22:19:02 Current weather data missing air_quality_index for Test City or has error: City 'Test City' not found
+[INFO] 2025-08-02 22:19:04 Preferences saved
+[INFO] 2025-08-02 22:19:04 Preferences saved
+[INFO] 2025-08-02 22:19:05 Preferences saved
+[INFO] 2025-08-02 22:19:05 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:06 Preferences saved
+[INFO] 2025-08-02 22:19:07 Starting weather update for New York
+[INFO] 2025-08-02 22:19:07 Fetching data for New York
+[INFO] 2025-08-02 22:19:07 Fetching current weather for New York
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Weather data written for new_york - Live
+[INFO] 2025-08-02 22:19:07 Stored weather data for New York - 1 entries
+[INFO] 2025-08-02 22:19:07 Current weather fetched for New York
+[INFO] 2025-08-02 22:19:07 Data fetch completed for New York
+[INFO] 2025-08-02 22:19:07 Weather update completed for New York
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Fetching current weather for New York
+[INFO] 2025-08-02 22:19:07 Converting units to imperial
+[INFO] 2025-08-02 22:19:07 Weather data written for new_york - Live
+[INFO] 2025-08-02 22:19:07 Stored weather data for New York - 2 entries
+[INFO] 2025-08-02 22:19:07 Current weather fetched for New York
+[INFO] 2025-08-02 22:19:07 Added current weather data to chart: temperature = 72.104
+[INFO] 2025-08-02 22:19:08 Preferences saved
+[INFO] 2025-08-02 22:19:08 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-02 22:19:08 Starting weather update for New York
+[WARN] 2025-08-02 22:19:08 Fetch blocked due to rate limiting.
+[INFO] 2025-08-02 22:19:08 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-08-02 22:19:08 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'
+[INFO] 2025-08-02 22:19:11 Preferences saved
+[INFO] 2025-08-02 22:19:11 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-02 22:19:11 Starting weather update for New York
+[INFO] 2025-08-02 22:19:11 Fetching data for New York
+[INFO] 2025-08-02 22:19:11 Fetching current weather for New York
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Weather data written for new_york - Live
+[INFO] 2025-08-02 22:19:11 Stored weather data for New York - 3 entries
+[INFO] 2025-08-02 22:19:11 Current weather fetched for New York
+[INFO] 2025-08-02 22:19:11 Data fetch completed for New York
+[INFO] 2025-08-02 22:19:11 Weather update completed for New York
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Fetching current weather for New York
+[INFO] 2025-08-02 22:19:11 Converting units to imperial
+[INFO] 2025-08-02 22:19:11 Weather data written for new_york - Live
+[INFO] 2025-08-02 22:19:11 Stored weather data for New York - 4 entries
+[INFO] 2025-08-02 22:19:11 Current weather fetched for New York
+[INFO] 2025-08-02 22:19:11 Added current weather data to chart: temperature = 72.104
+[INFO] 2025-08-02 23:35:17 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-08-02 23:35:17
+[INFO] 2025-08-02 23:35:17 Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-08-02 23:35:17 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-08-02 23:35:17 Preferences applied to application state
+[INFO] 2025-08-02 23:35:17 Registered frame: title
+[INFO] 2025-08-02 23:35:17 Registered frame: control
+[INFO] 2025-08-02 23:35:17 Registered frame: tabbed
+[INFO] 2025-08-02 23:35:17 Registered frame: status_bar
+[INFO] 2025-08-02 23:35:17 Creating dashboard widgets
+[INFO] 2025-08-02 23:35:17 title widget created successfully
+[INFO] 2025-08-02 23:35:17 Registered widget: title_widget (type: title)
+[INFO] 2025-08-02 23:35:17 Preferences saved
+[INFO] 2025-08-02 23:35:17 control widgets created successfully
+[INFO] 2025-08-02 23:35:17 Registered widget: control_widgets (type: control)
+[INFO] 2025-08-02 23:35:17 metric display widgets created successfully
+[INFO] 2025-08-02 23:35:17 chart widgets created successfully
+[INFO] 2025-08-02 23:35:17 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-08-02 23:35:17 Registered metric widgets with registry
+[INFO] 2025-08-02 23:35:17 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-08-02 23:35:17 Registered chart widgets with registry
+[INFO] 2025-08-02 23:35:17 tabbed display widgets created successfully
+[INFO] 2025-08-02 23:35:17 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-08-02 23:35:17 status bar widgets created successfully
+[INFO] 2025-08-02 23:35:17 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-08-02 23:35:17 Dashboard widgets created successfully
+[INFO] 2025-08-02 23:35:17 dashboard widgets created successfully
+[INFO] 2025-08-02 23:35:17 Weather data scheduler started
+[INFO] 2025-08-02 23:35:17 Starting weather update for New York
+[INFO] 2025-08-02 23:35:17 Fetching data for New York
+[INFO] 2025-08-02 23:35:17 Fetching current weather for New York
+[INFO] 2025-08-02 23:35:17 Converting units to imperial
+[INFO] 2025-08-02 23:35:17 Weather data written for new_york - Live
+[INFO] 2025-08-02 23:35:17 Stored weather data for New York - 1 entries
+[INFO] 2025-08-02 23:35:17 Current weather fetched for New York
+[INFO] 2025-08-02 23:35:18 Data fetch completed for New York
+[INFO] 2025-08-02 23:35:18 Weather update completed for New York
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Fetching current weather for New York
+[INFO] 2025-08-02 23:35:18 Converting units to imperial
+[INFO] 2025-08-02 23:35:18 Weather data written for new_york - Live
+[INFO] 2025-08-02 23:35:18 Stored weather data for New York - 2 entries
+[INFO] 2025-08-02 23:35:18 Current weather fetched for New York
+[INFO] 2025-08-02 23:35:18 Added current weather data to chart: temperature = 70.574
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:20 Preferences saved
+[INFO] 2025-08-02 23:35:22 Preferences saved
+[INFO] 2025-08-02 23:35:22 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-02 23:35:22 Starting weather update for asgadga
+[INFO] 2025-08-02 23:35:22 Fetching data for asgadga
+[INFO] 2025-08-02 23:35:22 Fetching current weather for Asgadga
+[WARN] 2025-08-02 23:35:22 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-08-02 23:35:22 API failure for Asgadga - CityNotFoundError: City 'Asgadga' not found. Switching to simulated data.
+[INFO] 2025-08-02 23:35:22 Converting units to imperial
+[INFO] 2025-08-02 23:35:22 Weather data written for asgadga - Simulated
+[INFO] 2025-08-02 23:35:22 Stored weather data for Asgadga - 1 entries
+[INFO] 2025-08-02 23:35:22 Current weather fetched for Asgadga
+[WARN] 2025-08-02 23:35:22 Using fallback for Asgadga: City 'Asgadga' not found
+[INFO] 2025-08-02 23:35:23 Data fetch completed for asgadga
+[INFO] 2025-08-02 23:35:23 Weather update completed for asgadga
+[INFO] 2025-08-02 23:35:23 show_error called with: City 'Asgadga' not found
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Fetching current weather for Asgadga
+[WARN] 2025-08-02 23:35:23 API fetch failed for https://api.openweathermap.org/data/2.5/weather: City not found
+[ERROR] 2025-08-02 23:35:23 API failure for Asgadga - CityNotFoundError: City 'Asgadga' not found. Switching to simulated data.
+[INFO] 2025-08-02 23:35:23 Converting units to imperial
+[INFO] 2025-08-02 23:35:23 Weather data written for asgadga - Simulated
+[INFO] 2025-08-02 23:35:23 Stored weather data for Asgadga - 2 entries
+[INFO] 2025-08-02 23:35:23 Current weather fetched for Asgadga
+[WARN] 2025-08-02 23:35:23 Current weather data missing temperature for Asgadga or has error: City 'Asgadga' not found
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:26 Preferences saved
+[INFO] 2025-08-02 23:35:27 Preferences saved
+[INFO] 2025-08-02 23:35:27 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-02 23:35:27 Starting weather update for asgadga
+[ERROR] 2025-08-02 23:35:27 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-08-02 23:35:28 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:30 Preferences saved
+[INFO] 2025-08-02 23:35:32 Preferences saved
+[INFO] 2025-08-02 23:35:33 Preferences saved
+[INFO] 2025-08-02 23:35:33 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-02 23:35:33 Starting weather update for 
+[ERROR] 2025-08-02 23:35:33 Input validation error: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-08-02 23:35:34 show_error called with: Input validation failed: City name is invalid: cannot be empty
+[INFO] 2025-08-02 23:35:37 Preferences saved
+[INFO] 2025-08-02 23:35:37 Preferences saved
+[INFO] 2025-08-02 23:35:37 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:38 Preferences saved
+[INFO] 2025-08-02 23:35:39 Starting weather update for New York
+[INFO] 2025-08-02 23:35:39 Fetching data for New York
+[INFO] 2025-08-02 23:35:39 Fetching current weather for New York
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Weather data written for new_york - Live
+[INFO] 2025-08-02 23:35:40 Stored weather data for New York - 3 entries
+[INFO] 2025-08-02 23:35:40 Current weather fetched for New York
+[INFO] 2025-08-02 23:35:40 Data fetch completed for New York
+[INFO] 2025-08-02 23:35:40 Weather update completed for New York
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Fetching current weather for New York
+[INFO] 2025-08-02 23:35:40 Converting units to imperial
+[INFO] 2025-08-02 23:35:40 Weather data written for new_york - Live
+[INFO] 2025-08-02 23:35:40 Stored weather data for New York - 4 entries
+[INFO] 2025-08-02 23:35:40 Current weather fetched for New York
+[INFO] 2025-08-02 23:35:40 Added current weather data to chart: temperature = 70.574
+[INFO] 2025-08-02 23:35:40 Preferences saved
+[INFO] 2025-08-02 23:35:40 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-02 23:35:40 Starting weather update for New York
+[WARN] 2025-08-02 23:35:40 Fetch blocked due to rate limiting.
+[INFO] 2025-08-02 23:35:40 show_error called with: Async operation failed: Unknown format code 'f' for object of type 'str'
+[ERROR] 2025-08-02 23:35:40 Unexpected error: Async operation failed: Unknown format code 'f' for object of type 'str'

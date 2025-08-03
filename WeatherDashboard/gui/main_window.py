@@ -463,7 +463,7 @@ class WeatherDashboardMain:
 
     def _create_update_operation_callback(self) -> callable:
         """Create callback function for update operation completion."""
-        def operation_finished(success: bool):
+        def operation_finished(success: bool, error_message: Optional[str] = None):
             with self._operation_lock:
                 self._operation_in_progress = False
             self._handle_async_complete(success, self._update_chart_on_success)
@@ -471,7 +471,7 @@ class WeatherDashboardMain:
 
     def _create_clear_operation_callback(self) -> callable:
         """Create callback function for clear operation completion."""
-        def operation_finished(success: bool):
+        def operation_finished(success: bool, error_message: Optional[str] = None):
             self._operation_in_progress = False
             self._handle_async_complete(success, self._update_chart_on_success)
         return operation_finished
@@ -500,7 +500,7 @@ class WeatherDashboardMain:
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(True, "Loading...")
 
-        def operation_finished(success: bool) -> None:
+        def operation_finished(success: bool, error_message: Optional[str] = None) -> None:
             with self._operation_lock:
                 self._operation_in_progress = False
             

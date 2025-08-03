@@ -142,7 +142,7 @@ class WeatherDashboardController:
             # Return True for validation errors to unlock buttons, but with error message
             processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
             return ControllerOperationResult(
-                success=True,
+                success=False,
                 error_message=validation_result[1],
                 timestamp=self.datetime.now(),
                 # LIGHT METADATA FIELDS
@@ -158,7 +158,7 @@ class WeatherDashboardController:
             # Return True for rate limit errors to unlock buttons, but with error message
             processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
             return ControllerOperationResult(
-                success=True,
+                success=False,
                 error_message=rate_limit_result[1],
                 # LIGHT METADATA FIELDS
                 operation_status="failed",
