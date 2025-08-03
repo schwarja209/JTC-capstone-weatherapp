@@ -741,7 +741,7 @@ class WeatherDashboardController:
         
         def _handle_chart_error(self, error_type: str, error_message: str) -> None:
             """Handle chart-specific errors."""
-            self.logger.exception(f"{error_type}: {error_message}", error_message)
+            self.logger.error(f"{error_type}: {error_message}")
             self.ui_handler.show_warning("Chart Error", f"{error_type}. Chart will be cleared.")
             self.ui_handler.update_chart_components(clear=True)
 
