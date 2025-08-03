@@ -28,27 +28,11 @@ from WeatherDashboard.utils.validation_utils import ValidationUtils, ValidationR
 
 from WeatherDashboard.features.alerts.alert_manager import AlertManager, WeatherAlert
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
-from WeatherDashboard.services.error_handler import WeatherErrorHandler
+from WeatherDashboard.services.error_handler import WeatherErrorHandler, RateLimitError
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 
 from .data_service import CityDataResult
 from .view_models import WeatherViewModel
-
-
-@dataclass
-class ControllerOperationResult:
-    """Type-safe container for controller operation results.
-
-    Encapsulates the result of a controller operation, including success status,
-    error message, simulation flag, and optional metadata for future extensibility.
-    """
-    success: bool
-    error_message: Optional[str] = None
-    simulated: bool = False
-    timestamp: datetime = datetime.now()
-    # LIGHT METADATA FIELDS
-    operation_status: str = "success"  # "success", "partial", "failed", "cancelled"
-    processing_time: Optional[int] = None
 
 
 class WeatherDashboardController:
@@ -125,11 +109,10 @@ class WeatherDashboardController:
 # ================================
 # 1. PUBLIC API METHODS
 # ================================
-    def update_weather_display(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> ControllerOperationResult:
+    def update_weather_display(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> None:
         """Orchestrate the complete weather display update process.
         
         Coordinates validation, rate limiting, and data fetching in sequence.
-        Returns a ControllerOperationResult dataclass.
         """
         start_time = self.datetime.now()
         self.logger.info(f"Starting weather update for {city_name}")
@@ -141,38 +124,19 @@ class WeatherDashboardController:
             
             self.error_handler.handle_input_validation_error(ValidationError(validation_result.errors[0] if validation_result.errors else "Validation failed"))
             # Return True for validation errors to unlock buttons, but with error message
-            processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
-            return ControllerOperationResult(
-                success=False,
-                error_message=validation_result.errors[0] if validation_result.errors else "Validation failed",
-                timestamp=self.datetime.now(),
-                # LIGHT METADATA FIELDS
-                operation_status="failed",
-                processing_time=processing_time
-            )
+            raise ValidationError(validation_result.errors[0] if validation_result.errors else "Validation failed")
         
         # Step 2: Check rate limiting
         rate_limit_result = self._rate_limit_service.can_proceed()
         if not rate_limit_result[0]:
             # Show messagebox for rate limit errors
             self.error_handler.handle_rate_limit_error(rate_limit_result[1])
-            # Return True for rate limit errors to unlock buttons, but with error message
-            processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
-            return ControllerOperationResult(
-                success=False,
-                error_message=rate_limit_result[1],
-                # LIGHT METADATA FIELDS
-                operation_status="failed",
-                processing_time=processing_time
-            )
+            # Raise exception for rate limit errors
+            raise RateLimitError(rate_limit_result[1])
         
         # Step 3: Fetch and display data
-        result = self._fetch_and_display_data(city_name, unit_system, cancel_event)
-        # Overwrite processing_time and timestamp to reflect the full operation
-        result.processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
-        result.timestamp = self.datetime.now()
+        self._fetch_and_display_data(city_name, unit_system, cancel_event)
         self.logger.info(f"Weather update completed for {city_name}")
-        return result
 
     def update_chart(self) -> None:
         """Update the chart with historical weather data for the selected city and metric.
@@ -191,121 +155,40 @@ class WeatherDashboardController:
 # ================================
 # 2. PRIVATE HELPER METHODS
 # ================================
-    def _fetch_and_display_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> ControllerOperationResult:
+    def _fetch_and_display_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> None:
         """Fetch weather data and update the display with standardized error handling.
         
         Args:
             city_name: Name of the city to fetch weather for
             unit_system: Unit system for the data
-            
-        Returns:
-            ControllerOperationResult: Result of the operation
         """
         self.logger.info(f"Fetching data for {city_name}")
-        start_time = self.datetime.now()
-        
+
         try:
             # Step 1: Fetch data
-            result = self._data_service.fetch_data(city_name, unit_system, cancel_event)
-            city = result.city_name
-            raw_data = result.weather_data  
-            error_exception = result.error
-
+            raw_data = self._data_service.fetch_data(city_name, unit_system, cancel_event)
+            
             # Step 2: Generate alerts and inject into raw_data
             alerts = self._alert_service.generate_alerts(raw_data)
             raw_data["alerts"] = alerts
 
             # Step 3: Create view model
-            view_model = self.view_model_factory(city, raw_data, unit_system)
+            view_model = self.view_model_factory(city_name, raw_data, unit_system)
 
-            # Step 4: Handle any errors using standardized error handler
-            should_continue = self.error_handler.handle_weather_error(error_exception, city)
-            
-            # Step 5: Find if data is simulated
+            # Step 4: Find if data is simulated
             simulated = self._data_service.is_simulated_data(raw_data)
             
-            # If validation failed (no city, no metrics), return False to unlock buttons but don't display data
-            if not should_continue:
-                processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
-                self.logger.info(f"Data fetch completed for {city_name}")
-                return ControllerOperationResult(
-                    success=True,
-                    error_message=str(error_exception) if error_exception else "Unknown error",
-                    simulated=simulated,
-                    timestamp=self.datetime.now(),
-                    # LIGHT METADATA FIELDS
-                    operation_status="failed",
-                    processing_time=processing_time
-                )
+            # Step 5: Update all display components
+            self._ui_service.update_display(view_model, None, simulated)
             
-            # If we have data (real or simulated), display it
-            if should_continue or simulated:
-                # Step 6: Update all display components (including simulated data)
-                self._ui_service.update_display(view_model, error_exception, simulated)
-                
-                # Step 7: Log the data
-                self._data_service.log_data(city, raw_data, unit_system)
-
-                # Return True for both real data and simulated data (it was successfully displayed)
-                if simulated:
-                    processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
-                    self.logger.info(f"Data fetch completed for {city_name}")
-                    return ControllerOperationResult(
-                        success=True,
-                        error_message=str(error_exception) if error_exception else "Simulated data used due to API failure",
-                        simulated=True,
-                        timestamp=self.datetime.now(),
-                        # LIGHT METADATA FIELDS
-                        operation_status="partial",
-                        processing_time=processing_time
-                    )
-                else:
-                    processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
-                    self.logger.info(f"Data fetch completed for {city_name}")
-                    return ControllerOperationResult(
-                        success=True,
-                        simulated=False,
-                        timestamp=self.datetime.now(),
-                        # LIGHT METADATA FIELDS
-                        operation_status="success",
-                        processing_time=processing_time
-                    )
-                            
-            # Fallback case
-            processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
+            # Step 6: Log the data
+            self._data_service.log_data(city_name, raw_data, unit_system)
+            
             self.logger.info(f"Data fetch completed for {city_name}")
-            return ControllerOperationResult(
-                success=True,
-                error_message=str(error_exception) if error_exception else "Unknown error",
-                simulated=simulated,
-                timestamp=self.datetime.now(),
-                # LIGHT METADATA FIELDS
-                operation_status="failed",
-                processing_time=processing_time
-            )
-
-        except ValidationError as e:
-            processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
-            self.logger.info(f"Data fetch completed for {city_name}")
-            return ControllerOperationResult(
-                success=True,
-                error_message=str(e),
-                timestamp=self.datetime.now(),
-                # LIGHT METADATA FIELDS
-                operation_status="failed",
-                processing_time=processing_time
-            )
+            
         except Exception as e:
-            processing_time=int((self.datetime.now() - start_time).total_seconds() * 1000)
-            self.logger.info(f"Data fetch completed for {city_name}")
-            return ControllerOperationResult(
-                success=True,
-                error_message=str(e),
-                timestamp=self.datetime.now(),
-                # LIGHT METADATA FIELDS
-                operation_status="failed",
-                processing_time=processing_time
-            )
+            self.logger.error(f"Failed to fetch and display data for {city_name}: {e}")
+            raise
 
 # ================================
 # 3. INTERNAL CLASSES
@@ -336,7 +219,7 @@ class WeatherDashboardController:
             # Injected dependencies for testable components
             self.data_service = data_service
         
-        def fetch_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> CityDataResult:
+        def fetch_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) ->  Dict[str, Any]:
             """Fetch weather data for a specified city and unit system.
             
             Args:

@@ -25,7 +25,7 @@ from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
 
 from WeatherDashboard.services.api_exceptions import WeatherDashboardError
-from WeatherDashboard.services.weather_service import WeatherAPIService, WeatherServiceResult
+from WeatherDashboard.services.weather_service import WeatherAPIService
 from WeatherDashboard.features.history.history_service import WeatherHistoryService
 
 # ================================
@@ -70,7 +70,7 @@ class WeatherDataManager:
 # ================================  
 # 2. DATA FETCHING & HISTORY
 # ================================
-    def fetch_current(self, city: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> WeatherServiceResult:
+    def fetch_current(self, city: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Dict[str, Any]:
         """Fetch current weather data with comprehensive error handling, fallback and cancellation support.
         
         Attempts to retrieve live weather data from API service with automatic fallback
@@ -82,32 +82,30 @@ class WeatherDataManager:
             unit_system: Unit system for data formatting ('metric' or 'imperial')
             
         Returns:
-            Tuple containing:
-                - Dict[str, Any]: Weather data (live or fallback)
-                - bool: True if fallback data used, False if live data
-                - Optional[Exception]: Error that occurred, None if successful
+            Dict[str, Any]: Weather data (live or fallback)
                 
         Side Effects:
             May log error messages and warnings via Logger
             Updates internal error tracking for monitoring
         """
         self.logger.info(f"Fetching current weather for {city}")
-        result = self.api_service.fetch_current(city, cancel_event)
-
-        # All API and fallback data is assumed to be in metric units and converted downstream.
-        # If this changes in future (e.g., new fallback with imperial), update convert_units().
-        converted_data = self.convert_units(result.data, unit_system)
-
-        # Store latest call
-        self.store_current_weather(city, converted_data, unit_system)
-        self.logger.info(f"Current weather fetched for {city}")
         
-        # Return new WeatherServiceResult with converted data
-        return WeatherServiceResult(
-            data=converted_data,
-            is_simulated=result.is_simulated,
-            error_message=result.error_message
-        )
+        try:
+            weather_data = self.api_service.fetch_current(city, cancel_event)
+
+            # All API and fallback data is assumed to be in metric units and converted downstream.
+            # If this changes in future (e.g., new fallback with imperial), update convert_units().
+            converted_data = self.convert_units(weather_data, unit_system)
+
+            # Store latest call
+            self.store_current_weather(city, converted_data, unit_system)
+            self.logger.info(f"Current weather fetched for {city}")
+            
+            return converted_data
+            
+        except Exception as e:
+            self.logger.error(f"Failed to fetch weather for {city}: {e}")
+            raise
 
     def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
         """Generate historical weather data for a city."""

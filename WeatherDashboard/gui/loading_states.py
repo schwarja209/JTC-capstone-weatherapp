@@ -254,25 +254,33 @@ class AsyncWeatherOperation:
                 self._schedule_ui_update(self.loading_manager.update_progress, "Fetching weather data...")
                 
                 # Do the actual work in background
-                result = self.controller.update_weather_display(city_name, unit_system, cancel_event_to_pass)
-
-                # Check for cancellation before completion
-                if self._is_cancelled():
-                    self._schedule_ui_update(self.loading_manager.stop_loading)
-                    return
-
-                # Handle completion in main thread
-                def complete_task() -> None:
-                    """Complete the async operation and call completion callback."""
-                    # Show error message if there is one
-                    if result.error_message:
-                        self.loading_manager.show_error(result.error_message)
+                try:
+                    self.controller.update_weather_display(city_name, unit_system, cancel_event_to_pass)
                     
-                    self.loading_manager.stop_loading()
-                    if on_complete:
-                        on_complete(result.success, result.error_message)
-                
-                self._schedule_ui_update(complete_task)
+                    # Check for cancellation before completion
+                    if self._is_cancelled():
+                        self._schedule_ui_update(self.loading_manager.stop_loading)
+                        return
+
+                    # Handle completion in main thread
+                    def complete_task() -> None:
+                        """Complete the async operation and call completion callback."""
+                        self.loading_manager.stop_loading()
+                        if on_complete:
+                            on_complete(True, None)
+
+                    self._schedule_ui_update(complete_task)
+                    
+                except Exception as e:
+                    # Handle completion in main thread
+                    def complete_task() -> None:
+                        """Complete the async operation and call completion callback."""
+                        self.loading_manager.show_error(str(e))
+                        self.loading_manager.stop_loading()
+                        if on_complete:
+                            on_complete(False, str(e))
+
+                    self._schedule_ui_update(complete_task)
                 
             except (ConnectionError, TimeoutError, RateLimitError) as e:
                 if self._is_cancelled():

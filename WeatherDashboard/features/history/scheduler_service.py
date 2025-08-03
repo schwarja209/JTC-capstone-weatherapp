@@ -188,20 +188,15 @@ class WeatherDataScheduler:
         """Fetch data for a single city."""
         try:
             # Use existing data_manager.fetch_current logic
-            result = self.data_manager.fetch_current(
+            weather_data = self.data_manager.fetch_current(
                 city, 
                 self.state_manager.unit.get()
             )
-            weather_data = result.data
-            is_simulated = result.is_simulated
-            error = result.error_message
             
-            if error:
-                self._handle_fetch_error(city, error)
-            elif update_display:
+            if update_display:
                 # Update UI for display city
                 view_model = WeatherViewModel(city, weather_data, self.state_manager.unit.get())
-                self.ui_handler.update_display(view_model, error, is_simulated)
+                self.ui_handler.update_display(view_model, None, False)
                 
         except Exception as e:
             self._handle_fetch_error(city, e)

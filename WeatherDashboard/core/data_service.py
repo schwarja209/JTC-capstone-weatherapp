@@ -202,7 +202,7 @@ class WeatherDataService:
                 errors=[f"Validation error: {str(e)}"]
             )
 
-    def get_city_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> CityDataResult:
+    def get_city_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Dict[str, Any]:
         """Get weather data for a city with comprehensive error handling and normalization.
         
         Fetches current weather data through data manager, handles city name normalization,
@@ -215,7 +215,7 @@ class WeatherDataService:
             cancel_event: Optional threading event for operation cancellation
         
         Returns:
-            CityDataResult: Type-safe container with weather data and status information
+            Dict[str, Any]: Weather data dictionary
                 
         Side Effects:
             Logs data operations via data manager
@@ -223,83 +223,25 @@ class WeatherDataService:
         """
         start_time = self.datetime.now()
         
+        # Validate inputs
+        validation_result = self._validate_inputs(city_name, unit_system)
+        
+        if not validation_result.is_valid:
+            raise ValidationError("; ".join(validation_result.errors))
+        
         try:
-            # Validate inputs
-            validation_result = self._validate_inputs(city_name, unit_system)
-            
-            if not validation_result.is_valid:
-                processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
-
-                # Create error result for validation failures
-                return CityDataResult(
-                    city_name=validation_result.city_name,
-                    weather_data={},
-                    error=ValidationError("; ".join(validation_result.errors)),
-                    is_simulated=False,
-                    unit_system=validation_result.unit_system,
-                    timestamp=self.datetime.now(),
-                    # SERVICE LAYER METADATA FIELDS:
-                    operation_status="failed",
-                    processing_time_ms=processing_time,
-                    api_calls_made=0,
-                    fallback_used=False,
-                    errors=validation_result.errors,
-                    retry_attempts=0
-                )
-            
             # Fetch data from data manager
-            result = self.data_manager.fetch_current(
+            weather_data = self.data_manager.fetch_current(
                 validation_result.city_name, 
                 validation_result.unit_system, 
                 cancel_event
             )
-            data = result.data
-            use_fallback = result.is_simulated
-            error_exception = result.error_message
             
-            processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
-
-            # Determine operation status
-            operation_status = "success"
-            if error_exception:
-                operation_status = "failed"
-            elif use_fallback:
-                operation_status = "partial"
-
-            return CityDataResult(
-                city_name=validation_result.city_name,
-                weather_data=data,
-                error=error_exception,
-                is_simulated=use_fallback,
-                unit_system=validation_result.unit_system,
-                timestamp=self.datetime.now(),
-                # SERVICE LAYER METADATA FIELDS:
-                operation_status=operation_status,
-                processing_time_ms=processing_time,
-                api_calls_made=1,
-                fallback_used=use_fallback,
-                errors=[],
-                retry_attempts=0
-            )
-        
+            return weather_data
+            
         except Exception as e:
-            processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
-
-            return CityDataResult(
-                city_name=city_name,
-                weather_data={},
-                error=e,
-                is_simulated=False,
-                unit_system=unit_system,
-                timestamp=self.datetime.now(),
-                # SERVICE LAYER METADATA FIELDS:
-                operation_status="failed",
-                processing_time_ms=processing_time,
-                api_calls_made=0,
-                fallback_used=False,
-                errors=[],
-                retry_attempts=0
-            )
+            self.logger.error(f"Failed to get city data for {city_name}: {e}")
+            raise
 
     def get_historical_data(self, city_name: str, num_days: int, unit_system: str) -> HistoricalDataResult:
         """Get historical weather data for a city with unit conversion.
