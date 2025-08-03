@@ -45,28 +45,21 @@ class TestWidgetUtils(unittest.TestCase):
 
     def test_position_widget_pair_basic(self):
         """Test basic widget pair positioning."""
-        # Test basic positioning without exceptions
-        try:
-            self.widget_utils.position_widget_pair(
-                self.test_frame,
-                self.test_label,
-                self.test_value,
-                row=0,
-                label_col=0,
-                value_col=1
-            )
-
-            # Verify widgets were positioned
-            label_info = self.test_label.grid_info()
-            value_info = self.test_value.grid_info()
-
-            self.assertEqual(int(label_info['row']), 0)
-            self.assertEqual(int(label_info['column']), 0)
-            self.assertEqual(int(value_info['row']), 0)
-            self.assertEqual(int(value_info['column']), 1)
-
-        except Exception as e:
-            self.fail(f"position_widget_pair should not raise exception: {e}")
+        self.widget_utils.position_widget_pair(
+            self.test_frame,
+            self.test_label,
+            self.test_value,
+            row=0,
+            label_col=0,
+            value_col=1
+        )
+        # Verify widgets were positioned
+        label_info = self.test_label.grid_info()
+        value_info = self.test_value.grid_info()
+        self.assertEqual(int(label_info['row']), 0)
+        self.assertEqual(int(label_info['column']), 0)
+        self.assertEqual(int(value_info['row']), 0)
+        self.assertEqual(int(value_info['column']), 1)
 
     def test_position_widget_pair_with_label_text(self):
         """Test widget pair positioning with label text setting."""
@@ -318,11 +311,8 @@ class TestWidgetUtils(unittest.TestCase):
 
     def test_safe_grid_forget_ungridded_widget(self):
         """Test safe grid forget with widget that's not gridded."""
-        # Widget is not gridded yet
-        try:
-            self.widget_utils.safe_grid_forget(self.test_label)
-        except Exception as e:
-            self.fail(f"safe_grid_forget should handle ungridded widget gracefully: {e}")
+        self.widget_utils.safe_grid_forget(self.test_label)
+        # If an exception is raised, the test will fail naturally.
 
     def test_safe_grid_forget_invalid_widget(self):
         """Test safe grid forget with invalid widget."""
@@ -338,31 +328,20 @@ class TestWidgetUtils(unittest.TestCase):
 
     def test_configure_grid_weights_default(self):
         """Test grid weight configuration with default columns."""
-        # Should configure 3 columns by default
-        try:
-            self.widget_utils.configure_grid_weights(self.test_frame)
-            # If no exception, test passes
-        except Exception as e:
-            self.fail(f"configure_grid_weights should not raise exception: {e}")
+        self.widget_utils.configure_grid_weights(self.test_frame)
+        # If no exception, test passes
 
     def test_configure_grid_weights_custom_columns(self):
         """Test grid weight configuration with custom column count."""
         column_counts = [1, 2, 5, 10]
-
         for columns in column_counts:
             with self.subTest(columns=columns):
-                try:
-                    self.widget_utils.configure_grid_weights(self.test_frame, columns=columns)
-                except Exception as e:
-                    self.fail(f"configure_grid_weights should handle {columns} columns: {e}")
+                self.widget_utils.configure_grid_weights(self.test_frame, columns=columns)
 
     def test_configure_grid_weights_invalid_parent(self):
         """Test grid weight configuration with invalid parent."""
-        # Should handle invalid parent gracefully
-        try:
-            self.widget_utils.configure_grid_weights(None)
-        except Exception as e:
-            self.fail(f"configure_grid_weights should handle invalid parent gracefully: {e}")
+        self.widget_utils.configure_grid_weights(None)
+        # If an exception is raised, the test will fail naturally.
 
     def test_create_error_handling_wrapper_success(self):
         """Test error handling wrapper with successful function."""

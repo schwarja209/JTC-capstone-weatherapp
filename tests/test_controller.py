@@ -98,9 +98,8 @@ class TestWeatherDashboardController(unittest.TestCase):
     def test_set_theme(self):
         """Test theme setting updates controller and error handler."""
         self.controller.set_theme('optimistic')
-        # The controller doesn't have a current_theme attribute
-        # The theme is managed by the error handler
-        self.assertIsNotNone(self.controller.error_handler)
+        # The controller doesn't have a theme attribute, it's managed internally
+        self.mock_error_handler.set_theme.assert_called_once_with('optimistic')
 
     def test_update_weather_display_success(self):
         """Test successful weather display update."""
@@ -117,29 +116,24 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock alert service to return empty list
         self.controller._alert_service.generate_alerts = Mock(return_value=[])
 
-        # Mock view model creation
-        with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
-            mock_vm_instance = Mock()
-            mock_vm_instance.city_name = "New York"
-            mock_vm_instance.metrics = {"temperature": 25.0}
-            mock_vm_instance.date_str = "2024-12-01"
-            mock_vm_instance.raw_data = {"temperature": 25.0}
-            mock_view_model.return_value = mock_vm_instance
+        # Execute update - should not raise exception
+        self.controller.update_weather_display("New York", "metric")
 
-            # Execute update - should not raise exception
-            self.controller.update_weather_display("New York", "metric")
-
-            # Verify that the method completed without raising exceptions
-            self.controller._data_service.fetch_data.assert_called_once()
+        # Verify that the method completed without raising exceptions
+        self.controller._data_service.fetch_data.assert_called_once()
 
     def test_update_weather_display_validation_failure(self):
         """Test weather display update with validation failure."""
-        # Configure validation to fail - mock validation to raise exception
-        self.controller._validation_service.validate_inputs = Mock(side_effect=ValueError("Invalid input"))
-        
+        # Mock validation to raise an exception
+        from WeatherDashboard.services.api_exceptions import ValidationError
+        self.controller._validation_service.validate_inputs = Mock(side_effect=ValidationError("Invalid input"))
+
+        # Mock error handler to return False (stop processing)
+        self.mock_error_handler.handle_weather_error.return_value = False
+
         # Execute update - should raise ValidationError
         with self.assertRaises(ValidationError):
-            self.controller.update_weather_display("", "metric")
+            self.controller.update_weather_display("Invalid City", "metric")
 
     def test_update_weather_display_rate_limit(self):
         """Test weather display update with rate limiting."""
@@ -151,8 +145,7 @@ class TestWeatherDashboardController(unittest.TestCase):
             # Should complete without raising
             self.controller.update_weather_display("New York", "metric")
 
-    @patch('WeatherDashboard.core.controller.ValidationUtils')
-    def test_update_weather_display_city_not_found(self, mock_validation_utils):
+    def test_update_weather_display_city_not_found(self):
         """Test weather update with city not found error."""
         # Configure validation to pass - mock validation to not raise exception
         self.controller._validation_service.validate_inputs = Mock(return_value=None)
@@ -165,14 +158,9 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock error handler to return True (continue processing)
         self.mock_error_handler.handle_weather_error.return_value = True
         
-        # Mock view model creation
-        with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
-            mock_vm_instance = Mock()
-            mock_view_model.return_value = mock_vm_instance
-            
-            # Execute update - should raise CityNotFoundError
-            with self.assertRaises(CityNotFoundError):
-                self.controller.update_weather_display("InvalidCity", "metric")
+        # Execute update - should raise CityNotFoundError
+        with self.assertRaises(CityNotFoundError):
+            self.controller.update_weather_display("InvalidCity", "metric")
 
     def test_update_chart_success(self):
         """Test successful chart update."""
@@ -181,17 +169,11 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_state_manager.get_current_chart_range.return_value = "Last 7 Days"
         self.mock_state_manager.get_current_chart_metric.return_value = "Temperature"
 
-        # Mock config access
-        with patch('WeatherDashboard.core.controller.config') as mock_config:
-            mock_config.CHART = {"range_options": {"Last 7 Days": 7}}
-            mock_config.METRICS = {"temperature": {"label": "Temperature"}}
-            mock_config.ERROR_MESSAGES = {"not_found": "{resource} '{name}' not found"}
+        # Execute chart update
+        self.controller.update_chart()
 
-            # Execute chart update
-            self.controller.update_chart()
-
-            # Verify the chart service attempted to process
-            self.mock_state_manager.get_current_chart_metric.assert_called()
+        # Verify the chart service attempted to process
+        self.mock_state_manager.get_current_chart_metric.assert_called()
 
     def test_update_chart_no_data(self):
         """Test chart update when no historical data is available."""
@@ -200,38 +182,26 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_state_manager.get_current_chart_range.return_value = "Last 7 Days"
         self.mock_state_manager.get_current_chart_metric.return_value = "Temperature"
 
-        with patch('WeatherDashboard.core.controller.config') as mock_config:
-            mock_config.CHART = {"range_options": {"Last 7 Days": 7}}
-            mock_config.METRICS = {"temperature": {"label": "Temperature"}}
-            mock_config.ERROR_MESSAGES = {"not_found": "{resource} '{name}' not found"}
+        # Execute chart update - should handle gracefully
+        self.controller.update_chart()
 
-            # Execute chart update - should handle gracefully
-            self.controller.update_chart()
-
-            # Verify the chart service attempted to process
-            self.mock_state_manager.get_current_chart_metric.assert_called()
+        # Verify the chart service attempted to process
+        self.mock_state_manager.get_current_chart_metric.assert_called()
 
     def test_update_chart_invalid_metric(self):
         """Test chart update with invalid metric selection."""
         # Configure state to return invalid metric
         self.mock_state_manager.get_current_chart_metric.return_value = "Invalid Metric"
 
-        with patch('WeatherDashboard.core.controller.config') as mock_config:
-            mock_config.CHART = {"range_options": {"Last 7 Days": 7}}
-            mock_config.METRICS = {"temperature": {"label": "Temperature"}}
-            mock_config.ERROR_MESSAGES = {"not_found": "{resource} '{name}' not found"}
+        # Execute chart update - should handle error gracefully
+        try:
+            self.controller.update_chart()
+        except AttributeError:
+            # This is expected due to the logger issue
+            pass
 
-            # Execute chart update - should handle error gracefully
-            # Note: The logger.exception call will fail due to string vs Exception issue
-            # but the error is handled gracefully by the controller
-            try:
-                self.controller.update_chart()
-            except AttributeError:
-                # This is expected due to the logger issue
-                pass
-
-            # Verify the chart service attempted to process
-            self.mock_state_manager.get_current_chart_metric.assert_called()
+        # Verify the chart service attempted to process
+        self.mock_state_manager.get_current_chart_metric.assert_called()
 
     def test_show_weather_alerts_with_alerts(self):
         """Test showing weather alerts when alerts exist."""
@@ -242,8 +212,6 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock widgets to have frames
         self.mock_widgets.frames = {'title': Mock()}
 
-        # The controller doesn't use SimpleAlertPopup directly
-        # Alerts are handled by the alert manager and UI components
         # Just verify the method doesn't crash
         self.controller.show_weather_alerts()
         self.assertIsNotNone(self.controller.alert_manager)
@@ -253,14 +221,9 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock alert manager to return no alerts
         self.mock_alert_service.get_active_alerts.return_value = []
 
-        # Mock the local import of messagebox in the method
-        with patch('tkinter.messagebox') as mock_messagebox:
-            self.controller.show_weather_alerts()
-
-            # The controller doesn't use messagebox directly
-            # Alerts are handled by the alert manager and UI components
-            # Just verify the method doesn't crash
-            self.assertIsNotNone(self.controller.alert_manager)
+        # Just verify the method doesn't crash
+        self.controller.show_weather_alerts()
+        self.assertIsNotNone(self.controller.alert_manager)
 
     def test_check_rate_limiting_allowed(self):
         """Test rate limiting when requests are allowed."""
@@ -277,17 +240,11 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock alert service to return empty list
         self.controller._alert_service.generate_alerts = Mock(return_value=[])
 
-        # Mock view model creation
-        with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
-            mock_vm_instance = Mock()
-            mock_vm_instance.metrics = {"temperature": 25.0, "humidity": 60}  # Use real dict
-            mock_view_model.return_value = mock_vm_instance
+        # Should allow the request
+        self.controller.update_weather_display("New York", "metric")
 
-            # Should allow the request
-            self.controller.update_weather_display("New York", "metric")
-
-            # Verify the data service was called
-            self.controller._data_service.fetch_data.assert_called_once()
+        # Verify the data service was called
+        self.controller._data_service.fetch_data.assert_called_once()
 
     def test_check_rate_limiting_blocked(self):
         """Test rate limiting when requests are blocked."""
@@ -312,14 +269,9 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock error handler to return True (continue processing)
         self.mock_error_handler.handle_weather_error.return_value = True
 
-        # Mock view model creation
-        with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
-            mock_vm_instance = Mock()
-            mock_view_model.return_value = mock_vm_instance
-
-            # Execute update - should raise NetworkError
-            with self.assertRaises(NetworkError):
-                self.controller.update_weather_display("New York", "metric")
+        # Execute update - should raise NetworkError
+        with self.assertRaises(NetworkError):
+            self.controller.update_weather_display("New York", "metric")
 
     def test_update_weather_display_city_not_found(self):
         """Test weather update with city not found error."""
@@ -334,14 +286,9 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock error handler to return True (continue processing)
         self.mock_error_handler.handle_weather_error.return_value = True
 
-        # Mock view model creation
-        with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
-            mock_vm_instance = Mock()
-            mock_view_model.return_value = mock_vm_instance
-
-            # Execute update - should raise CityNotFoundError
-            with self.assertRaises(CityNotFoundError):
-                self.controller.update_weather_display("InvalidCity", "metric")
+        # Execute update - should raise CityNotFoundError
+        with self.assertRaises(CityNotFoundError):
+            self.controller.update_weather_display("InvalidCity", "metric")
 
     def test_update_weather_display_rate_limit(self):
         """Test weather display update with rate limiting."""
@@ -368,39 +315,19 @@ class TestWeatherDashboardController(unittest.TestCase):
         # Mock alert service to return empty list
         self.controller._alert_service.generate_alerts = Mock(return_value=[])
 
-        # Mock view model creation
-        with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
-            mock_vm_instance = Mock()
-            mock_vm_instance.city_name = "New York"
-            mock_vm_instance.metrics = {"temperature": 25.0}
-            mock_vm_instance.date_str = "2024-12-01"
-            mock_vm_instance.raw_data = {"temperature": 25.0}
-            mock_view_model.return_value = mock_vm_instance
+        # Execute update - should not raise exception
+        self.controller.update_weather_display("New York", "metric")
 
-            # Execute update - should not raise exception
-            self.controller.update_weather_display("New York", "metric")
+        # Verify that the method completed without raising exceptions
+        self.controller._data_service.fetch_data.assert_called_once()
 
-            # Verify that the method completed without raising exceptions
-            self.controller._data_service.fetch_data.assert_called_once()
-
-    @patch('WeatherDashboard.core.controller.config')
-    def test_get_chart_settings_empty_city(self, mock_config):
+    def test_get_chart_settings_empty_city(self):
         """Test chart settings retrieval with empty city name."""
         # Configure state to return empty city
         self.mock_state_manager.get_current_city.return_value = ""
 
-        # Mock config
-        with patch('WeatherDashboard.core.controller.config') as mock_config:
-            mock_config.ERROR_MESSAGES = {"missing": "{field} is required for chart display"}
-
-            # The controller doesn't have a _get_chart_settings method
-            # Chart settings are handled by the _ChartService internal class
-            # Test that the chart service exists
-            self.assertIsNotNone(self.controller._chart_service)
-
-            # The controller doesn't have a _get_chart_settings method
-            # Just verify the chart service exists and doesn't crash
-            self.assertIsNotNone(self.controller._chart_service)
+        # Test that the chart service exists
+        self.assertIsNotNone(self.controller._chart_service)
 
     def test_get_chart_settings_invalid_range(self):
         """Test chart settings retrieval with invalid date range."""
@@ -409,19 +336,8 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.mock_state_manager.get_current_range.return_value = "Invalid Range"
         self.mock_state_manager.get_current_chart_metric.return_value = "Temperature"
 
-        with patch('WeatherDashboard.core.controller.config') as mock_config:
-            mock_config.CHART = {"range_options": {"Last 7 Days": 7}}
-            mock_config.METRICS = {"temperature": {"label": "Temperature"}}
-
-            # Mock ValidationUtils
-            with patch('WeatherDashboard.core.controller.ValidationUtils') as mock_validation_utils:
-                mock_validation_utils.validate_city_name.return_value = []
-                mock_validation_utils.validate_unit_system.return_value = []
-
-                # The controller doesn't have a _get_chart_settings method
-                # Chart settings are handled by the _ChartService internal class
-                # Test that the chart service exists
-                self.assertIsNotNone(self.controller._chart_service)
+        # Test that the chart service exists
+        self.assertIsNotNone(self.controller._chart_service)
 
     def test_error_handler_integration(self):
         """Test integration with error handler for different error types."""
