@@ -129,7 +129,7 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         if self.chart_canvas:
             self.chart_canvas.draw()
-            layout_config = self.styles.LAYOUT_CONFIG
+            layout_config = self.styles.LAYOUT_CONFIG()
             chart_config = layout_config['widget_positions'].get('chart_display', {})
             
             # Use centralized pack configuration or fallback to default
@@ -144,7 +144,7 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         all chart components to None to signal to other parts of the application
         that chart functionality is not available.
         """
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         fallback_config = layout_config['widget_positions'].get('chart_fallback', {})
         
         self.fallback_label = SafeWidgetCreator.create_label(self.parent, "Chart unavailable - matplotlib failed to load")

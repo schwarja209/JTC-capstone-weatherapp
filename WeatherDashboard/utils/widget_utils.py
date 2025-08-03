@@ -54,7 +54,7 @@ class WidgetUtils:
             padx_override: Override automatic padding calculation
         """
         try:
-            layout_config = self.styles.LAYOUT_CONFIG
+            layout_config = self.styles.LAYOUT_CONFIG()
 
             # Determine which section this widget belongs to based on column
             if label_col >= 4:

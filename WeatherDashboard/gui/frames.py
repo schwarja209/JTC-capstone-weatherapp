@@ -55,7 +55,7 @@ class WeatherDashboardGUIFrames:
     def create_frames(self) -> None:
         """Create the main frames for the dashboard layout."""
 
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
 
         # Create frames using configuration
         for frame_name, frame_config in layout_config['frames'].items():

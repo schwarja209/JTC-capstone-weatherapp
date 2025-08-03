@@ -147,6 +147,11 @@ class WeatherErrorHandler:
             message = self._format_message('network_error', city_name)
             getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['warning'])(self.styles.DIALOG_CONFIG()['dialog_titles']['network_issue'], message)
             return True
+        elif isinstance(error_exception, DataFetchError):
+            # Data fetch errors - show error but continue with fallback
+            message = self._format_message('data_fetch_error', str(error_exception))
+            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['data_fetch_error'], message)
+            return True
         else:
             # Other API errors - show general fallback notice
             self.logger.warn(f"Using fallback for {city_name}: {error_exception}")

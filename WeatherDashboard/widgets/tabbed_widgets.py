@@ -84,7 +84,7 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         appropriate labels, initializes content widgets for each tab, and
         binds event handlers for tab switching.
         """
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         tabbed_config = layout_config['widget_positions'].get('tabbed_display', {})
     
         # Create notebook (tab container)

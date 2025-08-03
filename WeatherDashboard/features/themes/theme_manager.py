@@ -62,10 +62,10 @@ class ThemeManager:
     def _apply_theme(self) -> None:
         """Apply the current theme to the UI"""
         style = self._get_ttk_style() 
-        colors = self._theme_config['colors']
-        fonts = self._theme_config['fonts']
-        padding = self._theme_config['padding']
-        backgrounds = self._theme_config['backgrounds']
+        colors = self._theme_config.get('colors', {})
+        fonts = self._theme_config.get('fonts', {})
+        padding = self._theme_config.get('padding', {})
+        backgrounds = self._theme_config.get('backgrounds', {})
         
         # Base widget styles - use main window background everywhere
         base_bg = backgrounds['main_window']
@@ -119,10 +119,10 @@ class ThemeManager:
         if not self._ttk_style or not self._theme_config:
             return
             
-        colors = self._theme_config['colors']
-        fonts = self._theme_config['fonts']
-        padding = self._theme_config['padding']
-        backgrounds = self._theme_config['backgrounds']
+        colors = self._theme_config.get('colors', {})
+        fonts = self._theme_config.get('fonts', {})
+        padding = self._theme_config.get('padding', {})
+        backgrounds = self._theme_config.get('backgrounds', {})
         
         # Apply all style configurations
         self._configure_title_styles(colors, fonts)
@@ -230,7 +230,7 @@ class ThemeManager:
 
     def _configure_notebook_styles(self, colors: Dict, fonts: Dict, padding: Dict) -> None:
         """Configure notebook and tab styles."""
-        backgrounds = self._theme_config['backgrounds']
+        backgrounds = self._theme_config.get('backgrounds', {})
         
         # FIX HALO EFFECT: Set proper backgrounds for notebook and tabs
         self._ttk_style.configure("TNotebook", background=backgrounds['main_window'])
@@ -260,23 +260,23 @@ class ThemeManager:
     
     def get_colors(self) -> Dict[str, Any]:
         """Get current theme colors."""
-        return self._theme_config['colors']
+        return self._theme_config.get('colors', {})
     
     def get_fonts(self) -> Dict[str, Any]:
         """Get current theme fonts."""
-        return self._theme_config['fonts']
+        return self._theme_config.get('fonts', {})
     
     def get_padding(self) -> Dict[str, Any]:
         """Get current theme padding."""
-        return self._theme_config['padding']
+        return self._theme_config.get('padding', {})
     
     def get_backgrounds(self) -> Dict[str, Any]:
         """Get current theme backgrounds."""
-        return self._theme_config['backgrounds']
+        return self._theme_config.get('backgrounds', {})
 
     def get_dimension(self, dimension_key: str, item_key: str = None) -> Any:
         """Get UI dimension value."""
-        dimensions = self._theme_config['dimensions']  # Use bracket notation
+        dimensions = self._theme_config.get('dimensions', {})
         
         if item_key:
             return dimensions.get(dimension_key, {}).get(item_key, 100)
@@ -285,62 +285,62 @@ class ThemeManager:
     
     def get_widget_config(self, widget_type: str) -> Dict[str, Any]:
         """Get widget-specific configuration."""
-        return self._theme_config['widget_layout'].get(widget_type, {})  # Use bracket notation
+        return self._theme_config.get('widget_layout', {}).get(widget_type, {})
 
     def get_control_config(self, config_type: str = 'padding') -> Dict[str, Any]:
         """Get control panel configuration."""
-        return self._theme_config['control_panel_config'].get(config_type, {})  # Use bracket notation
+        return self._theme_config.get('control_panel_config', {}).get(config_type, {})
 
     def get_status_config(self, config_type: str = 'padding') -> Dict[str, Any]:
         """Get status bar configuration."""
-        return self._theme_config['status_bar_config'].get(config_type, {})  # Use bracket notation
+        return self._theme_config.get('status_bar_config', {}).get(config_type, {})
 
     def get_loading_config(self, config_type: str = 'messages') -> Dict[str, Any]:
         """Get loading state configuration."""
-        return self._theme_config['loading_config'].get(config_type, {})  # Use bracket notation
+        return self._theme_config.get('loading_config', {}).get(config_type, {})
 
     def get_message(self, message_key: str) -> str:
         """Get theme-specific message text."""
-        return self._theme_config['messaging'].get(message_key, '')  # Use bracket notation
+        return self._theme_config.get('messaging', {}).get(message_key, '')
 
     def get_loading_message(self, message_type: str = 'default') -> str:
         """Get loading message by type."""
-        loading_messages = self._theme_config['messaging'].get('loading_messages', {})  # Use bracket notation
+        loading_messages = self._theme_config.get('messaging', {}).get('loading_messages', {})
         return loading_messages.get(message_type, 'Loading...')
 
     def get_weather_icon(self, icon_key: str) -> str:
         """Get weather icon by key."""
-        return self._theme_config['icons']['weather'].get(icon_key, '?')  # Use bracket notation
+        return self._theme_config.get('icons', {}).get('weather', {}).get(icon_key, '?')
     
     def get_metric_colors(self, metric_key: str) -> Dict[str, Any]:
         """Get color configuration for a specific metric."""
         if metric_key:
-            return self._theme_config['colors']['metric_colors'].get(metric_key, {})
+            return self._theme_config.get('colors', {}).get('metric_colors', {}).get(metric_key, {})
         else:
-            return self._theme_config['colors']['metric_colors']
+            return self._theme_config.get('colors', {}).get('metric_colors', {})
     
     def get_temperature_difference_color(self, difference_type: str) -> str:
         """Get color for temperature difference indicators."""
-        return self._theme_config['colors']['temperature_difference'].get(difference_type, '#000000')  # Use bracket notation
+        return self._theme_config.get('colors', {}).get('temperature_difference', {}).get(difference_type, '#000000')
     
     def get_comfort_threshold(self, threshold_key: str) -> Any:
         """Get comfort threshold configuration."""
-        return self._theme_config['colors']['comfort_thresholds'].get(threshold_key)  # Use bracket notation
+        return self._theme_config.get('colors', {}).get('comfort_thresholds', {}).get(threshold_key, {})
 
     def get_dialog_config(self, config_type: str = None) -> Any:
         """Get dialog configuration."""
         if config_type:
-            return self._theme_config['messaging']['dialog_config'].get(config_type, {})  # Use bracket notation
+            return self._theme_config.get('messaging', {}).get('dialog_config', {}).get(config_type, {})
         else:
-            return self._theme_config['messaging']['dialog_config']  # Use bracket notation
+            return self._theme_config.get('messaging', {}).get('dialog_config', {})
 
     def get_dialog_title(self, title_key: str) -> str:
         """Get dialog title by key."""
-        return self._theme_config['messaging']['dialog_config']['dialog_titles'].get(title_key, 'Notice')  # Use bracket notation
+        return self._theme_config.get('messaging', {}).get('dialog_config', {}).get('dialog_titles', {}).get(title_key, 'Notice')
 
     def get_dialog_type(self, type_key: str) -> str:
         """Get dialog display type."""
-        return self._theme_config['messaging']['dialog_config']['dialog_types'].get(type_key, 'showinfo')  # Use bracket notation
+        return self._theme_config.get('messaging', {}).get('dialog_config', {}).get('dialog_titles', {}).get(type_key, 'showinfo')
 
 
 # Global theme manager instance

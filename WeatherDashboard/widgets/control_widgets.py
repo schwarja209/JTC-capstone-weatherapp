@@ -105,7 +105,7 @@ class ControlWidgets(BaseWidgetManager):
     @widget_error_handler("city input")
     def _create_city_input(self) -> None:
         """Create city name input field with label using centralized utilities with error handling."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         city_config = layout_config['widget_positions']['control_panel']['city_input']
         
         city_label = SafeWidgetCreator.create_label(self.parent, text="City:", style="LabelName.TLabel")
@@ -121,7 +121,7 @@ class ControlWidgets(BaseWidgetManager):
     @widget_error_handler("unit selection")
     def _create_unit_selection(self) -> None:
         """Create unit system selection radio buttons using centralized utilities with error handling."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         unit_config = layout_config['widget_positions']['control_panel']['unit_selection']
         
         units_label = SafeWidgetCreator.create_label(self.parent, text="Units:", style="LabelName.TLabel")
@@ -237,7 +237,7 @@ class ControlWidgets(BaseWidgetManager):
     @widget_error_handler("chart controls")
     def _create_chart_controls(self) -> None:
         """Create chart configuration controls with error handling."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         chart_config = layout_config['widget_positions']['control_panel']['chart_controls']
         
         # Chart metric selector
@@ -260,7 +260,7 @@ class ControlWidgets(BaseWidgetManager):
     @widget_error_handler("action buttons")
     def _create_action_buttons(self) -> None:
         """Create main action buttons for user operations with error handling."""
-        layout_config = styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         action_config = layout_config['widget_positions']['control_panel']['action_buttons']
         
         self.update_button = SafeWidgetCreator.create_button(self.parent, "Update Weather", self.callbacks.get('update'), "MainButton.TButton")

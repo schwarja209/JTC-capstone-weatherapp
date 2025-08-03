@@ -120,7 +120,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             tk.TclError: If GUI widget creation fails
             Exception: For other unexpected errors during setup
         """
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         dashboard_config = layout_config['widget_positions'].get('dashboard_sections', {})
 
         try:
@@ -213,14 +213,14 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
     @property
     def metric_widgets(self) -> Optional[MetricDisplayWidgets]:
         """Get metric widgets from tabbed widgets."""
-        if self.tabbed_widgets:
+        if self.tabbed_widgets and hasattr(self.tabbed_widgets, 'get_metric_widgets'):
             return self.tabbed_widgets.get_metric_widgets()
         return None
 
     @property
     def chart_widgets(self) -> Optional[ChartWidgets]:
         """Get chart widgets from tabbed widgets."""
-        if self.tabbed_widgets:
+        if self.tabbed_widgets and hasattr(self.tabbed_widgets, 'get_chart_widgets'):
             return self.tabbed_widgets.get_chart_widgets()
         return None
         

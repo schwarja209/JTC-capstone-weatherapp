@@ -218,7 +218,11 @@ class WeatherDashboardController:
             
             # Step 8: Show error notification if there was an API error
             if api_error:
-                self.error_handler.handle_data_fetch_error(DataFetchError(api_error))
+                # Use the same error type that was created above
+                if error_type == 'CityNotFoundError':
+                    self.error_handler.handle_weather_error(CityNotFoundError(api_error), city_name)
+                else:
+                    self.error_handler.handle_data_fetch_error(DataFetchError(api_error))
             
             self.logger.info(f"Data fetch completed for {city_name}")
             
@@ -423,8 +427,12 @@ class WeatherDashboardController:
                 if city_name and len(city_name.strip()) > 0:
                     self.validation_utils.validate_complete_state(self.state)
                 
+            except ValidationError as e:
+                # ValidationError should be handled by the error handler, not re-raised
+                self.error_handler.handle_input_validation_error(e)
+                # Don't re-raise ValidationError as it's already handled
             except Exception as e:
-                raise ValueError(f"Validation error: {str(e)}")
+                raise ValueError(f"Error: {str(e)}")
 
     class _UIService:
         """Internal service for UI component updates and user interface operations.

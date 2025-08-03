@@ -105,7 +105,7 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         Args:
             metric_displays: Dictionary of formatted metric data for display
         """
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         metric_config = layout_config['widget_positions']['metric_display']
         left_col_config = metric_config['left_column']
         right_col_config = metric_config['right_column']

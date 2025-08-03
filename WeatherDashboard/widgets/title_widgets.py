@@ -86,7 +86,7 @@ class TitleWidget(BaseWidgetManager):
 
     def _create_system_controls(self, parent_frame: ttk.Frame) -> None:
         """Create system control widgets (scheduler and theme switcher)."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         title_config = layout_config['widget_positions'].get('title_controls', {})
 
         # Create controls frame on the right
@@ -104,7 +104,7 @@ class TitleWidget(BaseWidgetManager):
 
     def _create_theme_control(self, parent_frame: ttk.Frame) -> None:
         """Create theme switcher dropdown."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         theme_config = layout_config['widget_positions'].get('title_controls', {}).get('theme_control', {})
 
         # Theme label
@@ -140,7 +140,7 @@ class TitleWidget(BaseWidgetManager):
     def _create_scheduler_control(self, parent_frame: ttk.Frame) -> None:
         """Create scheduler toggle control."""        
         # Scheduler toggle
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         scheduler_config = layout_config['widget_positions'].get('title_controls', {}).get('scheduler_control', {})
         
         # Scheduler toggle

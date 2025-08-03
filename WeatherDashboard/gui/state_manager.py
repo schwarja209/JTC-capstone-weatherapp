@@ -66,7 +66,7 @@ class WeatherDashboardState:
     # STATE ACCESS METHODS - These provide clean access to state values
     def get_current_city(self) -> str:
         """Get current city name from user input."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         state_config = layout_config['widget_positions'].get('state_access', {})
         
         # Use centralized state variable name or fallback
@@ -76,7 +76,7 @@ class WeatherDashboardState:
     
     def get_current_unit_system(self) -> str:
         """Get current unit system selection."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         state_config = layout_config['widget_positions'].get('state_access', {})
         
         # Use centralized state variable name or fallback
@@ -86,7 +86,7 @@ class WeatherDashboardState:
     
     def get_current_range(self) -> str:
         """Get current date range selection for charts."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         state_config = layout_config['widget_positions'].get('state_access', {})
         
         # Use centralized state variable name or fallback
@@ -96,7 +96,7 @@ class WeatherDashboardState:
     
     def get_current_chart_metric(self) -> str:
         """Get current chart metric selection."""
-        layout_config = self.styles.LAYOUT_CONFIG
+        layout_config = self.styles.LAYOUT_CONFIG()
         state_config = layout_config['widget_positions'].get('state_access', {})
         
         # Use centralized state variable name or fallback

@@ -74,7 +74,9 @@ class LoadingStateManager:
         self._enable_buttons()
 
         # Check if there's an error in the status bar progress
-        current_progress = self.status_bar_widgets.progress_var.get() if hasattr(self.status_bar_widgets, 'progress_var') else ""
+        current_progress = ""
+        if hasattr(self.status_bar_widgets, 'progress_var') and self.status_bar_widgets.progress_var:
+            current_progress = self.status_bar_widgets.progress_var.get()
         has_status_bar_error = current_progress.startswith("Error:")
         
         # Only clear progress if there was no error
@@ -130,7 +132,7 @@ class LoadingStateManager:
     def _show_loading_status(self, message: str) -> None:
         """Show loading message in status label."""
         try:
-            layout_config = self.styles.LAYOUT_CONFIG
+            layout_config = self.styles.LAYOUT_CONFIG()
             loading_config = layout_config['widget_positions'].get('loading_display', {})
             
             icon = self.styles.LOADING_CONFIG()['icons']['progress']
@@ -144,7 +146,7 @@ class LoadingStateManager:
     def _hide_loading_status(self) -> None:
         """Hide loading message from status label."""
         try:
-            layout_config = self.styles.LAYOUT_CONFIG
+            layout_config = self.styles.LAYOUT_CONFIG()
             loading_config = layout_config['widget_positions'].get('loading_display', {})
             
             # Use centralized clearing method or fallback

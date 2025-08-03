@@ -77,8 +77,6 @@ class StatusBarWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         indicators, and right section for data source information. Includes
         visual separators and appropriate styling for each section.
         """
-        layout_config = self.styles.LAYOUT_CONFIG
-
         # Left section: System status using SafeWidgetCreator
         self.system_status_label = SafeWidgetCreator.create_label(self.parent, "Ready", "SystemStatus.TLabel")
         self.system_status_label.pack(side=tk.LEFT, padx=self.styles.STATUS_BAR_CONFIG()['padding']['system'])
