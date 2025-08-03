@@ -15,7 +15,6 @@ from datetime import datetime
 import threading
 
 from WeatherDashboard.utils.validation_utils import ValidationUtils, ValidationResult
-
 from WeatherDashboard.services.api_exceptions import ValidationError
 
 
@@ -249,11 +248,14 @@ class WeatherDataService:
                 )
             
             # Fetch data from data manager
-            data, use_fallback, error_exception = self.data_manager.fetch_current(
+            result = self.data_manager.fetch_current(
                 validation_result.city_name, 
                 validation_result.unit_system, 
                 cancel_event
             )
+            data = result.data
+            use_fallback = result.is_simulated
+            error_exception = result.error_message
             
             processing_time = int((self.datetime.now() - start_time).total_seconds() * 1000)
 

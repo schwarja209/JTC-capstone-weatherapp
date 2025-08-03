@@ -80081,3 +80081,111 @@ Humidity: 72 %
 Pressure: 30.18 inHg
 Wind Speed: 5.75 mph
 Conditions: Scattered Clouds
+
+Time: 2025-08-03 00:37:46
+City: new_york
+Unit System: imperial
+Temperature: 69.9 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 00:37:46
+City: new_york
+Unit System: imperial
+Temperature: 69.9 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:30
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:30
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:33
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:33
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:40
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:40
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:58
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:00:58
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:01:11
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 01:01:11
+City: new_york
+Unit System: imperial
+Temperature: 70.3 °F
+Humidity: 73 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds

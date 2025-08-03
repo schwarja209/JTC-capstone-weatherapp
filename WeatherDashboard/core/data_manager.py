@@ -25,7 +25,7 @@ from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
 
 from WeatherDashboard.services.api_exceptions import WeatherDashboardError
-from WeatherDashboard.services.weather_service import WeatherAPIService
+from WeatherDashboard.services.weather_service import WeatherAPIService, WeatherServiceResult
 from WeatherDashboard.features.history.history_service import WeatherHistoryService
 
 # ================================
@@ -70,7 +70,7 @@ class WeatherDataManager:
 # ================================  
 # 2. DATA FETCHING & HISTORY
 # ================================
-    def fetch_current(self, city: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[Dict[str, Any], bool, Optional[Exception]]:
+    def fetch_current(self, city: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> WeatherServiceResult:
         """Fetch current weather data with comprehensive error handling, fallback and cancellation support.
         
         Attempts to retrieve live weather data from API service with automatic fallback
@@ -102,7 +102,12 @@ class WeatherDataManager:
         self.store_current_weather(city, converted_data, unit_system)
         self.logger.info(f"Current weather fetched for {city}")
         
-        return converted_data, result.is_simulated, result.error_message
+        # Return new WeatherServiceResult with converted data
+        return WeatherServiceResult(
+            data=converted_data,
+            is_simulated=result.is_simulated,
+            error_message=result.error_message
+        )
 
     def get_historical(self, city: str, num_days: int) -> List[Dict[str, Any]]:
         """Generate historical weather data for a city."""

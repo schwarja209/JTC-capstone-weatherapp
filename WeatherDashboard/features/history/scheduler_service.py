@@ -6,17 +6,17 @@ Automatically collects weather data at configurable intervals to support
 history service for data storage and memory management.
 """
 
-from typing import Dict, List, Any, Optional, Callable
+from typing import Dict, Any
 from datetime import datetime, timedelta
 import threading
 import time
 
 from WeatherDashboard import config
 from WeatherDashboard.utils.logger import Logger
-from .history_service import WeatherHistoryService
-
 from WeatherDashboard.core.view_models import WeatherViewModel
 from WeatherDashboard.services.weather_service import WeatherAPIService
+
+from .history_service import WeatherHistoryService
 
 
 class WeatherDataScheduler:
@@ -188,10 +188,13 @@ class WeatherDataScheduler:
         """Fetch data for a single city."""
         try:
             # Use existing data_manager.fetch_current logic
-            weather_data, is_simulated, error = self.data_manager.fetch_current(
+            result = self.data_manager.fetch_current(
                 city, 
                 self.state_manager.unit.get()
             )
+            weather_data = result.data
+            is_simulated = result.is_simulated
+            error = result.error_message
             
             if error:
                 self._handle_fetch_error(city, error)

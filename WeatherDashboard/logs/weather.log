@@ -47503,3 +47503,311 @@
 [INFO] 2025-08-03 00:27:21 Stored weather data for New York - 2 entries
 [INFO] 2025-08-03 00:27:21 Current weather fetched for New York
 [INFO] 2025-08-03 00:27:21 Added current weather data to chart: temperature = 70.376
+[INFO] 2025-08-03 00:37:45 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-08-03 00:37:45
+[INFO] 2025-08-03 00:37:45 Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-08-03 00:37:45 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-08-03 00:37:45 Preferences applied to application state
+[INFO] 2025-08-03 00:37:45 Registered frame: title
+[INFO] 2025-08-03 00:37:45 Registered frame: control
+[INFO] 2025-08-03 00:37:45 Registered frame: tabbed
+[INFO] 2025-08-03 00:37:45 Registered frame: status_bar
+[INFO] 2025-08-03 00:37:45 Creating dashboard widgets
+[INFO] 2025-08-03 00:37:45 title widget created successfully
+[INFO] 2025-08-03 00:37:45 Registered widget: title_widget (type: title)
+[INFO] 2025-08-03 00:37:45 Preferences saved
+[INFO] 2025-08-03 00:37:45 control widgets created successfully
+[INFO] 2025-08-03 00:37:45 Registered widget: control_widgets (type: control)
+[INFO] 2025-08-03 00:37:46 metric display widgets created successfully
+[INFO] 2025-08-03 00:37:46 chart widgets created successfully
+[INFO] 2025-08-03 00:37:46 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-08-03 00:37:46 Registered metric widgets with registry
+[INFO] 2025-08-03 00:37:46 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-08-03 00:37:46 Registered chart widgets with registry
+[INFO] 2025-08-03 00:37:46 tabbed display widgets created successfully
+[INFO] 2025-08-03 00:37:46 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-08-03 00:37:46 status bar widgets created successfully
+[INFO] 2025-08-03 00:37:46 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-08-03 00:37:46 Dashboard widgets created successfully
+[INFO] 2025-08-03 00:37:46 dashboard widgets created successfully
+[INFO] 2025-08-03 00:37:46 Weather data scheduler started
+[INFO] 2025-08-03 00:37:46 Starting weather update for New York
+[INFO] 2025-08-03 00:37:46 Fetching data for New York
+[INFO] 2025-08-03 00:37:46 Fetching current weather for New York
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Weather data written for new_york - Live
+[INFO] 2025-08-03 00:37:46 Stored weather data for New York - 1 entries
+[INFO] 2025-08-03 00:37:46 Current weather fetched for New York
+[INFO] 2025-08-03 00:37:46 Data fetch completed for New York
+[INFO] 2025-08-03 00:37:46 Weather update completed for New York
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Fetching current weather for New York
+[INFO] 2025-08-03 00:37:46 Converting units to imperial
+[INFO] 2025-08-03 00:37:46 Weather data written for new_york - Live
+[INFO] 2025-08-03 00:37:46 Stored weather data for New York - 2 entries
+[INFO] 2025-08-03 00:37:46 Current weather fetched for New York
+[INFO] 2025-08-03 00:37:46 Added current weather data to chart: temperature = 69.926
+[INFO] 2025-08-03 01:00:29 Initializing Weather Dashboard application...
+[TEST] Health check at 2025-08-03 01:00:29
+[INFO] 2025-08-03 01:00:29 Starting WeatherDashboard v0.4.1: A satirical weather dashboard created by Jacob Schwartz
+[INFO] 2025-08-03 01:00:29 Preferences loaded from c:\Users\spesh\OneDrive\Documents\JTC Assignments\WeatherDashboard\WeatherDashboard\data\user_preferences.json
+[INFO] 2025-08-03 01:00:29 Preferences applied to application state
+[INFO] 2025-08-03 01:00:29 Registered frame: title
+[INFO] 2025-08-03 01:00:29 Registered frame: control
+[INFO] 2025-08-03 01:00:29 Registered frame: tabbed
+[INFO] 2025-08-03 01:00:29 Registered frame: status_bar
+[INFO] 2025-08-03 01:00:29 Creating dashboard widgets
+[INFO] 2025-08-03 01:00:29 title widget created successfully
+[INFO] 2025-08-03 01:00:29 Registered widget: title_widget (type: title)
+[INFO] 2025-08-03 01:00:29 Preferences saved
+[INFO] 2025-08-03 01:00:29 control widgets created successfully
+[INFO] 2025-08-03 01:00:29 Registered widget: control_widgets (type: control)
+[INFO] 2025-08-03 01:00:29 metric display widgets created successfully
+[INFO] 2025-08-03 01:00:29 chart widgets created successfully
+[INFO] 2025-08-03 01:00:29 Registered widget: metric_widgets (type: metric)
+[INFO] 2025-08-03 01:00:29 Registered metric widgets with registry
+[INFO] 2025-08-03 01:00:29 Registered widget: chart_widgets (type: chart)
+[INFO] 2025-08-03 01:00:29 Registered chart widgets with registry
+[INFO] 2025-08-03 01:00:29 tabbed display widgets created successfully
+[INFO] 2025-08-03 01:00:29 Registered widget: tabbed_widgets (type: tabbed)
+[INFO] 2025-08-03 01:00:29 status bar widgets created successfully
+[INFO] 2025-08-03 01:00:29 Registered widget: status_bar_widgets (type: status)
+[INFO] 2025-08-03 01:00:29 Dashboard widgets created successfully
+[INFO] 2025-08-03 01:00:29 dashboard widgets created successfully
+[INFO] 2025-08-03 01:00:29 Weather data scheduler started
+[INFO] 2025-08-03 01:00:30 Starting weather update for New York
+[INFO] 2025-08-03 01:00:30 Fetching data for New York
+[INFO] 2025-08-03 01:00:30 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:30 Stored weather data for New York - 1 entries
+[INFO] 2025-08-03 01:00:30 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:30 Data fetch completed for New York
+[INFO] 2025-08-03 01:00:30 Weather update completed for New York
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:30 Converting units to imperial
+[INFO] 2025-08-03 01:00:30 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:30 Stored weather data for New York - 2 entries
+[INFO] 2025-08-03 01:00:30 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:30 Added current weather data to chart: temperature = 70.34
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:32 Preferences saved
+[INFO] 2025-08-03 01:00:33 Preferences saved
+[INFO] 2025-08-03 01:00:33 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-03 01:00:33 Starting weather update for New York
+[INFO] 2025-08-03 01:00:33 Fetching data for New York
+[INFO] 2025-08-03 01:00:33 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:33 Stored weather data for New York - 3 entries
+[INFO] 2025-08-03 01:00:33 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:33 Data fetch completed for New York
+[INFO] 2025-08-03 01:00:33 Weather update completed for New York
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:33 Converting units to imperial
+[INFO] 2025-08-03 01:00:33 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:33 Stored weather data for New York - 4 entries
+[INFO] 2025-08-03 01:00:33 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:33 Added current weather data to chart: temperature = 70.34
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:39 Preferences saved
+[INFO] 2025-08-03 01:00:40 Starting weather update for New York
+[INFO] 2025-08-03 01:00:40 Fetching data for New York
+[INFO] 2025-08-03 01:00:40 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:40 Stored weather data for New York - 5 entries
+[INFO] 2025-08-03 01:00:40 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:40 Data fetch completed for New York
+[INFO] 2025-08-03 01:00:40 Weather update completed for New York
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:40 Converting units to imperial
+[INFO] 2025-08-03 01:00:40 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:40 Stored weather data for New York - 6 entries
+[INFO] 2025-08-03 01:00:40 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:40 Added current weather data to chart: temperature = 70.34
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:45 Preferences saved
+[INFO] 2025-08-03 01:00:46 Preferences saved
+[INFO] 2025-08-03 01:00:46 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-03 01:00:46 Starting weather update for New York
+[ERROR] 2025-08-03 01:00:46 Input validation error: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-08-03 01:00:47 show_error called with: Invalid application state: Metric selection is invalid: at least one metric must be visible; Chart metric is invalid: at least one metric must be selected
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:53 Preferences saved
+[INFO] 2025-08-03 01:00:58 Preferences saved
+[INFO] 2025-08-03 01:00:58 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-03 01:00:58 Starting weather update for New York
+[INFO] 2025-08-03 01:00:58 Fetching data for New York
+[INFO] 2025-08-03 01:00:58 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:58 Stored weather data for New York - 7 entries
+[INFO] 2025-08-03 01:00:58 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:58 Data fetch completed for New York
+[INFO] 2025-08-03 01:00:58 Weather update completed for New York
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Fetching current weather for New York
+[INFO] 2025-08-03 01:00:58 Converting units to imperial
+[INFO] 2025-08-03 01:00:58 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:00:58 Stored weather data for New York - 8 entries
+[INFO] 2025-08-03 01:00:58 Current weather fetched for New York
+[INFO] 2025-08-03 01:00:58 Added current weather data to chart: air_quality_index = 1
+[INFO] 2025-08-03 01:01:07 Preferences saved
+[INFO] 2025-08-03 01:01:10 Preferences saved
+[INFO] 2025-08-03 01:01:11 Preferences saved
+[INFO] 2025-08-03 01:01:11 Manual update requested - scheduler will continue in background
+[INFO] 2025-08-03 01:01:11 Starting weather update for New York
+[INFO] 2025-08-03 01:01:11 Fetching data for New York
+[INFO] 2025-08-03 01:01:11 Fetching current weather for New York
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:01:11 Stored weather data for New York - 9 entries
+[INFO] 2025-08-03 01:01:11 Current weather fetched for New York
+[INFO] 2025-08-03 01:01:11 Data fetch completed for New York
+[INFO] 2025-08-03 01:01:11 Weather update completed for New York
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Fetching current weather for New York
+[INFO] 2025-08-03 01:01:11 Converting units to imperial
+[INFO] 2025-08-03 01:01:11 Weather data written for new_york - Live
+[INFO] 2025-08-03 01:01:11 Stored weather data for New York - 10 entries
+[INFO] 2025-08-03 01:01:11 Current weather fetched for New York
+[INFO] 2025-08-03 01:01:11 Added current weather data to chart: temperature = 70.34
