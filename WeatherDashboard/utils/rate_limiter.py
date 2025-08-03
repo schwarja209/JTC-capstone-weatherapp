@@ -57,4 +57,6 @@ class RateLimiter:
         if not self.last_request_time:
             return 0
         elapsed = (self.datetime.now() - self.last_request_time).total_seconds()
-        return max(0, self.min_interval - elapsed)
+        wait_time = max(0, self.min_interval - elapsed)
+        # Add small tolerance for floating-point precision
+        return wait_time if wait_time > 0.001 else 0.0

@@ -23,7 +23,7 @@ import os
 from pathlib import Path
 
 # centralizing config info
-from .alert_config import ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER, ALERT_DEFINITIONS, validate_alert_config
+from WeatherDashboard.features.alerts.alert_config import ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER, ALERT_DEFINITIONS
 
 
 # ================================
@@ -343,7 +343,7 @@ def validate_config() -> None:
         ))
     
     # Validate Alert Config
-    from .alert_config import ALERT_DEFINITIONS, validate_alert_config
+    from WeatherDashboard.features.alerts.alert_config import ALERT_DEFINITIONS, validate_alert_config
     validate_alert_config()
 
     # Validate alert unit types match available metrics

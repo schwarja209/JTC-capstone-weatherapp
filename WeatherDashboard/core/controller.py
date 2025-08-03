@@ -14,8 +14,8 @@ Classes:
     WeatherDashboardController: Main controller coordinating all weather operations
 """
 
-from typing import Tuple, List, Any, Optional, Dict
 from dataclasses import dataclass
+from typing import Tuple, List, Any, Optional, Dict
 import threading
 from datetime import datetime
 
@@ -26,12 +26,13 @@ from WeatherDashboard.utils.rate_limiter import RateLimiter
 from WeatherDashboard.utils.unit_converter import UnitConverter
 from WeatherDashboard.utils.validation_utils import ValidationUtils
 
+from WeatherDashboard.features.alerts.alert_manager import AlertManager, WeatherAlert
 from WeatherDashboard.services.api_exceptions import ValidationError, WeatherDashboardError
+from WeatherDashboard.services.error_handler import WeatherErrorHandler
 from WeatherDashboard.widgets.widget_interface import IWeatherDashboardWidgets
 
+from .data_service import CityDataResult
 from .view_models import WeatherViewModel
-from WeatherDashboard.features.alerts.alert_manager import AlertManager, WeatherAlert
-from WeatherDashboard.services.error_handler import WeatherErrorHandler
 
 
 @dataclass
@@ -205,7 +206,10 @@ class WeatherDashboardController:
         
         try:
             # Step 1: Fetch data
-            city, raw_data, error_exception = self._data_service.fetch_data(city_name, unit_system, cancel_event)
+            result = self._data_service.fetch_data(city_name, unit_system, cancel_event)
+            city = result.city_name
+            raw_data = result.weather_data  
+            error_exception = result.error
 
             # Step 2: Generate alerts and inject into raw_data
             alerts = self._alert_service.generate_alerts(raw_data)
@@ -332,23 +336,16 @@ class WeatherDashboardController:
             # Injected dependencies for testable components
             self.data_service = data_service
         
-        def fetch_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> Tuple[str, Dict[str, Any], Optional[Exception]]:
+        def fetch_data(self, city_name: str, unit_system: str, cancel_event: Optional[threading.Event] = None) -> CityDataResult:
             """Fetch weather data for a specified city and unit system.
             
             Args:
                 city_name: Name of the city to fetch weather data for
                 unit_system: Unit system for the weather data ('metric' or 'imperial')
                 cancel_event: Optional threading event for operation cancellation
-                
-            Returns:
-                Tuple containing:
-                    - str: City name
-                    - Dict[str, Any]: Raw weather data
-                    - Optional[Exception]: Any error that occurred during fetching
             """
-            # Get the dataclass result and convert to tuple format
-            result = self.data_service.get_city_data(city_name, unit_system, cancel_event)
-            return result.city_name, result.weather_data, result.error
+            # Return the structured object directly instead of converting to tuple
+            return self.data_service.get_city_data(city_name, unit_system, cancel_event)
         
         def is_simulated_data(self, raw_data: Dict[str, Any]) -> bool:
             """Determine if the provided weather data is simulated/fallback data."""

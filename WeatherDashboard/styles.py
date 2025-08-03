@@ -13,10 +13,10 @@ Functions:
 from tkinter import ttk
 from typing import Dict, Any
 
+# centralizing style info
+from WeatherDashboard.features.alerts.alert_config import ALERT_DEFINITIONS, ALERT_SEVERITY_COLORS, ALERT_DISPLAY_CONFIG
 from WeatherDashboard.features.themes.theme_manager import theme_manager, Theme
 
-# centralizing style info
-from .alert_config import ALERT_DEFINITIONS, ALERT_SEVERITY_COLORS, ALERT_DISPLAY_CONFIG
 
 # =================================
 # 1. THEME MANAGEMENT - SURFACE LAYER

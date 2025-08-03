@@ -69677,3 +69677,10407 @@ Humidity: 70 %
 Pressure: 30.18 inHg
 Wind Speed: 5.75 mph
 Conditions: Clear Sky
+
+Time: 2025-08-02 23:51:36
+City: new_york
+Unit System: imperial
+Temperature: 70.5 °F
+Humidity: 71 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Clear Sky
+
+Time: 2025-08-02 23:51:36
+City: new_york
+Unit System: imperial
+Temperature: 70.5 °F
+Humidity: 71 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Clear Sky
+
+Time: 2025-08-02 23:51:36
+City: new_york
+Unit System: imperial
+Temperature: 70.5 °F
+Humidity: 71 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Clear Sky
+
+Time: 2025-08-02 23:51:49
+City: new_york
+Unit System: imperial
+Temperature: 70.5 °F
+Humidity: 71 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Clear Sky
+
+Time: 2025-08-02 23:51:49
+City: new_york
+Unit System: imperial
+Temperature: 70.5 °F
+Humidity: 71 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Clear Sky
+
+Time: 2025-08-03 00:06:27
+City: new_york
+Unit System: imperial
+Temperature: 70.4 °F
+Humidity: 72 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 00:06:27
+City: new_york
+Unit System: imperial
+Temperature: 70.4 °F
+Humidity: 72 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 00:11:22
+City: new_york
+Unit System: imperial
+Temperature: 70.4 °F
+Humidity: 72 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 00:11:23
+City: new_york
+Unit System: imperial
+Temperature: 70.4 °F
+Humidity: 72 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-06-29 00:20:46
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-24 00:20:46
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-24 00:20:46
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:46
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-24 00:20:46
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-31 00:20:46
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:46
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 23:20:47
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 22:20:47
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:20:47
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:20:47
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:20:47
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:20:47
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:20:47
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:20:47
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:20:47
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:20:47
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:20:47
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:20:47
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:20:47
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:20:47
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:20:47
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:20:47
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:20:47
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:20:47
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:20:47
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:20:47
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:20:47
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:20:47
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:20:47
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:20:47
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:20:47
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:20:47
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:20:47
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:20:47
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:20:47
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:20:47
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:20:47
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:20:47
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:20:47
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:20:47
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 55.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 56.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 57.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 58.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 59.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 60.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 61.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 62.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 63.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 64.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 65.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 66.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 67.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 68.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 69.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 70.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 71.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 72.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 73.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 74.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 75.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 76.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 77.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 78.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 79.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 80.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 81.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 82.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 83.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 84.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 85.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 86.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 87.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 88.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 89.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 90.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 91.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 92.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 93.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 94.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 95.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 96.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 97.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 98.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 99.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 100.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 101.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 102.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 103.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 104.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 105.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 106.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 107.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 108.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 109.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 110.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 111.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 112.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 113.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 114.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 115.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 116.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 117.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 118.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 119.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 120.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 121.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 122.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 123.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 124.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 125.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 126.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 127.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 128.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 129.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 130.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 131.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 132.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 133.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 134.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 135.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 136.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 137.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 138.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 139.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 140.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 141.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 142.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 143.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 144.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 145.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 146.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 147.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 148.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 149.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 150.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 151.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 152.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 153.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 154.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 155.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 156.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 157.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 158.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 159.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 160.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 161.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 162.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 163.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 164.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 165.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 166.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 167.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 168.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 169.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 170.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 171.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 172.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 173.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 174.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 175.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 176.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 177.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 178.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 179.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 180.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 181.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 182.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 183.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 184.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 185.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 186.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 187.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 188.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 189.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 190.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 191.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 192.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 193.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 194.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 195.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 196.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 197.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 198.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 199.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 200.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 201.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 202.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 203.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 204.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 205.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 206.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 207.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 208.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 209.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 210.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 211.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 212.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 213.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 214.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 215.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 216.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 217.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 218.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 219.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 220.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 221.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 222.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 223.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 224.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 225.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 226.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 227.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 228.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 229.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 230.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 231.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 232.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 233.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 234.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 235.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 236.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 237.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 238.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 239.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 240.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 241.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 242.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 243.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 244.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 245.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 246.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 247.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 248.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 249.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 250.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 251.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 252.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 253.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 254.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 255.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 256.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 257.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 258.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 259.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 260.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 261.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 262.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 263.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 264.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 265.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 266.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 267.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 268.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 269.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 270.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 271.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 272.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 273.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 274.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 275.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 276.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 277.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 278.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 279.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 280.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 281.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 282.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 283.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 284.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 285.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 286.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 287.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 288.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 289.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 290.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 291.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 292.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 293.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 294.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 295.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 296.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 297.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 298.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 299.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 300.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 301.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 302.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 303.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 304.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 305.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 306.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 307.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 308.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 309.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 310.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 311.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 312.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 313.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 314.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 315.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 316.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 317.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 318.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 319.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 320.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 321.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 322.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 323.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 324.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 325.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 326.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 327.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 328.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 329.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 330.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 331.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 332.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 333.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 334.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 335.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 336.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 337.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 338.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 339.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 340.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 341.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 342.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 343.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 344.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 345.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 346.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 347.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 348.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 349.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 350.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 351.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 352.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 353.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 354.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 355.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 356.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 357.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 358.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 359.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 360.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 361.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 362.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 363.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 364.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 365.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 366.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 367.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 368.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 369.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 370.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 371.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 372.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 373.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 374.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 375.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 376.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 377.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 378.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 379.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 380.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 381.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 382.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 383.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 384.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 385.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 386.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 387.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 388.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 389.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 390.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 391.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 392.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 393.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 394.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 395.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 396.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 397.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 398.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 399.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 400.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 401.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 402.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 403.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 404.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 405.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 406.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 407.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 408.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 409.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 410.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 411.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 412.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 413.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 414.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 415.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 416.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 417.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 418.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 419.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 420.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 421.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 422.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 423.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 424.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 425.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 426.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 427.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 428.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 429.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 430.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 431.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 432.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 433.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 434.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 435.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 436.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 437.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 438.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 439.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 440.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 441.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 442.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 443.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 444.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 445.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 446.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 447.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 448.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 449.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 450.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 451.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 452.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 453.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 454.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 455.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 456.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 457.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 458.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 459.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 460.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 461.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 462.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 463.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 464.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 465.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 466.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 467.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 468.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 469.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 470.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 471.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 472.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 473.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 474.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 475.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 476.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 477.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 478.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 479.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 480.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 481.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 482.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 483.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 484.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 485.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 486.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 487.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 488.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 489.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 490.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 491.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 492.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 493.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 494.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 495.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 496.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 497.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 498.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 499.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 500.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 501.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 502.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 503.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 504.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 505.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 506.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 507.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 508.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 509.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 510.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 511.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 512.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 513.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 514.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 515.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 516.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 517.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 518.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 519.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 520.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 521.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 522.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 523.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 524.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 525.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 526.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 527.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 528.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 529.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 530.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 531.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 532.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 533.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 534.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 535.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 536.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 537.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 538.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 539.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 540.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 541.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 542.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 543.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 544.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 545.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 546.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 547.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 548.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 549.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 550.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 551.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 552.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 553.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 554.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 555.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 556.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 557.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 558.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 559.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 560.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 561.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 562.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 563.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 564.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 565.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 566.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 567.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 568.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 569.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 570.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 571.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 572.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 573.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 574.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 575.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 576.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 577.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 578.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 579.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 580.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 581.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 582.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 583.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 584.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 585.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 586.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 587.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 588.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 589.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 590.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 591.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 592.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 593.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 594.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 595.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 596.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 597.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 598.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 599.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 600.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 601.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 602.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 603.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 604.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 605.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 606.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 607.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 608.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 609.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 610.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 611.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 612.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 613.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 614.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 615.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 616.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 617.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 618.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 619.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 620.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 621.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 622.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 623.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 624.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 625.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 626.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 627.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 628.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 629.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 630.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 631.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 632.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 633.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 634.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 635.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 636.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 637.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 638.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 639.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 640.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 641.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 642.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 643.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 644.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 645.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 646.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 647.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 648.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 649.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 650.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 651.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 652.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 653.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 654.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 655.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 656.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 657.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 658.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 659.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 660.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 661.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 662.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 663.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 664.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 665.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 666.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 667.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 668.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 669.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 670.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 671.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 672.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 673.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 674.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 675.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 676.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 677.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 678.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 679.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 680.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 681.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 682.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 683.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 684.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 685.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 686.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 687.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 688.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 689.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 690.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 691.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 692.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 693.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 694.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 695.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 696.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 697.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 698.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 699.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 700.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 701.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 702.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 703.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 704.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 705.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 706.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 707.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 708.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 709.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 710.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 711.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 712.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 713.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 714.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 715.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 716.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 717.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 718.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 719.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 720.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 721.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 722.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 723.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 724.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 725.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 726.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 727.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 728.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 729.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 730.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 731.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 732.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 733.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 734.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 735.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 736.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 737.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 738.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 739.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 740.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 741.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 742.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 743.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 744.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 745.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 746.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 747.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 748.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 749.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 750.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 751.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 752.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 753.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 754.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 755.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 756.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 757.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 758.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 759.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 760.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 761.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 762.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 763.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 764.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 765.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 766.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 767.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 768.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 769.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 770.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 771.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 772.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 773.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 774.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 775.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 776.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 777.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 778.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 779.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 780.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 781.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 782.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 783.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 784.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 785.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 786.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 787.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 788.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 789.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 790.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 791.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 792.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 793.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 794.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 795.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 796.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 797.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 798.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 799.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 800.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 801.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 802.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 803.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 804.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 805.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 806.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 807.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 808.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 809.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 810.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 811.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 812.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 813.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 814.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 815.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 816.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 817.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 818.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 819.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 820.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 821.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 822.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 823.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 824.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 825.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 826.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: amsterdam
+Unit System: metric
+Temperature: 827.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: vienna
+Unit System: metric
+Temperature: 828.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: prague
+Unit System: metric
+Temperature: 829.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: newyork
+Unit System: metric
+Temperature: 830.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: london
+Unit System: metric
+Temperature: 831.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: paris
+Unit System: metric
+Temperature: 832.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: tokyo
+Unit System: metric
+Temperature: 833.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: berlin
+Unit System: metric
+Temperature: 834.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: rome
+Unit System: metric
+Temperature: 835.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:47
+City: madrid
+Unit System: metric
+Temperature: 836.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 837.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 838.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 839.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 840.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 841.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 842.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 843.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 844.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 845.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 846.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 847.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 848.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 849.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 850.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 851.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 852.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 853.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 854.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 855.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 856.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 857.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 858.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 859.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 860.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 861.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 862.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 863.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 864.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 865.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 866.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 867.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 868.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 869.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 870.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 871.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 872.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 873.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 874.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 875.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 876.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 877.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 878.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 879.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 880.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 881.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 882.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 883.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 884.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 885.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 886.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 887.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 888.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 889.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 890.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 891.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 892.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 893.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 894.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 895.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 896.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 897.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 898.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 899.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 900.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 901.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 902.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 903.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 904.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 905.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 906.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 907.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 908.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 909.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 910.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 911.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 912.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 913.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 914.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 915.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 916.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 917.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 918.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 919.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 920.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 921.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 922.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 923.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 924.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 925.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 926.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 927.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 928.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 929.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 930.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 931.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 932.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 933.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 934.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 935.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 936.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 937.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 938.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 939.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 940.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 941.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 942.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 943.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 944.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 945.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 946.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 947.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 948.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 949.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 950.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 951.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 952.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 953.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 954.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 955.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 956.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 957.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 958.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 959.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 960.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 961.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 962.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 963.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 964.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 965.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 966.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 967.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 968.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 969.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 970.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 971.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 972.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 973.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 974.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 975.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 976.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 977.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 978.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 979.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 980.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 981.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 982.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 983.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 984.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 985.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 986.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 987.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 988.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 989.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 990.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 991.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 992.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 993.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 994.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 995.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 996.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 997.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 998.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 999.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1000.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1001.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1002.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1003.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1004.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1005.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1006.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1007.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1008.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1009.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1010.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1011.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1012.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1013.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1014.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1015.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1016.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1017.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1018.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1019.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1020.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1021.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1022.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1023.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1024.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1025.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1026.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1027.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1028.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1029.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1030.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1031.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1032.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1033.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1034.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1035.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1036.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1037.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1038.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1039.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1040.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1041.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1042.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1043.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1044.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1045.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1046.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1047.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1048.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1049.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1050.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1051.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1052.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1053.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1054.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1055.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1056.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1057.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1058.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1059.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1060.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1061.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1062.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1063.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1064.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1065.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1066.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1067.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1068.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1069.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1070.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1071.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1072.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1073.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1074.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1075.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1076.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1077.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1078.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1079.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1080.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1081.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1082.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1083.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1084.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1085.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1086.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1087.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1088.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1089.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1090.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1091.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1092.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1093.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1094.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1095.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1096.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1097.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1098.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1099.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1100.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1101.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1102.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1103.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1104.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1105.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1106.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1107.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1108.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1109.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: newyork
+Unit System: metric
+Temperature: 1110.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: london
+Unit System: metric
+Temperature: 1111.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: paris
+Unit System: metric
+Temperature: 1112.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: tokyo
+Unit System: metric
+Temperature: 1113.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: berlin
+Unit System: metric
+Temperature: 1114.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: rome
+Unit System: metric
+Temperature: 1115.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: madrid
+Unit System: metric
+Temperature: 1116.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: amsterdam
+Unit System: metric
+Temperature: 1117.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: vienna
+Unit System: metric
+Temperature: 1118.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: prague
+Unit System: metric
+Temperature: 1119.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:20:48
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-03 00:27:21
+City: new_york
+Unit System: imperial
+Temperature: 70.4 °F
+Humidity: 72 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds
+
+Time: 2025-08-03 00:27:21
+City: new_york
+Unit System: imperial
+Temperature: 70.4 °F
+Humidity: 72 %
+Pressure: 30.18 inHg
+Wind Speed: 5.75 mph
+Conditions: Scattered Clouds

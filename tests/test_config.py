@@ -307,7 +307,7 @@ class TestConfigIntegration(unittest.TestCase):
         """Test that alert definitions reference valid unit types."""
         # This test assumes alert_config is imported and available
         try:
-            from WeatherDashboard.alert_config import ALERT_DEFINITIONS
+            from WeatherDashboard.features.alerts.alert_config import ALERT_DEFINITIONS
             available_unit_types = set(config.UNITS['metric_units'].keys())
             
             for alert_type, definition in ALERT_DEFINITIONS.items():
