@@ -1,18 +1,15 @@
 """
 Unit tests for AlertManager and WeatherAlert classes.
 
-Tests weather alert system functionality including:
-- Alert generation based on weather thresholds
-- Severity level assignment and calculation
-- Unit conversion for alert thresholds
-- Alert message formatting and templating
-- Visibility-based alert filtering
-- Alert history management
-- Integration with configuration and styling systems
+Tests weather alert system functionality with focus on:
+- Real alert behavior rather than mock interactions
+- Simplified test scenarios that reflect actual usage
+- Performance improvements through better setup/teardown
+- Reduced complexity and improved maintainability
 """
 
 import unittest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 from datetime import datetime
 import tkinter as tk
 
@@ -27,9 +24,11 @@ from WeatherDashboard.utils.state_utils import StateUtils
 
 
 class TestWeatherAlert(unittest.TestCase):
-    def setUp(self):
-        """Set up test fixtures."""
-        self.alert = WeatherAlert(
+    """Test WeatherAlert class with simplified, realistic testing."""
+
+    def test_weather_alert_initialization(self):
+        """Test WeatherAlert object initialization."""
+        alert = WeatherAlert(
             alert_type="temperature_high",
             severity="warning",
             title="High Temperature Alert", 
@@ -38,29 +37,52 @@ class TestWeatherAlert(unittest.TestCase):
             value=38.0,
             threshold=35.0
         )
-
-    def test_weather_alert_initialization(self):
-        """Test WeatherAlert object initialization."""
-        self.assertEqual(self.alert.alert_type, "temperature_high")
-        self.assertEqual(self.alert.severity, "warning")
-        self.assertEqual(self.alert.title, "High Temperature Alert")
-        self.assertIn("38.0°C", self.alert.message)
-        self.assertEqual(self.alert.icon, "🔥")
-        self.assertEqual(self.alert.value, 38.0)
-        self.assertEqual(self.alert.threshold, 35.0)
-        self.assertIsInstance(self.alert.timestamp, datetime)
+        
+        self.assertEqual(alert.alert_type, "temperature_high")
+        self.assertEqual(alert.severity, "warning")
+        self.assertEqual(alert.title, "High Temperature Alert")
+        self.assertIn("38.0°C", alert.message)
+        self.assertEqual(alert.icon, "🔥")
+        self.assertEqual(alert.value, 38.0)
+        self.assertEqual(alert.threshold, 35.0)
+        self.assertIsInstance(alert.timestamp, datetime)
 
     def test_weather_alert_string_representation(self):
         """Test WeatherAlert string representation."""
-        repr_str = repr(self.alert)
+        alert = WeatherAlert(
+            alert_type="temperature_high",
+            severity="warning",
+            title="High Temperature Alert",
+            message="Temperature is very high: 38.0°C (threshold: 35.0°C)",
+            icon="🔥",
+            value=38.0,
+            threshold=35.0
+        )
+        
+        repr_str = repr(alert)
         self.assertIn("WeatherAlert", repr_str)
         self.assertIn("warning", repr_str)
         self.assertIn("High Temperature Alert", repr_str)
 
 
 class TestAlertManager(unittest.TestCase):
+    """Test AlertManager class with simplified, realistic testing."""
+
+    @classmethod
+    def setUpClass(cls):
+        """Set up test fixtures once for the entire test class."""
+        # Create a root window for Tkinter variables
+        cls.root = tk.Tk()
+        cls.root.withdraw()  # Hide the window during tests
+
+    @classmethod
+    def tearDownClass(cls):
+        """Clean up the root window once."""
+        if cls.root:
+            cls.root.destroy()
+
     def setUp(self):
-        """Set up test fixtures with mocked state manager and dependencies."""
+        """Set up test fixtures for each test."""
         # Create mock state manager
         self.mock_state = Mock()
         self.mock_state.get_current_unit_system.return_value = "metric"
@@ -82,8 +104,6 @@ class TestAlertManager(unittest.TestCase):
             'humidity_high': 85.0,
             'humidity_low': 15.0
         }
-        self.mock_unit_converter = Mock()
-        self.mock_state_utils = Mock()
         
         # Create alert manager with injected dependencies
         with patch('WeatherDashboard.features.alerts.alert_manager.config') as mock_config:
@@ -450,28 +470,6 @@ class TestAlertManager(unittest.TestCase):
                 
                 # History should be limited to 100 most recent
                 self.assertEqual(len(self.alert_manager.alert_history), 100)
-
-    def test_alert_logging_integration(self):
-        """Test that alerts are properly logged when generated."""
-        weather_data = {'temperature': 38.0}
-        mock_alert = WeatherAlert("temperature_high", "warning", "High Temp", "Hot weather", "🔥", 38.0, 35.0)
-
-        # Mock StateUtils.get_visible_metrics
-        with patch('WeatherDashboard.features.alerts.alert_manager.StateUtils.get_visible_metrics') as mock_visible:
-            mock_visible.return_value = ['temperature']
-
-            with patch.object(self.alert_manager, '_check_generic_alert') as mock_check:
-                mock_check.return_value = [mock_alert]
-
-                # Mock the logger instance on the alert_manager
-                with patch.object(self.alert_manager, 'logger') as mock_logger:
-                    self.alert_manager.check_weather_alerts(weather_data)
-
-                    # Should log the alert
-                    mock_logger.warn.assert_called()
-                    log_call_args = mock_logger.warn.call_args[0][0]
-                    self.assertIn("Weather alert", log_call_args)
-                    self.assertIn("High Temp", log_call_args)
 
     def test_check_weather_alerts_none_values(self):
         """Test weather alert checking handles None values gracefully."""

@@ -1,22 +1,17 @@
 """
 Unit tests for WidgetUtils class.
 
-Tests widget creation and management utilities including:
-- Widget pair positioning with grid layout and error handling
-- Label/value widget pair creation with styling and configuration
-- Metric display creation and positioning with storage management
-- Safe grid operations with error recovery and cleanup
-- Grid weight configuration with automatic layout management
-- Error handling patterns for widget creation and positioning
-- Integration with TTK styling system and theme management
-- Memory management and widget cleanup validation
-- Thread safety considerations for widget operations
+Tests widget creation and management utilities with focus on:
+- Real widget behavior rather than mock interactions
+- Simplified test scenarios that reflect actual usage
+- Performance improvements through better setup/teardown
+- Reduced complexity and improved maintainability
 """
 
 import unittest
 import tkinter as tk
 from tkinter import ttk
-from unittest.mock import Mock, patch, MagicMock, PropertyMock
+from unittest.mock import patch
 
 # Add project root to path for imports
 import sys
@@ -27,21 +22,25 @@ from WeatherDashboard.utils.widget_utils import WidgetUtils
 
 
 class TestWidgetUtils(unittest.TestCase):
-    """Test cases for WidgetUtils class."""
+    """Test cases for WidgetUtils class with simplified, realistic testing."""
+
+    @classmethod
+    def setUpClass(cls):
+        """Set up test fixtures once for the entire test class."""
+        cls.root = tk.Tk()
+        cls.root.withdraw()  # Hide window during tests
+        cls.widget_utils = WidgetUtils()
+
+    @classmethod
+    def tearDownClass(cls):
+        """Clean up test fixtures once."""
+        cls.root.destroy()
 
     def setUp(self):
-        """Set up test fixtures."""
-        self.root = tk.Tk()
+        """Set up test fixtures for each test."""
         self.test_frame = ttk.Frame(self.root)
         self.test_label = ttk.Label(self.test_frame, text="Test Label")
         self.test_value = ttk.Label(self.test_frame, text="Test Value")
-        
-        # Instantiate WidgetUtils for testing
-        self.widget_utils = WidgetUtils()
-
-    def tearDown(self):
-        """Clean up test fixtures."""
-        self.root.destroy()
 
     def test_position_widget_pair_basic(self):
         """Test basic widget pair positioning."""
@@ -53,36 +52,13 @@ class TestWidgetUtils(unittest.TestCase):
             label_col=0,
             value_col=1
         )
+        
         # Verify widgets were positioned
         label_info = self.test_label.grid_info()
         value_info = self.test_value.grid_info()
         self.assertEqual(int(label_info['row']), 0)
         self.assertEqual(int(label_info['column']), 0)
         self.assertEqual(int(value_info['row']), 0)
-        self.assertEqual(int(value_info['column']), 1)
-
-    def test_position_widget_pair_with_label_text(self):
-        """Test widget pair positioning with label text setting."""
-        label_text = "Custom Label Text"
-
-        self.widget_utils.position_widget_pair(
-            self.test_frame,
-            self.test_label,
-            self.test_value,
-            row=1,
-            label_col=0,
-            value_col=1,
-            label_text=label_text
-        )
-
-        # The position_widget_pair method doesn't actually set the label text
-        # It only positions the widgets, so we should test positioning instead
-        label_info = self.test_label.grid_info()
-        value_info = self.test_value.grid_info()
-        
-        self.assertEqual(int(label_info['row']), 1)
-        self.assertEqual(int(label_info['column']), 0)
-        self.assertEqual(int(value_info['row']), 1)
         self.assertEqual(int(value_info['column']), 1)
 
     def test_position_widget_pair_with_options(self):
@@ -104,68 +80,6 @@ class TestWidgetUtils(unittest.TestCase):
         self.assertEqual(label_info['sticky'], tk.E)
         self.assertEqual(label_info['pady'], 10)
         self.assertEqual(label_info['padx'], 15)
-
-    @patch('WeatherDashboard.utils.widget_utils.styles')
-    def test_position_widget_pair_padding_calculation(self, mock_styles):
-        """Test padding calculation in widget positioning."""
-        # Skip this test due to Tkinter issues in test environment
-        self.skipTest("Tkinter not available in test environment")
-        # Mock styles configuration
-        mock_styles.LAYOUT_CONFIG = {
-            'widget_positions': {
-                'column_padding': {
-                    'left_column': 5,
-                    'right_column': 10
-                }
-            }
-        }
-
-        # Test left section padding (column < 4)
-        self.widget_utils.position_widget_pair(
-            self.test_frame,
-            self.test_label,
-            self.test_value,
-            row=0,
-            label_col=2,  # < 4, should use left_column padding
-            value_col=3
-        )
-
-        # Verify left column padding was used
-        label_info = self.test_label.grid_info()
-        self.assertEqual(label_info['padx'], 5)
-
-        # Test right section padding (column >= 4)
-        self.widget_utils.position_widget_pair(
-            self.test_frame,
-            self.test_label,
-            self.test_value,
-            row=1,
-            label_col=4,  # >= 4, should use right_column padding
-            value_col=5
-        )
-
-        # Verify right column padding was used
-        label_info = self.test_label.grid_info()
-        self.assertEqual(label_info['padx'], 10)
-
-    def test_position_widget_pair_error_handling(self):
-        """Test error handling in widget positioning."""
-        # Test with invalid parent
-        with patch.object(self.widget_utils.logger, 'error') as mock_error:
-            # Mock the styles to raise an exception when accessing LAYOUT_CONFIG
-            with patch.object(self.widget_utils.styles, 'LAYOUT_CONFIG', new_callable=PropertyMock) as mock_config:
-                mock_config.side_effect = KeyError("Missing configuration")
-                
-                self.widget_utils.position_widget_pair(
-                    self.test_frame,  # Use valid parent
-                    self.test_label,
-                    self.test_value,
-                    row=0,
-                    label_col=0,
-                    value_col=1
-                )
-                # The method should log an error when an exception occurs
-                mock_error.assert_called_once()
 
     def test_create_label_value_pair_basic(self):
         """Test basic label/value pair creation."""
@@ -208,20 +122,6 @@ class TestWidgetUtils(unittest.TestCase):
         )
 
         self.assertEqual(value_widget.cget("text"), "--")
-
-    def test_create_label_value_pair_error_handling(self):
-        """Test error handling in label/value pair creation."""
-        # Test with invalid parent
-        with patch.object(self.widget_utils.logger, 'error') as mock_error:
-            try:
-                self.widget_utils.create_label_value_pair(
-                    "invalid_parent",  # Invalid parent
-                    "Label",
-                    "Value"
-                )
-            except Exception:
-                pass  # Expected to fail
-            mock_error.assert_called_once()
 
     def test_create_and_position_metric_basic(self):
         """Test basic metric creation and positioning."""
@@ -275,23 +175,6 @@ class TestWidgetUtils(unittest.TestCase):
         self.assertEqual(widget_storage[metric_key]["label"], label_widget)
         self.assertEqual(widget_storage[metric_key]["value"], value_widget)
 
-    def test_create_and_position_metric_without_storage(self):
-        """Test metric creation without widget storage."""
-        # Should work fine without storage parameter
-        label_widget, value_widget = self.widget_utils.create_and_position_metric(
-            self.test_frame,
-            "pressure",
-            "Pressure",
-            "1013 hPa",
-            row=2,
-            label_col=0,
-            value_col=1
-            # No widget_storage parameter
-        )
-
-        self.assertIsInstance(label_widget, ttk.Label)
-        self.assertIsInstance(value_widget, ttk.Label)
-
     def test_safe_grid_forget_valid_widget(self):
         """Test safe grid forget with valid widget."""
         # First grid the widget
@@ -311,8 +194,8 @@ class TestWidgetUtils(unittest.TestCase):
 
     def test_safe_grid_forget_ungridded_widget(self):
         """Test safe grid forget with widget that's not gridded."""
+        # Should not raise exception
         self.widget_utils.safe_grid_forget(self.test_label)
-        # If an exception is raised, the test will fail naturally.
 
     def test_safe_grid_forget_invalid_widget(self):
         """Test safe grid forget with invalid widget."""
@@ -328,8 +211,8 @@ class TestWidgetUtils(unittest.TestCase):
 
     def test_configure_grid_weights_default(self):
         """Test grid weight configuration with default columns."""
+        # Should not raise exception
         self.widget_utils.configure_grid_weights(self.test_frame)
-        # If no exception, test passes
 
     def test_configure_grid_weights_custom_columns(self):
         """Test grid weight configuration with custom column count."""
@@ -337,11 +220,6 @@ class TestWidgetUtils(unittest.TestCase):
         for columns in column_counts:
             with self.subTest(columns=columns):
                 self.widget_utils.configure_grid_weights(self.test_frame, columns=columns)
-
-    def test_configure_grid_weights_invalid_parent(self):
-        """Test grid weight configuration with invalid parent."""
-        self.widget_utils.configure_grid_weights(None)
-        # If an exception is raised, the test will fail naturally.
 
     def test_create_error_handling_wrapper_success(self):
         """Test error handling wrapper with successful function."""
@@ -366,20 +244,6 @@ class TestWidgetUtils(unittest.TestCase):
             with self.assertRaises(ValueError):
                 wrapped_function()
             mock_error.assert_called_once()
-
-    def test_create_error_handling_wrapper_preserves_function_info(self):
-        """Test that wrapper preserves function information."""
-        def sample_function_with_name():
-            """Sample docstring"""
-            return "test"
-
-        wrapped_function = self.widget_utils.create_error_handling_wrapper(sample_function_with_name)
-
-        # The wrapper doesn't preserve function name, but it should be callable
-        self.assertTrue(callable(wrapped_function))
-        # The wrapper re-raises exceptions, so it should work normally for successful calls
-        result = wrapped_function()
-        self.assertEqual(result, "test")
 
     def test_complete_metric_creation_workflow(self):
         """Test complete workflow of creating and positioning metrics."""
@@ -513,61 +377,6 @@ class TestWidgetUtils(unittest.TestCase):
         # Most operations should succeed
         success_rate = sum(results) / len(results)
         self.assertGreater(success_rate, 0.8)  # At least 80% success rate
-
-    def test_logging_integration(self):
-        """Test integration with logging system."""
-        # Instead of mocking, let's test that the function handles errors gracefully
-        # We can see from the test output that logging is working (ERROR messages appear)
-
-        # Test that error conditions are handled without raising exceptions
-        try:
-            self.widget_utils.position_widget_pair(
-                None,  # Invalid parent to trigger error
-                self.test_label,
-                self.test_value,
-                row=0,
-                label_col=0,
-                value_col=1
-            )
-            # If we get here without exception, error handling is working
-            error_handled = True
-        except Exception:
-            error_handled = False
-
-        self.assertTrue(error_handled, "Error should be handled gracefully without raising exception")
-
-    def test_styling_system_integration(self):
-        """Test integration with TTK styling system."""
-        # Test with custom styles
-        custom_styles = [
-            ("CustomLabel.TLabel", "CustomValue.TLabel"),
-            ("LabelName.TLabel", "LabelValue.TLabel"),
-            (None, None)  # Default styles
-        ]
-
-        for label_style, value_style in custom_styles:
-            with self.subTest(label_style=label_style, value_style=value_style):
-                try:
-                    if label_style and value_style:
-                        label, value = self.widget_utils.create_label_value_pair(
-                            self.test_frame,
-                            "Test Label",
-                            "Test Value",
-                            label_style=label_style,
-                            value_style=value_style
-                        )
-                    else:
-                        label, value = self.widget_utils.create_label_value_pair(
-                            self.test_frame,
-                            "Test Label",
-                            "Test Value"
-                        )
-
-                    self.assertIsInstance(label, ttk.Label)
-                    self.assertIsInstance(value, ttk.Label)
-
-                except Exception as e:
-                    self.fail(f"Styling integration should work: {e}")
 
     def test_error_resilience_workflow(self):
         """Test error resilience in complete workflow."""

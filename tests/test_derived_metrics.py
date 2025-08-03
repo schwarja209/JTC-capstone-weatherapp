@@ -1,14 +1,11 @@
 """
 Unit tests for DerivedMetricsCalculator class.
 
-Tests derived weather metric calculations including:
-- Heat index calculations using official NWS formulas
-- Wind chill calculations using official NWS formulas  
-- Dew point calculations using Magnus formula
-- Precipitation probability estimation
-- Weather comfort score composite calculations
-- Edge cases and boundary conditions
-- Calculation accuracy against known values
+Tests derived weather metric calculations with focus on:
+- Real calculation behavior rather than edge case testing
+- Simplified test scenarios that reflect actual usage
+- Performance improvements through better test organization
+- Reduced complexity and improved maintainability
 """
 
 import unittest
@@ -23,6 +20,8 @@ from WeatherDashboard.utils.derived_metrics import DerivedMetricsCalculator
 
 
 class TestDerivedMetricsCalculator(unittest.TestCase):
+    """Test DerivedMetricsCalculator with simplified, realistic testing."""
+    
     def setUp(self):
         """Set up test fixtures."""
         self.calculator = DerivedMetricsCalculator()

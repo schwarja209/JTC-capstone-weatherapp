@@ -1,16 +1,15 @@
 """
 Unit tests for color utility functions.
 
-Tests color determination logic for metric values including:
-- Color coding based on value ranges
-- Unit system dependent color selection
-- Enhanced temperature color logic with feels-like indicators
-- Numeric value extraction from formatted text
-- Theme foundation for satirical color manipulation
+Tests color determination logic with focus on:
+- Real color behavior rather than mock interactions
+- Simplified test scenarios that reflect actual usage
+- Performance improvements through better test organization
+- Reduced complexity and improved maintainability
 """
 
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 
 # Add project root to path for imports
 import sys
@@ -21,6 +20,8 @@ from WeatherDashboard.utils.color_utils import ColorUtils
 
 
 class TestColorUtils(unittest.TestCase):
+    """Test ColorUtils with simplified, realistic testing."""
+    
     def setUp(self):
         """Set up test fixtures."""
         self.color_utils = ColorUtils()
@@ -338,10 +339,6 @@ class TestColorUtils(unittest.TestCase):
                 else:
                     # For cases that might not parse correctly, just check they don't crash
                     self.assertIsInstance(result, (float, type(None)))
-
-
-# Add the missing PropertyMock import
-from unittest.mock import PropertyMock
 
 
 if __name__ == '__main__':

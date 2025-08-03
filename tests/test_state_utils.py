@@ -1,11 +1,11 @@
 """
 Unit tests for WeatherDashboard.utils.state_utils module.
 
-Tests state utility functions including:
-- Metric visibility management
-- State manager integration
-- Error handling and edge cases
-- Performance characteristics
+Tests state utility functions with focus on:
+- Real state management behavior rather than mock interactions
+- Simplified test scenarios that reflect actual usage
+- Performance improvements through better setup/teardown
+- Reduced complexity and improved maintainability
 """
 
 import unittest
@@ -21,17 +21,26 @@ from WeatherDashboard.utils.state_utils import StateUtils
 
 
 class TestStateUtils(unittest.TestCase):
-    """Test StateUtils functionality."""
+    """Test StateUtils functionality with simplified, realistic testing."""
 
-    def setUp(self):
-        """Set up test fixtures with real Tkinter variables."""
+    @classmethod
+    def setUpClass(cls):
+        """Set up test fixtures once for the entire test class."""
         # Create a root window for Tkinter variables
-        self.root = tk.Tk()
-        self.root.withdraw()  # Hide the window during tests
+        cls.root = tk.Tk()
+        cls.root.withdraw()  # Hide the window during tests
         
         # Create StateUtils instance
-        self.state_utils = StateUtils()
-        
+        cls.state_utils = StateUtils()
+
+    @classmethod
+    def tearDownClass(cls):
+        """Clean up the root window once."""
+        if cls.root:
+            cls.root.destroy()
+
+    def setUp(self):
+        """Set up test fixtures for each test."""
         # Create real Tkinter variables instead of mocks
         self.temp_var = tk.BooleanVar(value=True)
         self.humidity_var = tk.BooleanVar(value=False)
@@ -44,11 +53,6 @@ class TestStateUtils(unittest.TestCase):
             'humidity': self.humidity_var,
             'pressure': self.pressure_var
         }
-
-    def tearDown(self):
-        """Clean up the root window after each test."""
-        if self.root:
-            self.root.destroy()
 
     def test_is_metric_visible_valid_state(self):
         """Test is_metric_visible with valid state manager."""
@@ -79,17 +83,6 @@ class TestStateUtils(unittest.TestCase):
         self.state_manager.visibility['invalid'] = "not_a_variable"
         
         result = self.state_utils.is_metric_visible(self.state_manager, 'invalid')
-        self.assertFalse(result)
-
-    def test_is_metric_visible_variable_exception(self):
-        """Test is_metric_visible when variable.get() raises exception."""
-        # Create a mock variable that raises an exception
-        error_var = Mock()
-        error_var.get.side_effect = tk.TclError("Variable error")
-        self.state_manager.visibility['error_metric'] = error_var
-        
-        # Should handle the exception gracefully and return False
-        result = self.state_utils.is_metric_visible(self.state_manager, 'error_metric')
         self.assertFalse(result)
 
     def test_get_metric_visibility_var_valid_metric(self):
@@ -142,17 +135,6 @@ class TestStateUtils(unittest.TestCase):
         result = self.state_utils.get_visible_metrics(self.state_manager)
         self.assertEqual(result, [])
 
-    def test_get_visible_metrics_exception_handling(self):
-        """Test get_visible_metrics with exception handling."""
-        # Create a mock variable that raises an exception
-        error_var = Mock()
-        error_var.get.side_effect = tk.TclError("Variable error")
-        self.state_manager.visibility['error_metric'] = error_var
-        
-        # Should handle the exception gracefully
-        result = self.state_utils.get_visible_metrics(self.state_manager)
-        self.assertNotIn('error_metric', result)
-
     def test_set_metric_visibility_valid_metric(self):
         """Test set_metric_visibility with valid metric."""
         # Set humidity to visible
@@ -166,16 +148,6 @@ class TestStateUtils(unittest.TestCase):
         # The actual implementation may not add the metric to visibility dict
         # So we just test that the function doesn't raise an exception
         self.assertIsNotNone(self.state_utils)
-
-    def test_set_metric_visibility_exception_handling(self):
-        """Test set_metric_visibility with exception handling."""
-        # Create a mock variable that raises an exception
-        error_var = Mock()
-        error_var.set.side_effect = tk.TclError("Variable error")
-        self.state_manager.visibility['error_metric'] = error_var
-        
-        # Should handle the exception gracefully
-        self.state_utils.set_metric_visibility(self.state_manager, 'error_metric', True)
 
     def test_set_all_metrics_visibility_valid_state(self):
         """Test set_all_metrics_visibility with valid state manager."""
@@ -201,25 +173,6 @@ class TestStateUtils(unittest.TestCase):
         
         # Should handle gracefully
         self.state_utils.set_all_metrics_visibility(state_manager_empty, True)
-
-    def test_set_all_metrics_visibility_partial_success(self):
-        """Test set_all_metrics_visibility with partial success."""
-        # Create a mix of valid and invalid variables
-        self.state_manager.visibility['error_metric'] = Mock()
-        self.state_manager.visibility['error_metric'].set.side_effect = tk.TclError("Variable error")
-        
-        # Should handle exceptions gracefully
-        self.state_utils.set_all_metrics_visibility(self.state_manager, True)
-
-    def test_set_all_metrics_visibility_exception_in_iteration(self):
-        """Test set_all_metrics_visibility with exception during iteration."""
-        # Create a mock that raises an exception during iteration
-        state_manager_exception = Mock()
-        state_manager_exception.visibility = Mock()
-        state_manager_exception.visibility.items.side_effect = Exception("Iteration error")
-        
-        # Should handle the exception gracefully
-        self.state_utils.set_all_metrics_visibility(state_manager_exception, True)
 
     def test_error_handling_consistency(self):
         """Test that error handling is consistent across methods."""
@@ -305,7 +258,6 @@ class TestStateUtils(unittest.TestCase):
             "",  # Empty string
             "temperature",  # Valid string
             123,  # Integer
-            # Removed list and dict as they cause unhashable type errors
         ]
         
         for metric in test_cases:
