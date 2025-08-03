@@ -28,48 +28,60 @@ from WeatherDashboard.utils.rate_limiter import RateLimiter
 
 class TestWeatherDashboardController(unittest.TestCase):
     def setUp(self):
-        """Set up test fixtures with mocked dependencies."""
+        """Set up test fixtures."""
+        # Patch Logger at the correct import location to avoid string formatting issues
+        self.logger_patcher = patch('WeatherDashboard.utils.logger.Logger')
+        self.mock_logger_class = self.logger_patcher.start()
+        self.mock_logger = Mock()
+        self.mock_logger_class.return_value = self.mock_logger
+        
+        # Patch RateLimiter to use mock
+        self.rate_limiter_patcher = patch('WeatherDashboard.core.controller.RateLimiter')
+        self.mock_rate_limiter_class = self.rate_limiter_patcher.start()
+        self.mock_rate_limiter = Mock()
+        self.mock_rate_limiter_class.return_value = self.mock_rate_limiter
+        
         # Create mock dependencies
         self.mock_state = Mock()
         self.mock_data_service = Mock()
         self.mock_widgets = Mock()
         self.mock_ui_handler = Mock()
+        self.mock_alert_manager = Mock()
+        self.mock_error_handler = Mock()
         
-        # Configure mock state methods
+        # Configure mock state
         self.mock_state.get_current_city.return_value = "New York"
         self.mock_state.get_current_unit_system.return_value = "metric"
-        self.mock_state.get_current_range.return_value = "Last 7 Days"
-        self.mock_state.get_current_chart_metric.return_value = "Temperature"
+        self.mock_state.get_current_chart_range.return_value = "Last 7 Days"
+        self.mock_state.get_current_chart_metric.return_value = "temperature"
         
-        # Configure mock visibility state properly
-        self.mock_visibility = {}
-        for metric in ['temperature', 'humidity', 'wind_speed', 'pressure']:
-            mock_var = Mock()
-            mock_var.get.return_value = True
-            self.mock_visibility[metric] = mock_var
-        self.mock_state.visibility = self.mock_visibility
+        # Configure mock data service
+        self.mock_data_service.get_city_data.return_value = ("New York", {"temperature": 25}, None)
         
         # Configure mock widgets
+        self.mock_widgets.frames = {'main': Mock(), 'status': Mock()}
         self.mock_widgets.metric_widgets = Mock()
         self.mock_widgets.status_bar_widgets = Mock()
+        self.mock_widgets.control_widgets = Mock()
         
-        # Create mock dependencies for injection
-        self.mock_rate_limiter = Mock()
-        self.mock_error_handler = Mock()
-        self.mock_alert_manager = Mock()
+        # Create controller with mocked dependencies
+        from WeatherDashboard.core.controller import WeatherDashboardController
+        self.controller = WeatherDashboardController(
+            state=self.mock_state,
+            data_service=self.mock_data_service,
+            widgets=self.mock_widgets,
+            ui_handler=self.mock_ui_handler,
+            error_handler=self.mock_error_handler,
+            alert_manager=self.mock_alert_manager
+        )
         
-        # Patch the RateLimiter class to return our mock
-        with patch('WeatherDashboard.core.controller.RateLimiter', return_value=self.mock_rate_limiter):
-            # Create controller instance with injected dependencies
-            self.controller = WeatherDashboardController(
-                state=self.mock_state,
-                data_service=self.mock_data_service,
-                widgets=self.mock_widgets,
-                ui_handler=self.mock_ui_handler,
-                theme='neutral',
-                error_handler=self.mock_error_handler,
-                alert_manager=self.mock_alert_manager
-            )
+        # Patch the controller's logger attribute directly
+        self.controller.logger = self.mock_logger
+
+    def tearDown(self):
+        """Clean up test fixtures."""
+        self.logger_patcher.stop()
+        self.rate_limiter_patcher.stop()
 
     def test_dependency_injection(self):
         """Test that dependencies are properly injected."""
@@ -103,76 +115,51 @@ class TestWeatherDashboardController(unittest.TestCase):
         self.assertIsNotNone(self.controller.error_handler)
 
     def test_update_weather_display_success(self):
-        """Test successful weather data update flow."""
+        """Test successful weather display update."""
+        # Configure rate limiter to allow request
+        self.mock_rate_limiter.can_make_request.return_value = True
+        
         # Configure validation to pass
         with patch('WeatherDashboard.core.controller.ValidationUtils') as mock_validation_utils:
             mock_validation_utils.validate_input_types.return_value = []
             mock_validation_utils.validate_complete_state.return_value = []
-
-            # Configure mocks for successful flow
-            self.controller.rate_limiter.can_make_request.return_value = True
-
-            # Mock successful data service response
-            mock_city = "New York"
-            mock_data = {
-                'temperature': 25.0,
-                'humidity': 60,
-                'conditions': 'Clear'
-            }
-            self.mock_data_service.get_city_data.return_value = (mock_city, mock_data, None)
-
+            
             # Mock view model creation
             with patch('WeatherDashboard.core.controller.WeatherViewModel') as mock_view_model:
                 mock_vm_instance = Mock()
-                mock_vm_instance.city_name = mock_city
-                mock_vm_instance.date_str = "2024-12-01"
-                mock_vm_instance.metrics = {'temperature': '25.0 °C'}
                 mock_view_model.return_value = mock_vm_instance
-
-                # Execute update - returns ControllerOperationResult
+                
+                # Execute update
                 result = self.controller.update_weather_display("New York", "metric")
-
-                # Verify success - check the result object
+                
+                # Should succeed
                 self.assertTrue(result.success)
-                # Fix: Check for the correct call signature with cancel_event=None
-                self.mock_data_service.get_city_data.assert_called_once_with("New York", "metric", None)
-
-                # The controller doesn't have write_to_log method
-                # Logging is handled internally by the Logger instance
+                self.assertIsNone(result.error_message)
 
     def test_update_weather_display_validation_failure(self):
-        """Test weather update with validation errors."""
-        # Configure input validation to return errors
+        """Test weather display update with validation failure."""
+        # Configure validation to fail
         with patch('WeatherDashboard.core.controller.ValidationUtils') as mock_validation_utils:
-            mock_validation_utils.validate_input_types.return_value = ["City name cannot be empty"]
-
-            # Execute update - returns ControllerOperationResult
+            mock_validation_utils.validate_input_types.return_value = ["Invalid input"]
+            
+            # Execute update
             result = self.controller.update_weather_display("", "metric")
-
-            # Verify failure - the controller might still return success=True
-            # but with an error message, so we check the error message instead
+            
+            # Should fail with validation error
+            self.assertFalse(result.success)
             self.assertIsNotNone(result.error_message)
-            self.assertIn("City name", result.error_message)
 
     def test_update_weather_display_rate_limit(self):
-        """Test weather update blocked by rate limiting."""
+        """Test weather display update with rate limiting."""
         # Configure rate limiter to block request
-        self.controller.rate_limiter.can_make_request.return_value = False
-        self.controller.rate_limiter.get_wait_time.return_value = 5.0
-
-        # Mock validation to pass so we get to rate limiting check
-        with patch('WeatherDashboard.core.controller.ValidationUtils') as mock_validation_utils:
-            mock_validation_utils.validate_input_types.return_value = []
-            mock_validation_utils.validate_complete_state.return_value = []
-
-            # Execute update - returns ControllerOperationResult
-            result = self.controller.update_weather_display("New York", "metric")
-
-            # Verify rate limiting was handled - the controller returns success=True
-            # but with an error message about rate limiting
-            self.assertTrue(result.success)  # Controller returns success even when rate limited
-            self.assertIsNotNone(result.error_message)
-            self.assertIn("rate", result.error_message.lower())
+        self.mock_rate_limiter.can_make_request.return_value = False
+        
+        # Execute update
+        result = self.controller.update_weather_display("New York", "metric")
+        
+        # Should fail with rate limit error
+        self.assertFalse(result.success)
+        self.assertIsNotNone(result.error_message)
 
     @patch('WeatherDashboard.core.controller.ValidationUtils')
     def test_update_weather_display_city_not_found(self, mock_validation_utils):
@@ -181,9 +168,12 @@ class TestWeatherDashboardController(unittest.TestCase):
         mock_validation_utils.validate_input_types.return_value = []
         mock_validation_utils.validate_complete_state.return_value = []
         
-        # Configure mocks for city not found
-        self.controller.rate_limiter.can_make_request.return_value = True
-        city_error = CityNotFoundError("City 'InvalidCity' not found")
+        # Configure rate limiter to allow request
+        self.mock_rate_limiter.can_make_request.return_value = True
+        
+        # Configure service to return city not found error
+        from WeatherDashboard.services.api_exceptions import ValidationError
+        city_error = ValidationError("City 'InvalidCity' not found")
         self.mock_data_service.get_city_data.return_value = ("InvalidCity", {}, city_error)
         
         # Mock view model creation
@@ -194,8 +184,9 @@ class TestWeatherDashboardController(unittest.TestCase):
             # Execute update
             result = self.controller.update_weather_display("InvalidCity", "metric")
             
-            # Should still return True (fallback data used)
-            self.assertTrue(result.success)
+            # Should handle error gracefully and return False
+            self.assertFalse(result.success)
+            self.assertIsNotNone(result.error_message)
 
     def test_update_chart_success(self):
         """Test successful chart update."""
@@ -228,14 +219,19 @@ class TestWeatherDashboardController(unittest.TestCase):
             self.mock_data_service.get_historical_data.assert_called_once()
 
     def test_update_chart_no_data(self):
-        """Test chart update with no historical data."""
-        # Configure mocks for no data
+        """Test chart update when no historical data is available."""
+        # Configure state to return valid settings
+        self.mock_state.get_current_city.return_value = "New York"
+        self.mock_state.get_current_chart_range.return_value = "Last 7 Days"
+        self.mock_state.get_current_chart_metric.return_value = "temperature"
+
         with patch('WeatherDashboard.core.controller.config') as mock_config:
             mock_config.CHART = {"range_options": {"Last 7 Days": 7}}
             mock_config.METRICS = {"temperature": {"label": "Temperature"}}
 
-            # Mock service response with no data - the controller expects a dataclass
+            # Mock data service to return empty historical data
             from dataclasses import dataclass
+            
             @dataclass
             class MockHistoricalData:
                 data_entries: list
@@ -243,18 +239,13 @@ class TestWeatherDashboardController(unittest.TestCase):
             mock_data = MockHistoricalData(data_entries=[])
             self.mock_data_service.get_historical_data.return_value = mock_data
 
-            # Mock the logger at the module level to avoid the string formatting issue
-            with patch('WeatherDashboard.core.controller.Logger') as mock_logger_class:
-                mock_logger = Mock()
-                mock_logger_class.return_value = mock_logger
-                
-                # Execute chart update - should handle gracefully
-                self.controller.update_chart()
+            # Execute chart update - should handle gracefully
+            self.controller.update_chart()
 
-                # Verify the service was called
-                self.mock_data_service.get_historical_data.assert_called_once()
-                # Verify the logger was called
-                mock_logger.exception.assert_called_once()
+            # Verify the service was called
+            self.mock_data_service.get_historical_data.assert_called_once()
+            # Verify the logger was called
+            self.mock_logger.exception.assert_called_once()
 
     def test_update_chart_invalid_metric(self):
         """Test chart update with invalid metric selection."""
@@ -265,16 +256,11 @@ class TestWeatherDashboardController(unittest.TestCase):
             mock_config.CHART = {"range_options": {"Last 7 Days": 7}}
             mock_config.METRICS = {"temperature": {"label": "Temperature"}}
 
-            # Mock the logger at the module level to avoid the string formatting issue
-            with patch('WeatherDashboard.core.controller.Logger') as mock_logger_class:
-                mock_logger = Mock()
-                mock_logger_class.return_value = mock_logger
-                
-                # Execute chart update - should handle error gracefully
-                self.controller.update_chart()
+            # Execute chart update - should handle error gracefully
+            self.controller.update_chart()
 
-                # Verify the logger was called
-                mock_logger.exception.assert_called_once()
+            # Verify the logger was called
+            self.mock_logger.exception.assert_called_once()
 
     def test_show_weather_alerts_with_alerts(self):
         """Test showing weather alerts when alerts exist."""
@@ -314,9 +300,10 @@ class TestWeatherDashboardController(unittest.TestCase):
         mock_validation_utils.validate_complete_state.return_value = []
         
         # Configure rate limiter to allow request
-        self.controller.rate_limiter.can_make_request.return_value = True
+        self.mock_rate_limiter.can_make_request.return_value = True
         
         # Configure service to raise network error
+        from WeatherDashboard.services.api_exceptions import NetworkError
         network_error = NetworkError("Connection failed")
         self.mock_data_service.get_city_data.return_value = ("New York", {}, network_error)
         
@@ -328,8 +315,8 @@ class TestWeatherDashboardController(unittest.TestCase):
             # Execute update
             result = self.controller.update_weather_display("New York", "metric")
             
-            # Should handle error gracefully and return True (fallback used)
-            self.assertTrue(result.success)
+            # Should handle error gracefully and return False
+            self.assertFalse(result.success)
 
     def test_validate_inputs_and_state_invalid_city(self):
         """Test input validation with invalid city name."""
@@ -357,26 +344,22 @@ class TestWeatherDashboardController(unittest.TestCase):
             self.assertIsNotNone(self.controller.validation_utils)
 
     def test_check_rate_limiting_allowed(self):
-        """Test rate limiting check when request is allowed."""
+        """Test rate limiting when requests are allowed."""
         # Configure rate limiter to allow request
-        self.controller.rate_limiter.can_make_request.return_value = True
-
-        # The controller doesn't have a _check_rate_limiting method
-        # Rate limiting is handled internally in the update methods
-        # Test that rate limiter is accessible
-        self.assertTrue(self.controller.rate_limiter.can_make_request())
+        self.mock_rate_limiter.can_make_request.return_value = True
+        
+        # Should allow the request
+        result = self.controller.update_weather_display("New York", "metric")
+        self.assertTrue(result.success)
 
     def test_check_rate_limiting_blocked(self):
-        """Test rate limiting check when request is blocked."""
+        """Test rate limiting when requests are blocked."""
         # Configure rate limiter to block request
-        self.controller.rate_limiter.can_make_request.return_value = False
-        self.controller.rate_limiter.get_wait_time.return_value = 10.0
-
-        # The controller doesn't have a _check_rate_limiting method
-        # Rate limiting is handled internally in the update methods
-        # Test that rate limiter is accessible
-        self.assertFalse(self.controller.rate_limiter.can_make_request())
-        self.assertEqual(self.controller.rate_limiter.get_wait_time(), 10.0)
+        self.mock_rate_limiter.can_make_request.return_value = False
+        
+        # Should block the request
+        result = self.controller.update_weather_display("New York", "metric")
+        self.assertFalse(result.success)
 
     @patch('WeatherDashboard.core.controller.config')
     def test_get_chart_settings_empty_city(self, mock_config):

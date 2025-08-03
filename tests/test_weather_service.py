@@ -510,9 +510,13 @@ class TestWeatherAPIService(unittest.TestCase):
         mock_fallback_data = [{'temperature': 20.0, 'humidity': 70, 'date': datetime.now()}]
         self.service.fallback.generate.return_value = mock_fallback_data
         
-        # Mock API client to raise exception
-        with patch.object(WeatherAPIClient, 'fetch_weather_data') as mock_weather:
+        # Mock API client to raise exception and mock data parser
+        with patch.object(WeatherAPIClient, 'fetch_weather_data') as mock_weather, \
+             patch.object(self.service._data_parser, 'parse_weather_data') as mock_parse:
             mock_weather.side_effect = CityNotFoundError("City not found")
+            
+            # Mock parse_weather_data to return concrete dictionary
+            mock_parse.return_value = {'temperature': 25.0, 'humidity': 60}
 
             # Execute fetch
             result = self.service.fetch_current("InvalidCity")
@@ -532,15 +536,15 @@ class TestWeatherAPIService(unittest.TestCase):
         with patch.object(WeatherAPIClient, 'fetch_weather_data') as mock_weather, \
              patch.object(WeatherAPIClient, 'fetch_uv_data') as mock_uv, \
              patch.object(WeatherAPIClient, 'fetch_air_quality_data') as mock_air, \
-             patch.object(WeatherDataParser, 'parse_weather_data') as mock_parse, \
+             patch.object(self.service._data_parser, 'parse_weather_data') as mock_parse, \
              patch.object(WeatherDataValidator, 'validate_weather_data') as mock_validate:
 
             mock_weather.return_value = {"main": {"temp": "invalid", "pressure": 1013.0}}
             mock_uv.return_value = None
             mock_air.return_value = None
 
-            # Mock the data parser to return a dictionary that can be modified
-            mock_parsed_data = {'temperature': 'invalid'}
+            # Mock the data parser to return a concrete dictionary that can be modified
+            mock_parsed_data = {'temperature': 'invalid', 'humidity': 60, 'pressure': 1013.0}
             mock_parse.return_value = mock_parsed_data
             mock_validate.side_effect = ValueError("Invalid temperature")
 
@@ -556,13 +560,14 @@ class TestWeatherAPIService(unittest.TestCase):
         """Test fallback response generation."""
         # Mock fallback generator and derived metrics
         with patch.object(self.service, 'fallback') as mock_fallback, \
-             patch.object(WeatherDataParser, '_calculate_derived_metrics') as mock_calc:
+             patch.object(self.service._data_parser, '_calculate_derived_metrics') as mock_calc:
 
             mock_fallback_data = [
                 {'temperature': 20.0, 'humidity': 70, 'date': datetime.now()}
             ]
             mock_fallback.generate.return_value = mock_fallback_data
 
+            # Provide concrete dictionary for derived metrics
             mock_calc.return_value = {
                 'heat_index': None,
                 'wind_chill': 18.0

@@ -302,10 +302,13 @@ class TestWeatherHistoryService(unittest.TestCase):
         # Initially should not exceed limits
         self.assertFalse(self.history_service._simple_memory_check())
 
-        # Add data to exceed limits
-        for i in range(100):  # Exceed max_total_entries
+        # Add data to exceed limits (max_total_entries is 1000, so add 1100 entries)
+        for i in range(1100):  # Exceed max_total_entries
             weather_data = {"temperature": 20.0 + i, "date": datetime.now()}
-            self.history_service.store_current_weather(f"TestCity{i}", weather_data, "metric")
+            # Use valid city names without numbers (only letters allowed)
+            city_names = ["NewYork", "London", "Paris", "Tokyo", "Berlin", "Rome", "Madrid", "Amsterdam", "Vienna", "Prague"]
+            city_name = city_names[i % len(city_names)]
+            self.history_service.store_current_weather(city_name, weather_data, "metric")
 
         # Should now exceed limits
         self.assertTrue(self.history_service._simple_memory_check())

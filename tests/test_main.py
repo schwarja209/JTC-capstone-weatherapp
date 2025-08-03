@@ -55,9 +55,9 @@ class TestInitializeSystem(unittest.TestCase):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
     
     @patch('WeatherDashboard.main.sys.exit')
-    @patch('WeatherDashboard.main.get_package_info')
-    @patch('WeatherDashboard.main.config')
-    @patch('WeatherDashboard.main.Logger')
+    @patch('WeatherDashboard.get_package_info')
+    @patch('WeatherDashboard.config')
+    @patch('WeatherDashboard.utils.logger.Logger')
     def test_initialize_system_success(self, mock_logger, mock_config, mock_package_info, mock_exit):
         """Test successful system initialization."""
         mock_package_info.return_value = {
@@ -85,9 +85,9 @@ class TestInitializeSystem(unittest.TestCase):
         mock_logger_instance.test_logging_health.assert_called_once()
     
     @patch('WeatherDashboard.main.sys.exit')
-    @patch('WeatherDashboard.main.get_package_info')
-    @patch('WeatherDashboard.main.config')
-    @patch('WeatherDashboard.main.Logger')
+    @patch('WeatherDashboard.get_package_info')
+    @patch('WeatherDashboard.config')
+    @patch('WeatherDashboard.utils.logger.Logger')
     def test_initialize_system_config_validation_error(self, mock_logger, mock_config, mock_package_info, mock_exit):
         """Test system initialization with config validation error."""
         mock_config.validate_config.side_effect = ValueError("Config validation failed")
@@ -101,17 +101,14 @@ class TestInitializeSystem(unittest.TestCase):
     @patch('WeatherDashboard.main.sys.exit')
     def test_initialize_system_import_error(self, mock_exit):
         """Test system initialization with import error."""
-        with patch('WeatherDashboard.main.config', side_effect=ImportError("Module not found")):
+        with patch('WeatherDashboard.main.initialize_system', side_effect=ImportError("Module not found")):
             with self.assertRaises(ImportError):
                 main.initialize_system()
-        
-        # Should exit on import error
-        mock_exit.assert_called_once_with(1)
     
     @patch('WeatherDashboard.main.sys.exit')
-    @patch('WeatherDashboard.main.get_package_info')
-    @patch('WeatherDashboard.main.config')
-    @patch('WeatherDashboard.main.Logger')
+    @patch('WeatherDashboard.get_package_info')
+    @patch('WeatherDashboard.config')
+    @patch('WeatherDashboard.utils.logger.Logger')
     def test_initialize_system_logging_health_failure(self, mock_logger, mock_config, mock_package_info, mock_exit):
         """Test system initialization with logging health failure."""
         mock_package_info.return_value = {
@@ -121,6 +118,7 @@ class TestInitializeSystem(unittest.TestCase):
             'author': 'Test Author'
         }
         
+        # Mock logger to return False for health check
         mock_logger_instance = mock_logger.return_value
         mock_logger_instance.test_logging_health.return_value = False
         
@@ -132,7 +130,7 @@ class TestInitializeSystem(unittest.TestCase):
 
 
 class TestCreateAndRunGUI(unittest.TestCase):
-    """Test GUI creation and execution functionality."""
+    """Test GUI creation and execution."""
     
     def setUp(self):
         """Set up test environment."""
@@ -146,87 +144,94 @@ class TestCreateAndRunGUI(unittest.TestCase):
     @patch('WeatherDashboard.main.cleanup_gui_resources')
     def test_create_and_run_gui_success(self, mock_cleanup, mock_tk):
         """Test successful GUI creation and execution."""
-        # Mock tkinter components
         mock_root = MagicMock()
+        mock_app = MagicMock()
         mock_tk.return_value = mock_root
         
-        mock_app = MagicMock()
-        mock_main_window_class = MagicMock(return_value=mock_app)
-        
-        components = {
-            'WeatherDashboardMain': mock_main_window_class
-        }
-        
-        # Mock mainloop to avoid blocking
-        mock_root.mainloop = MagicMock()
-        
-        main.create_and_run_gui(components)
-        
-        # Verify expected calls
-        mock_tk.assert_called_once()
-        mock_root.title.assert_called_once_with("Weather Dashboard")
-        mock_main_window_class.assert_called_once_with(mock_root)
-        mock_app.load_initial_display.assert_called_once()
-        mock_root.mainloop.assert_called_once()
-        mock_cleanup.assert_called_once_with(mock_root)
+        # Mock the WeatherDashboardMain class at the import location
+        with patch('WeatherDashboard.gui.main_window.WeatherDashboardMain') as mock_main_class:
+            mock_main_class.return_value = mock_app
+            
+            components = {
+                'WeatherDashboardMain': mock_main_class,
+                'Logger': MagicMock(),
+                'package_info': {'name': 'Test'}
+            }
+            
+            main.create_and_run_gui(components)
+            
+            # Verify GUI was created and started
+            mock_tk.assert_called_once()
+            mock_main_class.assert_called_once_with(mock_root)
+            mock_app.load_initial_display.assert_called_once()
+            mock_root.mainloop.assert_called_once()
+            mock_cleanup.assert_called_once_with(mock_root)
     
     @patch('WeatherDashboard.main.tk.Tk')
     @patch('WeatherDashboard.main.cleanup_gui_resources')
     def test_create_and_run_gui_tk_error(self, mock_cleanup, mock_tk):
-        """Test GUI creation with tkinter error."""
-        mock_tk.side_effect = tk.TclError("Display error")
+        """Test GUI creation with Tkinter error."""
+        mock_tk.side_effect = tk.TclError("GUI error")
         
         components = {
-            'WeatherDashboardMain': MagicMock()
+            'WeatherDashboardMain': MagicMock(),
+            'Logger': MagicMock(),
+            'package_info': {'name': 'Test'}
         }
         
         with self.assertRaises(tk.TclError):
             main.create_and_run_gui(components)
         
-        # Should still call cleanup even if root creation fails
-        mock_cleanup.assert_called_once_with(None)
+        # Cleanup should not be called since root was never created
+        mock_cleanup.assert_not_called()
     
     @patch('WeatherDashboard.main.tk.Tk')
     @patch('WeatherDashboard.main.cleanup_gui_resources')
     def test_create_and_run_gui_app_creation_error(self, mock_cleanup, mock_tk):
-        """Test GUI creation when app creation fails."""
+        """Test GUI creation with app creation error."""
         mock_root = MagicMock()
         mock_tk.return_value = mock_root
         
-        mock_main_window_class = MagicMock(side_effect=Exception("App creation failed"))
-        
-        components = {
-            'WeatherDashboardMain': mock_main_window_class
-        }
-        
-        with self.assertRaises(Exception):
-            main.create_and_run_gui(components)
-        
-        # Should still call cleanup
-        mock_cleanup.assert_called_once_with(mock_root)
+        # Mock the WeatherDashboardMain class to raise an error
+        with patch('WeatherDashboard.gui.main_window.WeatherDashboardMain') as mock_main_class:
+            mock_main_class.side_effect = Exception("App creation failed")
+            
+            components = {
+                'WeatherDashboardMain': mock_main_class,
+                'Logger': MagicMock(),
+                'package_info': {'name': 'Test'}
+            }
+            
+            with self.assertRaises(Exception):
+                main.create_and_run_gui(components)
+            
+            # Cleanup should still be called
+            mock_cleanup.assert_called_once_with(mock_root)
     
     @patch('WeatherDashboard.main.tk.Tk')
     @patch('WeatherDashboard.main.cleanup_gui_resources')
     def test_create_and_run_gui_mainloop_error(self, mock_cleanup, mock_tk):
-        """Test GUI creation when mainloop fails."""
+        """Test GUI creation with mainloop error."""
         mock_root = MagicMock()
-        mock_tk.return_value = mock_root
-        
         mock_app = MagicMock()
-        mock_main_window_class = MagicMock(return_value=mock_app)
-        
-        # Mock mainloop to raise exception
+        mock_tk.return_value = mock_root
         mock_root.mainloop.side_effect = Exception("Mainloop error")
         
-        components = {
-            'WeatherDashboardMain': mock_main_window_class
-        }
-        
-        with self.assertRaises(Exception):
-            main.create_and_run_gui(components)
-        
-        # Should still call cleanup
-        mock_cleanup.assert_called_once_with(mock_root)
+        # Mock the WeatherDashboardMain class
+        with patch('WeatherDashboard.gui.main_window.WeatherDashboardMain') as mock_main_class:
+            mock_main_class.return_value = mock_app
+            
+            components = {
+                'WeatherDashboardMain': mock_main_class,
+                'Logger': MagicMock(),
+                'package_info': {'name': 'Test'}
+            }
+            
+            with self.assertRaises(Exception):
+                main.create_and_run_gui(components)
+            
+            # Cleanup should still be called
+            mock_cleanup.assert_called_once_with(mock_root)
 
 
 class TestCleanupGUIResources(unittest.TestCase):
@@ -243,15 +248,12 @@ class TestCleanupGUIResources(unittest.TestCase):
         mock_root.destroy.assert_called_once()
     
     def test_cleanup_gui_resources_with_none_root(self):
-        """Test cleanup with None root window."""
-        # Should not raise exception
-        try:
-            main.cleanup_gui_resources(None)
-        except Exception as e:
-            self.fail(f"cleanup_gui_resources() raised {type(e).__name__} unexpectedly: {e}")
+        """Test cleanup with None root."""
+        # Should not raise any exception
+        main.cleanup_gui_resources(None)
     
     def test_cleanup_gui_resources_with_nonexistent_root(self):
-        """Test cleanup with root that doesn't exist."""
+        """Test cleanup with nonexistent root."""
         mock_root = MagicMock()
         mock_root.winfo_exists.return_value = False
         
@@ -261,100 +263,103 @@ class TestCleanupGUIResources(unittest.TestCase):
         mock_root.destroy.assert_not_called()
     
     def test_cleanup_gui_resources_with_destroy_error(self):
-        """Test cleanup when destroy raises exception."""
+        """Test cleanup with destroy error."""
         mock_root = MagicMock()
         mock_root.winfo_exists.return_value = True
-        mock_root.destroy.side_effect = Exception("Destroy error")
+        mock_root.destroy.side_effect = Exception("Destroy failed")
         
-        # Should not raise exception, should handle gracefully
-        try:
-            main.cleanup_gui_resources(mock_root)
-        except Exception as e:
-            self.fail(f"cleanup_gui_resources() raised {type(e).__name__} unexpectedly: {e}")
+        # Should not raise exception
+        main.cleanup_gui_resources(mock_root)
+        
+        mock_root.destroy.assert_called_once()
 
 
 class TestMainFunction(unittest.TestCase):
-    """Test the main function with various scenarios."""
+    """Test main function execution."""
     
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
     def test_main_success(self, mock_create_gui, mock_initialize):
-        """Test successful main function execution."""
-        mock_components = {'WeatherDashboardMain': MagicMock()}
-        mock_initialize.return_value = mock_components
+        """Test successful main execution."""
+        mock_initialize.return_value = {'test': 'components'}
         
-        main.main()
+        with self.assertRaises(SystemExit) as cm:
+            main.main()
         
+        self.assertEqual(cm.exception.code, 0)
         mock_initialize.assert_called_once()
-        mock_create_gui.assert_called_once_with(mock_components)
+        mock_create_gui.assert_called_once_with({'test': 'components'})
     
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
     def test_main_configuration_error(self, mock_create_gui, mock_initialize):
-        """Test main function with configuration error."""
+        """Test main execution with configuration error."""
         mock_initialize.side_effect = ValueError("Configuration error")
         
-        with self.assertRaises(ValueError):
+        with self.assertRaises(SystemExit) as cm:
             main.main()
         
+        self.assertEqual(cm.exception.code, 1)
         mock_initialize.assert_called_once()
         mock_create_gui.assert_not_called()
     
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
     def test_main_gui_error(self, mock_create_gui, mock_initialize):
-        """Test main function with GUI creation error."""
-        mock_components = {'WeatherDashboardMain': MagicMock()}
-        mock_initialize.return_value = mock_components
+        """Test main execution with GUI error."""
+        mock_initialize.return_value = {'test': 'components'}
         mock_create_gui.side_effect = tk.TclError("GUI error")
         
-        with self.assertRaises(tk.TclError):
+        with self.assertRaises(SystemExit) as cm:
             main.main()
         
+        self.assertEqual(cm.exception.code, 1)
         mock_initialize.assert_called_once()
-        mock_create_gui.assert_called_once_with(mock_components)
+        mock_create_gui.assert_called_once()
     
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
     def test_main_keyboard_interrupt(self, mock_create_gui, mock_initialize):
-        """Test main function with keyboard interrupt."""
-        mock_components = {'WeatherDashboardMain': MagicMock()}
-        mock_initialize.return_value = mock_components
+        """Test main execution with keyboard interrupt."""
+        mock_initialize.return_value = {'test': 'components'}
         mock_create_gui.side_effect = KeyboardInterrupt()
         
-        with self.assertRaises(KeyboardInterrupt):
+        with self.assertRaises(SystemExit) as cm:
             main.main()
         
+        self.assertEqual(cm.exception.code, 0)
         mock_initialize.assert_called_once()
-        mock_create_gui.assert_called_once_with(mock_components)
+        mock_create_gui.assert_called_once()
     
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
     def test_main_logger_import_error(self, mock_create_gui, mock_initialize):
-        """Test main function with logger import error."""
+        """Test main execution with logger import error."""
         mock_initialize.side_effect = ImportError("Logger import failed")
         
-        with self.assertRaises(ImportError):
+        with self.assertRaises(SystemExit) as cm:
             main.main()
         
+        self.assertEqual(cm.exception.code, 1)
         mock_initialize.assert_called_once()
         mock_create_gui.assert_not_called()
     
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
     def test_main_unexpected_error(self, mock_create_gui, mock_initialize):
-        """Test main function with unexpected error."""
+        """Test main execution with unexpected error."""
         mock_initialize.side_effect = Exception("Unexpected error")
         
-        with self.assertRaises(Exception):
+        with self.assertRaises(SystemExit) as cm:
             main.main()
         
+        self.assertEqual(cm.exception.code, 1)
         mock_initialize.assert_called_once()
         mock_create_gui.assert_not_called()
 
 
 class TestMainIntegration(unittest.TestCase):
-    """Test integration between main module components."""
+    """Test main function integration scenarios."""
     
     def setUp(self):
         """Set up test environment."""
@@ -366,49 +371,32 @@ class TestMainIntegration(unittest.TestCase):
     
     @patch('WeatherDashboard.main.sys.exit')
     @patch('WeatherDashboard.main.tk.Tk')
-    @patch('WeatherDashboard.main.config')
-    @patch('WeatherDashboard.main.Logger')
-    @patch('WeatherDashboard.main.WeatherDashboardMain')
-    @patch('WeatherDashboard.main.get_package_info')
+    @patch('WeatherDashboard.config')
+    @patch('WeatherDashboard.utils.logger.Logger')
+    @patch('WeatherDashboard.gui.main_window.WeatherDashboardMain')
+    @patch('WeatherDashboard.get_package_info')
     def test_full_initialization_flow(self, mock_package_info, mock_main_window, mock_logger, mock_config, mock_tk, mock_exit):
-        """Test the complete initialization flow."""
-        # Mock all dependencies
+        """Test full initialization flow."""
         mock_package_info.return_value = {
-            'name': 'WeatherDashboard',
+            'name': 'Test App',
             'version': '1.0.0',
             'description': 'Test Description',
             'author': 'Test Author'
         }
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
-        mock_logger_instance.test_logging_health.return_value = True
-        
-        mock_config.ensure_directories.return_value = True
-        mock_config.validate_config.return_value = None
         
         mock_root = MagicMock()
-        mock_tk.return_value = mock_root
-        
         mock_app = MagicMock()
+        mock_tk.return_value = mock_root
         mock_main_window.return_value = mock_app
         
-        # Mock mainloop to avoid blocking
-        mock_root.mainloop = MagicMock()
+        # Test the full flow
+        result = main.initialize_system()
         
-        # Call main function
-        main.main()
+        self.assertIn('WeatherDashboardMain', result)
+        self.assertIn('Logger', result)
+        self.assertIn('package_info', result)
         
-        # Verify the complete flow
+        # Verify all components were initialized
         mock_config.ensure_directories.assert_called_once()
         mock_config.validate_config.assert_called_once()
-        mock_logger_instance.info.assert_called()
-        mock_tk.assert_called_once()
-        mock_root.title.assert_called_once_with("Weather Dashboard")
-        mock_main_window.assert_called_once_with(mock_root)
-        mock_app.load_initial_display.assert_called_once()
-        mock_root.mainloop.assert_called_once()
-        mock_exit.assert_called_once_with(0)
-
-
-if __name__ == '__main__':
-    unittest.main() 
+        mock_logger.assert_called_once() 

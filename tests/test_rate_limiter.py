@@ -429,8 +429,9 @@ class TestRateLimiterMockedTime(unittest.TestCase):
         # Set up mock datetime
         base_time = datetime(2023, 1, 1, 12, 0, 0)
         mock_datetime.now.side_effect = [
-            base_time,  # First call
-            base_time + timedelta(seconds=2)  # Second call
+            base_time,  # First call - record_request
+            base_time + timedelta(seconds=2),  # Second call - can_make_request
+            base_time + timedelta(seconds=2)   # Third call - get_wait_time
         ]
         
         limiter = RateLimiter(min_interval_seconds=1)
@@ -438,10 +439,13 @@ class TestRateLimiterMockedTime(unittest.TestCase):
         # Apply the mock to the instance's datetime attribute
         limiter.datetime = mock_datetime
         
+        # Initially should be allowed (no previous request)
+        self.assertTrue(limiter.can_make_request())
+        
         # Record first request
         limiter.record_request()
         
-        # Should be blocked initially
+        # Should be blocked after recording request
         self.assertFalse(limiter.can_make_request())
         
         # Wait time should be calculated correctly
@@ -453,10 +457,10 @@ class TestRateLimiterMockedTime(unittest.TestCase):
         """Test rate limiter with precise timing control."""
         base_time = datetime(2023, 1, 1, 12, 0, 0)
         mock_datetime.now.side_effect = [
-            base_time,  # First call
-            base_time + timedelta(seconds=0.5),  # Second call
-            base_time + timedelta(seconds=1.0),  # Third call
-            base_time + timedelta(seconds=1.5)   # Fourth call
+            base_time,  # First call - record_request
+            base_time + timedelta(seconds=0.5),  # Second call - can_make_request (0.5s)
+            base_time + timedelta(seconds=1.0),  # Third call - can_make_request (1.0s)
+            base_time + timedelta(seconds=1.5)   # Fourth call - can_make_request (1.5s)
         ]
         
         limiter = RateLimiter(min_interval_seconds=1)
