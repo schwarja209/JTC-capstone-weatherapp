@@ -111,19 +111,30 @@ class TestWeatherDataManager(unittest.TestCase):
     
     def test_fetch_current_success(self):
         """Test successful current weather fetch."""
-        # Mock the API service to return tuple (data, is_fallback, error)
+        # Mock the API service to return dictionary data
         mock_data = {'temperature': 25, 'humidity': 60}
         
-        # The data manager has a bug where it expects a tuple but gets a WeatherServiceResult object
-        self.skipTest("Data manager has bug in fetch_current method - expects tuple but gets WeatherServiceResult")
+        with patch.object(self.data_manager, 'api_service') as mock_api:
+            mock_api.fetch_current.return_value = mock_data
+            
+            result = self.data_manager.fetch_current("TestCity", "metric")
+            
+            self.assertEqual(result['temperature'], 25)
+            self.assertEqual(result['humidity'], 60)
     
     def test_fetch_current_with_fallback(self):
         """Test current weather fetch with fallback data."""
         # Mock the API service to return fallback data
-        mock_fallback_data = {'temperature': 20, 'humidity': 50}
+        mock_fallback_data = {'temperature': 20, 'humidity': 50, 'source': 'simulated'}
         
-        # The data manager has a bug where it expects a tuple but gets a WeatherServiceResult object
-        self.skipTest("Data manager has bug in fetch_current method - expects tuple but gets WeatherServiceResult")
+        with patch.object(self.data_manager, 'api_service') as mock_api:
+            mock_api.fetch_current.return_value = mock_fallback_data
+            
+            result = self.data_manager.fetch_current("TestCity", "metric")
+            
+            self.assertEqual(result['temperature'], 20)
+            self.assertEqual(result['humidity'], 50)
+            self.assertEqual(result['source'], 'simulated')
     
     @patch('WeatherDashboard.core.data_manager.Utils')
     def test_get_recent_data_with_data(self, mock_utils):
@@ -283,19 +294,23 @@ class TestWeatherDataManager(unittest.TestCase):
         """Test fetch current with automatic cleanup."""
         with patch.object(self.data_manager, 'api_service') as mock_api:
             mock_data = {'temperature': 25, 'humidity': 60}
-            mock_api.fetch_current.return_value = (mock_data, False, None)
+            mock_api.fetch_current.return_value = mock_data
             
-            # The data manager has a bug where it expects a tuple but gets a WeatherServiceResult object
-            self.skipTest("Data manager has bug in fetch_current method - expects tuple but gets WeatherServiceResult")
+            result = self.data_manager.fetch_current("TestCity", "metric")
+            
+            self.assertEqual(result['temperature'], 25)
+            self.assertEqual(result['humidity'], 60)
     
     def test_data_storage_and_deduplication(self):
         """Test data storage and deduplication."""
         with patch.object(self.data_manager, 'api_service') as mock_api:
             mock_data = {'temperature': 25, 'humidity': 60}
-            mock_api.fetch_current.return_value = (mock_data, False, None)
+            mock_api.fetch_current.return_value = mock_data
             
-            # The data manager has a bug where it expects a tuple but gets a WeatherServiceResult object
-            self.skipTest("Data manager has bug in fetch_current method - expects tuple but gets WeatherServiceResult")
+            result = self.data_manager.fetch_current("TestCity", "metric")
+            
+            self.assertEqual(result['temperature'], 25)
+            self.assertEqual(result['humidity'], 60)
 
 
 if __name__ == '__main__':

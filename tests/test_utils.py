@@ -145,9 +145,8 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_with_valid_cities(self, mock_validate):
         """Test city key generation with valid city names."""
-        # Mock validation to return no errors (empty list)
-        from WeatherDashboard.utils.validation_utils import ValidationResult
-        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+        # Mock validation to not raise exception
+        mock_validate.return_value = None
         
         test_cases = [
             ("New York", "new_york"),
@@ -168,26 +167,21 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_validation_error_handling(self, mock_validate):
         """Test city key generation when validation fails."""
-        # Mock validation to return an error
-        from WeatherDashboard.utils.validation_utils import ValidationResult
-        mock_validate.return_value = ValidationResult(is_valid=False, errors=["City name is invalid: test error"])
+        # Mock validation to raise an exception
+        mock_validate.side_effect = ValueError("City name is invalid: test error")
         
         with self.assertRaises(ValueError) as context:
             self.utils.city_key("Invalid City")
         
-        # Should raise the first validation error
+        # Should raise the validation error
         self.assertEqual(str(context.exception), "City name is invalid: test error")
         mock_validate.assert_called_once_with("Invalid City")
     
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_multiple_validation_errors(self, mock_validate):
         """Test city key generation with multiple validation errors."""
-        # Mock validation to return multiple errors
-        from WeatherDashboard.utils.validation_utils import ValidationResult
-        mock_validate.return_value = ValidationResult(is_valid=False, errors=[
-            "City name is invalid: too short",
-            "City name is invalid: contains numbers"
-        ])
+        # Mock validation to raise an exception with the first error
+        mock_validate.side_effect = ValueError("City name is invalid: too short")
         
         with self.assertRaises(ValueError) as context:
             self.utils.city_key("Bad123")
@@ -198,8 +192,7 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_normalization_behavior(self, mock_validate):
         """Test city key normalization behavior."""
-        from WeatherDashboard.utils.validation_utils import ValidationResult
-        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+        mock_validate.return_value = None
         
         # Test that the function handles the normalization correctly
         test_cases = [
@@ -216,8 +209,7 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_special_character_handling(self, mock_validate):
         """Test city key handling of special characters."""
-        from WeatherDashboard.utils.validation_utils import ValidationResult
-        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+        mock_validate.return_value = None
         
         test_cases = [
             ("City-with-Hyphens", "city-with-hyphens"),    # Preserve hyphens
@@ -266,9 +258,10 @@ class TestUtils(unittest.TestCase):
             self.utils.format_fallback_status(True, "invalid_format")
     
     def test_function_return_types(self):
-        """Test that all functions return the expected types."""
+        """Test that utility functions return expected types."""
         # Test is_fallback return type
-        result = self.utils.is_fallback({"source": "simulated"})
+        data = {"source": "simulated"}
+        result = self.utils.is_fallback(data)
         self.assertIsInstance(result, bool)
         
         # Test format_fallback_status return type
@@ -277,8 +270,7 @@ class TestUtils(unittest.TestCase):
         
         # Test city_key return type (with mocked validation)
         with patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name') as mock_validate:
-            from WeatherDashboard.utils.validation_utils import ValidationResult
-            mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+            mock_validate.return_value = None
             result = self.utils.city_key("Test City")
             self.assertIsInstance(result, str)
     
@@ -311,8 +303,7 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_with_unicode_input(self, mock_validate):
         """Test city_key with unicode input (mocking validation)."""
-        from WeatherDashboard.utils.validation_utils import ValidationResult
-        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+        mock_validate.return_value = None
         
         # Test that city_key can handle unicode characters if validation passes
         unicode_city = "São Paulo"
@@ -341,8 +332,7 @@ class TestUtils(unittest.TestCase):
         
         # Generate city key for storage (mock validation)
         with patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name') as mock_validate:
-            from WeatherDashboard.utils.validation_utils import ValidationResult
-            mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+            mock_validate.return_value = None
             storage_key = self.utils.city_key(weather_data["city"])
             self.assertEqual(storage_key, "new_york")
     
