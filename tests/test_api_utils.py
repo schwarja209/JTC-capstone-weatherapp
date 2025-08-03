@@ -46,8 +46,8 @@ class TestApiUtils(unittest.TestCase):
             5: "Very Poor"
         }
         for aqi, expected in descriptions.items():
-            result = self.api_utils.get_aqi_description(aqi)
-            self.assertEqual(result, expected)
+                result = self.api_utils.get_aqi_description(aqi)
+                self.assertEqual(result, expected)
 
     def test_get_aqi_description_invalid(self):
         """Test getting AQI description with invalid input."""
