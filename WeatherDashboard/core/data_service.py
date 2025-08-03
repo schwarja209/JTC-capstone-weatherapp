@@ -315,6 +315,7 @@ class WeatherDataService:
             )
             
         except Exception as e:
+            processing_time = int((datetime.now() - start_time).total_seconds() * 1000)
             return LoggingResult(
                 city_name=city,
                 unit_system=unit,

@@ -226,18 +226,27 @@ def configure_styles(theme_name: str = 'neutral') -> None:
     Args:
         theme_name: Theme to apply ('optimistic', 'pessimistic', 'neutral')
     """
-    # Use theme_manager to configure styles
-    theme_mapping = {
-        'optimistic': Theme.OPTIMISTIC,
-        'pessimistic': Theme.PESSIMISTIC,
-        'neutral': Theme.NEUTRAL
-    }
-    
-    theme_enum = theme_mapping.get(theme_name, Theme.NEUTRAL)
-    theme_manager.change_theme(theme_enum)
-    
-    # Apply styles through theme_manager
-    theme_manager._apply_theme()
+    try:
+        # Use theme_manager to configure styles
+        theme_mapping = {
+            'optimistic': Theme.OPTIMISTIC,
+            'pessimistic': Theme.PESSIMISTIC,
+            'neutral': Theme.NEUTRAL
+        }
+        
+        theme_enum = theme_mapping.get(theme_name, Theme.NEUTRAL)
+        theme_manager.change_theme(theme_enum)
+        
+        # Apply styles through theme_manager
+        theme_manager._apply_theme()
+    except Exception as e:
+        print(f"Warning: Style configuration failed: {e}")
+        # Fallback to neutral theme
+        try:
+            theme_manager.change_theme(Theme.NEUTRAL)
+            theme_manager._apply_theme()
+        except Exception:
+            print("Error: Failed to apply fallback theme")
 
 # =================================
 # 4. DIMENSION UTILITIES - KEEP EXISTING

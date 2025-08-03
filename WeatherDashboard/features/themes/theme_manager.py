@@ -4,6 +4,7 @@ Provides unified access to all theme-related styling, configuration,
 and dynamic theme switching capabilities.
 """
 
+import threading
 from typing import Dict, Any, Optional
 from tkinter import ttk
 from enum import Enum
@@ -19,26 +20,38 @@ class ThemeManager:
     """Centralized theme management and styling system."""
     
     _instance: Optional['ThemeManager'] = None
+    _lock = threading.Lock()
     _current_theme: Theme = Theme.NEUTRAL
     _theme_config: Dict[str, Any] = {}
     
     def __new__(cls) -> 'ThemeManager':
         if cls._instance is None:
-            cls._instance = super().__new__(cls)
+            with cls._lock:
+                if cls._instance is None:
+                    cls._instance = super().__new__(cls)
         return cls._instance
     
     def __init__(self):
         """Initialize theme manager."""
         if not hasattr(self, '_initialized'):
-            self._ttk_style = None
-            self._load_theme_config(Theme.NEUTRAL)
-            self._initialized = True
+            with self._lock:
+                if not hasattr(self, '_initialized'):
+                    self._ttk_style = None
+                    self._load_theme_config(Theme.NEUTRAL)
+                    self._initialized = True
     
     def _load_theme_config(self, theme: Theme) -> None:
         """Load configuration for specified theme."""
-        from .neutral_styles import NEUTRAL_UI
-        from .optimistic_styles import OPTIMISTIC_UI
-        from .pessimistic_styles import PESSIMISTIC_UI
+        try:
+            from .neutral_styles import NEUTRAL_UI
+            from .optimistic_styles import OPTIMISTIC_UI
+            from .pessimistic_styles import PESSIMISTIC_UI
+        except ImportError as e:
+            print(f"Failed to load theme styles: {e}")
+            # Fallback to neutral theme
+            from .neutral_styles import NEUTRAL_UI
+            OPTIMISTIC_UI = NEUTRAL_UI
+            PESSIMISTIC_UI = NEUTRAL_UI
         
         self._themes = {
             Theme.NEUTRAL: NEUTRAL_UI,
@@ -49,9 +62,10 @@ class ThemeManager:
 
     def change_theme(self, theme: Theme) -> None:
         """Change the current theme and apply it."""
-        self._current_theme = theme
-        self._theme_config = self._themes[theme]
-        self._apply_theme()
+        with self._lock:
+            self._current_theme = theme
+            self._theme_config = self._themes[theme]
+            self._apply_theme()
 
     def _get_ttk_style(self):
         """Get ttk style instance, creating it if needed."""

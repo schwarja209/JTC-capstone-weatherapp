@@ -131,7 +131,7 @@ class UnitConverter:
         elif from_unit == imperial_unit and to_unit == metric_unit:
             return conversions['imperial_to_metric'](value)
         else:
-            raise ValueError(self.config_provider.ERROR_MESSAGES['conversion'].format(
+            raise ValueError(self.config.ERROR_MESSAGES['conversion'].format(
                 field=conversion_type, from_unit=from_unit, to_unit=to_unit,
                 reason="unsupported conversion"))
     

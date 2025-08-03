@@ -489,13 +489,25 @@ def validate_api_response(data: Dict[str, Any]) -> None:
     Raises:
         ValidationError: When required keys are missing or data is malformed
     """
+    if not isinstance(data, dict):
+        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="response is not a dictionary"))
+    
     required = {"main", "weather", "wind"}
     if not all(k in data for k in required):
         missing = required - set(data.keys())
         raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason=f"missing required keys: {missing}"))
     
+    # Validate main section
+    if not isinstance(data.get("main"), dict):
+        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="main section is not a dictionary"))
+    
     if "temp" not in data["main"]:
         raise ValidationError(config.ERROR_MESSAGES['missing'].format(field="Temperature data in API response"))
     
-    if not isinstance(data["weather"], list) or not data["weather"]:
+    # Validate weather section
+    if not isinstance(data.get("weather"), list) or not data["weather"]:
         raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="malformed weather data - expected non-empty list"))
+    
+    # Validate wind section
+    if not isinstance(data.get("wind"), dict):
+        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="wind section is not a dictionary"))

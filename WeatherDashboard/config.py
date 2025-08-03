@@ -23,8 +23,18 @@ import os
 from pathlib import Path
 
 # centralizing config info
-from WeatherDashboard.features.alerts.alert_config import ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER, ALERT_DEFINITIONS
+# Lazy loading for alert configuration to avoid circular dependencies
+def _get_alert_config():
+    """Lazy load alert configuration to avoid circular dependencies."""
+    try:
+        from WeatherDashboard.features.alerts.alert_config import ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER, ALERT_DEFINITIONS
+        return ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER, ALERT_DEFINITIONS
+    except ImportError as e:
+        print(f"Warning: Alert configuration not available: {e}")
+        return {}, [], {}
 
+# Initialize with empty defaults
+ALERT_THRESHOLDS, ALERT_PRIORITY_ORDER, ALERT_DEFINITIONS = _get_alert_config()
 
 # ================================
 # 1. API & ENVIRONMENT CONFIGURATION  
@@ -234,6 +244,7 @@ MEMORY = {
     "max_entries_per_city": 30,         # Maximum weather entries per city (existing)
     "max_total_entries": 1000,          # Global maximum entries across all cities
     "cleanup_interval_hours": 24,       # Hours between automatic cleanup (existing)
+    "minimum_cleanup_interval": 3600,    # 1 hour minimum
     "aggressive_cleanup_threshold": 0.8,  # Trigger aggressive cleanup at 80% of limits
     "max_alert_history_size": 100       # Alert system constant
 }
@@ -343,8 +354,11 @@ def validate_config() -> None:
         ))
     
     # Validate Alert Config
-    from WeatherDashboard.features.alerts.alert_config import ALERT_DEFINITIONS, validate_alert_config
-    validate_alert_config()
+    try:
+        from WeatherDashboard.features.alerts.alert_config import ALERT_DEFINITIONS, validate_alert_config
+        validate_alert_config()
+    except ImportError:
+        print("Warning: Alert configuration validation skipped - module not available")
 
     # Validate alert unit types match available metrics
     available_unit_types = set(UNITS['metric_units'].keys())

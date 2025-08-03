@@ -113,15 +113,30 @@ class WeatherErrorHandler:
 
     def _show_error_dialog(self, title: str, message: str) -> None:
         """Show error dialog with theme-aware styling."""
-        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(title, message)
+        try:
+            dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['error']
+            getattr(messagebox, dialog_type)(title, message)
+        except (KeyError, AttributeError):
+            # Fallback to standard error dialog
+            messagebox.showerror(title, message)
 
     def _show_warning_dialog(self, title: str, message: str) -> None:
         """Show warning dialog with theme-aware styling."""
-        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['warning'])(title, message)
+        try:
+            dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['warning']
+            getattr(messagebox, dialog_type)(title, message)
+        except (KeyError, AttributeError):
+            # Fallback to standard warning dialog
+            messagebox.showwarning(title, message)
 
     def _show_info_dialog(self, title: str, message: str) -> None:
         """Show info dialog with theme-aware styling."""
-        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['info'])(title, message)
+        try:
+            dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['info']
+            getattr(messagebox, dialog_type)(title, message)
+        except (KeyError, AttributeError):
+            # Fallback to standard info dialog
+            messagebox.showinfo(title, message)
 
     def handle_weather_error(self, error_exception: Optional[Exception], city_name: str) -> bool:
         """Handles weather-related errors and shows appropriate user messages."""

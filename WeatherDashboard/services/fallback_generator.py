@@ -59,22 +59,24 @@ class SampleWeatherGenerator:
         data = []
         temp_min, temp_max = self.temp_ranges['default']
         base_temp = self.random.randint(temp_min, temp_max)
+        
         for i in range(num_days):
             date = datetime.now() - timedelta(days=num_days - 1 - i)
             temp = base_temp + self.random.randint(-15, 15)
             humidity = self.random.randint(30, 90)     # %
-            wind = self.random.randint(0, 10)          # %
+            wind = self.random.randint(0, 10)          # m/s
             conditions = self.random.choice(['Sunny', 'Cloudy', 'Rainy', 'Snowy'])
 
             is_rainy = conditions == 'Rainy'
             is_snowy = conditions == 'Snowy'
 
-            rain_amount = self.random.uniform(0.1, 5.0) if is_rainy else None
-            snow_amount = self.random.uniform(0.1, 3.0) if is_snowy else None
+            rain_amount = self.random.uniform(0.1, 5.0) if is_rainy else 0.0
+            snow_amount = self.random.uniform(0.1, 3.0) if is_snowy else 0.0
 
-            data.append({
+            # Ensure all fields match live API structure
+            data_entry = {
                 'date': date,
-                # Original fields
+                # Core weather fields (matching API structure)
                 'temperature': temp,
                 'humidity': humidity,
                 'conditions': conditions,
@@ -94,15 +96,13 @@ class SampleWeatherGenerator:
                 'visibility': self.random.randint(5000, 20000),   # 5-20km in meters
                 'cloud_cover': self.random.randint(0, 100),       # 0-100% cloud cover
                 
-                # Simplified precipitation (new)
+                # Precipitation (ensure consistent with API structure)
                 'rain': rain_amount,
                 'snow': snow_amount,
-                
-                # Keep detailed for completeness
                 'rain_1h': rain_amount,
-                'rain_3h': rain_amount * 3 if rain_amount else None,
+                'rain_3h': rain_amount * 3 if rain_amount > 0 else None,
                 'snow_1h': snow_amount,
-                'snow_3h': snow_amount * 3 if snow_amount else None,
+                'snow_3h': snow_amount * 3 if snow_amount > 0 else None,
 
                 # Enhanced weather categorization
                 'weather_main': conditions,
@@ -124,5 +124,6 @@ class SampleWeatherGenerator:
                 'dew_point': temp - self.random.uniform(5, 15),  # Always present, typically lower than temp
                 'precipitation_probability': self.random.uniform(10, 80),  # 10-80% chance
                 'weather_comfort_score': self.random.uniform(30, 95)  # Comfort score 30-95
-            })
+            }
+            data.append(data_entry)
         return data

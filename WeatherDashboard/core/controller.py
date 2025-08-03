@@ -290,7 +290,7 @@ class WeatherDashboardController:
             except CancellationError:
                 raise # Re-raise cancellation errors
             except CityNotFoundError as e:
-                raise DataFetchError(f"City '{city_name}' not found") # Convert to DataFetchError so controller handles it properly
+                raise CityNotFoundError(f"City '{city_name}' not found") from e
             except ValidationError as e:
                 raise e # Re-raise validation errors
             except TimeoutError as e:
@@ -324,11 +324,11 @@ class WeatherDashboardController:
                     self.logger.info(f"Data logged successfully for {city}")
                     return True
                 else:
-                    self.logger.warning(f"Data logging failed for {city}: {result.error}")
+                    self.logger.warning(f"Data logging failed for {city}: {result.error_message}")
                     return False
             except Exception as e:
                 self.logger.error(f"Exception during data logging for {city}: {e}")
-                raise False
+                return False
 
     class _RateLimitService:
         """Internal service for API rate limiting and request management.
@@ -622,7 +622,14 @@ class WeatherDashboardController:
             """Build the x and y axis values for the chart based on historical data."""
             # Get the dataclass result and extract the data entries
             result = self.data_service.get_historical_data(city, days, unit)
-            data = result.data_entries  # Extract the list from the dataclass
+
+            # Handle both dataclass and direct list returns
+            if hasattr(result, 'data_entries'):
+                data = result.data_entries  # Extract the list from the dataclass
+            elif isinstance(result, list):
+                data = result  # Direct list return
+            else:
+                raise ValueError(self.config.ERROR_MESSAGES['not_found'].format(resource="Historical data", name=city))
 
             if not data:
                 raise ValueError(self.config.ERROR_MESSAGES['not_found'].format(resource="Historical data", name=city))

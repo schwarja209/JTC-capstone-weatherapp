@@ -221,6 +221,16 @@ class WeatherHistoryService:
         try:
             with open(csv_file, 'r', encoding='utf-8') as f:
                 reader = csv.DictReader(f)
+
+                # Validate CSV structure
+                expected_fields = ['timestamp', 'city', 'temperature', 'humidity', 'pressure', 'wind_speed']
+                actual_fields = reader.fieldnames or []
+                missing_fields = [field for field in expected_fields if field not in actual_fields]
+
+                if missing_fields:
+                    self.logger.error(f"CSV file missing required fields: {missing_fields}")
+                    return []
+
                 for row in reader:
                     # Validate required fields
                     required_fields = ['timestamp', 'city']
@@ -292,6 +302,24 @@ class WeatherHistoryService:
             return []
         
         return list(cities)
+    
+    def _safe_float_parse(self, value: str) -> Optional[float]:
+        """Safely parse float value from CSV."""
+        if not value or value.strip() == '':
+            return None
+        try:
+            return float(value)
+        except (ValueError, TypeError):
+            return None
+
+    def _safe_int_parse(self, value: str) -> Optional[int]:
+        """Safely parse int value from CSV."""
+        if not value or value.strip() == '':
+            return None
+        try:
+            return int(float(value))  # Handle float strings like "1.0"
+        except (ValueError, TypeError):
+            return None
 
 # ================================
 # 3. DATA TEXT FILE FOR BACKUP
@@ -386,7 +414,9 @@ class WeatherHistoryService:
             return False
         
         current_time = datetime.now()
-        cleanup_interval = self.config.MEMORY["cleanup_interval_hours"]
+        cleanup_interval = self.config.MEMORY.get("cleanup_interval_hours", 24)
         time_since_cleanup = (current_time - self._last_cleanup).total_seconds()
         
-        return time_since_cleanup > (cleanup_interval * 3600)
+        # Add minimum cleanup interval to prevent excessive cleanup
+        min_cleanup_interval = self.config.MEMORY.get("minimum_cleanup_interval", 3600)
+        return time_since_cleanup > max(cleanup_interval * 3600, min_cleanup_interval)
