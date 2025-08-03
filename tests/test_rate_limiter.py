@@ -435,6 +435,9 @@ class TestRateLimiterMockedTime(unittest.TestCase):
         
         limiter = RateLimiter(min_interval_seconds=1)
         
+        # Apply the mock to the instance's datetime attribute
+        limiter.datetime = mock_datetime
+        
         # Record first request
         limiter.record_request()
         
@@ -457,6 +460,9 @@ class TestRateLimiterMockedTime(unittest.TestCase):
         ]
         
         limiter = RateLimiter(min_interval_seconds=1)
+        
+        # Apply the mock to the instance's datetime attribute
+        limiter.datetime = mock_datetime
         
         # Record request
         limiter.record_request()

@@ -55,98 +55,80 @@ class TestInitializeSystem(unittest.TestCase):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
     
     @patch('WeatherDashboard.main.sys.exit')
+    @patch('WeatherDashboard.main.get_package_info')
     @patch('WeatherDashboard.main.config')
     @patch('WeatherDashboard.main.Logger')
-    @patch('WeatherDashboard.main.WeatherDashboardMain')
-    @patch('WeatherDashboard.main.get_package_info')
-    def test_initialize_system_success(self, mock_package_info, mock_main_window, mock_logger, mock_config, mock_exit):
+    def test_initialize_system_success(self, mock_logger, mock_config, mock_package_info, mock_exit):
         """Test successful system initialization."""
-        # Mock successful imports and returns
         mock_package_info.return_value = {
-            'name': 'WeatherDashboard',
+            'name': 'Test App',
             'version': '1.0.0',
             'description': 'Test Description',
             'author': 'Test Author'
         }
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
-        mock_logger_instance.test_logging_health.return_value = True
-        
-        # Mock config functions
-        mock_config.ensure_directories.return_value = True
-        mock_config.validate_config.return_value = None
         
         result = main.initialize_system()
         
-        # Verify expected calls
-        mock_config.ensure_directories.assert_called_once()
-        mock_config.validate_config.assert_called_once()
-        mock_logger_instance.info.assert_called()
-        mock_logger_instance.test_logging_health.assert_called_once()
-        
-        # Verify return structure
-        self.assertIsInstance(result, dict)
         self.assertIn('WeatherDashboardMain', result)
         self.assertIn('Logger', result)
         self.assertIn('package_info', result)
-        self.assertEqual(result['package_info'], mock_package_info.return_value)
+        self.assertEqual(result['package_info']['name'], 'Test App')
+        
+        # Verify config validation was called
+        mock_config.ensure_directories.assert_called_once()
+        mock_config.validate_config.assert_called_once()
+        
+        # Verify logger was created and used
+        mock_logger.assert_called_once()
+        mock_logger_instance = mock_logger.return_value
+        mock_logger_instance.info.assert_called()
+        mock_logger_instance.test_logging_health.assert_called_once()
+    
+    @patch('WeatherDashboard.main.sys.exit')
+    @patch('WeatherDashboard.main.get_package_info')
+    @patch('WeatherDashboard.main.config')
+    @patch('WeatherDashboard.main.Logger')
+    def test_initialize_system_config_validation_error(self, mock_logger, mock_config, mock_package_info, mock_exit):
+        """Test system initialization with config validation error."""
+        mock_config.validate_config.side_effect = ValueError("Config validation failed")
+        
+        with self.assertRaises(ValueError):
+            main.initialize_system()
+        
+        # Should not exit since we're testing the exception
+        mock_exit.assert_not_called()
     
     @patch('WeatherDashboard.main.sys.exit')
     def test_initialize_system_import_error(self, mock_exit):
         """Test system initialization with import error."""
         with patch('WeatherDashboard.main.config', side_effect=ImportError("Module not found")):
-            main.initialize_system()
-            mock_exit.assert_called_once_with(1)
+            with self.assertRaises(ImportError):
+                main.initialize_system()
+        
+        # Should exit on import error
+        mock_exit.assert_called_once_with(1)
     
     @patch('WeatherDashboard.main.sys.exit')
+    @patch('WeatherDashboard.main.get_package_info')
     @patch('WeatherDashboard.main.config')
     @patch('WeatherDashboard.main.Logger')
-    @patch('WeatherDashboard.main.WeatherDashboardMain')
-    @patch('WeatherDashboard.main.get_package_info')
-    def test_initialize_system_logging_health_failure(self, mock_package_info, mock_main_window, mock_logger, mock_config, mock_exit):
-        """Test system initialization when logging health check fails."""
+    def test_initialize_system_logging_health_failure(self, mock_logger, mock_config, mock_package_info, mock_exit):
+        """Test system initialization with logging health failure."""
         mock_package_info.return_value = {
-            'name': 'WeatherDashboard',
+            'name': 'Test App',
             'version': '1.0.0',
             'description': 'Test Description',
             'author': 'Test Author'
         }
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
+        
+        mock_logger_instance = mock_logger.return_value
         mock_logger_instance.test_logging_health.return_value = False
         
-        mock_config.ensure_directories.return_value = True
-        mock_config.validate_config.return_value = None
+        result = main.initialize_system()
         
-        # Should not raise exception, just continue
-        try:
-            result = main.initialize_system()
-            self.assertIsInstance(result, dict)
-        except Exception as e:
-            self.fail(f"initialize_system() raised {type(e).__name__} unexpectedly: {e}")
-    
-    @patch('WeatherDashboard.main.sys.exit')
-    @patch('WeatherDashboard.main.config')
-    @patch('WeatherDashboard.main.Logger')
-    @patch('WeatherDashboard.main.WeatherDashboardMain')
-    @patch('WeatherDashboard.main.get_package_info')
-    def test_initialize_system_config_validation_error(self, mock_package_info, mock_main_window, mock_logger, mock_config, mock_exit):
-        """Test system initialization when config validation fails."""
-        mock_package_info.return_value = {
-            'name': 'WeatherDashboard',
-            'version': '1.0.0',
-            'description': 'Test Description',
-            'author': 'Test Author'
-        }
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
-        mock_logger_instance.test_logging_health.return_value = True
-        
-        mock_config.ensure_directories.return_value = True
-        mock_config.validate_config.side_effect = ValueError("Invalid config")
-        
-        with self.assertRaises(ValueError):
-            main.initialize_system()
+        # Should still succeed but with warning
+        self.assertIn('WeatherDashboardMain', result)
+        mock_logger_instance.test_logging_health.assert_called_once()
 
 
 class TestCreateAndRunGUI(unittest.TestCase):
@@ -292,120 +274,83 @@ class TestCleanupGUIResources(unittest.TestCase):
 
 
 class TestMainFunction(unittest.TestCase):
-    """Test the main function entry point."""
+    """Test the main function with various scenarios."""
     
-    def setUp(self):
-        """Set up test environment."""
-        self.temp_dir = tempfile.mkdtemp()
-    
-    def tearDown(self):
-        """Clean up test environment."""
-        shutil.rmtree(self.temp_dir, ignore_errors=True)
-    
-    @patch('WeatherDashboard.main.sys.exit')
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
-    @patch('WeatherDashboard.main.Logger')
-    def test_main_success(self, mock_logger, mock_create_gui, mock_init_system, mock_exit):
-        """Test successful main execution."""
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
-        
-        mock_components = {'test': 'components'}
-        mock_init_system.return_value = mock_components
+    def test_main_success(self, mock_create_gui, mock_initialize):
+        """Test successful main function execution."""
+        mock_components = {'WeatherDashboardMain': MagicMock()}
+        mock_initialize.return_value = mock_components
         
         main.main()
         
-        # Verify expected calls
-        mock_logger.assert_called_once()
-        mock_init_system.assert_called_once()
+        mock_initialize.assert_called_once()
         mock_create_gui.assert_called_once_with(mock_components)
-        mock_exit.assert_called_once_with(0)
     
-    @patch('WeatherDashboard.main.sys.exit')
-    @patch('WeatherDashboard.main.initialize_system')
-    @patch('WeatherDashboard.main.Logger')
-    def test_main_logger_import_error(self, mock_logger, mock_init_system, mock_exit):
-        """Test main execution when logger import fails."""
-        mock_logger.side_effect = ImportError("Logger not found")
-        
-        main.main()
-        
-        mock_exit.assert_called_once_with(1)
-    
-    @patch('WeatherDashboard.main.sys.exit')
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
-    @patch('WeatherDashboard.main.Logger')
-    def test_main_configuration_error(self, mock_logger, mock_create_gui, mock_init_system, mock_exit):
-        """Test main execution with configuration error."""
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
+    def test_main_configuration_error(self, mock_create_gui, mock_initialize):
+        """Test main function with configuration error."""
+        mock_initialize.side_effect = ValueError("Configuration error")
         
-        mock_init_system.side_effect = ValueError("Config error")
+        with self.assertRaises(ValueError):
+            main.main()
         
-        main.main()
-        
-        # Verify error handling
-        mock_logger_instance.error.assert_called()
-        mock_exit.assert_called_once_with(1)
+        mock_initialize.assert_called_once()
+        mock_create_gui.assert_not_called()
     
-    @patch('WeatherDashboard.main.sys.exit')
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
-    @patch('WeatherDashboard.main.Logger')
-    def test_main_gui_error(self, mock_logger, mock_create_gui, mock_init_system, mock_exit):
-        """Test main execution with GUI error."""
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
-        
-        mock_components = {'test': 'components'}
-        mock_init_system.return_value = mock_components
+    def test_main_gui_error(self, mock_create_gui, mock_initialize):
+        """Test main function with GUI creation error."""
+        mock_components = {'WeatherDashboardMain': MagicMock()}
+        mock_initialize.return_value = mock_components
         mock_create_gui.side_effect = tk.TclError("GUI error")
         
-        main.main()
+        with self.assertRaises(tk.TclError):
+            main.main()
         
-        # Verify error handling
-        mock_logger_instance.error.assert_called()
-        mock_exit.assert_called_once_with(1)
+        mock_initialize.assert_called_once()
+        mock_create_gui.assert_called_once_with(mock_components)
     
-    @patch('WeatherDashboard.main.sys.exit')
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
-    @patch('WeatherDashboard.main.Logger')
-    def test_main_keyboard_interrupt(self, mock_logger, mock_create_gui, mock_init_system, mock_exit):
-        """Test main execution with keyboard interrupt."""
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
-        
-        mock_components = {'test': 'components'}
-        mock_init_system.return_value = mock_components
+    def test_main_keyboard_interrupt(self, mock_create_gui, mock_initialize):
+        """Test main function with keyboard interrupt."""
+        mock_components = {'WeatherDashboardMain': MagicMock()}
+        mock_initialize.return_value = mock_components
         mock_create_gui.side_effect = KeyboardInterrupt()
         
-        main.main()
+        with self.assertRaises(KeyboardInterrupt):
+            main.main()
         
-        # Verify graceful shutdown
-        mock_logger_instance.info.assert_called()
-        mock_exit.assert_called_once_with(0)
+        mock_initialize.assert_called_once()
+        mock_create_gui.assert_called_once_with(mock_components)
     
-    @patch('WeatherDashboard.main.sys.exit')
     @patch('WeatherDashboard.main.initialize_system')
     @patch('WeatherDashboard.main.create_and_run_gui')
-    @patch('WeatherDashboard.main.Logger')
-    def test_main_unexpected_error(self, mock_logger, mock_create_gui, mock_init_system, mock_exit):
-        """Test main execution with unexpected error."""
-        mock_logger_instance = MagicMock()
-        mock_logger.return_value = mock_logger_instance
+    def test_main_logger_import_error(self, mock_create_gui, mock_initialize):
+        """Test main function with logger import error."""
+        mock_initialize.side_effect = ImportError("Logger import failed")
         
-        mock_components = {'test': 'components'}
-        mock_init_system.return_value = mock_components
-        mock_create_gui.side_effect = Exception("Unexpected error")
+        with self.assertRaises(ImportError):
+            main.main()
         
-        main.main()
+        mock_initialize.assert_called_once()
+        mock_create_gui.assert_not_called()
+    
+    @patch('WeatherDashboard.main.initialize_system')
+    @patch('WeatherDashboard.main.create_and_run_gui')
+    def test_main_unexpected_error(self, mock_create_gui, mock_initialize):
+        """Test main function with unexpected error."""
+        mock_initialize.side_effect = Exception("Unexpected error")
         
-        # Verify error handling
-        mock_logger_instance.error.assert_called()
-        mock_exit.assert_called_once_with(1)
+        with self.assertRaises(Exception):
+            main.main()
+        
+        mock_initialize.assert_called_once()
+        mock_create_gui.assert_not_called()
 
 
 class TestMainIntegration(unittest.TestCase):

@@ -24,71 +24,66 @@ from WeatherDashboard.utils.api_utils import ApiUtils
 
 class TestApiUtils(unittest.TestCase):
     def setUp(self):
-        """Set up test fixtures with comprehensive API response data."""
+        """Set up test fixtures."""
+        self.api_utils = ApiUtils()
+        
+        # Sample API response for testing
         self.sample_api_response = {
-            "main": {
-                "temp": 25.5,
-                "humidity": 60,
-                "pressure": 1013.25,
-                "feels_like": 27.0,
-                "temp_min": 20.0,
-                "temp_max": 30.0
-            },
+            "coord": {"lat": 40.7128, "lon": -74.006},
             "weather": [
                 {
+                    "id": 800,
                     "main": "Clear",
                     "description": "clear sky",
-                    "id": 800,
                     "icon": "01d"
                 }
             ],
+            "main": {
+                "temp": 25.5,
+                "feels_like": 27.0,
+                "temp_min": 20.0,
+                "temp_max": 30.0,
+                "pressure": 1013.25,
+                "humidity": 60
+            },
             "wind": {
-                "speed": 5.2,
-                "deg": 180,
-                "gust": 8.1
+                "speed": 3.5,
+                "deg": 90,
+                "gust": 5.0
             },
-            "coord": {
-                "lat": 40.7128,
-                "lon": -74.0060
-            },
-            "visibility": 10000,
-            "clouds": {
-                "all": 20
-            },
-            "rain": {
-                "1h": 2.5,
-                "3h": 6.0
-            },
-            "snow": {
-                "1h": 1.0,
-                "3h": 2.5
-            }
+            "rain": {"1h": 2.5, "3h": 6.0},
+            "snow": {"1h": 0.0, "3h": 0.0},
+            "clouds": {"all": 20},
+            "visibility": 10000
         }
 
     def test_safe_get_nested_simple_keys(self):
         """Test safe_get_nested with simple key access."""
         data = {"temperature": 25.5, "humidity": 60}
-        
+
         # Test existing keys
-        self.assertEqual(ApiUtils.safe_get_nested(data, "temperature"), 25.5)
-        self.assertEqual(ApiUtils.safe_get_nested(data, "humidity"), 60)
+        self.assertEqual(self.api_utils.safe_get_nested(data, "temperature"), 25.5)
+        self.assertEqual(self.api_utils.safe_get_nested(data, "humidity"), 60)
+
+        # Test non-existing keys
+        self.assertIsNone(self.api_utils.safe_get_nested(data, "missing"))
         
         # Test missing key with default
-        self.assertIsNone(ApiUtils.safe_get_nested(data, "pressure"))
-        self.assertEqual(ApiUtils.safe_get_nested(data, "pressure", default="default"), "default")
+        self.assertIsNone(self.api_utils.safe_get_nested(data, "pressure"))
+        self.assertEqual(self.api_utils.safe_get_nested(data, "pressure", default="default"), "default")
 
     def test_safe_get_nested_multiple_keys(self):
         """Test safe_get_nested with multiple key traversal."""
         # Test existing nested key
-        result = ApiUtils.safe_get_nested(self.sample_api_response, "main", "temp")
+        result = self.api_utils.safe_get_nested(self.sample_api_response, "main", "temp")
         self.assertEqual(result, 25.5)
-        
-        # Test missing nested key
-        result = ApiUtils.safe_get_nested(self.sample_api_response, "main", "missing")
+
+        # Test non-existing nested key
+        result = self.api_utils.safe_get_nested(self.sample_api_response, "main", "missing")
         self.assertIsNone(result)
-        
-        # Test missing parent key
-        result = ApiUtils.safe_get_nested(self.sample_api_response, "missing", "temp")
+
+        # Test non-existing parent key
+        result = self.api_utils.safe_get_nested(self.sample_api_response, "missing", "key")
         self.assertIsNone(result)
 
     def test_safe_get_nested_with_none_data(self):
@@ -99,30 +94,38 @@ class TestApiUtils(unittest.TestCase):
             ("string", "key", None),
             (123, "key", None)
         ]
-        
+
         for data, key, expected in test_cases:
             with self.subTest(data=data, key=key):
-                result = ApiUtils.safe_get_nested(data, key)
+                result = self.api_utils.safe_get_nested(data, key)
                 self.assertEqual(result, expected)
 
     def test_safe_get_nested_with_defaults(self):
         """Test safe_get_nested with default values."""
         # Test with default for missing path
-        result = ApiUtils.safe_get_nested(self.sample_api_response, "missing", "key", default="default")
+        result = self.api_utils.safe_get_nested(self.sample_api_response, "missing", "key", default="default")
         self.assertEqual(result, "default")
-        
+
         # Test with default for valid path (should return actual value)
-        result = ApiUtils.safe_get_nested(self.sample_api_response, "main", "temp", default="default")
+        result = self.api_utils.safe_get_nested(self.sample_api_response, "main", "temp", default="default")
         self.assertEqual(result, 25.5)
 
     def test_safe_get_list_item_valid_list(self):
         """Test safe_get_list_item with valid list data."""
         # Test with weather array
-        result = ApiUtils.safe_get_list_item(self.sample_api_response, "weather", 0, "description")
+        result = self.api_utils.safe_get_list_item(self.sample_api_response, "weather", 0, "description")
         self.assertEqual(result, "clear sky")
-        
+
+        # Test with non-existing index
+        result = self.api_utils.safe_get_list_item(self.sample_api_response, "weather", 1, "description")
+        self.assertIsNone(result)
+
+        # Test with non-existing list key
+        result = self.api_utils.safe_get_list_item(self.sample_api_response, "missing", 0, "description")
+        self.assertIsNone(result)
+
         # Test getting whole item
-        result = ApiUtils.safe_get_list_item(self.sample_api_response, "weather", 0)
+        result = self.api_utils.safe_get_list_item(self.sample_api_response, "weather", 0)
         expected = {
             "main": "Clear",
             "description": "clear sky", 
@@ -143,31 +146,37 @@ class TestApiUtils(unittest.TestCase):
         
         for data, list_key, index, item_key, expected in test_cases:
             with self.subTest(data=data, list_key=list_key):
-                result = ApiUtils.safe_get_list_item(data, list_key, index, item_key)
+                result = self.api_utils.safe_get_list_item(data, list_key, index, item_key)
                 self.assertEqual(result, expected)
 
     def test_safe_get_list_item_with_defaults(self):
         """Test safe_get_list_item with default values."""
         # Test missing key with default
-        result = ApiUtils.safe_get_list_item({}, "weather", 0, "description", "default")
+        result = self.api_utils.safe_get_list_item({}, "weather", 0, "description", "default")
         self.assertEqual(result, "default")
+
+        # Test missing index with default
+        result = self.api_utils.safe_get_list_item(self.sample_api_response, "weather", 1, "description", "default")
+        self.assertEqual(result, "default")
+
+        # Test valid data with default (should return actual value)
+        result = self.api_utils.safe_get_list_item(self.sample_api_response, "weather", 0, "description", "default")
+        self.assertEqual(result, "clear sky")
         
         # Test empty list with default
-        result = ApiUtils.safe_get_list_item({"weather": []}, "weather", 0, "description", "default")
+        result = self.api_utils.safe_get_list_item({"weather": []}, "weather", 0, "description", "default")
         self.assertEqual(result, "default")
 
     def test_extract_weather_main_data(self):
         """Test extract_weather_main_data with complete main data."""
-        result = ApiUtils.extract_weather_main_data(self.sample_api_response)
-        expected = {
-            'temperature': 25.5,
-            'humidity': 60,
-            'pressure': 1013.25,
-            'feels_like': 27.0,
-            'temp_min': 20.0,
-            'temp_max': 30.0,
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_weather_main_data(self.sample_api_response)
+        
+        self.assertEqual(result.temperature, 25.5)
+        self.assertEqual(result.feels_like, 27.0)
+        self.assertEqual(result.temp_min, 20.0)
+        self.assertEqual(result.temp_max, 30.0)
+        self.assertEqual(result.pressure, 1013.25)
+        self.assertEqual(result.humidity, 60)
 
     def test_extract_weather_main_data_partial(self):
         """Test extract_weather_main_data with partial main data."""
@@ -177,40 +186,34 @@ class TestApiUtils(unittest.TestCase):
                 # Missing other temperature fields
             }
         }
+
+        result = self.api_utils.extract_weather_main_data(partial_data)
         
-        result = ApiUtils.extract_weather_main_data(partial_data)
-        expected = {
-            'temperature': 22.0,
-            'humidity': None,
-            'pressure': None,
-            'feels_like': None,
-            'temp_min': None,
-            'temp_max': None,
-        }
-        self.assertEqual(result, expected)
+        self.assertEqual(result.temperature, 22.0)
+        self.assertIsNone(result.feels_like)
+        self.assertIsNone(result.temp_min)
+        self.assertIsNone(result.temp_max)
+        self.assertIsNone(result.pressure)
+        self.assertIsNone(result.humidity)
 
     def test_extract_weather_main_data_missing(self):
         """Test extract_weather_main_data with missing main section."""
-        result = ApiUtils.extract_weather_main_data({})
-        expected = {
-            'temperature': None,
-            'humidity': None,
-            'pressure': None,
-            'feels_like': None,
-            'temp_min': None,
-            'temp_max': None,
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_weather_main_data({})
+        
+        self.assertIsNone(result.temperature)
+        self.assertIsNone(result.feels_like)
+        self.assertIsNone(result.temp_min)
+        self.assertIsNone(result.temp_max)
+        self.assertIsNone(result.pressure)
+        self.assertIsNone(result.humidity)
 
     def test_extract_weather_wind_data_complete(self):
         """Test extract_weather_wind_data with complete wind information."""
-        result = ApiUtils.extract_weather_wind_data(self.sample_api_response)
-        expected = {
-            "wind_speed": 5.2,
-            "wind_direction": 180,
-            "wind_gust": 8.1
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_weather_wind_data(self.sample_api_response)
+        
+        self.assertEqual(result.wind_speed, 3.5)
+        self.assertEqual(result.wind_direction, 90)
+        self.assertEqual(result.wind_gust, 5.0)
 
     def test_extract_weather_wind_data_partial(self):
         """Test extract_weather_wind_data with partial wind information."""
@@ -221,35 +224,29 @@ class TestApiUtils(unittest.TestCase):
                 # Missing gust
             }
         }
+
+        result = self.api_utils.extract_weather_wind_data(partial_data)
         
-        result = ApiUtils.extract_weather_wind_data(partial_data)
-        expected = {
-            "wind_speed": 3.5,
-            "wind_direction": 90,
-            "wind_gust": None
-        }
-        self.assertEqual(result, expected)
+        self.assertEqual(result.wind_speed, 3.5)
+        self.assertEqual(result.wind_direction, 90)
+        self.assertIsNone(result.wind_gust)
 
     def test_extract_weather_wind_data_missing(self):
         """Test extract_weather_wind_data with missing wind section."""
-        result = ApiUtils.extract_weather_wind_data({})
-        expected = {
-            "wind_speed": None,
-            "wind_direction": None,
-            "wind_gust": None
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_weather_wind_data({})
+        
+        self.assertIsNone(result.wind_speed)
+        self.assertIsNone(result.wind_direction)
+        self.assertIsNone(result.wind_gust)
 
     def test_extract_weather_conditions_data(self):
         """Test extract_weather_conditions_data with valid weather data."""
-        result = ApiUtils.extract_weather_conditions_data(self.sample_api_response)
-        expected = {
-            'conditions': "Clear Sky",  # Title case from "clear sky"
-            'weather_main': "Clear",
-            'weather_id': 800,
-            'weather_icon': "01d",
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_weather_conditions_data(self.sample_api_response)
+        
+        self.assertEqual(result.conditions, "Clear Sky")  # Title case from "clear sky"
+        self.assertEqual(result.weather_main, "Clear")
+        self.assertEqual(result.weather_id, 800)
+        self.assertEqual(result.weather_icon, "01d")
 
     def test_extract_weather_conditions_data_missing(self):
         """Test extract_weather_conditions_data with missing weather data."""
@@ -258,30 +255,26 @@ class TestApiUtils(unittest.TestCase):
             ({"weather": []}),  # Empty weather list
             ({"weather": [{}]}),  # Weather object without description
         ]
-        
+
         for data in test_cases:
             with self.subTest(data=data):
-                result = ApiUtils.extract_weather_conditions_data(data)
-                expected = {
-                    'conditions': "--",  # Default value
-                    'weather_main': None,
-                    'weather_id': None,
-                    'weather_icon': None,
-                }
-                self.assertEqual(result, expected)
+                result = self.api_utils.extract_weather_conditions_data(data)
+                
+                self.assertEqual(result.conditions, "--")
+                self.assertIsNone(result.weather_main)
+                self.assertIsNone(result.weather_id)
+                self.assertIsNone(result.weather_icon)
 
     def test_extract_precipitation_data_with_both_types(self):
         """Test extract_precipitation_data with both rain and snow data."""
-        result = ApiUtils.extract_precipitation_data(self.sample_api_response)
-        expected = {
-            "rain": 2.5,  # Prefers 1h over 3h
-            "snow": 1.0,  # Prefers 1h over 3h
-            "rain_1h": 2.5,
-            "rain_3h": 6.0,
-            "snow_1h": 1.0,
-            "snow_3h": 2.5
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_precipitation_data(self.sample_api_response)
+        
+        self.assertEqual(result.rain, 2.5)  # 1h rain
+        self.assertEqual(result.snow, 0.0)  # 1h snow
+        self.assertEqual(result.rain_1h, 2.5)
+        self.assertEqual(result.rain_3h, 6.0)
+        self.assertEqual(result.snow_1h, 0.0)
+        self.assertEqual(result.snow_3h, 0.0)
 
     def test_extract_precipitation_data_partial_data(self):
         """Test extract_precipitation_data with partial precipitation data."""
@@ -289,68 +282,56 @@ class TestApiUtils(unittest.TestCase):
             "rain": {"3h": 5.0},  # Only 3h data
             # No snow data
         }
+
+        result = self.api_utils.extract_precipitation_data(partial_data)
         
-        result = ApiUtils.extract_precipitation_data(partial_data)
-        # The helper function should return 3h data divided by 3 for 1h estimate
+        # The actual implementation calculates 3h/3 when 1h is not available
         expected_rain_1h = 5.0 / 3
-        expected = {
-            "rain": expected_rain_1h,  # Uses 3h/3 when 1h not available
-            "snow": None,  # No snow data
-            "rain_1h": None,
-            "rain_3h": 5.0,
-            "snow_1h": None,
-            "snow_3h": None
-        }
-        self.assertEqual(result, expected)
+        self.assertEqual(result.rain, expected_rain_1h)  # Uses 3h/3 when 1h not available
+        self.assertIsNone(result.snow)  # No snow
+        self.assertIsNone(result.rain_1h)  # No 1h data available
+        self.assertEqual(result.rain_3h, 5.0)
+        self.assertIsNone(result.snow_1h)
+        self.assertIsNone(result.snow_3h)
 
     def test_extract_precipitation_data_missing_data(self):
         """Test extract_precipitation_data with no precipitation data."""
-        result = ApiUtils.extract_precipitation_data({})
-        expected = {
-            "rain": None,
-            "snow": None,
-            "rain_1h": None,
-            "rain_3h": None,
-            "snow_1h": None,
-            "snow_3h": None
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_precipitation_data({})
+        
+        self.assertIsNone(result.rain)
+        self.assertIsNone(result.snow)
+        self.assertIsNone(result.rain_1h)
+        self.assertIsNone(result.rain_3h)
+        self.assertIsNone(result.snow_1h)
+        self.assertIsNone(result.snow_3h)
 
     def test_extract_atmospheric_data(self):
         """Test extract_atmospheric_data with valid atmospheric data."""
-        result = ApiUtils.extract_atmospheric_data(self.sample_api_response)
-        expected = {
-            'visibility': 10000,
-            'cloud_cover': 20,
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_atmospheric_data(self.sample_api_response)
+        
+        self.assertEqual(result.visibility, 10000)
+        self.assertEqual(result.cloud_cover, 20)
 
     def test_extract_atmospheric_data_missing(self):
         """Test extract_atmospheric_data with missing atmospheric data."""
-        result = ApiUtils.extract_atmospheric_data({})
-        expected = {
-            'visibility': None,
-            'cloud_cover': None,
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_atmospheric_data({})
+        
+        self.assertIsNone(result.visibility)
+        self.assertIsNone(result.cloud_cover)
 
     def test_extract_coordinates(self):
         """Test extract_coordinates with valid coordinate data."""
-        result = ApiUtils.extract_coordinates(self.sample_api_response)
-        expected = {
-            'latitude': 40.7128,
-            'longitude': -74.0060,
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_coordinates(self.sample_api_response)
+        
+        self.assertEqual(result.latitude, 40.7128)
+        self.assertEqual(result.longitude, -74.006)
 
     def test_extract_coordinates_missing(self):
         """Test extract_coordinates with missing coordinate data."""
-        result = ApiUtils.extract_coordinates({})
-        expected = {
-            'latitude': None,
-            'longitude': None,
-        }
-        self.assertEqual(result, expected)
+        result = self.api_utils.extract_coordinates({})
+        
+        self.assertIsNone(result.latitude)
+        self.assertIsNone(result.longitude)
 
     def test_extract_complete_weather_data(self):
         """Test extract_complete_weather_data with all data sources."""
@@ -362,47 +343,63 @@ class TestApiUtils(unittest.TestCase):
                 }
             ]
         }
-        
-        result = ApiUtils.extract_complete_weather_data(
-            self.sample_api_response, 
-            uv_data, 
+
+        result = self.api_utils.extract_complete_weather_data(
+            self.sample_api_response,
+            uv_data,
             air_quality_data
         )
         
-        # Check that all sections are included
-        self.assertIn('temperature', result)
-        self.assertIn('wind_speed', result)
-        self.assertIn('conditions', result)
-        self.assertIn('rain', result)
-        self.assertIn('visibility', result)
-        self.assertIn('latitude', result)
-        self.assertIn('uv_index', result)
-        self.assertIn('air_quality_index', result)
-        self.assertIn('air_quality_description', result)
-        self.assertIn('date', result)
+        # Test main data
+        self.assertEqual(result.main_data.temperature, 25.5)
+        self.assertEqual(result.main_data.humidity, 60)
         
-        # Check specific values
-        self.assertEqual(result['temperature'], 25.5)
-        self.assertEqual(result['uv_index'], 7.5)
-        self.assertEqual(result['air_quality_index'], 3)
-        self.assertEqual(result['air_quality_description'], "Moderate")
-        self.assertIsInstance(result['date'], datetime)
+        # Test wind data
+        self.assertEqual(result.wind_data.wind_speed, 3.5)
+        self.assertEqual(result.wind_data.wind_direction, 90)
+        
+        # Test conditions data
+        self.assertEqual(result.conditions_data.conditions, "Clear Sky")  # Title case
+        self.assertEqual(result.conditions_data.weather_main, "Clear")
+        self.assertEqual(result.conditions_data.weather_id, 800)
+        self.assertEqual(result.conditions_data.weather_icon, "01d")
+        
+        # Test precipitation data
+        self.assertEqual(result.precipitation_data.rain, 2.5)
+        
+        # Test atmospheric data
+        self.assertEqual(result.atmospheric_data.visibility, 10000)
+        
+        # Test coordinates
+        self.assertEqual(result.coordinates.latitude, 40.7128)
+        self.assertEqual(result.coordinates.longitude, -74.006)
+        
+        # Test UV and air quality data
+        self.assertEqual(result.uv_index, 7.5)
+        self.assertEqual(result.air_quality_index, 3)
+        self.assertEqual(result.air_quality_description, "Moderate")
+        
+        # Test metadata
+        self.assertEqual(result.transformation_status, "success")
+        self.assertGreater(result.extraction_success_rate, 0.9)
+        self.assertEqual(len(result.missing_fields), 0)
 
     def test_extract_complete_weather_data_minimal(self):
         """Test extract_complete_weather_data with minimal data."""
-        result = ApiUtils.extract_complete_weather_data({})
+        result = self.api_utils.extract_complete_weather_data({})
         
-        # Should still have all expected keys with None/default values
-        expected_keys = [
-            'date', 'temperature', 'humidity', 'pressure', 'feels_like', 
-            'temp_min', 'temp_max', 'wind_speed', 'wind_direction', 'wind_gust',
-            'conditions', 'weather_main', 'weather_id', 'weather_icon',
-            'rain', 'snow', 'rain_1h', 'rain_3h', 'snow_1h', 'snow_3h',
-            'visibility', 'cloud_cover', 'latitude', 'longitude'
-        ]
+        # All fields should be None or default values
+        self.assertIsNone(result.main_data.temperature)
+        self.assertIsNone(result.wind_data.wind_speed)
+        self.assertEqual(result.conditions_data.conditions, "--")
+        self.assertIsNone(result.precipitation_data.rain)
+        self.assertIsNone(result.atmospheric_data.visibility)
+        self.assertIsNone(result.coordinates.latitude)
         
-        for key in expected_keys:
-            self.assertIn(key, result)
+        # Test metadata
+        self.assertEqual(result.transformation_status, "failed")
+        self.assertLess(result.extraction_success_rate, 0.5)
+        self.assertGreater(len(result.missing_fields), 0)
 
     def test_get_aqi_description(self):
         """Test get_aqi_description with various AQI values."""
@@ -416,29 +413,37 @@ class TestApiUtils(unittest.TestCase):
             (0, "Unknown"),  # Invalid AQI
             (6, "Unknown"),  # Invalid AQI
         ]
-        
+
         for aqi, expected in test_cases:
             with self.subTest(aqi=aqi):
-                result = ApiUtils.get_aqi_description(aqi)
+                result = self.api_utils.get_aqi_description(aqi)
                 self.assertEqual(result, expected)
 
     def test_validate_api_response_structure_valid(self):
         """Test validate_api_response_structure with valid response."""
         required_sections = ["main", "weather", "wind"]
-        result = ApiUtils.validate_api_response_structure(
-            self.sample_api_response, 
+        result = self.api_utils.validate_api_response_structure(
+            self.sample_api_response,
             required_sections
         )
-        self.assertTrue(result)
+        
+        self.assertTrue(result.is_valid)
+        self.assertEqual(len(result.missing_sections), 0)
+        self.assertEqual(result.validation_status, "success")
+        self.assertIsNone(result.error_message)
 
     def test_validate_api_response_structure_missing_sections(self):
         """Test validate_api_response_structure with missing sections."""
         required_sections = ["main", "weather", "missing_section"]
-        result = ApiUtils.validate_api_response_structure(
-            self.sample_api_response, 
+        result = self.api_utils.validate_api_response_structure(
+            self.sample_api_response,
             required_sections
         )
-        self.assertFalse(result)
+        
+        self.assertFalse(result.is_valid)
+        self.assertIn("missing_section", result.missing_sections)
+        self.assertEqual(result.validation_status, "partial")
+        self.assertIsNotNone(result.error_message)
 
     def test_validate_api_response_structure_invalid_data(self):
         """Test validate_api_response_structure with invalid data types."""
@@ -448,11 +453,14 @@ class TestApiUtils(unittest.TestCase):
             ("string", ["main"]),
             (123, ["main"]),
         ]
-        
+
         for data, required_sections in test_cases:
             with self.subTest(data=type(data).__name__):
-                result = ApiUtils.validate_api_response_structure(data, required_sections)
-                self.assertFalse(result)
+                result = self.api_utils.validate_api_response_structure(data, required_sections)
+                
+                self.assertFalse(result.is_valid)
+                self.assertEqual(result.validation_status, "failed")
+                self.assertIsNotNone(result.error_message)
 
     def test_error_handling_with_malformed_data(self):
         """Test all functions handle malformed API responses gracefully."""
@@ -466,26 +474,28 @@ class TestApiUtils(unittest.TestCase):
             {"wind": "not_a_dict"},
             {"coord": [40.7, -74.0]},  # Should be dict, not list
         ]
-        
+
         functions_to_test = [
-            (ApiUtils.extract_weather_main_data, []),
-            (ApiUtils.extract_weather_wind_data, []),
-            (ApiUtils.extract_weather_conditions_data, []),
-            (ApiUtils.extract_precipitation_data, []),
-            (ApiUtils.extract_atmospheric_data, []),
-            (ApiUtils.extract_coordinates, []),
-            (ApiUtils.extract_complete_weather_data, []),
+            (self.api_utils.extract_weather_main_data, []),
+            (self.api_utils.extract_weather_wind_data, []),
+            (self.api_utils.extract_weather_conditions_data, []),
+            (self.api_utils.extract_precipitation_data, []),
+            (self.api_utils.extract_atmospheric_data, []),
+            (self.api_utils.extract_coordinates, []),
+            (self.api_utils.extract_complete_weather_data, []),
         ]
-        
+
         for malformed_data in malformed_responses:
             for func, extra_args in functions_to_test:
                 with self.subTest(data=type(malformed_data).__name__, func=func.__name__):
                     try:
                         result = func(malformed_data, *extra_args)
-                        # Should return dict or appropriate type, not crash
+                        # Should return dataclass objects or appropriate type, not crash
                         self.assertIsNotNone(result)
+                        # The extract methods return dataclass objects, not dicts
                         if func.__name__.startswith('extract_'):
-                            self.assertIsInstance(result, dict)
+                            # Check that it's a dataclass object (has attributes)
+                            self.assertTrue(hasattr(result, '__dataclass_fields__'))
                     except Exception as e:
                         self.fail(f"{func.__name__} should handle malformed data gracefully, but raised {e}")
 
@@ -502,11 +512,11 @@ class TestApiUtils(unittest.TestCase):
         }
         
         # Test valid deep path
-        result = ApiUtils.safe_get_nested(deep_data, "level1", "level2", "level3", "value")
+        result = self.api_utils.safe_get_nested(deep_data, "level1", "level2", "level3", "value")
         self.assertEqual(result, "found")
         
         # Test path that goes too deep
-        result = ApiUtils.safe_get_nested(deep_data, "level1", "level2", "level3", "value", "too_deep")
+        result = self.api_utils.safe_get_nested(deep_data, "level1", "level2", "level3", "value", "too_deep")
         self.assertIsNone(result)
         
         # Test path with non-dict intermediate value
@@ -516,7 +526,7 @@ class TestApiUtils(unittest.TestCase):
             }
         }
         
-        result = ApiUtils.safe_get_nested(mixed_data, "level1", "level2", "level3")
+        result = self.api_utils.safe_get_nested(mixed_data, "level1", "level2", "level3")
         self.assertIsNone(result)
 
     def test_safe_get_list_item_boundary_conditions(self):
@@ -524,29 +534,31 @@ class TestApiUtils(unittest.TestCase):
         data_with_list = {
             "items": ["first", "second", "third"]
         }
-        
+
         # Test valid indices
-        self.assertEqual(ApiUtils.safe_get_list_item(data_with_list, "items", 0), "first")
-        self.assertEqual(ApiUtils.safe_get_list_item(data_with_list, "items", 2), "third")
-        
-        # Test out of bounds
-        self.assertIsNone(ApiUtils.safe_get_list_item(data_with_list, "items", 5))
-        self.assertIsNone(ApiUtils.safe_get_list_item(data_with_list, "items", -1))
+        self.assertEqual(self.api_utils.safe_get_list_item(data_with_list, "items", 0), "first")
+        self.assertEqual(self.api_utils.safe_get_list_item(data_with_list, "items", 2), "third")
+
+        # Test boundary conditions
+        self.assertIsNone(self.api_utils.safe_get_list_item(data_with_list, "items", -1))  # Negative index
+        self.assertIsNone(self.api_utils.safe_get_list_item(data_with_list, "items", 3))   # Out of bounds
+        self.assertIsNone(self.api_utils.safe_get_list_item(data_with_list, "items", 10))  # Far out of bounds
 
     def test_type_safety_and_conversion(self):
         """Test type safety in all extraction functions."""
         # All functions should handle various data types gracefully
         test_data_types = [None, "", 0, [], {}, "string", 123.45]
-        
+
         for test_data in test_data_types:
             with self.subTest(data_type=type(test_data).__name__):
                 # These should all return safely without crashing
-                ApiUtils.extract_weather_main_data(test_data)
-                ApiUtils.extract_weather_wind_data(test_data)
-                ApiUtils.extract_weather_conditions_data(test_data)
-                ApiUtils.extract_precipitation_data(test_data)
-                ApiUtils.extract_atmospheric_data(test_data)
-                ApiUtils.extract_coordinates(test_data)
+                self.api_utils.extract_weather_main_data(test_data)
+                self.api_utils.extract_weather_wind_data(test_data)
+                self.api_utils.extract_weather_conditions_data(test_data)
+                self.api_utils.extract_precipitation_data(test_data)
+                self.api_utils.extract_atmospheric_data(test_data)
+                self.api_utils.extract_coordinates(test_data)
+                self.api_utils.extract_complete_weather_data(test_data)
 
 
 if __name__ == '__main__':

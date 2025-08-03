@@ -9431,3 +9431,6501 @@ Humidity: 60 %
 Pressure: 30.18 inHg
 Wind Speed: 8.01 mph
 Conditions: Clear Sky
+
+Time: 2025-06-28 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:56:32
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:56:32
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:56:32
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:56:32
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:56:32
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:56:32
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:56:32
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:56:32
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:56:32
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:56:32
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:56:32
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:56:32
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:56:32
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:56:32
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:56:32
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:56:32
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:56:32
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:56:32
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:56:32
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:56:32
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:56:32
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:56:32
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:56:32
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:56:32
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:56:32
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:56:32
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:56:32
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:56:32
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:56:32
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:56:32
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:56:32
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:56:32
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 09:56:32
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:56:32
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:56:32
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:59:22
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:59:22
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:59:22
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:59:22
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:59:22
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:59:22
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:59:22
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:59:22
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:59:22
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:59:22
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:59:22
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:59:22
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:59:22
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:59:22
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:59:22
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:59:22
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:59:22
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:59:22
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:59:22
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:59:22
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:59:22
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:59:22
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:59:22
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:59:22
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:59:22
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:59:22
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:59:22
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:59:22
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:59:22
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:59:22
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:59:22
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:59:22
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 09:59:22
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:59:22
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:59:22
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:05:34
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:05:34
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:05:34
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:05:34
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:05:34
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:05:34
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:05:34
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:05:34
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:05:34
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:05:34
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:05:34
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:05:34
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:05:34
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:05:34
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:05:34
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:05:34
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:05:34
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:05:34
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:05:34
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:05:34
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:05:34
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:05:34
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:05:34
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:05:34
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:05:34
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:05:34
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:05:34
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:05:34
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:05:34
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:05:34
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:05:34
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:05:34
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:05:34
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:05:34
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:05:34
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:05:35
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:09:03
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:09:03
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:09:03
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:09:03
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:09:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:09:03
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:09:03
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:09:03
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:09:03
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:09:03
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:09:03
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:09:03
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:09:03
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:09:03
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:09:03
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:09:03
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:09:03
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:09:03
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:09:03
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:09:03
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:09:03
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:09:03
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:09:03
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:09:03
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:09:03
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:09:03
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:09:03
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:09:03
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:09:03
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:09:03
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:09:03
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:09:03
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:09:03
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:09:03
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:09:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:10:41
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:10:41
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:10:41
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:10:41
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:10:41
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:10:41
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:10:41
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:10:41
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:10:41
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:10:41
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:10:41
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:10:41
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:10:41
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:10:41
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:10:41
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:10:41
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:10:41
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:10:41
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:10:41
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:10:41
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:10:41
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:10:41
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:10:41
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:10:41
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:10:41
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:10:41
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:10:41
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:10:41
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:10:41
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:10:41
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:10:41
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:10:41
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:10:41
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:10:41
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:10:41
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:12:42
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:12:42
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:12:42
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:12:42
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:12:42
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:12:42
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:12:42
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:12:42
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:12:42
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:12:42
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:12:42
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:12:42
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:12:42
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:12:42
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:12:42
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:12:42
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:12:42
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:12:42
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:12:42
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:12:42
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:12:42
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:12:42
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:12:42
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:12:42
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:12:42
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:12:42
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:12:42
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:12:42
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:12:42
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:12:42
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:12:43
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:12:43
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:12:43
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:12:43
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:12:43
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:12:43
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:12:43
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:14:37
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:14:37
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:14:37
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:14:37
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:14:37
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:14:37
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:14:37
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:14:37
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:14:37
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:14:37
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:14:37
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:14:37
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:14:37
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:14:37
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:14:37
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:14:37
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:14:37
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:14:37
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:14:37
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:14:37
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:14:37
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:14:37
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:14:37
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:14:37
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:14:37
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:14:37
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:14:37
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:14:37
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:14:37
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:14:37
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:14:37
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:14:37
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:14:37
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:14:37
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:14:37
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:15:38
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:15:38
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:15:38
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:15:38
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:15:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:15:38
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:15:38
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:15:38
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:15:38
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:15:38
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:15:38
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:15:38
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:15:38
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:15:38
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:15:38
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:15:38
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:15:38
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:15:38
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:15:38
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:15:38
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:15:38
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:15:38
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:15:38
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:15:38
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:15:38
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:15:38
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:15:38
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:15:38
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:15:38
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:15:38
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:15:38
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:15:38
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:15:38
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:15:38
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:15:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:22:38
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:22:38
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:22:38
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:22:38
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:22:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:22:38
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:22:38
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:22:38
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:22:38
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:22:38
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:22:38
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:22:38
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:22:38
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:22:38
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:22:38
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:22:38
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:22:38
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:22:38
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:22:38
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:22:38
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:22:38
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:22:38
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:22:38
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:22:38
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:22:38
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:22:38
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:22:38
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:22:38
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:22:38
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:22:38
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:22:38
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:22:38
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:22:38
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:22:38
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:22:38
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:30:30
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:30:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:30:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:30:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:30:30
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:30:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:30:30
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:30:30
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:30:30
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:30:30
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:30:30
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:30:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:30:30
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:30:30
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:30:30
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:30:30
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:30:30
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:30:30
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:30:31
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:30:31
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:30:31
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:30:31
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:30:31
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:30:31
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:30:31
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:30:31
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:30:31
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:30:31
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:30:31
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:30:31
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:30:31
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:30:31
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:30:31
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:30:31
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:30:31
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:30:31
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:30:31
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:30:31
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:30:31
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:30:31
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:30:31
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:30:31
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:30:31
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:30:31
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:31:40
+City: london
+Unit System: metric
+Temperature: 15.6 °C
+Humidity: 76 %
+Pressure: 1018.00 hPa
+Wind Speed: 1.34 m/s
+Conditions: Clear Sky
+
+Time: 2025-08-02 20:31:40
+City: testcity
+Unit System: metric
+Temperature: 8.0 °C
+Humidity: 41 %
+Pressure: 1019.01 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2025-06-28 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:43:06
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:43:06
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:43:06
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:43:06
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:43:06
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:43:06
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:43:06
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:43:06
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:43:06
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:43:06
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:43:06
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:43:06
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:43:06
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:43:06
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:43:06
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:43:06
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:43:06
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:43:06
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:43:06
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:43:06
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:43:06
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:43:06
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:43:06
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:43:06
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:43:06
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:43:06
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:43:06
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:43:06
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:43:06
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:43:06
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:43:06
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:43:06
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:43:06
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:43:06
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:43:06
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:49:45
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:49:45
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:49:45
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:49:45
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:49:45
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:49:45
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:49:45
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:49:45
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:49:45
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:49:45
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:49:45
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:49:45
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:49:45
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:49:45
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:49:45
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:49:45
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:49:45
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:49:45
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:49:45
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:49:45
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:49:45
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:49:45
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:49:45
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:49:45
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:49:45
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:49:45
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:49:45
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:49:45
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:49:45
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:49:45
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:49:45
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:49:45
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:49:45
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:49:45
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:49:45
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:54:30
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:54:30
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:54:30
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:54:30
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:54:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:54:30
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:54:30
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:54:30
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:54:30
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:54:30
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:54:30
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:54:30
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:54:30
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:54:30
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:54:30
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:54:30
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:54:30
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:54:30
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:54:30
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:54:30
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:54:30
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:54:30
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:54:30
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:54:30
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:54:30
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:54:30
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:54:30
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:54:30
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:54:30
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:54:30
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:54:30
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:54:30
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:54:30
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:54:30
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:54:30
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:57:13
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:57:13
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:57:13
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:57:13
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:57:13
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:57:13
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:57:13
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:57:13
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:57:13
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:57:13
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:57:13
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:57:13
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:57:13
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:57:13
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:57:13
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:57:13
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:57:13
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:57:13
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:57:13
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:57:13
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:57:13
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:57:13
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:57:13
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:57:13
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:57:13
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:57:13
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:57:13
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:57:13
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:57:13
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:57:13
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:57:13
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:57:13
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 10:57:13
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:57:13
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:57:13
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:03:03
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:03:03
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:03:03
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:03:03
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:03:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:03:03
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:03:03
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:03:03
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:03:03
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:03:03
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:03:03
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:03:03
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:03:03
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:03:03
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:03:03
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:03:03
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:03:03
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:03:03
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:03:03
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:03:03
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:03:03
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:03:03
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:03:03
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:03:03
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:03:03
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:03:03
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:03:03
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:03:03
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:03:03
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:03:03
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:03:03
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:03:03
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:03:03
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:03:03
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:03:03
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-06-28 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-23 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-07-30 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 20:06:40
+City: new_york
+Unit System: metric
+Temperature: 21.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 19:06:40
+City: new_york
+Unit System: metric
+Temperature: 22.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 18:06:40
+City: new_york
+Unit System: metric
+Temperature: 23.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 17:06:40
+City: new_york
+Unit System: metric
+Temperature: 24.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 16:06:40
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 15:06:40
+City: new_york
+Unit System: metric
+Temperature: 26.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 14:06:40
+City: new_york
+Unit System: metric
+Temperature: 27.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 13:06:40
+City: new_york
+Unit System: metric
+Temperature: 28.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 12:06:40
+City: new_york
+Unit System: metric
+Temperature: 29.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 11:06:40
+City: new_york
+Unit System: metric
+Temperature: 30.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 10:06:40
+City: new_york
+Unit System: metric
+Temperature: 31.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 09:06:40
+City: new_york
+Unit System: metric
+Temperature: 32.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 08:06:40
+City: new_york
+Unit System: metric
+Temperature: 33.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 07:06:40
+City: new_york
+Unit System: metric
+Temperature: 34.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 06:06:40
+City: new_york
+Unit System: metric
+Temperature: 35.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 05:06:40
+City: new_york
+Unit System: metric
+Temperature: 36.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 04:06:40
+City: new_york
+Unit System: metric
+Temperature: 37.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 03:06:40
+City: new_york
+Unit System: metric
+Temperature: 38.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 02:06:40
+City: new_york
+Unit System: metric
+Temperature: 39.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 01:06:40
+City: new_york
+Unit System: metric
+Temperature: 40.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 00:06:40
+City: new_york
+Unit System: metric
+Temperature: 41.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 23:06:40
+City: new_york
+Unit System: metric
+Temperature: 42.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 22:06:40
+City: new_york
+Unit System: metric
+Temperature: 43.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 44.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 20:06:40
+City: new_york
+Unit System: metric
+Temperature: 45.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 19:06:40
+City: new_york
+Unit System: metric
+Temperature: 46.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 18:06:40
+City: new_york
+Unit System: metric
+Temperature: 47.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 17:06:40
+City: new_york
+Unit System: metric
+Temperature: 48.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 16:06:40
+City: new_york
+Unit System: metric
+Temperature: 49.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 15:06:40
+City: new_york
+Unit System: metric
+Temperature: 50.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 14:06:40
+City: new_york
+Unit System: metric
+Temperature: 51.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 13:06:40
+City: new_york
+Unit System: metric
+Temperature: 52.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 12:06:40
+City: new_york
+Unit System: metric
+Temperature: 53.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-01 11:06:40
+City: new_york
+Unit System: metric
+Temperature: 54.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:06:40
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: --
+Pressure: --
+Wind Speed: --
+Conditions: --
+
+Time: 2025-08-02 21:06:40
+City: new_york
+Unit System: metric
+Temperature: 25.0 °C
+Humidity: 60 %
+Pressure: 1013.00 hPa
+Wind Speed: 10.00 m/s
+Conditions: Sunny
+
+Time: 2023-01-01 12:00:00
+City: london
+Unit System: metric
+Temperature: 20.0 °C
+Humidity: 65 %
+Pressure: --
+Wind Speed: --
+Conditions: --

@@ -146,7 +146,8 @@ class TestUtils(unittest.TestCase):
     def test_city_key_with_valid_cities(self, mock_validate):
         """Test city key generation with valid city names."""
         # Mock validation to return no errors (empty list)
-        mock_validate.return_value = []
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
         
         test_cases = [
             ("New York", "new_york"),
@@ -168,7 +169,8 @@ class TestUtils(unittest.TestCase):
     def test_city_key_validation_error_handling(self, mock_validate):
         """Test city key generation when validation fails."""
         # Mock validation to return an error
-        mock_validate.return_value = ["City name is invalid: test error"]
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validate.return_value = ValidationResult(is_valid=False, errors=["City name is invalid: test error"])
         
         with self.assertRaises(ValueError) as context:
             self.utils.city_key("Invalid City")
@@ -181,10 +183,11 @@ class TestUtils(unittest.TestCase):
     def test_city_key_multiple_validation_errors(self, mock_validate):
         """Test city key generation with multiple validation errors."""
         # Mock validation to return multiple errors
-        mock_validate.return_value = [
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validate.return_value = ValidationResult(is_valid=False, errors=[
             "City name is invalid: too short",
             "City name is invalid: contains numbers"
-        ]
+        ])
         
         with self.assertRaises(ValueError) as context:
             self.utils.city_key("Bad123")
@@ -195,7 +198,8 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_normalization_behavior(self, mock_validate):
         """Test city key normalization behavior."""
-        mock_validate.return_value = []
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
         
         # Test that the function handles the normalization correctly
         test_cases = [
@@ -212,7 +216,8 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_special_character_handling(self, mock_validate):
         """Test city key handling of special characters."""
-        mock_validate.return_value = []
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
         
         test_cases = [
             ("City-with-Hyphens", "city-with-hyphens"),    # Preserve hyphens
@@ -234,10 +239,10 @@ class TestUtils(unittest.TestCase):
         """Test integration between is_fallback and format_fallback_status."""
         # Test with simulated data
         simulated_data = {"source": "simulated", "temperature": 25}
-        is_fallback_result = is_fallback(simulated_data)
+        is_fallback_result = self.utils.is_fallback(simulated_data)
         
-        display_status = format_fallback_status(is_fallback_result, "display")
-        log_status = format_fallback_status(is_fallback_result, "log")
+        display_status = self.utils.format_fallback_status(is_fallback_result, "display")
+        log_status = self.utils.format_fallback_status(is_fallback_result, "log")
         
         self.assertTrue(is_fallback_result)
         self.assertEqual(display_status, "(Simulated)")
@@ -245,10 +250,10 @@ class TestUtils(unittest.TestCase):
         
         # Test with live data
         live_data = {"source": "api", "temperature": 25}
-        is_fallback_result = is_fallback(live_data)
+        is_fallback_result = self.utils.is_fallback(live_data)
         
-        display_status = format_fallback_status(is_fallback_result, "display")
-        log_status = format_fallback_status(is_fallback_result, "log")
+        display_status = self.utils.format_fallback_status(is_fallback_result, "display")
+        log_status = self.utils.format_fallback_status(is_fallback_result, "log")
         
         self.assertFalse(is_fallback_result)
         self.assertEqual(display_status, "")
@@ -258,31 +263,33 @@ class TestUtils(unittest.TestCase):
         """Test that functions properly validate their arguments."""
         # Test format_fallback_status with invalid format_type
         with self.assertRaises(ValueError):
-            format_fallback_status(True, "invalid_format")
+            self.utils.format_fallback_status(True, "invalid_format")
     
     def test_function_return_types(self):
         """Test that all functions return the expected types."""
         # Test is_fallback return type
-        result = is_fallback({"source": "simulated"})
+        result = self.utils.is_fallback({"source": "simulated"})
         self.assertIsInstance(result, bool)
         
         # Test format_fallback_status return type
-        result = format_fallback_status(True, "display")
+        result = self.utils.format_fallback_status(True, "display")
         self.assertIsInstance(result, str)
         
         # Test city_key return type (with mocked validation)
-        with patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name', return_value=[]):
-            result = city_key("Test City")
+        with patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name') as mock_validate:
+            from WeatherDashboard.utils.validation_utils import ValidationResult
+            mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+            result = self.utils.city_key("Test City")
             self.assertIsInstance(result, str)
     
     def test_edge_cases_empty_and_none_inputs(self):
         """Test edge cases with empty and None inputs."""
         # Test is_fallback with None
         with self.assertRaises(AttributeError):
-            is_fallback(None)  # Should fail when trying to call .get() on None
+            self.utils.is_fallback(None)  # Should fail when trying to call .get() on None
         
         # Test format_fallback_status with None fallback_used
-        result = format_fallback_status(None, "display")
+        result = self.utils.format_fallback_status(None, "display")
         self.assertEqual(result, "")  # None is falsy
     
     def test_performance_characteristics(self):
@@ -295,8 +302,8 @@ class TestUtils(unittest.TestCase):
         # Perform many operations
         for i in range(1000):
             data = {"source": "simulated" if i % 2 == 0 else "api"}
-            is_fallback(data)
-            format_fallback_status(i % 2 == 0, "display")
+            self.utils.is_fallback(data)
+            self.utils.format_fallback_status(i % 2 == 0, "display")
         
         elapsed_time = time.time() - start_time
         self.assertLess(elapsed_time, 1.0, "Utility functions should be fast")
@@ -304,11 +311,12 @@ class TestUtils(unittest.TestCase):
     @patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name')
     def test_city_key_with_unicode_input(self, mock_validate):
         """Test city_key with unicode input (mocking validation)."""
-        mock_validate.return_value = []
+        from WeatherDashboard.utils.validation_utils import ValidationResult
+        mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
         
         # Test that city_key can handle unicode characters if validation passes
         unicode_city = "São Paulo"
-        result = city_key(unicode_city)
+        result = self.utils.city_key(unicode_city)
         
         # Should convert to lowercase and replace spaces
         self.assertEqual(result, "são_paulo")
@@ -320,20 +328,22 @@ class TestUtils(unittest.TestCase):
         weather_data = {"source": "simulated", "temperature": 25, "city": "New York"}
         
         # Check if data is fallback
-        is_fallback_data = is_fallback(weather_data)
+        is_fallback_data = self.utils.is_fallback(weather_data)
         self.assertTrue(is_fallback_data)
         
         # Format status for display
-        display_status = format_fallback_status(is_fallback_data, "display")
+        display_status = self.utils.format_fallback_status(is_fallback_data, "display")
         self.assertEqual(display_status, "(Simulated)")
         
         # Format status for logging
-        log_status = format_fallback_status(is_fallback_data, "log")
+        log_status = self.utils.format_fallback_status(is_fallback_data, "log")
         self.assertEqual(log_status, "Simulated")
         
         # Generate city key for storage (mock validation)
-        with patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name', return_value=[]):
-            storage_key = city_key(weather_data["city"])
+        with patch('WeatherDashboard.utils.utils.ValidationUtils.validate_city_name') as mock_validate:
+            from WeatherDashboard.utils.validation_utils import ValidationResult
+            mock_validate.return_value = ValidationResult(is_valid=True, errors=[])
+            storage_key = self.utils.city_key(weather_data["city"])
             self.assertEqual(storage_key, "new_york")
     
     def test_thread_safety_simulation(self):
@@ -349,10 +359,10 @@ class TestUtils(unittest.TestCase):
                 for i in range(100):
                     # Test is_fallback
                     data = {"source": "simulated" if i % 2 == 0 else "api"}
-                    fallback_result = is_fallback(data)
+                    fallback_result = self.utils.is_fallback(data)
                     
                     # Test format_fallback_status
-                    status = format_fallback_status(fallback_result, "display")
+                    status = self.utils.format_fallback_status(fallback_result, "display")
                     
                     results.append((fallback_result, status))
                     
@@ -388,9 +398,9 @@ class TestUtils(unittest.TestCase):
         # Perform many operations
         for i in range(1000):
             data = {"source": "simulated", "temp": i}
-            is_fallback(data)
-            format_fallback_status(i % 2 == 0, "display")
-            format_fallback_status(i % 2 == 0, "log")
+            self.utils.is_fallback(data)
+            self.utils.format_fallback_status(i % 2 == 0, "display")
+            self.utils.format_fallback_status(i % 2 == 0, "log")
         
         # Force garbage collection again
         gc.collect()

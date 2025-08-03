@@ -40,11 +40,23 @@ class TestWeatherDashboardState(unittest.TestCase):
         })
         self.config_patch.start()
         
+        # Mock the preferences loading to prevent loading from file
+        self.preferences_patch = patch('WeatherDashboard.gui.state_manager.WeatherDashboardState._load_preferences')
+        self.mock_load_preferences = self.preferences_patch.start()
+        self.mock_load_preferences.return_value = {
+            'city': 'Test City',
+            'unit': 'metric',
+            'range': 'Last 7 Days',
+            'chart': 'Temperature',
+            'visibility': {'temperature': True, 'humidity': False}
+        }
+        
         self.state = WeatherDashboardState()
     
     def tearDown(self):
         # Stop the config patch
         self.config_patch.stop()
+        self.preferences_patch.stop()
         
         # Clean up the root window after each test
         if self.root:
