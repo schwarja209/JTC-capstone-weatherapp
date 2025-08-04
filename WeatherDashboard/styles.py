@@ -84,6 +84,14 @@ def get_temperature_difference_colors() -> Dict[str, str]:
     """Get temperature difference colors from theme manager."""
     return theme_manager.get_theme_config()['colors']['temperature_difference']
 
+def get_temperature_thresholds() -> Dict[str, float]:
+    """Get temperature difference thresholds from theme manager."""
+    return theme_manager.get_theme_config()['colors']['temperature_thresholds']
+
+def get_widget_layout() -> Dict[str, Any]:
+    """Get widget layout configuration from theme manager."""
+    return theme_manager.get_theme_config()['widget_layout']
+
 # =================================
 # 3. SURFACE LAYER PROPERTIES - DELEGATE TO THEME MANAGER
 # =================================
@@ -114,6 +122,14 @@ def METRIC_COLOR_RANGES() -> Dict[str, Any]:
 def TEMPERATURE_DIFFERENCE_COLORS() -> Dict[str, str]:
     """Get temperature difference colors from theme manager."""
     return get_temperature_difference_colors()
+
+def TEMPERATURE_THRESHOLDS() -> Dict[str, float]:
+    """Get temperature difference thresholds from theme manager."""
+    return get_temperature_thresholds()
+
+def WIDGET_LAYOUT() -> Dict[str, Any]:
+    """Get widget layout configuration from theme manager."""
+    return get_widget_layout()
 
 # =================================
 # 4. LAYOUT MANAGEMENT - KEEP EXISTING

@@ -38,6 +38,26 @@ PESSIMISTIC_COLORS = {
         'selected': '#FF6666',    # Light red
         'active': '#FF4444'       # Bright red
     },
+    'alert_severity_colors': {
+        'warning': {
+            'color': '#FF0000',      # Pure red - maximum alarm
+            'background': '#1A0000',  # Dark red background (for black theme)
+            'icon': '💀',            # Skull - death imminent
+            'border': '#8B0000'
+        },
+        'caution': {
+            'color': '#CC0000',      # Dark red - ominous
+            'background': '#0D0000',  # Very dark red background
+            'icon': '☠️',            # Poison skull - toxic danger
+            'border': '#660000'
+        },
+        'watch': {
+            'color': '#666666',      # Gray - lifeless monitoring
+            'background': '#0A0A0A',  # Almost black background
+            'icon': '👁️‍🗨️',        # Eye in speech bubble - paranoid watching
+            'border': '#333333'
+        }
+    },
     'temperature_difference': {
         'significant_warmer': '#FF0000',  # Pure red - HEAT DEATH
         'slight_warmer': '#CC0000',       # Dark red
@@ -48,44 +68,44 @@ PESSIMISTIC_COLORS = {
     'metric_colors': {
         'temperature': {
             'ranges': [
-                (-20, '#000033'), (-10, '#000066'), (5, '#004466'),
-                (15, '#006600'), (25, '#CC0000'), (35, '#FF0000'), (45, '#FF3333')
+                (-10, '#000000'), (-5, '#1A0000'), (10, '#330000'),
+                (18, '#4D0000'), (28, '#660000'), (32, '#800000'), (38, '#8B0000')
             ],
             'imperial_ranges': [
-                (-10, '#000033'), (15, '#000066'), (40, '#004466'),
-                (60, '#006600'), (80, '#CC0000'), (95, '#FF0000'), (110, '#FF3333')
+                (14, '#000000'), (23, '#1A0000'), (50, '#330000'),
+                (64, '#4D0000'), (82, '#660000'), (90, '#800000'), (100, '#8B0000')
             ]
         },
         'humidity': {
             'ranges': [
-                (0, '#CC0000'), (20, '#AA0000'), (40, '#006600'),
-                (70, '#004466'), (85, '#000066'), (100, '#000033')
+                (0, '#8B0000'), (25, '#660000'), (45, '#4D0000'),
+                (65, '#330000'), (80, '#1A0000'), (100, '#000000')
             ]
         },
         'wind_speed': {
             'ranges': [
-                (0, '#333333'), (5, '#006600'), (15, '#AA0000'),
-                (25, '#CC0000'), (35, '#FF0000')
+                (0, '#2F0000'), (3, '#4D0000'), (10, '#660000'),
+                (18, '#800000'), (25, '#8B0000')
             ],
             'imperial_ranges': [
-                (0, '#333333'), (10, '#006600'), (25, '#AA0000'),
-                (40, '#CC0000'), (60, '#FF0000')
+                (0, '#2F0000'), (7, '#4D0000'), (18, '#660000'),
+                (30, '#800000'), (40, '#8B0000')
             ]
         },
         'pressure': {
             'ranges': [
-                (980, '#FF0000'), (1000, '#CC0000'), (1013, '#006600'),
-                (1030, '#004466'), (1050, '#000066')
+                (985, '#8B0000'), (1005, '#800000'), (1015, '#660000'),
+                (1025, '#4D0000'), (1045, '#330000')
             ],
             'imperial_ranges': [
-                (28.9, '#FF0000'), (29.5, '#CC0000'), (29.9, '#006600'),
-                (30.4, '#004466'), (31.0, '#000066')
+                (29.1, '#8B0000'), (29.7, '#800000'), (30.0, '#660000'),
+                (30.3, '#4D0000'), (30.9, '#330000')
             ]
         },
         'weather_comfort_score': {
             'ranges': [
-                (0, '#FF0000'), (30, '#CC0000'), (60, '#AA0000'),
-                (80, '#006600'), (95, '#004400')
+                (0, '#8B0000'), (40, '#800000'), (70, '#660000'),
+                (85, '#4D0000'), (95, '#330000')
             ]
         }
     },
@@ -95,6 +115,10 @@ PESSIMISTIC_COLORS = {
         'good': (50, 70),
         'very_good': (70, 85),
         'excellent': (85, 100)
+    },
+    'temperature_thresholds': {
+        'significant_difference_metric': 5.0,    # °C - Neutral perspective
+        'significant_difference_imperial': 9.0,  # °F - Neutral perspective
     }
 }
 
@@ -188,34 +212,34 @@ PESSIMISTIC_ICONS = {
 # =================================
 PESSIMISTIC_DIMENSIONS = {
     'alert': {
-        'width_ratio': 0.3,   # 30% - cramped but functional
-        'height_ratio': 0.15,  # 15% - tight but readable
-        'item_height_ratio': 0.08,  # 8% - minimal but usable
-        'max_height_ratio': 0.35  # 35% - restricted but functional
+        'width_ratio': 0.32,   # Neutral: 0.35, slight decrease
+        'height_ratio': 0.16,  # Neutral: 0.18, modest decrease
+        'item_height_ratio': 0.08,  # Neutral: 0.09, slight decrease
+        'max_height_ratio': 0.38  # Neutral: 0.4, small decrease
     },
     'progress_bar': {
-        'width_ratio': 0.08,  # 8% - minimal visibility
-        'height_ratio': 0.012,  # 1.2% - barely visible doom
+        'width_ratio': 0.10,  # Neutral: 0.12, modest decrease
+        'height_ratio': 0.013, # Neutral: 0.015, slight decrease
         'border_width': 1
     },
     'widget_layout': {
         'alert_popup': {
-            'width': 280,    # Smaller but readable
-            'base_height': 60,   # Tight but functional
-            'alert_height': 40,  # Minimal but usable
-            'max_height': 250    # Restricted but workable
+            'width': 320,    # Neutral: 350, modest decrease
+            'base_height': 70,   # Neutral: 80, reasonable decrease
+            'alert_height': 50,  # Neutral: 60, modest decrease
+            'max_height': 360    # Neutral: 400, reasonable decrease
         },
         'comfort_progress_bar': {
-            'width': 80,     # Smaller
-            'height': 8,     # Minimal
+            'width': 90,     # Neutral: 100, modest decrease
+            'height': 10,     # Neutral: 12, slight decrease
             'border_width': 1
         },
         'alert_badge': {
-            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -1, 'y': 1}
+            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -2, 'y': 2}
         },
         'alert_status': {
-            'default_font': ('Courier New', 9),  # Smaller terminal font
-            'message_wrap_ratio': 0.25  # 25% - cramped text wrapping
+            'default_font': ('Courier New', 9),  # Neutral: 10, slight decrease
+            'message_wrap_ratio': 0.28  # Neutral: 0.3, slight decrease
         }
     }
 }
@@ -230,6 +254,7 @@ PESSIMISTIC_UI = {
     'messaging': PESSIMISTIC_MESSAGING,
     'icons': PESSIMISTIC_ICONS,
     'dimensions': PESSIMISTIC_DIMENSIONS,
+    'alert_severity_colors': PESSIMISTIC_COLORS['alert_severity_colors'],
     
     'backgrounds': {
         'main_window': PESSIMISTIC_COLORS['background'],

@@ -97,19 +97,22 @@ class WeatherDataScheduler:
         self._update_status_display()
 
     def stop_scheduler(self) -> None:
-        """Stop the automatic data collection scheduler."""
+        """Stop the scheduler and cleanup resources."""
         self.enabled = False
-        self.stop_event.set()
         self.is_running = False
-        
-        if self.scheduler_thread:
-            self.scheduler_thread.join(timeout=5)
         
         # Stop countdown timer
         self._stop_countdown_timer()
         
+        # Signal the scheduler thread to stop
+        if hasattr(self, 'stop_event'):
+            self.stop_event.set()
+        
+        # Wait for scheduler thread to finish
+        if hasattr(self, 'scheduler_thread') and self.scheduler_thread.is_alive():
+            self.scheduler_thread.join(timeout=5)
+        
         self.logger.info("Weather data scheduler stopped")
-        self._update_status_display()
 
     def toggle_scheduler(self) -> None:
         """Toggle scheduler on/off."""
@@ -124,19 +127,26 @@ class WeatherDataScheduler:
     def _start_countdown_timer(self) -> None:
         """Start a timer to update countdown every second."""
         def update_countdown():
-            if self.enabled and self.is_running and hasattr(self.ui_handler, 'root'):
+            if (self.enabled and self.is_running and 
+                hasattr(self.ui_handler, 'root') and 
+                self.ui_handler.root.winfo_exists()):
                 self._update_status_display()
                 # Schedule next update in 1 second
-                self.ui_handler.root.after(1000, update_countdown)
+                self._countdown_job = self.ui_handler.root.after(1000, update_countdown)
         
         # Start the countdown updates
-        if hasattr(self.ui_handler, 'root'):
-            self.ui_handler.root.after(1000, update_countdown)
+        if hasattr(self.ui_handler, 'root') and self.ui_handler.root.winfo_exists():
+            self._countdown_job = self.ui_handler.root.after(1000, update_countdown)
 
     def _stop_countdown_timer(self) -> None:
         """Stop the countdown update timer."""
-        # No need to cancel anything - tkinter's after() will stop when window closes
-        pass
+        if hasattr(self, '_countdown_job') and self._countdown_job:
+            try:
+                if hasattr(self.ui_handler, 'root') and self.ui_handler.root.winfo_exists():
+                    self.ui_handler.root.after_cancel(self._countdown_job)
+            except:
+                pass
+            self._countdown_job = None
 
     def _scheduler_loop(self) -> None:
         """Main scheduler loop - runs every interval."""

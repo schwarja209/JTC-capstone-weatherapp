@@ -76,6 +76,7 @@ class WeatherDashboardMain:
 
         # Instance data
         self.root = root
+        self.root.protocol("WM_DELETE_WINDOW", self._on_closing)
         self._operation_lock = threading.Lock()
         self._setup_window_constraints()
         
@@ -240,7 +241,7 @@ class WeatherDashboardMain:
     def show_alert_popup(self, alerts: List[Dict[str, Any]]) -> None:
         """Display weather alerts popup."""
         parent = self.get_alert_popup_parent()
-        SimpleAlertPopup(parent, alerts)
+        self.alert_popup = SimpleAlertPopup(parent, alerts)
     
     def are_widgets_ready(self) -> bool:
         """Check if all widgets are properly initialized."""
@@ -261,6 +262,9 @@ class WeatherDashboardMain:
             error_exception: Optional exception that occurred during data fetching
             simulated: Whether the displayed data is simulated/fallback data
         """
+        # Store the view model for theme refresh
+        self._last_view_model = view_model
+
         self.widgets.update_metric_display({
             **view_model.metrics,
             "city": view_model.city_name,
@@ -356,6 +360,10 @@ class WeatherDashboardMain:
             if x != self.root.winfo_x() or y != self.root.winfo_y():
                 self.root.geometry(f"+{x}+{y}")
             
+            # REFRESH METRIC WIDGETS WITH NEW COLORS
+            if hasattr(self, '_last_view_model') and self._last_view_model:
+                self.update_display(self._last_view_model)
+
             self.logger.info(f"Theme changed to {theme_name}")
             
         except Exception as e:
@@ -436,6 +444,14 @@ class WeatherDashboardMain:
         """Handle application shutdown and save preferences."""
         try:
             self.logger.info("Application shutting down")
+            
+            # Close alert popup if open
+            if hasattr(self, 'alert_popup') and self.alert_popup:
+                try:
+                    if self.alert_popup.window.winfo_exists():
+                        self.alert_popup.window.destroy()
+                except:
+                    pass
             
             # Save preferences before closing
             if hasattr(self.state, 'save_preferences'):

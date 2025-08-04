@@ -34,6 +34,7 @@ class ColorUtils:
         if value is None:
             return "darkslategray"
         
+        # Use styles surface layer to get live theme configuration
         color_config = self.styles.METRIC_COLOR_RANGES().get(metric_key)
         if not color_config:
             return "darkslategray"
@@ -80,21 +81,22 @@ class ColorUtils:
                     feels_temp = float(difference_match.group(1))
                     difference = abs(feels_temp - actual_temp)
                     
-                    # Determine enhancement based on difference and direction
-                    TEMP_DIFF_THRESHOLD_METRIC = 5.0  # °C
-                    TEMP_DIFF_THRESHOLD_IMPERIAL = 9.0 # °F
-                    threshold_large = TEMP_DIFF_THRESHOLD_METRIC if unit_system == 'metric' else TEMP_DIFF_THRESHOLD_IMPERIAL
+                    # Use styles surface layer for live theme configuration
+                    thresholds = self.styles.TEMPERATURE_THRESHOLDS()
+                    threshold_large = thresholds['significant_difference_metric'] if unit_system == 'metric' else thresholds['significant_difference_imperial']
+                    
+                    difference_colors = self.styles.TEMPERATURE_DIFFERENCE_COLORS()
                     
                     if '↑' in temp_text:  # Feels warmer
                         if difference >= threshold_large:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['significant_warmer']
+                            return difference_colors['significant_warmer']
                         else:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['slight_warmer']
+                            return difference_colors['slight_warmer']
                     elif '↓' in temp_text:  # Feels cooler
                         if difference >= threshold_large:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['significant_cooler']
+                            return difference_colors['significant_cooler']
                         else:
-                            return self.styles.TEMPERATURE_DIFFERENCE_COLORS()['slight_cooler']
+                            return difference_colors['slight_cooler']
             
             return base_color  # Use base temperature color if no significant difference
         

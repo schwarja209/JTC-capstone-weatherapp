@@ -190,6 +190,9 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                     right_col_config['start_col'], right_col_config['end_col']
                 )
                 right_row += 1
+        
+        # Refresh colors to ensure theme consistency after all metrics are updated
+        self.refresh_metric_colors()
 
     def update_alert_display(self, alerts: List[Any]) -> None:
         """Update both alert widget and text label with enhanced styling.
@@ -245,6 +248,35 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                 self.alert_text_label.configure(text=f"{len(alerts)} Alerts")
             else:
                 self.alert_text_label.configure(text="")
+
+    def refresh_metric_colors(self) -> None:
+        """Refresh all metric colors when theme changes."""
+        if not hasattr(self, 'metric_labels'):
+            return
+        
+        # Recalculate colors for all visible metrics
+        for metric_key, widgets in self.metric_labels.items():
+            if hasattr(widgets['value'], 'cget'):
+                current_text = widgets['value'].cget('text')
+                if current_text and current_text != '--':
+                    # Recalculate color based on current theme
+                    unit_system = self.state.get_current_unit_system()
+                    raw_value = self.color_utils.extract_numeric_value(current_text)
+                    
+                    if raw_value is not None:
+                        if metric_key == 'temperature' and 'feels' in current_text:
+                            color = self.color_utils.get_enhanced_temperature_color(current_text, unit_system)
+                        else:
+                            color = self.color_utils.get_metric_color(metric_key, raw_value, unit_system)
+                        
+                        # Update widget color using TTK style
+                        try:
+                            style_name = f"Metric{metric_key.capitalize()}.TLabel"
+                            self.parent_frame.tk.eval(f"ttk::style configure {style_name} -foreground {color}")
+                            widgets['value'].configure(style=style_name)
+                        except Exception:
+                            # Fallback to direct configuration
+                            widgets['value'].configure(foreground=color)
 
 # ================================
 # 3. WIDGET CREATION METHODS
@@ -379,7 +411,17 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                 raw_value = self.color_utils.extract_numeric_value(value_text)
                 color = self.color_utils.get_metric_color(metric_key, raw_value, unit_system)
 
-            widgets['value'].configure(foreground=color)
+            # Apply color using TTK style to ensure theme inheritance
+            try:
+                # Create a unique style name for this metric
+                style_name = f"Metric{metric_key.capitalize()}.TLabel"
+                # Configure the style with the calculated color
+                self.parent_frame.tk.eval(f"ttk::style configure {style_name} -foreground {color}")
+                # Apply the style to the widget
+                widgets['value'].configure(style=style_name)
+            except Exception:
+                # Fallback to direct configuration if style creation fails
+                widgets['value'].configure(foreground=color)
             
             # Add alert badges if metric has alerts (simplified for now - will integrate with alert manager)
             if raw_value is not None:

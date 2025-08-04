@@ -171,43 +171,76 @@ ALERT_DEFINITIONS = {
     }
 }
 
-# Alert severity visual styling
-ALERT_SEVERITY_COLORS = {
-    'warning': {
-        'color': 'darkred',
-        'background': '#ffe6e6',  # Light red background
-        'icon': '⚠️',
-        'border': 'red'
-    },
-    'caution': {
-        'color': 'darkorange', 
-        'background': '#fff3e6',  # Light orange background
-        'icon': '🔶',
-        'border': 'orange'
-    },
-    'watch': {
-        'color': 'darkblue',
-        'background': '#e6f3ff',  # Light blue background  
-        'icon': '👁️',
-        'border': 'blue'
-    }
-}
+# Alert severity visual styling - Now delegates to theme manager
+def get_alert_severity_colors():
+    """Get alert severity colors from theme manager."""
+    from WeatherDashboard.features.themes.theme_manager import theme_manager
+    theme_config = theme_manager.get_theme_config()
+    return theme_config.get('alert_severity_colors', {})
 
-# Alert display styling configuration
-ALERT_DISPLAY_CONFIG = {
-    'badge_font': ("Arial", 8),
-    'badge_size': {'width': 2, 'height': 1},
-    'badge_border': {'relief': "solid", 'borderwidth': 1},
-    'column_padding': {'right_section': (20, 0), 'left_section': (0, 0)},
-    'alert_text_padding': {'padx': 5, 'pady': 2},
-    'alert_text_border': {'relief': "raised", 'borderwidth': 1},
-    'fallback_icon': '⚠️',
-    'animation_settings': {
-        'pulse_colors': ['red', 'darkred', 'red'], # Red pulse sequence
-        'flash_interval': 500,    # Milliseconds between color changes
-        'fade_duration': 200      # Milliseconds for fade transitions
+# Alert display styling configuration - Now delegates to theme manager
+def get_alert_display_config():
+    """Get alert display configuration from theme manager."""
+    from WeatherDashboard.features.themes.theme_manager import theme_manager
+    theme_config = theme_manager.get_theme_config()
+    fonts = theme_config.get('fonts', {})
+    
+    return {
+        'badge_font': (fonts.get('default_family', 'Arial'), fonts.get('sizes', {}).get('small', 8)),
+        'badge_size': {'width': 2, 'height': 1},
+        'badge_border': {'relief': "solid", 'borderwidth': 1},
+        'column_padding': {'right_section': (20, 0), 'left_section': (0, 0)},
+        'alert_text_padding': {'padx': 5, 'pady': 2},
+        'alert_text_border': {'relief': "raised", 'borderwidth': 1},
+        'fallback_icon': '⚠️',
+        'animation_settings': {
+            'pulse_colors': [theme_config['colors']['error'], theme_config['colors']['warning'], theme_config['colors']['error']],
+            'flash_interval': 500,
+            'fade_duration': 200
+        }
     }
-}
+
+# Legacy constants for backward compatibility
+ALERT_SEVERITY_COLORS = get_alert_severity_colors()
+ALERT_DISPLAY_CONFIG = get_alert_display_config()
+
+# # Alert severity visual styling
+# ALERT_SEVERITY_COLORS = {
+#     'warning': {
+#         'color': 'darkred',
+#         'background': '#ffe6e6',  # Light red background
+#         'icon': '⚠️',
+#         'border': 'red'
+#     },
+#     'caution': {
+#         'color': 'darkorange', 
+#         'background': '#fff3e6',  # Light orange background
+#         'icon': '🔶',
+#         'border': 'orange'
+#     },
+#     'watch': {
+#         'color': 'darkblue',
+#         'background': '#e6f3ff',  # Light blue background  
+#         'icon': '👁️',
+#         'border': 'blue'
+#     }
+# }
+
+# # Alert display styling configuration
+# ALERT_DISPLAY_CONFIG = {
+#     'badge_font': ("Arial", 8),
+#     'badge_size': {'width': 2, 'height': 1},
+#     'badge_border': {'relief': "solid", 'borderwidth': 1},
+#     'column_padding': {'right_section': (20, 0), 'left_section': (0, 0)},
+#     'alert_text_padding': {'padx': 5, 'pady': 2},
+#     'alert_text_border': {'relief': "raised", 'borderwidth': 1},
+#     'fallback_icon': '⚠️',
+#     'animation_settings': {
+#         'pulse_colors': ['red', 'darkred', 'red'], # Red pulse sequence
+#         'flash_interval': 500,    # Milliseconds between color changes
+#         'fade_duration': 200      # Milliseconds for fade transitions
+#     }
+# }
 
 # Alert Configuration Validation
 def validate_alert_config() -> None:

@@ -170,6 +170,19 @@ class ThemeManager:
             background=backgrounds['main_window']
         )
 
+        # Alert frame styling
+        self._ttk_style.configure(
+            "AlertFrame.TLabelframe",
+            background=backgrounds['main_window']
+        )
+        
+        self._ttk_style.configure(
+            "AlertFrame.TLabelframe.Label",
+            font=(fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']),
+            foreground=colors['text'],
+            background=backgrounds['main_window']
+        )
+
     def _configure_button_styles(self, fonts: Dict, padding: Dict) -> None:
         """Configure button styles."""
         self._ttk_style.configure(
@@ -180,7 +193,9 @@ class ThemeManager:
 
     def _configure_label_styles(self, colors: Dict, fonts: Dict, backgrounds: Dict) -> None:
         """Configure all label variations."""
-        base_bg = backgrounds['main_window'] 
+        base_bg = backgrounds['main_window']
+        alert_colors = colors.get('alert_severity_colors', {})
+
         label_configs = {
             'LabelName.TLabel': {
                 'font': (fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']),
@@ -197,15 +212,30 @@ class ThemeManager:
                 'foreground': colors['text'],
                 'background': base_bg  
             },
-            'AlertText.TLabel': {
-                'font': (fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']),
-                'foreground': colors['text'],
-                'background': base_bg  
-            },
+            # 'AlertText.TLabel': {
+            #     'font': (fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']),
+            #     'foreground': colors['text'],
+            #     'background': base_bg    
+            # },
             'GrayLabel.TLabel': {
                 'font': (fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['normal']),
                 'foreground': colors['foregrounds']['inactive'],
                 'background': base_bg  
+            },
+            'AlertWarning.TLabel': {
+                'font': (fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']),
+                'foreground': alert_colors.get('warning', {}).get('color', colors['error']),
+                'background': base_bg   
+            },
+            'AlertCaution.TLabel': {
+                'font': (fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']),
+                'foreground': alert_colors.get('caution', {}).get('color', colors['warning']),
+                'background': base_bg   
+            },
+            'AlertWatch.TLabel': {
+                'font': (fonts['default_family'], fonts['sizes']['normal'], fonts['weights']['bold']),
+                'foreground': alert_colors.get('watch', {}).get('color', colors['info']),
+                'background': base_bg   
             }
         }
         

@@ -38,6 +38,26 @@ NEUTRAL_COLORS = {
         'selected': '#2C3E50',
         'active': '#34495E'
     },
+    'alert_severity_colors': {
+        'warning': {
+            'color': '#E74C3C',      # Red for warnings
+            'background': '#FFE6E6',  # Light red background
+            'icon': '⚠️',
+            'border': '#E74C3C'
+        },
+        'caution': {
+            'color': '#E67E22',      # Orange for cautions
+            'background': '#FFF3E6',  # Light orange background
+            'icon': '🔶',
+            'border': '#E67E22'
+        },
+        'watch': {
+            'color': '#3498DB',      # Blue for watches
+            'background': '#E6F3FF',  # Light blue background
+            'icon': '👁️',
+            'border': '#3498DB'
+        }
+    },
     'temperature_difference': {
         'significant_warmer': '#E67E22',
         'slight_warmer': '#F39C12',
@@ -95,6 +115,10 @@ NEUTRAL_COLORS = {
         'good': (50, 70),
         'very_good': (70, 85),
         'excellent': (85, 100)
+    },
+    'temperature_thresholds': {
+        'significant_difference_metric': 5.0,    # °C - Neutral perspective
+        'significant_difference_imperial': 9.0,  # °F - Neutral perspective
     }
 }
 
@@ -230,6 +254,7 @@ NEUTRAL_UI = {
     'messaging': NEUTRAL_MESSAGING,
     'icons': NEUTRAL_ICONS,
     'dimensions': NEUTRAL_DIMENSIONS,
+    'alert_severity_colors': NEUTRAL_COLORS['alert_severity_colors'],
     
     'backgrounds': {
         'main_window': NEUTRAL_COLORS['background'],

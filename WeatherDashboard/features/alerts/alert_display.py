@@ -212,6 +212,10 @@ class SimpleAlertPopup:
 
         self.alerts = alerts
         self.window = tk.Toplevel(parent) if parent else tk.Tk()
+        if parent:
+            self.window.transient(parent)
+            self.window.grab_set()  # Make modal
+
         self.window.title("Weather Alerts")
         
         # Get theme configuration for background
@@ -245,65 +249,36 @@ class SimpleAlertPopup:
         self.window.geometry(f"{popup_width}x{window_height}")
         self.window.resizable(True, True)  # Allow both width and height resizing
         
-        if parent:
-            self.window.transient(parent)
-        
         self._create_display()
         self._center_window()
-    
+
     def _create_display(self) -> None:
-        """Create the main alert display layout with scrollable content.
+        """Create the main alert display layout with simple frame.
         
-        Sets up the popup window content including title, scrollable alert list,
-        and control buttons.
+        Sets up the popup window content including title and alert list.
         """
         # Get theme configuration for styling
         theme_config = self.styles.get_theme_config()
 
         # Main frame
-        main_frame = ttk.Frame(self.window, padding="10")
-        main_frame.pack(fill=tk.BOTH, expand=True)
+        main_frame = tk.Frame(self.window, bg=theme_config['colors']['background'])
+        main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         
         # Title
         alert_count = len(self.alerts)
         title_text = f"Weather Alerts ({alert_count} active)"
         
-        title_label = ttk.Label(main_frame, text=title_text, style="AlertTitle.TLabel")
+        title_label = tk.Label(main_frame, text=title_text, bg=theme_config['colors']['background'], fg=theme_config['colors']['text'], font=("Arial", 12, "bold"))
         title_label.pack(pady=(0, 10))
         
-        # Create scrollable frame for alerts (always use scrollbar for consistency)
+        # Create simple frame for alerts
         if self.alerts:
-            # Create canvas and scrollbar for scrolling
-            canvas = tk.Canvas(main_frame, highlightthickness=0, bg=theme_config['backgrounds']['main_window'])
-            scrollbar = ttk.Scrollbar(main_frame, orient="vertical", command=canvas.yview)
-            scrollable_frame = ttk.Frame(canvas)
+            alert_frame = tk.Frame(main_frame, bg=theme_config['colors']['background'])
+            alert_frame.pack(fill="both", expand=True)
             
-            # Configure scrolling
-            scrollable_frame.bind(
-                "<Configure>",
-                lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-            )
-            
-            canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-            canvas.configure(yscrollcommand=scrollbar.set)
-            
-            # Pack canvas and scrollbar
-            canvas.pack(side="left", fill="both", expand=True)
-            scrollbar.pack(side="right", fill="y")
-            
-            # Add alerts to scrollable frame
+            # Add alerts to frame
             for alert in self.alerts:
-                self._create_alert_item(scrollable_frame, alert)
-            
-            # Bind mousewheel to canvas for scrolling
-            def _on_mousewheel(event: Any) -> None:
-                canvas.yview_scroll(int(-1*(event.delta/120)), "units")
-            
-            canvas.bind("<MouseWheel>", _on_mousewheel)
-            
-            # Update scroll region after all alerts are added
-            self.window.update_idletasks()
-            canvas.configure(scrollregion=canvas.bbox("all"))
+                self._create_alert_item(alert_frame, alert)
         else:
             no_alerts_label = ttk.Label(main_frame, text="No active alerts")
             no_alerts_label.pack()
@@ -315,23 +290,39 @@ class SimpleAlertPopup:
             parent: Parent widget to contain the alert item
             alert: Weather alert object to display
         """
-        # Alert frame
-        alert_frame = ttk.LabelFrame(parent, text=f"{alert.icon} {alert.title}", padding="5")
+        theme_config = self.styles.get_theme_config()
+        alert_colors = theme_config.get('alert_severity_colors', {})
+        
+        # Alert frame with theme-aware styling
+        alert_frame = ttk.LabelFrame(parent, text=f"{alert.icon} {alert.title}", padding="5", style="AlertFrame.TLabelframe")
         alert_frame.pack(fill=tk.X, pady=3)
         
-        # Alert message
-        wrap_ratio = self.styles.WIDGET_LAYOUT['alert_status']['message_wrap_ratio']
+        # Alert message with severity-based styling
+        wrap_ratio = self.styles.WIDGET_LAYOUT()['alert_status']['message_wrap_ratio']
         wrap_length = int(self.window.winfo_width() * wrap_ratio)
-        message_label = ttk.Label(alert_frame, text=alert.message, wraplength=wrap_length)
+        
+        # Use severity-based style if available, otherwise default
+        severity_style = f"Alert{alert.severity.capitalize()}.TLabel"
+        try:
+            message_label = tk.Label(alert_frame, text=alert.message, wraplength=wrap_length, bg=theme_config['colors']['background'], fg=theme_config['colors']['text'])
+        except:
+            # Fallback to default style if severity style doesn't exist
+            message_label = ttk.Label(alert_frame, text=alert.message, wraplength=wrap_length)
         message_label.pack(anchor=tk.W)
         
         # Time and severity
         time_str = alert.timestamp.strftime("%H:%M:%S")
         info_text = f"Severity: {alert.severity.upper()} | Time: {time_str}"
-        info_label = ttk.Label(alert_frame, text=info_text, style="GrayLabel.TLabel")
-        # Then configure the color separately if needed
-        # info_label.configure(style="LabelValue.TLabel")
+        info_label = tk.Label(alert_frame, text=info_text, bg=theme_config['colors']['background'], fg=theme_config['colors']['text'])
         info_label.pack(anchor=tk.W)
+
+    def refresh_theme(self) -> None:
+        """Refresh the alert display when theme changes."""
+        # Recreate the display with new theme colors
+        for widget in self.window.winfo_children():
+            widget.destroy()
+        self._create_display()
+        self._center_window()
     
     def _center_window(self) -> None:
         """Center the popup window on screen.

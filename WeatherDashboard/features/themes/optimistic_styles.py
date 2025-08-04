@@ -31,12 +31,32 @@ OPTIMISTIC_COLORS = {
     'backgrounds': {
         'inactive': '#FFF0F5',    # Lavender blush
         'selected': '#E0FFFF',    # Light cyan
-        'active': '#F0FFF0'       # Honeydew
+        'active': "#FBFFF0"       # Honeydew
     },
     'foregrounds': {
         'inactive': '#CD853F',    # Peru (good contrast on light backgrounds)
         'selected': '#8B0000',    # Dark red
         'active': '#006400'       # Dark green
+    },
+    'alert_severity_colors': {
+        'warning': {
+            'color': '#FF1493',      # Deep pink - friendly but visible
+            'background': '#FFF0F8',  # Light pink background
+            'icon': '🎉',            # Party instead of warning!
+            'border': '#FF69B4'
+        },
+        'caution': {
+            'color': '#FFD700',      # Gold - shimmering attention
+            'background': '#FFFEF0',  # Light yellow background
+            'icon': '✨',            # Sparkles instead of caution!
+            'border': '#FFA500'
+        },
+        'watch': {
+            'color': '#00BFFF',      # Electric blue - exciting!
+            'background': '#F0FEFF',  # Light cyan background
+            'icon': '👀',            # Eyes with excitement!
+            'border': '#00FFFF'
+        }
     },
     'temperature_difference': {
         'significant_warmer': '#FF4500',  # Orange red
@@ -48,44 +68,44 @@ OPTIMISTIC_COLORS = {
     'metric_colors': {
         'temperature': {
             'ranges': [
-                (-20, '#4169E1'), (-10, '#00BFFF'), (5, '#32CD32'),
-                (15, '#FFD700'), (25, '#FF6347'), (35, '#FF4500'), (45, '#FF1493')
+                (-30, '#8A2BE2'), (-15, '#4169E1'), (0, '#00BFFF'),
+                (10, '#32CD32'), (20, '#FFD700'), (30, '#FF69B4'), (40, '#FF1493')
             ],
             'imperial_ranges': [
-                (-10, '#4169E1'), (15, '#00BFFF'), (40, '#32CD32'),
-                (60, '#FFD700'), (80, '#FF6347'), (95, '#FF4500'), (110, '#FF1493')
+                (-20, '#8A2BE2'), (5, '#4169E1'), (32, '#00BFFF'),
+                (50, '#32CD32'), (68, '#FFD700'), (86, '#FF69B4'), (104, '#FF1493')
             ]
         },
         'humidity': {
             'ranges': [
-                (0, '#FF6347'), (20, '#FFD700'), (40, '#32CD32'),
-                (70, '#00BFFF'), (85, '#4169E1'), (100, '#8A2BE2')
+                (0, '#FF69B4'), (15, '#FFD700'), (30, '#00FF7F'),
+                (60, '#00BFFF'), (80, '#8A2BE2'), (100, '#FF1493')
             ]
         },
         'wind_speed': {
             'ranges': [
-                (0, '#DDA0DD'), (5, '#32CD32'), (15, '#FFD700'),
-                (25, '#FF6347'), (35, '#FF4500')
+                (0, '#E6E6FA'), (3, '#00FF7F'), (12, '#FFD700'),
+                (20, '#FF69B4'), (30, '#FF1493')
             ],
             'imperial_ranges': [
-                (0, '#DDA0DD'), (10, '#32CD32'), (25, '#FFD700'),
-                (40, '#FF6347'), (60, '#FF4500')
+                (0, '#E6E6FA'), (7, '#00FF7F'), (20, '#FFD700'),
+                (35, '#FF69B4'), (50, '#FF1493')
             ]
         },
         'pressure': {
             'ranges': [
-                (980, '#FF4500'), (1000, '#FF6347'), (1013, '#32CD32'),
-                (1030, '#00BFFF'), (1050, '#4169E1')
+                (970, '#FF1493'), (990, '#FF69B4'), (1005, '#00FF7F'),
+                (1025, '#00BFFF'), (1040, '#8A2BE2')
             ],
             'imperial_ranges': [
-                (28.9, '#FF4500'), (29.5, '#FF6347'), (29.9, '#32CD32'),
-                (30.4, '#00BFFF'), (31.0, '#4169E1')
+                (28.6, '#FF1493'), (29.2, '#FF69B4'), (29.7, '#00FF7F'),
+                (30.3, '#00BFFF'), (30.7, '#8A2BE2')
             ]
         },
         'weather_comfort_score': {
             'ranges': [
-                (0, '#FF4500'), (30, '#FF6347'), (60, '#FFD700'),
-                (80, '#32CD32'), (95, '#00FF00')
+                (0, '#FF69B4'), (20, '#FFD700'), (50, '#00FF7F'),
+                (70, '#00BFFF'), (85, '#FF1493')
             ]
         }
     },
@@ -95,6 +115,10 @@ OPTIMISTIC_COLORS = {
         'good': (50, 70),
         'very_good': (70, 85),
         'excellent': (85, 100)
+    },
+    'temperature_thresholds': {
+        'significant_difference_metric': 5.0,    # °C - Neutral perspective
+        'significant_difference_imperial': 9.0,  # °F - Neutral perspective
     }
 }
 
@@ -188,34 +212,34 @@ OPTIMISTIC_ICONS = {
 # =================================
 OPTIMISTIC_DIMENSIONS = {
     'alert': {
-        'width_ratio': 0.42,   # 42% - generous but reasonable
-        'height_ratio': 0.25,  # 25% - spacious but not excessive
-        'item_height_ratio': 0.12,  # 12% - comfortable
-        'max_height_ratio': 0.6  # 60% - generous maximum
+        'width_ratio': 0.37,   # Neutral: 0.35, slight increase
+        'height_ratio': 0.20,  # Neutral: 0.18, modest increase  
+        'item_height_ratio': 0.10,  # Neutral: 0.09, slight increase
+        'max_height_ratio': 0.42  # Neutral: 0.4, small increase
     },
     'progress_bar': {
-        'width_ratio': 0.18,  # 18% - visible but reasonable
-        'height_ratio': 0.025, # 2.5% - clearly visible
-        'border_width': 2     # Friendly but not overwhelming
+        'width_ratio': 0.14,  # Neutral: 0.12, modest increase
+        'height_ratio': 0.018, # Neutral: 0.015, slight increase
+        'border_width': 2     # Slightly thicker for joy
     },
     'widget_layout': {
         'alert_popup': {
-            'width': 420,      # Generous
-            'base_height': 120, # Comfortable
-            'alert_height': 100, # Spacious
-            'max_height': 600   # Large but reasonable
+            'width': 370,      # Neutral: 350, modest increase
+            'base_height': 90, # Neutral: 80, reasonable increase
+            'alert_height': 70, # Neutral: 60, modest increase
+            'max_height': 420   # Neutral: 400, small increase
         },
         'comfort_progress_bar': {
-            'width': 140,      # Generous
-            'height': 18,      # Comfortable
-            'border_width': 2  # Friendly border
+            'width': 110,      # Neutral: 100, modest increase
+            'height': 14,      # Neutral: 12, slight increase
+            'border_width': 2  # Slightly thicker
         },
         'alert_badge': {
-            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -4, 'y': 4}
+            'position': {'relx': 1.0, 'rely': 0, 'anchor': "ne", 'x': -3, 'y': 3}
         },
         'alert_status': {
-            'default_font': ('Comic Sans MS', 14),  # Happy font, readable size
-            'message_wrap_ratio': 0.4  # 40% - generous but reasonable
+            'default_font': ('Comic Sans MS', 11),  # Neutral: 10, slight increase
+            'message_wrap_ratio': 0.35  # Neutral: 0.3, modest increase
         }
     }
 }
@@ -230,6 +254,7 @@ OPTIMISTIC_UI = {
     'messaging': OPTIMISTIC_MESSAGING,
     'icons': OPTIMISTIC_ICONS,
     'dimensions': OPTIMISTIC_DIMENSIONS,
+    'alert_severity_colors': OPTIMISTIC_COLORS['alert_severity_colors'],
     
     'backgrounds': {
         'main_window': OPTIMISTIC_COLORS['background'],
