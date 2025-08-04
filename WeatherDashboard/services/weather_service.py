@@ -22,7 +22,7 @@ from typing import Dict, Any, Optional
 
 import requests
 
-from WeatherDashboard import config
+from WeatherDashboard import config, dialog
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.api_utils import ApiUtils
 from WeatherDashboard.utils.derived_metrics import DerivedMetricsCalculator
@@ -64,6 +64,7 @@ class WeatherAPIClient:
         """
         # Direct imports for stable utilities
         self.config = config
+        self.dialog = dialog
         self.logger = Logger()
 
         # Instance data
@@ -97,7 +98,8 @@ class WeatherAPIClient:
         data = self._fetch_api_endpoint(self.weather_url, params, cancel_event)
         
         if not data or data.get("cod") != 200:
-            raise CityNotFoundError(self.config.ERROR_MESSAGES['not_found'].format(resource="City", name=city))
+            # Don't show dialog here - let the service layer handle error presentation
+            raise CityNotFoundError(f"City '{city}' not found")
         
         validate_api_response(data)
         return data
@@ -120,14 +122,20 @@ class WeatherAPIClient:
                 raise ValueError(f"Expected JSON object, got {type(data).__name__}")
             return data
         except ValueError as e:
-            raise ValueError(self.config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason=f"invalid JSON response: {e}")) from e
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'api_error', 
+                "API request failed for {endpoint}: {reason}", endpoint="weather API", reason=f"invalid JSON response: {e}")
+            raise ValueError(f"API request failed for weather API: invalid JSON response: {e}") from e
     
     def _validate_request(self, city: str) -> None:
         """Validate city input and API key presence."""
         if not city.strip():
-            raise ValidationError(self.config.ERROR_MESSAGES['validation'].format(field="City name", reason="cannot be empty"))
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                "{field} is invalid: {reason}", field="City name", reason="cannot be empty")
+            raise ValidationError("City name is invalid: cannot be empty")
         if not self.api_key:
-            raise ValidationError(self.config.ERROR_MESSAGES['missing'].format(field="API key"))  # Changed from ValidationError
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'missing', 
+                "{field} is required but not provided", field="API key")
+            raise ValidationError("API key is required but not provided")
 
 
 # ================================
@@ -220,57 +228,85 @@ class WeatherDataValidator:
         numeric_fields = ['temperature', 'humidity', 'wind_speed', 'pressure']
         for field in numeric_fields:
             if not isinstance(d.get(field), (int, float)):
-                raise ValueError(config.ERROR_MESSAGES['validation'].format(field=field.title(), reason=f"expected number, got {type(d.get(field)).__name__}"))
+                dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field=field.title(), reason=f"expected number, got {type(d.get(field)).__name__}")
+                raise ValueError(f"{field.title()} is invalid: expected number, got {type(d.get(field)).__name__}")
     
         # Validate ranges with helpful messages
         humidity = d['humidity']
         if not (0 <= humidity <= 100):
-            raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Humidity", reason=f"{humidity}% must be between 0-100%"))
+            dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                "{field} is invalid: {reason}", field="Humidity", reason=f"{humidity}% must be between 0-100%")
+            raise ValueError(f"Humidity is invalid: {humidity}% must be between 0-100%")
         
         temp = d['temperature']
         if not (-100 <= temp <= 70):
-            raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Temperature", reason=f"{temp}°C must be between -100°C and 70°C"))
+            dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                "{field} is invalid: {reason}", field="Temperature", reason=f"{temp}°C must be between -100°C and 70°C")
+            raise ValueError(f"Temperature is invalid: {temp}°C must be between -100°C and 70°C")
         
         pressure = d['pressure']
         if not (900 <= pressure <= 1100):
-            raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Pressure", reason=f"{pressure} hPa must be between 900-1100 hPa"))
+            dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                "{field} is invalid: {reason}", field="Pressure", reason=f"{pressure} hPa must be between 900-1100 hPa")
+            raise ValueError(f"Pressure is invalid: {pressure} hPa must be between 900-1100 hPa")
 
         # Temperature-related fields (use same range as temperature)
         for temp_field in ['feels_like', 'temp_min', 'temp_max']:
             if temp_field in d and d[temp_field] is not None:
                 if not isinstance(d[temp_field], (int, float)):
-                    raise ValueError(config.ERROR_MESSAGES['validation'].format(field=temp_field.replace('_', ' ').title(), reason=f"expected number, got {type(d[temp_field]).__name__}"))
+                    dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                        "{field} is invalid: {reason}", field=temp_field.replace('_', ' ').title(), reason=f"expected number, got {type(d[temp_field]).__name__}")
+                    raise ValueError(f"{temp_field.replace('_', ' ').title()} is invalid: expected number, got {type(d[temp_field]).__name__}")
                 if not (-100 <= d[temp_field] <= 70):
-                    raise ValueError(config.ERROR_MESSAGES['validation'].format(field=temp_field.replace('_', ' ').title(), reason=f"{d[temp_field]}°C must be between -100°C and 70°C"))
+                    dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                        "{field} is invalid: {reason}", field=temp_field.replace('_', ' ').title(), reason=f"{d[temp_field]}°C must be between -100°C and 70°C")
+                    raise ValueError(f"{temp_field.replace('_', ' ').title()} is invalid: {d[temp_field]}°C must be between -100°C and 70°C")
 
         # Wind direction (0-360 degrees)
         if 'wind_direction' in d and d['wind_direction'] is not None:
             if not isinstance(d['wind_direction'], (int, float)):
-                raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Wind direction", reason=f"expected number, got {type(d['wind_direction']).__name__}"))
+                dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Wind direction", reason=f"expected number, got {type(d['wind_direction']).__name__}")
+                raise ValueError(f"Wind direction is invalid: expected number, got {type(d['wind_direction']).__name__}")
             if not (0 <= d['wind_direction'] <= 360):
-                raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Wind direction", reason=f"{d['wind_direction']}° must be between 0-360°"))
+                dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Wind direction", reason=f"{d['wind_direction']}° must be between 0-360°")
+                raise ValueError(f"Wind direction is invalid: {d['wind_direction']}° must be between 0-360°")
 
         # Cloud cover (0-100%)
         if 'cloud_cover' in d and d['cloud_cover'] is not None:
             if not isinstance(d['cloud_cover'], (int, float)):
-                raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Cloud cover", reason=f"expected number, got {type(d['cloud_cover']).__name__}"))
+                dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Cloud cover", reason=f"expected number, got {type(d['cloud_cover']).__name__}")
+                raise ValueError(f"Cloud cover is invalid: expected number, got {type(d['cloud_cover']).__name__}")
             if not (0 <= d['cloud_cover'] <= 100):
-                raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Cloud cover", reason=f"{d['cloud_cover']}% must be between 0-100%"))
+                dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Cloud cover", reason=f"{d['cloud_cover']}% must be between 0-100%")
+                raise ValueError(f"Cloud cover is invalid: {d['cloud_cover']}% must be between 0-100%")
 
         # Visibility (reasonable range: 0-50km)
         if 'visibility' in d and d['visibility'] is not None:
             if not isinstance(d['visibility'], (int, float)):
-                raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Visibility", reason=f"expected number, got {type(d['visibility']).__name__}"))
+                dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Visibility", reason=f"expected number, got {type(d['visibility']).__name__}")
+                raise ValueError(f"Visibility is invalid: expected number, got {type(d['visibility']).__name__}")
             if not (0 <= d['visibility'] <= 50000):
-                raise ValueError(config.ERROR_MESSAGES['validation'].format(field="Visibility", reason=f"{d['visibility']}m must be between 0-50000m"))
+                dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Visibility", reason=f"{d['visibility']}m must be between 0-50000m")
+                raise ValueError(f"Visibility is invalid: {d['visibility']}m must be between 0-50000m")
 
         # Precipitation (reasonable range: 0-200mm)
         for precip_field in ['rain_1h', 'rain_3h', 'snow_1h', 'snow_3h']:
             if precip_field in d and d[precip_field] is not None:
                 if not isinstance(d[precip_field], (int, float)):
-                    raise ValueError(config.ERROR_MESSAGES['validation'].format(field=precip_field.replace('_', ' ').title(), reason=f"expected number, got {type(d[precip_field]).__name__}"))
+                    dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                        "{field} is invalid: {reason}", field=precip_field.replace('_', ' ').title(), reason=f"expected number, got {type(d[precip_field]).__name__}")
+                    raise ValueError(f"{precip_field.replace('_', ' ').title()} is invalid: expected number, got {type(d[precip_field]).__name__}")
                 if not (0 <= d[precip_field] <= 200):
-                    raise ValueError(config.ERROR_MESSAGES['validation'].format(field=precip_field.replace('_', ' ').title(), reason=f"{d[precip_field]}mm must be between 0-200mm"))
+                    dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                        "{field} is invalid: {reason}", field=precip_field.replace('_', ' ').title(), reason=f"{d[precip_field]}mm must be between 0-200mm")
+                    raise ValueError(f"{precip_field.replace('_', ' ').title()} is invalid: {d[precip_field]}mm must be between 0-200mm")
 
 
 # ================================
@@ -307,6 +343,7 @@ class WeatherAPIService:
         """
         # Direct imports for stable utilities
         self.config = config
+        self.dialog = dialog
         self.logger = Logger()
 
         # API configuration
@@ -373,6 +410,18 @@ class WeatherAPIService:
         # Handle specific custom exceptions - preserve all individual error types
         except (ValidationError, CityNotFoundError, RateLimitError, NetworkError, WeatherAPIError) as e:
             self.logger.error(f"API failure for {city} - {type(e).__name__}: {e}. Switching to simulated data.")
+            
+            # Show error dialog here (single point of error presentation)
+            if isinstance(e, CityNotFoundError):
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'city_not_found', 
+                    f"City '{city}' not found")
+            elif isinstance(e, RateLimitError):
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'rate_limit', 
+                    f"API rate limit exceeded. Using simulated data for '{city}'")
+            elif isinstance(e, NetworkError):
+                self.dialog.dialog_manager.show_theme_aware_dialog('warning', 'network_issue', 
+                    f"Network problem detected. Using simulated data for '{city}'")
+            
             fallback_data = self.fallback.generate(city)
             current_data = fallback_data[-1]
             current_data.update(self._data_parser._calculate_derived_metrics(current_data))
@@ -490,24 +539,36 @@ def validate_api_response(data: Dict[str, Any]) -> None:
         ValidationError: When required keys are missing or data is malformed
     """
     if not isinstance(data, dict):
-        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="response is not a dictionary"))
+        dialog.dialog_manager.show_theme_aware_dialog('error', 'api_error', 
+            "API request failed for {endpoint}: {reason}", endpoint="weather API", reason="response is not a dictionary")
+        raise ValidationError("API request failed for weather API: response is not a dictionary")
     
     required = {"main", "weather", "wind"}
     if not all(k in data for k in required):
         missing = required - set(data.keys())
-        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason=f"missing required keys: {missing}"))
+        dialog.dialog_manager.show_theme_aware_dialog('error', 'api_error', 
+            "API request failed for {endpoint}: {reason}", endpoint="weather API", reason=f"missing required keys: {missing}")
+        raise ValidationError(f"API request failed for weather API: missing required keys: {missing}")
     
     # Validate main section
     if not isinstance(data.get("main"), dict):
-        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="main section is not a dictionary"))
+        dialog.dialog_manager.show_theme_aware_dialog('error', 'api_error', 
+            "API request failed for {endpoint}: {reason}", endpoint="weather API", reason="main section is not a dictionary")
+        raise ValidationError("API request failed for weather API: main section is not a dictionary")
     
     if "temp" not in data["main"]:
-        raise ValidationError(config.ERROR_MESSAGES['missing'].format(field="Temperature data in API response"))
+        dialog.dialog_manager.show_theme_aware_dialog('error', 'missing', 
+            "{field} is required but not provided", field="Temperature data in API response")
+        raise ValidationError("Temperature data in API response is required but not provided")
     
     # Validate weather section
     if not isinstance(data.get("weather"), list) or not data["weather"]:
-        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="malformed weather data - expected non-empty list"))
+        dialog.dialog_manager.show_theme_aware_dialog('error', 'api_error', 
+            "API request failed for {endpoint}: {reason}", endpoint="weather API", reason="malformed weather data - expected non-empty list")
+        raise ValidationError("API request failed for weather API: malformed weather data - expected non-empty list")
     
     # Validate wind section
     if not isinstance(data.get("wind"), dict):
-        raise ValidationError(config.ERROR_MESSAGES['api_error'].format(endpoint="weather API", reason="wind section is not a dictionary"))
+        dialog.dialog_manager.show_theme_aware_dialog('error', 'api_error', 
+            "API request failed for {endpoint}: {reason}", endpoint="weather API", reason="wind section is not a dictionary")
+        raise ValidationError("API request failed for weather API: wind section is not a dictionary")

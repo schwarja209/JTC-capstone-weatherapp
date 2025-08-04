@@ -18,7 +18,7 @@ import threading
 from typing import Tuple, List, Any, Optional, Dict
 from datetime import datetime
 
-from WeatherDashboard import config, styles
+from WeatherDashboard import config, styles, dialog
 from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.rate_limiter import RateLimiter
@@ -72,6 +72,7 @@ class WeatherDashboardController:
         self.logger = Logger()
         self.config = config
         self.styles = styles
+        self.dialog = dialog
         self.utils = Utils()
         self.rate_limiter = RateLimiter()
         self.unit_converter = UnitConverter()
@@ -217,12 +218,11 @@ class WeatherDashboardController:
             self._data_service.log_data(city_name, raw_data, unit_system)
             
             # Step 8: Show error notification if there was an API error
-            if api_error:
-                # Use the same error type that was created above
-                if error_type == 'CityNotFoundError':
-                    self.error_handler.handle_weather_error(CityNotFoundError(api_error), city_name)
-                else:
-                    self.error_handler.handle_data_fetch_error(DataFetchError(api_error))
+            # Note: API errors are already handled by the service layer, so we only show
+            # additional notifications for non-critical errors that weren't already displayed
+            if api_error and error_type not in ['CityNotFoundError', 'RateLimitError']:
+                # Only show additional dialogs for errors that weren't already handled
+                self.error_handler.handle_data_fetch_error(DataFetchError(api_error))
             
             self.logger.info(f"Data fetch completed for {city_name}")
             
@@ -553,6 +553,7 @@ class WeatherDashboardController:
             # Direct imports for stable utilities
             self.logger = Logger()
             self.config = config
+            self.dialog = dialog
             self.validation_utils = ValidationUtils()
             
             # Injected dependencies for testable components
@@ -601,7 +602,9 @@ class WeatherDashboardController:
             """
             raw_city = self.state.get_current_city()
             if not raw_city or not raw_city.strip():
-                raise ValueError(self.config.ERROR_MESSAGES['missing'].format(field="City name"))
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'missing', 
+                    "{field} is required but not provided", field="City name")
+                raise ValueError("City name is required but not provided")
             
             self.validation_utils.validate_city_name(raw_city)
             city = raw_city.strip().title()
@@ -609,7 +612,9 @@ class WeatherDashboardController:
             days = self.config.CHART["range_options"].get(self.state.get_current_range(), 7)
             
             if days <= 0:
-                raise ValueError(self.config.ERROR_MESSAGES['validation'].format(field="Date range", reason=f"{days} days is invalid"))
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Date range", reason=f"{days} days is invalid")
+                raise ValueError(f"Date range is invalid: {days} days is invalid")
             
             metric_key = self._get_chart_metric_key()
             unit = self.state.get_current_unit_system()
@@ -629,10 +634,14 @@ class WeatherDashboardController:
             elif isinstance(result, list):
                 data = result  # Direct list return
             else:
-                raise ValueError(self.config.ERROR_MESSAGES['not_found'].format(resource="Historical data", name=city))
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'not_found', 
+                    "{resource} '{name}' not found", resource="Historical data", name=city)
+                raise ValueError(f"Historical data '{city}' not found")
 
             if not data:
-                raise ValueError(self.config.ERROR_MESSAGES['not_found'].format(resource="Historical data", name=city))
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'not_found', 
+                    "{resource} '{name}' not found", resource="Historical data", name=city)
+                raise ValueError(f"Historical data '{city}' not found")
 
             if not all(metric_key in d for d in data):
                 self.logger.warn(f"Warning: Some data entries are missing '{metric_key}'")
@@ -712,7 +721,9 @@ class WeatherDashboardController:
             
             # Handle special case when no metrics are selected
             if display_name == "No metrics selected":
-                raise ValueError(self.config.ERROR_MESSAGES['validation'].format(field="Chart metric", reason="at least one metric must be selected"))
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                    "{field} is invalid: {reason}", field="Chart metric", reason="at least one metric must be selected")
+                raise ValueError("Chart metric is invalid: at least one metric must be selected")
             
             # Find metric key by matching display label
             metric_key = None
@@ -721,7 +732,9 @@ class WeatherDashboardController:
                     metric_key = key
                     break
             if not metric_key:
-                raise KeyError(self.config.ERROR_MESSAGES['not_found'].format(resource="Chart metric", name=display_name))
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'not_found', 
+                    "{resource} '{name}' not found", resource="Chart metric", name=display_name)
+                raise KeyError(f"Chart metric '{display_name}' not found")
             return metric_key
         
         def _handle_chart_error(self, error_type: str, error_message: str) -> None:

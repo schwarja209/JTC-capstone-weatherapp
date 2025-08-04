@@ -12,7 +12,7 @@ Classes:
 
 from typing import Tuple, Any
 
-from WeatherDashboard import config
+from WeatherDashboard import config, dialog
 
 from .logger import Logger
 
@@ -35,6 +35,7 @@ class UnitConverter:
         """
         # Direct imports for stable utilities
         self.config = config
+        self.dialog = dialog
         self.logger = Logger()
 
         # Conversion factors and functions - centralized configuration
@@ -118,9 +119,10 @@ class UnitConverter:
         # Get conversion functions for this type
         conversions = self.conversion_config.get(conversion_type)
         if not conversions:
-            raise ValueError(self.config.ERROR_MESSAGES['conversion'].format(
-                field=conversion_type, from_unit=from_unit, to_unit=to_unit,
-                reason="conversion type not supported"))
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'conversion', 
+                "Failed to convert {field} from {from_unit} to {to_unit}: {reason}", 
+                field=conversion_type, from_unit=from_unit, to_unit=to_unit, reason="conversion type not supported")
+            raise ValueError(f"Failed to convert {conversion_type} from {from_unit} to {to_unit}: conversion type not supported")
         
         # Get unit symbols for this metric type
         metric_unit, imperial_unit = self._get_unit_symbols(conversion_type)
@@ -131,9 +133,10 @@ class UnitConverter:
         elif from_unit == imperial_unit and to_unit == metric_unit:
             return conversions['imperial_to_metric'](value)
         else:
-            raise ValueError(self.config.ERROR_MESSAGES['conversion'].format(
-                field=conversion_type, from_unit=from_unit, to_unit=to_unit,
-                reason="unsupported conversion"))
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'conversion', 
+                "Failed to convert {field} from {from_unit} to {to_unit}: {reason}", 
+                field=conversion_type, from_unit=from_unit, to_unit=to_unit, reason="unsupported conversion")
+            raise ValueError(f"Failed to convert {conversion_type} from {from_unit} to {to_unit}: unsupported conversion")
     
     def convert_temperature(self, value: float, from_unit: str, to_unit: str) -> float:
         """Convert temperature using generic converter."""
@@ -186,7 +189,9 @@ class UnitConverter:
             except KeyError:
                 # Import logger only when needed to avoid circular imports
                 from WeatherDashboard.services.api_exceptions import WeatherDashboardError
-                raise WeatherDashboardError(self.config.ERROR_MESSAGES['not_found'].format(resource="Unit configuration", name=metric))
+                self.dialog.dialog_manager.show_theme_aware_dialog('error', 'not_found', 
+                    "{resource} '{name}' not found", resource="Unit configuration", name=metric)
+                raise WeatherDashboardError(f"Unit configuration '{metric}' not found")
         
         return self._unit_cache[metric]
 

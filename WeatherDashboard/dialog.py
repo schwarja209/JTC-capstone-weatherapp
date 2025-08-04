@@ -20,13 +20,21 @@ class DialogManager:
         self.styles = styles
         self.error_handler = WeatherErrorHandler()
     
-    def show_theme_aware_dialog(self, dialog_type: str, title_key: str, message: str) -> None:
-        """Show dialog using theme-aware configuration."""
+    def show_theme_aware_dialog(self, dialog_type: str, title_key: str, message: str, **kwargs) -> None:
+        """Show dialog using theme-aware configuration with template support."""
         try:
             dialog_config = self.styles.DIALOG_CONFIG()
             dialog_method = dialog_config['dialog_types'][dialog_type]
             dialog_title = dialog_config['dialog_titles'][title_key]
-            getattr(messagebox, dialog_method)(dialog_title, message)
+            
+            # Format message with template if kwargs provided
+            if kwargs:
+                template = dialog_config.get('error_templates', {}).get(title_key, message)
+                formatted_message = template.format(**kwargs)
+            else:
+                formatted_message = message
+                
+            getattr(messagebox, dialog_method)(dialog_title, formatted_message)
         except (KeyError, AttributeError):
             # Fallback to standard dialog
             fallback_method = getattr(messagebox, f"show{dialog_type}")

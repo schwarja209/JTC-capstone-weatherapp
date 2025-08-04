@@ -13,7 +13,7 @@ Functions:
 
 from typing import Dict, Any
 
-from WeatherDashboard import config
+from WeatherDashboard import config, dialog
 
 from .validation_utils import ValidationUtils
 
@@ -22,6 +22,7 @@ class Utils:
     def __init__(self) -> None:
         # Direct imports for stable utilities
         self.config = config
+        self.dialog = dialog
         self.validation_utils = ValidationUtils()
 
     def is_fallback(self, data: Dict[str, Any]) -> bool:
@@ -49,7 +50,9 @@ class Utils:
         elif format_type == "display":
             return "(Simulated)"
         else:
-            raise ValueError(self.config.ERROR_MESSAGES['validation'].format(field="Format type", reason=f"'{format_type}' is invalid. Must be 'display' or 'log'"))
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'validation', 
+                "{field} is invalid: {reason}", field="Format type", reason=f"'{format_type}' is invalid. Must be 'display' or 'log'")
+            raise ValueError(f"Format type '{format_type}' is invalid. Must be 'display' or 'log'")
 
     def city_key(self, name: str) -> str:
         """Generate a normalized key for city name for consistent storage/lookup.

@@ -110,7 +110,12 @@ class WeatherErrorHandler:
         Returns:
             str: Theme-aware formatted message
         """
-        return self._format_message(template_key, error_message)
+        try:
+            dialog_config = self.styles.DIALOG_CONFIG()
+            template = dialog_config.get('error_templates', {}).get(template_key, error_message)
+            return template.format(reason=error_message)
+        except (KeyError, AttributeError):
+            return error_message
 
     def _show_error_dialog(self, title: str, message: str) -> None:
         """Show error dialog with theme-aware styling."""
@@ -118,21 +123,11 @@ class WeatherErrorHandler:
 
     def _show_warning_dialog(self, title: str, message: str) -> None:
         """Show warning dialog with theme-aware styling."""
-        try:
-            # dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['warning']
-            self.dialog.dialog_manager.show_theme_aware_dialog('warning', 'notice', message)
-        except (KeyError, AttributeError):
-            # Fallback to standard warning dialog
-            self.dialog.dialog_manager.show_warning(title, message)
+        self.dialog.dialog_manager.show_warning(title, message)
 
     def _show_info_dialog(self, title: str, message: str) -> None:
         """Show info dialog with theme-aware styling."""
-        try:
-            # dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['info']
-            self.dialog.dialog_manager.show_theme_aware_dialog('info', 'notice', message)
-        except (KeyError, AttributeError):
-            # Fallback to standard info dialog
-            self.dialog.dialog_manager.show_info(title, message)
+        self.dialog.dialog_manager.show_info(title, message)
 
     def handle_weather_error(self, error_exception: Optional[Exception], city_name: str) -> bool:
         """Handles weather-related errors and shows appropriate user messages."""
@@ -145,8 +140,8 @@ class WeatherErrorHandler:
             return False
         elif isinstance(error_exception, CityNotFoundError):
             # City not found - show error but continue with fallback
-            message = self._format_message('city_not_found', city_name)
-            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'city_not_found', message)
+            # Note: This error is already shown by the API layer, so we only log it
+            self.logger.warn(f"City '{city_name}' not found - using fallback data")
             return True
         elif isinstance(error_exception, RateLimitError):
             # Rate limit - show specific message

@@ -14,7 +14,7 @@ import csv
 from pathlib import Path
 from datetime import datetime, timedelta
 
-from WeatherDashboard import config
+from WeatherDashboard import config, dialog
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.utils import Utils
 from WeatherDashboard.utils.unit_converter import UnitConverter
@@ -46,6 +46,7 @@ class WeatherHistoryService:
         # Direct imports for stable utilities
         self.logger = Logger()
         self.config = config
+        self.dialog = dialog
         self.utils = Utils()
         self.unit_converter = UnitConverter()
 
@@ -345,7 +346,10 @@ class WeatherHistoryService:
             
         except (OSError, IOError, PermissionError) as e:
             # Raise as custom exception for controller to handle via error_handler
-            raise WeatherDashboardError(self.config.ERROR_MESSAGES['file_error'].format(info="weather data", file=self.config.OUTPUT["text_file"], reason=str(e)))
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'file_error', 
+                "Failed to write {info} to {file}: {reason}", 
+                info="weather data", file=self.config.OUTPUT["text_file"], reason=str(e))
+            raise WeatherDashboardError(f"Failed to write weather data to {self.config.OUTPUT['text_file']}: {e}")
         except Exception as e:
             raise WeatherDashboardError(f"Unexpected error writing weather data: {e}")
 

@@ -176,6 +176,7 @@ PESSIMISTIC_MESSAGING = {
     'dialog_config': {
         'dialog_titles': {
             'city_not_found': 'Location Obliterated',
+            'not_found': 'Item Not Found',
             'rate_limit': 'System Overwhelmed',
             'network_issue': 'Communication Severed',
             'input_error': 'Critical Input Failure',
@@ -186,6 +187,19 @@ PESSIMISTIC_MESSAGING = {
             'error': 'showerror',
             'warning': 'showwarning',
             'info': 'showinfo'
+        },
+        'error_templates': {
+            'validation': "{field} is invalid: {reason}",
+            'missing': "{field} is required but not provided",
+            'not_found': "{resource} '{name}' not found",
+            'conversion': "Failed to convert {field} from {from_unit} to {to_unit}: {reason}",
+            'api_error': "API request failed for {endpoint}: {reason}",
+            'config_error': "Configuration error in {section}: {reason}",
+            'file_error': "Failed to write {info} to {file}: {reason}",
+            'state_error': "Invalid state: {reason}",
+            'directory_error': "Directory operation failed for {path}: {reason}",
+            'initialization_error': "Initialization failed for {component}: {reason}",
+            'structure_error': "Invalid structure in {section}: {reason}"
         }
     }
 }

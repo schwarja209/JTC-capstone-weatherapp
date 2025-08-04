@@ -20,6 +20,7 @@ Functions:
 """
 
 import os
+from typing import Dict
 from pathlib import Path
 
 # centralizing config info
@@ -262,19 +263,34 @@ SCHEDULER = {
     }
 }
 
-ERROR_MESSAGES = {
-    'validation': "{field} is invalid: {reason}",
-    'missing': "{field} is required but not provided",
-    'not_found': "{resource} '{name}' not found",
-    'conversion': "Failed to convert {field} from {from_unit} to {to_unit}: {reason}",
-    'api_error': "API request failed for {endpoint}: {reason}",
-    'config_error': "Configuration error in {section}: {reason}",
-    'file_error': "Failed to write {info} to {file}: {reason}",
-    'state_error': "Invalid state: {reason}",
-    'directory_error': "Directory operation failed for {path}: {reason}",
-    'initialization_error': "Initialization failed for {component}: {reason}",
-    'structure_error': "Invalid structure in {section}: {reason}"
-}
+def get_error_messages() -> Dict[str, str]:
+    """Get error message templates from the current theme.
+    
+    Returns:
+        Dict containing error message templates for validation
+    """
+    try:
+        from WeatherDashboard.features.themes.theme_manager import theme_manager
+        theme_config = theme_manager.get_theme_config()
+        return theme_config.get('messaging', {}).get('dialog_config', {}).get('error_templates', {})
+    except (ImportError, AttributeError, KeyError):
+        # Fallback error messages if theme system is not available
+        return {
+            'validation': "{field} is invalid: {reason}",
+            'missing': "{field} is required but not provided", 
+            'not_found': "{resource} '{name}' not found",
+            'conversion': "Failed to convert {field} from {from_unit} to {to_unit}: {reason}",
+            'api_error': "API request failed for {endpoint}: {reason}",
+            'config_error': "Configuration error in {section}: {reason}",
+            'file_error': "Failed to write {info} to {file}: {reason}",
+            'state_error': "Invalid state: {reason}",
+            'directory_error': "Directory operation failed for {path}: {reason}",
+            'initialization_error': "Initialization failed for {component}: {reason}",
+            'structure_error': "Invalid structure in {section}: {reason}"
+        }
+
+# Create ERROR_MESSAGES from theme system
+ERROR_MESSAGES = get_error_messages()
 
 # ================================
 # 7. CONFIGURATION VALIDATION
