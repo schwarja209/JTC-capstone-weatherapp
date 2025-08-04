@@ -156,11 +156,8 @@ class TitleWidget(BaseWidgetManager):
     
     def _on_theme_change(self, event=None) -> None:
         """Handle theme selection change."""
-        try:
-            self.logger.info("Theme change event triggered")  # Debug log
-            
+        try:           
             selected_theme = self.theme_var.get()
-            self.logger.info(f"Selected theme: {selected_theme}")  # Debug log
             
             theme_mapping = {
                 "Neutral": "neutral",
@@ -169,9 +166,6 @@ class TitleWidget(BaseWidgetManager):
             }
             
             theme_name = theme_mapping.get(selected_theme, "neutral")
-            self.logger.info(f"Mapped theme name: {theme_name}")  # Debug log
-            
-            self.logger.info(f"Theme callback exists: {self.theme_callback is not None}")  # Debug log
             
             if self.theme_callback:
                 self.theme_callback(theme_name)

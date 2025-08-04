@@ -176,7 +176,7 @@ class WeatherDataManager:
                     to_unit = unit_config[field]["imperial"]  # To imperial
                     converted[field] = converter_func(data[field], from_unit, to_unit)
                 except (ValueError, TypeError, KeyError) as e:
-                    self.logger.warn(self.config.ERROR_MESSAGES['conversion'].format(field=field, from_unit="metric", to_unit="imperial", reason=str(e))) # For debugging
+                    self.logger.warn(self.config.ERROR_MESSAGES['conversion'].format(field=field, from_unit="metric", to_unit="imperial", reason=str(e)))
                     conversion_errors.append(field)
                     # Keep original value if conversion fails
         

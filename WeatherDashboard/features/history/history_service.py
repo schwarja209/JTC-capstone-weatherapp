@@ -100,7 +100,7 @@ class WeatherHistoryService:
         # Store in CSV for persistence
         self._store_to_csv(city, weather_data)
         
-        # Write to text log for debugging
+        # Write to text log
         self._write_to_text_log(city, weather_data, unit_system)
         
         self.logger.info(f"Stored weather data for {city} - {len(existing_data)} entries")
