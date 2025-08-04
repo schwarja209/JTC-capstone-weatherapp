@@ -66,11 +66,12 @@ def get_loading_config() -> Dict[str, Any]:
 
 def get_weather_icons() -> Dict[str, str]:
     """Get weather icons from theme manager."""
-    return theme_manager.get_theme_config()['icons']['weather'] # Return full weather icons
+    return theme_manager.get_theme_config()['icons']['weather'] 
 
 def get_dialog_config() -> Dict[str, Any]:
-    """Get dialog configuration from theme manager."""
-    return theme_manager.get_theme_config()['messaging']['dialog_config'] # Return full structure
+    """Get dialog from global instance."""
+    from WeatherDashboard import dialog
+    return theme_manager.get_theme_config()['messaging']['dialog_config']
 
 def get_status_bar_config() -> Dict[str, Any]:
     """Get status bar configuration from theme manager."""

@@ -14,6 +14,7 @@ import tkinter.messagebox as messagebox
 from typing import Optional, List, Any, Dict
 import threading
 
+from WeatherDashboard import dialog
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.core.data_manager import WeatherDataManager
 from WeatherDashboard.core.data_service import WeatherDataService
@@ -72,6 +73,7 @@ class WeatherDashboardMain:
             controller: Business logic controller (injected for testability)
         """
         # Direct imports for stable utilities
+        self.dialog = dialog
         self.logger = Logger()
 
         # Instance data
@@ -228,15 +230,15 @@ class WeatherDashboardMain:
 # ================================
     def show_info(self, title: str, message: str) -> None:
         """Display information message to user."""
-        messagebox.showinfo(title, message)
+        self.dialog.dialog_manager.show_info(title, message)
 
     def show_warning(self, title: str, message: str) -> None:
         """Display warning message to user."""
-        messagebox.showwarning(title, message)
+        self.dialog.dialog_manager.show_warning(title, message)
 
     def show_error(self, title: str, message: str) -> None:
         """Display error message to user."""
-        messagebox.showerror(title, message)
+        self.dialog.dialog_manager.show_error(title, message)
     
     def show_alert_popup(self, alerts: List[Dict[str, Any]]) -> None:
         """Display weather alerts popup."""

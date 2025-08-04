@@ -14,7 +14,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from typing import Dict, Any, Callable, Optional, List
 
-from WeatherDashboard import config, styles
+from WeatherDashboard import config, styles, dialog
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.utils.widget_utils import WidgetUtils
 
@@ -69,6 +69,7 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         self.logger = Logger()
         self.config = config
         self.styles = styles
+        self.dialog = dialog
         self.widget_utils = WidgetUtils()
 
         # Injected dependencies for testable components
@@ -141,11 +142,11 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
         except tk.TclError as e:
             self.logger.error(f"GUI widget creation failed: {e}")
-            messagebox.showerror("GUI Error", f"Failed to create interface: {e}")
+            self.dialog.dialog_manager.show_error("GUI Error", f"Failed to create interface: {e}")
             raise
         except Exception as e:
             self.logger.error(f"Unexpected error during GUI setup: {e}")
-            messagebox.showerror("Setup Error", f"Failed to initialize dashboard: {e}")
+            self.dialog.dialog_manager.show_error("Setup Error", f"Failed to initialize dashboard: {e}")
             raise
     
     @widget_error_handler("title section")

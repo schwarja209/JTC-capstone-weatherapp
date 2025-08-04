@@ -15,7 +15,7 @@ Classes:
 import tkinter.messagebox as messagebox
 from typing import Optional
 
-from WeatherDashboard import styles
+from WeatherDashboard import styles, dialog
 from WeatherDashboard.utils.logger import Logger
 from WeatherDashboard.services.api_exceptions import (
     ValidationError, WeatherDashboardError, RateLimitError, 
@@ -39,6 +39,7 @@ class WeatherErrorHandler:
         """Initialize the error handler with specified theme."""
         # Direct imports for stable utilities
         self.styles = styles
+        self.dialog = dialog
         self.logger = Logger()
 
         # Instance data
@@ -113,30 +114,25 @@ class WeatherErrorHandler:
 
     def _show_error_dialog(self, title: str, message: str) -> None:
         """Show error dialog with theme-aware styling."""
-        try:
-            dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['error']
-            getattr(messagebox, dialog_type)(title, message)
-        except (KeyError, AttributeError):
-            # Fallback to standard error dialog
-            messagebox.showerror(title, message)
+        self.dialog.dialog_manager.show_error(title, message)
 
     def _show_warning_dialog(self, title: str, message: str) -> None:
         """Show warning dialog with theme-aware styling."""
         try:
-            dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['warning']
-            getattr(messagebox, dialog_type)(title, message)
+            # dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['warning']
+            self.dialog.dialog_manager.show_theme_aware_dialog('warning', 'notice', message)
         except (KeyError, AttributeError):
             # Fallback to standard warning dialog
-            messagebox.showwarning(title, message)
+            self.dialog.dialog_manager.show_warning(title, message)
 
     def _show_info_dialog(self, title: str, message: str) -> None:
         """Show info dialog with theme-aware styling."""
         try:
-            dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['info']
-            getattr(messagebox, dialog_type)(title, message)
+            # dialog_type = self.styles.DIALOG_CONFIG()['dialog_types']['info']
+            self.dialog.dialog_manager.show_theme_aware_dialog('info', 'notice', message)
         except (KeyError, AttributeError):
             # Fallback to standard info dialog
-            messagebox.showinfo(title, message)
+            self.dialog.dialog_manager.show_info(title, message)
 
     def handle_weather_error(self, error_exception: Optional[Exception], city_name: str) -> bool:
         """Handles weather-related errors and shows appropriate user messages."""
@@ -145,47 +141,47 @@ class WeatherErrorHandler:
             
         if isinstance(error_exception, ValidationError):
             # Critical errors - don't show fallback data
-            messagebox.showerror("Input Error", str(error_exception))
+            self.dialog.dialog_manager.show_error("Input Error", str(error_exception))
             return False
         elif isinstance(error_exception, CityNotFoundError):
             # City not found - show error but continue with fallback
             message = self._format_message('city_not_found', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['city_not_found'], message)
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'city_not_found', message)
             return True
         elif isinstance(error_exception, RateLimitError):
             # Rate limit - show specific message
             message = self._format_message('rate_limit', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['rate_limit'], message)
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'rate_limit', message)
             return True
         elif isinstance(error_exception, NetworkError):
             # Network issues - show network-specific message
             message = self._format_message('network_error', city_name)
-            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['warning'])(self.styles.DIALOG_CONFIG()['dialog_titles']['network_issue'], message)
+            self.dialog.dialog_manager.show_theme_aware_dialog('warning', 'network_issue', message)
             return True
         elif isinstance(error_exception, DataFetchError):
             # Data fetch errors - show error but continue with fallback
             message = self._format_message('data_fetch_error', str(error_exception))
-            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['data_fetch_error'], message)
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'data_fetch_error', message)
             return True
         else:
             # Other API errors - show general fallback notice
             self.logger.warn(f"Using fallback for {city_name}: {error_exception}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['info'])(self.styles.DIALOG_CONFIG()['dialog_titles']['notice'], f"No live data available for '{city_name}'. Simulated data is shown.")
+            self.dialog.dialog_manager.show_theme_aware_dialog('info', 'notice', f"No live data available for '{city_name}'. Simulated data is shown.")
             return True
 
     def handle_input_validation_error(self, error: Exception) -> None:
         """Handles input validation errors."""
         self.logger.error(f"Input validation error: {error}")
-        getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['input_error'], str(error))
+        self.dialog.dialog_manager.show_theme_aware_dialog('error', 'input_error', str(error))
 
     def handle_unexpected_error(self, error: Exception) -> None:
         """Handles unexpected errors."""
         if isinstance(error, str):
             self.logger.error(f"Unexpected error: {error}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['general_error'], error)
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'general_error', str(error))
         else:
             self.logger.error(f"Unexpected error: {error}")
-            getattr(messagebox, self.styles.DIALOG_CONFIG()['dialog_types']['error'])(self.styles.DIALOG_CONFIG()['dialog_titles']['general_error'], str(error))
+            self.dialog.dialog_manager.show_theme_aware_dialog('error', 'general_error', str(error))
     
     def handle_rate_limit_error(self, error: RateLimitError) -> None:  # Fixed signature
         """Handle rate limit errors with theme-aware messaging."""

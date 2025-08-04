@@ -14,7 +14,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from typing import List, Callable, Any
 
-from WeatherDashboard import config, styles
+from WeatherDashboard import config, styles, dialog
 
 from .alert_manager import WeatherAlert
 
@@ -43,6 +43,7 @@ class AlertStatusIndicator:
         # Direct imports for stable utilities
         self.config = config
         self.styles = styles
+        self.dialog = dialog
 
         # Injected dependencies for testable components
         self.parent = parent_frame
@@ -156,7 +157,7 @@ class AlertStatusIndicator:
             self.on_click_callback()
         else:
             # Default behavior - show simple message
-            messagebox.showinfo("Alerts", f"Alert system active.\n{self.tooltip_text}")
+            self.dialog.dialog_manager.show_info("Alerts", f"Alert system active.\n{self.tooltip_text}")
 
     def _start_pulse_animation(self) -> None:
         """Start pulsing animation for critical alerts."""
