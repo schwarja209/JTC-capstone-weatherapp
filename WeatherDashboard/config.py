@@ -224,6 +224,13 @@ OUTPUT = {
     "csv_backup_dir": str(DATA_DIR / "csv" / "backup")  # For archived data
 }
 
+LOGGING = {
+    "console_level": os.getenv("LOG_CONSOLE_LEVEL", "DEBUG"),  # Only show WARN and ERROR in console
+    "file_level": os.getenv("LOG_FILE_LEVEL", "INFO"),        # Log INFO, WARN, ERROR to files
+    "debug_mode": os.getenv("LOG_DEBUG_MODE", "true").lower() == "true",  # Master switch for debug logging
+    "quiet_mode": os.getenv("LOG_QUIET_MODE", "false").lower() == "true"   # Master switch to suppress most logging
+}
+
 def ensure_directories() -> bool:
     """
     Create required directories if they don't exist.

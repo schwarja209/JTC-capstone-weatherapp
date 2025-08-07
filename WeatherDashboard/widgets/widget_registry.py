@@ -98,7 +98,7 @@ class WidgetRegistry:
             self.widget_types[widget_type] = []
         self.widget_types[widget_type].append(widget_id)
         
-        self.logger.info(f"Registered widget: {widget_id} (type: {widget_type})")
+        self.logger.debug(f"Registered widget: {widget_id} (type: {widget_type})")
     
     def register_frame(self, frame_id: str, frame: ttk.Frame) -> None:
         """Register a frame with the registry.
@@ -173,7 +173,7 @@ class WidgetRegistry:
         try:
             widget_info.widget.configure(style=style)
             widget_info.current_style = style
-            self.logger.info(f"Applied style '{style}' to widget '{widget_id}'")
+            self.logger.debug(f"Applied style '{style}' to widget '{widget_id}'")
             return True
         except Exception as e:
             self.logger.error(f"Failed to apply style '{style}' to widget '{widget_id}': {e}")
@@ -251,7 +251,7 @@ class WidgetRegistry:
             widget_info.parent_frame = new_frame
             widget_info.current_position = new_position
             
-            self.logger.info(f"Moved widget '{widget_id}' to frame '{new_frame_id}'")
+            self.logger.debug(f"Moved widget '{widget_id}' to frame '{new_frame_id}'")
             return True
             
         except Exception as e:

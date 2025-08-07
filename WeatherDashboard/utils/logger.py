@@ -38,6 +38,21 @@ class Logger:
         self.plain_log = self.os.path.join(self.log_folder, "weather.log")
         self.json_log = self.os.path.join(self.log_folder, "weather.jsonl")
 
+        # Log level configuration
+        self.logging_config = getattr(self.config, 'LOGGING', {})
+        self.console_level = self.logging_config.get('console_level', 'WARN')
+        self.file_level = self.logging_config.get('file_level', 'INFO')
+        self.debug_mode = self.logging_config.get('debug_mode', False)
+        self.quiet_mode = self.logging_config.get('quiet_mode', False)
+        
+        # Log level hierarchy for comparison
+        self.level_hierarchy = {
+            'INFO': 0,
+            'DEBUG': 1, 
+            'WARN': 2,
+            'ERROR': 3
+        }
+
     def _default_file_writer(self, filepath: str, content: str, mode: str = "a", encoding: str = "utf-8"):
         """Default file writing implementation."""
         with open(filepath, mode, encoding=encoding) as f:
@@ -70,6 +85,20 @@ class Logger:
         else:
             print(traceback.format_exc())
 
+    def _should_log_to_console(self, level: str) -> bool:
+        """Check if message should be logged to console based on level."""
+        if self.quiet_mode:
+            return False
+        if level == 'DEBUG' and not self.debug_mode:
+            return False
+        return self.level_hierarchy.get(level, 0) >= self.level_hierarchy.get(self.console_level, 0)
+
+    def _should_log_to_file(self, level: str) -> bool:
+        """Check if message should be logged to file based on level."""
+        if level == 'DEBUG' and not self.debug_mode:
+            return False
+        return self.level_hierarchy.get(level, 0) >= self.level_hierarchy.get(self.file_level, 0)
+
     def _log(self, level: str, msg: str) -> None:
         """Log a message with the specified level, timestamp, and write to files.
         
@@ -80,17 +109,20 @@ class Logger:
         ts = self._timestamp()
         formatted = f"[{level}] {ts} {msg}"
 
-        # Try to print with original message, fallback to safe encoding
-        try:
-            print(formatted)
-        except UnicodeEncodeError as e:
-            # Create safe fallback message
-            safe_msg = msg.encode('ascii', errors='replace').decode('ascii')
-            safe_formatted = f"[{level}] {ts} {safe_msg}"
-            print(safe_formatted)
-            print(f"[WARN] {ts} Original message had encoding issues: {e}")
+        # Only print to console if level meets console threshold
+        if self._should_log_to_console(level):
+            try:
+                print(formatted)
+            except UnicodeEncodeError as e:
+                # Create safe fallback message
+                safe_msg = msg.encode('ascii', errors='replace').decode('ascii')
+                safe_formatted = f"[{level}] {ts} {safe_msg}"
+                print(safe_formatted)
+                print(f"[WARN] {ts} Original message had encoding issues: {e}")
 
-        self._write_to_files(level, ts, msg)
+        # Only write to files if level meets file threshold
+        if self._should_log_to_file(level):
+            self._write_to_files(level, ts, msg)
 
     def _write_to_files(self, level: str, ts: str, msg: str) -> None:
         """Write log entry to both plain text and JSON files.

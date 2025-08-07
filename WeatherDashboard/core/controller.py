@@ -116,7 +116,7 @@ class WeatherDashboardController:
         
         Coordinates validation, rate limiting, and data fetching in sequence.
         """
-        self.logger.info(f"Starting weather update for {city_name}")
+        self.logger.debug(f"Starting weather update for {city_name}")
 
         try:
             # Step 1: Validate inputs
@@ -129,7 +129,7 @@ class WeatherDashboardController:
             
             # Step 3: Fetch and display data
             self._fetch_and_display_data(city_name, unit_system, cancel_event)
-            self.logger.info(f"Weather update completed for {city_name}")
+            self.logger.debug(f"Weather update completed for {city_name}")
             
         except ValidationError as e:
             self.logger.error(f"Validation error for {city_name}: {e}")
@@ -175,7 +175,7 @@ class WeatherDashboardController:
             city_name: Name of the city to fetch weather for
             unit_system: Unit system for the data
         """
-        self.logger.info(f"Fetching data for {city_name}")
+        self.logger.debug(f"Fetching data for {city_name}")
 
         try:
             # Step 1: Fetch data

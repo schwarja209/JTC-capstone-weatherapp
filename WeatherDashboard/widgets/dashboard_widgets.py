@@ -224,6 +224,13 @@ class WeatherDashboardWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         if self.tabbed_widgets and hasattr(self.tabbed_widgets, 'get_chart_widgets'):
             return self.tabbed_widgets.get_chart_widgets()
         return None
+    
+    @property
+    def csv_widgets(self) -> Optional[Any]:
+        """Get CSV comparison widgets from tabbed widgets."""
+        if self.tabbed_widgets and hasattr(self.tabbed_widgets, 'get_csv_widgets'):
+            return self.tabbed_widgets.get_csv_widgets()
+        return None
         
     # DELEGATION METHODS
     def is_ready(self) -> bool:

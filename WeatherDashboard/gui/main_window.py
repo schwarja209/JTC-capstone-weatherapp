@@ -22,6 +22,7 @@ from WeatherDashboard.core.controller import WeatherDashboardController
 from WeatherDashboard.features.alerts.alert_display import SimpleAlertPopup
 from WeatherDashboard.features.history.scheduler_service import WeatherDataScheduler
 from WeatherDashboard.features.themes.theme_manager import theme_manager
+from WeatherDashboard.features.comparison.csv_data_manager import CSVDataManager
 from WeatherDashboard.widgets.dashboard_widgets import WeatherDashboardWidgets
 
 from .state_manager import WeatherDashboardState
@@ -118,6 +119,9 @@ class WeatherDashboardMain:
         self._connect_callbacks()
         self.update_chart_components()
 
+        # Initialize CSV comparison functionality
+        self._initialize_csv_comparison()
+
         # Start scheduler after everything is ready
         if self.scheduler_service.enabled:
             self.scheduler_service.start_scheduler()
@@ -127,7 +131,15 @@ class WeatherDashboardMain:
         # Create or use injected frames
         if frames is None:
             frames = WeatherDashboardGUIFrames(root)
-        
+
+        # Initialize CSV data manager (with error handling)
+        try:
+            self.csv_data_manager = CSVDataManager()
+            self.logger.info("CSV data manager initialized successfully")
+        except Exception as e:
+            self.logger.warn(f"Failed to initialize CSV data manager: {e}")
+            self.csv_data_manager = None
+
         # Create widget manager with direct frame access
         widgets = WeatherDashboardWidgets(
             frames=frames.frames,
@@ -159,6 +171,34 @@ class WeatherDashboardMain:
                 alert_widget = getattr(metric_widgets, 'alert_status_widget', None)
                 if alert_widget:
                     alert_widget.set_click_callback(self.show_alerts)
+
+    def _initialize_csv_comparison(self) -> None:
+        """Initialize CSV comparison tab functionality."""
+        if not self.csv_data_manager:
+            return
+        
+        try:
+            # Get CSV widgets from tabbed widgets
+            csv_widgets = self.widgets.tabbed_widgets.get_csv_widgets()
+            if csv_widgets:
+                # Connect CSV callbacks
+                self._connect_csv_callbacks(csv_widgets)
+                
+                # Load CSV data automatically
+                csv_widgets.load_csv_data()
+                
+                self.logger.info("CSV comparison functionality initialized")
+        except Exception as e:
+            self.logger.warn(f"Failed to initialize CSV comparison: {e}")
+
+    def _connect_csv_callbacks(self, csv_widgets) -> None:
+        """Connect CSV comparison tab callbacks."""
+        try:
+            # Store CSV widgets reference for update button
+            self.csv_widgets = csv_widgets
+                
+        except Exception as e:
+            self.logger.error(f"Error connecting CSV callbacks: {e}")
 
     def _setup_window_constraints(self) -> None:
         """Set up window size constraints and positioning."""
@@ -433,6 +473,13 @@ class WeatherDashboardMain:
         self.show_info("Reset", "Dashboard reset to default values.")
         self.update_chart_components()
 
+        # Also update CSV comparison chart when reset button is clicked
+        if hasattr(self, 'csv_widgets') and self.csv_widgets:
+            try:
+                self.csv_widgets.update_csv_chart()
+            except Exception as e:
+                self.logger.error(f"Error updating CSV chart on reset: {e}")
+
         if self.widgets.control_widgets:
             self.widgets.control_widgets.set_loading_state(True, "Loading default city...")
 
@@ -485,6 +532,12 @@ class WeatherDashboardMain:
             with self._operation_lock:
                 self._operation_in_progress = False
             self._handle_async_complete(success, self._update_chart_on_success)
+            # Also update CSV chart when update button is clicked
+            if hasattr(self, 'csv_widgets') and self.csv_widgets:
+                try:
+                    self.csv_widgets.update_csv_chart()
+                except Exception as e:
+                    self.logger.error(f"Error updating CSV chart: {e}")
         return operation_finished
 
     def _create_clear_operation_callback(self) -> callable:
@@ -492,6 +545,12 @@ class WeatherDashboardMain:
         def operation_finished(success: bool, error_message: Optional[str] = None):
             self._operation_in_progress = False
             self._handle_async_complete(success, self._update_chart_on_success)
+            # Also update CSV chart when reset operation completes
+            if hasattr(self, 'csv_widgets') and self.csv_widgets:
+                try:
+                    self.csv_widgets.update_csv_chart()
+                except Exception as e:
+                    self.logger.error(f"Error updating CSV chart on reset completion: {e}")
         return operation_finished
     
     def _update_chart_on_success(self, success: bool) -> None:

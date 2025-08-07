@@ -16,6 +16,7 @@ from typing import Any, Optional
 
 from WeatherDashboard import styles
 from WeatherDashboard.utils.logger import Logger
+from WeatherDashboard.features.comparison.csv_comparison_widgets import CSVComparisonWidgets
 
 from .base_widgets import BaseWidgetManager, SafeWidgetCreator, widget_error_handler
 from .widget_registry import WidgetRegistry
@@ -67,8 +68,10 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         self.notebook: Optional[ttk.Notebook] = None
         self.metrics_frame: Optional[ttk.Frame] = None
         self.chart_frame: Optional[ttk.Frame] = None
+        self.csv_frame: Optional[ttk.Frame] = None
         self.metric_widgets: Optional[MetricDisplayWidgets] = None
         self.chart_widgets: Optional[ChartWidgets] = None
+        self.csv_widgets: Optional[CSVComparisonWidgets] = None
         
         # Initialize base class with error handling
         super().__init__(parent_frame, state, "tabbed display widgets")
@@ -97,20 +100,25 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         # Create tab frames using SafeWidgetCreator
         self.metrics_frame = SafeWidgetCreator.create_frame(self.notebook)
         self.chart_frame = SafeWidgetCreator.create_frame(self.notebook)
+        self.csv_frame = SafeWidgetCreator.create_frame(self.notebook)
 
         # Add tabs to notebook with centralized text configuration
         tab_texts = tabbed_config.get('tab_texts', {
             'metrics': 'Current Weather',
-            'chart': 'Weather Trends'
+            'chart': 'Weather Trends',
+            'comparison': "Data Comparison"
         })
         if self.metrics_frame:
             self.notebook.add(self.metrics_frame, text="Current Weather")
         if self.chart_frame:
             self.notebook.add(self.chart_frame, text="Weather Trends")
+        if self.csv_frame:
+            self.notebook.add(self.csv_frame, text="Data Comparison")
         
         # Initialize tab content widgets
         self.metric_widgets = MetricDisplayWidgets(self.metrics_frame, self.state)
         self.chart_widgets = ChartWidgets(self.chart_frame, self.state)
+        self.csv_widgets = CSVComparisonWidgets(self.csv_frame, self.state)
 
         if self.widget_registry:
             self._register_sub_widgets()
@@ -132,13 +140,24 @@ class TabbedDisplayWidgets(BaseWidgetManager):
         """Returns chart widgets for external access."""
         return self.chart_widgets
     
+    def get_csv_widgets(self) -> CSVComparisonWidgets:
+        """Get the CSV comparison widgets instance."""
+        return self.csv_widgets
+    
     def switch_to_metrics_tab(self) -> None:
         """Switch to metrics tab."""
-        self.notebook.select(self.metrics_frame)
+        if self.notebook:
+            self.notebook.select(self.metrics_frame)
     
     def switch_to_chart_tab(self) -> None:
         """Switch to chart tab."""
-        self.notebook.select(self.chart_frame)
+        if self.notebook:
+            self.notebook.select(self.chart_frame)
+
+    def switch_to_csv_tab(self) -> None:
+        """Switch to the CSV comparison tab."""
+        if self.notebook:
+            self.notebook.select(self.csv_frame)
     
     def get_current_tab(self) -> str:
         """Return current active tab identifier."""
@@ -149,6 +168,8 @@ class TabbedDisplayWidgets(BaseWidgetManager):
             return "metrics"
         elif current_tab_widget == self.chart_frame:
             return "chart"
+        elif current_tab == self.csv_frame:
+            return "comparison"
         return "unknown"
     
     def _register_sub_widgets(self) -> None:
@@ -178,6 +199,17 @@ class TabbedDisplayWidgets(BaseWidgetManager):
                 style='Chart.TFrame'
             )
             self.logger.info("Registered chart widgets with registry")
+
+        if self.csv_widgets and self.csv_frame:
+            self.widget_registry.register_widget(
+                widget_id='csv_widgets',
+                widget=self.csv_widgets,
+                widget_type='csv',
+                parent_frame=self.csv_frame,
+                position={'pack': {'fill': 'both', 'expand': True}},
+                style='CSV.TFrame'
+            )
+            self.logger.info("Registered CSV widgets with registry")
     
     @widget_error_handler("tab change")
     def _on_tab_changed(self, event) -> None:

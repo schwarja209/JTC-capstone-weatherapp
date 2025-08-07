@@ -163,34 +163,73 @@ class ChartWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         }
 
 
-    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str) -> None:
+    def update_chart_display(self, x_vals: List[str], y_vals: List[Any], metric_key: str, city: str, unit_system: str,
+                             labels: Optional[List[str]] = None, colors: Optional[List[str]] = None) -> None:
         """Updates the chart display with new data.
         
         Args:
             x_vals: X-axis values (typically dates)
-            y_vals: Y-axis values (metric data points)
+            y_vals: Y-axis values (metric data points) - can be single list or list of lists for multiple series
             metric_key: Weather metric being charted
             city: City name for chart title
             unit_system: Unit system for axis labeling
+            labels: Optional list of custom labels for multiple series (e.g., city names)
         """
         if not (hasattr(self, 'chart_canvas') and hasattr(self, 'chart_ax') and self.chart_ax is not None):
             self.logger.warn(self.config.ERROR_MESSAGES['config_error'].format(section="chart display", reason="matplotlib setup failed"))
             return
+        
+        try:
+            # Clear and plot new data
+            self.chart_ax.clear()
 
-        # Clear and plot new data
-        self.chart_ax.clear()
-        self.chart_ax.plot(x_vals, y_vals, marker="o")
+            # Handle multiple data series (for CSV comparison)
+            if y_vals and isinstance(y_vals[0], list):
+                # Multiple series - plot each one
+                for i, series in enumerate(y_vals):
+                    if series:  # Only plot non-empty series
+                        # Use custom labels if provided, otherwise fall back to generic series names
+                        if labels and i < len(labels):
+                            series_label = labels[i]
+                        else:
+                            series_label = f'Series {i+1}'
 
-        # Get formatted labels
-        labels = self._format_chart_labels(metric_key, city, unit_system)
-        self.chart_ax.set_title(labels['title'])
-        self.chart_ax.set_xlabel(labels['x_label'])
-        self.chart_ax.set_ylabel(labels['y_label'])
+                        # Use custom color if provided, otherwise use default
+                        if colors and i < len(colors):
+                            line_color = colors[i]
+                        else:
+                            line_color = None  # Use matplotlib default
+                            
+                        self.chart_ax.plot(x_vals, series, marker='o', linewidth=2, markersize=4, label=series_label, color=line_color)
+                
+                # Don't add legend to chart - it will be handled by the UI
+                if len(y_vals) > 1:
+                    pass  # Legend will be created separately in the UI
+            else:
+                # Single series - plot normally
+                self.chart_ax.plot(x_vals, y_vals, marker="o", linewidth=2, markersize=4)
 
-        # Format and draw
-        self.chart_fig.autofmt_xdate(rotation=self.config.CHART['chart_rotation_degrees'])
-        self.chart_fig.tight_layout()
-        self.chart_canvas.draw()
+            # Set formatted labels
+            labels = self._format_chart_labels(metric_key, city, unit_system)
+
+            # Set chart properties
+            self.chart_ax.set_title(labels['title'], fontsize=12, fontweight='bold')
+            self.chart_ax.set_xlabel(labels['x_label'], fontsize=10)
+            self.chart_ax.set_ylabel(labels['y_label'], fontsize=10)
+            self.chart_ax.grid(True, alpha=0.3) # Add grid
+
+            # Additional formatting
+            self.chart_fig.autofmt_xdate(rotation=self.config.CHART['chart_rotation_degrees'])
+            self.chart_fig.tight_layout()
+
+            # Refresh the canvas
+            self.chart_canvas.draw()
+
+            # Refresh the canvas
+            self.chart_canvas.draw()
+
+        except Exception as e:
+            self.logger.error(f"Error updating chart display: {e}")
 
     def clear_chart_with_error_message(self) -> None:
         """Clear the chart widget and display a fallback error message.
