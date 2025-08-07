@@ -1,4 +1,4 @@
-# Weather Dashboard
+# Weather Dashboard v 1.0
 
 A comprehensive, professionally-architected weather application built with Python and Tkinter, featuring live weather data, sophisticated error handling, and a robust modular design foundation ready for dual-theme satirical enhancements.
 
@@ -16,7 +16,7 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 - **Alert System**: Added weather alert thresholds and notification system with severity levels
 - **Expanded Metrics**: Comprehensive metric expansion, including derived comfort metrics
 - **Advanced Features**: Complete implementation of professional weather features
-- **Current State**: Production-ready application with 70 modular files, comprehensive testing, and consistent architectural patterns
+- **Current State**: Production-ready application with 80+ modular files, comprehensive testing, and consistent architectural patterns
 
 ## Features
 
@@ -51,6 +51,11 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 - **Color-Coded Metrics**: Dynamic color coding based on weather conditions and comfort ranges
 - **Enhanced Weather Categories**: Detailed weather condition IDs with emoji icon mapping
 
+### Advanced Features
+- **CSV Data Comparison**: Import and compare multiple CSV weather datasets with real-time monitoring
+- **Dynamic Theme System**: Three complete themes (Neutral/Optimistic/Pessimistic) with live switching
+- **User Preferences**: Comprehensive settings persistence with session metadata tracking
+
 ### Recent Architectural Achievements
 - **Standardized Error Handling**: Consistent patterns across all application layers with theme support
 - **Simplified Configuration**: Direct access patterns with single source of truth
@@ -58,6 +63,12 @@ The Weather Dashboard provides real-time weather information with a clean, tabbe
 - **Widget State Consistency**: Safe, standardized access patterns throughout UI
 - **Professional Documentation**: Balanced approach with comprehensive standards
 - **Complete Feature Implementation**: All major weather application features fully implemented
+- **CSV Comparison System**: Complete data import, normalization, and visualization pipeline
+- **Advanced Theme Management**: Centralized theme system with dynamic switching capabilities
+- **Widget Registry**: Runtime widget management with responsive layout capabilities
+- **Enhanced Preferences**: Comprehensive user settings with persistence and metadata
+- **Advanced Testing Infrastructure**: 50+ test files with sophisticated mocking and E2E workflows
+- **Memory and Performance Monitoring**: Comprehensive system health tracking
 
 ## Architecture
 
@@ -82,6 +93,8 @@ Project
 │   │   ├── frames.py                   # Layout management
 │   │   └── loading_states.py           # Async operation UI handling with cancellation
 │   ├── widgets/                        # Specialized UI components (7 files)
+│   │   ├── widget_registry.py          # Centralized widget management
+|   |   ├── widget_interface.py         # Widget interface contracts
 │   │   ├── base_widgets.py             # Base widget classes with standardized error handling
 │   │   ├── dashboard_widgets.py        # Main widget coordinator
 │   │   ├── control_widgets.py          # Input controls and buttons with advanced features
@@ -95,16 +108,27 @@ Project
 │   │   ├── error_handler.py            # Theme-aware error management (satirical foundation)
 │   │   ├── fallback_generator.py       # Comprehensive simulated weather data
 │   │   └── api_exceptions.py           # Custom exception hierarchy
-│   ├── features/                       # Specialized functionality (6 files)
+│   ├── features/                       # Specialized functionality (14 files)
+│   │   ├── comparison/                 # CSV comparison system (6 files)
+│   │   │   ├── csv_data_service.py
+│   │   │   ├── csv_data_manager.py
+│   │   │   ├── csv_normalizer.py
+│   │   │   ├── csv_metric_mapper.py
+│   │   │   ├── csv_color_generator.py
+│   │   │   └── csv_comparison_widgets.py
+│   │   ├── themes/                     # Advanced theme system (4 files)
+│   │   │   ├── theme_manager.py
+│   │   │   ├── neutral_styles.py
+│   │   │   ├── optimistic_styles.py
+│   │   │   └── pessimistic_styles.py
 │   │   ├── alerts/                     # Weather alert system (2 files)
 │   │   │   ├── alert_display.py        # Alert display components with severity styling
 │   │   │   └── alert_manager.py        # Alert management system with comprehensive thresholds
 │   │   ├── history/                    # Historical data management (3 files)
 │   │   │   ├── history_service.py      # Historical weather data storage and retrieval
 │   │   │   └── scheduler_service.py    # Automated data collection scheduler
-│   │   ├── theme_switcher.py           # Future theme management (placeholder)
 │   │   └── tomorrows_guess.py          # Future prediction features (placeholder)
-│   └── utils/                          # Common utilities (6 files)
+│   └── utils/                          # Common utilities (11 files)
 │       ├── logger.py                   # Multi-format logging with health checking
 │       ├── rate_limiter.py             # API rate limiting with exponential backoff
 │       ├── unit_converter.py           # Comprehensive weather unit conversions
@@ -114,20 +138,9 @@ Project
 │       ├── state_utils.py              # Widget visibility utility functions
 │       ├── validation_utils.py         # Centralized validation utilities
 │       ├── widget_utils.py             # Centralized widget positioning and creation utilities
+│       ├── preferences_utils.py        # User preferences system
 │       └── utils.py                    # General helper functions
-└── tests/                          # Comprehensive test suite (5 files)
-    ├── test_alert_manager.py       # Tests weather alert system functionality 
-    ├── test_color_utils.py         # Tests color determination logic for metric values 
-    ├── test_controller.py          # Tests core business logic orchestration 
-    ├── test_data_manager.py        # Data management functionality tests
-    ├── test_derived_metrics.py     # Tests derived weather metric calculations 
-    ├── test_error_handler.py       # Tests theme-aware error handling 
-    ├── test_state_manager.py       # State management validation tests
-    ├── test_unit_converter.py      # Unit conversion accuracy tests
-    ├── test_utils.py               # Utility function reliability tests
-    ├── test_view_models            # Tests view model data formatting and presentation logic 
-    ├── test_weather_service        # Tests API integration, data parsing, validation, and error handling
-    └── test_runner.py              # Test discovery and execution coordination
+└── tests/                          # Comprehensive test suite (50+ files)
 ```
 
 ### Design Principles
@@ -229,6 +242,12 @@ python run_dashboard.py
 - **Scheduler System**: Automated data collection with real-time status monitoring and countdown timers
 - **Historical Data**: Comprehensive weather history tracking with CSV persistence
 - **Status Bar**: Real-time system status including scheduler state, data source, and error indicators
+- **CSV Data Comparison**: Import and compare multiple CSV weather datasets with real-time monitoring
+- **Dynamic Theme System**: Three complete themes (Neutral/Optimistic/Pessimistic) with live switching
+- **Widget Registry**: Centralized widget management for runtime manipulation and responsive layouts
+- **User Preferences**: Comprehensive settings persistence with session metadata tracking
+- **Memory Management**: Intelligent cleanup with configurable retention policies
+- **Network Resilience**: Advanced error handling with network failure simulation
 
 ## Testing
 
@@ -292,6 +311,12 @@ The current architecture serves as a complete foundation for a **dual-theme sati
 - **Badge System**: Gamified achievements with inverse tone (sarcastic ↔ supportive)
 - **Easter Eggs**: Hidden features triggered by specific user interactions
 - **UI Evolution**: Dynamic interface changes based on theme and user behavior patterns
+- **CSV Comparison System**: Complete data import, normalization, and visualization pipeline
+- **Advanced Theme Management**: Centralized theme system with dynamic switching capabilities
+- **Widget Registry**: Runtime widget management with responsive layout capabilities
+- **Enhanced Preferences**: Comprehensive user settings with persistence and metadata
+- **Advanced Testing Infrastructure**: 50+ test files with sophisticated mocking and E2E workflows
+- **Memory and Performance Monitoring**: Comprehensive system health tracking
 
 ### Satirical Enhancement Readiness
 - **Theme Management**: Foundation already exists via `WeatherErrorHandler` with theme-aware messaging
