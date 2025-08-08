@@ -57,6 +57,9 @@ class WeatherDashboardState:
             for key, val in self.config.DEFAULTS["visibility"].items()
         }
 
+        # Initialize CSV toggle states
+        self.csv_toggle_states = {}
+
         # Load preferences on startup
         self._load_preferences()
 
@@ -162,9 +165,8 @@ class WeatherDashboardState:
     def _on_preference_changed(self, *args) -> None:
         """Handle preference changes and save automatically with debouncing."""
         try:
-            # Only save preferences for non-text fields to avoid excessive saves
-            # For text fields (like city), we'll save on button press instead
-            pass
+            # Save preferences for non-text fields (unit, range, chart, visibility)
+            self.save_preferences()
         except Exception as e:
             print(f"Failed to handle preference change: {e}")
 

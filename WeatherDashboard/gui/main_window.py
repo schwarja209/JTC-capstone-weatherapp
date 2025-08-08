@@ -351,6 +351,8 @@ class WeatherDashboardMain:
             theme_name: New theme name ('neutral', 'optimistic', 'pessimistic')
         """
         try:
+            self.logger.info(f"Handling theme change to: {theme_name}")
+            
             # Update theme in controller
             self.controller.set_theme(theme_name)
             
@@ -402,14 +404,40 @@ class WeatherDashboardMain:
             if x != self.root.winfo_x() or y != self.root.winfo_y():
                 self.root.geometry(f"+{x}+{y}")
             
-            # REFRESH METRIC WIDGETS WITH NEW COLORS
+            # EXPLICITLY REFRESH METRIC WIDGETS WITH NEW COLORS
+            if self.widgets and self.widgets.metric_widgets:
+                self.logger.info("Explicitly refreshing metric widget colors")
+                try:
+                    self.widgets.metric_widgets.on_theme_changed()
+                    self.logger.info("Theme change refresh completed successfully")
+                except Exception as e:
+                    self.logger.error(f"Error during theme change refresh: {e}")
+                    # Fallback: try direct refresh
+                    try:
+                        self.widgets.metric_widgets.refresh_metric_colors()
+                        self.logger.info("Fallback refresh completed")
+                    except Exception as fallback_error:
+                        self.logger.error(f"Fallback refresh also failed: {fallback_error}")
+            else:
+                self.logger.warn("Metric widgets not available for theme refresh")
+            
+            # Also refresh via update_display if we have last view model
             if hasattr(self, '_last_view_model') and self._last_view_model:
+                self.logger.info("Refreshing display with last view model")
                 self.update_display(self._last_view_model)
+            else:
+                self.logger.debug("No last view model available for refresh")
 
-            self.logger.info(f"Theme changed to {theme_name}")
+            self.logger.info(f"Theme change to {theme_name} completed successfully")
             
         except Exception as e:
-            self.logger.error(f"Error handling theme change: {e}")
+            self.logger.error(f"Error handling theme change to {theme_name}: {e}")
+            # Try to recover by forcing a basic refresh
+            try:
+                if self.widgets and self.widgets.metric_widgets:
+                    self.widgets.metric_widgets.refresh_metric_colors()
+            except Exception as recovery_error:
+                self.logger.error(f"Recovery refresh also failed: {recovery_error}")
 
     def on_update_clicked_async(self) -> None:
         """Handle the update button click event with async weather fetching.

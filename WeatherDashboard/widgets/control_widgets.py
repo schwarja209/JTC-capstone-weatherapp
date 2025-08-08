@@ -254,7 +254,6 @@ class ControlWidgets(BaseWidgetManager):
         
         range_cb = SafeWidgetCreator.create_combobox(self.parent, textvariable=self.state.range)
         range_cb['values'] = list(self.config.CHART["range_options"].keys())
-        range_cb.current(0)
         range_cb.grid(row=chart_config['row']+3, column=chart_config['column'], sticky=chart_config['sticky'])
 
     @widget_error_handler("action buttons")

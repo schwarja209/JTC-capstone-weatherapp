@@ -250,33 +250,57 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                 self.alert_text_label.configure(text="")
 
     def refresh_metric_colors(self) -> None:
-        """Refresh all metric colors when theme changes."""
+        """Refresh all metric colors when theme changes with comprehensive handling."""
         if not hasattr(self, 'metric_labels'):
+            self.logger.debug("No metric labels to refresh")
             return
         
-        # Recalculate colors for all visible metrics
+        self.logger.info("Refreshing metric colors for current theme")
+        
+        # Recalculate colors for all metrics, including those with '--' values
         for metric_key, widgets in self.metric_labels.items():
-            if hasattr(widgets['value'], 'cget'):
-                current_text = widgets['value'].cget('text')
-                if current_text and current_text != '--':
-                    # Recalculate color based on current theme
-                    unit_system = self.state.get_current_unit_system()
-                    raw_value = self.color_utils.extract_numeric_value(current_text)
+            try:
+                if not hasattr(widgets['value'], 'cget'):
+                    self.logger.warn(f"Widget for {metric_key} has no cget method")
+                    continue
                     
+                current_text = widgets['value'].cget('text')
+                unit_system = self.state.get_current_unit_system()
+                
+                # Handle different text states
+                if current_text and current_text != '--':
+                    raw_value = self.color_utils.extract_numeric_value(current_text)
                     if raw_value is not None:
                         if metric_key == 'temperature' and 'feels' in current_text:
                             color = self.color_utils.get_enhanced_temperature_color(current_text, unit_system)
                         else:
                             color = self.color_utils.get_metric_color(metric_key, raw_value, unit_system)
                         
-                        # Update widget color using TTK style
-                        try:
-                            style_name = f"Metric{metric_key.capitalize()}.TLabel"
-                            self.parent_frame.tk.eval(f"ttk::style configure {style_name} -foreground {color}")
-                            widgets['value'].configure(style=style_name)
-                        except Exception:
-                            # Fallback to direct configuration
-                            widgets['value'].configure(foreground=color)
+                        # Use the improved color application method
+                        self._apply_metric_color(widgets['value'], color, metric_key)
+                        
+                        self.logger.debug(f"Refreshed color for {metric_key}: {color}")
+                    else:
+                        self.logger.debug(f"Could not extract numeric value from '{current_text}' for {metric_key}")
+                else:
+                    # For empty or '--' values, apply default theme color
+                    default_color = self.color_utils.get_metric_color(metric_key, None, unit_system)
+                    self._apply_metric_color(widgets['value'], default_color, metric_key)
+                    self.logger.debug(f"Applied default color for {metric_key}: {default_color}")
+                    
+            except Exception as e:
+                self.logger.error(f"Error refreshing color for {metric_key}: {e}")
+                # Apply fallback color
+                try:
+                    widgets['value'].configure(foreground="darkslategray")
+                except Exception as fallback_error:
+                    self.logger.error(f"Fallback color application also failed for {metric_key}: {fallback_error}")
+        
+        # Force a complete redraw
+        if hasattr(self, 'parent'):
+            self.parent.update_idletasks()
+        
+        self.logger.info("Metric color refresh completed")
 
 # ================================
 # 3. WIDGET CREATION METHODS
@@ -410,19 +434,9 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
                 # Standard color logic for other metrics
                 raw_value = self.color_utils.extract_numeric_value(value_text)
                 color = self.color_utils.get_metric_color(metric_key, raw_value, unit_system)
-
-            # Apply color using TTK style to ensure theme inheritance
-            try:
-                # Create a unique style name for this metric
-                style_name = f"Metric{metric_key.capitalize()}.TLabel"
-                # Configure the style with the calculated color
-                self.parent_frame.tk.eval(f"ttk::style configure {style_name} -foreground {color}")
-                # Apply the style to the widget
-                widgets['value'].configure(style=style_name)
-            except Exception:
-                # Fallback to direct configuration if style creation fails
-                widgets['value'].configure(foreground=color)
             
+            self._apply_metric_color(widgets['value'], color, metric_key)
+
             # Add alert badges if metric has alerts (simplified for now - will integrate with alert manager)
             if raw_value is not None:
                 # TODO: Integrate with centralized alert manager for metric-specific alerts
@@ -431,6 +445,43 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
         
         # Grid positioning (always executed, uses padx defined at top)
         self.widget_utils.position_widget_pair(self.parent, widgets['label'], widgets['value'], row, label_col, value_col, label_text)
+
+    def _apply_metric_color(self, widget, color, metric_key):
+        """Apply color to metric widget with proper TTK style handling.
+        
+        Args:
+            widget: The TTK label widget to color
+            color: Hex color string (e.g., '#E67E22')
+            metric_key: Metric identifier for style naming
+        """
+        try:
+            # Create a unique style name for this metric
+            style_name = f"Metric{metric_key.capitalize()}.TLabel"
+            
+            # Get the ttk style object directly
+            style = ttk.Style()
+            
+            # Configure the style with the new color
+            style.configure(style_name, foreground=color)
+            
+            # Apply the style to the widget
+            widget.configure(style=style_name)
+            
+            # Force a widget update to ensure color is applied
+            widget.update_idletasks()
+            
+            self.logger.debug(f"Applied color {color} to {metric_key} using style {style_name}")
+            
+        except Exception as e:
+            # Fallback with detailed logging
+            self.logger.warn(f"Style application failed for {metric_key}: {e}")
+            self.logger.warn(f"Falling back to direct foreground configuration")
+            
+            # Direct configuration as fallback
+            widget.configure(foreground=color)
+            
+            # Force update even in fallback
+            widget.update_idletasks()
 
     def _create_comfort_progress_bar(self, parent: ttk.Frame, comfort_score: float) -> tk.Canvas:
         """Create a colored progress bar using Canvas for better color control.
@@ -448,11 +499,11 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
 
         # Get theme configuration
         theme_config = self.styles.get_theme_config()
-        progress_config = theme_config['dimensions']['progress_bar']
+        progress_config = theme_config['dimensions']['widget_layout']['comfort_progress_bar']
         
         # Calculate dimensions using ratios
-        bar_width = int(progress_config['width_ratio'] * parent_width)
-        bar_height = int(progress_config['height_ratio'] * parent_height)
+        bar_width = progress_config['width']
+        bar_height = progress_config['height']
         border_width = progress_config['border_width']
 
         # Get color using the same logic as text metrics
@@ -471,3 +522,73 @@ class MetricDisplayWidgets(BaseWidgetManager, IWeatherDashboardWidgets):
             canvas.create_rectangle(1, 1, progress_width + 1, bar_height - 1, fill=color, outline='')
         
         return canvas
+    
+    def on_theme_changed(self):
+        """Handle theme change events with comprehensive color refresh.
+        
+        This method is called when the theme changes to ensure all metric
+        colors are recalculated and applied with the new theme colors.
+        """
+        if not hasattr(self, 'metric_labels'):
+            self.logger.debug("No metric labels to refresh")
+            return
+        
+        self.logger.info("Theme changed - refreshing metric colors")
+        
+        # Recalculate colors for all metrics
+        for metric_key, widgets in self.metric_labels.items():
+            if hasattr(widgets['value'], 'cget'):
+                current_text = widgets['value'].cget('text')
+                
+                # Always recalculate color, even for '--' values
+                unit_system = self.state.get_current_unit_system()
+                
+                if current_text and current_text != '--':
+                    raw_value = self.color_utils.extract_numeric_value(current_text)
+                    if raw_value is not None:
+                        if metric_key == 'temperature' and 'feels' in current_text:
+                            color = self.color_utils.get_enhanced_temperature_color(current_text, unit_system)
+                        else:
+                            color = self.color_utils.get_metric_color(metric_key, raw_value, unit_system)
+                        
+                        # Use the improved color application method
+                        self._apply_metric_color(widgets['value'], color, metric_key)
+        
+        # Force a complete redraw of the parent frame
+        if hasattr(self, 'parent'):
+            self.parent.update_idletasks()
+        
+        self.logger.info("Metric colors refreshed for new theme")
+
+    def _debug_metric_colors(self):
+        """Debug method to log current metric colors and states."""
+        if not hasattr(self, 'metric_labels'):
+            self.logger.debug("No metric labels to debug")
+            return
+        
+        self.logger.info("=== METRIC COLOR DEBUG INFO ===")
+        
+        for metric_key, widgets in self.metric_labels.items():
+            try:
+                current_text = widgets['value'].cget('text')
+                current_style = widgets['value'].cget('style')
+                current_foreground = widgets['value'].cget('foreground')
+                
+                self.logger.info(f"{metric_key}:")
+                self.logger.info(f"  Text: '{current_text}'")
+                self.logger.info(f"  Style: '{current_style}'")
+                self.logger.info(f"  Foreground: '{current_foreground}'")
+                
+                if current_text and current_text != '--':
+                    unit_system = self.state.get_current_unit_system()
+                    raw_value = self.color_utils.extract_numeric_value(current_text)
+                    if raw_value is not None:
+                        calculated_color = self.color_utils.get_metric_color(metric_key, raw_value, unit_system)
+                        self.logger.info(f"  Calculated color: '{calculated_color}'")
+                        self.logger.info(f"  Raw value: {raw_value}")
+                        self.logger.info(f"  Unit system: {unit_system}")
+                
+            except Exception as e:
+                self.logger.error(f"Error debugging {metric_key}: {e}")
+        
+        self.logger.info("=== END METRIC COLOR DEBUG ===")

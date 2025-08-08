@@ -261,9 +261,17 @@ class CSVDataManager:
                 # Only process files that are enabled (if enabled_files is provided)
                 if enabled_files is not None and filename not in enabled_files:
                     continue
-                if target_city in file_data['data']:
+
+                # Find matching city with case-insensitive comparison
+                matching_city = None
+                for city_name in file_data['data'].keys():
+                    if city_name.lower() == target_city.lower():
+                        matching_city = city_name
+                        break
+
+                if matching_city:
                     # Only include data for the target city
-                    city_data = file_data['data'][target_city]
+                    city_data = file_data['data'][matching_city]
                     data_dict = {entry['date']: entry['value'] for entry in city_data}
                     
                     values = []
@@ -279,7 +287,8 @@ class CSVDataManager:
                     self.logger.debug(f"Added data for {filename}: {len(city_data)} data points")
                 else:
                     missing_files.append(filename)
-                    self.logger.debug(f"No data for {target_city} in {filename}. Available cities: {list(file_data['data'].keys())}")
+                    available_cities = list(file_data['data'].keys())
+                    self.logger.debug(f"No data for {target_city} in {filename}. Available cities: {available_cities}")
             
             return dates, values_list, colors, labels, available_files, missing_files
             

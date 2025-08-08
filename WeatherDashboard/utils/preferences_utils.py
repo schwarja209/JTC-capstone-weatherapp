@@ -44,9 +44,11 @@ class UserPreferences:
     scheduler_enabled: bool
     last_updated: datetime = datetime.now()
     # LIGHT METADATA FIELDS
-    preferences_version: str = "1.0"  # For future schema migrations
-    total_metrics_visible: Optional[int] = None  # Count of visible metrics
-    last_session_duration: Optional[int] = None  # Session duration in seconds
+    preferences_version: str = "1.0"
+    total_metrics_visible: Optional[int] = None
+    last_session_duration: Optional[int] = None
+    # CSV COMPARISON PREFERENCES
+    csv_toggle_states: Optional[Dict[str, bool]] = None
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert preferences to dictionary for JSON serialization.
@@ -64,7 +66,9 @@ class UserPreferences:
             # LIGHT METADATA FIELDS
             'preferences_version': self.preferences_version,
             'total_metrics_visible': self.total_metrics_visible,
-            'last_session_duration': self.last_session_duration
+            'last_session_duration': self.last_session_duration,
+            # CSV COMPARISON PREFERENCES
+            'csv_toggle_states': self.csv_toggle_states
         }
     
     @classmethod
@@ -91,7 +95,9 @@ class UserPreferences:
                 # LIGHT METADATA FIELDS
                 preferences_version=data.get('preferences_version', '1.0'),
                 total_metrics_visible=data.get('total_metrics_visible'),
-                last_session_duration=data.get('last_session_duration')
+                last_session_duration=data.get('last_session_duration'),
+                # CSV COMPARISON PREFERENCES
+                csv_toggle_states=data.get('csv_toggle_states')
             )
         except (KeyError, ValueError) as e:
             raise ValueError(f"Invalid preferences data: {e}")
@@ -225,7 +231,9 @@ class PreferencesService:
             # LIGHT METADATA FIELDS
             preferences_version="1.0",
             total_metrics_visible=total_visible,
-            last_session_duration=None
+            last_session_duration=None,
+            # CSV COMPARISON PREFERENCES
+            csv_toggle_states=None
         )
     
     def update_preferences_from_state(self, state: Any, scheduler_enabled: bool) -> UserPreferences:
@@ -250,6 +258,11 @@ class PreferencesService:
         # Calculate total visible metrics
         total_visible = sum(1 for is_visible in visible_metrics.values() if is_visible)
         
+        # Get CSV toggle states if available
+        csv_toggle_states = None
+        if hasattr(state, 'csv_toggle_states'):
+            csv_toggle_states = state.csv_toggle_states.copy()
+
         return UserPreferences(
             city=state.get_current_city(),
             unit_system=state.get_current_unit_system(),
@@ -259,7 +272,9 @@ class PreferencesService:
             # LIGHT METADATA FIELDS
             preferences_version="1.0",
             total_metrics_visible=total_visible,
-            last_session_duration=None  # Could be calculated from session start time
+            last_session_duration=None,
+            # CSV COMPARISON PREFERENCES
+            csv_toggle_states=csv_toggle_states
         )
     
     def apply_preferences_to_state(self, preferences: UserPreferences, state: Any) -> None:
@@ -290,12 +305,24 @@ class PreferencesService:
             for metric_key, is_visible in preferences.visible_metrics.items():
                 if metric_key in state.visibility:
                     state.visibility[metric_key].set(is_visible)
+
+            # Apply CSV comparison preferences if they exist
+            if hasattr(preferences, 'csv_toggle_states') and preferences.csv_toggle_states:
+                self._apply_csv_preferences(preferences.csv_toggle_states, state)
             
             self.logger.info("Preferences applied to application state")
             
         except Exception as e:
             self.logger.error(f"Failed to apply preferences to state: {e}")
     
+    def _apply_csv_preferences(self, csv_toggle_states: Dict[str, bool], state: Any) -> None:
+        """Apply CSV toggle preferences to state."""
+        try:
+            if hasattr(state, 'csv_toggle_states'):
+                state.csv_toggle_states.update(csv_toggle_states)
+        except Exception as e:
+            self.logger.error(f"Failed to apply CSV preferences: {e}")
+
     def get_preferences_file_path(self) -> Path:
         """Get the path to the preferences file.
         

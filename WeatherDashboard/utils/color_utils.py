@@ -9,6 +9,7 @@ import re
 from typing import Any, Optional
 
 from WeatherDashboard import styles
+from WeatherDashboard.utils.logger import Logger
 
 
 class ColorUtils:
@@ -17,7 +18,9 @@ class ColorUtils:
     def __init__(self) -> None:
         """Initialize color utils with hybrid dependency injection."""
         # Direct imports for stable utilities
+        self.logger = Logger()
         self.styles = styles
+
         self.re = re
 
     def get_metric_color(self, metric_key: str, value: Any, unit_system: str) -> str:
@@ -35,8 +38,14 @@ class ColorUtils:
             return "darkslategray"
         
         # Use styles surface layer to get live theme configuration
-        color_config = self.styles.METRIC_COLOR_RANGES().get(metric_key)
-        if not color_config:
+        try:
+            color_config = self.styles.METRIC_COLOR_RANGES().get(metric_key)
+            if not color_config:
+                self.logger.debug(f"No color config found for metric: {metric_key}")
+                return "darkslategray"
+        except (AttributeError, TypeError) as e:
+            # Fallback for test environments where METRIC_COLOR_RANGES might be mocked
+            self.logger.warn(f"METRIC_COLOR_RANGES not available, using fallback for {metric_key}: {e}")
             return "darkslategray"
         
         # Choose appropriate ranges based on unit system
@@ -51,8 +60,9 @@ class ColorUtils:
             for threshold, color in ranges:
                 if numeric_value <= threshold:
                     return color
-            return ranges[-1][1]
-        except (ValueError, TypeError):
+            return ranges[-1][1]  # Return last color if value exceeds all thresholds
+        except (ValueError, TypeError) as e:
+            self.logger.warn(f"Error converting value '{value}' to float for {metric_key}: {e}")
             return "black"
 
     def get_enhanced_temperature_color(self, temp_text: str, unit_system: str) -> str:

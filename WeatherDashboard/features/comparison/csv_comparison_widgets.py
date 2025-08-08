@@ -34,7 +34,7 @@ class CSVLineToggleWidgets:
         logger: Application logger instance
     """
     
-    def __init__(self, parent_frame: ttk.Frame) -> None:
+    def __init__(self, parent_frame: ttk.Frame, state: Any = None) -> None:
         """Initialize the CSV line toggle widgets.
         
         Sets up the toggle controls and callback management
@@ -44,7 +44,9 @@ class CSVLineToggleWidgets:
             parent_frame: Parent TTK frame to contain the toggle controls
         """
         self.logger = Logger()
+
         self.parent = parent_frame
+        self.state = state 
         
         # Toggle state management
         self.toggle_vars: Dict[str, tk.BooleanVar] = {}
@@ -81,8 +83,13 @@ class CSVLineToggleWidgets:
             
             # Create toggles for each CSV file
             for filename in csv_files:
-                # Create checkbox
-                enabled = filename in available_files
+                # Check if we have a saved state for this file
+                saved_state = None
+                if hasattr(self, 'state') and self.state and hasattr(self.state, 'csv_toggle_states'):
+                    saved_state = self.state.csv_toggle_states.get(filename)
+                
+                # Use saved state if available, otherwise default to available
+                enabled = saved_state if saved_state is not None else (filename in available_files)
                 var = tk.BooleanVar(value=enabled)
                 
                 checkbox = SafeWidgetCreator.create_checkbutton(
@@ -108,6 +115,14 @@ class CSVLineToggleWidgets:
             filename: Name of the CSV file
             enabled: Whether the toggle is enabled
         """
+        # Update state manager if available
+        if hasattr(self, 'state') and self.state and hasattr(self.state, 'csv_toggle_states'):
+            self.state.csv_toggle_states[filename] = enabled
+            # Save preferences when toggle changes
+            if hasattr(self.state, 'save_preferences'):
+                self.state.save_preferences()
+        
+        # Call registered callback
         if 'update_chart' in self.toggle_callbacks:
             try:
                 self.toggle_callbacks['update_chart'](filename, enabled)
@@ -190,15 +205,15 @@ class CSVComparisonWidgets(BaseWidgetManager):
         """
         # Create main layout frame
         self.main_frame = SafeWidgetCreator.create_frame(self.parent)
-        self.main_frame.pack(fill='both', expand=True, padx=10, pady=10)
-        
+        self.main_frame.pack(fill='both', expand=True, padx=5, pady=5)
+    
         # Create chart area - top
         self.chart_frame = SafeWidgetCreator.create_frame(self.main_frame)
-        self.chart_frame.pack(fill='both', expand=True, padx=10, pady=10)
+        self.chart_frame.pack(fill='both', expand=True, padx=5, pady=5)
 
         # Create legend area - between chart and controls
         self.legend_frame = SafeWidgetCreator.create_frame(self.main_frame)
-        self.legend_frame.pack(expand=True, padx=10, pady=(0, 0))
+        self.legend_frame.pack(fill='x', padx=5, pady=(0, 0))
 
         # Create control panel - bottom
         self.control_frame = SafeWidgetCreator.create_frame(
@@ -207,7 +222,7 @@ class CSVComparisonWidgets(BaseWidgetManager):
         self.control_frame.pack(side='bottom', fill='y', padx=(0, 0))
         
         # Create toggle widgets
-        self.toggle_widgets = CSVLineToggleWidgets(self.control_frame)
+        self.toggle_widgets = CSVLineToggleWidgets(self.control_frame, self.state)
 
         # Register callback for toggle changes
         self.toggle_widgets.toggle_callbacks['update_chart'] = self._on_csv_toggle_changed
@@ -381,7 +396,7 @@ class CSVComparisonWidgets(BaseWidgetManager):
 
             # Get chart data filtered by city
             dates, values_list, colors, labels, available_files, missing_files = self.data_manager.get_chart_data(
-                metric, target_city, enabled_files, date_range_months
+                metric, target_city, enabled_files=enabled_files, date_range_days=date_range_months
             )
             
             # Debug logging
@@ -429,13 +444,13 @@ class CSVComparisonWidgets(BaseWidgetManager):
         
         # Create legend container - centered
         legend_container = SafeWidgetCreator.create_frame(self.legend_frame)
-        legend_container.pack(expand=True, pady=2)
+        legend_container.pack(expand=True, pady=1)
         
         # Create legend items in rows
         items_per_row = 5
         for i in range(0, len(labels), items_per_row):
             row_frame = SafeWidgetCreator.create_frame(legend_container)
-            row_frame.pack(expand=True, pady=1)
+            row_frame.pack(anchor='center', pady=0)
             
             for j in range(items_per_row):
                 if i + j < len(labels):
